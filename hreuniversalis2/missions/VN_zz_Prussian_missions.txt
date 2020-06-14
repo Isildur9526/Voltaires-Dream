@@ -849,13 +849,13 @@ vn_pru_missions_slot_4_a = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-			add_adm_power = 50
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 40
 				region = rhenish_region
 			}
         }
         effect = {
+			add_adm_power = 50
 			rhenish_region = {
 				limit = { country_or_non_sovereign_subject_holds = ROOT }
 				add_nationalism = -10

@@ -175,7 +175,7 @@ vn_fri_missions_slot_2_a = {
         }
         effect = {
             add_legitimacy = 10
-            add_stability_or_adm_power = 1
+            add_stability_or_adm_power = yes
         }
 	}
 }
@@ -1107,15 +1107,13 @@ vn_fri_missions_slot_5_a = {
             custom_trigger_tooltip = {
                 tooltip = vn_fri_mare_frisicum.tt
                 any_known_country = {
-                    limit = {
-                        num_of_ports = 1
-                        capital_scope = {
-                            OR = {
-                                superregion = germanynorth_superregion
-                                superregion = scandinavia_superregion
-                                superregion = british_isles_superregion
-                                superregion = lowlands_superregion
-                            }
+                    num_of_ports = 1
+                    capital_scope = {
+                        OR = {
+                            superregion = germanynorth_superregion
+                            superregion = scandinavia_superregion
+                            superregion = british_isles_superregion
+                            superregion = lowlands_superregion
                         }
                     }
                     NOT = { navy_size = ROOT }

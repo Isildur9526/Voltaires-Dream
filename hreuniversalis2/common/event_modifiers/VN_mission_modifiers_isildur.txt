@@ -2131,6 +2131,9 @@ atc_knights_of_rome_mission = {
 	leader_land_shock = 1
 	cav_to_inf_ratio = 0.25
 }
+atc_holy_land_reclaimed_mission = {
+	culture_conversion_cost = -0.15
+}
 
 #Palatinate
 pal_new_seat_of_power_mission = {

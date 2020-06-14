@@ -3171,6 +3171,8 @@
  desc_atc_reconquer_jerusalem_mission: ""
  atc_knights_of_rome_mission: "Knights of Rome"
  desc_atc_knights_of_rome_mission: ""
+ atc_holy_land_reclaimed_mission: "Influx of Christian Migrants"
+ desc_atc_holy_land_reclaimed_mission: ""
 #PALATINATE
  pal_new_seat_of_power_mission: "Heidelberger Schloss"
  desc_pal_new_seat_of_power_mission: ""

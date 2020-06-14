@@ -109,7 +109,7 @@ vn_dan_nor_missions_slot_1_a = {
 			}
 			1799 = {
 				add_province_modifier = {
-					name = "nor_reestablish_jorvik_mission"
+					name = "dan_nor_reestablish_jorvik_mission"
 					duration = 9125
 				}
 			}

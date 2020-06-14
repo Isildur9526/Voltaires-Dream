@@ -264,7 +264,7 @@ vn_atc_missions_slot_3_a = {
             add_dip_power = 50
             add_mil_power = 50
             capital_scope = {
-                region_for_scope_province = {
+                region = {
                     limit = { owned_by = ROOT }
                     add_province_modifier = {
                         name = "atc_a_western_orient_mission"

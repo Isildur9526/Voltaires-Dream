@@ -567,7 +567,7 @@ vn_pal_missions_slot_5 = {
             }
         }
         effect = {
-            add_religious_influence_small_effect = yes
+            add_religious_influence_effect_small = yes
             add_country_modifier = {
                 name = "pal_support_conversion_mission"
                 duration = 9125

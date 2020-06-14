@@ -1250,6 +1250,7 @@ VN_bur_missions_slot_3_d = {
 		required_missions = { vn_bur_consolidate_netherlands }
 		trigger = {
 			government_rank = 5
+			prestige = 50
 		}
 		effect = {
 			country_event = {

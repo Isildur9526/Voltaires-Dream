@@ -2038,26 +2038,23 @@ vn_swe_missions_slot_5_c = {
 				}
 				if = {
 					limit = { base_tax = 2 }
-					chance = {
-						10 = {
-							add_base_tax = -1
-						}
+					random = {
+						chance = 10
+						add_base_tax = -1
 					}
 				}
 				if = {
 					limit = { base_production = 2 }
-					chance = {
-						10 = {
-							add_base_production = -1
-						}
+					random = {
+						chance = 10
+						add_base_tax = -1
 					}
 				}
 				if = {
 					limit = { base_manpower = 2 }
-					chance = {
-						10 = {
-							add_base_manpower = -1
-						}
+					random = {
+						chance = 10
+						add_base_tax = -1
 					}
 				}
 			}

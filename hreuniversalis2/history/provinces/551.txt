@@ -1,6 +1,6 @@
 culture = greek
 religion = orthodox 
-hre = n5
+hre = no
 base_tax = 5
 base_production = 5
 trade_goods = wine

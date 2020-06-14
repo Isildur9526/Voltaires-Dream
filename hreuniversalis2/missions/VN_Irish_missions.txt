@@ -289,7 +289,7 @@ vn_ire_missions_slot_3_a = {
         }
         effect = {
             add_mil_power = 50
-            wessex_region = {
+            southwest_england_region = {
                 limit = {
                     NOT = { is_core = ROOT }
                     NOT = { is_permanent_claim = ROOT }
@@ -303,11 +303,11 @@ vn_ire_missions_slot_3_a = {
         position = 3
         required_missions = { vn_ire_invade_wales }
         provinces_to_highlight = {
-            region = wessex_region
+            region = southwest_england_region
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            wessex_region = {
+            southwest_england_region = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
             }

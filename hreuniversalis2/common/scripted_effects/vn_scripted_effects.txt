@@ -849,7 +849,7 @@ add_religious_influence_effect_small = {
 		add_papal_influence = 10
 	}
 	if = {
-		limit = { uses_church_power = yes }
+		limit = { uses_church_aspects = yes }
 		add_church_power = 25
 	}
 	if = {
@@ -880,7 +880,7 @@ add_religious_influence_effect_large = {
 		add_papal_influence = 25
 	}
 	if = {
-		limit = { uses_church_power = yes }
+		limit = { uses_church_aspects = yes }
 		add_church_power = 50
 	}
 	if = {
