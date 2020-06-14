@@ -62,6 +62,7 @@ country_event = {
 			every_country = {
 				limit = {
 					is_part_of_hre = yes
+					NOT = { tag = PAP }
 					OR = {
 						government = theocracy
 						has_reform = free_city
@@ -190,6 +191,7 @@ country_event = {
 			random_country = {
 				limit = {
 					is_part_of_hre = yes
+					NOT = { tag = PAP }
 					government = theocracy
 					NOT = { has_country_flag = had_mediatization_event }
 					any_neighbor_country = {
@@ -308,6 +310,7 @@ country_event = {
 			random_known_country = {
 				limit = {
 					is_part_of_hre = yes
+					NOT = { tag = PAP }
 					government = theocracy
 					NOT = { has_country_flag = had_mediatization_event }
 					any_neighbor_country = {
@@ -330,7 +333,7 @@ country_event = {
 		custom_tooltip = incident_mediatization.4.a.tt2 #for second while
 		custom_tooltip = incident_mediatization.4.a.tt3 #for third while
 		hidden_effect = {
-			if = {
+			while = {
 				limit = {
 					any_owned_province = {
 						any_core_country = {
@@ -340,7 +343,7 @@ country_event = {
 						}
 					}
 				}
-				every_owned_province = {
+				random_owned_province = {
 					limit = {
 						any_core_country = {
 							exists = yes
@@ -359,20 +362,29 @@ country_event = {
 					}
 				}
 			}
-			if = {
+			while = {
 				limit = {
 					any_owned_province = {
 						is_part_of_hre = yes
-						any_core_country = { exists = no }
+						any_core_country = { 
+							exists = no 
+							NOT = { has_reform = free_city }
+						}
 					}
 				}
-				every_owned_province = {
+				random_owned_province = {
 					limit = {
 						is_part_of_hre = yes
-						any_core_country = { exists = no }
+						any_core_country = { 
+							exists = no 
+							NOT = { has_reform = free_city }
+						}
 					}
 					random_core_country = {
-						limit = { exists = no }
+						limit = { 
+							exists = no 
+							NOT = { has_reform = free_city }
+						}
 						ROOT = { release = PREV }
 						change_government = monarchy
 					}
@@ -577,7 +589,7 @@ country_event = {
 		custom_tooltip = incident_mediatization.4.a.tt2 #for second while
 		custom_tooltip = incident_mediatization.4.a.tt3 #for third while
 		hidden_effect = {
-			if = {
+			while = {
 				limit = {
 					any_owned_province = {
 						any_core_country = {
@@ -587,7 +599,7 @@ country_event = {
 						}
 					}
 				}
-				every_owned_province = {
+				random_owned_province = {
 					limit = {
 						any_core_country = {
 							exists = yes
@@ -606,20 +618,29 @@ country_event = {
 					}
 				}
 			}
-			if = {
+			while = {
 				limit = {
 					any_owned_province = {
 						is_part_of_hre = yes
-						any_core_country = { exists = no }
+						any_core_country = { 
+							exists = no 
+							NOT = { has_reform = free_city }
+						}
 					}
 				}
-				every_owned_province = {
+				random_owned_province = {
 					limit = {
 						is_part_of_hre = yes
-						any_core_country = { exists = no }
+						any_core_country = { 
+							exists = no 
+							NOT = { has_reform = free_city }
+						}
 					}
 					random_core_country = {
-						limit = { exists = no }
+						limit = { 
+							exists = no 
+							NOT = { has_reform = free_city }
+						}
 						ROOT = { release = PREV }
 						change_government = monarchy
 					}
@@ -706,8 +727,7 @@ country_event = {
 					}
 				}
 			}
-			
-		
+		}
 	}
 	option = {		#Fight back
 		ai_chance = { factor = 0 }
@@ -737,7 +757,6 @@ country_event = {
 			modifier = mediatize_fightback_malus
 		}
 	}
-	
 	option = {	#We survive!
 		ai_chance = { factor = 100 }
 		name = incident_mediatization.5.c
@@ -853,6 +872,7 @@ country_event = {
 			random_country = {
 				limit = {
 					is_part_of_hre = yes
+					NOT = { tag = PAP }
 					government = theocracy
 					NOT = { has_country_flag = had_mediatization_event }
 					any_neighbor_country = {
