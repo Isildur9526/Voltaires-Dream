@@ -62,7 +62,7 @@ country_event = {
 			every_country = {
 				limit = {
 					is_part_of_hre = yes
-					NOT = { tag = PAP }
+					NOT = { has_reform = papacy_reform }
 					OR = {
 						government = theocracy
 						has_reform = free_city
@@ -188,35 +188,66 @@ country_event = {
 					modifier = mediatization_bonus
 				}
 			}
-			random_country = {
+			if = {
 				limit = {
-					is_part_of_hre = yes
-					NOT = { tag = PAP }
-					government = theocracy
-					NOT = { has_country_flag = had_mediatization_event }
-					any_neighbor_country = {
-						government = monarchy
+					any_country = {
+						OR = {
+							AND = {
+								is_part_of_hre = yes
+								NOT = { has_reform = papacy_reform }
+								government = theocracy
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+							AND = {
+								is_part_of_hre = yes
+								has_reform = free_city
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+						}
 					}
 				}
-				country_event = {
-					id = incident_mediatization.4
-					days = 10
-					random = 5
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						NOT = { has_reform = papacy_reform }
+						government = theocracy
+						NOT = { has_country_flag = had_mediatization_event }
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					country_event = {
+						id = incident_mediatization.4
+						days = 10
+						random = 5
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						has_reform = free_city
+						NOT = { has_country_flag = had_mediatization_event }
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					country_event = {
+						id = incident_mediatization.5
+						days = 10
+						random = 5
+					}
 				}
 			}
-			random_country = {
-				limit = {
-					is_part_of_hre = yes
-					has_reform = free_city
-					NOT = { has_country_flag = had_mediatization_event }
-					any_neighbor_country = {
-						government = monarchy
-					}
-				}
+			else = {
 				country_event = {
-					id = incident_mediatization.5
-					days = 10
-					random = 5
+					id = incident_mediatization.9	#Failsafe in event of no eligible tags existing
+					days = 1
 				}
 			}
 		}
@@ -307,20 +338,53 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_country_flag = had_mediatization_event
-			random_known_country = {
+			if = {
 				limit = {
-					is_part_of_hre = yes
-					NOT = { tag = PAP }
-					government = theocracy
-					NOT = { has_country_flag = had_mediatization_event }
-					any_neighbor_country = {
-						government = monarchy
+					any_country = {
+						OR = {
+							AND = {
+								is_part_of_hre = yes
+								NOT = { has_reform = papacy_reform }
+								government = theocracy
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+							AND = {
+								is_part_of_hre = yes
+								has_reform = free_city
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+						}
 					}
 				}
-				country_event = {
-					id = incident_mediatization.4
-					days = 10
-					random = 5
+				random_known_country = {
+					limit = {
+						is_part_of_hre = yes
+						NOT = { has_reform = papacy_reform }
+						government = theocracy
+						NOT = { has_country_flag = had_mediatization_event }
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					country_event = {
+						id = incident_mediatization.4
+						days = 10
+						random = 5
+					}
+				}
+			}
+			else = {
+				emperor = {
+					country_event = {
+						id = incident_mediatization.9	#Failsafe in event of no eligible tags existing
+						days = 1
+					}
 				}
 			}
 		}
@@ -564,19 +628,52 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_country_flag = had_mediatization_event
-			random_known_country = {
+			if = {
 				limit = {
-					is_part_of_hre = yes
-					has_reform = free_city
-					NOT = { has_country_flag = had_mediatization_event }
-					any_neighbor_country = {
-						government = monarchy
+					any_country = {
+						OR = {
+							AND = {
+								is_part_of_hre = yes
+								NOT = { has_reform = papacy_reform }
+								government = theocracy
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+							AND = {
+								is_part_of_hre = yes
+								has_reform = free_city
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+						}
 					}
 				}
-				country_event = {
-					id = incident_mediatization.5
-					days = 10
-					random = 5
+				random_known_country = {
+					limit = {
+						is_part_of_hre = yes
+						has_reform = free_city
+						NOT = { has_country_flag = had_mediatization_event }
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					country_event = {
+						id = incident_mediatization.5
+						days = 10
+						random = 5
+					}
+				}
+			}
+			else = {
+				emperor = {
+					country_event = {
+						id = incident_mediatization.9
+						days = 1
+					}
 				}
 			}
 		}
@@ -872,7 +969,7 @@ country_event = {
 			random_country = {
 				limit = {
 					is_part_of_hre = yes
-					NOT = { tag = PAP }
+					NOT = { has_reform = papacy_reform }
 					government = theocracy
 					NOT = { has_country_flag = had_mediatization_event }
 					any_neighbor_country = {
@@ -926,5 +1023,25 @@ country_event = {
 		add_prestige = 10
 		custom_tooltip = incident_mediatization.8.a.tt
 		clr_country_flag = med_attacker
+	}
+}
+
+country_event = {
+	id = incident_mediatization.9
+	title = incident_mediatization.9.t
+	desc = incident_mediatization.9.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = {
+		#add - Disallow anyone in HRE reforming to Free City or Theocracy in future.
+	}
+	
+	option = {
+		name = incident_mediatization.9.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = incident_mediatization.9.a.tt
 	}
 }
