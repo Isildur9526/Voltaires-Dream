@@ -1,3 +1,25 @@
+#Incidents
+#Mediatization
+mediatize_fightback_malus = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+mediatize_survive_malus = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+mediatization_malus = {
+	opinion = -50
+	yearly_decay = 3
+}
+
+mediatization_bonus = {
+	opinion = 50
+	yearly_decay = 3
+}
+
 #HistoryPerson
 karling_frank_coronation_opinion = {
 	opinion = -100

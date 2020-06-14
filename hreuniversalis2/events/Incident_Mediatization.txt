@@ -1,0 +1,910 @@
+#VN Mediatization Incident
+
+namespace = incident_mediatization
+
+#Initial Event
+country_event = {
+	id = incident_mediatization.1
+	title = incident_mediatization.1.t
+	desc = incident_mediatization.1.d
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes 
+	
+	trigger = {
+		is_institution_enabled = enlightenment
+		num_of_foreign_hre_provinces = 100
+		NOT = { started_in = 1789.7.14 }
+		#NOT = { active_imperial_incident = any } #add - uncomment in 1.30
+		is_part_of_hre = no
+		is_at_war = no
+		NOT = {
+			has_country_flag = med_demander_country
+		}
+		any_country = {
+			is_part_of_hre = yes
+			government = theocracy
+		}
+		any_country = {
+			is_part_of_hre = yes
+			has_reform = free_city
+		}
+		any_owned_province = {
+			is_part_of_hre = yes
+		}
+		NOT = {
+			any_known_country = {
+				is_part_of_hre = no
+				any_owned_province = {
+					is_part_of_hre = yes
+				}
+				num_of_cities = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = med_demander
+			set_country_flag = med_demander_country
+		}
+	}
+	
+	option = {	#Demand
+		name = incident_mediatization.1.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = incident_mediatization.1.a.tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						government = theocracy
+						has_reform = free_city
+					}
+				}
+				country_event = {
+					id = incident_mediatization.2	#All theocracies/free cities informed of their fate
+					days = 20
+					random = 10
+				}
+			}
+		}
+		#add - replace this block with set_imperial_incident = incident_mediatization
+		#### start of block
+		emperor = {
+			country_event = {
+				id = incident_mediatization.3	#incident event
+				days = 60
+				random = 10
+			}
+		}
+		#### end of block
+	}
+	
+	option = {	#Back down
+		name = incident_mediatization.1.b
+		ai_chance = { factor = 0 }
+		add_prestige = -20
+	}
+}
+
+#For theocracies/free cities
+country_event = {
+	id = incident_mediatization.2
+	title = incident_mediatization.2.t
+	desc = {
+		trigger = { government = theocracy }
+		desc = incident_mediatization.2.da
+	}
+	desc = {
+		trigger = { has_reform = free_city }
+		desc = incident_mediatization.2.db
+	}
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	#Prepare for the worst...
+		ai_chance = { factor = 100 }
+		name = incident_mediatization.2.a
+	}
+	
+}
+
+#For Emperor - first incident event
+country_event = {
+	id = incident_mediatization.3
+	title = incident_mediatization.3.t
+	desc = incident_mediatization.3.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Art of War" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Art of War" }
+		picture = DIPLOMACY_SIGNING_eventPicture
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {	#Accept
+		name = incident_mediatization.3.a
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 100
+				event_target:med_demander = {
+					num_of_cities = ROOT
+				}
+			}
+			modifier = {
+				factor = 100
+				event_target:med_demander = {
+					reverse_has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				event_target:med_demander = {
+					army_strength = {
+						who = ROOT
+						value = 1.0
+					}
+				}
+			}
+		}
+		custom_tooltip = incident_mediatization.3.a.tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						government = theocracy
+						has_reform = free_city
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = mediatization_malus
+				}
+			}
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					government = monarchy
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = mediatization_bonus
+				}
+			}
+			random_country = {
+				limit = {
+					is_part_of_hre = yes
+					government = theocracy
+					NOT = { has_country_flag = had_mediatization_event }
+					any_neighbor_country = {
+						government = monarchy
+					}
+				}
+				country_event = {
+					id = incident_mediatization.4
+					days = 10
+					random = 5
+				}
+			}
+			random_country = {
+				limit = {
+					is_part_of_hre = yes
+					has_reform = free_city
+					NOT = { has_country_flag = had_mediatization_event }
+					any_neighbor_country = {
+						government = monarchy
+					}
+				}
+				country_event = {
+					id = incident_mediatization.5
+					days = 10
+					random = 5
+				}
+			}
+		}
+	}
+	
+	option = {	#Decline and fight
+		name = incident_mediatization.3.b
+		ai_chance = { 
+			factor = 25 
+			modifier = {
+				factor = 100
+				event_target:med_demander = {
+					NOT = { num_of_cities = ROOT }
+				}
+			}
+			modifier = {
+				factor = 100
+				event_target:med_demander = {
+					is_enemy = ROOT
+				}
+			}
+			modifier = {
+				factor = 100
+				event_target:med_demander = {
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 1.0
+						}
+					}
+				}
+			}
+		}
+		add_stability = -1
+		custom_tooltip = incident_mediatization.3.b.tt1
+		hidden_effect = { 
+			set_country_flag = med_attacker 
+			declare_war_with_cb = {
+				who = event_target:med_demander
+				type = cb_insult
+			}
+		}
+		custom_tooltip = incident_mediatization.3.b.tt2
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						government = theocracy
+						has_reform = free_city
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = mediatization_bonus
+				}
+			}
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					government = monarchy
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = mediatization_malus
+				}
+			}
+		}
+	}
+}
+
+#For theocracies - mediatize
+country_event = {
+	id = incident_mediatization.4
+	title = incident_mediatization.4.t
+	desc = incident_mediatization.4.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Art of War" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Art of War" }
+		picture = PRINCE_BISHOP_RESIGN_eventPicture
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_mediatization_event
+			random_known_country = {
+				limit = {
+					is_part_of_hre = yes
+					government = theocracy
+					NOT = { has_country_flag = had_mediatization_event }
+					any_neighbor_country = {
+						government = monarchy
+					}
+				}
+				country_event = {
+					id = incident_mediatization.4
+					days = 10
+					random = 5
+				}
+			}
+		}
+	}
+	
+	option = {	
+		ai_chance = { factor = 100 }
+		name = incident_mediatization.4.a
+		custom_tooltip = incident_mediatization.4.a.tt1	#for first while
+		custom_tooltip = incident_mediatization.4.a.tt2 #for second while
+		custom_tooltip = incident_mediatization.4.a.tt3 #for third while
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						any_core_country = {
+							exists = yes
+							is_part_of_hre = yes
+							government = monarchy
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						any_core_country = {
+							exists = yes
+							is_part_of_hre = yes
+							government = monarchy
+						}
+					}
+					random_core_country = {
+						limit = {
+							exists = yes
+							is_part_of_hre = yes
+							government = monarchy
+						}
+						save_event_target_as = med_core_country
+						PREV = { cede_province = event_target:med_core_country }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						is_part_of_hre = yes
+						any_core_country = { exists = no }
+					}
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+						any_core_country = { exists = no }
+					}
+					random_core_country = {
+						limit = { exists = no }
+						ROOT = { release = PREV }
+						change_government = monarchy
+					}
+				}
+			}
+			while = {
+				limit = {
+					num_of_cities = 1
+				}
+				if = {
+					limit = {
+						any_neighbor_country = {
+							is_part_of_hre = yes
+							government = monarchy
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							is_part_of_hre = yes
+							government = monarchy
+						}
+						save_event_target_as = mediatize_theo_country
+						random_owned_province = {
+							limit = {
+								any_neighbor_province = {
+									owned_by = ROOT
+								}
+							}
+							random_neighbor_province = {
+								limit = {
+									owned_by = ROOT
+								}
+								area = {
+									limit = { owned_by = ROOT }
+									remove_core = ROOT
+									cede_province = event_target:mediatize_theo_country
+									add_core = event_target:mediatize_theo_country
+									event_target:mediatize_theo_country = {
+										country_event = {
+											id = incident_mediatization.6
+											days = 1
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							government = monarchy
+						}
+						save_event_target_as = mediatize_theo_country
+						random_owned_province = {
+							limit = {
+								any_neighbor_province = {
+									owned_by = ROOT
+								}
+							}
+							random_neighbor_province = {
+								limit = {
+									owned_by = ROOT
+								}
+								area = {
+									limit = { owned_by = ROOT }
+									remove_core = ROOT
+									cede_province = event_target:mediatize_theo_country
+									add_core = event_target:mediatize_theo_country
+									event_target:mediatize_theo_country = {
+										country_event = {
+											id = incident_mediatization.6
+											days = 1
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+		
+	}
+	option = {		#Fight back
+		ai_chance = { factor = 0 }
+		name = incident_mediatization.4.b
+		add_stability = -1
+		every_neighbor_country = {
+			limit = { 
+				OR = {
+					tag = event_target:med_demander
+					AND = {
+						government = monarchy
+						is_part_of_hre = yes
+					}
+				}
+			}
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+			}
+		}
+		reverse_add_opinion = {
+			who = emperor
+			modifier = mediatize_fightback_malus
+		}
+		reverse_add_opinion = {
+			who = event_target:med_demander
+			modifier = mediatize_fightback_malus
+		}
+	}
+	option = {	#We survive!
+		ai_chance = { factor = 0 }
+		name = incident_mediatization.4.c
+		highlight = yes
+		trigger = {
+			OR = {
+				AND = {
+					ruler_has_personality = silver_tongue_personality
+					reverse_has_opinion = {
+						who = emperor
+						value = 150
+					}
+				}
+				reverse_has_opinion = {
+					who = emperor
+					value = 200
+				}
+			}
+		}
+		every_neighbor_country = {
+			limit = { 
+				OR = {
+					tag = event_target:med_demander
+					AND = {
+						government = monarchy
+						is_part_of_hre = yes
+					}
+				}
+			}
+			add_truce_with = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = mediatize_survive_malus
+			}
+		}
+		reverse_add_opinion = {
+			who = event_target:med_demander
+			modifier = mediatize_survive_malus
+		}
+	}
+}
+
+#For republics - mediatize
+country_event = {
+	id = incident_mediatization.5
+	title = incident_mediatization.5.t
+	desc = incident_mediatization.5.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Art of War" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Art of War" }
+		picture = DIPLOMACY_SIGNING_eventPicture
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_mediatization_event
+			random_known_country = {
+				limit = {
+					is_part_of_hre = yes
+					has_reform = free_city
+					NOT = { has_country_flag = had_mediatization_event }
+					any_neighbor_country = {
+						government = monarchy
+					}
+				}
+				country_event = {
+					id = incident_mediatization.5
+					days = 10
+					random = 5
+				}
+			}
+		}
+	}
+
+	option = {	#Get annexed
+		ai_chance = { factor = 1 }
+		name = incident_mediatization.5.a
+		custom_tooltip = incident_mediatization.4.a.tt1	#for first while
+		custom_tooltip = incident_mediatization.4.a.tt2 #for second while
+		custom_tooltip = incident_mediatization.4.a.tt3 #for third while
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						any_core_country = {
+							exists = yes
+							is_part_of_hre = yes
+							government = monarchy
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						any_core_country = {
+							exists = yes
+							is_part_of_hre = yes
+							government = monarchy
+						}
+					}
+					random_core_country = {
+						limit = {
+							exists = yes
+							is_part_of_hre = yes
+							government = monarchy
+						}
+						save_event_target_as = med_core_country
+						PREV = { cede_province = event_target:med_core_country }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						is_part_of_hre = yes
+						any_core_country = { exists = no }
+					}
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+						any_core_country = { exists = no }
+					}
+					random_core_country = {
+						limit = { exists = no }
+						ROOT = { release = PREV }
+						change_government = monarchy
+					}
+				}
+			}
+			while = {
+				limit = {
+					num_of_cities = 1
+				}
+				if = {
+					limit = {
+						any_neighbor_country = {
+							is_part_of_hre = yes
+							government = monarchy
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							is_part_of_hre = yes
+							government = monarchy
+						}
+						save_event_target_as = mediatize_rep_country
+						random_owned_province = {
+							limit = {
+								any_neighbor_province = {
+									owned_by = ROOT
+								}
+							}
+							random_neighbor_province = {
+								limit = {
+									owned_by = ROOT
+								}
+								area = {
+									limit = { owned_by = ROOT }
+									remove_core = ROOT
+									cede_province = event_target:mediatize_rep_country
+									add_core = event_target:mediatize_rep_country
+									event_target:mediatize_rep_country = {
+										country_event = {
+											id = incident_mediatization.6
+											days = 1
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							government = monarchy
+						}
+						save_event_target_as = mediatize_rep_country
+						random_owned_province = {
+							limit = {
+								any_neighbor_province = {
+									owned_by = ROOT
+								}
+							}
+							random_neighbor_province = {
+								limit = {
+									owned_by = ROOT
+								}
+								area = {
+									limit = { owned_by = ROOT }
+									remove_core = ROOT
+									cede_province = event_target:mediatize_rep_country
+									add_core = event_target:mediatize_rep_country
+									event_target:mediatize_rep_country = {
+										country_event = {
+											id = incident_mediatization.6
+											days = 1
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		
+	}
+	option = {		#Fight back
+		ai_chance = { factor = 0 }
+		name = incident_mediatization.5.b
+		add_stability = -1
+		every_neighbor_country = {
+			limit = { 
+				OR = {
+					tag = event_target:med_demander
+					AND = {
+						government = monarchy
+						is_part_of_hre = yes
+					}
+				}
+			}
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+			}
+		}
+		reverse_add_opinion = {
+			who = emperor
+			modifier = mediatize_fightback_malus
+		}
+		reverse_add_opinion = {
+			who = event_target:med_demander
+			modifier = mediatize_fightback_malus
+		}
+	}
+	
+	option = {	#We survive!
+		ai_chance = { factor = 100 }
+		name = incident_mediatization.5.c
+		highlight = yes
+		trigger = {
+			OR = {
+				AND = {
+					ruler_has_personality = silver_tongue_personality
+					reverse_has_opinion = {
+						who = emperor
+						value = 150
+					}
+				}
+				reverse_has_opinion = {
+					who = emperor
+					value = 200
+				}
+			}
+		}
+		every_neighbor_country = {
+			limit = { 
+				OR = {
+					tag = event_target:med_demander
+					AND = {
+						government = monarchy
+						is_part_of_hre = yes
+					}
+				}
+			}
+			add_truce_with = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = mediatize_survive_malus
+			}
+		}
+		reverse_add_opinion = {
+			who = event_target:med_demander
+			modifier = mediatize_survive_malus
+		}
+	}
+	
+	option = {	#Our city is too important!
+		ai_chance = { factor = 100 }
+		name = incident_mediatization.5.e
+		highlight = yes
+		trigger = {
+			capital_scope = {
+				development = 50
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		every_neighbor_country = {
+			limit = { 
+				OR = {
+					tag = event_target:med_demander
+					AND = {
+						government = monarchy
+						is_part_of_hre = yes
+					}
+				}
+			}
+			add_truce_with = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = mediatize_survive_malus
+			}
+		}
+		reverse_add_opinion = {
+			who = event_target:med_demander
+			modifier = mediatize_survive_malus
+		}
+	}
+}
+
+#Informing Monarchies of FROM being annexed
+country_event = {
+	id = incident_mediatization.6
+	title = incident_mediatization.6.t
+	desc = incident_mediatization.6.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	#Great!
+		name = incident_mediatization.6.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+#Lost War to Demander Country
+country_event = {
+	id = incident_mediatization.7
+	title = incident_mediatization.7.t
+	desc = incident_mediatization.7.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {
+		has_country_flag = med_attacker
+		FROM = { has_country_flag = med_demander_country }
+	}
+	
+	option = {	#Terrible! (Mediatization enforced)
+		name = incident_mediatization.7.a
+		ai_chance = { factor = 100 }
+		add_imperial_influence = -20
+		add_prestige = -10
+		custom_tooltip = incident_mediatization.7.a.tt
+		hidden_effect = {
+			clr_country_flag = med_attacker
+			random_country = {
+				limit = {
+					is_part_of_hre = yes
+					government = theocracy
+					NOT = { has_country_flag = had_mediatization_event }
+					any_neighbor_country = {
+						government = monarchy
+					}
+				}
+				country_event = {
+					id = incident_mediatization.4
+					days = 15
+					random = 5
+				}
+			}
+			random_country = {
+				limit = {
+					is_part_of_hre = yes
+					has_reform = free_city
+					NOT = { has_country_flag = had_mediatization_event }
+					any_neighbor_country = {
+						government = monarchy
+					}
+				}
+				country_event = {
+					id = incident_mediatization.5
+					days = 15
+					random = 5
+				}
+			}
+		}
+	}
+}
+
+#Won War against Demander Country
+country_event = {
+	id = incident_mediatization.8
+	title = incident_mediatization.8.t
+	desc = incident_mediatization.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {
+		has_country_flag = med_attacker
+		FROM = { has_country_flag = med_demander_country }
+	}
+	
+	option = {	#Great! (Mediatization stopped)
+		name = incident_mediatization.8.a
+		ai_chance = { factor = 100 }
+		add_imperial_influence = 20
+		add_prestige = 10
+		custom_tooltip = incident_mediatization.8.a.tt
+		clr_country_flag = med_attacker
+	}
+}
