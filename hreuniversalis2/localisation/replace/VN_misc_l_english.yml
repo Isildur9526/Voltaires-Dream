@@ -25,6 +25,7 @@
  building_cathedral_zoroastrian: "Great Fire Temple"
  building_cathedral_buddhism: "Stupa"
 #Misc
+ has_non_outdated_fort_trigger: "Has the most advanced fort type available at the current Military Technology level."
  nrm_high_king_opinion: "Sought English Support"
  ghazali_falasifa: "Supported Al-Ghazali"
  desc_ghazali_falasifa: "We have supported Al-Ghazali in his struggle against the Falasifa and Shiites."

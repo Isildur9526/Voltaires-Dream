@@ -32,6 +32,59 @@ has_fort_17th_trigger = {
 	}
 }
 
+has_non_outdated_fort = {
+	custom_trigger_tooltip = {
+		tooltip = has_non_outdated_fort_trigger
+		if = {
+			limit = {
+				ROOT = {
+					NOT = { mil_tech = 26 }
+				}
+			}
+			has_building = fort_14th
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					mil_tech = 26
+					NOT = { mil_tech = 48 }
+				}
+			}
+			has_building = fort_15th
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					AND = {
+						mil_tech = 48
+						NOT = { mil_tech = 54 }
+					}
+				}
+			}
+			has_building = fort_16th
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					AND = {
+						mil_tech = 54
+						NOT = { mil_tech = 60 }
+					}
+				}
+			}
+			has_building = fort_17th
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					mil_tech = 60
+				}
+			}
+			has_building = fort_18th
+		}
+	}
+}
+
 has_medical_building_trigger = {
 	OR = {
 		has_building = customs_house
