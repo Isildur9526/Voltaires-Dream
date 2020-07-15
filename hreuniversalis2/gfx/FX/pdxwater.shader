@@ -329,7 +329,6 @@ PixelShader =
 			waterColor.rgb = lerp( waterColor.rgb, vSample.rgb, saturate( vSample.a ) );
 
 			float vIceFade = 0.0f;
-			waterColor = ApplyIce( waterColor, Input.pos.xz, normal, vFoWColor, Input.uv_ice, vIceFade );
 			
 			float3 vEyeDir = normalize( Input.pos - vCamPos.xyz );
 			float3 reflection = reflect( vEyeDir, normal );
@@ -444,7 +443,6 @@ PixelShader =
 			//Ice effect
 			float4 waterColor = tex2D( WaterColor, Input.uv );
 			float vIceFade = 0.0f;
-			waterColor = ApplyIce( waterColor, Input.pos.xz, normal, vFoWColor, Input.uv_ice, vIceFade );
 			
 			float3 vEyeDir = normalize( Input.pos - vCamPos.xyz );
 			float3 reflection = reflect( vEyeDir, normal );

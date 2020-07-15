@@ -1,10 +1,16 @@
 objectTypes = {
 
 	pdxmesh = {
+		name = "empty_mesh"
+		file = "gfx/models/Mapitems/empty.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
 		name = "selection"
 		file = "gfx/models/Mapitems/selection.mesh"		
 		animation = { id = "idle"	type = "selection" }
-		scale = 0.7 #0.7
+		scale = 0.7
 	}
 	
 	pdxmesh = {
@@ -61,28 +67,21 @@ objectTypes = {
 		name = "selection_navy"
 		file = "gfx/models/Mapitems/selection.mesh"			
 		animation = { id = "idle"	type = "selection" }
-		scale = 0.7 #0.7
+		scale = 0.9
 	}	
-	
-	pdxmesh = {
-		name = "flag"
-		file = "gfx/models/Mapitems/flag.mesh"			
-		animation = { id = "idle"	type = "flag_idle" }	
-		scale = 0.3 #0.3
-	}
 	
 	pdxmesh = {
 		name = "construction_building"
 		file = "gfx/models/Mapitems/Build_Structure.mesh"	
 		animation = { id = "idle"	type = "build_structure" }
-		scale = 0.5
+		scale = 0.7
 	}
 	
 	pdxmesh = {
 		name = "construction_military"
 		file = "gfx/models/Mapitems/build_army.mesh"			
 		animation = { id = "idle"	type = "build_army" }	
-		scale = 0.2 #0.2
+		scale = 0.2
 
 	}
 
@@ -91,7 +90,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/build_ship.mesh"			
 
 		animation = { id = "idle"	type = "build_ship" }
-		scale = 0.2 #0.2
+		scale = 0.2
 	}
 
 	pdxmesh = {
@@ -99,7 +98,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/build_colony.mesh"			
 
 		animation = { id = "idle"	type = "build_colony" }
-		scale = 0.25 #0.25
+		scale = 0.25
 	}
 	
 	pdxmesh = {
@@ -107,7 +106,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/Siege_cannon.mesh"			
 
 		animation = { id = "idle"	type = "siege_cannon" }
-		scale = 0.4 #0.4
+		scale = 0.5
 	}
 	
 	pdxmesh = {
@@ -115,7 +114,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/western_missionary.mesh"			
 
 		animation = { id = "idle"	type = "western_missionary" }
-		scale = 0.3 #0.3
+		scale = 0.4
 	}
 		
 	pdxmesh = {
@@ -123,7 +122,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/muslim_missionary.mesh"			
 
 		animation = { id = "idle"	type = "muslim_missionary" }
-		scale = 0.3 #0.3
+		scale = 0.4
 		
 	}
 	
@@ -132,7 +131,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/asian_missionary.mesh"			
 
 		animation = { id = "idle"	type = "asian_missionary" }
-		scale = 0.3 #0.3
+		scale = 0.4
 	}
 
 	pdxmesh = {
@@ -140,7 +139,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/pagan_missionary.mesh"			
 
 		animation = { id = "idle"	type = "pagan_missionary" }
-		scale = 0.3 #0.3
+		scale = 0.4
 	}
 	
 	pdxmesh = {
@@ -148,7 +147,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/magistrate_western.mesh"			
 
 		animation = { id = "idle"	type = "magistrate_western_idle_animation" }
-		scale = 0.3 #0.3
+		scale = 0.35
 	}	
 	
 	pdxmesh = {
@@ -156,7 +155,7 @@ objectTypes = {
 		file = "gfx/models/Mapitems/magistrate_indian.mesh"			
 
 		animation = { id = "idle"	type = "magistrate_indian_idle_animation" }
-		scale = 0.3 #0.3
+		scale = 0.35
 	}		
 		
 	pdxmesh = {
@@ -164,14 +163,14 @@ objectTypes = {
 		file = "gfx/models/Mapitems/magistrate_asian.mesh"			
 
 		animation = { id = "idle"	type = "magistrate_asian_idle_animation" }
-		scale = 0.3 #0.3
+		scale = 0.35
 	}	
 	pdxmesh = {
 		name = "pagan_magistrate_mesh"
 		file = "gfx/models/Mapitems/magistrate_pagan.mesh"			
 
 		animation = { id = "idle"	type = "magistrate_pagan_idle_animation" }
-		scale = 0.3 #0.3
+		scale = 0.35
 	}	
 	
 	
@@ -182,14 +181,14 @@ objectTypes = {
 		name = "westerngfx_traderoute_land"
 		file = "gfx/models/Mapitems/Tradecart.mesh"		
 		animation = { id = "idle"	type = "Tradecart_idle" }
-		scale = 0.2 #0.2
+		scale = 0.2
 	}
 	
 	pdxmesh = {
 		name = "westerngfx_traderoute_naval"
 		file = "gfx/models/Mapitems/Trade_ship.mesh"
 		animation = { id = "idle"	type = "Tradeship" }
-		scale = 0.3 #0.3
+		scale = 0.3
 	}
 
 
@@ -197,45 +196,43 @@ objectTypes = {
 		name = "westerngfx_envoy_land"
 		file = "gfx/models/Mapitems/envoy_carriage.mesh"		
 		animation = { id = "idle"	type = "envoy_carriage_idle" }
-		scale = 0.2 #0.2
+		scale = 0.2
 	}
 	
 	pdxmesh = {
 		name = "westerngfx_envoy_naval"
 		file = "gfx/models/Mapitems/envoy_ship.mesh"
 		animation = { id = "idle"	type = "envoy_ship_idle" }
-		scale = 0.3 #0.3
+		scale = 0.3
 	}
 
 	pdxmesh = {
 		name = "tradenode"
 		file = "gfx/models/Mapitems/buoy.mesh"
 		animation = { id = "idle"	type = "buoy_idle" }
-		scale = 0.7 #0.7
+		scale = 0.7
 		}
 
 	pdxmesh = {
 		name = "tradenode_terrain"
 		file = "gfx/models/Mapitems/tradenode_land.mesh"
-		scale = 1.0 #1.0
 	}
 	
 	pdxmesh = {
 		name = "coin"
 		file = "gfx/models/Mapitems/coin.mesh"
-		scale = 1.7 #1.7
 	}
 	
 	pdxmesh = {
 		name = "port_blockade"
 		file = "gfx/models/Mapitems/port_blockade.mesh"
-		scale = 2.4 #2.4
+		scale = 2.2
 	}
 	
 	pdxmesh = {
 		name = "capital_indicator"
 		file = "gfx/models/Mapitems/capital_indicator.mesh"			
-		scale = 1.5 #1.5
+		scale = 1.5
 	}
 
 	### Trees ######################################################
