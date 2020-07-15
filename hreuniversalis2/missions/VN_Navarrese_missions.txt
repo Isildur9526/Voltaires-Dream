@@ -61,7 +61,7 @@ vn_nav_missions_slot_1_b = {
 	has_country_shield = yes
 	
     vn_nav_southern_france = {
-        icon = mission_iberian_conquistador 	#placeholder
+        icon = mission_cannons_firing
         position = 4
 		required_missions = { vn_nav_beyond_pyrenees }
 		provinces_to_highlight = {
@@ -93,7 +93,7 @@ vn_nav_missions_slot_1_b = {
         }
     }
     vn_nav_keep_conquests = {
-		icon = mission_iberian_conquistador 	#placeholder
+		icon = mission_have_two_subjects
         position = 6
 		required_missions = { vn_nav_southern_france }
 		provinces_to_highlight = {
@@ -178,7 +178,7 @@ vn_nav_missions_slot_2_b = {
 	has_country_shield = yes
 	
 	vn_nav_beyond_pyrenees = {
-        icon = mission_iberian_conquistador 	#placeholder 
+        icon = the_alpine_wall
         position = 3
 		required_missions = { vn_nav_seeking_alliances }
 		provinces_to_highlight = {
@@ -261,7 +261,7 @@ vn_nav_missions_slot_2_b = {
         }
     }
     vn_nav_eclipse_france = {
-        icon = mission_iberian_conquistador 	#placeholder 
+        icon = king_of_france
         position = 6
         required_missions = { vn_nav_french_trouble }
         trigger = {

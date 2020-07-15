@@ -116,7 +116,7 @@ vn_pie_missions_slot_2_a = {
         }
 	}
 	vn_pie_over_the_alps = {
-        icon = mission_conquer_50_development
+        icon = alpine_fortifications
         position = 3
 		required_missions = { vn_pie_conquer_aosta }
 		provinces_to_highlight = {
@@ -148,7 +148,7 @@ vn_pie_missions_slot_2_a = {
 		}
 	}
 	vn_pie_greater_piedmont = {
-        icon = mission_unite_home_region	#placeholder
+        icon = prosper_in_piedmont
         position = 4
 		required_missions = { vn_pie_over_the_alps }
 		provinces_to_highlight = {
@@ -185,7 +185,7 @@ vn_pie_missions_slot_3_a = {
 	has_country_shield = yes
 	
 	vn_pie_conquer_eastern_piedmont = {
-		icon = mission_unite_home_region	#placeholder
+		icon = unify_piedmont
         position = 2
         required_missions = { vn_pie_lessons_from_neighbors }
         provinces_to_highlight = {
@@ -224,7 +224,7 @@ vn_pie_missions_slot_3_a = {
         }
 	}
 	vn_pie_crush_lombards = {
-		icon = mission_unite_home_region	#placeholder
+		icon = seize_lombardy
         position = 3
 		required_missions = { vn_pie_conquer_eastern_piedmont }
 		provinces_to_highlight = {
@@ -328,7 +328,7 @@ vn_pie_missions_slot_4_a = {
 	has_country_shield = yes
 	
 	vn_pie_conquer_ventimiglia = {
-		icon = mission_unite_home_region	#placeholder
+		icon = mission_build_up_to_force_limit
         position = 2
 		required_missions = { vn_pie_lessons_from_neighbors }
 		provinces_to_highlight = {
@@ -445,32 +445,36 @@ vn_pie_missions_slot_5_a = {
 			}
 		}
         trigger = {
-			1009 = {
-				owned_by = ROOT
-				has_trade_building_trigger = yes
-				has_fort_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = vn_pie_pedemontana_road.tt
+				1009 = {
+					owned_by = ROOT
+					has_trade_building_trigger = yes
+					has_fort_trigger = yes
+				}
+				1007 = {
+					owned_by = ROOT
+					has_trade_building_trigger = yes
+				}
+				2559 = {
+					owned_by = ROOT
+					has_trade_building_trigger = yes
+				}
+				2580 = {
+					owned_by = ROOT
+					has_trade_building_trigger = yes
+				}
+				1800 = {
+					owned_by = ROOT
+					has_trade_building_trigger = yes
+				}
+				2992 = {
+					owned_by = ROOT
+					has_trade_building_trigger = yes
+					has_fort_trigger = yes
+				}
 			}
-			1007 = {
-				owned_by = ROOT
-				has_trade_building_trigger = yes
-			}
-			2559 = {
-				owned_by = ROOT
-				has_trade_building_trigger = yes
-			}
-			2580 = {
-				owned_by = ROOT
-				has_trade_building_trigger = yes
-			}
-			1800 = {
-				owned_by = ROOT
-				has_trade_building_trigger = yes
-			}
-			2992 = {
-				owned_by = ROOT
-				has_trade_building_trigger = yes
-				has_fort_trigger = yes
-			}
+			
         }
         effect = {
 			add_adm_power = 25
@@ -513,7 +517,7 @@ vn_pie_missions_slot_5_a = {
         }
 	}
 	vn_pie_guilds_of_turin = {
-		icon = mission_trade_company_region_abroad
+		icon = glory_to_turin
         position = 3
 		required_missions = { vn_pie_pedemontana_road }
 		provinces_to_highlight = {
@@ -532,7 +536,7 @@ vn_pie_missions_slot_5_a = {
         }
 	}
 	vn_pie_ligurian_traders = {
-		icon = mission_dominate_home_trade_node
+		icon = end_genoese_competition
         position = 4
         required_missions = {
 			vn_pie_guilds_of_turin 

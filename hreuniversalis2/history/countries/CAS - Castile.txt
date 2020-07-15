@@ -62,17 +62,6 @@ add_army_professionalism = 0.1
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = intricate_web_weaver_personality
-	heir = {
-		name = "Alfonso"
-		monarch_name = "Alfonso VII"
-		dynasty = "de Ivrea"
-		birth_date = 1105.3.1
-		death_date = 1157.8.21
-		claim = 75
-		adm = 2
-		dip = 3
-		mil = 2
-	}
 }
 1114.4.1 = { capital = 1208 }
 1126.3.8 = {

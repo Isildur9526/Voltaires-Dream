@@ -170,7 +170,7 @@ vn_sie_missions_slot_2_a = {
         }
     }
     vn_sie_monte_dei_paschi_bank = {
-        icon = mission_rb_the_bank_of_scotland 
+        icon = medici_bank_ledgers
         position = 4
 		required_missions = { vn_sie_santa_maria_della_scala }
 		provinces_to_highlight = {
@@ -314,7 +314,7 @@ vn_sie_missions_slot_4_a = {
     has_country_shield = yes
 
     vn_sie_unite_siena = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_unite_home_region
         position = 1
 		required_missions = {  }
 		provinces_to_highlight = {
@@ -412,7 +412,7 @@ vn_sie_missions_slot_4_a = {
         }
     }
     vn_sie_massa_marittima = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_sea_battles
         position = 2
 		required_missions = { vn_sie_unite_siena }
 		provinces_to_highlight = {
@@ -461,7 +461,7 @@ vn_sie_missions_slot_4_a = {
         }
     }
     vn_sie_seize_pisa = {
-        icon = mission_unite_home_region	#placeholder
+        icon = pulverize_pisa
         position = 3
 		required_missions = { vn_sie_massa_marittima }
 		provinces_to_highlight = {
@@ -487,7 +487,7 @@ vn_sie_missions_slot_4_a = {
         }
     }
     vn_sie_capture_florence = {
-        icon = mission_unite_home_region	#placeholder 
+        icon = conquer_tuscany
         position = 4
 		required_missions = { 
 			vn_sie_seize_pisa 
@@ -524,7 +524,7 @@ vn_sie_missions_slot_5_a = {
 	has_country_shield = yes
 	
     vn_sie_sovana_and_santa_fiora = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_large_army
         position = 2
 		required_missions = { vn_sie_unite_siena }
 		provinces_to_highlight = {
@@ -565,7 +565,7 @@ vn_sie_missions_slot_5_a = {
         }
     }
     vn_sie_subjugate_arezzo = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_conquer_50_development
         position = 3
 		required_missions = { vn_sie_sovana_and_santa_fiora }
 		provinces_to_highlight = {

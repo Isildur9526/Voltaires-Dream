@@ -151,7 +151,7 @@ VN_bur_missions_slot_1_a = {
 		}
     }
 	vn_bur_seize_savoy = {
-		icon = mission_unite_home_region	#placeholder
+		icon = alpine_fortifications
 		required_missions = { vn_bur_conquer_romandie }
 		provinces_to_highlight = {
 			area = savoy_area
@@ -942,7 +942,7 @@ VN_bur_missions_slot_3_b = {
 		}
     }
 	vn_bur_conquer_lorraine = {
-		icon = mission_unite_home_region	#placeholder
+		icon = integrate_lorraine
 		required_missions = { vn_bur_duchy_of_bar }
 		provinces_to_highlight = {
 			OR = {

@@ -12,7 +12,7 @@ vn_mlo_missions_slot_1_a = {
     has_country_shield = yes
 
     vn_mlo_conquer_novara = {
-        icon = mission_italian_condottiere  #placeholder
+        icon = mission_cannons_firing
         position = 2
         required_missions = { vn_mlo_expansion_of_milan }
         provinces_to_highlight = {
@@ -37,7 +37,7 @@ vn_mlo_missions_slot_1_a = {
     }
     vn_mlo_covet_piedmont = {
         position = 4
-        icon = mission_italian_condottiere  #placeholder
+        icon = prosper_in_piedmont
         required_missions = {
             vn_mlo_conquer_novara
             vn_mlo_access_to_ligurian_sea
@@ -109,31 +109,33 @@ vn_mlo_missions_slot_1_b = {
         icon = mission_rule_italy
         required_missions = { vn_mlo_support_from_city_states }
         trigger = {
-            NOT = { is_year = 1250 }
-            is_emperor = no
-            emperor = {
-                capital_scope = {
-                    NOT = { superregion = italy_superregion }
-				}
-			}
-			num_of_cities = 10
-            calc_true_if = {
-                all_ally = {
-                    custom_trigger_tooltip = {
-						tooltip = vn_mlo_support_from_city_states.tt
-						capital_scope = {
-							superregion = italy_superregion
-						}
-					}
-                }
-                amount = 4
-            }
+            #NOT = { is_year = 1250 }
+            #is_emperor = no
+            #emperor = {
+            #    capital_scope = {
+            #        NOT = { superregion = italy_superregion }
+			#	}
+			#}
+			#num_of_cities = 10
+            #calc_true_if = {
+            #    all_ally = {
+            #        custom_trigger_tooltip = {
+			#			tooltip = vn_mlo_support_from_city_states.tt
+			#			capital_scope = {
+			#				superregion = italy_superregion
+			#			}
+			#		}
+            #    }
+            #    amount = 4
+            #}
+            #add - Is member of the Lombard League when it forms
         }
         effect = {
-            custom_tooltip = vn_mlo_lombard_league.tt
-            country_event = {
-                id = vn_missions.66
-            }
+            #custom_tooltip = vn_mlo_lombard_league.tt
+            #country_event = {
+            #    id = vn_missions.66
+            #}
+            #add new effect
         }
     }
     vn_mlo_cast_out_emperor = {
@@ -443,7 +445,7 @@ vn_mlo_missions_slot_3_a = {
         }
     }
     vn_mlo_beyond_the_po = {
-        icon = mission_advance_to_the_dnieper
+        icon = expand_to_the_south
         required_missions = { vn_mlo_expansion_of_milan }
         provinces_to_highlight = {
             OR = {
@@ -602,7 +604,7 @@ vn_mlo_missions_slot_3_b = {
     has_country_shield = yes
 
     vn_mlo_wealth_of_florence = {
-        icon = mission_big_city
+        icon = conquer_tuscany
         position = 6
         required_missions = { vn_mlo_into_romagna }
         provinces_to_highlight = {
@@ -745,7 +747,7 @@ vn_mlo_missions_slot_4_b = {
     has_country_shield = yes
 
     vn_mlo_seize_mantua = {
-        icon = mission_italian_condottiere  #placeholder
+        icon = mission_village
         position = 4
         required_missions = { vn_mlo_conquer_cremona }
         provinces_to_highlight = {
@@ -940,7 +942,7 @@ vn_mlo_missions_slot_5_a = {
     has_country_shield = yes
 
     vn_mlo_annex_como = {
-        icon = mission_italian_condottiere  #placeholder
+        icon = mission_large_army
         position = 2
         required_missions = { vn_mlo_expansion_of_milan }
         provinces_to_highlight = {
@@ -1053,7 +1055,7 @@ vn_mlo_missions_slot_5_b = {
     has_country_shield = yes
 
     vn_mlo_beyond_lago_di_garda = {
-        icon = mission_italian_condottiere  #placeholder
+        icon = reclaim_the_ducal_lands
         position = 5
         required_missions = { vn_mlo_seize_mantua }
         provinces_to_highlight = {
@@ -1149,7 +1151,7 @@ vn_mlo_missions_slot_5_b = {
         }
     }
     vn_mlo_conquer_friuli = {
-        icon = mission_italian_condottiere  #placeholder
+        icon = expand_the_terraferma
 		required_missions = { vn_mlo_end_la_serenissima }
 		provinces_to_highlight = {
 			OR = {

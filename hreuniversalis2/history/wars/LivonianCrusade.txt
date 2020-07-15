@@ -2,7 +2,7 @@ name = "Livonian Crusade"
 war_goal = {
 	type = take_claim
 	casus_belli = cb_conquest
-	province = 2845
+	province = 5764
 }
 
 1236.2.19 = {

@@ -2,7 +2,7 @@ name = "Gollub War"
 war_goal = {
 	type = take_border
 	casus_belli = cb_border_war
-	province = 988
+	province = 5761
 }
 
 1422.7.1 = {

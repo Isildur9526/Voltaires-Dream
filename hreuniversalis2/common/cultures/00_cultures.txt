@@ -2838,8 +2838,8 @@ semitic = {
 	hebrew = {
 		primary = ISR
 		dynasty_names = {
-			Abiatarid Akabonid Amitid Amramid Boazid Dorid Dovid Eiranid Eleazid Heroid Honioid Hillelid Joazid Kahanid Nahumid Nirid Nogahid 
-			Oferid Omrid Pinchasid Raananid Shemidid Shemidid Yairid
+			Abiatarim Akabonim Amitim Amramim Boazim Dorim Dovim Eiranim Eleazim Heroim Honioim Hillelim Joazim Kahanim Nahumim Nirim Nogahim 
+			Oferim Omrim Pinchasim Raananim Shemidim Yairim
 		}
 		male_names = {
 			Abiatar Ahijah Akabon Alon Amit Amram Ananelus Ananias Aretas Aristobulus Azrikam Barak Baruch Belshazar Costobarus Deror Dori 

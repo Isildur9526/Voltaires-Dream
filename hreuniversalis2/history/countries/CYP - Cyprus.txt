@@ -107,9 +107,11 @@ capital = 3071
 }
 1237.1.1 = {
 	queen = {
-		country_of_origin = CYP
+		country_of_origin = LBR
+		culture = armenian
+		religion = coptic
 		name = "Stephanie"
-		dynasty = "de Lampron"
+		dynasty = "Hetoumian"
 		female = yes
 		birth_date = 1220.1.1
 		death_date = 1249.4.2

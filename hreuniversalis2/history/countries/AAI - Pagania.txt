@@ -9,15 +9,22 @@ historical_rival = VEN
 
 1054.1.1 = {
 	monarch = {
-		name = "Vijece"
+		name = "Berigoj"
+		dynasty = "Narentani"
 		adm = 2
 		dip = 2
-		mil = 2
-		regent = yes
+		mil = 1
 	}
 }
 1066.1.1 = {
 	religion = catholic
 	government = republic
 	add_government_reform = peasants_republic
+	monarch = {
+		name = "Vijece"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
 }

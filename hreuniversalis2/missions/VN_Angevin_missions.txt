@@ -107,7 +107,7 @@ vn_anj_missions_slot_2_a = {
     has_country_shield = yes
     
     vn_anj_subjugation_of_poitou = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_conquer_50_development
         required_missions = { vn_anj_greater_anjou }
         position = 4
         provinces_to_highlight = {
@@ -132,7 +132,7 @@ vn_anj_missions_slot_2_a = {
         }
     }
     vn_anj_aquitainian_hegemon = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_build_up_to_force_limit
         required_missions = { vn_anj_subjugation_of_poitou }
         provinces_to_highlight = {
             region = aquitaine_region
@@ -301,7 +301,7 @@ vn_anj_missions_slot_3_a = {
     has_country_shield = yes
     
     vn_anj_control_homelands = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_monarch_in_throne_room
         required_missions = { }
         position = 1
         provinces_to_highlight = {
@@ -345,7 +345,7 @@ vn_anj_missions_slot_3_a = {
         }
     }
     vn_anj_seize_le_mans = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_large_army
         required_missions = { vn_anj_control_homelands }
         provinces_to_highlight = {
             area = maine_area
@@ -448,7 +448,7 @@ vn_anj_missions_slot_3_a = {
         }
     }
     vn_anj_occupy_caen = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_village
         required_missions = { vn_anj_greater_anjou }
         position = 5
         provinces_to_highlight = {
@@ -480,7 +480,7 @@ vn_anj_missions_slot_3_a = {
         }
     }
     vn_anj_advances_in_east = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_assemble_an_army
         required_missions = { vn_anj_occupy_caen }
         provinces_to_highlight = {
             area = caux_area
@@ -540,7 +540,7 @@ vn_anj_missions_slot_4_a = {
     has_country_shield = yes
     
     vn_anj_end_blesevins = {
-        icon = mission_humiliate_provence   #placeholder
+        icon = mission_cannons_firing
         required_missions = { vn_anj_greater_anjou }
         position = 4
         provinces_to_highlight = {

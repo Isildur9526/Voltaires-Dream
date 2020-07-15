@@ -2513,7 +2513,7 @@
  dev_events.4.a: "Disastrous!"
 #Destruction of X
  dev_events.5.t: "The Destruction of [Root.GetCapitalName]"
- dev_events.5.d1: ""
+ dev_events.5.d1: "[Root.GetCapitalName] once stood as a shining beacon of the Islamic world and a major instigator of the Islamic Golden Age, but in the aftermath of the [From.GetCultureName] siege of the city it has become a depopulated ruin.\nAfter a long siege the [From.GetAdjectiveCap] army entered [Root.GetCapitalName], and from there the city was subjected to their whims. Countless mosques, palaces and even libraries were looted and destroyed, including the world-famous House of Wisdom which had extremely valuable works and treasures. It is said that the Tigris runs both red with the blood of the dead and black with the ink of destroyed books. The death toll itself was even more shocking, with tens of thousands reportedly being massacred by the [From.GetCultureName] armies.\nNow, in the wake of the near-complete destruction of [Root.GetCapitalName], it seems unlikely that the city will ever recover to its former glory without major intervention."
 #x
  dev_events.5.a: "A catastrophic loss for mankind..."
 #Plague Events

@@ -151,7 +151,7 @@ vn_bri_missions_slot_1_b = {
         }
     }
     vn_bri_up_the_peninsula = {
-        icon = mission_unite_home_region 	#placeholder 
+        icon = defeat_the_english
 		required_missions = { vn_bri_liberate_cornwall }
 		provinces_to_highlight = {
 			OR = {
@@ -378,7 +378,7 @@ vn_bri_missions_slot_2_a = {
         }
     }
     vn_bri_foothold_in_wales = {
-        icon = mission_unite_home_region 	#placeholder 
+        icon = mission_invade_island
 		required_missions = { vn_bri_breizh_kingdom }
 		provinces_to_highlight = {
 			OR = {
@@ -426,7 +426,7 @@ vn_bri_missions_slot_2_a = {
         }
     }
     vn_bri_celtic_sea_empire = {
-        icon = mission_unite_home_region 	#placeholder 
+        icon = mission_empire
         required_missions = { 
 			vn_bri_up_the_peninsula 
 			vn_bri_conquer_wales 
@@ -663,7 +663,7 @@ vn_bri_missions_slot_4_a = {
         }
     }
     vn_bri_order_of_the_ermine = {
-        icon = mission_unite_home_region 	#placeholder 
+        icon = chivalry_is_not_dead
         required_missions = { vn_bri_defend_our_independence }
         trigger = {
             employed_advisor = {
@@ -938,7 +938,7 @@ vn_bri_missions_slot_5_a = {
         }
     }
     vn_bri_kroaz_du = {
-        icon = mission_unite_home_region 	#placeholder 
+        icon = mission_religious
         required_missions = { vn_bri_nantes_cathedral }
         trigger = {
 			religion = catholic

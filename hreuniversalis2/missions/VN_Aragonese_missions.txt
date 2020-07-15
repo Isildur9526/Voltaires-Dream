@@ -433,7 +433,7 @@ vn_ara_missions_slot_2_d = {
 	has_country_shield = yes
 
 	vn_ara_conquer_almeria = {
-		icon = mission_unite_home_region	#placeholder
+		icon = mission_cannons_firing
 		required_missions = { vn_ara_advance_to_valencia }
 		position = 6
 		provinces_to_highlight = {
@@ -722,7 +722,7 @@ vn_ara_missions_slot_3_a = {
 		}
     }
 	vn_ara_conquer_teruel = {
-		icon = mission_unite_home_region	#placeholder
+		icon = mission_build_up_to_force_limit
 		required_missions = { vn_ara_reach_ebro }
 		provinces_to_highlight = {
 			OR = {
@@ -1122,7 +1122,7 @@ vn_ara_missions_slot_4_a = {
     }
 	vn_ara_catalan_aragonese_union = {
 		position = 5
-		icon = mission_unite_home_region	#placeholder
+		icon = mission_alliances
 		required_missions = { vn_ara_the_catalan_question }
 		provinces_to_highlight = {
 			region = catalunya_region
@@ -1176,7 +1176,7 @@ vn_ara_missions_slot_4_b = {
     
 	vn_ara_intrigues_in_greece = {
 		position = 7
-		icon = mission_unite_home_region	#placeholder
+		icon = cross_the_pindus
 		required_missions = { vn_ara_crown_of_aragon }
 		trigger = {
             num_of_mercenaries = 5
@@ -1221,7 +1221,7 @@ vn_ara_missions_slot_4_b = {
 		}	
     }
 	vn_ara_conquer_athens = {
-		icon = mission_unite_home_region	#placeholder
+		icon = foothold_in_greece
 		required_missions = {
 			vn_ara_intrigues_in_greece
 			vn_ara_establish_a_navy
@@ -1274,7 +1274,7 @@ vn_ara_missions_slot_4_c = {
     
 	vn_ara_homogenize_culture = {
 		position = 9
-		icon = mission_unite_home_region	#placeholder
+		icon = mission_expel_the_moriscos
 		required_missions = { vn_ara_centralize_kingdom }
 		provinces_to_highlight = {
 			region = aragon_region
@@ -1318,7 +1318,7 @@ vn_ara_missions_slot_5_a = {
     
 	vn_ara_conquer_septimania = {
 		position = 4
-		icon = mission_unite_home_region	#placeholder
+		icon = mission_conquer_50_development
 		required_missions = { vn_ara_the_catalan_question }
 		provinces_to_highlight = {
 			OR = {

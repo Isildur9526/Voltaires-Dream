@@ -541,7 +541,7 @@ historical_rival = SJK
 1204.2.5 = {
 	monarch = {
 		name = "Alexios V"
-		dynasty = "Angelos"
+		dynasty = "Doukas"
 		birth_date = 1140.1.1
 		adm = 2
 		dip = 1
@@ -616,7 +616,9 @@ historical_rival = SJK
 		death_date = 1281.1.1 
 	}
 }
+1274.6.24 = { religion = catholic }
 1282.12.11 = {
+	religion = orthodox
 	monarch = {
 		name = "Andronikos II"
 		dynasty = "Palaiologos"
@@ -895,6 +897,7 @@ historical_rival = SJK
 		dynasty = "Palaiologos"
 		birth_date = 1405.2.8
 		death_date = 1453.5.29
+		religion = catholic
 		claim = 95
 		adm = 3
 		dip = 2
@@ -919,6 +922,7 @@ historical_rival = SJK
 		name = "Konstantinos XI"
 		dynasty = "Palaiologos"
 		birth_date = 1405.2.8
+		religion = catholic
 		adm = 3
 		dip = 2
 		mil = 2
@@ -927,3 +931,4 @@ historical_rival = SJK
 }
 
 1452.1.1 = { leader = {	name = "Giovanni Giustiniani"	type = general	fire = 4	shock = 2	manuever = 3	siege = 0	death_date = 1453.5.29 } }
+1452.9.12 = { religion = catholic }

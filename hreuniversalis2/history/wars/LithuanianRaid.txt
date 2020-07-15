@@ -2,7 +2,7 @@ name = "Polish-Lithuanian War"
 war_goal = {
 	type = take_claim
 	casus_belli = cb_conquest
-	province = 910
+	province = 5757
 }
 
 1351.1.1 = {

@@ -715,7 +715,7 @@ vn_fra_missions_slot_1_c = {
         }
     }
     vn_fra_overthrow_naples = {
-        icon = mission_unite_home_region	#placeholder
+        icon = king_of_naples
         position = 18
 		required_missions = { vn_fra_conquest_of_sicily }
 		provinces_to_highlight = {
@@ -1280,7 +1280,7 @@ vn_fra_missions_slot_2_d = {
         }
     }
     vn_fra_consolidate_pyrenees = {
-        icon = mission_unite_home_region	#placeholder 
+        icon = the_alpine_wall
         required_missions = { 
 			vn_fra_advance_into_gascony 
 			vn_fra_centralize_state 
@@ -1632,7 +1632,7 @@ vn_fra_missions_slot_2_f = {
         }
     }
     vn_fra_march_on_rome = {
-        icon = mission_unite_home_region	#placeholder 
+        icon = new_st_peters_basilica
         required_missions = { 
 			vn_fra_overthrow_naples 
 			vn_fra_challenge_papal_power 
@@ -1766,7 +1766,7 @@ vn_fra_missions_slot_2_g = {
         }
     }
     vn_fra_marca_hispanica = {
-        icon = mission_unite_home_region	#placeholder
+        icon = a_question_of_spain
 		required_missions = { vn_fra_reconquer_catalonia }
 		provinces_to_highlight = {
 			OR = {
@@ -2109,7 +2109,7 @@ vn_fra_missions_slot_3_a = {
         }
     }
     vn_fra_beyond_alps = {
-        icon = mission_unite_home_region	#placeholder
+        icon = alpine_fortifications
         required_missions = { vn_fra_italian_ambition }
 		provinces_to_highlight = {
 			OR = {
@@ -2170,7 +2170,7 @@ vn_fra_missions_slot_3_a = {
         }
     }
     vn_fra_conquer_romagna = {
-        icon = mission_unite_home_region	#placeholder
+        icon = sweep_the_po
 		required_missions = { vn_fra_secure_lombardy }
 		provinces_to_highlight = {
 			region = romagna_region
@@ -2684,7 +2684,7 @@ vn_fra_missions_slot_4_d = {
 	has_country_shield = yes
 	
     vn_fra_rein_in_burgundy = {
-        icon = mission_rb_repatriate_burgundy
+        icon = conquer_burgundy
         position = 9
 		required_missions = { vn_fra_centralize_state }
 		provinces_to_highlight = {
@@ -2781,7 +2781,7 @@ vn_fra_missions_slot_4_d = {
         }
     }
     vn_fra_beyond_jura = {
-        icon = mission_unite_home_region	#placeholder
+        icon = consolidate_switzerland
 		required_missions = { vn_fra_into_franche_comte }
 		provinces_to_highlight = {
 			OR = {
@@ -2962,7 +2962,7 @@ vn_fra_missions_slot_4_f = {
 	has_country_shield = yes
 	
     vn_fra_annex_lorraine = {
-        icon = mission_unite_home_region	#placeholder
+        icon = integrate_lorraine
         position = 15
 		required_missions = { vn_fra_letat_cest_moi }
 		provinces_to_highlight = {
@@ -3699,7 +3699,7 @@ vn_fra_missions_slot_5_e = {
         }
     }
     vn_fra_edict_of_nantes = {
-		icon = mission_religious	#placeholder
+		icon = mission_religious
         required_missions = { vn_fra_endure_reformation }
         trigger = {
 			NOT = { has_disaster = french_wars_of_religion }
@@ -3862,7 +3862,7 @@ vn_fra_missions_slot_5_f = {
         }
     }
     vn_fra_one_lingua_franca = {
-        icon = mission_alliances	#placeholder? 
+        icon = mission_alliances
 		required_missions = { vn_fra_integrate_occitans }
 		provinces_to_highlight = {
 			superregion = french_superregion
@@ -4098,7 +4098,7 @@ vn_fra_missions_slot_5_h = {
         }
     }
     vn_fra_subjugate_dutch = {
-        icon = mission_unite_home_region	#placeholder 
+        icon = the_true_freedom
 		required_missions = { vn_fra_into_netherlands }
 		provinces_to_highlight = {
 			OR = {

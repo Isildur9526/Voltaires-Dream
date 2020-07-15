@@ -354,7 +354,7 @@ vn_spa_missions_slot_2_a = {
         }
     }
     vn_spa_nueva_planta_decrees = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_taula_de_canvi
         position = 12
 		required_missions = { vn_spa_iberian_union }
 		provinces_to_highlight = {
@@ -902,7 +902,7 @@ vn_spa_missions_slot_3_a = {
         }
     }
     vn_spa_eclipse_france = {
-        icon = mission_unite_home_region	#placeholder
+        icon = weaken_france
         position = 14
 		required_missions = { vn_spa_french_rivalry }
 		provinces_to_highlight = {
@@ -983,7 +983,7 @@ vn_spa_missions_slot_3_b = {
         }
     }
     vn_spa_papal_marches = {
-        icon = mission_unite_home_region	#placeholder
+        icon = sweep_the_po
         position = 16
 		required_missions = { vn_spa_sack_of_rome }
 		provinces_to_highlight = {
@@ -1199,7 +1199,7 @@ vn_spa_missions_slot_4_b = {
         }
     }
     vn_spa_subjugate_naples = {
-        icon = mission_unite_home_region	#placeholder
+        icon = union_with_naples
         position = 14
 		required_missions = { vn_spa_acquire_sicily }
 		provinces_to_highlight = {

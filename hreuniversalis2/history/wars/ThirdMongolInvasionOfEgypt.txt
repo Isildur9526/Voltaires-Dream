@@ -7,7 +7,7 @@ war_goal = {
 
 1299.9.9 = {
 	add_attacker = ILK
-	add_attacler = RUM
+	add_attacker = RUM
 	add_defender = MAM
 	add_defender = FAD
 }

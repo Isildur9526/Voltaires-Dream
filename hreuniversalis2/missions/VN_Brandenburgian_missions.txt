@@ -518,7 +518,7 @@ vn_bra_missions_slot_2_b = {
         }
     }
     vn_bra_brandenburg_prussia = {
-        icon = mission_unite_home_region	#placeholder
+        icon = develop_konigsberg
 		required_missions = { vn_bra_schlawe_and_stolp }
 		provinces_to_highlight = {
 			OR = {
@@ -698,7 +698,7 @@ vn_bra_missions_slot_3_b = {
         }
     }
     vn_bra_into_silesia = {
-        icon = mission_unite_home_region	#placeholder
+        icon = take_silesia
 		required_missions = { vn_bra_eastern_frontier }
 		provinces_to_highlight = {
 			region = silesia_region
@@ -781,7 +781,7 @@ vn_bra_missions_slot_3_c = {
 	has_country_shield = yes
 	
     vn_bra_subjugate_pomerelia = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_danzig_or_war
         position = 7
 		required_missions = { vn_bra_schlawe_and_stolp }
 		provinces_to_highlight = {
@@ -811,7 +811,7 @@ vn_bra_missions_slot_3_c = {
         }
     }
     vn_bra_unite_prussia = {
-        icon = mission_unite_home_region	#placeholder
+        icon = an_army_with_a_state
 		required_missions = { 
 			vn_bra_subjugate_pomerelia 
 			vn_bra_brandenburg_prussia 
@@ -958,7 +958,7 @@ vn_bra_missions_slot_4_a = {
     has_country_shield = yes
 
     vn_bra_electorate = {
-		icon = mission_alliances
+		icon = electorate_of_brandenburg
 		position = 1
         required_missions = {  }
         trigger = {

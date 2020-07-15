@@ -577,6 +577,7 @@ country_event = {
 	option = {
 		name = vn_missions.65.a
         ai_chance = { factor = 100 }
+		#add - rework event for 1.30 merc companies
         random_owned_province = {
             limit = { controlled_by = ROOT }
             add_unit_construction = {
@@ -602,89 +603,45 @@ country_event = {
 	}
 }
 
-#Lombard League (66)
-#add - REWORK into Imperial Incident post Emperor
-country_event = {
-	id = vn_missions.66
-	title = vn_missions.66.t
-	desc = vn_missions.66.d
-	picture = HRE_eventPicture
+#66, 67 free, old 67 moved to incident
 
-	is_triggered_only = yes
-    major = yes
+#Lombard League (66) - obsoleted
+#country_event = {
+#	id = vn_missions.66
+#	title = vn_missions.66.t
+#	desc = vn_missions.66.d
+#	picture = HRE_eventPicture
 
-	option = {
-		name = vn_missions.66.a
-        ai_chance = { factor = 100 }
-        add_country_modifier = {
-            name = "lombard_league_member"
-            duration = -1
-        }
-        every_known_country = {
-            limit = {
-                capital_scope = {
-                    superregion = italy_superregion
-                }
-                OR = {
-                    alliance_with = ROOT
-                    has_opinion = {
-                        who = ROOT
-                        value = 100
-                    }
-                }
-            }
-            add_country_modifier = {
-                name = "lombard_league_member"
-                duration = -1
-            }
-        }
-	}
-}
+#	is_triggered_only = yes
+#    major = yes
 
-#Lombard League disbands (67)
-country_event = {
-	id = vn_missions.67
-	title = vn_missions.67.t
-	desc = vn_missions.67.d
-	picture = HRE_eventPicture
-
-	trigger = {
-        has_country_modifier = lombard_league_member
-        any_country = {
-            has_country_modifier = lombard_league_member
-        }
-        is_year = 1250
-        OR = {
-            is_part_of_hre = no
-            is_emperor = yes
-            emperor = {
-                NOT = {
-                    OR = {
-                        ADM = 4
-                        DIP = 4
-                        MIL = 4
-                    }
-                }
-            }
-        }
-    }
-
-    mean_time_to_happen = {
-        months = 1
-    }
-
-	option = {
-		name = vn_missions.67.a
-        ai_chance = { factor = 100 }
-        remove_country_modifier = lombard_league_member
-        every_country = {
-            limit = {
-                has_country_modifier = lombard_league_member
-            }
-            remove_country_modifier = lombard_league_member
-        }
-	}
-}
+#	option = {
+#		name = vn_missions.66.a
+#        ai_chance = { factor = 100 }
+#        add_country_modifier = {
+#            name = "lombard_league_member"
+#            duration = -1
+#        }
+#        every_known_country = {
+#            limit = {
+#                capital_scope = {
+#                    superregion = italy_superregion
+#                }
+#                OR = {
+#                    alliance_with = ROOT
+#                    has_opinion = {
+#                        who = ROOT
+#                        value = 100
+#                    }
+#                }
+#            }
+#            add_country_modifier = {
+#                name = "lombard_league_member"
+#                duration = -1
+#            }
+#        }
+#	}
+#}
 
 #The Capital of Lotharingia (68)
 country_event = {

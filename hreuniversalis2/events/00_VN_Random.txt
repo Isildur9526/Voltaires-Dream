@@ -1640,12 +1640,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 2
-				OR = {
-					NOT = { legitimacy = 80 }
-					AND = {
-						has_dlc = "Mandate of Heaven"
-					}
-				}
+				NOT = { legitimacy = 80 }
 			}
 		}
 		define_advisor = {
@@ -1714,9 +1709,7 @@ country_event = {
 
 	option = {
 		name = "FBIA24"
-		ai_chance = {
-			factor = 33
-		}
+		ai_chance = { factor = 33 }
 		add_adm_power = 50
 		add_faction_influence = {
 			faction = tur_pacifists
@@ -1730,12 +1723,7 @@ country_event = {
 			factor = 34
 			modifier = {
 				factor = 2
-				OR = {
-					NOT = { legitimacy = 80 }
-					AND = {
-						has_dlc = "Mandate of Heaven"
-					}
-				}
+				NOT = { legitimacy = 80 }
 			}
 		}
 		add_dip_power = 50
@@ -1747,9 +1735,7 @@ country_event = {
 
 	option = {
 		name = "FBIC24"
-		ai_chance = {
-			factor = 33
-		}
+		ai_chance = { factor = 33 }
 		add_mil_power = 50
 		add_faction_influence = {
 			faction = tur_militarists
@@ -1873,12 +1859,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 2
-				OR = {
-					NOT = { legitimacy = 80 }
-					AND = {
-						has_dlc = "Mandate of Heaven"
-					}
-				}
+				NOT = { legitimacy = 80 }
 			}
 		}
 		add_adm_power = -15

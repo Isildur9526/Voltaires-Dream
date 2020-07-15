@@ -2,7 +2,7 @@ name = "Lithuanian Crusade"
 war_goal = {
 	type = take_claim
 	casus_belli = cb_conquest
-	province = 2392
+	province = 5765
 }
 
 1347.1.1 = {
@@ -24,7 +24,7 @@ war_goal = {
 1348.2.2 = { 
 	battle = { 
 		name = "Streva" 
-		location = 1152
+		location = 5732
 		attacker = { 
 			commander = "Winrich von Kniprode"
 			infantry = 4000

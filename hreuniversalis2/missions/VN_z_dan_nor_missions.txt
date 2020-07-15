@@ -234,25 +234,28 @@ vn_dan_nor_missions_slot_1_b = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			west_midlands_area = {
-				country_or_non_sovereign_subject_holds = ROOT
-				has_courthouse_building_trigger = yes
-			}
-			devon_area = {
-				country_or_non_sovereign_subject_holds = ROOT
-				has_courthouse_building_trigger = yes
-			}
-			somerset_area = {
-				country_or_non_sovereign_subject_holds = ROOT
-				has_courthouse_building_trigger = yes
-			}
-			wessex_area = {
-				country_or_non_sovereign_subject_holds = ROOT
-				has_courthouse_building_trigger = yes
-			}
-			sussex_area = {
-				country_or_non_sovereign_subject_holds = ROOT
-				has_courthouse_building_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = vn_dan_nor_revive_danegeld.tt
+				west_midlands_area = {
+					country_or_non_sovereign_subject_holds = ROOT
+					has_courthouse_building_trigger = yes
+				}
+				devon_area = {
+					country_or_non_sovereign_subject_holds = ROOT
+					has_courthouse_building_trigger = yes
+				}
+				somerset_area = {
+					country_or_non_sovereign_subject_holds = ROOT
+					has_courthouse_building_trigger = yes
+				}
+				wessex_area = {
+					country_or_non_sovereign_subject_holds = ROOT
+					has_courthouse_building_trigger = yes
+				}
+				sussex_area = {
+					country_or_non_sovereign_subject_holds = ROOT
+					has_courthouse_building_trigger = yes
+				}
 			}
         }
         effect = {

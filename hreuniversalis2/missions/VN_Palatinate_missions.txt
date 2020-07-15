@@ -184,7 +184,7 @@ vn_pal_missions_slot_2_a = {
         }
     }
     vn_pal_rule_oberpfalz = {
-        icon = mission_unite_home_region    #placeholder
+        icon = mission_unite_home_region   #placeholder
         position = 5
         required_missions = { vn_pal_bridge_to_oberpfalz }
         provinces_to_highlight = {
@@ -228,7 +228,7 @@ vn_pal_missions_slot_2_a = {
         }
     }
     vn_pal_unite_wittelsbachs = {
-        icon = mission_unite_home_region    #placeholder
+        icon = unite_the_wittelsbachs
         position = 6
         required_missions = { vn_pal_rule_oberpfalz }
         provinces_to_highlight = {
@@ -354,7 +354,7 @@ vn_pal_missions_slot_3_a = {
         }
     }
     vn_pal_consolidate_rhineland = {
-        icon = mission_unite_home_region    #placeholder
+        icon = rhineland_conquest
         position = 5
         required_missions = { vn_pal_cross_the_rhine }
         provinces_to_highlight = {
@@ -404,7 +404,7 @@ vn_pal_missions_slot_4_a = {
         }
     }
     vn_pal_ruprechts_ambition = {
-        icon = mission_unite_home_region    #placeholder
+        icon = centralized_empire
         position = 2
         required_missions = { 
 			vn_pal_our_electoral_dignity 

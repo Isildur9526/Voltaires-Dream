@@ -87,7 +87,7 @@ vn_lor_missions_slot_1_a = {
         }
     }
     vn_lor_a_national_identity = {
-        icon = mission_coronation   #placeholder
+        icon = integrate_lorraine
         required_missions = { 
             vn_lor_control_waterways
             vn_lor_merge_ville_vieille
@@ -122,7 +122,7 @@ vn_lor_missions_slot_2_a = {
     has_country_shield = yes
 
     vn_lor_merge_ville_vieille = {
-        icon = mission_coronation   #placeholder
+        icon = appease_the_estates
         required_missions = { }
         position = 2
         provinces_to_highlight = {
@@ -162,7 +162,7 @@ vn_lor_missions_slot_2_b = {
     has_country_shield = yes
 
     vn_lor_reach_rhine = {
-        icon = mission_coronation   #placeholder
+        icon = rhineland_conquest
         required_missions = { vn_lor_upper_lorraine }
         position = 3
         provinces_to_highlight = {
@@ -296,7 +296,7 @@ vn_lor_missions_slot_2_b = {
         }
     }
     vn_lor_expand_into_franconia = {
-        icon = mission_coronation   #placeholder
+        icon = conquer_franconia
         required_missions = { vn_lor_we_are_a_fortress }
         provinces_to_highlight = {
             OR = {
@@ -409,7 +409,7 @@ vn_lor_missions_slot_2_b = {
         }
     }
     vn_lor_cleves_and_cologne = {
-        icon = mission_coronation   #placeholder
+        icon = sway_cologne
         required_missions = { vn_lor_expand_into_franconia }
         provinces_to_highlight = {
             OR = {
@@ -1008,7 +1008,7 @@ vn_lor_missions_slot_5_a = {
     has_country_shield = yes
 
     vn_lor_trois_eveches = {
-        icon = mission_coronation   #placeholder
+        icon = take_the_bishoprics
         required_missions = { }
         position = 2
         provinces_to_highlight = {

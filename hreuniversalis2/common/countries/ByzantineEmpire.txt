@@ -45,7 +45,7 @@ historical_units = {
 monarch_names = {
 	"Ioannes #1" = 40
 	"Alexios #0" = 30
-	"Konstantinos #10" = 20
+	"Konstantinos #9" = 20
 	"Andronikos #0" = 20
 	"Manuel #0" = 20
 	"Romanos #3" = 20
@@ -182,10 +182,17 @@ ship_names = {
 }
 
 army_names = {
-	"Thema Thrakes" "Thema Makedonikon" "Thema Thessalonikes" "Thema Helladikon" "Thema Opsikion" "Thema Optimaton" 
-	"Thema Paphlagonia" "Thema $PROVINCE$"
+	"Thema Anatolikon" "Thema Armeniakon" "Thema Boukellarion" "Thema Kappadokias" "Thema Chaldias" "Thema Charsianou"
+	"Thema Koloneias" "Thema Longobardia" "Thema Lykandos" "Thema Mesopotamias" "Thema Nikopoleos" "Thema Phasianes"
+	"Thema Peloponnesou" "Thema Sebasteias" "Thema Seleukeias" "Thema Strymonos" "Thema Thrakesion" "Thema Artze"
+	"Thema Thrakes" "Thema Makedonias" "Thema Thessalonikes" "Thema Elladikon" "Thema Opsikion" "Thema Optimaton" 
+	"Thema Paphlagonia" "Thema Asmosaton" "Thema Boleron" "Thema Boulgarias" "Thema Charpezikion" "Thema Chauzizion"
+	"Thema Chozanon" "Thema Edesses" "Thema Pareuphratidai" "Thema Exakomia" "Thema Iberias" "Thema Kama" "Thema Taron"
+	"Thema Loukanias" "Thema Matzikert" "Thema Melitene" "Thema Paristriou" "Thema Samosata" "Thema Sirmiou" "Thema Mylasa"
+	"Thema Tarantas" "Thema Tephrikes" "Thema Theodosioupolis" "Thema Baasprakania" "Thema Maeandrou" "Thema Neokastra"
 }
 
 fleet_names = {
-	"Thema Cibyrraeoton" "Thema Cypriakon" "Thema Aigaeou Pelagous" "Thema Sicelias"
+	"Thema Cibyrraeoton" "Thema Cypriakon" "Thema Aigaeou Pelagous" "Thema Sicelias" "Thema Kephallenias"
+	"Thema Kretes" "Thema Chersonos" "Thema Dalmatias" "Thema Dyrrhachiou" "Thema Samou" "Thema Kalabrias"
 }

@@ -12,7 +12,7 @@ vn_pru_missions_slot_1_a = {
     has_country_shield = yes
 
     vn_pru_rivalry_with_austria = {
-        icon = mission_unite_home_region	#placeholder
+        icon = humiliate_austria
         position = 2
         required_missions = { vn_pru_king_in_prussia }
         trigger = {
@@ -91,7 +91,7 @@ vn_pru_missions_slot_1_b = {
         trigger = {
 			has_global_modifier_value = {
 				which = discipline
-				value = 1.25
+				value = 0.25
 			}
         }
         effect = {
@@ -115,7 +115,7 @@ vn_pru_missions_slot_1_c = {
 	has_country_shield = yes
 	
     vn_pru_holy_alliance = {
-		icon = mission_unite_home_region	#placeholder
+		icon = take_silesia
         position = 5
 		required_missions = {  }
 		provinces_to_highlight = {
@@ -229,7 +229,7 @@ vn_pru_missions_slot_1_c = {
         }
     }
     vn_pru_polish_corridor = {
-        icon = mission_unite_home_region	#placeholder
+        icon = mission_danzig_or_war
         position = 7
 		required_missions = { 
 			vn_pru_holy_alliance 
@@ -531,7 +531,7 @@ vn_pru_missions_slot_2_c = {
 	has_country_shield = yes
 	
     vn_pru_counter_kleinstaaterei = {
-        icon = mission_unite_home_region	#placeholder
+        icon = control_swabia
         position = 8
 		required_missions = {  }
 		provinces_to_highlight = {
@@ -591,7 +591,7 @@ vn_pru_missions_slot_3_a = {
     has_country_shield = yes
 
     vn_pru_festung_berlin = {
-		icon = mission_unite_home_region	#placeholder
+		icon = the_balance_of_power
         position = 1
 		required_missions = {  }
 		provinces_to_highlight = {
@@ -652,7 +652,7 @@ vn_pru_missions_slot_3_b = {
 	has_country_shield = yes
 	
     vn_pru_neutralize_saxony = {
-        icon = mission_unite_home_region	#placeholder
+        icon = electorate_of_saxony
         position = 3
 		required_missions = {  }
 		provinces_to_highlight = {
@@ -696,7 +696,7 @@ vn_pru_missions_slot_3_c = {
 	has_country_shield = yes
 
     vn_pru_establish_zollverein = {
-        icon = mission_unite_home_region	#placeholder
+        icon = the_imperial_border
         position = 5
         required_missions = { vn_pru_north_german_confederation }
         trigger = {
@@ -889,7 +889,7 @@ vn_pru_missions_slot_4_a = {
         }
     }
     vn_pru_influence_south = {
-        icon = mission_unite_home_region	#placeholder
+        icon = establish_oktoberfest
         position = 6
 		required_missions = { vn_pru_north_german_confederation }
 		provinces_to_highlight = {
@@ -1062,7 +1062,7 @@ vn_pru_missions_slot_4_a = {
         }
     }
     vn_pru_alsace_lorraine = {
-        icon = mission_unite_home_region	#placeholder
+        icon = integrate_lorraine
         position = 7
 		required_missions = { vn_pru_influence_south }
 		provinces_to_highlight = {
