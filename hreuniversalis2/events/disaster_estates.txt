@@ -244,8 +244,9 @@ country_event = {
 	
 	option = {
 		name = estate_disasters.9.a	
-		create_independent_estate_from_religion = {
+		create_independent_estate = {
 			estate = estate_dhimmi
+			play_as = no
 		}
 	}
 	
@@ -255,7 +256,7 @@ country_event = {
 			ai = no 
 			has_dlc = "The Cossacks"
 		}
-		create_independent_estate_from_religion = {
+		create_independent_estate = {
 			estate = estate_dhimmi
 			play_as = yes
 		}
@@ -486,6 +487,11 @@ country_event = {
 		hidden_effect = {
 			remove_heir = yes
 			swap_free_idea_group = yes
+			if = {
+				limit = { tag = MAM }
+				override_country_name = MAMLUKS_NAME
+				set_country_flag = mamluks_name_flag
+			}
 		}
 	}
 }

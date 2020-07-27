@@ -466,6 +466,8 @@ national_focus = ADM
 1356.1.10 = { set_global_flag = remove_electorate_allowed }
 1358.8.16 = {
 	government_rank = 4
+	government = monarchy
+	add_government_reform = austrian_archduchy_reform
 	monarch = {
 		name = "Rudolf IV"
 		dynasty = "von Habsburg"
@@ -777,7 +779,6 @@ national_focus = ADM
 	add_accepted_culture = czech
 	elector = yes
 }
-1556.10.2 = { set_legacy_government = administrative_monarchy }
 1564.7.27 = {
 	monarch = {
 		name = "Maximilian II"
@@ -1093,7 +1094,6 @@ national_focus = ADM
 	}
 }
 1740.10.22 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "Maria Theresia I"
 		dynasty = "von Habsburg"

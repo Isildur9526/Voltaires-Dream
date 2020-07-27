@@ -36,9 +36,9 @@ country_event = {
 			estate = estate_church
 			influence = 25
 		}
-		any_owned_province = {
-			has_estate = estate_dhimmi
-			NOT = { religion_group = owner }
+		estate_territory = { 
+			estate = estate_dhimmi
+			territory = 1
 		}
 	}
 	
@@ -160,12 +160,6 @@ country_event = {
 			}
 		}
 		add_years_of_income = -0.1
-		hidden_effect = {
-			random_owned_province = {
-				limit = { has_province_flag = overzealous_qazi }
-				clr_province_flag = overzealous_qazi
-			}
-		}
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = -15
@@ -206,6 +200,7 @@ country_event = {
 		}
 		any_owned_province = {
 			NOT = { religion_group = muslim }
+			is_city = yes
 		}
 	}
 	
@@ -220,12 +215,14 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					NOT = { religion_group = ROOT }
+					is_city = yes
 				}
 				set_province_flag = demanding_dhimmi
 			}
 			random_owned_province = {
 				limit = {
 					NOT = { religion_group = ROOT }
+					is_city = yes
 					NOT = { has_province_flag = demanding_dhimmi }
 					owner = {
 						num_of_cities = 10
@@ -236,6 +233,7 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					NOT = { religion_group = ROOT }
+					is_city = yes
 					NOT = { has_province_flag = demanding_dhimmi }
 					owner = {
 						num_of_cities = 25
@@ -246,6 +244,7 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					NOT = { religion_group = ROOT }
+					is_city = yes
 					NOT = { has_province_flag = demanding_dhimmi }
 					owner = {
 						num_of_cities = 50
@@ -457,8 +456,9 @@ country_event = {
 			estate = estate_dhimmi
 			influence = 40
 		}
-		any_owned_province = {
-			has_estate = estate_dhimmi
+		estate_territory = { 
+			estate = estate_dhimmi
+			territory = 1
 		}
 	}
 	
@@ -507,9 +507,12 @@ country_event = {
 				}
 			}
 		}
+		scaled_estate_dhimmi_negative_land_share_effect = yes
 		random_owned_province = {
-			limit = { has_estate = estate_dhimmi }
-			remove_estate = estate_dhimmi
+			limit = {
+				NOT = { religion_group = muslim }
+				is_city = yes
+			}
 			add_province_modifier = {
 				name = "repression_of_influential_dhimmi"
 				duration = 3650
@@ -682,6 +685,8 @@ country_event = {
 		has_estate = estate_dhimmi
 		any_owned_province = {
 			NOT = { religion_group = muslim }
+			is_capital = no
+			is_city = yes
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -689,8 +694,9 @@ country_event = {
 				modifier = EST_VAL_DHIMMI_CONCESSIONS
 			}
 		}
-		any_owned_province = {
-			has_estate = estate_dhimmi
+		estate_territory = { 
+			estate = estate_dhimmi
+			territory = 1
 		}
 		NOT = {
 			estate_loyalty = {
@@ -720,7 +726,11 @@ country_event = {
 		add_republican_tradition = -7
 		add_devotion = -7
 		random_owned_province = {
-			limit = { has_estate = estate_dhimmi }
+			limit = {
+				NOT = { religion_group = muslim }
+				is_capital = no
+				is_city = yes
+			}
 			add_local_autonomy = 33
 		}
 	}

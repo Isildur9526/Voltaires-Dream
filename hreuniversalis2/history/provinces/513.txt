@@ -10,7 +10,6 @@ trade_goods = grain
 base_manpower = 2
 capital = "Trnava"
 is_city = yes
-estate = estate_church
 
 1060.12.6 = {
 	owner = HUN

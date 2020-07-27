@@ -8,6 +8,14 @@ add_accepted_culture = gutnish
 religion = norse_pagan_reformed
 capital = 6112	#Uppsala
 national_focus = MIL
+change_estate_land_share = {
+	estate = estate_church
+	share = -6
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
 
 1050.1.1 = {
 	monarch = {
@@ -772,7 +780,6 @@ national_focus = MIL
 1544.1.1 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = administrative_monarchy
 }
 1552.8.22 = {
 	queen = {
@@ -1226,7 +1233,6 @@ national_focus = MIL
 		mil = 1
 	}
 }
-1772.1.1 = { set_legacy_government = constitutional_monarchy }
 1778.11.1 = {
 	heir = {
 		name = "Gustav Adolf"

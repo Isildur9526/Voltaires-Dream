@@ -21,6 +21,7 @@ fixed_capital = 5449
 
 #Duchy of Candia
 1204.5.16 = {
+	override_country_name = CANDIA
 	technology_group = western
 	primary_culture = venetian
 	add_accepted_culture = peloponnesian
@@ -55,6 +56,7 @@ fixed_capital = 5449
 
 #Great Revolt
 1282.1.1 = {
+	restore_country_name = yes
 	technology_group = eastern
 	remove_accepted_culture = peloponnesian
 	primary_culture = peloponnesian
@@ -70,6 +72,7 @@ fixed_capital = 5449
 
 #Duchy Restored
 1299.4.28 = {
+	override_country_name = CANDIA
 	technology_group = western
 	primary_culture = venetian
 	add_accepted_culture = peloponnesian
@@ -112,6 +115,7 @@ fixed_capital = 5449
 
 #Revolt of St Titus
 1363.8.1 = {
+	restore_country_name = yes
 	government = republic
 	add_government_reform = oligarchy_reform
 	technology_group = eastern
@@ -129,6 +133,7 @@ fixed_capital = 5449
 
 #Duchy Restored
 1368.1.1 = {
+	override_country_name = CANDIA
 	government = monarchy
 	add_government_reform = feudalism_reform
 	technology_group = western
@@ -228,6 +233,7 @@ fixed_capital = 5449
 #done 1669.9.26
 
 1669.9.26 = {
+	restore_country_name = yes
 	technology_group = eastern
 	remove_accepted_culture = peloponnesian
 	primary_culture = peloponnesian

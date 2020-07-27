@@ -11,7 +11,6 @@ owner = RVA
 controller = RVA
 add_core = RVA
 add_core = WGT
-estate = estate_church
 
 1130.1.1 = {
 	owner = WGT

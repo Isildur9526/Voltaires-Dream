@@ -127,7 +127,10 @@ VN_BYZ_missions_slot_1_a = {
 				NOT = { hre_size = 1 }
 				AND = {
 					is_emperor = yes
-					hre_reform_level = 12
+					OR = {
+						hre_reform_passed = emperor_erbkaisertum
+						hre_reform_passed = erbkaisertum
+					}
 				}
 			}
 			custom_trigger_tooltip = {

@@ -38,6 +38,7 @@ religious_school = maliki_school
 	technology_group = western
 	primary_culture = aragonese
 	remove_accepted_culture = mozarabic
+	override_country_name = ALBARRACIN_NAME
 	religion = catholic
 	monarch = {
 		name = "Pedro I"

@@ -118,7 +118,7 @@ bgh_islam_in_baghdad_mission = { #25 years
 }
 bgh_the_islamic_heartland_mission = { #25 years
 	improve_relation_modifier = 0.25
-	diplomaric_reputation = 1
+	diplomatic_reputation = 1
 }
 bgh_incursion_into_italy_mission = { #25 years
 	warscore_cost_vs_other_religion = -0.25
@@ -149,7 +149,7 @@ bgh_spread_of_islam_mission = { #25 years
 bgh_trade_in_baghdad_mission = { #Province
 	province_trade_power_modifier = 0.1
 }
-bgh_umayyads_wiped_out = { #25 years
+bgh_umayyads_wiped_out_mission = { #25 years
 	years_of_nationalism = -5
 }
 bgh_the_holy_city_mission = { #Province
@@ -266,7 +266,7 @@ bgh_a_professional_army_mission = { #25 years
 	drill_gain_modifier = 0.1
 	army_tradition = 0.5
 }
-bgh_ship_research_event = { #25 years
+bgh_ship_research_mission = { #25 years
 	ship_durability = 0.1
 }
 bgh_denied_ship_research_event = { #25 years
@@ -288,7 +288,7 @@ sjk_islam_in_baghdad_mission = { #25 years
 }
 sjk_the_islamic_heartland_mission = { #25 years
 	improve_relation_modifier = 0.25
-	diplomaric_reputation = 1
+	diplomatic_reputation = 1
 }
 sjk_facilitate_urban_growth_mission = { #25 years
 	development_cost = -0.1
@@ -397,7 +397,7 @@ sjk_turkicization_of_anatolia_mission_c = { #50 years
 	culture_conversion_cost = -0.25	
 }
 sjk_atabegs_mission = { #25 years #Finish post-Emperor with governing capacity
-	max_states = 10
+	governing_capacity = 500
 }
 sjk_control_of_the_beyliks_mission = { #25 years
 	global_autonomy = -0.05
@@ -594,6 +594,14 @@ sic_conquer_albania_mission = {
 	infantry_cost = -0.1
 	infantry_power = 0.1
 }
+sic_imperial_power_mission = {
+	improve_relation_modifier = 0.25
+	imperial_authority = 0.1
+}
+our_ancestral_domain_mission = { 
+	legitimacy = 1
+	diplomatic_reputation = 1
+}
 
 #Foix
 FOI_languedoc_mission = {
@@ -629,8 +637,8 @@ FOI_bordeaux_mission = {
 
 #Bohemia
 boh_castles_of_ottokar_mission = {
-	garrison_growth = 0.2
-	defensiveness = 0.2
+	garrison_growth = 0.25
+	defensiveness = 0.25
 }
 boh_bohemian_electorate_mission = {
 	diplomatic_reputation = 1
@@ -656,9 +664,10 @@ boh_conquer_brandenburg_mission = {
 }
 boh_develop_gold_mines_mission = {
 	inflation_reduction = 0.1
-	global_tax_modifier = 0.1
+	global_trade_goods_size_modifier = 0.1
 }
 boh_tolerance_of_jews_mission = {
+	global_tax_modifier = 0.1
 	interest = -0.5
 	tolerance_heathen = 1
 }
@@ -714,7 +723,60 @@ boh_kingdom_of_bohemia_mission = {
 boh_manufactories_and_furnaces_mission = {
 	local_production_efficiency = 0.25
 	trade_goods_size_modifier = 0.25
-	local_development_cost = -0.25
+	local_development_cost = -0.1
+}
+boh_bohemia_crystal_mission = {
+	local_production_efficiency = 0.1
+	trade_goods_size_modifier = 0.25	
+}
+boh_aspire_for_local_control_event = {
+	core_creation = -0.1
+	ae_impact = -0.1
+	diplomatic_upkeep = 1
+}
+boh_muster_our_strength_event = {
+	global_manpower_modifier = 0.25
+	global_regiment_cost = -0.1
+	army_tradition = 0.5
+}
+
+#Pavia
+pva_rebirth_mission = {
+	global_tax_modifier = 0.1
+	trade_efficiency = 0.1
+	development_cost = -0.1
+}
+pva_reclaim_our_glory_mission = {
+	global_regiment_cost = -0.1 
+	ae_impact = -0.1
+	core_creation = -0.1
+}
+pva_rise_event = {
+	diplomatic_reputation = 1
+}
+
+#Swabia
+wws_show_our_strength_event = {
+	global_regiment_cost = -0.1
+	global_manpower_modifier = 0.25
+	discipline = 0.05
+}
+wws_reunite_swabia_event = {
+	global_tax_modifier = 0.1
+	ae_impact = -0.1
+	core_creation = -0.1	
+}
+
+#Flanders
+fla_the_wake_of_great_powers_event = {
+	global_regiment_cost = -0.1
+	global_manpower_modifier = 0.25
+	core_creation = -0.1	
+}
+fla_fight_event = {
+	ae_impact = -0.1
+	army_tradition = 0.5
+	diplomatic_reputation = 1
 }
 
 #Holland/Netherlands
@@ -723,7 +785,7 @@ hol_the_republic_mission = {
 }
 hol_the_act_of_abjuration_mission = {
 	republican_tradition = 0.5
-	global_unrest = -2
+	global_unrest = -1
 	years_of_nationalism = -5
 }
 hol_orangists_mission = {
@@ -844,12 +906,12 @@ hol_claim_the_throne_mission = {
 	land_morale = 0.1
 }
 hol_master_of_britian_mission = {
-	max_states = 5
+	governing_capacity = 250
 	core_creation = -0.1
 }
 hol_raided_medway = {
 	naval_maintenance_modifier = 0.2
-	naval_morale = 0.1
+	naval_morale = -0.1
 }
 
 #Swiss Minor
@@ -861,7 +923,7 @@ swi_reichsfreier_status_mission = {
 	global_autonomy = -0.05
 }
 swi_alpine_fortifications_mission = {
-	defensveness = 0.25
+	defensiveness = 0.25
 	hostile_attrition = 1
 }
 swi_important_city_state_mission = {
@@ -896,7 +958,7 @@ swi_unite_switzerland_mission = {
 	global_unrest = -1
 }
 swi_papal_relations_mission = {
-	diplomaric_reputation = 1
+	diplomatic_reputation = 1
 	prestige = 1
 }
 swi_famous_discipline_mission = {
@@ -909,4 +971,175 @@ swi_universitat_basel_mission_p = {
 swi_build_universities_mission_c = {
 	idea_cost = -0.05
 	advisor_pool = 1
+}
+
+#Novgorod
+nov_balance_of_power_mission = {
+	global_unrest = -1
+}
+nov_capture_rostov_mission = {
+	colonists = 1
+}
+nov_an_eastward_push_mission = {
+	global_colonial_growth = 25
+}
+nov_chronicles_of_novgorod_mission = {
+	stability_cost_modifier = -0.1
+	idea_cost = -0.05
+}
+nov_please_the_boyars_mission = {
+	nobles_loyalty_modifier = 0.05
+}
+nov_predominance_of_veches_mission = {
+	burghers_loyalty_modifier = 0.05
+}
+nov_devoutness_in_faith_mission = {
+	warscore_cost_vs_other_religion = -0.25
+}
+nov_the_power_of_the_church_mission = {
+	church_loyalty_modifier = 0.05
+}
+nov_the_creation_of_icons_mission = {
+	missionaries = 1
+	tolerance_own = 1
+}
+nov_the_land_of_fur_mission = {
+	production_efficiency = 0.1
+}
+nov_new_capital_of_the_rus_mission = {
+	prestige = 1
+	legitimacy = 1
+}
+nov_the_rus_reunited_mission = {
+	core_creation = -0.1
+}
+nov_development_of_novgorod_mission = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+}
+nov_st_sophia_cathedral_mission = {
+	global_tax_modifier = 0.1
+	build_cost = -0.1
+}
+nov_a_merchant_navy_mission = {
+	navy_tradition = 1
+	naval_maintenance_modifier = -0.1
+}
+nov_access_baltic_sea_trade_mission = {
+	trade_range_modifier = 0.2
+	trade_steering = 0.2
+}
+nov_trade_with_the_hansa_mission = { 
+	merchants = 1
+}
+nov_entrepot_of_novgorod_mission = {
+	trade_value_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+nov_repel_the_knights_mission = {
+	discipline = 0.05
+	army_tradition = 0.5
+}
+nov_revive_old_networks_mission = {
+	trade_efficiency = 0.1
+}
+nov_ruthenian_trade_mission = {
+	global_trade_power = 0.1
+}
+nov_develop_neva_mission = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+}
+nov_diplomacy_with_the_west_mission = {
+	diplomatic_reputation = 1
+}
+nov_defend_our_realm_mission = {
+	land_forcelimit_modifier = 0.1
+	global_regiment_cost = -0.1
+}
+nov_the_ushkuyniks_mission = {
+	privateer_efficiency = 0.2
+	hostile_attrition = 1
+}
+nov_resist_moscow_mission = {
+	global_manpower_modifier = 0.1
+	army_tradition_decay = -1
+}
+nov_tribute_to_the_mongols_mission = {
+	diplomats = 1
+	improve_relation_modifier = 0.25
+}
+nov_avoid_the_mongol_wrath_mission = {
+	manpower_recovery_speed = 0.1
+	land_morale = 0.1
+}
+
+#Croatia
+cro_the_baska_tablet_mission = {
+	global_missionary_strength = 0.01
+	papal_influence = 1
+}
+cro_convert_the_realm_mission = {
+	legitimacy = 1
+	tolerance_own = 1
+}
+cro_episcopus_chroatensis_mission = {
+	church_loyalty_modifier = 0.05
+}
+cro_sponsor_commerce_mission = {
+	province_trade_power_modifier = 0.1
+}
+cro_papal_recognition_mission = {
+	diplomatic_reputation = 1
+	papal_influence = 1
+}
+cro_invite_the_knights_mission = {
+	army_tradition = 0.05
+	discipline = 0.05
+}
+cro_reign_in_the_nobility_mission = {
+	global_autonomy = -0.05
+}
+cro_develop_the_royal_seat_mission = {
+	local_build_cost = -0.1
+	local_development_cost = -0.1
+}
+cro_proclaim_free_cities_mission = {
+	global_unrest = -1
+	production_efficiency = 0.1
+}
+cro_centralization_efforts_mission = {
+	global_tax_modifier = 0.1
+}
+cro_defend_from_the_mongols_mission = {
+	land_morale = 0.1
+	army_tradition_decay = -1
+}
+cro_build_medvedgrad_mission = {
+	defensiveness = 0.25
+	hostile_attrition = 1
+}
+cro_revenge_on_venice_mission = {
+	prestige = 1
+	legitimacy = 1
+}
+cro_imperial_backing_mission = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.25
+}
+cro_hungarian_ally_mission = {
+	heir_chance = 0.25
+	diplomatic_upkeep = 1
+}
+cro_succession_in_control_mission = {
+	stability_cost_modifier = -0.1
+	global_unrest = -1
+}
+cro_venetian_hostilities_mission = {
+	naval_forcelimit_modifier = 0.5
+	naval_maintenance_modifier = -0.1
+}
+cro_need_for_allies_mission = {
+	global_manpower_modifier = 0.1
+	diplomatic_reputation = 1
 }

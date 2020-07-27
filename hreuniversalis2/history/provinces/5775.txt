@@ -16,7 +16,6 @@ add_core = ZMG
 	owner = LIT
 	controller = LIT
 	add_core = LIT
-	estate = estate_burghers
 }
 1532.1.1 = { culture = lithuanian }
 1569.7.1 = {

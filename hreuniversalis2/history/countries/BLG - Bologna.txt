@@ -6,6 +6,7 @@ religion = catholic
 primary_culture = emilian
 capital = 974
 add_army_professionalism = 0.05
+set_estate_privilege = estate_church_papal_emissary
 
 #Counts
 1054.1.1 = {
@@ -128,33 +129,32 @@ add_army_professionalism = 0.05
 		mil = 2
 	}
 }
-1414.1.1 = {
+1415.8.1 = {
 	heir = {
 		name = "Annibale"
 		monarch_name = "Annibale"
 		dynasty = "Bentivoglio"
-		birth_date = 1414.1.1
+		birth_date = 1415.8.1
 		death_date = 1445.6.24
 		claim = 95
-		adm = 2
-		dip = 1
-		mil = 4
+		adm = 3
+		dip = 2
+		mil = 2
 	}
 }
 1435.12.23 = {
 	monarch = {
 		name = "Annibale"
 		dynasty = "Bentivoglio"
-		birth_date = 1414.1.1
-		adm = 2
-		dip = 1
-		mil = 4
+		birth_date = 1415.8.1
+		adm = 3
+		dip = 2
+		mil = 2
 	}
 }
 1796.10.16 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "Repubblica Cispadana"
 		adm = 2

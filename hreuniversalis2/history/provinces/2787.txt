@@ -21,7 +21,7 @@ discovered_by = north_american
 	owner = ENG
 	controller = ENG
 	add_core = ENG
-	remove_core = GUY
+	remove_core = SOU
 	add_core = FRA
 }
 1355.1.1 = {

@@ -10,7 +10,6 @@ trade_goods = wool
 base_manpower = 2
 capital = "Kastoria"
 is_city = yes
-estate = estate_nomadic_tribes
 
 1204.5.16 = {
 	owner = BUL

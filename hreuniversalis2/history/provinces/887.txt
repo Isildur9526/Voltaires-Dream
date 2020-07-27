@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Ayr"
 is_city = yes
 add_core = MAF
-estate = estate_nobles
 
 1061.1.1 = { add_core = HSC }
 1061.1.1 = { culture = highland_scottish }

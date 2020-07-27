@@ -751,9 +751,9 @@ country_event = {
 
 #Food Revolution
 country_event = {
-	id = peoples_spring.8
-	title = peoples_spring.8.t
-	desc = peoples_spring.8.d
+	id = peoples_spring.7
+	title = peoples_spring.7.t
+	desc = peoples_spring.7.d
 	picture = REVOLUTION_eventPicture
 
 	is_triggered_only = yes

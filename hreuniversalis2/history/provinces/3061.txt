@@ -44,7 +44,6 @@ discovered_by = north_american
 	culture = outremer
 	capital = "Margat"
 }
-1186.1.1 = { estate = estate_holy_orders }
 1268.5.18 = {
 	owner = KNI
 	controller = KNI

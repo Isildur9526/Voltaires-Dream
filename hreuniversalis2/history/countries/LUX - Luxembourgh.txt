@@ -242,6 +242,4 @@ capital = 2530	# Luxembourg
 		female = yes
 	}
 }
-1617.1.1 = { set_legacy_government = administrative_monarchy }
-1707.1.1 = { set_legacy_government = constitutional_monarchy }
 1815.3.15 = { government_rank = 4 }

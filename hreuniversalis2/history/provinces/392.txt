@@ -62,7 +62,6 @@ is_city = yes
 	owner = TUR
 	controller = TUR
 	add_core = TUR
-	estate = estate_dhimmi
 	capital = "Janina"
 }
 1502.1.1 = { remove_core = EPI remove_core = BYZ }

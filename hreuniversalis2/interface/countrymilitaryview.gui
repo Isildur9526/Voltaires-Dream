@@ -103,7 +103,13 @@ guiTypes = {
 		guiButtonType = {
 			name ="leader_dismiss"
 			quadTextureSprite = "GFX_dismiss_leader"
-			position = { x= 320 y = 4 }			
+			position = { x= 316 y = 4 }
+		}
+
+		guiButtonType = {
+			name ="leader_detach"
+			quadTextureSprite = "GFX_detach_leader"
+			position = { x= 343 y = 4 }
 		}
 	}
 
@@ -2031,7 +2037,7 @@ guiTypes = {
 			name ="domesticpanel_naval_doctrine_select_list"
 			position = { x=65 y =208}
 			backGround=""
-			size = { x=0 y =170}
+			size = { x=500 y=0}
 			Orientation = "UPPER_LEFT"
 			horizontal = 1
 			spacing = 0

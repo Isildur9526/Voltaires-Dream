@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Bad Herrenalb" 
 is_city = yes	
 add_core = EBE
-estate = estate_church
 
 1289.1.1 = {
 	owner = BAD

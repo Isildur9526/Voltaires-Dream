@@ -72,6 +72,25 @@ country_decisions = {
 			change_primary_culture = piedmontese
 			set_capital = 1009		# Piedmont
 			add_prestige = 10
+
+			if = {
+				limit = {
+					primary_culture = sardinian
+					NOT = { accepted_culture = piedmontese }
+				}
+				add_accepted_culture = piedmontese
+			}
+			else_if = {
+				limit = {
+					primary_culture = piedmontese
+					NOT = { accepted_culture = sardinian }
+				}
+				add_accepted_culture = sardinian
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -161,6 +180,25 @@ country_decisions = {
 			change_primary_culture = piedmontese
 			set_capital = 1009	# Piedmont
 			add_prestige = 25
+
+			if = {
+				limit = {
+					primary_culture = sardinian
+					NOT = { accepted_culture = piedmontese }
+				}
+				add_accepted_culture = piedmontese
+			}
+			else_if = {
+				limit = {
+					primary_culture = piedmontese
+					NOT = { accepted_culture = sardinian }
+				}
+				add_accepted_culture = sardinian
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
 		}
 		ai_will_do = {
 			factor = 1

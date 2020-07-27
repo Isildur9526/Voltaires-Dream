@@ -26,7 +26,6 @@ add_core = CZY
 }
 1178.12.30 = { culture = pommeranian }
 1181.1.1 = { hre = yes }
-1199.1.1 = { estate = estate_church }
 1264.5.17 = {
 	owner = POM
 	controller = POM

@@ -87,7 +87,6 @@ center_of_trade = 2
 	controller = SPA
 	owner = SPA
 	add_core = SPA
-	estate = estate_burghers
 }
 1519.7.1 = { unrest = 2 }
 1521.5.1 = { unrest = 0 revolt = { type = revolutionary_rebels size = 2 } controller = REB }

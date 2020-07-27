@@ -153,6 +153,7 @@ national_focus = ADM
 #1138 done
 1300.1.1 = { government_rank = 5 }
 1305.6.21 = {
+	set_estate_privilege = estate_nobles_golden_liberty
 	monarch = {
 		name = "Wladyslaw I"
 		dynasty = "Piast"

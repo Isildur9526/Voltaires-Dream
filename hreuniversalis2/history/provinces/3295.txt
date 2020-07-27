@@ -64,7 +64,6 @@ add_core = BTY
 	remove_core = LIT
 	religion = catholic
 }
-1648.1.1 = { estate = estate_church }
 1660.1.1 = { controller = RUS }
 1661.1.1 = { controller = PLC }
 1794.3.24 = { unrest = 5 }

@@ -68,7 +68,7 @@ tus_pisa_shipbuilding_mission = {
 }
 tus_conquer_sardinia_mission = {
 	ship_durability = 0.05
-	naval_maintenance_modifier = 0.15
+	naval_maintenance_modifier = -0.15
 	global_ship_cost = -0.05
 }
 tus_conquer_lombardy_mission = {
@@ -124,7 +124,7 @@ apl_conquer_ionian_islands = {
 	movement_speed = 0.1 
 }
 apl_byzantine_emperorship_mission = {
-	max_states = 3
+	governing_capacity = 150
 }
 apl_conquer_alexandria_mission = {
 	global_missionary_strength = 0.02
@@ -576,7 +576,7 @@ byz_defend_constantinople_mission = {
 	regiment_recruit_speed = -0.1
 }
 byz_restore_roman_empire_mission = {
-	max_states = 5
+	governing_capacity = 250
 }
 byz_mare_nostrum_mission = {
 	trade_efficiency = 0.1
@@ -1034,7 +1034,7 @@ ven_greek_trade_mission = {
 	global_trade_power = 0.1
 }
 ven_appoint_colonial_ministers_mission = {
-	max_states = 3
+	governing_capacity = 150
 }
 ven_festa_della_sensa_mission = {
 	galley_cost = -0.1
@@ -1530,7 +1530,7 @@ lit_conquer_grodno_mission = {
 	land_morale = 0.1
 }
 lit_conquer_kiev_mission = {
-	max_states = 5
+	governing_capacity = 250
 }
 lit_university_of_vilnius_mission = {
 	technology_cost = -0.05
@@ -2300,7 +2300,7 @@ hab_josephinism_mission = {
 	max_absolutism = 10
 }
 hab_aeiou_mission = {
-	max_states = 10
+	governing_capacity = 500
 }
 hab_conquer_aargau_mission = {
 	local_unrest = -3

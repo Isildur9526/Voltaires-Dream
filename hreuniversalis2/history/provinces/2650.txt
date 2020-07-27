@@ -41,7 +41,6 @@ add_core = SIL
 	add_core = BRA
 	remove_core = WRC
 	capital = "Sonnenburg"
-	estate = estate_holy_orders
 	culture = central_margravian
 	hre = yes
 }

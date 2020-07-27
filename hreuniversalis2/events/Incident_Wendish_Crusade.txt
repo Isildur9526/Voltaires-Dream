@@ -1,0 +1,210 @@
+namespace = incident_wendish_crusade
+#trigger the incident
+country_event = {
+	id = incident_wendish_crusade.1
+	title = incident_wendish_crusade.1.t
+	desc = incident_wendish_crusade.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	major = yes
+
+	trigger = {
+		has_dlc = "Emperor"
+		normal_or_historical_nations = yes
+		NOT = { started_in = 1129.12.31 }
+		current_age = age_of_holy_wars
+		NOT = { active_imperial_incident = any }
+		is_part_of_hre = yes
+		OR = {
+			religion = catholic
+			religion = catholique
+		}
+		any_neighbor_country = {
+			OR = {
+				primary_culture = polabian
+				primary_culture = kashubian
+			}
+			is_part_of_hre = no
+			is_subject = no
+		}
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = incident_wendish_crusade.1.a
+		set_imperial_incident = incident_wendish_crusade
+	}
+}
+
+#let emperor start the crusade
+country_event = {
+	id = incident_wendish_crusade.2
+	title = incident_wendish_crusade.2.t
+	desc = incident_wendish_crusade.2.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_wendish_crusade.2.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 250
+				any_rival_country = {
+					OR = {
+						primary_culture = polabian
+						primary_culture = kashubian
+					}
+					is_part_of_hre = no
+				}
+			}
+			modifier = {
+				factor = 250
+				any_neighbor_country = {
+					OR = {
+						primary_culture = polabian
+						primary_culture = kashubian
+					}
+					is_part_of_hre = no
+				}
+			}
+		}
+		custom_tooltip = incident_wendish_crusade.2.tt
+		set_global_flag = wendish_crusade_active
+	}
+	option = {
+		name = incident_wendish_crusade.2.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 250
+				any_ally = {
+					OR = {
+						primary_culture = polabian
+						primary_culture = kashubian
+					}
+					is_part_of_hre = no
+				}
+			}
+		}
+		custom_tooltip = incident_wendish_crusade.2.tt2
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						primary_culture = polabian
+						primary_culture = kashubian
+					}
+					religion_group = pagan
+				}
+			}
+		}
+	}
+	option = {
+		name = incident_wendish_crusade.2.c
+		ai_chance = {
+			factor = 20
+		}
+		add_prestige = -10
+	}
+}
+
+# end of wendish crusade
+country_event = {
+	id = incident_wendish_crusade.3
+	title = incident_wendish_crusade.3.t
+	desc = incident_wendish_crusade.3.d
+	picture = HRE_eventPicture
+
+	major = yes
+
+	trigger = {
+		is_emperor = yes
+		had_global_flag = {
+			flag = wendish_crusade_active
+			days = 18250
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = incident_wendish_crusade.3.a
+		clr_global_flag = wendish_crusade_active
+		clr_global_flag = wendish_conversation_active
+	}
+}
+
+# let wends adopt christianity
+country_event = {
+	id = incident_wendish_crusade.4
+	title = incident_wendish_crusade.4.t
+	desc = incident_wendish_crusade.4.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_wendish_crusade.4.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				has_opinion = {
+					who = emperor
+					value = 100
+				}
+			}
+		}
+		change_religion = catholic
+		add_years_of_income = 1
+		add_country_modifier = {
+			name = slavic_christianization
+			duration = 5475
+		}
+		reverse_add_opinion = {
+			who = emperor
+			modifier = opinion_adopted_christianity
+		}
+		every_neighbor_country = {
+			limit = {
+				religion = catholic
+				is_part_of_hre = yes
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_adopted_christianity
+			}
+		}
+	}
+	option = {
+		name = incident_wendish_crusade.4.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				any_enemy_country = {
+					religion = catholic
+					is_part_of_hre = yes
+				}
+			}
+		}
+		add_prestige = 10
+		every_neighbor_country = {
+			limit = {
+				religion = ROOT
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_kept_slavic_faith
+			}
+		}
+	}
+}

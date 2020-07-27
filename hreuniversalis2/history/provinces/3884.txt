@@ -10,7 +10,6 @@ hre = no
 owner = NOV
 controller = NOV
 add_core = NOV
-estate = estate_burghers
 
 1398.1.1 = {
 	owner = MOS

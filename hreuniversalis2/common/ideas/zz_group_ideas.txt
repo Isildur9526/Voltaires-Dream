@@ -313,7 +313,81 @@ anatolian_beyliks_ideas = {
 	legacy_seljuqs_empire = {
 		prestige = 1
 	}
-}		
+}	
+
+BAV_ideas = {
+	start = {
+		cavalry_power = 0.1
+		heir_chance = 0.5
+	}
+	
+	bonus = {
+		development_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = bavarian
+	}
+	free = yes
+	
+	everlating_succeession = {
+		legitimacy = 1
+	}
+	bavarian_purity_law = {
+		production_efficiency = 0.1
+	}
+	bavarian_state_orchestra = {
+		prestige = 1
+	}
+	geistlicher_rat = {
+		global_heretic_missionary_strength = 0.03
+		papal_influence = 1
+	}
+	brewmaster_general = {
+		global_tax_modifier = 0.1
+	}
+	professional_army = {
+		discipline = 0.05
+	}
+	royal_order_of_st_george = {
+		army_tradition = 0.5
+	}
+}
+
+swabian_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		merc_maintenance_modifier = -0.15
+	}
+	bonus = {
+		improve_relation_modifier = 0.25
+	}
+	trigger = {
+		primary_culture = swabian
+	}
+	free = yes
+	swabian_mercenaries = {
+		mercenary_manpower = 0.4
+	}
+	swabian_river_iller = {
+		defensiveness = 0.2
+	}
+	swabian_bavarian_resistance = {
+		land_morale = 0.1
+	}
+	swabian_decapole = {
+		diplomatic_upkeep = 1
+	}
+	swabian_reclaiming_the_duchy = {
+		ae_impact = -0.1
+	}
+	swabian_thorn_of_the_empire = {
+		legitimacy = 1
+	}
+	swabian_habsburg_league = {
+		global_unrest = -1
+	}
+}	
 
 german_ideas = {
 	start = {
@@ -421,8 +495,7 @@ latin_ideas = {
 		idea_cost = -0.05
 	}
 	italian_aristocracy = {
-		enemy_core_creation = 0.25
-		global_spy_defence = 0.05
+		global_spy_defence = 0.2
  	}
 	tracee_italienne = {
 		defensiveness = 0.05
@@ -468,7 +541,7 @@ caucasus_ideas = {
 	}
 	alan_mercenaries = {
 		merc_maintenance_modifier = -0.10
-		possible_mercenaries = 0.15
+		mercenary_manpower = 0.15
 	}
 	caucasus_hit_and_run = {
 		leader_land_manuever = 1		

@@ -452,12 +452,13 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		TUR = { has_country_flag = ottoman_promise_to_crimea }
-		NOT = { had_country_flag = { flag = ottoman_promise_to_crimea days = 23725 } }
+		TUR = {
+			has_country_flag = ottoman_promise_to_crimea
+			NOT = { had_country_flag = { flag = ottoman_promise_to_crimea days = 23725 } }
+		}
 		tag = CRI
 		is_subject_of = TUR
 	}
-	
 	
 	option = {
 		name = "flavor_cri.6.a"

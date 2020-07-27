@@ -10,7 +10,6 @@ hre = no
 owner = ANJ
 controller = ANJ
 add_core = ANJ
-estate = estate_nobles
 
 1204.3.6 = {
 	owner = FRA

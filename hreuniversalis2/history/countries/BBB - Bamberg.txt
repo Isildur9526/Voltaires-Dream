@@ -314,8 +314,8 @@ fixed_capital = 2544
 		name = "Anton I"
 		dynasty = "von Rotenhan"
 		birth_date = 1390.1.1
-		adm = 3
-		dip = 2
+		adm = 1
+		dip = 0
 		mil = 2
 	}
 }
@@ -448,12 +448,13 @@ fixed_capital = 2544
 		name = "Johann IV"
 		dynasty = "von Gebsattel"
 		birth_date = 1555.5.13
-		adm = 0
+		adm = 5
 		dip = 1
-		mil = 1
+		mil = 0
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = sinner_personality
+	add_ruler_personality = architectural_visionary_personality
 }
 1609.6.26 = {
 	monarch = {
@@ -470,10 +471,12 @@ fixed_capital = 2544
 		name = "Johann VI"
 		dynasty = "Fuchs"
 		birth_date = 1586.4.23
-		adm = 2
-		dip = 2
-		mil = 3
+		adm = 1
+		dip = 0
+		mil = 4
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = zealot_personality
 }
 #under WBG
 1642.7.30 = {
@@ -481,10 +484,12 @@ fixed_capital = 2544
 		name = "Melchior Otto"
 		dynasty = "Voit"
 		birth_date = 1603.6.19
-		adm = 3
+		adm = 4
 		dip = 2
-		mil = 2
+		mil = 0
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = scholar_personality
 }
 1653.1.4 = {
 	monarch = {
@@ -521,10 +526,12 @@ fixed_capital = 2544
 		name = "Lothar Franz"
 		dynasty = "von Schönborn"
 		birth_date = 1655.10.4
-		adm = 4
-		dip = 2
+		adm = 5
+		dip = 3
 		mil = 3
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = architectural_visionary_personality
 }
 1729.1.30 = {
 	monarch = {

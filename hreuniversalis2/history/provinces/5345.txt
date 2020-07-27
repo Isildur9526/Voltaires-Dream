@@ -82,7 +82,6 @@ discovered_by = north_american
 1822.1.15 = {
 	owner = GRE
 	controller = GRE
-	remove_core = MOE
 	revolt = {}
 }
 1829.9.12 = { remove_core = TUR }

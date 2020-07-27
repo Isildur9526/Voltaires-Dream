@@ -1,0 +1,535 @@
+
+#This one or the next one will always be valid
+estate_holy_orders_hire_advisor = {
+	can_select = {
+		NOT = {
+			employed_advisor = {
+				category = MIL
+			}
+		}
+	}
+	selection_weight = {
+		factor = 1
+	}
+	task_requirements = {
+		employed_advisor = {
+			category = MIL
+		}
+		is_in_deficit = no
+	}
+    task_completed_effect = {
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+		}
+    }
+    failing_effect = {
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+estate_holy_orders_fire_advisor = {
+	can_select = {
+		employed_advisor = {
+			category = MIL
+		}
+	}
+	selection_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			always = yes
+		}
+	}
+	immediate_effect = {
+		hidden_effect = {
+			set_country_flag = need_to_fire_mil_advisor
+		}
+	}
+	on_invalid = {
+		clr_country_flag = need_to_fire_mil_advisor
+	}
+	task_requirements = {
+		custom_trigger_tooltip = {
+			tooltip = fire_mil_advisor_tooltip
+			has_country_flag = just_fired_mil_advisor
+		}
+	}
+    task_completed_effect = {
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+		}
+		clr_country_flag = just_fired_mil_advisor
+		clr_country_flag = need_to_fire_mil_advisor
+	}
+	invalid_trigger = {
+		NOT = {
+			employed_advisor = {
+				category = MIL
+			}
+		}
+		NOT = { has_country_flag = just_fired_mil_advisor }
+	}
+    failing_effect = {
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+		clr_country_flag = need_to_fire_mil_advisor
+    }
+}
+
+#Convert a province
+estate_holy_orders_convert_province_x = {
+	can_select = {
+		num_of_missionaries = 1
+		any_owned_province = {
+			is_state_core = root
+			NOT = { religion = root }
+			NOT = { has_province_modifier = religious_zeal_at_conv }
+			NOT = { has_province_modifier = expelled_minority }
+			NOT = { has_province_modifier = religious_migration }
+			has_missionary = no
+			missionary_strength = 0.01
+		}
+	}
+	selection_weight = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.85 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.75 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.65 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.5 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.4 }
+		}
+		modifier = {
+			factor = 0.35
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 2
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { num_of_missionaries = 2 }
+		}
+		modifier = {
+			factor = 1.25
+			is_defender_of_faith = yes
+		}
+		modifier = {
+			factor = 0.35
+			has_country_modifier = recent_converted_province_mission_timer
+		}
+	}
+	pre_effect = {
+		random_owned_province = {
+			limit = {
+				is_state_core = root
+				NOT = { religion = root }
+				NOT = { has_province_modifier = religious_zeal_at_conv }
+				NOT = { has_province_modifier = expelled_minority }
+				NOT = { has_province_modifier = religious_migration }
+				has_missionary = no
+			}
+			save_event_target_as = agenda_province
+		}
+		random_owned_province = {
+			limit = {
+				is_state_core = root
+				NOT = { religion = root }
+				NOT = { has_province_modifier = religious_zeal_at_conv }
+				NOT = { has_province_modifier = expelled_minority }
+				NOT = { has_province_modifier = religious_migration }
+				has_missionary = no
+				development = 10
+			}
+			save_event_target_as = agenda_province
+		}
+	}
+	fail_if = {
+		event_target:agenda_province = {
+			OR = {
+				NOT = { owned_by = root }
+				NOT = { religion = root }
+			}
+		}
+	}
+	immediate_effect = {
+		event_target:agenda_province = {
+			add_province_modifier = {
+				name = agenda_conversion_zeal
+				duration = 7300
+			}
+		}
+	}
+	on_invalid = {
+		event_target:agenda_province = {
+			if = {
+				limit = { has_province_modifier = agenda_conversion_zeal }
+				remove_province_modifier = agenda_conversion_zeal
+			}
+		}
+	}
+	provinces_to_highlight = {
+		province_id = event_target:agenda_province
+	}
+	task_requirements = {
+		event_target:agenda_province = {
+			religion = root
+		}
+	}
+    task_completed_effect = {
+		hidden_effect = {
+			event_target:agenda_province = {
+				if = {
+					limit = { has_province_modifier = agenda_conversion_zeal }
+					remove_province_modifier = agenda_conversion_zeal
+				}
+			}
+			add_country_modifier = {
+				name = recent_converted_province_mission_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+		generate_scaled_advisor_of_type_and_religion_effect = {
+			type = inquisitor
+			religion = root
+			discount = yes
+		}
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+		}
+    }
+    failing_effect = {
+		event_target:agenda_province = {
+			if = {
+				limit = { has_province_modifier = agenda_conversion_zeal }
+				remove_province_modifier = agenda_conversion_zeal
+			}
+		}
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Give us three privileges
+estate_holy_orders_three_privileges = {
+	can_select = {
+		NOT = {
+			num_of_estate_privileges = {
+				estate = estate_holy_orders
+				value = 2
+			}
+		}
+	}
+	selection_weight = {
+		factor = 1
+	}
+	pre_effect = {
+		set_variable = {
+			which = estate_holy_orders_three_privileges_var
+			value = 0
+		}
+		if = {
+			limit = {
+				num_of_estate_privileges = {
+					estate = estate_holy_orders
+					value = 1
+				}
+			}
+			set_variable = {
+				which = estate_holy_orders_three_privileges_var
+				value = 2
+			}
+		}
+		else = {
+			set_variable = {
+				which = estate_holy_orders_three_privileges_var
+				value = 1
+			}
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_holy_orders_three_privileges_var
+					value = 2
+				}
+			}
+			num_of_estate_privileges = {
+				estate = estate_holy_orders
+				value = 3
+			}
+		}
+		else = {
+			num_of_estate_privileges = {
+				estate = estate_holy_orders
+				value = 2
+			}
+		}
+	}
+    task_completed_effect = {
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 20
+		}
+    }
+    failing_effect = {
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+
+#Support Crusader Orders
+estate_holy_orders_relations_with_crusaders = {
+	can_select = {
+		religion = catholic
+		normal_or_historical_nations = yes
+		any_country = {
+			NOT = { num_of_cities = 30 }
+			NOT = { war_with = ROOT }
+			NOT = { is_enemy = ROOT }
+			NOT = { is_rival = ROOT }
+			has_reform = crusader_order_reform
+			is_free_or_tributary_trigger = yes
+			religion = catholic
+			OR = {
+				tag = TEU
+				tag = LIV
+				tag = KNI
+				tag = TEM
+			}
+		}
+	}
+	selection_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_defender_of_faith = yes
+				ruler_has_personality = zealot_personality
+			}
+		}
+	}
+	fail_if = {
+		NOT = {
+			any_country = {
+				NOT = { num_of_cities = 30 }
+				NOT = { war_with = ROOT }
+				NOT = { is_enemy = ROOT }
+				NOT = { is_rival = ROOT }
+				has_reform = crusader_order_reform
+				is_free_or_tributary_trigger = yes
+				religion = catholic
+				OR = {
+					tag = TEU
+					tag = LIV
+					tag = KNI
+					tag = TEM
+				}
+			}
+		}
+	}
+	task_requirements = {
+		treasury = 150
+	}
+	task_completed_effect = {
+		country_event = { id = hremodevents.23 }
+		add_country_modifier = {
+			name = "donated_ho"
+			duration = 1825
+		}
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+		}
+	}
+    failing_effect = {
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Crusade
+estate_holy_orders_crusade = {
+	can_select = {
+		is_at_war = no
+		is_free_or_tributary_trigger = yes
+		any_neighbor_country = {
+			is_subject = no
+			NOT = { religion = catholic }
+			NOT = { religion = catholique }
+			NOT = { truce_with = ROOT }
+		}
+	}
+	selection_weight = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			any_neighbor_country = {
+				is_subject = no
+				alliance_with = ROOT
+				NOT = { religion = catholic }
+				NOT = { religion = catholique }
+				NOT = { truce_with = ROOT }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			any_country = {
+				coalition_target = root
+			}
+		}
+	}
+	pre_effect = {
+		random_neighbor_country = {
+			limit = {
+				is_subject = no
+				NOT = { religion = catholic }
+				NOT = { religion = catholique }
+				NOT = { truce_with = ROOT }
+			}
+			save_event_target_as = agenda_country
+		}
+		random_neighbor_country = {
+			limit = {
+				is_subject = no
+				NOT = { religion = catholic }
+				NOT = { religion = catholique }
+				NOT = { truce_with = ROOT }
+				NOT = { alliance_with = ROOT }
+			}
+			save_event_target_as = agenda_country
+		}
+	}
+	fail_if = {
+		event_target:agenda_country = {
+			OR = {
+				religion = catholic
+				religion = catholique
+			}
+		}
+	}
+	provinces_to_highlight = {
+		is_capital_of = event_target:agenda_country
+	}
+	task_requirements = {
+		event_target:agenda_country = {
+			defensive_war_with = ROOT
+		}
+	}
+	task_completed_effect = {
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+		}
+		create_general = {
+			tradition = 60
+			add_shock = 1
+		}
+	}
+    failing_effect = {
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Grand Crusade
+estate_holy_orders_grand_crusade = {
+	can_select = {
+		ai = no
+		religion = catholic
+		is_free_or_tributary_trigger = yes
+		has_regency = no
+		has_global_flag = crx_start
+		OR = {
+			current_age = age_of_holy_wars
+			current_age = age_of_crisis
+		}
+	}
+	selection_weight = {
+		factor = 1
+	}
+	fail_if = {
+		OR = {
+			NOT = { religion = catholic }
+			is_free_or_tributary_trigger = no
+			has_regency = yes
+			NOT = {
+				OR = {
+					current_age = age_of_holy_wars
+					current_age = age_of_crisis
+				}
+			}
+		}
+	}
+	task_requirements = {
+		OR = {
+			is_in_war = { casus_belli = cb_grand_crusade }
+			is_in_war = { casus_belli = cb_grand_heretic }
+		}
+	}
+	task_completed_effect = {
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+		}
+		add_papal_influence = 10
+		add_army_tradition = 10
+	}
+    failing_effect = {
+        add_estate_loyalty_modifier = {
+            estate = estate_holy_orders
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}

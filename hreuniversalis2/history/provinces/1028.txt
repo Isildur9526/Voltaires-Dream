@@ -26,7 +26,6 @@ add_core = PIS
 	add_core = LAN
 	remove_core = MLO
 	revolt = {}
-	estate = estate_burghers
 }
 1494.1.1 = { controller = PIS owner = PIS }
 1495.1.1 = { hre = no }

@@ -10,7 +10,6 @@ hre = no
 owner = CHR
 controller = CHR
 add_core = CHR
-estate = estate_nobles
 
 1358.1.1 = {
 	owner = LIT

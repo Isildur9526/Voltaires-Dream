@@ -635,7 +635,7 @@ guiTypes = {
 		
 		iconType =
 		{
-			name ="tech_max_states"
+			name ="tech_governing_capacity"
 			spriteType = "GFX_icon_states"
 			position = { x= 478 y = 125 }
 			Orientation = "UPPER_LEFT"
@@ -643,7 +643,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name = "tech_max_states_value"
+			name = "tech_governing_capacity_value"
 			position = { x = 492 y = 125 }
 			textureFile = ""
 			font = "vic_18"
@@ -2021,7 +2021,7 @@ guiTypes = {
 		{
 			name ="item_button"
 			spriteType = "GFX_icon_maneuver"
-			position = { x= 0 y = 0 }
+			position = { x= -5 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 	}

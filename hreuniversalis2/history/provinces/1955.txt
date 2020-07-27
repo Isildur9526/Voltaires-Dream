@@ -26,7 +26,6 @@ center_of_trade = 1
 	add_core = ARA
 	remove_core = BRC
 	add_core = CAT
-	estate = estate_burghers
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1461.9.23 = { revolt = { type = revolutionary_rebels size = 2 } controller = REB }

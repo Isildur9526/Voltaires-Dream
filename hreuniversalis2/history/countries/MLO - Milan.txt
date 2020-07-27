@@ -5,6 +5,14 @@ primary_culture = lombard
 religion = catholic
 technology_group = western
 capital = 1818
+change_estate_land_share = {
+	estate = estate_church
+	share = -5
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
 
 1029.1.1 = {
 	monarch = {

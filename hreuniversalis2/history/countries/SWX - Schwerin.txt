@@ -7,6 +7,7 @@ capital = 415
 
 1000.1.1 = { set_country_flag = natives_flag }
 1030.1.1 = {
+	override_country_name = POLABI
 	monarch = {
 		name = "Gotszalk"
 		birth_date = 1010.1.1

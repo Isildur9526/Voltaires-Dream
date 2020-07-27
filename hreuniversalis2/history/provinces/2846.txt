@@ -1,7 +1,7 @@
 capital = "Dubá"
 culture = czech
 religion = catholic
-trade_goods = rye
+trade_goods = glass
 base_tax = 1
 base_production = 1
 base_manpower = 1

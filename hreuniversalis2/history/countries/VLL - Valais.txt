@@ -91,7 +91,6 @@ capital = 1239
 	}
 }
 1802.1.1 = {
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "Republique Rhodanique"
 		regent = yes

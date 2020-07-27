@@ -12,7 +12,6 @@ controller = CMO
 add_core = CMO
 add_core = TKN
 fort_14th = yes
-estate = estate_burghers
 
 1118.1.1 = {
 	owner = TKN

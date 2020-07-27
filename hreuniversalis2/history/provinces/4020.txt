@@ -25,7 +25,6 @@ center_of_trade = 2
 	add_core = FRA
 	remove_core = REE
 	add_core = CHP
-	estate = estate_church
 }
 1420.5.21 = { controller = BUR }
 1429.7.17 = { controller = FRA } 

@@ -7,6 +7,7 @@ capital = 2310
 
 1000.1.1 = { set_country_flag = natives_flag }
 1054.1.1 = {
+	override_country_name = WARNABI
 	monarch = {
 		name = "Warnabi"
 		regent = yes
@@ -23,6 +24,7 @@ capital = 2310
 	add_government_reform = autocracy_reform
 	technology_group = western
 	government_rank = 1
+	restore_country_name = yes
 }
 1226.6.5 = {
 	monarch = {

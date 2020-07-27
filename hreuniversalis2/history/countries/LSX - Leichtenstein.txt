@@ -170,7 +170,6 @@ capital = 2921
 		mil = 2 
 	}
 }
-1617.1.1 = { set_legacy_government = administrative_monarchy }
 1628.1.1 = {
 	heir = {
 		name = "Franz Wilhelm"
@@ -374,4 +373,3 @@ capital = 2921
 		mil = 3
 	}
 }
-1862.1.1 = { set_legacy_government = constitutional_monarchy }

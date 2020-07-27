@@ -797,7 +797,8 @@ vn_sjk_missions_slot_3 = {
 				army_tradition = 50
 			}
 			has_global_modifier_value = {
-				discipline = 0.1
+				which = discipline
+                value = 0.1
 			}
         }
         effect = {
@@ -1010,14 +1011,14 @@ vn_sjk_missions_slot_3 = {
 				}
 			}
 			else = { 
-				every_rival_country = { 
-					NOT = { 
-						army_strength = {
-							who = ROOT
-							value = 1
-						}
-					} 
-				}
+                NOT = {
+                    any_rival_country = {
+                        army_strength = {
+                            who = ROOT
+                            value = 1
+                        }
+                    }
+                }
 			}       
         }
         effect = {
@@ -1294,10 +1295,8 @@ vn_sjk_missions_slot_4 = {
         }   
         trigger = {
 			num_of_owned_provinces_with = {
-				limit = { 
-					superregion = anatolia_superregion
-				}
 				value = 50
+                superregion = anatolia_superregion
 				country_or_non_sovereign_subject_holds = ROOT
 				culture_group = oghuz
 			}            
@@ -1650,7 +1649,7 @@ vn_sjk_missions_slot_5 = {
                 add_permanent_claim = ROOT
             }
 			add_country_modifier = {
-               	name = "sjk_cross_the_caucusus_mission"
+               	name = "bgh_cross_the_caucusus_mission"
               	duration = 9125 
             }
         }

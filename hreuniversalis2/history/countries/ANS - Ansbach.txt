@@ -20,7 +20,7 @@ capital = 2543	# Ansbach
 #1411.1.18 under BRA 1420 combined with ANS
 1440.9.21 = {
 	monarch = {
-		name = "Albrecht II Achilles"
+		name = "Albrecht I Achilles"
 		dynasty = "von Hohenzollern"
 		birth_date = 1414.11.9
 		dip = 2

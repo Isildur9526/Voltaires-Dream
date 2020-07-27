@@ -12,7 +12,6 @@ trade_goods = naval_supplies
 base_manpower = 1
 capital = "Tulcha"
 is_city = yes
-estate = estate_nomadic_tribes
 fort_14th = yes
 
 1091.1.1 = { culture = cuman }

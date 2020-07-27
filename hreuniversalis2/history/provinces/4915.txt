@@ -48,7 +48,6 @@ add_core = SIL
 	add_core = POL
 	add_core = KRA
 	remove_core = CIE
-	estate = estate_church
 	hre = no
 }
 1569.7.1 = {

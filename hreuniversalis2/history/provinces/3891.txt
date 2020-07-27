@@ -10,7 +10,6 @@ hre = no
 owner = SMO
 controller = SMO
 add_core = SMO
-estate = estate_nobles
 
 1395.1.1 = { owner = LIT controller = LIT } 
 1399.1.1 = {

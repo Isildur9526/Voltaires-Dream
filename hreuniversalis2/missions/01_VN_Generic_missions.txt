@@ -259,15 +259,19 @@ VN_diplomatic_missions = {
 	vn_inspire_loyalty = {
 		icon = mission_monarch_in_throne_room
 		required_missions = { have_two_subjects }
+		provinces_to_highlight = {
+			owner = {
+				is_subject_of = ROOT
+				liberty_desire = 25
+			}
+		}
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_inspire_loyalty.tt
-				calc_true_if = {
-					all_subject_country = {
-						NOT = { liberty_desire = 25 }
-					}
-					amount = 3
+			calc_true_if = {
+				desc = vn_inspire_loyalty.tt
+				all_subject_country = {
+					NOT = { liberty_desire = 25 }
 				}
+				amount = 3
 			}
 		}
 		effect = {
@@ -280,11 +284,31 @@ VN_diplomatic_missions = {
 	vn_a_large_subject = {
 		icon = mission_empire
 		required_missions = { vn_inspire_loyalty }
+		provinces_to_highlight = {
+			owner = {
+				is_subject_of = ROOT
+				OR = {
+					is_subject_of_type = vassal
+					is_subject_of_type = march
+				}
+				NOT = { army_size = 15 }
+			}
+		}
 		trigger = {
-			march = 2
-			any_subject_country = {
-				is_subject_of_type = march
-				army_size = 15
+			if = {
+				limit = { has_dlc = "Art of War" }
+				march = 2
+				any_subject_country = {
+					is_subject_of_type = march
+					army_size = 15
+				}
+			}
+			else = {
+				vassal = 2
+				any_subject_country = {
+					is_subject_of_type = vassal
+					army_size = 15
+				}
 			}
 		}
 		effect = {
@@ -292,11 +316,23 @@ VN_diplomatic_missions = {
 				name = "large_subject_mission"
 				duration = 9125
 			}
-			every_subject_country = {
-				limit = { is_march = yes }
-				add_country_modifier = {
-					name = "powerful_marches_mission"
-					duration = 9125
+			if = {
+				limit = { has_dlc = "Art of War" }
+				every_subject_country = {
+					limit = { is_march = yes }
+					add_country_modifier = {
+						name = "powerful_marches_mission"
+						duration = 9125
+					}
+				}
+			}
+			else = {
+				every_subject_country = {
+					limit = { is_vassal = yes }
+					add_country_modifier = {
+						name = "powerful_marches_mission"
+						duration = 9125
+					}
 				}
 			}
 		}
@@ -346,17 +382,15 @@ vn_expansion_missions = {
 		icon = mission_fort
 		required_missions = { conquer_states }
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_fortify_frontiers.tt
-				calc_true_if = {
-					all_owned_province = {
-						any_neighbor_province = {
-							NOT = { owned_by = ROOT }
-						}
-						has_fort_trigger = yes
+			calc_true_if = {
+				desc = vn_fortify_frontiers.tt
+				all_owned_province = {
+					any_neighbor_province = {
+						NOT = { owned_by = ROOT }
 					}
-					amount = 5
+					has_fort_trigger = yes
 				}
+				amount = 5
 			}
 		}
 		effect = {
@@ -586,6 +620,11 @@ vn_buildings_missions = {
 			}
 		}
 		effect = {
+			if = {
+				limit = { has_dlc = "Emperor" }
+				custom_tooltip = emp_ven_plague_doctor_training_tt
+				set_country_flag = has_competent_doctors
+			}
 			add_country_modifier = {
 				name = "build_hospitals_mission"
 				duration = 9125
@@ -637,21 +676,14 @@ vn_development_missions = {
 	vn_expand_the_capital = {
 		icon = mission_big_city
 		required_missions = { high_income_mission }
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
 		trigger = {
 			capital_scope = {
 				#development = 25
 				#num_of_times_improved = 5
-				calc_true_if = {
-					amount = 3
-					has_trade_building_trigger = yes
-					has_courthouse_building_trigger = yes
-					has_shipyard_building_trigger = yes
-					has_dock_building_trigger = yes
-					has_tax_building_trigger = yes
-					has_manpower_building_trigger = yes
-					has_production_building_trigger = yes
-					has_forcelimit_building_trigger = yes
-				}
+				num_of_buildings_in_province = 3
 			}
 		}
 		effect = {
@@ -667,35 +699,36 @@ vn_development_missions = {
 		icon = mission_early_modern_university
 		required_missions = { vn_expand_the_capital }
 		trigger = {
-			innovativeness = 25
-			custom_trigger_tooltip = {
-                tooltip = vn_technological_might.tt
-				calc_true_if = {
-					full_idea_group = logistics_ideas
-					full_idea_group = cultural_ideas
-					full_idea_group = manufacturing_ideas
-					full_idea_group = aristocracy_ideas
-					full_idea_group = plutocracy_ideas
-					full_idea_group = innovativeness_ideas
-					full_idea_group = religious_ideas
-					full_idea_group = spy_ideas
-					full_idea_group = diplomatic_ideas
-					full_idea_group = piracy_ideas
-					full_idea_group = offensive_ideas
-					full_idea_group = defensive_ideas
-					full_idea_group = trade_ideas
-					full_idea_group = administrative_ideas
-					full_idea_group = economic_ideas
-					full_idea_group = exploration_ideas
-					full_idea_group = maritime_ideas
-					full_idea_group = quality_ideas
-					full_idea_group = quantity_ideas
-					full_idea_group = expansion_ideas
-					full_idea_group = humanist_ideas
-					full_idea_group = naval_ideas
-					full_idea_group = influence_ideas
-					amount = 3
-				}
+			if = {
+				limit = { has_dlc = "Rule Britannia" }
+				innovativeness = 25
+			}
+			calc_true_if = {
+				desc = vn_technological_might.tt
+                full_idea_group = logistics_ideas
+				full_idea_group = cultural_ideas
+				full_idea_group = manufacturing_ideas
+				full_idea_group = aristocracy_ideas
+				full_idea_group = plutocracy_ideas
+				full_idea_group = innovativeness_ideas
+				full_idea_group = religious_ideas
+				full_idea_group = spy_ideas
+				full_idea_group = diplomatic_ideas
+				full_idea_group = piracy_ideas
+				full_idea_group = offensive_ideas
+				full_idea_group = defensive_ideas
+				full_idea_group = trade_ideas
+				full_idea_group = administrative_ideas
+				full_idea_group = economic_ideas
+				full_idea_group = exploration_ideas
+				full_idea_group = maritime_ideas
+				full_idea_group = quality_ideas
+				full_idea_group = quantity_ideas
+				full_idea_group = expansion_ideas
+				full_idea_group = humanist_ideas
+				full_idea_group = naval_ideas
+				full_idea_group = influence_ideas
+				amount = 3
 			}
 		}
 		effect = {
@@ -708,22 +741,15 @@ vn_development_missions = {
 	vn_a_grand_city = {
 		icon = mission_early_game_buildings
 		required_missions = { vn_technological_might }
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
 		trigger = {
 			capital_scope = {
 				#development = 50
 				#num_of_times_improved = 10
+				num_of_buildings_in_province = 6
 				NOT = { num_free_building_slots = 1 }
-				calc_true_if = {
-					amount = 6
-					has_trade_building_trigger = yes
-					has_courthouse_building_trigger = yes
-					has_shipyard_building_trigger = yes
-					has_dock_building_trigger = yes
-					has_tax_building_trigger = yes
-					has_manpower_building_trigger = yes
-					has_production_building_trigger = yes
-					has_forcelimit_building_trigger = yes
-				}
 			}
 		}
 		effect = {
@@ -775,14 +801,12 @@ vn_administrative_missions = {
 		icon = mission_noble_council
 		required_missions = { vn_stable_nation }
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_expand_court.tt
-				calc_true_if = {
-					has_adm_advisor_2 = yes
-					has_dip_advisor_2 = yes
-					has_mil_advisor_2 = yes
-					amount = 2
-				}
+			calc_true_if = {
+				desc = vn_expand_court.tt
+				has_adm_advisor_2 = yes
+				has_dip_advisor_2 = yes
+				has_mil_advisor_2 = yes
+				amount = 2
 			}
 		}
 		effect = {
@@ -796,41 +820,42 @@ vn_administrative_missions = {
 		icon = mission_have_two_subjects
 		required_missions = { vn_expand_court }
 		trigger = {
+			crown_land_share = 30
             if = {
                 limit = {
                     has_estate = estate_burghers
                 }
-                estate_loyalty = { estate = estate_burghers loyalty = 70 }
+                estate_loyalty = { estate = estate_burghers loyalty = 60 }
             }
 			if = {
                 limit = {
                     has_estate = estate_nobles
                 }
-                estate_loyalty = { estate = estate_nobles loyalty = 70 }
+                estate_loyalty = { estate = estate_nobles loyalty = 60 }
             }
             if = {
                 limit = {
                     has_estate = estate_church
                 }
-                estate_loyalty = { estate = estate_church loyalty = 70 }
+                estate_loyalty = { estate = estate_church loyalty = 60 }
 			}
 			if = {
                 limit = {
                     has_estate = estate_maratha
                 }
-                estate_loyalty = { estate = estate_maratha loyalty = 70 }
+                estate_loyalty = { estate = estate_maratha loyalty = 60 }
 			}
 			if = {
                 limit = {
                     has_estate = estate_vaisyas
                 }
-                estate_loyalty = { estate = estate_vaisyas loyalty = 70 }
+                estate_loyalty = { estate = estate_vaisyas loyalty = 60 }
 			}
 			if = {
                 limit = {
                     has_estate = estate_brahmins
                 }
-                estate_loyalty = { estate = estate_brahmins loyalty = 70 }
+                estate_loyalty = { estate = estate_brahmins loyalty = 60 }
             }
 		}
 		effect = {
@@ -845,8 +870,11 @@ vn_administrative_missions = {
 		required_missions = { vn_loyal_estates }
 		trigger = {
 			if = {
-				limit = { has_dlc = "Mandate of Heaven" }
-				absolutism = 50
+				limit = { has_dlc = "Emperor" }
+				OR = {
+					absolutism = 50
+					revolutionary_zeal = 50
+				}
 			}
 			else = {
 				legitimacy_equivalent = 100

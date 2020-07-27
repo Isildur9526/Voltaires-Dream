@@ -1,6 +1,468 @@
 # For specific combinations of culture, religion and other such triggers
 # Will pick the first valid one it finds in list
 
+revolutionary_peasant_republic = {
+	rank = {
+		6 = REVOLUTIONARY_PEASANT_REPUBLIC
+	}
+	ruler_male = {
+		6 = GREAT_CONSUL
+	}
+	ruler_female = {
+		6 = GREAT_CONSULESS
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		have_had_reform = peasants_republic
+		government_rank = 6
+	}
+}
+
+revolutionary_spanish_republic = {
+	rank = {
+		1 = REVOLUTIONARY_SPANISH_REPUBLIC
+		2 = REVOLUTIONARY_SPANISH_REPUBLIC
+		3 = REVOLUTIONARY_SPANISH_REPUBLIC
+		4 = REVOLUTIONARY_SPANISH_REPUBLIC
+		5 = REVOLUTIONARY_SPANISH_REPUBLIC
+		6 = REVOLUTIONARY_SPANISH_REPUBLIC
+	}
+	ruler_male = {
+		1 = PRESIDENT
+		2 = PRESIDENT
+		3 = PRESIDENT
+		4 = PRESIDENT
+		5 = PRESIDENT
+		6 = PRESIDENT
+	}
+	ruler_female = {
+		1 = PRESIDENT_fem
+		2 = PRESIDENT_fem
+		3 = PRESIDENT_fem
+		4 = PRESIDENT_fem
+		5 = PRESIDENT_fem
+		6 = PRESIDENT_fem
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		tag = SPA
+	}
+}
+
+revolutionary_swedish_republic = {
+	rank = {
+		1 = REVOLUTIONARY_SWEDISH_REPUBLIC
+		2 = REVOLUTIONARY_SWEDISH_REPUBLIC
+		3 = REVOLUTIONARY_SWEDISH_REPUBLIC
+		4 = REVOLUTIONARY_SWEDISH_REPUBLIC
+		5 = REVOLUTIONARY_SWEDISH_REPUBLIC
+		6 = REVOLUTIONARY_SWEDISH_REPUBLIC
+	}
+	ruler_male = {
+		1 = FIRST_LAWSPEAKER
+		2 = FIRST_LAWSPEAKER
+		3 = FIRST_LAWSPEAKER
+		4 = FIRST_LAWSPEAKER
+		5 = FIRST_LAWSPEAKER
+		6 = FIRST_LAWSPEAKER
+	}
+	ruler_female = {
+		1 = FIRST_LAWSPEAKER_fem
+		2 = FIRST_LAWSPEAKER_fem
+		3 = FIRST_LAWSPEAKER_fem
+		4 = FIRST_LAWSPEAKER_fem
+		5 = FIRST_LAWSPEAKER_fem
+		6 = FIRST_LAWSPEAKER_fem
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		OR = {
+			tag = SWE
+			AND = {
+				tag = SCA
+				NOT = { was_tag = DAN }
+				NOT = { was_tag = NOR }
+			}
+		}
+	}
+}
+
+revolutionary_danish_republic = {
+	rank = {
+		1 = REVOLUTIONARY_DANISH_REPUBLIC
+		2 = REVOLUTIONARY_DANISH_REPUBLIC
+		3 = REVOLUTIONARY_DANISH_REPUBLIC
+		4 = REVOLUTIONARY_DANISH_REPUBLIC
+		5 = REVOLUTIONARY_DANISH_REPUBLIC
+		6 = REVOLUTIONARY_DANISH_REPUBLIC
+	}
+	ruler_male = {
+		1 = FIRST_LAWSPEAKER
+		2 = FIRST_LAWSPEAKER
+		3 = FIRST_LAWSPEAKER
+		4 = FIRST_LAWSPEAKER
+		5 = FIRST_LAWSPEAKER
+		6 = FIRST_LAWSPEAKER
+	}
+	ruler_female = {
+		1 = FIRST_LAWSPEAKER_fem
+		2 = FIRST_LAWSPEAKER_fem
+		3 = FIRST_LAWSPEAKER_fem
+		4 = FIRST_LAWSPEAKER_fem
+		5 = FIRST_LAWSPEAKER_fem
+		6 = FIRST_LAWSPEAKER_fem
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		OR = {
+			tag = DAN
+			tag = NOR
+			AND = {
+				tag = SCA
+				OR = {
+					was_tag = DAN
+					was_tag = NOR
+				}
+			}
+		}
+	}
+}
+
+revolutionary_ottoman_republic = {
+	rank = {
+		1 = GOV_REVOLUTIONARY_REPUBLIC
+		2 = GOV_REVOLUTIONARY_REPUBLIC
+		3 = GOV_REVOLUTIONARY_REPUBLIC
+		4 = GOV_REVOLUTIONARY_REPUBLIC
+		5 = GOV_REVOLUTIONARY_REPUBLIC
+		6 = GOV_REVOLUTIONARY_REPUBLIC
+	}
+	ruler_male = {
+		1 = SUPREME_VIZIER
+		2 = SUPREME_VIZIER
+		3 = SUPREME_VIZIER
+		4 = SUPREME_VIZIER
+		5 = SUPREME_VIZIER
+		6 = SUPREME_VIZIER
+	}
+	ruler_female = {
+		1 = SUPREME_VIZIER_fem
+		2 = SUPREME_VIZIER_fem
+		3 = SUPREME_VIZIER_fem
+		4 = SUPREME_VIZIER_fem
+		5 = SUPREME_VIZIER_fem
+		6 = SUPREME_VIZIER_fem
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		tag = TUR
+	}
+}
+
+revolutionary_german_republic = {
+	rank = {
+		1 = GOV_REVOLUTIONARY_REPUBLIC
+		2 = GOV_REVOLUTIONARY_REPUBLIC
+		3 = GOV_REVOLUTIONARY_REPUBLIC
+		4 = GOV_REVOLUTIONARY_REPUBLIC
+		5 = GOV_REVOLUTIONARY_REPUBLIC
+		6 = GOV_REVOLUTIONARY_REPUBLIC
+	}
+	ruler_male = {
+		1 = CHAIRMAN
+		2 = CHAIRMAN
+		3 = CHAIRMAN
+		4 = CHAIRMAN
+		5 = CHAIRMAN
+		6 = CHAIRMAN
+	}
+	ruler_female = {
+		1 = CHAIRMAN_fem
+		2 = CHAIRMAN_fem
+		3 = CHAIRMAN_fem
+		4 = CHAIRMAN_fem
+		5 = CHAIRMAN_fem
+		6 = CHAIRMAN_fem
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		OR = {
+			tag = GER
+			tag = PRU
+			tag = BAV
+			tag = WWS
+			tag = FKN
+			tag = HAN
+			tag = WES
+			tag = SAX
+			tag = POM
+		}
+	}
+}
+
+gov_revolutionary_republic = {
+	rank = {
+		1 = GOV_REVOLUTIONARY_REPUBLIC
+		2 = GOV_REVOLUTIONARY_REPUBLIC
+		3 = GOV_REVOLUTIONARY_REPUBLIC
+		4 = GOV_REVOLUTIONARY_REPUBLIC
+		5 = GOV_REVOLUTIONARY_REPUBLIC
+		6 = GOV_REVOLUTIONARY_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = CONSUL
+		2 = CONSUL
+		3 = CONSUL
+		4 = CONSUL
+		5 = CONSUL
+		6 = CONSUL
+	}
+	ruler_female = {
+		1 = CONSULESS
+		2 = CONSULESS
+		3 = CONSULESS
+		4 = CONSULESS
+		5 = CONSULESS
+		6 = CONSULESS
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+	}
+}
+
+gov_polish_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = REPUBLIC
+		3 = REPUBLIC
+		4 = REPUBLIC
+		5 = SERENE_REPUBLIC
+		6 = MOST_SERENE_REPUBLIC
+	}
+	ruler_male = {
+		1 = MARSHAL
+		2 = MARSHAL
+		3 = MARSHAL
+		4 = MARSHAL
+		5 = SERENE_MARSHAL
+		6 = MOST_SERNE_MARSHAL
+	}
+	ruler_female = {
+		1 = MARSHAL
+		2 = MARSHAL
+		3 = MARSHAL
+		4 = MARSHAL
+		5 = SERENE_MARSHAL
+		6 = MOST_SERNE_MARSHAL
+	}
+	trigger = {
+		primary_culture = polish
+		government = republic
+	}
+}
+
+gov_german_empire = {
+	rank = {
+		6 = KAISERREICH
+	}
+	ruler_male = {
+		6 = KAISER
+	}
+	ruler_female = {
+		6 = KAISERIN
+	}
+	trigger = {
+		culture_group = germanic
+		government_rank = 6
+		OR = {
+			tag = HLR
+			tag = GER
+		}
+		government = monarchy
+	}
+}
+
+gov_prussian_republic = {
+	rank = {
+		1 = STRATOCRACY
+		2 = STRATOCRACY
+		3 = STRATOCRACY
+		4 = STRATOCRACY
+		5 = STRATOCRACY
+		6 = STRATOCRACY
+	}
+	ruler_male = {
+		1 = FIELD_MARSHAL
+		2 = FIELD_MARSHAL
+		3 = FIELD_MARSHAL
+		4 = FIELD_MARSHAL
+		5 = FIELD_MARSHAL
+		6 = FIELD_MARSHAL
+	}
+	ruler_female = {
+		1 = FIELD_MARSHAL
+		2 = FIELD_MARSHAL
+		3 = FIELD_MARSHAL
+		4 = FIELD_MARSHAL
+		5 = FIELD_MARSHAL
+		6 = FIELD_MARSHAL
+	}
+	trigger = {
+		has_reform = prussian_republic_reform
+	}
+}
+
+gov_admiralty = {
+	rank = {
+		1 = ADMIRALTY
+		2 = ADMIRALTY
+		3 = ADMIRALTY
+		4 = ADMIRALTY
+		5 = HIGH_ADMIRALTY
+		6 = SUPREME_ADMIRALTY
+	}
+	
+	ruler_male = {
+		1 = LORD_HIGH_ADMIRAL
+		2 = LORD_HIGH_ADMIRAL
+		3 = LORD_HIGH_ADMIRAL
+		4 = LORD_HIGH_ADMIRAL
+		5 = LORD_HIGH_ADMIRAL
+		6 = SUPREME_ADMIRAL
+	}
+	
+	ruler_female = {
+		1 = LORD_HIGH_ADMIRAL
+		2 = LORD_HIGH_ADMIRAL
+		3 = LORD_HIGH_ADMIRAL
+		4 = LORD_HIGH_ADMIRAL
+		5 = LORD_HIGH_ADMIRAL
+		6 = SUPREME_ADMIRAL
+	}
+	
+	trigger = {
+		has_reform = admiralty_reform
+	}
+}
+
+gov_english_commonwealth = {
+	rank = {
+		1 = COMMONWEALTH
+		2 = COMMONWEALTH
+		3 = COMMONWEALTH
+		4 = COMMONWEALTH
+		5 = COMMONWEALTH
+		6 = COMMONWEALTH
+	}
+	
+	ruler_male = {
+		1 = LORD_PROTECTOR
+		2 = LORD_PROTECTOR
+		3 = LORD_PROTECTOR
+		4 = LORD_PROTECTOR
+		5 = LORD_PROTECTOR
+		6 = LORD_PROTECTOR
+	}
+	
+	ruler_female = {
+		1 = LADY_PROTECTOR
+		2 = LADY_PROTECTOR
+		3 = LADY_PROTECTOR
+		4 = LADY_PROTECTOR
+		5 = LADY_PROTECTOR
+		6 = LADY_PROTECTOR
+	}
+	
+	trigger = {
+		has_reform = protectorate_parliament_reform
+	}
+}
+
+savonarola_unique = {
+	rank = {
+		1 = SAVANAROLA_GOVERNMENT
+		2 = SAVANAROLA_GOVERNMENT
+		3 = SAVANAROLA_GOVERNMENT
+		4 = SAVANAROLA_GOVERNMENT
+		5 = SAVANAROLA_GOVERNMENT
+		6 = SAVANAROLA_GOVERNMENT
+	}
+	ruler_male = {
+		1 = BROTHER
+		2 = BROTHER
+		3 = BROTHER
+		4 = BROTHER
+		5 = BROTHER
+		6 = BROTHER
+	}
+	trigger = {
+		has_ruler_flag = savonarola_flag
+	}
+}
+
+military_dictatorship = {
+	rank = {
+		1 = MILITARY_GOVERNMENT
+		2 = MILITARY_GOVERNMENT
+		3 = MILITARY_GOVERNMENT
+		4 = MILITARY_GOVERNMENT
+		5 = MILITARY_GOVERNMENT
+		6 = MILITARY_GOVERNMENT
+	}
+	ruler_male = {
+		1 = CAPTAIN_GENERAL
+		2 = CAPTAIN_GENERAL
+		3 = CAPTAIN_GENERAL
+		4 = CAPTAIN_GENERAL
+		5 = CAPTAIN_GENERAL
+		6 = CAPTAIN_GENERAL
+	}
+	ruler_female = {
+		1 = CAPTAIN_GENERAL
+		2 = CAPTAIN_GENERAL
+		3 = CAPTAIN_GENERAL
+		4 = CAPTAIN_GENERAL
+		5 = CAPTAIN_GENERAL
+		6 = CAPTAIN_GENERAL
+	}
+	trigger = {
+		has_reform = military_dictatorship_reform
+	}
+}
+
+greek_pirate_government = {
+	rank = {
+		1 = PIRATE_CITY
+		2 = PIRATE_REPUBLIC
+		3 = PIRATE_REPUBLIC
+		4 = PIRATE_CONFEDERACY
+		5 = PIRATE_CONFEDERACY
+		6 = GRAND_PIRATE_CONFEDERACY
+	}
+	ruler_male = {
+		1 = ARCHPIRATE
+		2 = ARCHPIRATE
+		3 = ARCHPIRATE
+		4 = ARCHPIRATE
+		5 = ARCHPIRATE
+		6 = ARCHPIRATE
+	}
+	ruler_female = {
+		1 = ARCHPIRATE
+		2 = ARCHPIRATE
+		3 = ARCHPIRATE
+		4 = ARCHPIRATE
+		5 = ARCHPIRATE
+		6 = ARCHPIRATE
+	}
+	trigger = {
+		has_reform = pirate_republic_reform
+		NOT = { has_reform = pirate_king_reform }
+		primary_culture = greek
+	}
+}
+
 athenian_monastic_order = {
 	rank = {
 		1 = MERCENARY_COMPANY
@@ -66,6 +528,7 @@ pirate_government = {
 	trigger = {
 		has_reform = pirate_republic_reform
 		NOT = { has_reform = pirate_king_reform }
+		NOT = { primary_culture = greek }
 	}
 }
 
@@ -99,6 +562,40 @@ pirate_kingdom = {
 
 	trigger = {
 		has_reform = pirate_king_reform
+	}
+}
+
+gov_papal_government_elector = {
+	rank = {
+		1 = PAPACY
+		2 = PAPACY
+		3 = PAPACY
+		4 = PAPACY
+		5 = PAPACY
+		6 = PAPACY
+	}
+	
+	ruler_male = {
+		1 = POPE_ELECTOR
+		2 = POPE_ELECTOR
+		3 = POPE_ELECTOR
+		4 = POPE_ELECTOR
+		5 = POPE_ELECTOR
+		6 = POPE_ELECTOR
+	}
+	
+	ruler_female  ={
+		1 = POPETTE_ELECTOR
+		2 = POPETTE_ELECTOR
+		3 = POPETTE_ELECTOR
+		4 = POPETTE_ELECTOR
+		5 = POPETTE_ELECTOR
+		6 = POPETTE_ELECTOR
+	}
+	
+	trigger = {
+		has_reform = papacy_reform
+		is_elector = yes
 	}
 }
 
@@ -1242,9 +1739,9 @@ giudicato_monarchy = {
 	}
 	
 	ruler_female = {
-		1 = JUDGE
-		2 = JUDGE
-		3 = JUDGE
+		1 = JUDGE_fem
+		2 = JUDGE_fem
+		3 = JUDGE_fem
 		4 = PRINCESS
 		5 = QUEEN
 		6 = EMPRESS
@@ -1979,7 +2476,7 @@ german_republican_bailiff = {
 	}
 	
 	ruler_female = {
-		1 = BAILIFF
+		1 = BAILIFF_fem
 		2 = MARGRAVINE
 		3 = DUCHESS
 		4 = PRINCESS
@@ -2510,12 +3007,12 @@ vassal_theocracy = {
 	}
 
 	ruler_female = {
-		1 = BAILIFF
-		2 = BAILIFF
-		3 = BAILIFF
-		4 = BAILIFF
-		5 = BAILIFF
-		6 = BAILIFF
+		1 = BAILIFF_fem
+		2 = BAILIFF_fem
+		3 = BAILIFF_fem
+		4 = BAILIFF_fem
+		5 = BAILIFF_fem
+		6 = BAILIFF_fem
 	}
 
 	trigger = {
@@ -2913,7 +3410,7 @@ dutch_republic = {
 	trigger = {
 		government = republic
 		primary_culture = dutch
-		NOT = { has_reform = revolutionary_republic_reform }
+		NOT = { is_revolutionary_republic_trigger = yes }
 		NOT = { has_reform = presidential_despot_reform }
 		NOT = { has_reform = noble_elite_reform }
 	}
@@ -2950,7 +3447,7 @@ russian_republic = {
 	trigger = {
 		government = republic
 		culture_group = east_slavic
-		NOT = { has_reform = revolutionary_republic_reform }
+		NOT = { is_revolutionary_republic_trigger = yes }
 		NOT = { has_reform = presidential_despot_reform }
 		NOT = { has_reform = noble_elite_reform }
 	}
@@ -2990,7 +3487,7 @@ south_slavic_republic = {
 			tag = DTT
 			tag = POJ
 		}
-		NOT = { has_reform = revolutionary_republic_reform }
+		NOT = { is_revolutionary_republic_trigger = yes }
 		NOT = { has_reform = presidential_despot_reform }
 		NOT = { has_reform = noble_elite_reform }
 	}
@@ -3125,7 +3622,7 @@ hereditary_republic = {
 		1 = STRATEGESSA
 		2 = PREFECT
 		3 = DUCESSA
-		4 = PATRICIAN
+		4 = PATRICIAN_fem
 		5 = HYPATESSA
 		6 = EMPRESS
 	}
@@ -3428,12 +3925,12 @@ livonian_monastic_order = {
 	}
 
 	ruler_female = {
-		1 = LANDMEISTER
-		2 = LANDMEISTER
-		3 = LANDMEISTER
-		4 = LANDMEISTER
-		5 = LANDMEISTER
-		6 = LANDMEISTER
+		1 = LANDMEISTER_fem
+		2 = LANDMEISTER_fem
+		3 = LANDMEISTER_fem
+		4 = LANDMEISTER_fem
+		5 = LANDMEISTER_fem
+		6 = LANDMEISTER_fem
 	}
 
 	trigger = {
@@ -3462,12 +3959,12 @@ provostry_order = {
 	}
 
 	ruler_female = {
-		1 = PROVOST
+		1 = PROVOST_fem
 		2 = COUNTESS_PROVOST
 		3 = COUNTESS_PROVOST
 		4 = PRINCESS_PROVOST
-		5 = HIGH_PROVOST
-		6 = HIGHEST_PROVOST
+		5 = HIGH_PROVOST_fem
+		6 = HIGHEST_PROVOST_fem
 	}
 
 	trigger = {

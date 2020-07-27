@@ -20,7 +20,8 @@ country_event = {
 	
 	immediate = {
 		set_country_flag = had_counts_feud
-	
+		set_country_flag = counts_feud_start_event
+		add_stability = -1
 	
 		hidden_effect = {
 			random_owned_province = {
@@ -53,6 +54,8 @@ country_event = {
 				size = 1
 				win = yes
 				unrest = 20
+				leader = "Christoffer"
+				leader_dynasty = "von Oldenburg"
 			}
 			clr_province_flag = counts_feud
 		}
@@ -81,6 +84,9 @@ country_event = {
 			adm = 2
 			dip = 3
 			mil = 2
+			fixed = yes
+			name = "Christoffer"
+			dynasty = "von Oldenburg"
 		}
 		if = {
 			limit = {
@@ -98,6 +104,10 @@ country_event = {
 			}
 			clr_province_flag = counts_feud
 		}
+	}
+
+	after = {
+		clr_country_flag = counts_feud_start_event
 	}
 }
 

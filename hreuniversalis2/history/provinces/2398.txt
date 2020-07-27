@@ -92,9 +92,8 @@ center_of_trade = 2
 	controller = TUR 
 	add_core = BYZ
 	remove_core = VEN
-	estate = estate_dhimmi
 }
-1502.1.1 = { remove_core = BYZ remove_core = TSS }
+1502.1.1 = { remove_core = BYZ }
 1519.1.1 = { religion = jewish }
 1555.1.1 = { unrest = 5 }
 1556.1.1 = { unrest = 0 }

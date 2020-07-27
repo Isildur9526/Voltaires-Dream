@@ -11,7 +11,6 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = XMI
-estate = estate_nomadic_tribes
 
 1173.1.1 = { religion = orthodox }
 1204.5.16 = {

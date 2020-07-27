@@ -402,4 +402,3 @@ capital = 2482	# Bar-le-Duc
 	}
 }
 #1483.3.23 LOR
-1589.8.8 = { set_legacy_government = administrative_monarchy }

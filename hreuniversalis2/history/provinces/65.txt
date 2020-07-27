@@ -23,7 +23,6 @@ fort_14th = yes
 	controller = XMU
 	add_core = XMU
 	remove_core = BAV
-	estate = estate_holy_orders
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1340.12.21 = {

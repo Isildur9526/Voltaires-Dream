@@ -27,7 +27,6 @@ fort_14th = yes
 	religion = catholic
 	capital = "Tortose"
 }
-1152.1.1 = { estate = estate_holy_orders }
 1271.3.29 = {
 	owner = TEM
 	controller = TEM

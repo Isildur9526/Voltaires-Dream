@@ -8,7 +8,7 @@ base_tax = 1
 base_production = 1
 trade_goods = plumbum
 base_manpower = 1
-capital = "Tserkezkioi"
+capital = "Tribiton"
 is_city = yes
 
 1204.5.16 = {
@@ -54,9 +54,9 @@ is_city = yes
 	owner = TUR
 	controller = TUR
 	add_core = TUR
-	capital = "Çerkezköy"
+	capital = "Çorlu"
 }
-1459.1.1 = { culture = turkish religion = sunni estate = estate_dhimmi }
+1459.1.1 = { culture = turkish religion = sunni }
 1481.6.1 = { unrest = 6 }
 1482.7.26 = { unrest = 0 }
 1502.1.1 = { remove_core = BYZ }

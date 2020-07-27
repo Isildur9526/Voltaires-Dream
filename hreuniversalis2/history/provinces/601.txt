@@ -17,7 +17,6 @@ fort_14th = yes
 	controller = ACH
 	add_core = ACH
 	remove_core = BYZ
-	estate = estate_nobles
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1395.1.1 = {

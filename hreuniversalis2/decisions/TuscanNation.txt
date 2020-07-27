@@ -70,6 +70,7 @@ country_decisions = {
 				limit = {
 					culture = tuscan
 					NOT = { owned_by = ROOT }
+					continent = europe
 				}
 				add_permanent_claim = TUS
 			}
@@ -83,13 +84,6 @@ country_decisions = {
 					is_playing_custom_nation = no
 				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
-			}
-			if = {
-				limit = {
-					government = republic
-				}
-				change_government = monarchy
-				add_government_reform = feudalism_reform
 			}
 			add_prestige = 25
 			hidden_effect = {

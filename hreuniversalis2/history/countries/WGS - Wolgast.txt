@@ -7,6 +7,7 @@ capital = 2201
 
 1000.1.1 = { set_country_flag = natives_flag }
 1054.1.1 = {
+	override_country_name = VELUNZANI
 	monarch = {
 		name = "Velunzani"
 		regent = yes
@@ -102,7 +103,10 @@ capital = 2201
 		mil = 2
 	}
 }
-1240.1.1 = { primary_culture = pommeranian }
+1240.1.1 = {
+	primary_culture = pommeranian
+	restore_country_name = yes
+}
 #under POM
 1295.7.12 = {
 	capital = 2642
@@ -250,7 +254,7 @@ capital = 2201
 		death_date = 1457.4.17
 		claim = 95
 		adm = 2
-		dip = 2
+		dip = 3
 		mil = 3
 	}
 }
@@ -270,7 +274,7 @@ capital = 2201
 		death_date = 1457.4.17
 		claim = 95
 		adm = 2
-		dip = 2
+		dip = 3
 		mil = 3
 	}
 }
@@ -280,13 +284,26 @@ capital = 2201
 		dynasty = "Gryf"
 		birth_date = 1400.1.1
 		adm = 2
-		dip = 2
+		dip = 3
 		mil = 3
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = lawgiver_personality
 	add_ruler_personality = benevolent_personality
 	add_ruler_personality = scholar_personality
+}
+1419.1.1 = {
+	queen = {
+		country_of_origin = LAU
+		name = "Sophia"
+		dynasty = "Askanier"
+		birth_date = 1405.9.22
+		death_date = 1462.1.1
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
 }
 1425.1.1 = {
 	heir = {

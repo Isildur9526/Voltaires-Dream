@@ -10,7 +10,6 @@ hre = yes
 owner = XNV
 controller = XNV
 add_core = XNV
-estate = estate_church
 
 1332.1.1 = {
 	owner = MLO

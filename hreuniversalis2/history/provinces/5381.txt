@@ -34,7 +34,6 @@ discovered_by = north_american
 	controller = VEN
 	add_core = VEN
 	remove_core = GEN
-	estate = estate_nobles
 }
 1538.1.1 = {
 	owner = TUR

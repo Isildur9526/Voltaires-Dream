@@ -222,7 +222,6 @@ add_army_professionalism = 0.05
 		mil = 2
 	}
 }
-1622.3.6 = { set_legacy_government = administrative_monarchy }
 1630.9.17 = {
 	heir = {
 		name = "Ranuccio"
@@ -293,7 +292,6 @@ add_army_professionalism = 0.05
 	}
 }
 1731.1.20 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "Carlo I"
 		dynasty = "de Bourbon"

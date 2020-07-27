@@ -1,7 +1,8 @@
 country_decisions = {
 
 	build_lubeck_krantor = {
-		potential = {	
+		potential = {
+			NOT = { has_dlc = "Emperor" }
 			tag = HSA
 			normal_or_historical_nations = yes
 			OR = {
@@ -50,17 +51,25 @@ country_decisions = {
 			}
 		}
 		allow = {
-			years_of_income = 0.7
-			adm_power = 30
+			if = {
+				limit = { NOT = { has_dlc = "Golden Century" } }
+				years_of_income = 0.7
+				adm_power = 30
+			}
+			else = { has_flagship = yes }
 			any_neighbor_country = {
 				is_at_war = yes
+				num_of_ports = 1
 			}
 		}
 		effect = {
-			add_years_of_income = -0.7
-			add_adm_power = -30
-			13 = {
-				heavy_ship = ROOT
+			if = {
+				limit = {
+					NOT = { has_dlc = "Golden Century" }
+				}
+				add_years_of_income = -0.7
+				add_adm_power = -30
+				13 = { heavy_ship = ROOT }
 			}
 			set_country_flag = adler_built
 			add_country_modifier = {

@@ -375,7 +375,6 @@ historical_friend = STY
 		mil = 2
 	}
 }
-1646.5.17 = { set_legacy_government = administrative_monarchy }
 1662.12.30 = {
 	monarch = {
 		name = "Sigismund Franz"

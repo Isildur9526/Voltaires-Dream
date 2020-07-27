@@ -1,6 +1,5 @@
 government = monarchy
 add_government_reform = feudalism_reform
-set_legacy_government = administrative_monarchy
 government_rank = 5
 technology_group = western
 religion = catholic

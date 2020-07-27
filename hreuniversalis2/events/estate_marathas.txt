@@ -118,8 +118,8 @@ country_event = {
 		}
 		define_advisor = {
 			type = philosopher
-			culture = marathi
-			religion = hinduism
+			culture = persian
+			religion = zoroastrian
 			skill = 2
 			female = no
 			discount = yes
@@ -200,6 +200,18 @@ country_event = {
 		cavalry_fraction = 0.1
 		NOT = {
 			has_country_modifier = bargi_giri
+		}
+		OR = {
+			any_rival_country = {
+				num_of_artillery = root
+				num_of_artillery = 10
+				mil_tech = 10
+			}
+			any_enemy_country = {
+				num_of_artillery = root
+				num_of_artillery = 10
+				mil_tech = 10
+			}
 		}
 	}
 	
@@ -319,14 +331,21 @@ country_event = {
 			estate = estate_maratha
 			loyalty = 60
 		}
-		any_owned_province = {
-			has_estate = estate_maratha
+		estate_territory = { 
+			estate = estate_maratha
+			territory = 1
 		}
 		NOT = {
 			has_estate_influence_modifier = {
 				estate = estate_maratha
 				modifier = EST_VAL_MARATHA_MILITARIZATION
 			}
+		}
+		any_owned_province = {
+			religion = zoroastrian
+			is_capital = no
+			is_city = yes
+			NOT = { has_province_flag = marathi_militarized_province }
 		}
 	}
 	
@@ -346,7 +365,10 @@ country_event = {
 		}
 		random_owned_province = {
 			limit = {
-				has_estate = estate_maratha
+				religion = zoroastrian
+				is_capital = no
+				is_city = yes
+				NOT = { has_province_flag = marathi_militarized_province }
 			}
 			add_base_manpower = 1
 			set_province_flag = marathi_militarized_province
@@ -370,7 +392,11 @@ country_event = {
 			influence = 10
 		}
 		any_owned_province = {
-			has_estate = estate_maratha
+			OR = {
+				religion = zoroastrian
+				culture = persian
+			}
+			is_city = yes
 			has_province_flag = marathi_militarized_province
 			base_tax = 2
 			base_production = 2
@@ -397,10 +423,14 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
+					OR = {
+						religion = zoroastrian
+						culture = persian
+					}
+					is_city = yes
 					base_production = 2
 					base_tax = 2
 					has_province_flag = marathi_militarized_province
-					has_estate = estate_maratha
 				}
 				save_event_target_as = maratha_farming_province
 			}
@@ -472,6 +502,7 @@ country_event = {
 		trigger = {
 			ADM = 4
 		}
+		highlight = yes
 		add_army_tradition = 5
 	}
 }
@@ -598,7 +629,8 @@ country_event = {
 		has_estate = estate_brahmins
 		any_owned_province = {
 			religion = zoroastrian
-			has_estate = estate_maratha
+			culture = persian
+			is_city = yes
 		}
 		NOT = {
 			any_owned_province = {
@@ -615,6 +647,79 @@ country_event = {
 	
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						culture = persian
+						is_city = yes
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = persian
+						is_city = yes
+					}
+					set_province_flag = palkhis_flag
+				}
+			}
+			if = {
+				limit = {
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = palkhis_flag
+							value = estate
+							estate = estate_maratha
+						}
+					}
+					any_owned_province = {
+						religion = zoroastrian
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = palkhis_flag }
+					}
+				}
+				set_country_flag = not_enough_marathi_for_this_event
+				while = {
+					limit = {
+						NOT = { 
+							development_in_provinces = {
+								has_province_flag = palkhis_flag
+								value = estate
+								estate = estate_maratha
+							}
+						}
+						any_owned_province = {
+							religion = zoroastrian
+							is_capital = no
+							is_city = yes
+							NOT = { has_province_flag = palkhis_flag }
+						}
+					}
+					random_owned_province = {
+						limit = {
+							religion = zoroastrian
+							is_capital = no
+							is_city = yes
+							NOT = { has_province_flag = palkhis_flag }
+						}
+						set_province_flag = palkhis_flag
+					}
+				}
+			}
+		}
+	}
+	after = {
+		clr_country_flag = not_enough_marathi_for_this_event
+		every_owned_province = {
+			limit = {
+				has_province_flag = palkhis_flag
+			}
+			clr_province_flag = palkhis_flag
+		}
 	}
 	
 	option = {
@@ -635,12 +740,19 @@ country_event = {
 			estate = estate_maratha
 			loyalty = 15
 		}
-		custom_tooltip = palkis.tooltip
+		if = {
+			limit = {
+				has_country_flag = not_enough_marathi_for_this_event
+			}
+			custom_tooltip = palkis.tooltip
+		}
+		else = {
+			custom_tooltip = palkis.tooltip2
+		}
 		hidden_effect = {
 			every_owned_province = {
 				limit = {
-					religion = zoroastrian
-					has_estate = estate_maratha
+					has_province_flag = palkhis_flag
 				}
 				add_province_modifier = {
 					name = popular_palkhis
@@ -681,9 +793,20 @@ country_event = {
 			desc = EST_VAL_BRAHMIN_PALKHIS
 			duration = 7300
 		}
-		add_country_modifier = {
-			name = organized_palkhis
-			duration = 7300
+		if = {
+			limit = {
+				religion = zoroastrian
+			}
+			add_country_modifier = {
+				name = organized_palkhis
+				duration = 7300
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = organized_palkhis_nonhindu
+				duration = 7300
+			}
 		}
 	}
 }
@@ -799,8 +922,9 @@ country_event = {
 			estate = estate_maratha
 			influence = 10
 		}
-		any_owned_province = {
-			has_estate = estate_maratha
+		estate_territory = { 
+			estate = estate_maratha
+			territory = 10
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -814,57 +938,45 @@ country_event = {
 				modifier = EST_VAL_MARATHAS_DENIED_RIGHTS
 			}
 		}
+		any_owned_province = {
+			religion = zoroastrian
+			is_capital = no
+			is_city = yes
+		}
 	}
 	
 	is_triggered_only = yes
 	
 	immediate = {
 		hidden_effect = {
-			random_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_maratha
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = maratha_estate_revolt
+							value = estate
+							estate = estate_maratha
+						}
+					}
+					any_owned_province = {
+						religion = zoroastrian
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = maratha_estate_revolt }
+					}
+					check_reducing_estate_revolt_size_trigger = {
+						FLAG = maratha_estate_revolt
+					}
 				}
-				set_province_flag = maratha_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_maratha
-					NOT = { has_province_flag = maratha_estate_revolt }
-					owner = { num_of_cities = 8 }
+				random_owned_province = {
+					limit = {
+						religion = zoroastrian
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = maratha_estate_revolt }
+					}
+					set_province_flag = maratha_estate_revolt
 				}
-				set_province_flag = maratha_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_maratha
-					NOT = { has_province_flag = maratha_estate_revolt }
-					owner = { num_of_cities = 14 }
-				}
-				set_province_flag = maratha_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_maratha
-					NOT = { has_province_flag = maratha_estate_revolt }
-					owner = { num_of_cities = 18 }
-				}
-				set_province_flag = maratha_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_maratha
-					NOT = { has_province_flag = maratha_estate_revolt }
-					owner = { num_of_cities = 25 }
-				}
-				set_province_flag = maratha_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_maratha
-					NOT = { has_province_flag = maratha_estate_revolt }
-					owner = { num_of_cities = 30 }
-				}
-				set_province_flag = maratha_estate_revolt
 			}
 		}
 	}
@@ -885,7 +997,9 @@ country_event = {
 			duration = 5475
 		}
 		every_owned_province = {
-			limit = { has_estate = estate_maratha }
+			limit = { 
+				has_province_flag = maratha_estate_revolt
+			}
 			add_local_autonomy = 33
 		}
 		hidden_effect = {

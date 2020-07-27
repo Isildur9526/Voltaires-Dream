@@ -14,7 +14,6 @@ extra_cost = 16
 center_of_trade = 2
 fort_14th = yes
 
-1314.1.1 = { estate = estate_burghers }
 1531.11.5 = {
 	revolt = { type = revolutionary_rebels size = 1 }
 	controller = REB

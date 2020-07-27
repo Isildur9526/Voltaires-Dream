@@ -33,16 +33,6 @@ add_core = USR
 	controller = USR
 	remove_core = SER
 }
-1232.1.1 = {
-	owner = SER
-	controller = SER
-	add_core = SER
-}
-1247.1.1 = {
-	owner = USR
-	controller = USR
-	remove_core = SER
-}
 1319.1.1 = {
 	owner = SER
 	controller = SER

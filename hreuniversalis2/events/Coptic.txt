@@ -661,6 +661,7 @@ country_event = {
 	title = coptic_flavor.31.t
 	desc = coptic_flavor.31.d
 	picture = PRAYING_eventPicture
+	goto = pious_province
   
 	trigger = {
 		religion = coptic
@@ -747,6 +748,7 @@ country_event = {
   title = coptic_flavor.32.t
   desc = coptic_flavor.32.d
   picture = CITY_DEVELOPMENT_eventPicture
+  goto = pious_province
   
 	trigger = {
 		has_dlc = "Rights of Man"
@@ -754,6 +756,7 @@ country_event = {
 		any_owned_province = {
 			is_capital = no
 			religion = coptic
+			has_tax_building_trigger = no
 		}
 		NOT = {
 			any_owned_province = {
@@ -778,6 +781,7 @@ country_event = {
 					NOT = { has_province_modifier = "songs_of_the_pious" }
 					NOT = { has_province_modifier = "scripture_studies" }
 					NOT = { has_province_modifier = "monastery_repaired" }
+					has_tax_building_trigger = no
 				}
 				save_event_target_as = pious_province
 			}
@@ -791,7 +795,6 @@ country_event = {
 
   option = {
     name = coptic_flavor.32.a
-    custom_tooltip = coptic_flavor.32.a.tt
     
 	if = { 
 		limit = { monthly_income = 20 }
@@ -807,6 +810,7 @@ country_event = {
 			name = "songs_of_the_pious"
 			duration = 3650
 		}
+		add_building = temple
   	}
   	ai_chance = {
 		factor = 90
@@ -877,6 +881,7 @@ country_event = {
 							superregion = anatolia_superregion 
 						}
 					}
+					num_of_cities = 12
 					NOT = { war_with = ROOT }
 				}
 				save_event_target_as = faraway_catholic
@@ -1330,6 +1335,10 @@ country_event = {
     custom_tooltip = coptic_flavor.43.a.tt
 
     hidden_effect = {
+    	add_opinion = {
+			who = FROM
+			modifier = opinion_approves_of_diplomacy
+		}
     	FROM = {
 			add_opinion = {
 				who = ROOT
@@ -1397,6 +1406,7 @@ province_event = {
 	id = coptic_flavor.100
 	title = coptic_flavor.100.t
 	picture = RELIGION_eventPicture
+	goto = root
   
 	trigger = {
 		religion = coptic
@@ -1465,6 +1475,7 @@ country_event = {
 	title = coptic_flavor.101.t
 	desc = coptic_flavor.101.d
 	picture = PRAYING_eventPicture
+	goto = scholarly_province
 
 	trigger = {
 		religion = coptic

@@ -1,0 +1,60 @@
+incident_mediatization = {
+	event = incident_mediatization.3
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				any_country = {
+					is_part_of_hre = yes
+					OR = {
+						government = republic
+						government = theocracy
+					}
+				}
+			}
+			NOT = {
+				any_country = {
+					is_part_of_hre = yes
+					OR = {
+						government = republic
+						government = theocracy
+					}
+					NOT = { has_country_flag = had_mediatization_event }
+				}
+			}
+			any_country = {
+				has_country_flag = med_demanding_country
+				war_score_against = {
+					who = emperor
+					value = -100
+				}
+			}
+		}
+		
+	}
+	
+	0 = {	#Accept
+		factor = 1
+		modifier = {
+			factor = 1000
+			government = monarchy
+		}
+		modifier = {
+			factor = 100
+			any_neighbor_country = {
+				has_country_flag = med_demanding_country
+			}
+		}
+	}
+	1 = {	#Decline
+		factor = 1
+		modifier = {
+			factor = 1000
+			OR = {
+				government = republic
+				government = theocracy
+			}
+		}
+	}
+}

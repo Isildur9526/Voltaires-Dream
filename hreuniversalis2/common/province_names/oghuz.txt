@@ -77,7 +77,7 @@
 992 = "Nis"
 1022 = "Gelibolu"
 1043 = "Silistre"
-1045 = "Çerkezköy"
+1045 = "Çorlu"
 1049 = "Çanak-Kale"
 1051 = "Hüdavendigar"
 1052 = "Iznik"

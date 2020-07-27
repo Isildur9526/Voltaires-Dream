@@ -12,7 +12,6 @@ controller = NOL
 add_core = NOL
 add_core = ASE
 latent_trade_goods = { coal }
-estate = estate_church
 
 1065.10.3 = {
 	owner = ASE

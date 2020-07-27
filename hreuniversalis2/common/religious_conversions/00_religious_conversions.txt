@@ -13,9 +13,69 @@ propagate_religion_policy = {
 			factor = 0
 			has_missionary = yes
 		}
+		modifier = {
+			factor = 0
+			is_empty = yes
+		}
+		modifier = {
+			factor = 0
+			has_province_modifier = religious_center
+		}
+		modifier = {
+			factor = 0
+			province_id = 2235 # Rome, seat of Papacy
+		}
+		modifier = {
+			factor = 0
+			has_province_modifier = religious_zeal_at_conv
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				religion_group = muslim
+				religion_group = christian
+				religion_group = jewish_group
+			}
+		}
+		modifier = {
+			factor = 0.25
+			has_port = no
+		}
+		modifier = {
+			factor = 1.15
+			has_province_modifier = trading_settlement
+		}
+		modifier = {
+			factor = 1.5
+			has_province_modifier = islamic_missionaries
+		}
+		modifier = {
+			factor = 1.5
+			has_province_modifier = muslim_sailor_community
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				any_neighbor_province = {
+					religion = FROM
+				}
+				has_port = yes
+			}
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				religion = FROM
+			}
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				religion_group = FROM
+			}
+		}
 	}
 }
-
 
 # Centers of Reformation
 # From Scope is center of Reformation Province
@@ -119,7 +179,17 @@ protestant_center_of_reformation = {
 				religion = paulician
 				religion = orthodox
 			}
-		}		
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
+		}	
 	}
 }
 
@@ -221,7 +291,17 @@ reformed_center_of_reformation = {
 				religion = paulician
 				religion = orthodox
 			}
-		}		
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
+		}	
 	}
 }
 
@@ -329,6 +409,16 @@ lollardy_center_of_reformation = {
 				religion = fraticelli
 				religion = hussite
 			}
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
 		}		
 	}
 }
@@ -437,6 +527,16 @@ cathar_center_of_reformation = {
 				religion = fraticelli
 				religion = hussite
 			}
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
 		}		
 	}
 }
@@ -545,6 +645,16 @@ waldensian_center_of_reformation = {
 				religion = fraticelli
 				religion = hussite
 			}
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
 		}		
 	}
 }
@@ -653,6 +763,16 @@ fraticelli_center_of_reformation = {
 				religion = lollardy
 				religion = hussite
 			}
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
 		}		
 	}
 }
@@ -762,6 +882,16 @@ hussite_center_of_reformation = {
 				religion = lollardy
 			}
 		}		
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
+		}	
 	}
 }
 
@@ -867,6 +997,16 @@ bogomilist_center_of_reformation = {
 				religion = fraticelli
 				religion = hussite
 			}
+		}	
+		modifier = {
+			factor = 0.5
+			has_state_edict = edict_religion_enforced
+		}
+		modifier = {
+			factor = 0.75
+			is_part_of_hre = yes
+			PAP = { is_part_of_hre = yes }
+			has_global_flag = PAP_out_of_hre
 		}		
 	}
 }

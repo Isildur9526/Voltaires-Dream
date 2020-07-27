@@ -51,7 +51,6 @@ add_core = KIE
 	controller = PLC
 	add_core = PLC
 	remove_core = LIT
-	estate = estate_cossacks
 }
 1595.1.1 = { unrest = 4 }
 1596.1.1 = { unrest = 0 } 

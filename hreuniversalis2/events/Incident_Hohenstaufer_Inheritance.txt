@@ -1,0 +1,300 @@
+namespace = incident_hohenstaufer_inheritance
+# ruler of swabia is killed in battle
+country_event = {
+	id = incident_hohenstaufer_inheritance.1
+	title = "incident_hohenstaufer_inheritance.1.t"
+	desc = "incident_hohenstaufer_inheritance.1.d"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		current_age = age_of_empire
+		NOT = { started_in = 1090.5.18 }
+		is_year = 1065
+		NOT = { active_imperial_incident = any }
+		is_emperor = no
+		is_subject = no
+		is_part_of_hre = yes
+		tag = WWS
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					NOT = { dynasty = ROOT }
+					NOT = { dynasty = emperor }
+					NOT = { dynasty = "von Hohenstaufen" }
+					is_part_of_hre = yes
+					government = monarchy
+					has_regency = no
+					has_consort_regency = no
+				}
+				save_event_target_as = new_swabian_duke
+			}
+		}
+	}
+
+	option = {
+		name = incident_hohenstaufer_inheritance.1.a
+		set_imperial_incident = incident_hohenstaufer_inheritance
+		tooltip = {
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			remove_heir = yes
+		}
+		define_ruler = {
+			claim = 75
+			dynasty = event_target:new_swabian_duke
+			culture = event_target:new_swabian_duke
+			religion = event_target:new_swabian_duke
+		}
+		custom_tooltip = incident_hohenstaufer_inheritance.1.tt
+	}
+}
+
+# let emperor decide on swabia's new ruler
+country_event = {
+	id = incident_hohenstaufer_inheritance.2
+	title = "incident_hohenstaufer_inheritance.2.t"
+	desc = "incident_hohenstaufer_inheritance.2.d"
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+
+	option = {
+		name = incident_hohenstaufer_inheritance.2.a
+		ai_chance = {
+			factor = 25
+		}
+		tooltip = {
+			WWS = {
+				add_stability_or_adm_power = yes
+				add_legitimacy = 20
+			}
+		}
+		reverse_add_opinion = {
+			who = WWS
+			modifier = opinion_legitimazed_ruler
+		}
+		hidden_effect = {
+			WWS = {
+				set_country_flag = dynastic_ruler
+				country_event = {
+					id = incident_hohenstaufer_inheritance.3
+				}
+			}
+		}
+	}
+	option = {
+		name = incident_hohenstaufer_inheritance.2.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1000
+				is_rival = WWS
+			}
+		}
+		add_prestige = -15
+		tooltip = {
+			WWS = {
+				define_ruler = {
+					claim = 95
+					dynasty = emperor
+					culture = emperor
+					religion = emperor
+				}
+			}
+			add_casus_belli = {
+				type = cb_fabricated_claims
+				target = WWS
+				months = 300
+			}
+		}
+		reverse_add_opinion = {
+			who = WWS
+			modifier = opinion_claimed_our_duchy
+		}
+		hidden_effect = {
+			WWS = {
+				set_country_flag = imperial_ruler
+				country_event = {
+					id = incident_hohenstaufer_inheritance.3
+				}
+			}
+		}
+	}
+	option = {
+		name = incident_hohenstaufer_inheritance.2.c
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				GMU = {
+					ai = yes
+					government = monarchy
+					is_part_of_hre = yes
+					dynasty = "von Hohenstaufen"
+					is_emperor = no
+					is_subject = no
+				}
+			}
+			custom_tooltip = incident_hohenstaufer_inheritance.2.tt
+			tooltip = {
+				WWS = {
+					inherit = GMU
+				}
+			}
+		}
+		else = {
+			WWS = {
+				define_ruler = {
+					claim = 95
+					dynasty = "von Hohenstaufen"
+				}
+			}
+		}
+		reverse_add_opinion = {
+			who = WWS
+			modifier = opinion_hohenstaufer_relations
+		}
+		hidden_effect = {
+			WWS = {
+				set_country_flag = hohenstaufer_ruler
+				country_event = {
+					id = incident_hohenstaufer_inheritance.3
+				}
+			}
+		}
+	}
+}
+
+# response for swabia
+country_event = {
+	id = incident_hohenstaufer_inheritance.3
+	title = "incident_hohenstaufer_inheritance.3.t"
+	desc = {
+		trigger = {
+			has_country_flag = dynastic_ruler
+		}
+		desc = incident_hohenstaufer_inheritance.3.d
+	}
+	desc = {
+		trigger = {
+			has_country_flag = imperial_ruler
+		}
+		desc = incident_hohenstaufer_inheritance.3.d2
+	}
+	desc = {
+		trigger = {
+			has_country_flag = hohenstaufer_ruler
+		}
+		desc = incident_hohenstaufer_inheritance.3.d3
+	}
+	picture = {
+		trigger = {
+			OR = {
+				has_country_flag = dynastic_ruler
+				has_country_flag = hohenstaufer_ruler
+			}
+		}
+		picture = GOOD_WITH_MONARCH_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_country_flag = imperial_ruler
+		}
+		picture = BAD_WITH_MONARCH_eventPicture
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_hohenstaufer_inheritance.3.a
+		trigger = { has_country_flag = dynastic_ruler }
+		add_stability_or_adm_power = yes
+		add_legitimacy = 20
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opinion_legitimazed_ruler
+			}
+		}
+		clr_country_flag = dynastic_ruler
+	}
+	option = {
+		name = incident_hohenstaufer_inheritance.3.b
+		trigger = { has_country_flag = imperial_ruler }
+		if = {
+			limit = { has_heir = yes }
+			remove_heir = yes
+		}
+		define_ruler = {
+			claim = 95
+			dynasty = emperor
+			culture = emperor
+			religion = emperor
+		}
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opinion_claimed_our_duchy
+			}
+		}
+		clr_country_flag = imperial_ruler
+	}
+	option = {
+		name = incident_hohenstaufer_inheritance.3.c
+		trigger = { has_country_flag = hohenstaufer_ruler }
+		if = {
+			limit = { has_heir = yes }
+			remove_heir = yes
+		}
+		if = {
+			limit = {
+				GMU = {
+					ai = yes
+					government = monarchy
+					is_part_of_hre = yes
+					dynasty = "von Hohenstaufen"
+					is_emperor = no
+					is_subject = no
+				}
+			}
+			custom_tooltip = incident_hohenstaufer_inheritance.2.tt
+			hidden_effect = {
+				GMU = {
+					exile_ruler_as = staufer_ruler
+					exile_heir_as = staufer_heir
+				}
+				set_ruler = staufer_ruler
+				set_heir = staufer_heir
+			}
+			inherit = GMU
+			set_capital = 70
+		}
+		else = {
+			define_ruler = {
+				claim = 95
+				dynasty = "von Hohenstaufen"
+			}
+		}
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opinion_hohenstaufer_relations
+			}
+		}
+		clr_country_flag = hohenstaufer_ruler
+	}
+}

@@ -78,6 +78,7 @@ capital = 2668
 }
 1171.5.1 = { primary_culture = irish }
 1185.4.25 = {
+	override_country_name = ORMOND
 	government = monarchy
 	add_government_reform = feudalism_reform
 	primary_culture = hiberno_norman

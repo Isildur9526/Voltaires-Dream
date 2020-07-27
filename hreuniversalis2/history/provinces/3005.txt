@@ -16,7 +16,6 @@ add_core = SDZ
 	owner = SDZ
 	controller = SDZ
 	remove_core = POL
-	estate = estate_holy_orders
 }
 1300.1.1 = {
 	owner = POL

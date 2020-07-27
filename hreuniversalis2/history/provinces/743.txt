@@ -28,7 +28,6 @@ add_core = BDJ
 	controller = POR
 	add_core = POR
 	remove_core = STN
-	remove_core = MOR
 	religion = catholic
 	culture = portugese
 	capital = "Tomar"

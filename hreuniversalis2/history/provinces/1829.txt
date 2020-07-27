@@ -11,7 +11,6 @@ owner = HAB
 controller = HAB
 add_core = HAB
 fort_14th = yes
-estate = estate_church
 
 1804.1.1 = {
 	owner = EAH

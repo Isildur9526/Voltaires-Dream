@@ -23,7 +23,6 @@ add_core = ARM
 	owner = JVK
 	controller = JVK
 	add_core = JVK
-	remove_core = GEO
 	remove_core = DVN
 }
 1850.1.1 = {

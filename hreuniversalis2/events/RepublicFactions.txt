@@ -155,6 +155,12 @@ province_event = {
 			}
 		}
 		NOT = { has_province_modifier = strong_guild }
+		NOT = {
+			has_trade_modifier = {
+				who = root
+				key = allowed_imports
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -1000,10 +1006,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Res Publica"
-		OR = {
-			has_government_attribute = is_merchant_republic
-			has_reform = veche_republic
-		}
+		has_government_attribute = is_merchant_republic
 		faction_in_power = mr_aristocrats
 	}
 

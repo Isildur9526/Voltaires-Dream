@@ -37,6 +37,7 @@ country_event = {
 			}
 			NOT = { is_rival = KOL }					
 		}
+		NOT = { has_country_flag = KOL_secondogeniture_of_BAV }
 	}
 
 	

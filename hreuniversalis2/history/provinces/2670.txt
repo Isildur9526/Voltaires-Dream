@@ -70,7 +70,6 @@ fort_14th = yes
 	remove_core = CRD
 	religion = catholic
 	culture = mozarabic
-	estate = estate_nobles
 	capital = "Córdoba"
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }

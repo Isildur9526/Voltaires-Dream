@@ -10,7 +10,6 @@ base_manpower = 4
 capital = "Maastricht"
 is_city = yes
 add_core = LBG
-estate = estate_burghers
 fort_14th = yes
 
 1288.6.5 = {

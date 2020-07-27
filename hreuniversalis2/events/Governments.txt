@@ -52,7 +52,7 @@ country_event = {
 	
 	trigger = {
 		NOT = {
-			has_reform = revolutionary_republic_reform
+			is_revolutionary_republic_trigger = yes
 		}
 		has_country_modifier = cult_of_reason
 	}

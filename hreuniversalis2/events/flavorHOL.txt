@@ -202,6 +202,8 @@ country_event = {
 		is_emperor_of_china = no
 		NOT = { current_age = age_of_revolutions }
 		NOT = { current_age = age_of_ideology }
+		is_revolutionary = no
+		is_subject = no
 	}
 	
 	mean_time_to_happen = {
@@ -213,7 +215,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		if = {
 			limit = { NOT = { government = republic } }
-			change_government = republic
+			change_government_to_republic = yes
 		}
 		if = {
 			limit = {
@@ -227,27 +229,29 @@ country_event = {
 		name = "flavor_hol.EVTOPTB3502" #Confederacy on Republican Model
 		ai_chance = { factor = 0 }
 		trigger = { 
+			always = no
 			NOT = { government = republic } 
 			NOT = { has_dlc = "Dharma" }
+			NOT = { has_dlc = "Emperor" }
 		}
 		if = {
 			limit = { NOT = { government = republic } }
 			change_government = republic
 		}
-		set_legacy_government = administrative_republic
 	}
 	option = {
 		name = "flavor_hol.EVTOPTC3502" #Centralized Monarchy
 		ai_chance = { factor = 0 }
 		trigger = { 
+			always = no
 			NOT = { government = monarchy }
 			NOT = { has_dlc = "Dharma" }
+			NOT = { has_dlc = "Emperor" }
 		}
 		if = {
 			limit = { NOT = { government = monarchy } }
 			change_government = monarchy
 		}
-		set_legacy_government = administrative_monarchy
 	}
 	option = {
 		name = "flavor_hol.EVTOPTD3502" #Keep current government

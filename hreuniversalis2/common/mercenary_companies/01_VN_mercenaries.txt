@@ -1,0 +1,215 @@
+# Reconquista Knights
+merc_order_of_aviz = {
+	regiments_per_development = 0.02
+	home_province = 2253 #Aviz
+	cavalry_weight = 0.5
+	cavalry_cap = 6
+	artillery_weight = 0
+	sprites = { dlc042_por_sprite_pack por_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = reconquista_knights
+			has_global_flag = enable_reconquista_holy_orders_flag
+		}
+		2253 = {
+			owner = {
+				religion_group = christian
+			}
+		}
+		religion_group = christian
+		culture_group = iberian
+	}
+	modifier = {
+		cavalry_power = 0.15
+	}
+	cost_modifier = 0.5
+}
+
+merc_order_of_santiago = {
+	regiments_per_development = 0.02
+	home_province = 4397 #Taracon
+	cavalry_weight = 0.5
+	cavalry_cap = 6
+	artillery_weight = 0
+	sprites = { dlc098_gal_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = reconquista_knights
+			has_global_flag = enable_reconquista_holy_orders_flag
+		}
+		4397 = {
+			owner = {
+				religion_group = christian
+			}
+		}
+		religion_group = christian
+		culture_group = iberian
+	}
+	modifier = {
+		land_attrition = -0.1
+		movement_speed = 0.1
+	}
+	cost_modifier = 0.5
+}
+
+merc_order_of_calatrava = {
+	regiments_per_development = 0.02
+	home_province = 1206 #Calatrava
+	cavalry_weight = 0.5
+	cavalry_cap = 6
+	artillery_weight = 0
+	sprites = { dlc029_spa_sprite_pack cas_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = reconquista_knights
+			has_global_flag = enable_reconquista_holy_orders_flag
+		}
+		1206 = {
+			owner = {
+				religion_group = christian
+			}
+		}
+		religion_group = christian
+		OR = {
+			culture_group = iberian
+			culture = basque
+		}
+	}
+	modifier = {
+		discipline = 0.05
+	}
+	cost_modifier = 0.5
+}
+
+merc_order_of_montesa = {
+	regiments_per_development = 0.02
+	home_province = 4319 #Xativa
+	cavalry_weight = 0.5
+	cavalry_cap = 6
+	artillery_weight = 0
+	sprites = { dlc098_gal_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = reconquista_knights
+			has_global_flag = enable_reconquista_holy_orders_flag
+		}
+		4319 = {
+			owner = {
+				religion_group = christian
+			}
+		}
+		religion_group = christian
+		culture_group = iberian
+	}
+	modifier = {
+		land_morale = 0.05
+		recover_army_morale_speed = 0.05
+	}
+	cost_modifier = 0.5
+}
+
+merc_order_of_alcantara = {
+	regiments_per_development = 0.02
+	home_province = 4391 #Alacantara
+	cavalry_weight = 0.5
+	cavalry_cap = 6
+	artillery_weight = 0
+	sprites = { dlc098_nav_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = reconquista_knights
+			has_global_flag = enable_reconquista_holy_orders_flag
+		}
+		4391 = {
+			owner = {
+				religion_group = christian
+			}
+		}
+		religion_group = christian
+		culture_group = iberian
+	}
+	modifier = {
+		shock_damage = 0.1
+		shock_damage_received = -0.05
+	}
+	cost_modifier = 0.5
+}
+
+# Order of Assassins
+merc_order_of_assassins = {
+    regiments_per_development = 0.02
+    home_province = 3108 #Al-Qadmus
+	cost_modifier = 1.4
+	cavalry_weight = 0
+	artillery_weight = 0
+	sprites = { dlc079_per_sprite_pack per_base_sprite_pack muslimgfx_sprite_pack }
+    trigger = {
+		custom_trigger_tooltip = {
+			tooltip = hashashins
+			has_global_flag = hashashins_spawned_flag
+		}
+		OR = {
+			current_age = age_of_holy_wars
+			current_age = age_of_crisis
+		}
+	}
+	modifier = {
+		infantry_power = 0.15
+	}
+}
+
+merc_victual_brothers = {
+    regiments_per_development = 0.025
+	home_province = 2697 #Visby
+	sprites = { swe_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = scandinavia_superregion
+				superregion = baltic_superregion
+				superregion = poland_superregion
+			}
+		}
+		any_owned_province = { has_port = yes }
+		current_age = age_of_dynasticism
+	}
+	modifier = {
+		discipline = 0.05
+	}
+}
+
+merc_catalan_company = {
+    regiments_per_development = 0.02
+    artillery_weight = 0 # No artillery
+	home_province = 2828 #Athens
+	cost_modifier = 1.1
+	sprites = { dlc020_ara_sprite_pack dlc029_spa_sprite_pack dlc049_SPA_sprite_pack dlc053_spa_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		any_country = {
+			religion = catholic
+			capital_scope = {
+				OR = {
+					region = thrace_region
+					region = macedonia_region
+					region = furthergreece_region
+					region = greekislands_region
+					region = hellas_region
+				}
+			}
+		}
+		OR = {
+			tag = BYZ
+			tag = NKA
+			capital_scope = {
+				region = thrace_region
+				region = macedonia_region
+				region = furthergreece_region
+				region = greekislands_region
+				region = hellas_region
+			}
+		}
+	}
+	modifier = {
+        movement_speed = 0.15
+	}
+}

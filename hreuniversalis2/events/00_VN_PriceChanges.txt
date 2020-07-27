@@ -240,6 +240,7 @@ country_event = {
 	title = vn_prices.7.t
 	desc = vn_prices.7.d
 	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	goto = beer_province
 
 	fire_only_once = yes
 	major = yes
@@ -256,6 +257,15 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { trade_goods = beer }
+				save_event_target_as = beer_province
+			}
+		}
+	}
 	
 	option = {
 		name = vn_prices.7.a
@@ -265,8 +275,7 @@ country_event = {
 			value = 0.4
 			duration = -1
 		}
-		random_owned_province = {
-			limit = { trade_goods = beer }
+		event_target:beer_province = {
 			add_base_production = 2
 		}
 	}
@@ -278,6 +287,7 @@ country_event = {
 	title = vn_prices.8.t
 	desc = vn_prices.8.d
 	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	goto = potato_province
 
 	fire_only_once = yes
 	major = yes
@@ -295,9 +305,18 @@ country_event = {
 		months = 1
 	}
 	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { NOT = { religion = waldensian } }
+				save_event_target_as = potato_province
+			}
+		}
+	}
+	
 	option = {
 		name = vn_prices.8.a
-		random_owned_province = {
+		event_target:potato_province = {
 			change_religion = waldensian
 			add_base_tax = 2
 		}
@@ -393,6 +412,7 @@ country_event = {
 	title = vn_prices.11.t
 	desc = vn_prices.11.d
 	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+	goto = steel_province
 
 	fire_only_once = yes
 	major = yes
@@ -410,13 +430,21 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { trade_goods = steel }
+				save_event_target_as = steel_province
+			}
+		}
+	}
 	
 	option = {
 		name = vn_prices.11.a
 		add_years_of_income = 1
 		add_adm_power = 50
-		random_owned_province = {
-			limit = { trade_goods = steel }
+		event_target:steel_province = {
 			if = {
 				limit = { has_building = furnace }
 				add_base_production = 6
@@ -708,6 +736,7 @@ country_event = {
 	title = vn_prices.18.t
 	desc = vn_prices.18.d
 	picture = TRADEGOODS_eventPicture
+	goto = 2967
 
 	fire_only_once = yes
 	major = yes
@@ -745,6 +774,7 @@ country_event = {
 	title = vn_prices.19.t
 	desc = vn_prices.19.d
 	picture = TRADEGOODS_eventPicture
+	goto = carpet_province
 
 	fire_only_once = yes
 	major = yes
@@ -760,11 +790,30 @@ country_event = {
 			}
 			development = 20
 			NOT = { trade_goods = carpet }
+			NOT = { trade_goods = silver }
 		}
 	}
 	
 	mean_time_to_happen = {
 		months = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						superregion = lowlands_superregion
+						superregion = french_superregion
+						superregion = british_isles_superregion
+					}
+					development = 20
+					NOT = { trade_goods = carpet }
+					NOT = { trade_goods = silver }
+				}
+				save_event_target_as = carpet_province
+			}
+		}
 	}
 	
 	option = {
@@ -775,16 +824,7 @@ country_event = {
 			value = -0.35
 			duration = -1
 		}
-		random_owned_province = {
-			limit = {
-				OR = {
-					superregion = lowlands_superregion
-					superregion = french_superregion
-					superregion = british_isles_superregion
-				}
-				development = 20
-				NOT = { trade_goods = carpet }
-			}
+		event_target:carpet_province = {
 			change_trade_goods = carpet
 		}
 		add_years_of_income = 0.5
@@ -797,6 +837,7 @@ country_event = {
 	title = vn_prices.20.t
 	desc = vn_prices.20.d
 	picture = TRADEGOODS_eventPicture
+	goto = whiskey_province
 
 	fire_only_once = yes
 	major = yes
@@ -807,21 +848,31 @@ country_event = {
 		any_owned_province = {
 			superregion = irish_superregion
 			NOT = { trade_goods = spirits }
+			NOT = { trade_goods = silver }
 		}
 	}
 	
 	mean_time_to_happen = {
 		months = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					superregion = irish_superregion
+					NOT = { trade_goods = spirits }
+					NOT = { trade_goods = silver }
+				}
+				save_event_target_as = whiskey_province
+			}
+		}
+	}
 	
 	option = {
 		name = vn_prices.20.a
 		add_years_of_income = 0.5
-		random_owned_province = {
-			limit = {
-				superregion = irish_superregion
-				NOT = { trade_goods = spirits }
-			}
+		event_target:whiskey_province = {
 			change_trade_goods = spirits
 			add_base_production = 2
 		}
@@ -1057,6 +1108,7 @@ country_event = {
 	title = vn_prices.26.t
 	desc = vn_prices.26.d
 	picture = TRADE_GOODS_eventPicture
+	goto = soap_province
 
 	fire_only_once = yes
 	major = yes
@@ -1070,12 +1122,20 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { trade_goods = oil }
+				save_event_target_as = soap_province
+			}
+		}
+	}
 	
 	option = {
 		name = vn_prices.26.a
 		add_innovativeness_small_effect = yes
-		random_owned_province = {
-			limit = { trade_goods = oil }
+		event_target:soap_province = {
 			add_base_production = 2
 		}
 		change_price = {
@@ -1198,6 +1258,7 @@ country_event = {
 	title = vn_prices.29.t
 	desc = vn_prices.29.d
 	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	goto = tobacco_province
 
 	fire_only_once = yes
 	major = yes
@@ -1210,18 +1271,30 @@ country_event = {
 		}
 		any_owned_province = {
 			NOT = { trade_goods = tobacco }
+			NOT = { trade_goods = silver }
 		}
 	}
 	
 	mean_time_to_happen = {
 		months = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { trade_goods = tobacco }
+					NOT = { trade_goods = silver }
+				}
+				save_event_target_as = tobacco_province
+			}
+		}
+	}
 	
 	option = {
 		name = vn_prices.29.a
 		add_dip_power = 100
-		random_owned_province = {
-			limit = { NOT = { trade_goods = tobacco } }
+		event_target:tobacco_province = {
 			change_trade_goods = tobacco
 		}
 		change_price = {

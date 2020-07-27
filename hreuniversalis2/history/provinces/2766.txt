@@ -20,7 +20,6 @@ discovered_by = muslim
 	controller = FRA
 	add_core = FRA
 	remove_core = REE
-	estate = estate_church
 }
 1418.5.29 = { controller = BUR }
 1420.5.12 = {

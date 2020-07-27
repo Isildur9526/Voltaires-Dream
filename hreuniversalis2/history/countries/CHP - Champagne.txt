@@ -196,4 +196,3 @@ fixed_capital = 183
 	}
 }
 #1234.4.7 done
-1589.8.3 = { set_legacy_government = administrative_monarchy }

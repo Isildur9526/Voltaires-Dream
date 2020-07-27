@@ -11,7 +11,6 @@ owner = BGM
 controller = BGM
 add_core = BGM
 add_core = MLO
-estate = estate_church
 
 1092.1.1 = {
 	owner = XKK

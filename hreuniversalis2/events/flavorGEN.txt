@@ -392,8 +392,9 @@ country_event = {
 			dynasty = "Doria"
 			DIP = 5			
 			ADM = 5
-			MIL = 5
+			MIL = 6
 			attach_leader = "Andrea Doria"
+			fixed = yes
 		}		
 		if = {
 			limit = {

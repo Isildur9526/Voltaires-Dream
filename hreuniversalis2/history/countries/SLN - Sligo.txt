@@ -56,6 +56,7 @@ capital = 426
 
 #Sligo
 1232.1.1 = {
+	override_country_name = SLIGO
 	government = monarchy
 	add_government_reform = feudalism_reform
 	primary_culture = hiberno_norman
@@ -70,6 +71,7 @@ capital = 426
 	}
 }
 1257.5.20 = { #battle of Credran Cille
+	restore_country_name = yes
 	primary_culture = irish
 	government = tribal
 	add_government_reform = tribal_kingdom

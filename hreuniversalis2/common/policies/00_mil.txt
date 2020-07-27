@@ -105,7 +105,7 @@ logistics_administrative = {
 		full_idea_group = administrative_ideas
 	}
 	
-	max_states = 4
+	governing_capacity = 200
 	ai_will_do = {
 		factor = 1
 		modifier = {
@@ -370,7 +370,7 @@ the_mercenary_registration_act = {
 		full_idea_group = quantity_ideas
 	}
 
-	possible_mercenaries = 0.25
+	mercenary_manpower = 0.25
 	merc_maintenance_modifier = -0.15
 	
 	ai_will_do = {
@@ -614,7 +614,7 @@ modern_firearm_techniques = {
 		full_idea_group = quality_ideas
 	}
 	
-	infantry_power = 0.2
+	infantry_power = 0.1
 
 	ai_will_do = {
 		factor = 1.2		
@@ -777,7 +777,7 @@ underhanded_diplomacy_act = {
 		full_idea_group = offensive_ideas
 	}
 	
-	possible_mercenaries = 0.5
+	mercenary_manpower = 0.5
 	diplomatic_reputation = 1
 
 	ai_will_do = {
@@ -1179,7 +1179,7 @@ noble_loyalty_act = {
 		full_idea_group = spy_ideas
 	}
 
-	cavalry_power = 0.20
+	cavalry_power = 0.10
 	
 	ai_will_do = {
 		factor = 1
@@ -1358,7 +1358,7 @@ deserteur_act = {
 		full_idea_group = quality_ideas
 	}
 
-	army_tradition_decay = -0.01
+	army_tradition_decay = -0.005
 	
 	ai_will_do = {
 		factor = 0.75

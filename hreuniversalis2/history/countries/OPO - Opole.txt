@@ -195,7 +195,7 @@ capital = 2815
 		death_date = 1476.7.3
 		claim = 95
 		adm = 3
-		dip = 1
+		dip = 4
 		mil = 3
 	}
 }
@@ -205,7 +205,7 @@ capital = 2815
 		dynasty = "Piast"
 		birth_date = 1424.1.1
 		adm = 3
-		dip = 1
+		dip = 4
 		mil = 3
 	}
 }

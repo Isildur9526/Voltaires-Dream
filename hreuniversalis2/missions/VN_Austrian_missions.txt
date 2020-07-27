@@ -983,7 +983,10 @@ vn_hab_missions_slot_3 = {
         required_missions = { vn_hab_imperial_ambition }
         trigger = {
             is_emperor = yes
-			hre_reform_level = 6
+			OR = {
+                hre_reform_passed = emperor_chrysobull
+                hre_reform_passed = chrysobull
+            }
 		}
         effect = {
             add_country_modifier = {
@@ -1343,7 +1346,10 @@ vn_hab_missions_slot_4 = {
         required_missions = { }
 		trigger = {
             is_emperor = yes
-            hre_reform_level = 3
+            OR = {
+                hre_reform_passed = emperor_statutumprincipum
+                hre_reform_passed = statutumprincipum
+            }
 		}
         effect = {
             if = {
@@ -1465,7 +1471,10 @@ vn_hab_missions_slot_4 = {
         required_missions = { vn_hab_weather_religious_wars }
         trigger = {
             is_emperor = yes
-            hre_reform_level = 9
+            OR = {
+                hre_reform_passed = emperor_hofgericht
+                hre_reform_passed = hofgericht
+            }
 		}
         effect = {
             
@@ -1476,7 +1485,10 @@ vn_hab_missions_slot_4 = {
         required_missions = { vn_hab_further_reforms }
         trigger = {
             is_emperor = yes
-            hre_reform_level = 12
+            OR = {
+                hre_reform_passed = emperor_erbkaisertum
+                hre_reform_passed = erbkaisertum
+            }
 		}
         effect = {
             

@@ -673,19 +673,12 @@ country_event = {
 	trigger = {
 		normal_or_historical_nations = yes
 		NOT = { has_global_flag = guelph_ghib_enabled }
+		has_global_flag = italian_monarchy_allowed
 		is_emperor = yes
-		OR = {
-			current_age = age_of_holy_wars
-			hre_reform_level = 1
-		}
 	}
 	
 	mean_time_to_happen = {
 		months = 240
-		modifier = {
-			factor = 0.1
-			hre_reform_level = 1
-		}
 	}
 
 	option = {
@@ -813,6 +806,7 @@ country_event = {
 			remove_core = ROOT
 		}
 		add_prestige = 25
+		AVI = { change_religion = catholique }
 	}
 }
 
@@ -920,6 +914,7 @@ country_event = {
 		}
 		add_papal_influence = 20
 		add_prestige = 25
+		AVI = { change_religion = catholique }
 	}
 	option = {
 		name = "EVTOPTB1082"
@@ -3500,6 +3495,8 @@ country_event = {
 			NOT = { hre_size = 200 }
 		}
 	}
+
+	immediate = { hidden_effect = { set_global_flag = PAP_out_of_hre } }
 
 	option = {
 		name = "FBIA70"
@@ -7690,7 +7687,6 @@ country_event = {
 			}
 		}
 		event_target:folkmoot_province = {
-			set_estate = estate_nobles
 			add_local_autonomy = 50
 		}
 		add_stability = 1
@@ -7804,5 +7800,97 @@ country_event = {
 				modifier = opinion_displeased
 			}
 		}
+	}
+}
+
+#To Fix Names
+country_event = {
+	id = fbievents.139
+	title = "FBIT139"
+	desc = "FBID139"
+	picture = BATTLE_eventPicture
+	mean_time_to_happen = { days = 1 }
+	hidden = yes
+
+	trigger = {
+		NOT = { has_country_flag = name_cleared_flag }
+		OR = {
+			AND = {
+				tag = FTM
+				NOT = { started_in = 1171.9.13 }
+				normal_or_historical_nations = yes
+				NOT = { dynasty = "Banû Fâtimah" }
+			}
+			AND = {
+				tag = MAM
+				started_in = 1171.9.13
+				NOT = { started_in = 1250.5.2 }
+				normal_or_historical_nations = yes
+				NOT = { dynasty = "Banû Ayyûb" }
+			}
+			AND = {
+				has_country_flag = ayyubids_name_flag
+				NOT = { dynasty = "Banû Ayyûb" }
+			}
+			AND = {
+				tag = MAM
+				started_in = 1250.5.2
+				normal_or_historical_nations = yes
+				NOT = { has_reform = mamluk_government }
+			}
+			AND = {
+				has_country_flag = mamluks_name_flag
+				NOT = { has_reform = mamluk_government }
+			}
+			AND = {
+				tag = MOR
+				started_in = 1061.1.1
+				NOT = { started_in = 1147.1.1 }
+				normal_or_historical_nations = yes
+				NOT = { dynasty = "al-Murâbit" }
+			}
+			AND = {
+				has_country_flag = almoravids_name_flag
+				NOT = { dynasty = "al-Murâbit" }
+			}
+			AND = {
+				tag = MOR
+				started_in = 1147.1.1
+				NOT = { started_in = 1269.9.8 }
+				normal_or_historical_nations = yes
+				NOT = { dynasty = "al-Muwahhid" }
+			}
+			AND = {
+				tag = BGH
+				started_in = 1127.1.1
+				NOT = { started_in = 1258.2.10 }
+				normal_or_historical_nations = yes
+				NOT = { dynasty = "Banû ‘Abbâs" }
+			}
+			AND = {
+				has_country_flag = abbasids_name_flag
+				NOT = { dynasty = "Banû ‘Abbâs" }
+			}
+			AND = {
+				tag = KHI
+				NOT = { started_in = 1073.1.1 }
+				normal_or_historical_nations = yes
+				NOT = { dynasty = "Qara Khan" }
+			}
+			AND = {
+				tag = CRT
+				NOT = { is_subject_of = VEN }
+			}
+		}
+	}
+
+	option = {
+		name = "FBIA139"
+		restore_country_name = yes
+		clr_country_flag = ayyubids_name_flag
+		clr_country_flag = mamluks_name_flag
+		clr_country_flag = almoravids_name_flag
+		clr_country_flag = abbasids_name_flag
+		set_country_flag = name_cleared_flag
 	}
 }

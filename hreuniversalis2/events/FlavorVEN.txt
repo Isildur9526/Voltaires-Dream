@@ -648,7 +648,11 @@ country_event = {
 		modifier =  {
 			factor = 0.5
 			has_country_modifier = ven_venetian_first
-		}		
+		}
+		modifier = {
+			factor = 5
+			has_country_flag = has_competent_doctors
+		}
 	}	
 	option = {	
 		name = flavor_ven.20.a

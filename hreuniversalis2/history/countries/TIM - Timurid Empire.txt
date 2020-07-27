@@ -6,6 +6,14 @@ religion = sunni
 religious_school = hanafi_school
 technology_group = nomad_group
 capital = 3577
+change_estate_land_share = {
+	estate = estate_church
+	share = -12
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 12
+}
 
 1000.1.1 = {
 	add_country_modifier = {

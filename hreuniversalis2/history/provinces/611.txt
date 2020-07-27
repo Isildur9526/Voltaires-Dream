@@ -10,7 +10,6 @@ hre = no
 owner = BYZ
 controller = BYZ
 add_core = BYZ
-estate = estate_nomadic_tribes
 fort_14th = yes
 
 1202.1.1 = {

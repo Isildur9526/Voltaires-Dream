@@ -21,7 +21,6 @@ add_core = DNZ
 	religion = catholic
 	add_core = DNZ
 }
-1198.1.1 = { estate = estate_holy_orders }
 1294.12.29 = {
 	owner = KUJ
 	controller = KUJ

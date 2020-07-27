@@ -90,7 +90,6 @@ capital = 2987
 1483.1.1 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = administrative_republic
 	monarch = {
 		name = "Stadtrat"
 		regent = yes

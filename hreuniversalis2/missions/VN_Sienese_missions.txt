@@ -135,7 +135,11 @@ vn_sie_missions_slot_2_a = {
 				limit = { has_estate = estate_burghers }
 				estate_loyalty = {
 					estate = estate_burghers
-					loyalty = 70
+					loyalty = 60
+				}
+				num_of_estate_privileges = {
+					estate = estate_burghers
+					value = 2
 				}
 			}
         }

@@ -6,6 +6,18 @@ religion = sunni
 technology_group = muslim
 capital = 586	# Tunis
 religious_school = maliki_school
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -20
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 10
+}
 
 1057.1.1 = {
 	monarch = {

@@ -148,7 +148,7 @@ vn_pro_missions_slot_1 = {
         }
     }
     vn_pro_comte_de_Bourgogne = {
-        icon = mission_duchy
+        icon = conquer_burgundy
         position = 7
         required_missions = { vn_pro_up_the_rhone vn_pro_trade_of_lyon }
         provinces_to_highlight = {
@@ -198,7 +198,7 @@ vn_pro_missions_slot_2 = {
     has_country_shield = yes
 
     vn_pro_provenca = {
-        icon = mission_unite_home_region
+        icon = develop_provence
         position = 1
         required_missions = {  }
         provinces_to_highlight = {
@@ -294,7 +294,7 @@ vn_pro_missions_slot_2 = {
         }
     }
     vn_pro_lands_of_the_zahringen = {
-        icon = mission_european_church
+        icon = up_the_adige
         position = 7
         required_missions = { vn_pro_up_the_rhone }
         provinces_to_highlight = {
@@ -349,7 +349,7 @@ vn_pro_missions_slot_2 = {
         }
     }
     vn_pro_heir_to_lotharingia = {
-        icon = mission_unite_home_region
+        icon = integrate_lorraine
         position = 8
         required_missions = { vn_pro_regnum_arelatense }
         provinces_to_highlight = {
@@ -498,7 +498,7 @@ vn_pro_missions_slot_3 = {
         }
     }
     vn_pro_italian_expansion = {
-        icon = mission_war_chest
+        icon = italian_riches
         position = 7
         required_missions = { vn_pro_genoa vn_pro_up_the_rhone }
         provinces_to_highlight = {
@@ -538,7 +538,7 @@ vn_pro_missions_slot_4 = {
     has_country_shield = yes
 
     vn_pro_lenga_doc = {
-        icon = mission_noble_council
+        icon = the_gallic_wars
         position = 1
         required_missions = {  }
         trigger = {
@@ -584,7 +584,7 @@ vn_pro_missions_slot_4 = {
         }
     }
     vn_pro_toulon_shipyard = { 
-        icon = mission_naval_expansion
+        icon = toulon_dockyards
         position = 4
         required_missions = {  }
         trigger = {
@@ -630,7 +630,7 @@ vn_pro_missions_slot_4 = {
         }
     }
     vn_pro_the_islands = {
-        icon = mission_invade_island
+        icon = unite_with_sardinia
         position = 6
         required_missions = { vn_pro_provencal_navy }
         provinces_to_highlight = {
@@ -654,7 +654,7 @@ vn_pro_missions_slot_4 = {
         }
     }
     vn_pro_sicily = {
-        icon = mission_sea_battles
+        icon = king_of_sicily
         position = 7
         required_missions = { vn_pro_the_islands }
         provinces_to_highlight = {
@@ -685,7 +685,7 @@ vn_pro_missions_slot_4 = {
         }
     }
     vn_pro_naples = {
-        icon = mission_conquer_50_development
+        icon = union_with_naples
         position = 8
         required_missions = { vn_pro_sicily }
         provinces_to_highlight = {
@@ -723,7 +723,7 @@ vn_pro_missions_slot_4 = {
         }
     }
     vn_pro_greek_expansion = {
-        icon = mission_unite_home_region
+        icon = cross_the_pindus
         position = 9
         required_missions = { vn_pro_naples }
         provinces_to_highlight = {
@@ -842,7 +842,7 @@ vn_pro_missions_slot_5 = {
         }
     }
     vn_pro_angevin_domain = {
-        icon = mission_unite_home_region
+        icon = mission_english_alliance
         position = 3
         required_missions = { vn_pro_the_dAnjou_holdings vn_pro_contest_poitiers}
         provinces_to_highlight = {
@@ -897,7 +897,7 @@ vn_pro_missions_slot_5 = {
         }
     }
     vn_pro_revenge_on_the_saracens = {
-        icon = mission_crusade_for_varna
+        icon = crusader_fleet
         position = 6
         required_missions = { vn_pro_crusader_dukes vn_pro_provencal_navy }
         provinces_to_highlight = {
@@ -928,7 +928,7 @@ vn_pro_missions_slot_5 = {
         }
     }
     vn_pro_strike_their_core = {
-        icon = mission_unite_home_region
+        icon = mission_crusade_for_varna
         position = 8
         required_missions = { vn_pro_revenge_on_the_saracens }
         trigger = {

@@ -111,14 +111,8 @@ guiTypes = {
 	##### WINDOW FOR LAND UNITS #####
 	windowType = {
 		name = "window_for_land_units"
-		backGround=""
 		position = { x=0 y = 0}	
 		size = { x= 200 y = 40}
-		moveable = 0
-		dontRender = ""
-		horizontalBorder= ""
-		verticalBorder= ""
-		fullscreen = no
 		
 		checkboxType = {
 			name = "build_button"
@@ -130,7 +124,7 @@ guiTypes = {
 		{
 			name ="icon_type"
 			spriteType = "GFX_unit_types_strip"
-			position = { x= -33 y = 2 }
+			position = { x = -33 y = 2 }
 			Orientation = "UPPER_LEFT"
 			scale = 0.8
 		}
@@ -163,7 +157,27 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "amount"
-			position = { x = 45 y = 22 }
+			position = { x = 80 y = 22 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			text = ""
+			maxWidth = 164
+			maxHeight = 32
+			format = left
+			allwaystransparent = yes
+		}
+		
+		
+		iconType =
+		{
+			name ="icon_sailors"
+			spriteType = "GFX_icon_sailors"
+			position = { x= 120 y = 18 }
+		}
+		
+		instantTextBoxType = {
+			name = "sailors"		
+			position = { x = 150 y = 22 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = ""
@@ -561,7 +575,7 @@ guiTypes = {
 			name ="medical_icon"
 			spriteType = "GFX_macro_buildings_category_strip"
 			position = { x = 309 y = 245}
-			frame = 10
+			frame = 12
 		}
 
 		iconType = {
@@ -584,7 +598,7 @@ guiTypes = {
 			name ="education_icon"
 			spriteType = "GFX_macro_buildings_category_strip"
 			position = { x = 309 y = 403}
-			frame = 9
+			frame = 10
 		}
 
 		iconType = {
@@ -1095,7 +1109,7 @@ guiTypes = {
 		iconType = {
 			name = "misc_banner"
 			position = { x = 4 y = 240 }
-			spriteType = "GFX_banner_both_3"
+			spriteType = "GFX_banner_left_6"
 		}
 		
 		instantTextBoxType={
@@ -1311,6 +1325,60 @@ guiTypes = {
 			position = { x = 206 y = 361 }
 			spriteType = "GFX_building_upgrade_icon"
 		}
+
+		iconType = {
+			name = "naval_defense_banner"
+			position = { x = 273 y = 321 }
+			spriteType = "GFX_banner_right_1"
+		}
+		instantTextBoxType={
+			name = "title_naval_defense"
+			position = {x = 337 y = 330 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 160
+			maxHeight = 18
+			text = "COASTAL_DEF"
+		}
+		iconType ={
+			name ="naval_defense_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 310 y = 324}
+			frame = 9
+		}
+		checkboxType = {
+			name = "build_coastal_defence"
+			position = { x = 301 y = 352 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+		instantTextBoxType={
+			name = "coastal_defence_cost"
+			position = {x = 304 y = 383 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+		checkboxType = {
+			name = "build_naval_battery"
+			position = { x = 353 y = 352 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+		instantTextBoxType={
+			name = "naval_battery_cost"
+			position = {x = 356 y = 383 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+		iconType = {
+			name = "coastal_defence_to_naval_battery_arrow"
+			position = { x = 345 y = 362 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
 		
 		iconType = {
 			name = "manufactory_banner"
@@ -1352,21 +1420,82 @@ guiTypes = {
 		}
 		
 		checkboxType = {
-			name = "build_furnace"
-			position = { x = 214 y = 432 }
+			name = "build_ramparts"
+			position = { x = 214 y = 272 }
 			quadTextureSprite = "GFX_furnace"
 		}
-		
 		instantTextBoxType={
-			name = "furnace_cost"
-			position = {x = 217 y = 463 }
+			name = "ramparts_cost"
+			position = {x = 217 y = 303 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
+			borderSize = {x = 0 y = 0}
 			maxWidth = 128
 			maxHeight = 18
-			text = "2000¤"	
+			text = "2000¤"
+		}
+		checkboxType = {
+			name = "build_impressment_offices"
+			position = { x = 61 y = 432 }
+			quadTextureSprite = "GFX_furnace"
+		}
+		instantTextBoxType={
+			name = "impressment_offices_cost"
+			position = {x = 64 y = 463 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+		checkboxType = {
+			name = "build_state_house"
+			position = { x = 113 y = 432 }
+			quadTextureSprite = "GFX_furnace"
+		}
+		instantTextBoxType={
+			name = "state_house_cost"
+			position = {x = 116 y = 463 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+		checkboxType = {
+			name = "build_soldier_households"
+			position = { x = 165 y = 432 }
+			quadTextureSprite = "GFX_furnace"
+		}
+		instantTextBoxType={
+			name = "soldier_households_cost"
+			position = {x = 168 y = 463 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+		checkboxType = {
+			name = "build_furnace"
+			position = { x = 217 y = 432 }
+			quadTextureSprite = "GFX_furnace"
+		}
+		instantTextBoxType={
+			name = "furnace_cost"
+			position = {x = 220 y = 463 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
 		}
 		
+		iconType = {
+			name = "current_building"
+			#Moves around to be on top of current building
+			spriteType = "GFX_unitpanel_button_large_glow"
+			alwaystransparent = yes
+		}
 	}
 
 	# List entry for the window with a list of provinces that a specific building can be built in
@@ -1433,28 +1562,6 @@ guiTypes = {
 			format = right
 			fixedsize = yes
 			allwaystransparent = yes
-		}
-
-		#instantTextBoxType = {
-		#	name = "improvement_value_text"
-		#	position = { x = 342 y = 4 }
-		#	textureFile = ""
-		#	font = "vic_18"
-		#	text = "+0.00¤"
-		#	maxWidth = 50
-		#	maxHeight = 18
-		#	format = center
-		#	fixedsize = yes
-		#	allwaystransparent = yes
-		#}
-
-		iconType = {
-			name = "estate_icon"
-			spriteType = "GFX_estates_icons"
-			position = { x = 156 y = 1 }
-			scale = 0.55
-			Orientation = "UPPER_LEFT"
-			#allwaystransparent = yes
 		}
 
 		iconType = {
@@ -1711,26 +1818,23 @@ guiTypes = {
 	windowType = {
 		name = "build_content_entry"
 		backGround=""
-		position = { x=0 y = 0}	
-		size = { x=300 y = 0}
+		position = { x=0 y= 0}	
+		size = { x=380 y=100 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
 		verticalBorder= ""
 		fullscreen = no
 				
-		windowType = {
-			name = "window_to_fill"
-			backGround=""
-			position = { x=40 y = 0}	
-			size = { x=1 y = 1 }
-			moveable = 0
-			dontRender = ""
-			horizontalBorder= ""
-			verticalBorder= ""
-			fullscreen = no
-			
-		}
+		listboxType = {
+				name ="list_to_fill"
+				position = { x=40 y = 0 }
+				backGround=""
+				size = { x= 380 y = 600 }
+				horizontal = 0
+				spacing = 0
+				scrollbartype = "standardlistbox_slider"
+			}
 	}
 		
 	

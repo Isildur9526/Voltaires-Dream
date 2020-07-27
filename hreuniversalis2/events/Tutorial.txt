@@ -67,7 +67,7 @@ country_event = {
 	option = {
 		name = "tutorial.6.a"
 		2495 = {
-			add_claim = ENG
+			add_core = ENG
 		}
 		add_casus_belli = {	
 				target = LEI

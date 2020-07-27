@@ -10,7 +10,6 @@ hre = no
 owner = FTM
 controller = FTM
 add_core = FTM
-estate = estate_nobles
 
 1071.8.26 = {
 	owner = DSC

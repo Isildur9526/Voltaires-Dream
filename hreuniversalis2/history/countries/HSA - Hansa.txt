@@ -29,5 +29,4 @@ historical_friend = RGS
 1803.2.25 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = administrative_republic
 }

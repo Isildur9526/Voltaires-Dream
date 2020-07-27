@@ -1,0 +1,92 @@
+incident_wendish_crusade = {
+	event = incident_wendish_crusade.2
+	default_option = 0
+	
+	can_stop = {
+		NOT = {
+			any_country = {
+				OR = {
+					primary_culture = polabian
+					primary_culture = kashubian
+				}
+				is_part_of_hre = no
+				is_subject = no
+			}
+		}
+	}
+	
+	0 = { # start crusade
+		factor = 1
+		modifier = {
+			factor = 1000
+			any_rival_country = {
+				OR = {
+					primary_culture = polabian
+					primary_culture = kashubian
+				}
+				is_part_of_hre = no
+			}
+		}
+		modifier = {
+			factor = 250
+			any_neighbor_country = {
+				OR = {
+					primary_culture = polabian
+					primary_culture = kashubian
+				}
+				is_part_of_hre = no
+			}
+		}
+		modifier = {
+			factor = 1000
+			primary_culture = central_margravian
+		}
+		modifier = {
+			factor = 100
+			primary_culture = saxon
+		}
+		modifier = {
+			factor = 100
+			primary_culture = low_elbish
+		}
+		modifier = {
+			factor = 250
+			has_idea_group = religious_ideas
+		}
+	}
+
+	1 = { # peaceful measures
+		factor = 1
+		modifier = {
+			factor = 1000
+			any_ally = {
+				OR = {
+					primary_culture = polabian
+					primary_culture = kashubian
+				}
+				is_part_of_hre = no
+			}
+		}
+		modifier = {
+			factor = 250
+			has_idea_group = religious_ideas
+		}
+	}
+	
+	2 = { # do nothing
+		factor = 1
+		modifier = {
+			factor = 1000
+			culture_group = west_slavic
+		}
+		modifier = {
+			factor = 1000
+			NOT = { religion = catholic }
+			NOT = { religion = catholique }
+		}
+		modifier = {
+			factor = 250
+			has_idea_group = humanist_ideas
+		}
+	}
+}

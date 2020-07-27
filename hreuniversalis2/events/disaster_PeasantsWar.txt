@@ -181,6 +181,8 @@ country_event = {
 
 	trigger = {
 		NOT = { has_country_flag = obsolete_forces }
+		mil_tech = 39
+		NOT = { mil_tech = 53 }
 	}
 
 	mean_time_to_happen = {
@@ -233,6 +235,7 @@ country_event = {
 
 	trigger = {
 		NOT = { has_country_modifier = isolate_rebels }
+		num_of_rebel_controlled_provinces = 1
 	}
 
 	mean_time_to_happen = {

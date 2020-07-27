@@ -300,7 +300,6 @@ capital = 640 # Firenze
 1859.11.7 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "Carlo"
 		dynasty = "Boncompagni"

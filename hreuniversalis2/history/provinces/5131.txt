@@ -1,7 +1,7 @@
 capital = "Loket"
 culture = czech
 religion = catholic
-trade_goods = tin
+trade_goods = glass
 base_tax = 2
 base_production = 1
 base_manpower = 1

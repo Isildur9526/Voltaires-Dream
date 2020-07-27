@@ -10,7 +10,6 @@ hre = no
 owner = NNT
 controller = NNT
 add_core = NNT
-estate = estate_nobles
 
 1063.2.27 = {
 	owner = KNV

@@ -21,8 +21,7 @@ add_core = BGH
 1127.1.1 = {
 	owner = BGH
 	controller = BGH
-	add_core = BGH
-	remove_core = MTQ
+	remove_core = SJK
 }
 1258.2.10 = {
 	owner = ILK

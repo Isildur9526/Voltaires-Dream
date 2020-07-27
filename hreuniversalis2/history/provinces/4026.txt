@@ -38,7 +38,6 @@ discovered_by = muslim
 	add_core = ARA
 	remove_core = ARR
 	remove_core = XMA
-	estate = estate_church
 	culture = aragonese
 	religion = catholic
 	capital = "Teruel"

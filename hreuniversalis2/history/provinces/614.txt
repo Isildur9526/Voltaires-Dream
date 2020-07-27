@@ -35,7 +35,6 @@ add_core = BYZ
 	add_core = MOE
 	remove_core = ACH
 }
-1397.1.1 = { estate = estate_church }
 1415.1.1 = { fort_15th = yes }
 1453.5.29 = { add_core = TUR }
 1458.1.1 = {

@@ -5,6 +5,7 @@ primary_culture = croatian
 religion = catholic
 technology_group = western
 capital = 133
+add_accepted_culture = dalmatian
 
 1030.1.1 = {
 	monarch = {

@@ -6,10 +6,12 @@ country_event = {
     title = monsoon_events.1.t
     desc = monsoon_events.1.d
     picture = 19_Monsoon_eventPicture
+	goto = severe_monsoon_province
 	
     trigger = {
 		any_owned_province = {
 			has_monsoon = severe_monsoon
+			development = 15
 		}
 		NOT = {
 			any_owned_province = {
@@ -40,7 +42,7 @@ country_event = {
     }
 	
 	mean_time_to_happen = {
-		months = 90
+		months = 180
 	}
 
     option = { # Relief effort    
@@ -52,15 +54,7 @@ country_event = {
 				NOT = { years_of_income = 0.5 }
 			}
         }
-		add_years_of_income = -0.15
-		event_target:severe_monsoon_province = {
-			area = {
-				limit = {
-					owned_by = ROOT
-				}
-				add_devastation = 5
-			}
-		}
+		add_years_of_income = -0.1
     }
     option = { # What a tragedy
         name = monsoon_events.1.b
@@ -72,7 +66,7 @@ country_event = {
 				limit = {
 					owned_by = ROOT
 				}
-				add_devastation = 10
+				add_devastation = 5
 			}
 		}
     }
@@ -84,6 +78,7 @@ country_event = {
     title = monsoon_events.2.t
     desc = monsoon_events.2.d
     picture = 20_Monsoon_eventPicture
+	goto = monsoon_failure_province
 	
     trigger = {
 		any_owned_province = {
@@ -126,7 +121,7 @@ country_event = {
     }
 	
 	mean_time_to_happen = {
-		months = 90
+		months = 180
 	}
 
     option = {
@@ -151,6 +146,7 @@ country_event = {
     title = monsoon_events.3.t
     desc = monsoon_events.3.d
     picture = 19_Monsoon_eventPicture
+	goto = good_monsoon_province
    
     trigger = {
 		any_owned_province = {
@@ -212,6 +208,83 @@ country_event = {
     }
 }
 
+# Famine caused by Trade Company policy
+country_event = {
+    id = monsoon_events.4
+    title = monsoon_events.4.t
+    desc = monsoon_events.4.d
+	picture = 20_Monsoon_eventPicture
+	goto = company_drought_province
+    
+    trigger = {
+		any_owned_province = {
+			is_owned_by_trade_company = yes
+			OR = {
+				has_monsoon = severe_monsoon
+				has_monsoon = normal_monsoon
+				has_monsoon = mild_monsoon
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = failed_monsoon
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = good_monsoon_modifier
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = company_drought
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = plum_rains
+			}
+		}
+    }
+    immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_owned_by_trade_company = yes
+					OR = {
+						has_monsoon = severe_monsoon
+						has_monsoon = normal_monsoon
+						has_monsoon = mild_monsoon
+					}
+				}
+				save_event_target_as = company_drought_province
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+	}
+    option = {      
+        name = monsoon_events.4.a
+        ai_chance = {
+            factor = 25
+        }
+		event_target:company_drought_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+					is_owned_by_trade_company = yes
+				}
+				add_devastation = 10
+				add_province_modifier = {
+					name = company_drought
+					duration = 1825
+				}
+			}
+		}
+    }
+}
 
 # Plum Rains
 country_event = {
@@ -219,6 +292,7 @@ country_event = {
     title = monsoon_events.5.t
     desc = monsoon_events.5.d
     picture = 19_Monsoon_eventPicture
+	goto = plum_rains_province
     
     trigger = {
 		any_owned_province = {

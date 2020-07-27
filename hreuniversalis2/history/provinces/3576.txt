@@ -40,7 +40,6 @@ add_core = GNJ
 	controller = ILK
 	add_core = ILK
 	add_core = GNJ
-	remove_core = SRV
 	remove_core = GGI
 	religion = sunni
 	culture = azari

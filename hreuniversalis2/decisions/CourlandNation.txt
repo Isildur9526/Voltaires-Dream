@@ -58,8 +58,7 @@ country_decisions = {
 				limit = {
 					government = theocracy
 				}
-				change_government = monarchy
-				add_government_reform = feudalism_reform
+				change_government_to_monarchy = yes
 				every_neighbor_country = {
 					limit = { government = monarchy }
 					add_opinion = { who = ROOT modifier = secularized_monastic_order }

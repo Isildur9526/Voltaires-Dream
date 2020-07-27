@@ -669,7 +669,7 @@ the_recruiting_act = {
 	}
 	
 	global_sailors_modifier = 0.25
-	naval_maintenance_modifier = -0.1
+	allowed_marine_fraction = 0.05
 	
 	ai_will_do = {
 		factor = 0.6

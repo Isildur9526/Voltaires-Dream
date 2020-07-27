@@ -77,7 +77,7 @@ country_event = {
 			estate = estate_nobles
 			desc = "vn_missions.202.ab"
 			influence = 10
-			duration = 7300
+			duration = 9125
 		}	
 	}
 }
@@ -158,4 +158,254 @@ country_event = {
         add_imperial_influence = 50
         elector = yes
     }
+}
+
+###Other Events
+#IDs 300 and over
+#XPavia 0, XSicily 1, XBarcelona 2, XProvence 3, Bohemia 4, Swabia 5, Flanders 6
+#Unique Political Situation (Bohemia)
+country_event = {
+	id = vn_missions.304
+	title = vn_missions.304.t
+	desc = vn_missions.304.d
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = BOH
+		army_size_percentage = 1
+		navy_size_percentage = 1
+		num_of_generals = 1
+		stability = 1
+		has_3_advisors_trigger = yes
+		OR = {
+			has_idea_group = logistics_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = defensive_ideas
+			has_idea_group = quality_ideas
+			has_idea_group = quantity_ideas
+			has_idea_group = naval_ideas
+			has_idea_group = aristocracy_ideas
+			has_idea_group = plutocracy_ideas
+		}	
+		NOT = {
+			has_country_flag = had_hp_event
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = had_hp_event
+	} 
+	
+	option = {
+		name = vn_missions.304.a
+		ai_chance = { factor = 100 }
+		add_prestige = 10
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		if = {
+			limit = {
+				OR = {
+					has_idea_group = aristocracy_ideas
+					has_idea_group = plutocracy_ideas
+				}
+				war_score = 50
+			}
+			create_general = { tradition = 100 }
+			add_army_tradition = 10
+			add_adm_power = 75
+			add_dip_power = 75
+			add_mil_power = 75
+			hidden_effect = { #Possibly add opinion modifier with emperor or pope
+				add_years_of_income = 1  
+				add_country_modifier = {
+					name = "boh_aspire_for_local_control_event"
+					duration = -1
+				}
+				add_country_modifier = {
+					name = "boh_muster_our_strength_event"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.300.b
+		ai_chance = { factor = 0 }
+		add_prestige = 10	
+		add_country_modifier = {
+			name = "pva_rise_event"
+			duration = 9125
+		}		
+	}
+}
+
+#Reunite Swabia (Swabia)
+country_event = {
+	id = vn_missions.305
+	title = vn_missions.305.t
+	desc = vn_missions.305.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = WWS
+		army_size_percentage = 1
+		navy_size_percentage = 1
+		num_of_generals = 1
+		stability = 1
+		has_3_advisors_trigger = yes
+		OR = {
+			has_idea_group = logistics_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = defensive_ideas
+			has_idea_group = quality_ideas
+			has_idea_group = quantity_ideas
+			has_idea_group = naval_ideas
+			has_idea_group = aristocracy_ideas
+			has_idea_group = plutocracy_ideas
+		}	
+		NOT = {
+			has_country_flag = had_hp_event
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = had_hp_event
+	} 
+	
+	option = {
+		name = vn_missions.305.a
+		ai_chance = { factor = 100 }
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		if = {
+			limit = {
+				OR = {
+					has_idea_group = aristocracy_ideas
+					has_idea_group = plutocracy_ideas
+				}
+				war_score = 50
+			}
+			create_general = { tradition = 100 }
+			add_army_tradition = 10
+			add_adm_power = 75
+			add_dip_power = 75
+			add_mil_power = 75
+			hidden_effect = {
+				add_years_of_income = 1  
+				add_country_modifier = {
+					name = "wws_show_our_strength_event"
+					duration = -1
+				}
+				add_country_modifier = {
+					name = "wws_reunite_swabia_event"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.300.b
+		ai_chance = { factor = 0 }
+		add_prestige = 10
+		add_country_modifier = {
+			name = "pva_rise_event"
+			duration = 9125
+		}
+	}
+}
+
+#Fight For Sovereignty (Flanders)
+country_event = {
+	id = vn_missions.306
+	title = vn_missions.306.t
+	desc = vn_missions.306.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = FLA
+		army_size_percentage = 1
+		navy_size_percentage = 1
+		num_of_generals = 1
+		stability = 1
+		has_3_advisors_trigger = yes
+		OR = {
+			has_idea_group = logistics_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = defensive_ideas
+			has_idea_group = quality_ideas
+			has_idea_group = quantity_ideas
+			has_idea_group = naval_ideas
+			has_idea_group = aristocracy_ideas
+			has_idea_group = plutocracy_ideas
+		}	
+		NOT = {
+			has_country_flag = had_hp_event
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = had_hp_event
+	} 
+	
+	option = {
+		name = vn_missions.306.a
+		ai_chance = { factor = 100 }
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		if = {
+			limit = {
+				OR = {
+					has_idea_group = aristocracy_ideas
+					has_idea_group = plutocracy_ideas
+				}
+				war_score = 50
+			}
+			create_general = { tradition = 100 }
+			add_army_tradition = 10
+			add_adm_power = 75
+			add_dip_power = 75
+			add_mil_power = 75
+			hidden_effect = {
+				add_years_of_income = 1  
+				add_country_modifier = {
+					name = "fla_the_wake_of_great_powers_event"
+					duration = -1
+				}
+				add_country_modifier = {
+					name = "fla_fight_event"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.300.b
+		ai_chance = { factor = 0 }
+		add_prestige = 10		
+		add_country_modifier = {
+			name = "pva_rise_event"
+			duration = 9125
+		}
+	}
 }

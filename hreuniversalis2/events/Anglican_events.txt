@@ -236,9 +236,10 @@ country_event = {
 		has_dlc = "Rule Britannia"
 		religion = anglican
 		any_owned_province = {
+			is_capital = no
 			OR = {
+				religion = reformed
 				religion = protestant
-				religion = anglican
 				religion = catholic
 			}
 		}
@@ -259,7 +260,7 @@ country_event = {
 					OR = {
 						religion = protestant
 						religion = catholic
-						religion = anglican
+						religion = reformed
 					}
 				}
 				save_event_target_as = prayer_book_province
@@ -281,7 +282,7 @@ country_event = {
 					OR = {
 						religion = protestant
 						religion = catholic
-						religion = anglican
+						religion = reformed
 					}
 				}
 				add_province_modifier = {
@@ -620,7 +621,7 @@ country_event = {
 		NOT = {
 			has_estate_influence_modifier = {
 				estate = estate_church
-				modifier = VESTMENTS_BANNED
+				modifier = EST_VAL_VESTMENTS_BANNED
 			}
 			has_country_modifier = fancy_vestments
 		}
@@ -820,6 +821,7 @@ country_event = {
 	picture = ANGLICAN_SERMON_eventPicture
 	
 	major = yes
+	fire_only_once = yes
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
@@ -844,6 +846,8 @@ country_event = {
 			}
 		}
 		num_of_cities = 10
+		NOT = { tag = PAP }
+		NOT = { tag = AVI }
 	}
 	mean_time_to_happen = {
 		months = 120
@@ -888,6 +892,10 @@ country_event = {
 				factor = 0.01
 				NOT = { tag = ENG }
 				NOT = { tag = GBR }
+			}
+			modifier = {
+				factor = 10000
+				PAP = { is_part_of_hre = yes }
 			}
 		}
 		enable_religion = anglican

@@ -10,7 +10,6 @@ hre = no
 owner = PLL
 controller = PLL
 add_core = PLL
-estate = estate_nobles
 
 1239.3.3 = {
 	owner = GLH

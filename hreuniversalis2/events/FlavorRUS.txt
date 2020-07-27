@@ -1639,6 +1639,7 @@ country_event = {
 			NOT = { is_rival = ROOT }
 			NOT = { is_enemy = ROOT }
 		}
+		is_subject = no
 	}
 	
 	mean_time_to_happen = {

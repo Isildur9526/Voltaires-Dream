@@ -54,7 +54,7 @@ center_of_trade = 2
 	owner = CAS
 	controller = CAS
 	add_core = CAS
-	remove_core = TUN
+	remove_core = TRP
 }
 1516.1.23 = {
 	owner = SPA	

@@ -35,7 +35,6 @@ discovered_by = muslim
 1308.11.13 = {
 	owner = TEU
 	controller = TEU
-	estate = estate_burghers
 	remove_core = POL
 }
 1309.9.13 = {

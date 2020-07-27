@@ -10,7 +10,6 @@ hre = yes
 owner = SDT
 controller = SDT
 add_core = SDT
-estate = estate_nobles
 
 1095.2.4 = {
 	owner = ALS

@@ -161,6 +161,13 @@ tengri_pagan_reformed_rebels = {
 				}
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -184,6 +191,13 @@ tengri_pagan_reformed_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -252,6 +266,11 @@ tengri_pagan_reformed_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }

@@ -10,7 +10,6 @@ hre = yes
 owner = HOL
 controller = HOL
 add_core = HOL
-estate = estate_church
 
 1549.11.4 = { 
 	owner = NED 

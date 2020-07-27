@@ -11,7 +11,6 @@ capital = "Lekno"
 is_city = yes	
 add_core = POL
 add_core = KSZ
-estate = estate_church
 
 1138.10.28 = {
 	owner = KRA
@@ -26,11 +25,6 @@ estate = estate_church
 	remove_core = KRA
 }
 1234.1.1 = {
-	owner = KSZ
-	controller = KSZ
-	remove_core = WKP
-}
-1249.1.1 = {
 	owner = KSZ
 	controller = KSZ
 	remove_core = WKP

@@ -11,7 +11,6 @@ owner = PLT
 controller = PLT
 add_core = PLT
 add_core = MSK
-estate = estate_nobles
 
 1101.1.1 = {
 	owner = MSK

@@ -10,7 +10,6 @@ hre = yes
 owner = PAP
 controller = PAP
 add_core = PAP
-estate = estate_nobles
 
 1177.7.24 = { hre = no }
 1798.2.15 = {

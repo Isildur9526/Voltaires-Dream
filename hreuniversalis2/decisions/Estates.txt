@@ -170,31 +170,33 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
-	curtail_estate_dhimmi = {
-		major = yes
-		potential = {
-			has_country_flag = dhimmi_estate_in_power
-		}
-		allow = {
-			stability = 1
-			NOT = { num_of_rebel_armies = 1 }
-			NOT = { num_of_rebel_controlled_provinces = 1 }			
-			NOT = {
-				estate_influence = {
-					estate = estate_dhimmi
-					influence = 60
-				}				
-			}
-		}
-		effect = {
-			add_stability = -3
-			add_piety = 0.5
-			clr_country_flag = dhimmi_estate_in_power
-		}
-		ai_will_do = {
-			factor = 1
-		}
+	curtail_estate_jains = {	
+		major = yes	
+		potential = {	
+			has_country_flag = jains_estate_in_power	
+		}	
+		allow = {	
+			stability = 1	
+			NOT = { num_of_rebel_armies = 1 }	
+			NOT = { num_of_rebel_controlled_provinces = 1 }				
+			NOT = {	
+				estate_influence = {	
+					estate = estate_jains	
+					influence = 60	
+				}					
+			}	
+		}	
+		effect = {	
+			add_stability = -3	
+			capital_scope = {	
+				add_base_tax = -1	
+				add_base_production = -1	
+			}	
+			clr_country_flag = jains_estate_in_power	
+		}	
+		ai_will_do = {	
+			factor = 1	
+		}	
 	}
 	cossack_nation = {
 		major = yes

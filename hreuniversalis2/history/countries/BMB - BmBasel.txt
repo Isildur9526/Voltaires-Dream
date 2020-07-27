@@ -496,7 +496,6 @@ fixed_capital = 1759
 1792.12.17 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "République Rauracienne"
 		regent = yes

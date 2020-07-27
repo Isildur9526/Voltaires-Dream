@@ -446,6 +446,26 @@ country_event = {
 
 	option = {
 		name = "tyw_events.9.a"
+		if = {
+			limit = {
+				NOT = { has_country_modifier = swedish_mercenary_core }
+				OR = {
+					current_age = age_of_discovery
+					current_age = age_of_reformation
+				}
+			}
+			custom_tooltip = tyw_events.9.tt1
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = swedish_mercenary_core }
+				OR = {
+					current_age = age_of_absolutism
+					current_age = age_of_revolutions
+				}
+			}
+			custom_tooltip = tyw_events.9.tt2
+		}
 		add_country_modifier = {
 			name = "scottish_mercenaries"
 			duration = 10950
@@ -2250,6 +2270,8 @@ country_event = {
 		any_known_country = {
 			is_league_leader = yes
 		}
+		NOT = { has_country_modifier = in_league_for_faith }
+		NOT = { has_country_modifier = in_league_for_land }
 	}
 
 	mean_time_to_happen = {

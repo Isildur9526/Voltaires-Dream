@@ -88,7 +88,6 @@ capital = 1805
 	}
 }
 1560.1.1 = {
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Giovanni III"
 		dynasty = "di Carpegna"

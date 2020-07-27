@@ -1,5 +1,6 @@
 age_of_empire = {
 	start = 1000
+	papacy = 1.00
 	
 	can_start = {
 		always = yes
@@ -165,6 +166,7 @@ age_of_empire = {
 
 age_of_holy_wars = {
 	start = 1100
+	papacy = 1.15
 	
 	can_start = {
 		any_country = { mil_tech = 4 }
@@ -352,6 +354,7 @@ age_of_holy_wars = {
 
 age_of_crisis = {
 	start = 1200
+	papacy = 1.30
 	
 	can_start = {
 		any_country = { mil_tech = 14 }
@@ -501,6 +504,7 @@ age_of_crisis = {
 
 age_of_dynasticism = {
 	start = 1300
+	papacy = 1.45
 
 	can_start = {
 		is_institution_enabled = chivalry
@@ -695,6 +699,7 @@ age_of_dynasticism = {
 
 age_of_discovery = {
 	start = 1400
+	papacy = 1.60
 	
 	can_start = {
 		is_institution_enabled = laytheology
@@ -884,6 +889,7 @@ age_of_discovery = {
 
 age_of_reformation = {
 	start = 1500
+	papacy = 1.75
 	
 	can_start = {
 		OR = {
@@ -1082,6 +1088,7 @@ age_of_reformation = {
 
 age_of_absolutism = {
 	start = 1600
+	papacy = 1.90
 	
 	can_start = {
 		is_institution_enabled = global_trade
@@ -1248,6 +1255,7 @@ age_of_absolutism = {
 
 age_of_revolutions = {
 	start = 1700
+	papacy = 2.05
 	
 	can_start = {
 		is_institution_enabled = enlightenment
@@ -1415,7 +1423,7 @@ age_of_revolutions = {
 				tag = RUS
 			}
 			modifier = {
-				max_states = 20
+				governing_capacity_modifier = 0.33
 			}
 			ai_will_do = {
 				factor = 100
@@ -1437,6 +1445,7 @@ age_of_revolutions = {
 
 age_of_ideology = {
 	start = 1800
+	papacy = 2.20
 
 	can_start = {
 		OR = {

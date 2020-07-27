@@ -26,7 +26,6 @@ add_core = LTT
 	controller = LIT
 	add_core = LIT
 	remove_core = LIV
-	estate = estate_nobles
 	capital = "Daugavpils"
 }
 1569.7.1 = {

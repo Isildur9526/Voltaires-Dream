@@ -22,7 +22,6 @@ add_core = XTO
 	controller = VLW
 	add_core = VLW
 	remove_core = REE
-	estate = estate_church
 }
 1328.4.2 = {
 	owner = FRA

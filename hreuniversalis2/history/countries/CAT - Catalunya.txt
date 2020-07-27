@@ -9,7 +9,6 @@ capital = 1955	# Barcelona
 1711.4.18 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 }
 1809.12.10 = {
 	monarch = {

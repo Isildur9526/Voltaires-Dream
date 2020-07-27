@@ -177,6 +177,9 @@ province_event = {
 					estate = estate_church
 					loyalty = -10
 				}
+				scaled_estate_land_share_reduce_effect = {
+					estate = estate_church
+				}
 			}
 		}
 		owner = { add_karma = -10 }
@@ -546,7 +549,6 @@ province_event = {
 		local_autonomy = 50
 		is_colony = no
 		is_state = yes
-		has_estate = no
 		owner = {
 			religion = buddhism
 			has_regency = no
@@ -602,6 +604,9 @@ country_event = {
 		religion = buddhism
 		has_regency = no
 		is_monarch_leader = yes
+		any_army = {
+			is_ruler_commanding_unit = yes
+		}
 		NOT = { has_ruler_flag = pariccaga_flag }
 		any_known_country = {
 			offensive_war_with = ROOT
@@ -815,7 +820,6 @@ province_event = {
 		religion = buddhism
 		is_capital = no
 		is_state = yes
-		has_estate = no
 		NOT = {
 			has_province_modifier = powerful_hostile_monastery
 		}
@@ -874,6 +878,7 @@ province_event = {
 					estate = estate_church
 					loyalty = -10
 				}
+				take_estate_land_share_small = { estate = estate_church }
 			}
 		}
 		add_local_autonomy = -50
@@ -903,6 +908,7 @@ province_event = {
 					estate = estate_church
 					loyalty = 10
 				}
+				give_estate_land_share_small = { estate = estate_church }
 			}
 		}
 		add_local_autonomy = 25
@@ -1221,6 +1227,7 @@ province_event = {
 	title = buddhism_events.30.t
 	desc = buddhism_events.30.d
 	picture = BUDDHISM_LAMA_eventPicture
+	goto = root
 	
 	trigger = {
 		has_dlc = "Common Sense"
@@ -1423,6 +1430,7 @@ country_event = {
 		name = buddhism_events.36.a #Aid the Search
 		add_adm_power = -50
 		add_karma = 10
+		set_country_flag = helped_search
 	}
 	option = {
 		name = buddhism_events.36.b #Let them sort it out themselves

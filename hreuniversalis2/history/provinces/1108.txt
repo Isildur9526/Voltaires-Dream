@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Nájera"
 is_city = yes
 add_core = NAV
-estate = estate_nobles
 fort_14th = yes
 
 1076.6.4 = {

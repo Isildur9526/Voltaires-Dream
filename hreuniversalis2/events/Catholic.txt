@@ -6,79 +6,6 @@
 
 namespace = catholic_flavor
 
-# The Council of PROVINCECAPITAL
-province_event = {
-	id = catholic_flavor.1
-	title = catholic_flavor.1.t
-	desc = catholic_flavor.1.d
-	picture = POPE_PREACHING_eventPicture
-	
-	major = yes
-	
-	trigger = {
-		NOT = { has_global_flag = counter_reformation }
-		OR = {
-			religion = catholic
-			religion = catholique
-		}
-		continent = europe
-		is_overseas = no
-		is_colony = no
-		owner = {
-			OR = {
-				religion = catholic
-				religion = catholique
-			}
-			is_colonial_nation = no
-			capital_scope = {
-				continent = europe
-			}
-		}
-		is_religion_enabled = protestant
-		OR = {
-			AND = {
-				is_religion_enabled = reformed
-				religion_years = { reformed = 14 }
-			}
-			religion_years = { protestant = 30 }
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 36
-		
-		modifier = {
-			factor = 0.1
-			owner = { is_defender_of_faith = yes }
-		}
-		modifier = {
-			factor = 0.4
-			owner = { tag = PAP }
-		}
-		modifier = {
-			factor = 0.2
-			owner = { is_emperor = yes }
-		}
-	}
-	immediate = {
-		set_global_flag = "counter_reformation"
-	}
-	
-	option = {
-		name = catholic_flavor.1.a
-		owner = { 
-			add_prestige = 5 
-			add_devotion = 1
-			if = {
-				limit = {
-					NOT = { tag = PAP }
-					NOT = { tag = AVI }
-				}
-				add_papal_influence = 2
-			}
-		}
-	}
-}
 # The Kingdom of God on Earth
 country_event = {
 	id = catholic_flavor.2
@@ -91,14 +18,11 @@ country_event = {
 
 	option = {
 		name = catholic_flavor.2.a
+		add_government_reform = kingdom_of_god_reform
+	}
+	option = {
+		name = catholic_flavor.2.b
 		add_prestige = 10
-		PAP = { set_papacy_active = no }
-		hidden_effect = {
-			if = {
-				limit = { AVI = { government = papal_government } }
-				AVI = { set_papacy_active = no }
-			}
-		}
 	}
 }
 
@@ -155,6 +79,13 @@ country_event = {
 
 	option = {
 		name = catholic_flavor.4.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_global_flag = borgia_pope_global
+			}
+		}
 		add_years_of_income = 0.2
 		if = {
 			limit = { is_institution_enabled = laytheology }
@@ -166,6 +97,7 @@ country_event = {
 	}
 	option = {
 		name = catholic_flavor.4.b
+		ai_chance = { factor = 10 }
 		add_papal_influence = 10
 		add_devotion = 1
 	}
@@ -187,30 +119,66 @@ country_event = {
 		NOT = { tag = PAP }
 		NOT = { tag = AVI }
 		is_year = 1480
+		ruler_age = 45
 		NOT = { has_global_flag = pap_disables_indulgences_flag }
+		is_excommunicated = no
+		NOT = { has_country_modifier = papal_indulgence }
+		NOT = {
+			reverse_has_opinion_modifier = {
+				who = PAP
+				modifier = bought_indulgence
+			}
+		}
 	}
 	
 	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = catholic_flavor.5.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				is_rival = PAP
+			}
+		}
+		add_years_of_income = -1
+		if = {
+			limit = { NOT = { num_of_cities = 10 } }
+			add_curia_treasur_small_effect = yes
+		}
+		else = {
+			add_curia_treasury_medium_effect = yes
+		}
+		add_papal_influence = 10
 		custom_tooltip = add_reform_desire_effect.4
 		add_reform_desire_effect = {
 			base_reform_desire = 0.04
 		}
-		add_years_of_income = 0.10
+	}
+	option = {
+		name = catholic_flavor.5.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_global_flag = borgia_pope_global
+			}
+			modifier = {
+				factor = 0.5
+				alliance_with = PAP
+			}
+		}
+		custom_tooltip = remove_reform_desire_effect.2
+		remove_reform_desire_effect = {
+			base_reform_desire = -0.02
+		}
+		add_papal_influence = -10
 		PAP = {
 			add_opinion = {
 				who = root
 				modifier = catholic_obstructing_church
 			}
-		}
-	}
-	option = {
-		name = catholic_flavor.5.b
-		custom_tooltip = remove_reform_desire_effect.2
-		remove_reform_desire_effect = {
-			base_reform_desire = -0.02
 		}
 	}
 }
@@ -234,11 +202,25 @@ country_event = {
 		is_year = 1490
 		NOT = { has_global_flag = pap_disables_veneration_relics_flag }
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholic
+				}
+				save_event_target_as = unrest_province
+			}
+		}
+	}
 	
 	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = catholic_flavor.6.a
+		ai_chance = {
+			factor = 10
+		}
 		custom_tooltip = add_reform_desire_effect.6
 		add_reform_desire_effect = {
 			base_reform_desire = 0.06
@@ -247,14 +229,15 @@ country_event = {
 	}
 	option = {
 		name = catholic_flavor.6.b
-		custom_tooltip = add_reform_desire_effect.4
-		add_reform_desire_effect = {
-			base_reform_desire = 0.04
-		}
-		random_owned_province = {
-			limit = {
-				religion = catholic
+		goto = unrest_province
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_global_flag = borgia_pope_global
 			}
+		}
+		event_target:unrest_province = {
 			add_unrest = 5
 		}
 	}
@@ -318,6 +301,16 @@ country_event = {
 	
 	mean_time_to_happen = { days = 1 }
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholic
+				}
+				save_event_target_as = unrest_province
+			}
+		}
+	}
 	option = {
 		name = catholic_flavor.8.a
 		custom_tooltip = add_reform_desire_effect.4
@@ -328,12 +321,12 @@ country_event = {
 	}
 	option = {
 		name = catholic_flavor.8.b
+		goto = unrest_province
 		custom_tooltip = remove_reform_desire_effect.4
 		remove_reform_desire_effect = {
 			base_reform_desire = -0.04
 		}
-		random_owned_province = {
-			limit = { religion = catholic }
+		event_target:unrest_province = {
 			add_unrest = 5
 		}
 	}
@@ -394,7 +387,7 @@ country_event = {
 		NOT = { tag = PAP }
 		NOT = { tag = AVI }
 		reform_desire = 0.75
-		is_year = 1510
+		is_year = 1520
 	}
 	
 	mean_time_to_happen = { days = 1 }

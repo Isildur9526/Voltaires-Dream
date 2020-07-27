@@ -51,13 +51,9 @@ country_event = {
 			}
 			add_core = GRE
 		}
-		if = {
-			limit = {
-				708 = {
-					NOT = { culture = greek }
-				}
-			}
-			708 = {
+		708 = {
+			if = {
+				limit = { NOT = { culture = greek } }
 				change_culture = greek
 			}
 		}

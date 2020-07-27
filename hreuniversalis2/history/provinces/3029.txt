@@ -26,7 +26,6 @@ discovered_by = north_american
 	religion = catholic
 	capital = "Chastel Rouge"
 }
-1152.1.1 = { estate = estate_holy_orders }
 1271.3.29 = {
 	owner = MAM
 	controller = MAM

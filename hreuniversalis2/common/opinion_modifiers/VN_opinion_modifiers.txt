@@ -143,6 +143,38 @@ pal_deter_french_aggression_mission = {
 	opinion = 75
 	yearly_decay = 3
 }
+slz_gain_imperial_favors_opinion = {
+	opinion = 50
+	yearly_decay = 2
+}
+mediatize_fightback_malus = {
+	opinion = -50
+	yearly_decay = 2
+}
+mediatize_survive_malus = {
+	opinion = -50
+	yearly_decay = 2
+}
+mediatization_malus = {
+	opinion = -50
+	yearly_decay = 3
+}
+mediatization_bonus = {
+	opinion = 50
+	yearly_decay = 3
+}
+lombard_league_dishonored = {
+	opinion = -50
+	yearly_decay = 3
+}
+emperor_dishonored = {
+	opinion = -50
+	yearly_decay = 3
+}
+is_lombard_league_member = {
+	opinion = 25
+	yearly_decay = 0.5
+}
 
 #Katharevousa
 opinion_guelph_ghib = {
@@ -164,8 +196,35 @@ hrema62_opinion = {
 
 #Shyguy
 opinion_investiture_controversy = {
-	opinion = -100
-	yearly_decay = 5
+	opinion = -200
+}
+opinion_made_pope_to_elector = {
+	opinion = -25
+	yearly_decay = 1
+}
+opinion_imperial_papal_ties = {
+	opinion = 50
+	yearly_decay = 2
+}
+opinion_legitimazed_ruler = {
+	opinion = 50
+	yearly_decay = 2
+}
+opinion_claimed_our_duchy = {
+	opinion = -50
+	yearly_decay = 2
+}
+opinion_hohenstaufer_relations = {
+	opinion = 100
+	yearly_decay = 2
+}
+opinion_adopted_christianity = {
+	opinion = 50
+	yearly_decay = -2
+}
+opinion_kept_slavic_faith = {
+	opinion = 50
+	yearly_decay = -2
 }
 hrema24_opinion = {
 	opinion = -50
@@ -191,6 +250,10 @@ hremb83_opinion = {
 	opinion = 100
 	yearly_decay = 2
 }
+hrema105_opinion = {
+	opinion = 75
+	yearly_decay = 3
+}
 lem_sent_reparations_opinion = {
 	opinion = 50
 	yearly_decay = 2
@@ -213,14 +276,6 @@ sav_antipope_opinion = {
 }
 spi_evicted_from_romagna_opinion = {
 	opinion = -50
-	yearly_decay = 1
-}
-bav_claimed_electorship = {
-	opinion = -50
-	yearly_decay = 2
-}
-bav_feudalized_cologne = {
-	opinion = -25
 	yearly_decay = 1
 }
 tou_principality_of_toulouse = {

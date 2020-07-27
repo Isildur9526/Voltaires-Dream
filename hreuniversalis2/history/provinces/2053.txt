@@ -30,7 +30,6 @@ discovered_by = north_american
 	add_core = NAP
 	remove_core = SIC
 }
-1443.1.1 = { estate = estate_nobles }
 1495.2.22 = { controller = FRA }
 1495.7.7 = { controller = NAP }
 1503.5.13 = {

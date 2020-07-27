@@ -62,6 +62,7 @@ capital = 258
 }
 #Norman Lords
 1177.1.1 = {
+	override_country_name = CORK
 	primary_culture = hiberno_norman
 	add_accepted_culture = irish
 	government = monarchy

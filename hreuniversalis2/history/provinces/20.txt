@@ -54,7 +54,6 @@ add_core = TLD
 	religion = catholic
 	culture = castillian
 }
-1400.1.1 = { estate = estate_holy_orders }
 1464.5.1 = { unrest = 3 }
 1468.9.18 = { unrest = 0 }
 1470.1.1 = { unrest = 3 }

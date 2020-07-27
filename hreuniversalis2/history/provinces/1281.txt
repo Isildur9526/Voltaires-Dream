@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Pardiac"
 is_city = yes
 add_core = AMG
-estate = estate_nobles
 
 1360.10.24 = {
 	owner = GUY

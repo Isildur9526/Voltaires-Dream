@@ -1,29 +1,29 @@
 2 = {
-	max_states = 5
+	governing_capacity = 100
 }
 
 3 = {
 	diplomats = 1
-	max_states = 5
+	governing_capacity = 100
 }
 
 4 = {
 	diplomats = 1
 	free_leader_pool = 1
-	max_states = 5
+	governing_capacity = 200
 }
 
 5 = {
 	diplomats = 1
 	free_leader_pool = 1
-	max_states = 5
+	governing_capacity = 300
 	global_autonomy = -0.025
 }
 
 6 = {
 	diplomats = 1
 	free_leader_pool = 1
-	max_states = 10
+	governing_capacity = 600
 	max_absolutism = 5
 	global_autonomy = -0.05
 }

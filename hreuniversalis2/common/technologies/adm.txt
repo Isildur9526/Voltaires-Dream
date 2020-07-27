@@ -41,7 +41,7 @@ technology = {
 	# Tech 2
 	year = 1074
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -69,7 +69,7 @@ technology = {
 	# Tech 6
 	year = 1119
 
-	max_states = 1	
+	governing_capacity = 50	
 }
 
 technology = {
@@ -83,7 +83,7 @@ technology = {
 	# Tech 8
 	year = 1140
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -125,7 +125,7 @@ technology = {
 	# Tech 14
 	year = 1206
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -146,7 +146,7 @@ technology = {
 	# Tech 17
 	year = 1239
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -181,7 +181,7 @@ technology = {
 	# Tech 22
 	year = 1294
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -230,7 +230,7 @@ technology = {
 	# Tech 29
 	year = 1371
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -244,14 +244,14 @@ technology = {
 	# Tech 31
 	year = 1393
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
 	# Tech 32
 	year = 1404
 	
-	max_states = 1
+	governing_capacity = 50
 	farm_estate = yes
 }
 
@@ -298,6 +298,7 @@ technology = {
 	
 	#Workshop
 	workshop = yes
+	ramparts = yes
 }
 
 technology = {
@@ -334,7 +335,7 @@ technology = {
 	# Tech 43
 	year = 1526
 	
-	max_states = 1
+	governing_capacity = 50
 }
 
 technology = {
@@ -359,6 +360,7 @@ technology = {
 	
 	administrative_monarchy	= yes 
 	administrative_republic	= yes
+	state_house = yes
 }
 
 technology = {
@@ -381,7 +383,8 @@ technology = {
 	# Tech 49
 	year = 1593
 	
-	may_force_march = yes	
+	may_force_march = yes
+	soldier_households = yes	
 }
 
 technology = {
@@ -405,7 +408,7 @@ technology = {
 	year = 1626
 	
 	university = yes	
-	max_states = 2
+	governing_capacity = 100
 }
 
 technology = {
@@ -428,7 +431,7 @@ technology = {
 	year = 1659
 	
 	republican_dictatorship = yes
-	max_states = 2
+	governing_capacity = 100
 }
 
 technology = {
@@ -467,7 +470,7 @@ technology = {
 	year = 1710
 	
 	counting_house = yes  
-	max_states = 2
+	governing_capacity = 100
 }
 
 technology = {
@@ -498,7 +501,7 @@ technology = {
 	year = 1758
 
 	administrative_efficiency = 0.1
-	max_states = 4
+	governing_capacity = 200
 }
 
 technology = {
@@ -538,7 +541,7 @@ technology = {
 	
 	revolutionary_republic = yes
 	revolutionary_empire = yes
-	max_states = 4
+	governing_capacity = 200
 }
 
 technology = {
@@ -574,7 +577,7 @@ technology = {
 	# Tech 74
 	year = 1868
 	
-	max_states = 4
+	governing_capacity = 200
 }
 
 technology = {

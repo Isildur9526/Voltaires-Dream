@@ -207,9 +207,11 @@ vn_pal_missions_slot_2_a = {
         effect = {
             if = {
                 limit = { 
+                    valid_for_personal_unions_trigger = yes
                     BAV = {
                         exists = yes
                         dynasty = "von Wittelsbach"
+                        valid_for_personal_unions_trigger = yes
                     }
                 }
                 add_casus_belli = {
@@ -605,9 +607,10 @@ vn_pal_missions_slot_5 = {
         effect = {
             if = {
                 limit = {
+                    valid_for_personal_unions_trigger = yes
                     BOH = {
                         exists = yes
-                        is_subject = no
+                        valid_for_personal_unions_trigger = yes
                     }
                 }
                 add_casus_belli = {

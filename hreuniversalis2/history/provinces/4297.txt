@@ -10,7 +10,6 @@ hre = no
 owner = CDY
 controller = CDY
 add_core = CDY 
-estate = estate_nobles
 
 1118.1.1 = {
 	owner = BRC

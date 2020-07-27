@@ -157,8 +157,8 @@ capital = 2518
 		birth_date = 1403.9.1
 		death_date = 1445.4.7
 		claim = 95
-		adm = 0	
-		dip = 2
+		adm = 3
+		dip = 3
 		mil = 3
     }
 }
@@ -181,8 +181,8 @@ capital = 2518
 		name = "Ludwig VIII"
 		dynasty = "von Wittelsbach"
 		birth_date = 1403.9.1
-		adm = 0	
-		dip = 2
+		adm = 3
+		dip = 3
 		mil = 3
     }
     queen = {
@@ -193,10 +193,11 @@ capital = 2518
 		birth_date = 1410.1.1
 		death_date = 1465.7.27
 		culture = central_margravian
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 3
+		dip = 3
+		mil = 3
 	}
+	add_queen_personality = infertile_personality
 }
 1445.4.7 = {
 	monarch = {

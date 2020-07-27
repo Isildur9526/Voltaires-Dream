@@ -10,7 +10,6 @@ hre = yes
 owner = GLS
 controller = GLS
 add_core = GLS
-estate = estate_nobles
 
 1106.8.12 = {
 	owner = BRU

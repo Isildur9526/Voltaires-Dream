@@ -6,6 +6,7 @@ primary_culture = romagnan
 religion = catholic
 capital = 2610
 add_army_professionalism = 0.05
+set_estate_privilege = estate_church_papal_emissary
 
 1106.1.1 = {
 	capital = 1805

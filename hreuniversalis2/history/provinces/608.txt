@@ -41,7 +41,6 @@ latent_trade_goods = { coal }
 	controller = POL
 	add_core = POL
 	capital = "Lwów"
-	estate = estate_church
 }
 1503.4.1 = { culture = ruthenian }
 1569.7.1 = {

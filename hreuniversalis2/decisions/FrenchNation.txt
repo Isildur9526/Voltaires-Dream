@@ -107,16 +107,7 @@ country_decisions = {
 				add_government_reform = celestial_empire
 			}
 			if = {
-				limit = {
-					has_custom_ideas = no
-					OR = {
-						ai = no
-						AND = {
-							ai = yes
-							has_idea_group = default_ideas
-						}
-					}
-				}
+				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 		}

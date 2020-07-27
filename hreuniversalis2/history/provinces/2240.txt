@@ -15,7 +15,6 @@ discovered_by = eastern
 discovered_by = ottoman
 discovered_by = western
 discovered_by = muslim
-estate = estate_nobles
 fort_14th = yes
 
 1066.10.14 = {

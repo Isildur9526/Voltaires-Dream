@@ -10,7 +10,6 @@ hre = no
 owner = RYA
 controller = RYA
 add_core = RYA
-estate = estate_nobles
 fort_14th = yes
 
 1357.1.1 = {

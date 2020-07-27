@@ -16,7 +16,6 @@ latent_trade_goods = { coal }
 	owner = PIS
 	controller = PIS
 	add_core = PIS
-	estate = estate_nobles
 }
 1324.2.7 = { controller = ARA }
 1326.6.1 = {

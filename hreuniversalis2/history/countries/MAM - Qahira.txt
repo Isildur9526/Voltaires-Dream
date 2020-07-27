@@ -13,10 +13,19 @@ historical_friend = ALW
 historical_friend = HED
 historical_rival = KOJ
 historical_rival = ILK
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 10
+}
 
 #Ayyubid Sultans of Egypt
 1171.9.13 = {
 	add_piety = 0.5
+	override_country_name = AYYUBIDS_NAME
 	monarch = {
 		name = "Yûsuf"
 		dynasty = "Banû Ayyûb"
@@ -168,6 +177,7 @@ historical_rival = ILK
 1250.5.2 = {
 	government = monarchy
 	add_government_reform = mamluk_government
+	override_country_name = MAMLUKS_NAME
 	monarch = {
 		name = "Shajar al-Durr"
 		dynasty = "Bahriyya"

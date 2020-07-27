@@ -12,7 +12,6 @@ controller = SOS
 add_core = SOS
 extra_cost = 8
 center_of_trade = 1
-estate = estate_nobles
 
 1056.1.1 = {
 	owner = DAA

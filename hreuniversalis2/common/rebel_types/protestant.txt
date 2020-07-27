@@ -165,6 +165,13 @@ protestant_rebels = {
 				}
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -185,6 +192,13 @@ protestant_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -285,6 +299,11 @@ protestant_rebels = {
 			capital_scope = {
 				remove_province_modifier = religious_fanatics
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }

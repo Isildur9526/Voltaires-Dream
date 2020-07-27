@@ -10,7 +10,6 @@ hre = no
 owner = DAN
 controller = DAN
 add_core = DAN
-estate = estate_church
 
 1525.1.1 = { owner = HSA controller = HSA }
 1536.3.15 = { religion = protestant }

@@ -8,7 +8,16 @@ capital = 6729
 national_focus = MIL
 add_army_professionalism = 0.1
 religious_school = hanafi_school
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
 
+1000.1.1 = { set_estate_privilege = estate_dhimmi_guaranteed_autonomy }
 1000.1.1 = { set_country_flag = unformable }
 1261.7.25 = {
 	monarch = {

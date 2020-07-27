@@ -15,7 +15,7 @@ vn_hol_missions_slot_1_a = {
     has_country_shield = yes
 
     vn_hol_reclaim_the_coast = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_unite_home_region
         required_missions = { }
         provinces_to_highlight = {
             OR = {
@@ -77,7 +77,7 @@ vn_hol_missions_slot_1_a = {
         }
     }
     vn_hol_reclaim_our_collateral = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_unite_home_region
         required_missions = { vn_hol_autonomy_from_utrecht }
         provinces_to_highlight = {
 			province_id = 2306
@@ -156,7 +156,7 @@ vn_hol_missions_slot_1_a = {
     }
     vn_hol_hertog_van_luxemburg = {
 		position = 6
-        icon = mission_build_up_to_force_limit
+        icon = rhineland_conquest
         required_missions = { vn_hol_the_liegeian_holy_lands }
         provinces_to_highlight = {
             area = luxemburg_area
@@ -210,7 +210,7 @@ vn_hol_missions_slot_1_b = {
     }
     vn_hol_the_republic = {
 		position = 10
-        icon = mission_build_up_to_force_limit
+        icon = the_true_freedom
         required_missions = { }
         trigger = {
 			has_reform = dutch_republic
@@ -224,7 +224,7 @@ vn_hol_missions_slot_1_b = {
         }
     }
     vn_hol_the_act_of_abjuration = {
-        icon = mission_build_up_to_force_limit
+        icon = the_ostend_company
 		required_missions = { vn_hol_the_republic }
 		provinces_to_highlight = {
 			OR = {
@@ -274,7 +274,7 @@ vn_hol_missions_slot_1_b = {
         }
     }
     vn_hol_orangists = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_noble_council
         required_missions = { vn_hol_the_act_of_abjuration }
         trigger = {
 			has_reform = dutch_republic
@@ -289,7 +289,7 @@ vn_hol_missions_slot_1_b = {
 		}
     }
     vn_hol_the_stadthouder = {
-        icon = mission_build_up_to_force_limit
+        icon = become_king
         required_missions = { vn_hol_orangists }
         trigger = {
 			statists_vs_orangists = 0.8
@@ -475,7 +475,7 @@ vn_hol_missions_slot_2_b = {
     has_country_shield = yes
 
     vn_hol_lowlands_united = {
-        icon = mission_build_up_to_force_limit
+        icon = je_maintiendrai
         required_missions = { 
 			vn_hol_incorporate_walloon_elite 
 			vn_hol_hertog_van_luxemburg 
@@ -509,7 +509,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_the_united_provinces = {
-        icon = mission_build_up_to_force_limit
+        icon = the_true_freedom
         required_missions = { vn_hol_lowlands_united }
         provinces_to_highlight = {
 			OR = {
@@ -548,7 +548,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_may_they_speak_dutch = {
-        icon = mission_build_up_to_force_limit
+        icon = the_true_freedom
         required_missions = { vn_hol_the_united_provinces }
         provinces_to_highlight = {
 			region = wallonian_region
@@ -571,7 +571,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_lotharingen = {
-        icon = mission_build_up_to_force_limit
+        icon = integrate_lorraine
         required_missions = { vn_hol_may_they_speak_dutch }
         provinces_to_highlight = {
 			OR = {
@@ -611,7 +611,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_burgundian_rule_reversed = {
-        icon = mission_build_up_to_force_limit
+        icon = conquer_burgundy
         required_missions = { vn_hol_lotharingen }
         provinces_to_highlight = {
             OR = {
@@ -641,7 +641,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_statists = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_noble_council
         required_missions = { vn_hol_the_act_of_abjuration }
         trigger = {
 			has_reform = dutch_republic
@@ -656,7 +656,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_raadspensionaris = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_noble_council
         required_missions = { vn_hol_statists }
         trigger = {
 			statists_vs_orangists = -0.8
@@ -683,7 +683,7 @@ vn_hol_missions_slot_2_b = {
 		}
     }
     vn_hol_dynastic_claims = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_alliances
         required_missions = { vn_hol_army_expansion }
         trigger = { 
 			num_of_royal_marriages = 3
@@ -710,7 +710,7 @@ vn_hol_missions_slot_2_b = {
         }
     }
     vn_hol_orange_nassau = {
-        icon = mission_build_up_to_force_limit
+        icon = rhineland_conquest
         required_missions = { vn_hol_dynastic_claims }
         provinces_to_highlight = {
 			OR = {
@@ -928,7 +928,7 @@ vn_hol_missions_slot_3_a = {
 		}
     }
     vn_hol_incorporate_walloon_elite = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_noble_council
         required_missions = { 
 			vn_hol_flemish_throne 
 			vn_hol_brabantian_throne 
@@ -1024,7 +1024,7 @@ vn_hol_missions_slot_3_b = {
     }
     vn_hol_dutch_trading_fleet = {
 		position = 9
-        icon = mission_build_up_to_force_limit
+        icon = overshadow_venice
         required_missions = { vn_hol_dutch_trading_culture }
         trigger = {
 			num_of_light_ship = 25
@@ -1040,7 +1040,7 @@ vn_hol_missions_slot_3_b = {
     }
     vn_hol_imperial_burgundian_circle = {
 		position = 11
-        icon = mission_build_up_to_force_limit
+        icon = glory_to_von_habsburg
         required_missions = { vn_hol_lotharingen }
         provinces_to_highlight = {
             OR = {
@@ -1066,7 +1066,7 @@ vn_hol_missions_slot_3_b = {
     }
     vn_hol_develop_the_staten = {
         position = 12
-        icon = mission_build_up_to_force_limit
+        icon = imperial_capitals
         required_missions = { vn_hol_the_act_of_abjuration }
         provinces_to_highlight = {
             region = netherlands_region
@@ -1101,7 +1101,7 @@ vn_hol_missions_slot_3_b = {
         }
     }
     vn_hol_proto_industrialization = {
-        icon = mission_build_up_to_force_limit
+        icon = industrialized_rhineland
         required_missions = { vn_hol_develop_the_staten }
         provinces_to_highlight = {
             region = netherlands_region
@@ -1147,11 +1147,12 @@ vn_hol_missions_slot_4_a = {
 	}
     has_country_shield = yes
 
-    vn_hol_dutch_golden_age = {	#MoH only, needs diff trigger
-        icon = mission_build_up_to_force_limit
+    vn_hol_dutch_golden_age = {
+        icon = indonesian_trade
         required_missions = { }
         trigger = {
 			in_golden_age = yes
+			is_great_power = yes
         }
         effect = {
 			add_country_modifier = {
@@ -1161,7 +1162,7 @@ vn_hol_missions_slot_4_a = {
         }
     }
     vn_hol_stable_dutch_banks = {
-        icon = mission_build_up_to_force_limit
+        icon = dominant_economy
         required_missions = { vn_hol_dutch_golden_age }
         trigger = {
 			treasury = 1000
@@ -1174,7 +1175,7 @@ vn_hol_missions_slot_4_a = {
         }
     }
     vn_hol_stock_exchange = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_alliances
         required_missions = { vn_hol_stable_dutch_banks }
         trigger = {
 			any_owned_province = { 
@@ -1190,7 +1191,7 @@ vn_hol_missions_slot_4_a = {
         }
     }
     vn_hol_de_gulden = {
-        icon = mission_build_up_to_force_limit
+        icon = dominant_economy
         required_missions = { vn_hol_stock_exchange }
         trigger = {
 			treasury = 10000
@@ -1271,7 +1272,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_merchant_throne = {
-        icon = mission_build_up_to_force_limit
+        icon = sources_of_trade
         required_missions = { vn_hol_port_of_antwerp }
         trigger = {
 			2729 = { #Antwerp
@@ -1287,7 +1288,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_dutch_trading_culture = {
-        icon = mission_build_up_to_force_limit
+        icon = support_the_bulk_trades
         required_missions = { 
 			vn_hol_worldport_amsterdam 
 			vn_hol_merchant_throne 
@@ -1311,7 +1312,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_oostsee_handel = {
-        icon = mission_build_up_to_force_limit
+        icon = sources_of_trade
         required_missions = { vn_hol_dutch_trading_culture }
         trigger = {
 			OR = {
@@ -1328,7 +1329,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_defeat_the_hansa = {	#Contest the Hansa
-        icon = mission_build_up_to_force_limit
+        icon = overshadow_venice
         required_missions = { vn_hol_oostsee_handel }
         trigger = {
 			num_of_owned_provinces_with = {
@@ -1404,7 +1405,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_rule_the_hansa = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_hanseatic_city
         required_missions = { vn_hol_defeat_the_hansa }
 		provinces_to_highlight = {
 			OR = {
@@ -1449,7 +1450,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_control_world_trade = {
-        icon = mission_build_up_to_force_limit
+        icon = the_shape_of_trades_to_come
         required_missions = { 
 			vn_hol_rule_the_hansa 
 			vn_hol_rival_english_trade 
@@ -1467,7 +1468,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_become_protestant = {
-        icon = mission_build_up_to_force_limit
+        icon = religious_resolution
         required_missions = { }
         trigger = {
 			is_force_converted = no
@@ -1485,7 +1486,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_the_statenvertaling = {
-        icon = mission_build_up_to_force_limit
+        icon = geneva_conventions
         required_missions = { vn_hol_become_protestant }
         trigger = {
 			has_institution = printing_press
@@ -1505,7 +1506,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_the_beeldenstorm = {
-        icon = mission_build_up_to_force_limit
+        icon = wars_of_religion
         required_missions = { vn_hol_the_statenvertaling }
         trigger = {
 			OR = {
@@ -1528,7 +1529,7 @@ vn_hol_missions_slot_4_b = {
         }
     }
     vn_hol_tolerate_heretics = {
-        icon = mission_build_up_to_force_limit
+        icon = mission_arts_and_letters
         required_missions = { vn_hol_the_beeldenstorm }
         trigger = {
 			full_idea_group = humanist_ideas
@@ -1561,7 +1562,7 @@ vn_hol_missions_slot_5_a = {
 
     vn_hol_build_stadsmuren = {
 		position = 1
-        icon = mission_build_up_to_force_limit
+        icon = fortify_the_passes
         required_missions = { }
         provinces_to_highlight = {
             region = netherlands_region
@@ -1585,7 +1586,7 @@ vn_hol_missions_slot_5_a = {
         }
     }
     vn_hol_university_of_leiden = {
-        icon = mission_build_up_to_force_limit
+        icon = leiden_university
         required_missions = { vn_hol_dutch_golden_age }
         provinces_to_highlight = {
             province_id = 327
@@ -1611,7 +1612,7 @@ vn_hol_missions_slot_5_a = {
         }
     }
     vn_hol_dutch_electorship = {	#should be changed to be less redundant
-        icon = mission_build_up_to_force_limit
+        icon = imperial_ascendancy
         required_missions = { }
         trigger = {
 			is_part_of_hre = yes 			
@@ -1626,7 +1627,7 @@ vn_hol_missions_slot_5_a = {
         }
     }
     vn_hol_dutch_influence = {
-        icon = mission_build_up_to_force_limit
+        icon = influence_the_princes
         required_missions = { vn_hol_dutch_electorship }
         trigger = {
 			is_elector = yes
@@ -1649,7 +1650,7 @@ vn_hol_missions_slot_5_a = {
     }
     vn_hol_build_grachtengordel = {	
 		position = 5
-        icon = mission_build_up_to_force_limit
+        icon = develop_the_po_valley
         required_missions = { }
         provinces_to_highlight = {
             province_id = 328
@@ -1676,7 +1677,7 @@ vn_hol_missions_slot_5_a = {
         }
     }
     vn_hol_worldport_amsterdam = {
-		icon = mission_build_up_to_force_limit
+		icon = control_coromandel
 		position = 7
         required_missions = { vn_hol_build_grachtengordel }
         provinces_to_highlight = {
@@ -1719,7 +1720,7 @@ vn_hol_missions_slot_5_b = {
 
     vn_hol_against_the_english = {
 		position = 9
-        icon = mission_build_up_to_force_limit
+        icon = english_alliance
         required_missions = { vn_hol_dutch_trading_culture }
         provinces_to_highlight = {
 			province_id = 2268	
@@ -1758,7 +1759,7 @@ vn_hol_missions_slot_5_b = {
     }
     vn_hol_rival_english_trade = {
 		position = 11
-        icon = mission_build_up_to_force_limit
+        icon = charter_the_wic
         required_missions = { vn_hol_against_the_english }
         trigger = {
 			2268 = { 
@@ -1783,7 +1784,7 @@ vn_hol_missions_slot_5_b = {
     }
     vn_hol_raid_on_the_medway = {
 		position = 12
-        icon = mission_build_up_to_force_limit
+        icon = the_glorious_revolution
         required_missions = { vn_hol_rival_english_trade }
         provinces_to_highlight = {
             province_id = 2268		
@@ -1813,7 +1814,7 @@ vn_hol_missions_slot_5_b = {
     }
     vn_hol_claim_the_throne = {
 		position = 14
-        icon = mission_build_up_to_force_limit
+        icon = overshadow_venice
         required_missions = { 
 			vn_hol_raid_on_the_medway 
 			vn_hol_become_protestant 
@@ -1863,7 +1864,7 @@ vn_hol_missions_slot_5_b = {
         }
     }
     vn_hol_king_stadtholder = {
-        icon = mission_build_up_to_force_limit
+        icon = become_king
         required_missions = { vn_hol_claim_the_throne }
         provinces_to_highlight = {
 			OR = {
@@ -1910,7 +1911,7 @@ vn_hol_missions_slot_5_b = {
         }
     }
     vn_hol_master_of_britian = {
-        icon = mission_build_up_to_force_limit
+        icon = the_true_freedom
         required_missions = { vn_hol_king_stadtholder }
         provinces_to_highlight = {
 			OR = {

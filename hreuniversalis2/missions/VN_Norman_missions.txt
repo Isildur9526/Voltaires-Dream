@@ -767,9 +767,8 @@ vn_nrm_missions_slot_5_b = {
 		trigger = {
 			if = {
 				limit = { exists = FRA }
-				war_score_against = {
+				has_won_war_against = {
 					who = FRA
-					value = 50
 				}
 			}
 			else = {
@@ -777,9 +776,11 @@ vn_nrm_missions_slot_5_b = {
 					culture_group = french
 					total_development = 100
 					war_with = ROOT
-					war_score_against = {
-						who = ROOT
-						value = -50
+					NOT = {	
+						war_score_against = {
+							who = ROOT
+							value = -50
+						}
 					}
 				}
 			}

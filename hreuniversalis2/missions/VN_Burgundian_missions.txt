@@ -1296,9 +1296,12 @@ VN_bur_missions_slot_4_a = {
 				theologian = 2
 				inquisitor = 2
 			}
-			num_of_owned_provinces_with = {
-				value = 6
-				has_estate = estate_church
+			if = {
+				limit = { has_estate = estate_church }
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 60
+				}
 			}
 			if = {
 				limit = {
@@ -1399,7 +1402,11 @@ VN_bur_missions_slot_4_b = {
 		}
 		effect = {
 			if = {
-				limit = { exists = FLA }
+				limit = { 
+					valid_for_personal_unions_trigger = yes
+                    exists = FLA
+                    FLA = { valid_for_personal_unions_trigger = yes }
+				}
 				add_casus_belli = {
 					target = FLA
 					type = cb_fabricated_claims
@@ -1440,28 +1447,15 @@ VN_bur_missions_slot_4_b = {
 		icon = mission_hanseatic_city
 		required_missions = { vn_bur_shipyard_of_bruges }
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_bur_autonomous_cities.tt.1
-				num_of_owned_provinces_with = {
+			if = {
+				limit = { has_estate = estate_burghers }
+				num_of_estate_privileges = {
+					estate = estate_burghers
 					value = 3
-					superregion = lowlands_superregion
-					has_estate = estate_nobles
 				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = vn_bur_autonomous_cities.tt.2
-				num_of_owned_provinces_with = {
-					value = 3
-					superregion = lowlands_superregion
-					has_estate = estate_burghers
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = vn_bur_autonomous_cities.tt.3
-				num_of_owned_provinces_with = {
-					value = 3
-					superregion = lowlands_superregion
-					has_estate = estate_church
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
 				}
 			}
 			num_of_owned_provinces_with = {
@@ -1651,14 +1645,13 @@ VN_bur_missions_slot_5_b = {
 		}
     }
 	vn_bur_defeat_france = {
-		icon = mission_king_of_the_franks
+		icon = king_of_the_franks
 		required_missions = { vn_bur_occupy_paris }
 		trigger = {
 			if = {
 				limit = { exists = FRA }
-				war_score_against = {
+				has_won_war_against = {
 					who = FRA
-					value = 75
 				}
 			}
 			else = {
@@ -1666,9 +1659,11 @@ VN_bur_missions_slot_5_b = {
 					culture_group = french
 					total_development = 100
 					war_with = ROOT
-					war_score_against = {
-						who = ROOT
-						value = -75
+					NOT = {	
+						war_score_against = {
+							who = ROOT
+							value = -75
+						}
 					}
 				}
 			}

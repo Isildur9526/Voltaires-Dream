@@ -920,12 +920,8 @@ vn_eng_missions_slot_2_e = {
         }
         trigger = {
             OR = {
-                AND = {
-                    war_with = BUR
-                    war_score_against = {
-                        who = BUR
-                        value = 75
-                    }
+                has_won_war_against = {
+                    who = BUR
                 }
                 burgundy_region = {
                     type = all

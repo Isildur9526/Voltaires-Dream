@@ -10,7 +10,6 @@ hre = yes
 owner = SUZ
 controller = SUZ
 add_core = SUZ
-estate = estate_nobles
 
 1162.1.1 = {
 	owner = HHB

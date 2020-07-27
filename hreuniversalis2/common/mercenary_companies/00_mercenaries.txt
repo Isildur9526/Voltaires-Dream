@@ -1,0 +1,1232 @@
+# Lombard Free Company
+merc_lombard_free_company = {
+    regiments_per_development = 0.04
+    home_province = 1012 # Pavia
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	sprites = { dlc056_mlo_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		custom_trigger_tooltip = {
+			tooltip = italian_wars_flag_tt
+			has_global_flag = italian_wars_global_flag
+		}
+		religion_group = christian
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			AND = {
+				NOT = {
+					capital_scope = {
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion
+						}
+					}
+				}
+				any_country = {
+					war_with = root
+					capital_scope = {
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion
+						}
+					}
+				}
+			}
+			capital_scope = {
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
+			}
+		}
+	}
+	modifier = { 
+		infantry_power = 0.05
+	}
+}
+
+# Tuscan Free Company
+merc_tuscan_free_company = {
+    regiments_per_development = 0.04
+    home_province = 2980 # Lucca
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	sprites = { dlc056_lan_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+   trigger = {
+		custom_trigger_tooltip = {
+			tooltip = italian_wars_flag_tt
+			has_global_flag = italian_wars_global_flag
+		}
+		religion_group = christian
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			AND = {
+				NOT = {
+					capital_scope = {
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion
+						}
+					}
+				}
+				any_country = {
+					war_with = root
+					capital_scope = {
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion
+						}
+					}
+				}
+			}
+			capital_scope = {
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
+			}
+		}
+	}
+	modifier = { 
+		infantry_power = 0.05
+	}
+}
+
+# Black Army (Hungary)
+merc_black_army = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+    artillery_weight = 0.4
+	cavalry_cap = 4
+	home_province = 444
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		OR = {
+			has_country_modifier = hun_black_army
+			has_reform = black_army_reform
+		}
+	}
+	cost_modifier = 0.75
+	modifier = {
+		discipline = 0.05
+	}
+}
+
+# Black Army Reserves (Hungary)
+merc_black_army_2 = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+    artillery_weight = 0.4
+	cavalry_cap = 4
+	home_province = 444
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		has_reform = black_army_reform
+	}
+	cost_modifier = 0.75
+	modifier = {
+		discipline = 0.05
+	}
+}
+
+# Knights Templar
+merc_knights_templar = {
+	regiments_per_development = 0.01
+	home_province = 4974
+	cavalry_weight = 0.5
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = crusade_start
+			has_global_flag = crx_start
+		}
+		NOT = { tag = TEM }
+		NOT = { war_with = TEM }
+		religion = catholic
+		OR = {
+			owns = 4974
+			capital_scope = { superregion = levant_superregion }
+			has_estate_privilege = estate_holy_orders_settle_templars
+		}
+	}
+	modifier = {
+		cavalry_power = 0.15
+		shock_damage = 0.05
+	}
+	cost_modifier = 0.5
+}
+
+# Pontifical Swiss Guard
+merc_swiss_guard = {
+    regiments_per_development = 0.005
+	home_province = 1131
+	sprites = { dlc029_pap_sprite_pack dlc040_pap_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = PAP
+		custom_trigger_tooltip = {
+			tooltip = swiss_guard_activated
+			has_country_flag = enable_swiss_guard
+		}
+	}
+    cost_modifier = 0.5
+	modifier = {
+		discipline = 0.025
+	}
+}
+
+# Bande Nere (Black Bands, Italy)
+merc_bande_nere = {
+    regiments_per_development = 0.05
+    home_province = 640 # Florence
+	artillery_weight = 0.3
+	sprites = { dlc056_lan_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = sicily_superregion
+					superregion = italy_superregion
+					superregion = iberia_superregion
+					superregion = french_superregion
+					superregion = burgundian_superregion
+				}
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_new_mercs_tt
+			NOT = { has_global_flag = new_european_mercs }
+		}
+	}
+	modifier = {}
+}
+
+# Schwarze Garde (Black Bands, Germany)
+merc_schwarze_garde = {
+    regiments_per_development = 0.05
+    home_province = 2803 # Dresden
+	artillery_weight = 0.3
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = bohemia_superregion
+					superregion = switzerland_superregion
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_new_mercs_tt
+			NOT = { has_global_flag = new_european_mercs }
+		}
+	}
+}
+
+# Doppelsoeldner (Swabia)
+merc_doppelsoeldner = {
+    regiments_per_development = 0.02
+    home_province = 2458 # Stuttgart
+	artillery_weight = 0.3
+    cost_modifier = 1.25
+	sprites = { dlc061_wur_sprite_pack dlc028_wur_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = bohemia_superregion
+					superregion = switzerland_superregion
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+		}
+	}
+	modifier = {
+        infantry_power = 0.1
+        discipline = 0.025
+	}
+}
+
+# Reisläufer (Switzerland)
+merc_reislaufer = {
+    regiments_per_development = 0.025
+    home_province = 2281 # 
+	artillery_weight = 0.3
+	sprites = { westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = bohemia_superregion
+					superregion = switzerland_superregion
+					superregion = sicily_superregion
+					superregion = italy_superregion
+					superregion = french_superregion
+					superregion = burgundian_superregion
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+	modifier = {
+        shock_damage_received = -0.05
+	}
+}
+
+# Hessian Jaegerkorps (Hesse, Absolutism + Revolution)
+merc_hessian_jaegerkorps = {
+    regiments_per_development = 0.05
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+	cost_modifier = 1.5
+    home_province = 81
+	sprites = { dlc028_hes_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = bohemia_superregion
+					superregion = switzerland_superregion
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = new_mercs_tt
+			has_global_flag = new_european_mercs
+		}
+	}
+	modifier = {
+		fire_damage_received = -0.1
+		shock_damage_received = -0.1
+		discipline = 0.025
+
+	}
+}
+
+# Routiers (Britanny, Renaissance)
+merc_routiers = {
+    regiments_per_development = 0.03
+    home_province = 2294
+	sprites = { dlc001_bri_sprite_pack dlc087_bri_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		capital_scope = {
+			OR = {
+				superregion = french_superregion
+				superregion = burgundian_superregion
+				superregion = irish_superregion
+				superregion = british_isles_superregion
+			}
+		}
+		current_age = age_of_discovery
+	}
+}
+
+# Routiers/Bascoli ( Gascony, Renaissance?)
+merc_bascoli = {
+    regiments_per_development = 0.03
+    home_province = 4103
+	sprites = { dlc001_amg_sprite_pack dlc049_FRA_sprite_pack dlc028_fra_sprite_pack dlc054_fra_sprite_pack fra_base_sprite_pack }
+    trigger = {
+		OR = {
+			tag = ENG
+			capital_scope = { 
+				OR = {
+					superregion = iberia_superregion
+					superregion = french_superregion
+					superregion = burgundian_superregion
+				}
+			}
+		}
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+			current_age = age_of_discovery
+		}
+	}
+}
+	
+# Levends (Dalmatia)
+merc_levends = {
+    regiments_per_development = 0.025
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 791
+	sprites = { easterngfx_sprite_pack }
+    trigger = {
+		any_owned_province = {
+			superregion = balkans_superregion
+		}
+	}
+	modifier = { }
+}
+
+# Stratioti (Durres)
+merc_stratioti = {
+    regiments_per_development = 0.025
+    home_province = 503
+	sprites = { easterngfx_sprite_pack }
+    trigger = {	
+		religion_group = christian
+		any_owned_province = {
+			superregion = balkans_superregion
+		}
+	}
+	modifier = { }
+}
+
+# Morlachs (Lika)
+merc_morlachs = {
+    regiments_per_development = 0.025
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 1972
+	sprites = { easterngfx_sprite_pack }
+    trigger = {
+		OR = {
+			any_owned_province = {
+				superregion = balkans_superregion
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+	modifier = { }
+}
+
+# Guardia Corsa (Cosica)
+merc_guardia_corsa = {
+    regiments_per_development = 0.025
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 1247
+	sprites = { sav_base_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { superregion = italy_superregion }
+			capital_scope = { superregion = sicily_superregion }
+			any_owned_province = { region = insular_region }
+		}
+	}
+	modifier = { }
+}
+
+# Hadjduks (Transylvania)
+merc_hadjuks = {
+    regiments_per_development = 0.05
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 739
+    cost_modifier = 0.75
+	sprites = { easterngfx_sprite_pack }
+    trigger = {
+		religion_group = christian
+		capital_scope = {
+			OR = {
+				superregion = balkans_superregion
+				superregion = carpathia_superregion
+				superregion = poland_superregion
+			}
+		}
+	}
+	modifier = { }
+}
+
+# Gallowglasses (Ireland, Renaissance + Reformation)
+merc_gallowglasses = {
+    regiments_per_development = 0.025
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 247
+	sprites = { dlc087_ire_sprite_pack lei_base_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { superregion = british_isles_superregion }
+			any_owned_province = { superregion = irish_superregion }
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_new_mercs_tt
+			NOT = { has_global_flag = new_european_mercs }
+		}
+	}
+	modifier = {
+        discipline = 0.025
+        shock_damage_received = -0.05
+	}
+}
+
+# Redshanks (Scotland, Renaissance + Reformation)
+merc_redshanks = {
+    regiments_per_development = 0.03
+    home_province = 4700
+	sprites = { dlc087_sco_sprite_pack dlc001_sco_sprite_pack sco_base_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		OR = {
+			capital_scope = { superregion = british_isles_superregion }
+			capital_scope = { superregion = irish_superregion }
+			has_country_modifier = scottish_mercenaries
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_new_mercs_tt
+			NOT = { has_global_flag = new_european_mercs }
+		}
+	}
+	modifier = {
+		shock_damage = 0.05
+	}
+}
+
+# Scottish Guard (Scotland, Absolutism + Revolution)
+merc_scottish_guard = {
+    regiments_per_development = 0.03
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 4699
+	sprites = { dlc087_sco_sprite_pack dlc001_sco_sprite_pack sco_base_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = british_isles_superregion
+					superregion = french_superregion
+					superregion = burgundian_superregion
+					superregion = irish_superregion
+				}
+			}
+			has_country_modifier = scottish_mercenaries
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = new_mercs_tt
+			has_global_flag = new_european_mercs
+		}
+	}
+	modifier = {
+        fire_damage_received = -0.05
+	}
+}
+
+# Seimeni (Reformation + Absolutism)
+merc_seimeni = {
+    regiments_per_development = 0.03
+    home_province = 478
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		culture_group = vlach
+		custom_trigger_tooltip = {
+			tooltip = new_mercs_tt
+			has_global_flag = new_european_mercs
+		}
+	}
+}
+
+# Armatoles
+merc_armatoles = {
+    regiments_per_development = 0.025
+    home_province = 708
+	sprites = { dlc006_byz_sprite_pack easterngfx_sprite_pack }
+    trigger = { 
+		capital_scope = { 
+			OR = {
+				region = thrace_region
+				region = macedonia_region
+				region = furthergreece_region
+				region = hellas_region
+			}
+		}
+		6783 = {
+			owner = {
+				primary_culture = turkish
+			}
+		}
+	}
+}
+
+merc_white_company = {
+    regiments_per_development = 0.03
+    home_province = 2268
+	sprites = { dlc049_ENG_sprite_pack dlc042_eng_sprite_pack dlc028_eng_sprite_pack eng_base_sprite_pack }
+    trigger = { 
+		OR = {
+			capital_scope = { superregion = british_isles_superregion }
+			capital_scope = { superregion = irish_superregion }
+			any_owned_province = { superregion = british_isles_superregion }
+			any_owned_province = { superregion = irish_superregion }
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		current_age = age_of_discovery
+	}
+	modifier = { }
+}
+
+merc_flemish_company = {
+    regiments_per_development = 0.04
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+    home_province = 896
+	sprites = { dlc042_ned_sprite_pack dlc028_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = switzerland_superregion
+					superregion = bohemia_superregion
+					superregion = lowlands_superregion
+					superregion = british_isles_superregion
+					superregion = irish_superregion
+					superregion = french_superregion
+					superregion = burgundian_superregion
+				}
+			}
+			any_owned_province = {
+				superregion = lowlands_superregion
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+	modifier = {
+        infantry_power = 0.05
+	}
+}
+
+merc_forlorn_hope = {
+    regiments_per_development = 0.025
+    home_province = 986 # Oxford
+	cost_modifier = 1.2
+	sprites = { dlc049_ENG_sprite_pack dlc042_eng_sprite_pack dlc028_eng_sprite_pack eng_base_sprite_pack }
+    trigger = {	
+		capital_scope = {
+			OR = {
+				superregion = british_isles_superregion
+				superregion = irish_superregion
+			}
+		}
+	}
+	modifier = {
+		reinforce_speed = -0.25
+		fire_damage_received = -0.1
+		shock_damage_received = -0.1
+		land_morale = 0.1
+	}
+}
+
+# Bukhara Band
+merc_bukhara_band = {
+    regiments_per_development = 0.05
+	cavalry_weight = 0.4
+    artillery_weight = 0.2
+	cavalry_cap = 6
+	home_province = 6439
+	sprites = { dlc048_tim_sprite_pack muslimgfx_sprite_pack }
+    trigger = {
+		any_owned_province = {
+			OR = {
+				superregion = central_asia_superregion
+				superregion = caucasia_superregion
+			}
+		}
+	}
+	modifier = { }
+}
+
+# Mesopotamian Mamluks
+merc_mesopotamian_mamluks = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.4
+    artillery_weight = 0.2
+	cavalry_cap = 6
+	home_province = 6301
+	cost_modifier = 1.1
+	sprites = { dlc080_alh_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = {
+				superregion = mesopotamia_superregion
+			}
+			accepted_culture = al_iraqiya_arabic
+			AND = {
+				religion_group = muslim
+				any_owned_province = {
+					superregion = mesopotamia_superregion
+				}
+			}
+		}
+	}
+    modifier = {
+        cavalry_shock = 1.0
+    }
+}
+
+# Nile Mamluks
+merc_nile_mamluks = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.4
+    artillery_weight = 0.2
+	cavalry_cap = 6
+    home_province = 5054
+	cost_modifier = 1.5
+	sprites = { dlc002_mam_sprite_pack dlc058_mam_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		NOT = { tag = MAM }
+		NOT = { was_tag = MAM }
+		capital_scope = {
+			OR = {
+				superregion = mesopotamia_superregion
+				superregion = levant_superregion
+				superregion = africa_superregion
+				superregion = maghreb_superregion
+			}
+		}
+	}
+    modifier = {
+        cavalry_power = 0.1
+        discipline = 0.025
+    }
+}
+
+merc_zeybeks = {
+    regiments_per_development = 0.03
+    home_province = 68
+	sprites = { dlc002_tur_sprite_pack dlc042_tur_sprite_pack tur_base_sprite_pack }
+	trigger = {
+		religion_group = muslim
+		any_owned_province = {
+			OR = {
+				region = greekislands_region
+				region = opsikion_region
+				region = thrakesion_region
+			}
+		}
+	}
+    modifier = { }
+}
+
+merc_sekban = {
+    regiments_per_development = 0.03
+    home_province = 2966
+	sprites = { dlc002_tur_sprite_pack dlc042_tur_sprite_pack tur_base_sprite_pack }
+	trigger = {
+		OR = {
+			tag = TUR
+			capital_scope = { superregion = anatolia_superregion }
+		}
+	}
+    modifier = { }
+}
+
+merc_nubian_company = {
+    regiments_per_development = 0.05
+    artillery_weight = 0.2
+    home_province = 5070
+	sprites = { dlc057_nub_sprite_pack africangfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = {
+				OR = {
+					superregion = mesopotamia_superregion
+					superregion = anatolia_superregion
+					superregion = levant_superregion
+					superregion = africa_superregion
+					superregion = maghreb_superregion
+				}
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_mongol_mercenaries = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.4
+    artillery_weight = 0.1
+	cavalry_cap = 6
+	home_province = 6439
+	cost_modifier = 1.5
+	sprites = { dlc069_kha_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			any_neighbor_country = {
+				culture_group = altaic
+			}
+			culture_group = altaic
+			any_owned_province = {
+				OR = {
+					culture_group = altaic
+					superregion = central_asia_superregion
+				}
+			}
+		}
+	}
+    modifier = {
+        cavalry_power = 0.2
+    }
+}
+
+merc_royal_circassian_guards = {
+    regiments_per_development = 0.025
+	cost_modifier = 1.1
+    home_province = 3751 # Circassia proper
+	sprites = { dlc047_cir_sprite_pack easterngfx_sprite_pack }
+	trigger = { 
+		capital_scope = { 
+			OR = {
+				superregion = pontic_steppe_superregion
+				superregion = central_asia_superregion
+				superregion = mesopotamia_superregion
+				superregion = anatolia_superregion
+				superregion = levant_superregion
+				superregion = africa_superregion
+				AND = {
+					superregion = balkans_superregion
+					religion_group = muslim
+				}
+			}
+		}
+		government = monarchy
+	}
+    modifier = {
+		prestige_from_land = 0.15
+	}
+}
+
+merc_bedouin_auxiliaries = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.4
+    artillery_weight = 0.1
+	cavalry_cap = 6
+    home_province = 5013 # Tabuk
+	sprites = { dlc080_shm_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = {
+				OR = {
+					superregion = caucasia_superregion
+					superregion = mesopotamia_superregion
+					superregion = anatolia_superregion
+					superregion = levant_superregion
+					superregion = africa_superregion
+					superregion = maghreb_superregion
+				}
+			}
+			any_owned_province = {
+				OR = {
+					superregion = levant_superregion
+					superregion = mesopotamia_superregion
+					superregion = africa_superregion
+				}
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_kurdish_company = {
+    regiments_per_development = 0.02
+    home_province = 6375 # Arbil
+	sprites = { dlc079_hsn_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = {
+				OR = {
+					superregion = mesopotamia_superregion
+					superregion = anatolia_superregion
+				}
+			}
+			any_owned_province = {
+				OR = {
+					region = al_jazira_region
+					region = corduene_region
+				}
+			}
+		}
+	}
+    modifier = { }
+}
+
+merc_laz_auxiliaries = {
+    regiments_per_development = 0.03
+    home_province = 3556 # Guria
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = { superregion = caucasia_superregion }
+			tag = BYZ
+			tag = NKA
+		}
+	}
+    modifier = { }
+}
+
+merc_tabarestan_company = {
+    regiments_per_development = 0.03
+    home_province = 6356 # Lahijan
+	sprites = { dlc079_tab_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		capital_scope = { superregion = caucasia_superregion }
+	}
+    modifier = { }
+}
+
+merc_novgorod_company = {
+    regiments_per_development = 0.02
+    home_province = 6144 # Novogorod
+	sprites = { dlc020_nov_sprite_pack rus_base_sprite_pack easterngfx_sprite_pack }
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = russia_superregion
+				superregion = ruthenia_superregion
+				superregion = baltic_superregion
+				superregion = poland_superregion
+				superregion = carpathia_superregion
+				superregion = balkans_superregion
+				superregion = pontic_steppe_superregion
+				superregion = ural_superregion
+			}
+		}
+	}
+    modifier = { }
+}
+
+merc_crimean_company = {
+    regiments_per_development = 0.03
+    home_province = 3094 # Crimea
+	sprites = { dlc047_cri_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			religion_group = muslim
+			religion = tengri_pagan_reformed
+		}
+	}
+    modifier = { }
+}
+
+merc_lithuanian_company = {
+    regiments_per_development = 0.03
+    home_province = 5732 # Vilnius
+	sprites = { dlc003_lit_sprite_pack dlc074_lit_sprite_pack easterngfx_sprite_pack }
+	trigger = {
+		any_owned_province = {
+			OR = {
+				superregion = ruthenia_superregion
+				superregion = baltic_superregion
+				superregion = poland_superregion
+			}
+		}
+	}
+    modifier = { }
+}
+
+merc_frisian_free_company = {
+    regiments_per_development = 0.02
+    home_province = 1238 # Emden
+    cost_modifier = 1.2
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion 
+					superregion = lowlands_superregion
+				}
+			}
+			any_owned_province = { region = friesland_region }
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = {
+        reserves_organisation = 0.05
+		land_morale = 0.05
+	}
+}
+
+merc_finnish_company = {
+    regiments_per_development = 0.04
+    artillery_weight = 0.1
+    home_province = 3264 # Nyland
+	sprites = { swe_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = { superregion = scandinavia_superregion }
+			any_owned_province = { region = finland_region }
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_almogavars = {
+    regiments_per_development = 0.02
+    artillery_weight = 0 # No artillery
+    home_province = 2693 # Alicante
+    cost_modifier = 1.1
+	sprites = { dlc020_ara_sprite_pack dlc029_spa_sprite_pack dlc049_SPA_sprite_pack dlc053_spa_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		OR = {
+			culture_group = iberian
+			primary_culture = basque
+			primary_culture = andalucian
+		}
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+			current_age = age_of_discovery
+		}
+	}
+    modifier = {
+        movement_speed = 0.15
+	}
+}
+
+merc_moorish_battalion = {
+    regiments_per_development = 0.03
+    home_province = 4656 # Fez
+	sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+	trigger = { 
+		OR = {
+			capital_scope = { superregion = maghreb_superregion }
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_miquelet_company = {
+    regiments_per_development = 0.02
+    home_province = 1245 # Urgell
+	cost_modifier = 1.1
+	sprites = { dlc098_nav_sprite_pack dlc020_ara_sprite_pack dlc029_spa_sprite_pack dlc049_SPA_sprite_pack dlc053_spa_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		capital_scope = { 
+			OR = {
+				superregion = iberia_superregion
+				superregion = french_region
+				superregion = burgundian_region
+			}
+		}
+	}
+    modifier = {
+		movement_speed = 0.1
+		land_attrition = -0.15
+	}
+}
+
+merc_crabats = {
+    regiments_per_development = 0.025
+    home_province = 2236 # Zagreb
+    cavalry_weight = 0.4
+    artillery_weight = 0.1
+	cavalry_cap = 6
+	sprites = { easterngfx_sprite_pack }
+    trigger = {
+		religion_group = christian
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = balkans_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = switzerland_superregion
+					superregion = carpathia_superregion
+				}
+			}
+			any_owned_province = {
+				region = croatia_region
+			}
+		}
+	}
+	modifier = { }
+}
+
+merc_free_swiss_guard = {
+    regiments_per_development = 0.025
+    home_province = 2281 # Bern
+	cost_modifier = 1.5
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		OR = {
+			capital_scope = {
+				OR = {
+					superregion = irish_superregion
+					superregion = british_isles_superregion
+					superregion = scandinavia_superregion
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = switzerland_superregion
+					superregion = bohemia_superregion
+					superregion = french_superregion
+					superregion = burgundian_superregion
+					superregion = iberia_superregion
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
+			}
+			any_owned_province = {
+				superregion = switzerland_superregion
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		NOT = { tag = PAP }
+	}
+	modifier = {
+        discipline = 0.05
+	}
+}
+
+merc_independent_cossack_host = {
+    regiments_per_development = 0.05
+    home_province = 3720 # Zaporozhia
+	cavalry_weight = 0.4 # lots of cavalry relative to other units
+	artillery_weight = 0 # no artillery
+	cavalry_cap = 6
+	sprites = { dlc047_zaz_sprite_pack easterngfx_sprite_pack }
+	trigger = {
+		OR = {
+			has_estate = estate_cossacks
+			has_reform = cossacks_reform
+			any_neighbor_country = {
+				OR = {
+					has_estate = estate_cossacks
+					has_reform = cossacks_reform
+				}
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_kazakh_company = {
+    regiments_per_development = 0.05
+    home_province = 6408 # Kazakh
+	cavalry_weight = 0.4
+	cavalry_cap = 6
+	sprites = { dlc048_shy_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = { superregion = central_asia_superregion }
+			has_estate = estate_nomadic_tribes
+			any_neighbor_country = {
+				has_estate = estate_nomadic_tribes
+			}
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_gascon_musket_company = {
+    regiments_per_development = 0.025
+    home_province = 4066
+    cost_modifier = 1.2
+	sprites = { dlc001_amg_sprite_pack dlc049_FRA_sprite_pack dlc028_fra_sprite_pack dlc054_fra_sprite_pack fra_base_sprite_pack }
+    trigger = {
+		capital_scope = {
+			OR = {
+				superregion = irish_superregion
+				superregion = british_isles_superregion
+				superregion = scandinavia_superregion
+				superregion = germanynorth_superregion
+				superregion = germanysouth_superregion
+				superregion = austria_superregion
+				superregion = switzerland_superregion
+				superregion = bohemia_superregion
+				superregion = french_superregion
+				superregion = burgundian_superregion
+				superregion = iberia_superregion
+				superregion = italy_superregion
+				superregion = sicily_superregion
+			}
+		}
+		is_year = 1500
+	}
+	modifier = {
+        infantry_fire = 0.5
+	}
+}
+
+merc_tyrolean_guard = {
+    regiments_per_development = 0.025
+    home_province = 2745
+	sprites = { dlc053_hab_sprite_pack dlc029_hab_sprite_pack hab_base_sprite_pack }
+    trigger = {
+		capital_scope = {
+			OR = {
+				superregion = germanysouth_superregion
+				superregion = austria_superregion
+				superregion = switzerland_superregion
+			}
+		}
+		is_year = 1500
+	}
+	modifier = { }
+}
+
+merc_swiss_canton_mercenaries = {
+    regiments_per_development = 0.05
+	home_province = 1123
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		tag = SWI
+	}
+	cost_modifier = 0.75
+	modifier = {
+		discipline = 0.05
+	}
+}

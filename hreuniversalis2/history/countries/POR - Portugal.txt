@@ -697,7 +697,6 @@ add_army_professionalism = 0.05
 }	
 1655.1.1 = { leader = {	name = "Álvares Botelho"       	type = admiral		fire = 3	shock = 2	manuever = 4	siege = 0	death_date = 1680.1.1 } }
 1656.11.7 = {
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Afonso VI"
 		dynasty = "de Bragança"
@@ -834,7 +833,6 @@ add_army_professionalism = 0.05
 	}
 }
 1750.8.2 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "José I"
 		dynasty = "de Bragança"
@@ -951,7 +949,6 @@ add_army_professionalism = 0.05
 	}
 }
 1826.5.2 = {
-	set_legacy_government = constitutional_monarchy
 	monarch = {
 		name = "Isabel Maria (Regent)"
 		regent = yes
@@ -974,7 +971,6 @@ add_army_professionalism = 0.05
 	}
 }
 1828.2.26 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "Miguel"
 		dynasty = "de Bragança"
@@ -988,7 +984,6 @@ add_army_professionalism = 0.05
 	add_ruler_personality = malevolent_personality
 }
 1834.5.16 = {
-	set_legacy_government = constitutional_monarchy
 	monarch = {
 		name = "Maria II"
 		dynasty = "de Bragança"

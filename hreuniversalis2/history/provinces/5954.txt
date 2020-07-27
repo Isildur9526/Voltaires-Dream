@@ -10,7 +10,6 @@ hre = yes
 owner = HAB
 controller = HAB
 add_core = HAB
-estate = estate_nobles
 
 1804.1.1 = {
 	owner = EAH

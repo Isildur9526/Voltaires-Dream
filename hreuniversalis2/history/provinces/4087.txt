@@ -10,7 +10,6 @@ hre = no
 owner = MNE
 controller = MNE
 add_core = MNE
-estate = estate_nobles
 
 1126.10.12 = {
 	owner = ANJ

@@ -24,6 +24,12 @@ defined_text = {
         }
     }
     text = {
+        localisation_key = string_screen_title_papacy
+        trigger = {
+			tag = PAP
+        }
+    }
+    text = {
         localisation_key = string_screen_title
         trigger = {
 			always = yes
@@ -69,11 +75,47 @@ defined_text = {
 			NOT = { is_year = 1452 }
 		}
     }
+    text = {
+        localisation_key = string_start_title_bavarians
+        trigger = {
+			OR = {
+				tag = ING
+				tag = MUL
+				tag = LSH
+			}
+			started_in = 1439.9.24
+			NOT = { is_year = 1448 }
+		}
+    }
+	text = { #Saxony
+		localisation_key = string_start_title_saxony
+		trigger = {
+			tag = SAX
+			started_in = 1440.1.1
+			NOT = { is_year = 1454 }
+		}
+	}
+	text = {
+        localisation_key = string_start_title_hungary
+        trigger = {
+			tag = HUN
+			started_in = 1444.11.10
+			NOT = { is_year = 1452 }
+		}
+    }
 	text = {
         localisation_key = string_start_title_burgundy
         trigger = {
 			tag = BUR
 			has_ruler = "Philippe III"
+		}
+    }
+    text = {
+        localisation_key = string_start_title_bohemia
+        trigger = {
+			tag = BOH
+			started_in = 1439.10.27
+			NOT = { is_year = 1457 }
 		}
     }
 	text = {
@@ -111,6 +153,41 @@ defined_text = {
 			started_in = 1444.11.11
 		}
     }
+    text = {
+        localisation_key = string_start_title_hanseatic
+        trigger = {
+			OR = {
+				tag = HAM
+				tag = CYB
+				tag = HSA
+			}
+			started_in = 1444.11.11
+		}
+    }
+	
+	text = {
+		localisation_key = string_start_title_byzantium
+		trigger = {
+			tag = BYZ
+			started_in = 1444.11.11
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_naples
+		trigger = {
+			tag = NAP
+			started_in = 1444.11.11
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_genoa
+		trigger = {
+			tag = GEN
+			started_in = 1444.11.11
+		}
+	}
 	
 	#Custom 1054 Overviews
 	#By Isildur
@@ -483,6 +560,42 @@ defined_text = {
 			NOT = { is_year = 1457 }
 		}
 	}
+	text = {
+        localisation_key = string_start_bavaria
+        trigger = {
+			OR = {
+				tag = ING
+				tag = MUL
+				tag = LSH
+			}
+			started_in = 1439.9.24
+			NOT = { is_year = 1448 }
+		}
+    }
+	text = { #Saxony
+		localisation_key = string_start_saxony
+		trigger = {
+			tag = SAX
+			started_in = 1440.1.1
+			NOT = { is_year = 1454 }
+		}
+	}
+	text = {
+        localisation_key = string_start_milan
+        trigger = {
+			tag = MLO
+			started_in = 1435.1.1
+			NOT = { is_year = 1445 }
+		}
+    }
+	text = {
+        localisation_key = string_start_hungary
+        trigger = {
+			tag = HUN
+			started_in = 1444.11.10
+			NOT = { is_year = 1452 }
+		}
+    }
 	text = { #Sweden
 		localisation_key = string_start_sweden
 		trigger = {
@@ -507,6 +620,14 @@ defined_text = {
 			NOT = { is_year = 1467 }
 		}
 	}
+	text = {
+        localisation_key = string_start_bohemia
+        trigger = {
+			tag = BOH
+			started_in = 1439.10.27
+			NOT = { is_year = 1457 }
+		}
+    }
 	text = { #France
 		localisation_key = string_start_france
 		trigger = {
@@ -546,6 +667,134 @@ defined_text = {
 			started_in = 1444.11.11
 			NOT = { is_year = 1445 }
         }
+	}
+	text = { #Muscovy
+		localisation_key = string_start_muscovy
+        trigger = {
+			tag = MOS
+			started_in = 1405.2.18
+			NOT = { is_year = 1460 }
+        }
+	}
+	
+	text = { # Irish Minors
+		localisation_key = string_start_irish_minors
+		trigger = {
+			OR = {
+				primary_culture = irish
+				primary_culture = hiberno_norman
+			}
+			started_in = 1332.2.1
+			NOT = { is_year = 1460 }
+		}
+	}
+	
+	text = { # Scotland
+		localisation_key = string_start_scotland
+		trigger = {
+			tag = SCO
+			started_in = 1437.2.21
+			NOT = { is_year = 1461 }
+		}
+	}
+	
+	text = { # Brittany
+		localisation_key = string_start_brittany
+		trigger = {
+			tag = BRI
+			started_in = 1424.8.17
+			NOT = { is_year = 1488 }
+		}
+	}
+	
+	text = { # Provence
+		localisation_key = string_start_provence
+		trigger = {
+			tag = PRO
+			started_in = 1442.1.1
+			NOT = { is_year = 1481 }
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_papal_state
+		trigger = {
+			tag = PAP
+			started_in = 1300.1.1
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_LANTUS
+		trigger = {
+			OR = {
+				tag = LAN
+				tag = SIE
+				tag = LUC
+				tag = POB
+			}
+			started_in = 1402.9.3
+			NOT = { is_year = 1569 }
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_dutch_minors
+		trigger = {
+			OR = {
+				tag = HOL
+				tag = BRB
+				tag = FLA
+				tag = UTR
+				tag = GEL
+			}
+			started_in = 1443.1.1
+			NOT = { is_year = 1467 }
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_venice
+		trigger = {
+			tag = VEN
+			started_in = 1440.1.1
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_hanseatic
+		trigger = {
+			OR = {
+				tag = HSA
+				tag = BRE
+				tag = HAM
+			}
+			started_in = 1444.11.11
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_byzantium
+		trigger = {
+			tag = BYZ
+			started_in = 1444.11.11
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_naples
+		trigger = {
+			tag = NAP
+			started_in = 1444.11.11
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_genoa
+		trigger = {
+			tag = GEN
+			started_in = 1444.11.11
+		}
 	}
 	
 	#Middle & Near East
@@ -1481,7 +1730,7 @@ defined_text  = {
 				has_reform = ottoman_government
 				has_reform = tribal_kingdom
 				AND = { 
-					has_reform = revolutionary_republic_reform
+					is_revolutionary_republic_trigger = yes
 					has_dlc = "Rights of Man"
 				}
 			}
@@ -1971,12 +2220,6 @@ defined_text = {
     text = {
         localisation_key = string_imperial_cities_desc
         trigger = {
-			has_dlc = "Common Sense"
-        }
-    }
-	text = {
-        localisation_key = string_imperial_cities_desc_no #Empty String
-        trigger = {
 			always = yes
         }
     }
@@ -2005,20 +2248,11 @@ defined_text = {
 }
 
 defined_text = {
-    name = start_dharma_gov_reforms
-    random = no
-    
+	name = start_dharma_gov_reforms
+	random = no
+	
     text = {
         localisation_key = string_dharma_government_reforms
-        trigger = {
-            has_dlc = "Dharma"
-        }
-    }
-    text = {
-        localisation_key = string_dharma_government_reforms_no #Empty String
-        trigger = {
-            always = yes
-        }
     }
 }
 

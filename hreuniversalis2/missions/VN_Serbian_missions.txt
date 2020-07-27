@@ -1,0 +1,1339 @@
+#Serbian missions
+#Contributed by Chi-Rho
+
+vn_ser_missions_slot_1_a = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ser_fortify_danube = {
+        icon = mission_european_castle
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 5399
+                province_id = 5403
+                province_id = 5398
+                province_id = 2445
+                province_id = 539
+                province_id = 5538
+                province_id = 5530
+                province_id = 547
+                province_id = 5550
+                province_id = 5513
+            }
+            has_fort_trigger = no
+        }
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 4
+                OR = {
+                    province_id = 5399
+                    province_id = 5403
+                    province_id = 5398
+                    province_id = 2445
+                    province_id = 539
+                    province_id = 5538
+                    province_id = 5530
+                    province_id = 547
+                    province_id = 5550
+                    province_id = 5513
+                }
+                has_fort_trigger = yes
+            }
+            NOT = { num_of_loans = 1 }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_fortify_danube_mission"
+                duration = 9125
+            }
+        }
+    }
+    vn_ser_bulgarian_border = {
+        icon = mission_conquer_50_development
+        position = 2
+        required_missions = { vn_ser_fortify_danube }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 5513
+                province_id = 5514
+                province_id = 2064
+                province_id = 5517
+                province_id = 563
+            }
+            has_fort_trigger = no
+        }
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 2
+                OR = {
+                    province_id = 5513
+                    province_id = 5514
+                    province_id = 2064
+                    province_id = 5517
+                    province_id = 563
+                }
+                has_fort_trigger = yes
+            }
+        }
+        effect = {
+            define_advisor = {
+                skill = 3
+                type = fortification_expert
+                cost_multiplier = 0.25
+            }
+        }
+    }
+    vn_ser_capital_in_belgrade = {
+        icon = fortress_of_belgrade
+        position = 3
+        required_missions = { vn_ser_bulgarian_border }
+        provinces_to_highlight = {
+            province_id = 539
+        }
+        trigger = {
+            539 = {
+                is_capital_of = ROOT
+                NOT = { num_free_building_slots = 1 }
+                development = 15
+            }
+        }
+        effect = {
+            if = {
+                limit = { has_dlc = "Mandate of Heaven" } 
+                539 = { add_prosperity = 25 }
+            }
+            add_prestige = 10
+            add_adm_power = 150
+            539 = {
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+            }
+        }
+    }
+    vn_ser_white_city_of_danube = {
+        icon = despot_stefans_legacy
+        position = 5
+        required_missions = { vn_ser_capital_in_belgrade }
+        provinces_to_highlight = {
+            province_id = 539
+        }
+        trigger = {
+            539 = {
+                is_capital_of = ROOT
+                NOT = { num_free_building_slots = 1 }
+                development = 30
+            }
+        }
+        effect = {
+            if = {
+                limit = { has_dlc = "Mandate of Heaven" } 
+                539 = { add_prosperity = 25 }
+            }
+            539 = {
+                add_province_modifier = {
+                    name = "ser_white_city_of_danube_mission"
+                    duration = -1
+                }
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_1_b = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_unite_south_slavs = {
+        icon = legacy_of_the_sclavinias
+        position = 6
+        required_missions = { vn_ser_croatian_subjugation }
+        provinces_to_highlight = {
+            OR = {
+                culture = slovenian
+                culture = croatian
+                culture = bosnian
+                culture = serbian
+            }
+            NOT = { owned_by = ROOT }
+        }
+        trigger = {
+            NOT = {
+                any_province = {
+                    OR = {
+                        culture = slovenian
+                        culture = croatian
+                        culture = bosnian
+                        culture = serbian
+                    }
+                    NOT = { owned_by = ROOT }
+                }
+            }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_unite_south_slavs_mission"
+                duration = 36500
+            }
+            add_accepted_culture = slovenian
+            bulgaria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            bulgariasouth_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ser_defeat_bulgaria = {
+        icon = push_on_to_bulgaria 
+        position = 8
+        required_missions = { vn_ser_unite_south_slavs }
+        provinces_to_highlight = {
+            culture = bulgarian
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 50
+                culture = bulgarian
+            }
+        }
+        effect = {
+            add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 20
+			}
+            add_prestige = 15
+            add_mil_power = 100
+            bulgaria_region = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
+                add_province_modifier = {
+                    name = "ser_defeat_bulgaria_mission"
+                    duration = 9125
+                }
+            }
+            bulgariasouth_region = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
+                add_province_modifier = {
+                    name = "ser_defeat_bulgaria_mission"
+                    duration = 9125
+                }
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_2_a = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ser_mines_of_serbia = {
+        icon = reissue_the_mining_code
+        position = 2
+        required_missions = { vn_ser_fortify_danube }
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 5
+                OR = {
+                    trade_goods = iron
+                    trade_goods = copper
+                    trade_goods = gold
+                    trade_goods = plumbum
+                    trade_goods = silver
+                }
+                base_production = 5
+            }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_mines_of_serbia_mission"
+                duration = 7300
+            }
+        }
+    }
+    vn_ser_economic_alternatives = {
+        icon = mission_have_manufactories
+        position = 3
+        required_missions = { vn_ser_mines_of_serbia }
+        trigger = {
+            if = {
+                limit = { has_dlc = "Rule Britannia" }
+                num_of_owned_provinces_with = {
+                    value = 4
+                    OR = {
+                        trade_goods = coal
+                        trade_goods = steel
+                    }
+                    development = 20
+                    has_manufactory_trigger = yes
+                }
+            }
+            else = {
+                num_of_owned_provinces_with = {
+                    value = 4
+                    development = 20
+                    has_manufactory_trigger = yes
+                }
+            }
+        }
+        effect = {
+            add_years_of_income = 1
+            random_owned_province = {
+                limit = { 
+                    has_manufactory_trigger = yes
+                    development = 20
+                }
+                add_base_production = 3
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_2_b = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_legacy_of_krusevac = {
+        icon = the_great_school 
+        position = 4
+        required_missions = { vn_ser_capital_in_belgrade }
+        provinces_to_highlight = {
+            province_id = 1947
+        }
+        trigger = {
+            1947 = {
+                owned_by = ROOT
+                is_core = ROOT
+                development = 25
+                has_building = university
+                NOT = { num_free_building_slots = 1 }
+            }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_legacy_of_krusevac_mission"
+                duration = 18250
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_2_c = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_croatian_subjugation = {
+        icon = secure_the_sava
+        position = 5
+        required_missions = { vn_ser_dalmatian_conquest }
+        provinces_to_highlight = {
+            region = croatia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            croatia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_accepted_culture = croatian
+            carniola_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_2_d = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ser_dusans_code = {
+        icon = law_of_the_pious
+        position = 7
+        required_missions = { vn_ser_unite_south_slavs }
+        trigger = {
+            NOT = { average_unrest = 0 }
+            NOT = { average_autonomy = 10 }
+            if = {
+                limit = { has_estate = estate_nobles }
+                estate_loyalty = {
+                    estate = estate_nobles
+                    loyalty = 60
+                }
+            }
+            if = {
+                limit = { has_estate = estate_church }
+                estate_loyalty = {
+                    estate = estate_church
+                    loyalty = 60
+                }
+            }
+            if = {
+                limit = { has_estate = estate_burghers }
+                estate_loyalty = {
+                    estate = estate_burghers
+                    loyalty = 60
+                }
+            }
+            stability = 3
+            NOT = { corruption = 0.1 }
+
+        }
+        effect = {
+            add_adm_power = 50
+            add_country_modifier = {
+                name = "ser_dusans_code_mission"
+                duration = 18250
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_3_a = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ser_access_to_sea = {
+        icon = danubian_power
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            OR = {
+                area = rashka_area
+                area = zeta_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            rashka_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            zeta_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_adm_power = 50
+            add_prestige = 5
+            5555 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            535 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            5549 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            2436 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            5551 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            534 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            5552 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            779 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+        }
+    }
+    vn_ser_integrate_krivaja = {
+        icon = mission_village
+        position = 2
+        required_missions = { vn_ser_access_to_sea }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 5555
+                province_id = 535
+                province_id = 5549
+                province_id = 2436
+                province_id = 5551
+                province_id = 534
+                province_id = 5552
+                province_id = 779
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            5555 = { country_or_non_sovereign_subject_holds = ROOT }
+            535 = { country_or_non_sovereign_subject_holds = ROOT }
+            5549 = { country_or_non_sovereign_subject_holds = ROOT }
+            2436 = { country_or_non_sovereign_subject_holds = ROOT }
+            5551 = { country_or_non_sovereign_subject_holds = ROOT }
+            534 = { country_or_non_sovereign_subject_holds = ROOT }
+            5552 = { country_or_non_sovereign_subject_holds = ROOT }
+            779 = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        effect = {
+            bosnia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ser_bosnian_question = {
+        icon = mission_unite_home_region
+        position = 3
+        required_missions = { 
+            vn_ser_integrate_krivaja 
+            vn_ser_incorporate_macva 
+        }
+        provinces_to_highlight = {
+            region = bosnia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            bosnia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_accepted_culture = bosnian
+            dalmatian_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ser_dalmatian_conquest = {
+        icon = capture_adriatic_ports
+        position = 4
+        required_missions = { vn_ser_bosnian_question }
+        provinces_to_highlight = {
+            region = dalmatian_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            dalmatian_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_yearly_sailors = 1
+            dalmatian_region = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
+                add_province_modifier = {
+                    name = "ser_dalmatian_conquest_mission"
+                    duration = 9125
+                }
+            }
+            albania_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            croatia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ser_attack_albania = {
+        icon = pacify_the_albanian_lands
+        position = 5
+        required_missions = { vn_ser_dalmatian_conquest }
+        provinces_to_highlight = {
+            region = albania_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            albania_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_accepted_culture = albanian
+            skopia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            prilep_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            624 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            630 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            623 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            622 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+        }
+    }
+    vn_ser_into_macedonia = {
+        icon = mission_cannons_firing
+        position = 6
+        required_missions = { vn_ser_attack_albania }
+        provinces_to_highlight = {
+            OR = {
+                area = skopia_area
+                area = prilep_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            skopia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT 
+            }
+            prilep_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_into_macedonia_mission"
+                duration = 7300
+            }
+            macedonia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_3_b = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_serbian_empire = {
+        icon = emperor_and_autocrat
+        position = 8
+        required_missions = { vn_ser_tsar_of_romans }
+        trigger = {
+            government_rank = 6
+            is_great_power = yes
+            calc_true_if = {
+                ADM = 5
+                DIP = 5
+                MIL = 5
+                amount = 2
+            }
+            prestige = 50
+			legitimacy = 95
+			stability = 2
+            army_size = 50
+            months_of_ruling = 120
+        }
+        effect = {
+            add_adm_power = 75
+            add_dip_power = 75
+            add_mil_power = 75
+            add_country_modifier = {
+				name = "ser_serbian_empire_mission"
+				duration = -1
+			}
+        }
+    }
+}
+
+vn_ser_missions_slot_4_a = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ser_recover_our_lands = {
+        icon = defeat_the_serbs 
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            OR = {
+                area = zlatibor_area
+                area = nis_area
+                area = kosovo_area
+                province_id = 5523
+                province_id = 5514
+                province_id = 5517
+                province_id = 563
+                province_id = 5957
+            }
+        }
+        trigger = {
+            zlatibor_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            nis_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            kosovo_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            5523 = { country_or_non_sovereign_subject_holds = ROOT }
+            5514 = { country_or_non_sovereign_subject_holds = ROOT }
+            5517 = { country_or_non_sovereign_subject_holds = ROOT }
+            563 = { country_or_non_sovereign_subject_holds = ROOT }
+            5957 = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        effect = {
+            add_army_tradition = 15
+            add_prestige = 5
+            belgrade_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            branicevo_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ser_incorporate_macva = {
+        icon = mission_large_army
+        position = 2
+        required_missions = { vn_ser_recover_our_lands }
+        provinces_to_highlight = {
+            OR = {
+                area = belgrade_area
+                area = branicevo_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            belgrade_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            branicevo_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            belgrade_area = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
+                add_province_modifier = {
+                    name = "ser_incorporate_macva_mission"
+                    duration = 9125
+                }
+            }
+            branicevo_area = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
+                add_province_modifier = {
+                    name = "ser_incorporate_macva_mission"
+                    duration = 9125
+                }
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_4_b = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_deal_with_romania = {
+        icon = mission_alliances
+        position = 4
+        required_missions = { vn_ser_bosnian_question }
+        trigger = {
+            OR = {
+                calc_true_if = {
+                    all_known_country = {
+                        capital_scope = {
+                            OR = {
+                                region = wallachia_region
+                                region = moldavia_region
+                                region = transylvania_region
+                            }
+                        }
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                    amount = 5
+                }
+                calc_true_if = {
+                    all_province = {
+                        OR = {
+                            region = wallachia_region
+                            region = moldavia_region
+                            region = transylvania_region
+                        }
+                        OR = {
+                            is_claim = ROOT
+                            is_core = ROOT
+                        }
+                    }
+                    amount = 10
+                }
+            }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_deal_with_romania_mission"
+                duration = 9125
+            }
+        }
+    }
+    vn_ser_adriatic_fleet = {
+        icon = mission_establish_high_seas_navy
+        position = 5
+        required_missions = { vn_ser_dalmatian_conquest }
+        trigger = {
+            naval_forcelimit = 30
+			calc_true_if = {
+				num_of_heavy_ship = 5
+				num_of_galley = 10
+				num_of_light_ship = 10
+				num_of_transport = 15
+				amount = 3
+			}
+        }
+        effect = {
+            add_navy_tradition = 15
+            create_admiral = {
+                tradition = 75
+            }
+        }
+    }
+    vn_ser_isles_of_ionian_sea = {
+        icon = mission_invade_island
+        position = 6
+        required_missions = { 
+            vn_ser_attack_albania 
+            vn_ser_adriatic_fleet 
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 624
+                province_id = 630
+                province_id = 623
+                province_id = 622
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            624 = { country_or_non_sovereign_subject_holds = ROOT }
+            630 = { country_or_non_sovereign_subject_holds = ROOT }
+            623 = { country_or_non_sovereign_subject_holds = ROOT }
+            622 = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        effect = {
+            furthergreece_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ser_tsar_of_romans = {
+        icon = cross_the_pindus
+        position = 7
+        required_missions = { 
+            vn_ser_into_macedonia 
+            vn_ser_isles_of_ionian_sea 
+        }
+        provinces_to_highlight = {
+            OR = {
+                region = macedonia_region
+                region = furthergreece_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            macedonia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            furthergreece_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_prestige = 15
+            add_accepted_culture = greek
+            hellas_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            thrace_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_5_a = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ser_deal_with_bogomils = {
+        icon = fight_bosnian_heresies
+        position = 1
+        required_missions = {  }
+        trigger = {
+            OR = {
+                AND = {
+                    serbia_region = {
+                        type = all
+                        NOT = { religion = bogomilist }
+                    }
+                    rashkan_region = {
+                        type = all
+                        NOT = { religion = bogomilist }
+                    }
+                }
+                AND = {
+                    religion = bogomilist
+                }
+            }
+            religious_unity = 1
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_deal_with_bogomils_mission"
+                duration = 7300
+            }
+        }
+    }
+    vn_ser_nomocanon_of_saint_sava = {
+        icon = reform_the_nomocanon
+        position = 2
+        required_missions = { vn_ser_deal_with_bogomils }
+        trigger = {
+            if = {
+                limit = { uses_patriarch_authority = yes }
+                patriarch_authority = 0.5
+            }
+            else = {
+                religious_unity = 1
+                stability = 1
+            }
+            theologian = 3
+        }
+        effect = {
+            add_religious_influence_effect_large = yes
+            add_country_modifier = {
+                name = "ser_nomocanon_of_saint_sava_mission"
+                duration = 36500
+            }
+        }
+    }
+    vn_ser_serbian_patriarch = {
+        icon = promote_the_patriarchate
+        position = 3
+        required_missions = { vn_ser_nomocanon_of_saint_sava }
+        trigger = {
+            if = {
+                limit = { uses_patriarch_authority = yes }
+                patriarch_authority = 1
+            }
+            else = {
+                religious_unity = 1
+                stability = 3
+            }
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_serbian_patriarch_mission"
+                duration = 18250
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_5_b = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_banners_of_serbs = {
+        icon = moravian_arms
+        position = 4
+        required_missions = {  }
+        trigger = {
+            army_tradition = 50
+            army_size_percentage = 0.8
+            land_forcelimit = 25
+        }
+        effect = {
+            add_country_modifier = {
+                name = "ser_banners_of_serbs_mission"
+                duration = 10950
+            }
+        }
+    }
+    vn_ser_elite_hussars = {
+        icon = mission_cossack_cavalry
+        position = 5
+        required_missions = { vn_ser_banners_of_serbs }
+        trigger = {
+            cavalry_fraction = 0.25
+            num_of_cavalry = 8
+            is_in_deficit = no
+            if = {
+                limit = { has_dlc = "Cradle of Civilization" }
+                army_professionalism = 0.25
+            }
+            else = {
+                has_leader_with = {
+                    shock = 4
+                }
+            }
+        }
+        effect = {
+            add_army_professionalism = 0.05
+            add_country_modifier = {
+                name = "ser_elite_hussars_mission"
+                duration = 10950
+            }
+        }
+    }
+    vn_ser_alemannic_guard = {
+        icon = mission_landsknecht_soldier
+        position = 6
+        required_missions = { vn_ser_elite_hussars }
+        trigger = {
+            num_of_mercenaries = 10
+            is_in_deficit = no
+            NOT = { num_of_loans = 1 }
+        }
+        effect = {
+            #add - unlock Alemannic Guard mercenary company (1.30)
+        }
+    }
+}
+
+vn_ser_missions_slot_5_c = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_venetian_rivalry = {
+        icon = nuova_promissione_ducale
+        position = 7
+        required_missions = { vn_ser_isles_of_ionian_sea }
+        trigger = {
+            if = {
+                limit = { exists = VEN }
+                navy_size = VEN
+                num_of_ports = VEN
+            }
+            else = {
+                naval_forcelimit = 50
+                navy_size_percentage = 0.75
+                num_of_ports = 25
+            }
+        }
+        effect = {
+            add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 20
+			}
+            if = {
+                limit = { exists = VEN }
+                add_casus_belli = {
+                    target = VEN
+                    type = cb_trade_war_triggered
+                }
+            }
+            add_country_modifier = {
+                name = "ser_venetian_rivalry_mission"
+                duration = 9125
+            }
+        }
+    }
+}
+
+vn_ser_missions_slot_5_d = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            tag = KSV
+            tag = SER
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+	
+    vn_ser_capture_constantinople = {
+        icon = take_constantinople
+        position = 8
+        required_missions = { vn_ser_tsar_of_romans }
+        provinces_to_highlight = {
+            region = thrace_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            thrace_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_religious_influence_effect_large = yes
+            2233 = {
+                if = {
+                    limit = {
+                        NOT = { religion = ROOT }
+                    }
+                }
+                change_religion = ROOT
+                add_province_modifier = {
+                    name = "ser_capture_constantinople_mission"
+                    duration = 9125
+                }
+            }
+        }
+    }
+}

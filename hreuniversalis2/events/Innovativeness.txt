@@ -110,9 +110,11 @@ country_event = {
 	title = "innovativeness_events.3.t"
 	desc = "innovativeness_events.3.d"
 	picture = ROYAL_SOCIETY_eventPicture
+	goto = doctor_province
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
+		innovativeness = 1
 		any_owned_province = {
 			is_state = yes
 			is_capital = no
@@ -142,7 +144,7 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 		modifier = {
-			factor = 3
+			factor = 1.2
 			religion_group = christian
 		}
 	}
@@ -155,6 +157,7 @@ country_event = {
 		reduce_innovativeness_small_effect = yes
 	}
 	option = {
+		goto = doctor_province
 		name = "innovativeness_events.3.b"
 		ai_chance = {
 			factor = 40
@@ -170,6 +173,7 @@ country_event = {
 		}
 	}
 	option = {
+		goto = doctor_province
 		name = "innovativeness_events.3.c"
 		ai_chance = {
 			factor = 40
@@ -282,6 +286,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
+		innovativeness = 1
 		any_owned_province = {
 			NOT = { development = 12 }
 			is_capital = no
@@ -347,17 +352,11 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		has_institution = renaissance
 	}
 	
 	is_triggered_only = yes
-	
-	immediate = {
-		hidden_effect = {
-			
-		}
-	}
 	
 	mean_time_to_happen = {
 		days = 1
@@ -394,7 +393,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		has_institution = printing_press
 		any_owned_province = {
 			printing_press = 100
@@ -459,7 +458,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		religion_group = christian
 		num_of_owned_provinces_with = {
 			religion_group = ROOT
@@ -501,7 +500,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		NOT = {
 			has_country_modifier = "religion_mocked"
 			has_country_modifier = "blasphemous_scientist_punished"
@@ -555,7 +554,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 	}
 
 	mean_time_to_happen = {
@@ -596,7 +595,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		has_institution = manufactories
 		any_country = {
 			capital_scope = {
@@ -646,7 +645,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		has_institution = renaissance
 	}
 	mean_time_to_happen = {
@@ -671,7 +670,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		has_institution = enlightenment
 	}
 	mean_time_to_happen = {
@@ -713,7 +712,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rule Britannia"
-		innovativeness = 10
+		innovativeness = 5
 		has_institution = new_world_i
 	}
 	mean_time_to_happen = {

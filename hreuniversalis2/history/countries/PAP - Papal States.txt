@@ -8,13 +8,27 @@ capital = 2235
 historical_rival = VEN
 historical_rival = BYZ
 add_army_professionalism = 0.05
+change_estate_land_share = {
+	estate = estate_church
+	share = -30
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 5
+}
 
 #Global Flags
 1099.1.13 = { set_global_flag = crx_start }
+1115.7.24 = { set_global_flag = italian_monarchy_allowed }
 1122.9.23 = { set_global_flag = guelph_ghib_enabled }
 1147.5.1 = { set_global_flag = crx_start }
 1158.1.1 = { set_global_flag = enable_reconquista_holy_orders_flag }
 1167.1.1 = { set_global_flag = cathar_heresy_g }
+1167.12.1 = { set_global_flag = lombard_league_founded }
 1169.1.1 = { set_global_flag = norman_invasion_started }
 1189.8.1 = { set_global_flag = crx_start }
 1203.4.1 = { set_global_flag = crx_start }

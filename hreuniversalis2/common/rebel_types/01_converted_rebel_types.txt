@@ -143,6 +143,13 @@ cathar_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -163,6 +170,13 @@ cathar_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -202,6 +216,11 @@ cathar_rebels = {
 			}
 			change_religion = cathar
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -349,6 +368,13 @@ catholique_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -369,6 +395,13 @@ catholique_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -408,6 +441,11 @@ catholique_rebels = {
 			}
 			change_religion = catholique
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -555,6 +593,13 @@ paulician_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -575,6 +620,13 @@ paulician_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -614,6 +666,11 @@ paulician_rebels = {
 			}
 			change_religion = paulician
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -761,6 +818,13 @@ fraticelli_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -781,6 +845,13 @@ fraticelli_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -820,6 +891,11 @@ fraticelli_rebels = {
 			}
 			change_religion = fraticelli
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -967,6 +1043,13 @@ waldensian_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -987,6 +1070,13 @@ waldensian_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -1026,6 +1116,11 @@ waldensian_rebels = {
 			}
 			change_religion = waldensian
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -1173,6 +1268,13 @@ lollardy_religion_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -1193,6 +1295,13 @@ lollardy_religion_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -1232,6 +1341,11 @@ lollardy_religion_rebels = {
 			}
 			change_religion = lollardy
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -1379,6 +1493,13 @@ bogomilist_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -1399,6 +1520,13 @@ bogomilist_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -1438,6 +1566,11 @@ bogomilist_rebels = {
 			}
 			change_religion = bogomilist
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -1585,6 +1718,13 @@ hellenic_pagan_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -1608,6 +1748,13 @@ hellenic_pagan_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -1676,6 +1823,11 @@ hellenic_pagan_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -1823,6 +1975,13 @@ finnish_pagan_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -1846,6 +2005,13 @@ finnish_pagan_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -1914,6 +2080,11 @@ finnish_pagan_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -2061,6 +2232,13 @@ slavic_pagan_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -2084,6 +2262,13 @@ slavic_pagan_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -2153,216 +2338,10 @@ slavic_pagan_rebels = {
 				influence = 15
 			}
 		}
-	}
-}
 
-hussite_rebels = {
-
-	area = nation 					# Sticks to provinces of their nation
-	government = theocracy 			# Desires Theocracy
-	religion = hussite
-	defection = religion			# Defects to countries of their religion
-	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
-	independence = none				# Does not strive for independence
-	unit_transfer = yes
-	gfx_type = culture_province
-	
-	resilient = no
-	reinforcing = yes
-	general = yes
-	smart = yes
-	
-	artillery = 0.0
-	infantry = 0.7
-	cavalry = 0.3
-	
-	morale = 1.1
-
-	# Possible handle actions
-	handle_action_negotiate = yes
-	handle_action_stability = yes
-	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
-	# The rebel type with the highest modifier for this province gets picked
-	spawn_chance = {
-		factor = 1
-		modifier = {
-			factor = 0.5
-			is_overseas = yes
-		}
-		modifier = {
-			factor = 0.0
-			owner = { religion = ROOT }
-		}
-		modifier = {
-			factor = 0.0
-			NOT = { religion = hussite }
-		}
-		modifier = {
-			factor = 0.001
-			tolerance_to_this = 5
-		}
-		modifier = {
-			factor = 0.5
-			tolerance_to_this = 2
-		}
-		modifier = {
-			factor = 5.0
-			owner = { has_country_flag = religious_turmoil }
-		}
-		modifier = {
-			factor = 2000
-			has_missionary = yes
-		}
-		modifier = {
-			factor = 2
-			NOT = { tolerance_to_this = 1 }
-		}
-		modifier = {
-			factor = 2
-			NOT = { tolerance_to_this = -1 }
-		}
-		modifier = {
-			factor = 2
-			NOT = { tolerance_to_this = -2 }
-		}
-		#hussite wars
-		modifier = {
-            factor = 100
-            owner = { has_disaster = hussite_wars }
-		}	
-	}
- 
- 	# This is checked for EACH province in the Area of Operations
-	movement_evaluation = {
-		factor = 1
-		modifier = {
-			factor = 0.5
-			units_in_province = 1
-		}
-		modifier = {
-			factor = 0.001
-			controlled_by = REB
-		}
-		modifier = {
-			factor = 0.0
-			religion = hussite
-			owner = { religion = hussite }
-		}
-		modifier = {
-			factor = 2.0
-			NOT = { religion = hussite }
-			any_neighbor_province = {
-	 			religion = hussite
-	 			NOT = { has_province_modifier = "forced_conversion" }
-	 		}
-	 	}
-		modifier = {
-			factor = 1.5
-			unrest = 2
-		}
-		modifier = {
-			factor = 1.5
-			unrest = 4
-		}
-		modifier = {
-			factor = 1.5
-			unrest = 6
-		}
-	}
- 
- 	# Province Scope
- 	siege_won_trigger = {
-		NOT = {
-			AND = {
-				OR = {
-					owned_by = PAP
-					owned_by = AVI
-				}
-				is_capital = yes
-			}
-		}
- 	}
-	siege_won_effect = {
-		if = {
-			limit = {
-				religion = hussite
-			}
-			add_province_modifier = {
-				name = "religious_violence"
-				duration = 730
-			}
-		}
-		if = {
-			limit = {
-				NOT = { religion = hussite }
-			}
-			change_religion = hussite
-			add_province_modifier = {
-				name = "forced_conversion"
-				duration = 730
-			}
-		}
-	}
-	
-	# Country scope
-	can_negotiate_trigger = {
-		OR = {
-			religion_group = christian
-			dominant_religion = hussite
-		}
-	}
-	
-	# Country scope
-	can_enforce_trigger = {
-		always = yes
-	}
-	
-	# Localisation for their demands
-	demands_description = "hussite_rebels_demand"
-	
-	# Country Scope	
-	demands_enforced_effect = {
-		if = {
-			limit = {
-				NOT = { religion_group = christian }
-			}
-			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					tag = PAP
-					tag = AVI
-				}
-			}
-			add_stability = -1
-		}
-		if = {
-			limit = {
-				religion = hussite
-			}
-			add_country_modifier = {
-				name = "religious_intolerance"
-				duration = 3650
-			}
-		}
-		if = {
-			limit = {
-				religion_group = christian
-				NOT = { religion = hussite }
-				NOT = { tag = PAP }
-				NOT = { tag = AVI }
-			}
-			change_religion = hussite
-			force_converted = yes
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -2510,6 +2489,13 @@ vainakh_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -2533,6 +2519,13 @@ vainakh_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -2601,6 +2594,11 @@ vainakh_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -2748,6 +2746,13 @@ egyptian_religion_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -2771,6 +2776,13 @@ egyptian_religion_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -2839,6 +2851,11 @@ egyptian_religion_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -2986,6 +3003,13 @@ druwi_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -3009,6 +3033,13 @@ druwi_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -3077,6 +3108,11 @@ druwi_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -3224,6 +3260,13 @@ dievturiba_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -3247,6 +3290,13 @@ dievturiba_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -3315,6 +3365,11 @@ dievturiba_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -3462,6 +3517,13 @@ maausko_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -3485,6 +3547,13 @@ maausko_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -3553,6 +3622,11 @@ maausko_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -3700,6 +3774,13 @@ uralinusko_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -3723,6 +3804,13 @@ uralinusko_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -3791,6 +3879,11 @@ uralinusko_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -3938,6 +4031,13 @@ khabze_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -3961,6 +4061,13 @@ khabze_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -4029,6 +4136,11 @@ khabze_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -4176,6 +4288,13 @@ uatsdin_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -4199,6 +4318,13 @@ uatsdin_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = pagan }
@@ -4267,6 +4393,11 @@ uatsdin_rebels = {
 				duration = 3650
 				influence = 15
 			}
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -4414,6 +4545,13 @@ druze_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -4431,6 +4569,13 @@ druze_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = zoroastrian_group }
@@ -4470,6 +4615,11 @@ druze_rebels = {
 			}
 			change_religion = druze
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -4617,6 +4767,13 @@ zikri_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -4634,6 +4791,13 @@ zikri_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = muslim }
@@ -4673,6 +4837,11 @@ zikri_rebels = {
 			}
 			change_religion = zikri
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -4820,6 +4989,13 @@ yazidi_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -4837,6 +5013,13 @@ yazidi_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = zoroastrian_group }
@@ -4876,6 +5059,11 @@ yazidi_rebels = {
 			}
 			change_religion = yazidi
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -5023,6 +5211,13 @@ nestorian_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -5040,6 +5235,13 @@ nestorian_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -5079,6 +5281,11 @@ nestorian_rebels = {
 			}
 			change_religion = nestorian
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -5226,6 +5433,13 @@ mandaeism_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -5243,6 +5457,13 @@ mandaeism_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = zoroastrian_group }
@@ -5282,6 +5503,11 @@ mandaeism_rebels = {
 			}
 			change_religion = mandaeism
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -5429,6 +5655,13 @@ iconoclast_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -5446,6 +5679,13 @@ iconoclast_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -5485,6 +5725,11 @@ iconoclast_rebels = {
 			}
 			change_religion = iconoclast
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }
@@ -5632,6 +5877,13 @@ monothelite_rebels = {
 				duration = 730
 			}
 		}
+		owner = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -5649,6 +5901,13 @@ monothelite_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = christian }
@@ -5688,6 +5947,11 @@ monothelite_rebels = {
 			}
 			change_religion = monothelite
 			force_converted = yes
+		}
+
+		change_estate_land_share = {
+			estate = estate_church
+			share = 10.0
 		}
 	}
 }

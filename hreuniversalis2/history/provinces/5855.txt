@@ -17,7 +17,6 @@ add_core = MTM
 	add_core = LIV
 	remove_core = MTM
 	religion = catholic
-	estate = estate_church
 }
 1234.1.1 = {
 	owner = OSL

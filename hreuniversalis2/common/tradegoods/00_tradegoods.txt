@@ -18,7 +18,7 @@ pepper = {
 
 rice = { 
 	color = { 0.9 0.9 0.6 }
-	modifier = { global_institution_spread = 0.05 }
+	modifier = { embracement_cost = -0.1 }
 	province = { local_institution_spread = 0.1 }
 	chance = {
 		factor = 5

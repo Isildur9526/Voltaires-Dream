@@ -1077,33 +1077,28 @@ vn_lor_missions_slot_5_a = {
         position = 5
         trigger = {
 			if = {
-				limit = {
-					has_estate = estate_church
-				}
+				limit = { has_estate = estate_church }
 				estate_loyalty = {
 					estate = estate_church
 					loyalty = 60
 				}
-				estate_influence = {
-					estate = estate_church
-					influence = 50
-				}
+                num_of_estate_agendas_completed = {
+                    estate = estate_church
+                    value = 3
+                }
 			}
-            if = {
-                limit = {
-                    has_estate = estate_holy_orders
-                }
-                estate_loyalty = {
-                    estate = estate_holy_orders
-                    loyalty = 60
-                }
-            }
         }
         effect = {
-            add_adm_power = 50
-            add_country_modifier = {
-                name = "lor_protect_clergy_mission"
-                duration = 9125
+            if = {
+                limit = { has_estate = estate_church }
+                add_adm_power = 50
+                add_country_modifier = {
+                    name = "lor_protect_clergy_mission"
+                    duration = 9125
+                }
+            }
+            else = {
+                custom_tooltip = vn_ase_elect_new_king.tt4
             }
         }
     }

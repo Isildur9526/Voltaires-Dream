@@ -353,6 +353,7 @@ country_event = {
 				value = yes
 			}
 		}
+		highlight = yes
 		add_mercantilism = 1
 		add_prestige = 10
 	}
@@ -375,6 +376,8 @@ country_event = {
 			}
 			NOT = { war_with = ROOT }
 		}
+		NOT = { government = tribal }
+		NOT = { government = native }
 	}
 
 	mean_time_to_happen = {
@@ -404,5 +407,6 @@ country_event = {
 		}
 		add_mercantilism = 1
 		add_prestige = 10
+		highlight = yes
 	}
 }

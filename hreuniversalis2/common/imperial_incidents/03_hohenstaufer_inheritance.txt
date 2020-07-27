@@ -1,0 +1,101 @@
+incident_hohenstaufer_inheritance = {
+	event = incident_hohenstaufer_inheritance.2
+	default_option = 2
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				exists = WWS
+			}
+			WWS = {
+				is_emperor = yes
+			}
+			WWS = {
+				is_subject = yes
+			}
+			WWS = {
+				NOT = { government = monarchy }
+			}
+			WWS = {
+				is_part_of_hre = no
+			}
+		}
+	}
+	
+	0 = { # the current duke
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_friendly
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_loyal
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_allied
+				}
+			}
+		}
+		modifier = {
+			factor = 1000
+			dynasty = WWS
+		}
+	}
+	
+	1 = { # a relative of the emperor
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_disloyal
+				}
+				ai_attitude = {
+					who = WWS
+					attitude = attitude_rebellious
+				}
+			}
+		}
+		modifier = {
+			factor = 1000
+			dynasty = emperor
+		}
+	}
+
+	2 = { # a hohenstaufer candidate
+		factor = 1
+		modifier = {
+			factor = 100
+			ai_attitude = {
+				who = WWS
+				attitude = attitude_neutral
+			}
+		}
+		modifier = {
+			factor = 1000
+			dynasty = "von Hohenstaufen"
+		}
+	}
+}

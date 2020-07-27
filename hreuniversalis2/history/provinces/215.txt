@@ -10,7 +10,6 @@ hre = yes
 owner = XBG
 controller = XBG
 add_core = XBG
-estate = estate_church
 
 1108.1.1 = {
 	owner = HHB

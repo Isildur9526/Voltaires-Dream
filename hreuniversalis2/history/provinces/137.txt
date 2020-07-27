@@ -13,7 +13,6 @@ add_core = BYZ
 add_core = RAG
 extra_cost = 16
 center_of_trade = 2
-estate = estate_burghers
 fort_14th = yes
 
 1204.5.16 = {

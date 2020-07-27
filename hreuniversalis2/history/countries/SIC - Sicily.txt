@@ -403,7 +403,6 @@ capital = 2041
 }
 1291.2.19 = { capital = 564 }
 #done 1302 or so
-1806.3.11 = { set_legacy_government = enlightened_despotism }
 1815.5.3 = {
 	monarch = {
 		name = "Ferrante I"

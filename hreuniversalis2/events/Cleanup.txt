@@ -176,7 +176,6 @@ country_event = {
 		name = cleanup_events.3.a
 		remove_government_reform = iqta
 		remove_government_reform = ottoman_government
-		set_legacy_government = despotic_monarchy
 	}
 	
 }

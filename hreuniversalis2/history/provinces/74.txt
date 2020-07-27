@@ -78,7 +78,6 @@ fort_14th = yes
 	add_core = CAS
 	remove_core = JAE
 	remove_core = GRA
-	estate = estate_church 
 	capital = "Jaén"
 	religion = catholic
 	culture = mozarabic

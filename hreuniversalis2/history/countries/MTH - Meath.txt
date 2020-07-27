@@ -108,6 +108,7 @@ capital = 2312
 1171.5.1 = { primary_culture = irish }
 #done 1172
 1172.1.1 ={
+	override_country_name = MEATH
 	capital = 2622
 	government = monarchy
 	add_government_reform = feudalism_reform

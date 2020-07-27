@@ -9,6 +9,7 @@ country_event = {
 		num_of_cities = 50
 		NOT = { treasury = 100 }
 		is_at_war = yes
+		NOT = { war_score = -10 }
 		NOT = { mil = 3 }
 		num_of_loans = 20
 	}
@@ -67,6 +68,10 @@ country_event = {
 		num_of_cities = 50
 		NOT = { adm = 3 }
 		NOT = { stability = 0 }
+		any_owned_province = {
+			has_owner_accepted_culture = no
+			NOT = { culture_group = root }
+		}
 	}
 
 	mean_time_to_happen = {
@@ -236,6 +241,14 @@ country_event = {
 		has_idea_group = exploration_ideas
 		NOT = { has_country_modifier = naval_improvements }
 		NOT = { has_country_modifier = naval_disarmament }
+		army_size = 50
+		navy_size = 1
+		any_country = {
+			naval_strength = {
+				who = root
+				value = 1.5
+			}
+		}
 	}
 
 	mean_time_to_happen = {

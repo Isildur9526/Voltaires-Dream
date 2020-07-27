@@ -19,7 +19,6 @@ country_decisions = {
 		}
 		effect = {
 			change_government = monarchy
-			set_legacy_government = despotic_monarchy
 			add_stability = -5
 			add_adm_power = -200
 			set_country_flag = recently_changed_government_flag
@@ -49,7 +48,6 @@ country_decisions = {
 		}
 		effect = {
 			change_government = monarchy
-			set_legacy_government = despotic_monarchy
 			add_stability = -5
 			add_adm_power = -200
 			if = {
@@ -99,7 +97,6 @@ country_decisions = {
 		}
 		effect = {
 			change_government = monarchy
-			set_legacy_government = despotic_monarchy
 			add_stability = -5
 			add_adm_power = -200
 			set_country_flag = recently_changed_government_flag
@@ -129,7 +126,7 @@ country_decisions = {
 		}
 		effect = {
 			change_government = tribal
-			set_legacy_government = tribal_despotism
+			add_government_reform = tribal_despotism
 			add_stability = -5
 			add_adm_power = -200
 			set_country_flag = recently_changed_government_flag
@@ -168,7 +165,6 @@ country_decisions = {
 			add_adm_power = -200
 			add_stability = -5
 			change_government = monarchy
-			set_legacy_government = despotic_monarchy
 			if = {
 				limit = {
 					technology_group = nomad_group

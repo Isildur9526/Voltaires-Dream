@@ -122,7 +122,7 @@ capital = 891
 1172.1.1 = {
 	capital = 921
 	monarch = {
-		name = "Dairmait II"
+		name = "Diarmait II"
 		dynasty = "Mac Cárthaigh"
 		birth_date = 1128.1.1 #est
 		adm = 2
@@ -230,7 +230,7 @@ capital = 891
 }
 1310.1.1 = {
 	monarch = {
-		name = "Dairmait IV"
+		name = "Diarmait IV"
 		dynasty = "Mac Cárthaigh"
 		adm = 2
 		dip = 2

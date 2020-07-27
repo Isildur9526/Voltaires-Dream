@@ -1,0 +1,709 @@
+#VN Lombard League Incident
+
+namespace = incident_lombard_league
+
+#Initial Event
+country_event = {
+	id = incident_lombard_league.1
+	title = incident_lombard_league.1.t
+	desc = incident_lombard_league.1.d
+	picture = HRE_eventPicture
+
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		capital_scope = {
+			superregion = italy_superregion
+		}
+		primary_culture = lombard
+		has_ruler_modifier = guelph_ruler
+		has_global_flag = guelph_ghib_enabled
+		NOT = { has_global_flag = lombard_league_founded }
+		NOT = { has_global_flag = italy_out_of_HRE }
+		is_part_of_hre = yes
+		is_emperor = no
+		is_subject = no
+		NOT = {
+			emperor = {
+				capital_scope = {
+					superregion = italy_superregion
+				}
+			}
+		}
+		is_year = 1150
+		NOT = { is_year = 1250 }
+		NOT = { active_imperial_incident = any }
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	immediate = {
+		hidden_effect = {
+			save_global_event_target_as = lombard_league_founder
+		}
+	}
+	
+	option = {	#Found the League
+		name = incident_lombard_league.1.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = incident_lombard_league.1.a.tt
+		hidden_effect = {
+			set_global_flag = lombard_league_founded
+			set_country_flag = lombard_league_leader
+			set_country_flag = lombard_league_member
+			set_country_flag = decided_league_status
+			set_variable = {
+				which = lombard_league_num
+				value = 0
+			}
+			set_variable = {
+				which = lombard_league_dec_num
+				value = 0
+			}
+			random_country = {
+				limit = {
+					NOT = { has_country_flag = decided_league_status }
+					capital_scope = {
+						superregion = italy_superregion
+					}
+					has_ruler_modifier = guelph_ruler
+					is_part_of_hre = yes
+					is_emperor = no
+					is_subject = no
+				}
+				country_event = {
+					id = incident_lombard_league.2
+					days = 5
+					random = 1
+				}
+			}
+		}
+		set_imperial_incident = incident_lombard_league
+	}
+	option = {	#Don't found it
+		name = incident_lombard_league.1.b
+		ai_chance = { factor = 0 }
+		add_prestige = -15	
+	}
+}
+
+#Decide whether or not to join league
+country_event = {
+	id = incident_lombard_league.2
+	title = incident_lombard_league.2.t
+	desc = incident_lombard_league.2.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = decided_league_status
+		}
+	}
+	
+	option = {	#Join
+		name = incident_lombard_league.2.a
+		ai_chance = { 
+			factor = 95
+			modifier = {
+				factor = 0
+				NOT = {
+					has_opinion = {
+						who = event_target:lombard_league_founder
+						value = 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_rival = event_target:lombard_league_founder
+					is_enemy = event_target:lombard_league_founder
+				}
+			}
+			modifier = {
+				factor = 0
+				war_with = event_target:lombard_league_founder
+			}
+			modifier = {
+				factor = 0
+				alliance_with = emperor
+			}
+		}
+		custom_tooltip = incident_lombard_league.2.a.tt
+		hidden_effect = {
+			set_country_flag = lombard_league_member
+			event_target:lombard_league_founder = {
+				change_variable = {
+					which = lombard_league_num
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = { has_country_flag = decided_league_status }
+						capital_scope = {
+							superregion = italy_superregion
+						}
+						has_ruler_modifier = guelph_ruler
+						is_part_of_hre = yes
+						is_emperor = no
+						is_subject = no
+					}
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = decided_league_status }
+						capital_scope = {
+							superregion = italy_superregion
+						}
+						has_ruler_modifier = guelph_ruler
+						is_part_of_hre = yes
+						is_emperor = no
+						is_subject = no
+					}
+					country_event = {
+						id = incident_lombard_league.2
+						days = 5
+						random = 1
+					}
+				}
+			}
+			else = {
+				event_target:lombard_league_founder = {
+					country_event = {
+						id = incident_lombard_league.9
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	option = {	#Don't join
+		name = incident_lombard_league.2.b
+		ai_chance = { 
+			factor = 5
+		}
+		add_prestige = -5
+		hidden_effect = {
+			set_country_flag = decided_league_status
+			event_target:lombard_league_founder = {
+				change_variable = {
+					which = lombard_league_dec_num
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = { has_country_flag = decided_league_status }
+						capital_scope = {
+							superregion = italy_superregion
+						}
+						has_ruler_modifier = guelph_ruler
+						is_part_of_hre = yes
+						is_emperor = no
+						is_subject = no
+					}
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = decided_league_status }
+						capital_scope = {
+							superregion = italy_superregion
+						}
+						has_ruler_modifier = guelph_ruler
+						is_part_of_hre = yes
+						is_emperor = no
+						is_subject = no
+					}
+					country_event = {
+						id = incident_lombard_league.2
+						days = 5
+						random = 1
+					}
+				}
+			}
+			else = {
+				event_target:lombard_league_founder = {
+					country_event = {
+						id = incident_lombard_league.9
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+#Emperor's response
+country_event = {
+	id = incident_lombard_league.3
+	title = incident_lombard_league.3.t
+	desc = incident_lombard_league.3.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	#Accept their legitimacy
+		name = incident_lombard_league.3.a
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 100
+				has_ruler_modifier = guelph_ruler
+			}
+			modifier = {
+				factor = 100
+				has_country_flag = lombard_league_member
+			}
+			modifier = {
+				factor = 100
+				alliance_with = event_target:lombard_league_founder
+			}
+		}
+		emperor = {
+			add_prestige = -20
+			custom_tooltip = incident_lombard_league.3.a.tt
+			hidden_effect = {
+				italy_superregion = {
+					limit = {
+						OR = {
+							is_core = ROOT
+							is_claim = ROOT
+						}
+					}
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
+		}
+	}
+	option = {	#Contest the League
+		name = incident_lombard_league.3.b
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 100
+				has_ruler_modifier = ghib_ruler
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					capital_scope = {
+						superregion = italy_superregion
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					is_rival = event_target:lombard_league_founder
+					is_enemy = event_target:lombard_league_founder
+				}
+			}
+		}
+		emperor = {
+			add_prestige = 10
+			declare_war_with_cb = {
+				who = event_target:lombard_league_founder
+				casus_belli = cb_insult
+			}
+		}
+		custom_tooltip = incident_lombard_league.3.b.tt
+		hidden_effect = {
+			every_country = {
+				limit = { 
+					has_country_flag = lombard_league_member
+					NOT = { has_country_flag = lombard_league_leader }
+				}
+				country_event = {
+					id = incident_lombard_league.4
+					days = 1
+				}
+			}
+			every_country = {
+				limit = { 
+					NOT = { has_country_flag = lombard_league_member }
+					capital_scope = {
+						superregion = italy_superregion
+					}
+					is_part_of_hre = yes
+					is_emperor = no
+					is_subject = no
+					has_ruler_modifier = ghib_ruler 
+				}
+				country_event = {
+					id = incident_lombard_league.5
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+#Decide whether or not to commit to the League
+country_event = {
+	id = incident_lombard_league.4
+	title = incident_lombard_league.4.t
+	desc = incident_lombard_league.4.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	#Join
+		name = incident_lombard_league.4.a
+		ai_chance = { 
+			factor = 95 
+			modifier = {
+				factor = 0
+				is_at_war = yes
+				NOT = { war_with = emperor }
+			}
+			modifier = {
+				factor = 0.75
+				num_of_loans = 1
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { alliance_with = event_target:lombard_league_founder }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { manpower_percentage = 0.5 }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { manpower_percentage = 0.25 }
+			}
+			modifier = {
+				factor = 0.75
+				has_opinion = {
+					who = emperor
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.75
+				has_opinion = {
+					who = emperor
+					value = 150
+				}
+			}
+			modifier = {
+				factor = 1.25
+				has_opinion = {
+					who = event_target:lombard_league_founder
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 1.25
+				has_opinion = {
+					who = event_target:lombard_league_founder
+					value = 150
+				}
+			}
+		}
+		join_all_defensive_wars_of = event_target:lombard_league_founder
+	}
+	option = {	#Don't join
+		name = incident_lombard_league.4.b
+		ai_chance = { 
+			factor = 5 
+			modifier = {
+				factor = 0
+				war_with = emperor
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_rival = emperor
+					is_enemy = emperor
+				}
+			}
+		}
+		custom_tooltip = incident_lombard_league.4.b.tt
+		hidden_effect = {
+			clr_country_flag = lombard_league_member
+			every_country = {
+				limit = { has_country_flag = lombard_league_member }
+				add_opinion = {
+					who = ROOT
+					modifier = lombard_league_dishonored
+				}
+			}
+		}
+		add_prestige = -15
+	}
+}
+
+#Decide whether or not to commit to the Emperor
+country_event = {
+	id = incident_lombard_league.5
+	title = incident_lombard_league.5.t
+	desc = incident_lombard_league.5.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	#Join
+		name = incident_lombard_league.5.a
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 0
+				is_at_war = yes
+				NOT = { war_with = event_target:lombard_league_founder }
+			}
+			modifier = {
+				factor = 0.75
+				num_of_loans = 1
+			}
+			modifier = {
+				factor = 0.75
+				NOT = {
+					any_neighbor_country = {
+						has_country_flag = lombard_league_member
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { alliance_with = emperor }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { manpower_percentage = 0.5 }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { manpower_percentage = 0.25 }
+			}
+			modifier = {
+				factor = 1.25
+				has_opinion = {
+					who = emperor
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 1.25
+				has_opinion = {
+					who = emperor
+					value = 150
+				}
+			}
+			modifier = {
+				factor = 0.75
+				has_opinion = {
+					who = event_target:lombard_league_founder
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.75
+				has_opinion = {
+					who = event_target:lombard_league_founder
+					value = 150
+				}
+			}
+		}
+		join_all_offensive_wars_of = emperor
+	}
+	option = {	#Don't join
+		name = incident_lombard_league.5.b
+		ai_chance = { 
+			factor = 25
+			modifier = {
+				factor = 0
+				war_with = event_target:lombard_league_founder
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_rival = event_target:lombard_league_founder
+					is_enemy = event_target:lombard_league_founder
+				}
+			}
+		}
+		add_prestige = -15
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = emperor_dishonored
+			}
+		}
+	}
+}
+
+#End Event 1 - War won by the League
+country_event = {
+	id = incident_lombard_league.6
+	title = incident_lombard_league.6.t
+	desc = incident_lombard_league.6.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes	#triggered by on_war_won for league leader if they won
+	major = yes
+	
+	option = {
+		name = incident_lombard_league.6.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = incident_lombard_league.6.a.tt
+		hidden_effect = {
+			clr_country_flag = lombard_league_leader
+			every_country = {
+				limit = { has_country_flag = lombard_league_member }
+				clr_country_flag = lombard_league_member
+				add_prestige = 10
+				add_country_modifier = {
+					name = "lombard_league_winner"
+					duration = -1
+				}
+			}
+		}
+		emperor = {
+			add_prestige = -20
+			add_imperial_influence = -10
+			custom_tooltip = incident_lombard_league.3.a.tt
+			hidden_effect = {
+				italy_superregion = {
+					limit = {
+						OR = {
+							is_core = PREV
+							is_claim = PREV
+						}
+					}
+					remove_core = PREV
+					remove_claim = PREV
+				}
+			}
+		}
+	}
+}
+
+#End Event 2 - War won by the Emperor
+country_event = {
+	id = incident_lombard_league.7
+	title = incident_lombard_league.7.t
+	desc = incident_lombard_league.7.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes	#triggered by on_war_won for Emperor if they won
+	major = yes
+	
+	option = {
+		name = incident_lombard_league.7.a
+		ai_chance = { factor = 100 }
+		add_prestige = 20
+		add_imperial_influence = 10
+		custom_tooltip = incident_lombard_league.7.a.tt
+		hidden_effect = {
+			every_country = {
+				limit = { has_country_flag = lombard_league_member }
+				clr_country_flag = lombard_league_member
+				add_prestige = -10
+			}
+		}
+		random_country = {
+			limit = { has_country_flag = lombard_league_leader }
+			clr_country_flag = lombard_league_leader
+			define_ruler = {
+				adm = -1
+				dip = -1
+				mil = -1
+			}
+			add_ruler_modifier = {
+				name = "ghib_ruler"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Lombard League disbands (fallback event)
+country_event = {
+	id = incident_lombard_league.8
+	title = incident_lombard_league.8.t
+	desc = incident_lombard_league.8.d
+	picture = HRE_eventPicture
+
+	major = yes
+	fire_only_once = yes
+
+	trigger = {
+        has_country_flag = lombard_league_leader
+        any_country = {
+            has_country_flag = lombard_league_member
+        }
+        OR = {
+			NOT = { current_age = age_of_empire }
+			NOT = { current_age = age_of_holy_wars }
+			emperor = {
+				capital_scope = {
+					superregion = italy_superregion
+				}
+			}
+			is_emperor = yes
+			has_global_flag = italy_out_of_HRE
+		}
+    }
+
+    mean_time_to_happen = {
+        months = 200
+    }
+
+	option = {
+		name = incident_lombard_league.8.a
+        ai_chance = { factor = 100 }
+		custom_tooltip = incident_lombard_league.8.a.tt
+		hidden_effect = {
+			clr_country_flag = lombard_league_leader
+			clr_country_flag = lombard_league_member
+			every_country = {
+				limit = {
+					has_country_flag = lombard_league_member
+				}
+				clr_country_flag = lombard_league_member
+			}
+		}
+	}
+}
+
+#The league grows stronger
+country_event = {
+	id = incident_lombard_league.9
+	title = incident_lombard_league.9.t
+	desc = incident_lombard_league.9.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_lombard_league.9.a
+		ai_chance = { factor = 100 }
+		every_country = {
+			limit = { 
+				has_country_flag = lombard_league_member 
+				NOT = { has_country_flag = lombard_league_leader }
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = is_lombard_league_member
+			}
+			hidden_effect = {
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = is_lombard_league_member
+				}
+			}
+		}
+	}
+}

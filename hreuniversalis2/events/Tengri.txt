@@ -1017,8 +1017,7 @@ country_event = {
 		}
 		if = { 
 			limit = { NOT = { government = theocracy } }
-			change_government = theocracy
-			set_legacy_government = theocratic_government
+			change_government_to_theocracy = yes
 		}
 		add_stability = -5
 		kill_heir = yes
@@ -1052,7 +1051,7 @@ country_event = {
 			limit = { is_capital = no }
 			spawn_rebels = {
 				type = sunni_rebels
-				size = 4
+				size = 3
 				win = yes
 			}
 		}
@@ -1060,7 +1059,7 @@ country_event = {
 			limit = { is_capital = yes }
 			spawn_rebels = {
 				type = sunni_rebels
-				size = 4
+				size = 3
 			}
 		}
 	}

@@ -37,7 +37,6 @@ add_core = HUN
 	owner = MOL
 	controller = MOL
 	add_core = MOL
-	remove_core = ROI
 	remove_core = SZK
 	culture = moldovan
 }

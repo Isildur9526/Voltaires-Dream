@@ -86,12 +86,18 @@ country_decisions = {
 			change_tag = UKR
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
-				limit = { NOT = { government = monarchy } }
-				change_government = monarchy
-			}
-			if = {
-				limit = { NOT = { has_reform = tsardom } }
-				add_government_reform = tsardom
+				limit = {
+					is_revolutionary = no
+					OR = {
+						has_reform = veche_republic
+						has_reform = principality
+					}
+				}
+				if = {
+					limit = { is_revolutionary = no }
+					change_government_to_monarchy = yes
+					add_government_reform = tsardom
+				}
 			}
 			if = {
 				limit = { NOT = { government_rank = 6 } }

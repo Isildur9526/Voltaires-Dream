@@ -407,4 +407,4 @@ capital = 1754
 	}
 }
 
-1562.11.18 = { religion = reformed set_legacy_government = administrative_monarchy }
+1562.11.18 = { religion = reformed }

@@ -1,26 +1,25 @@
-estate_mamluks =
-{
+estate_mamluks = {
 	icon = 13
-	
-	color = { 190 170 90 }
-	
+
 	# Used for when declaring independence
 	independence_government = monarchy
 	starting_reform = mamluk_government
-	independence_trigger = {
-		has_estate = estate_mamluks
-	}
-	
-	# Is estate kept in control of province on conquest?
-	keep_on_conquest = no
+	independence_tech_group = muslim
 
-	# Estate will always be removed when conquered by a different religion than previous owner
-	always_remove_on_religious_conquest = yes
-	
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			NOT = { religion_group = muslim }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { culture_group = ROOT }
+		}
+	}
+
 	# If true, country will get estate
-	
-	trigger = {	
-		has_dlc = "The Cossacks"
+	trigger = {
 		OR = {
 			has_reform = iqta
 			has_reform = feudal_theocracy
@@ -34,27 +33,6 @@ estate_mamluks =
 		culture_group = turko_semitic
 		religion_group = muslim
 	}
-	
-	# If true, province can be granted to estate
-	province_trigger = {
-		OR = {
-			NOT = { culture_group = turko_semitic }
-			trade_goods = slaves
-		}
-	}	
-
-	# Giving territory affects power this much compared to base
-	territory_power_modifier = 2.0
-
-	# Is used to weigh importance compared to other estates
-	start_territory_weight = 25
-	
-	# Min autonomy in estate provinces
-	min_autonomy = 25
-	
-	# Estate cancels out the following multiplicative local autonomy effects:
-	autonomy_does_not_affect = local_manpower_modifier
-	autonomy_does_not_affect = land_forcelimit_modifier
 
 	# These scale with loyalty & power
 	country_modifier_happy = {
@@ -65,21 +43,13 @@ estate_mamluks =
 		merc_maintenance_modifier = -0.25
 	}	
 	country_modifier_angry = {
-		possible_mercenaries = -1.0
+		mercenary_manpower = -1.0
 	}
-	
-	# These do not scale, but only applied in provinces owned by the estate
-	province_modifier_happy = {	
-		local_unrest = -5
-		local_manpower_modifier = 0.2
+	land_ownership_modifier = {
+		mamluks_loyalty_modifier = 0.2
 	}
-	province_modifier_neutral = {
-		local_manpower_modifier = 0.2
-	}	
-	province_modifier_angry = {
-		local_manpower_modifier = -0.2
-	}
-	
+
+
 	# Influence modifiers
 	base_influence = 0
 	influence_modifier = {
@@ -124,18 +94,31 @@ estate_mamluks =
 		influence = 20
 	}
 	influence_modifier = {
+		desc = EST_VAL_MAMLUK_LEADERSHIP
+		trigger = {
+			has_reform = mamluk_leadership_reform
+		}
+		influence = 10
+	}
+	influence_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER
 		trigger = {
 			OR = {
 				has_disaster = estate_nobility_disaster
 				has_disaster = estate_church_disaster
 				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+				has_disaster = estate_dhimmi_disaster
 			}
 		}
 		influence = -40
 	}
+
+	influence_from_dev_modifier = 0.5
 	
-	#Loyalty modifiers
+	#Loyalty Modifiers
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
 		trigger = {
@@ -143,6 +126,10 @@ estate_mamluks =
 				has_disaster = estate_nobility_disaster
 				has_disaster = estate_church_disaster
 				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+				has_disaster = estate_dhimmi_disaster
 			}
 		}
 		loyalty = -20
@@ -160,40 +147,6 @@ estate_mamluks =
 			has_reform = mamluk_government
 		}
 		loyalty = 40
-	}
-	influence_modifier = {
-		desc = EST_VAL_MAMLUK_LEADERSHIP
-		trigger = {
-			has_reform = mamluk_leadership_reform
-		}
-		influence = 10
-	}
-	
-	# For province assignment
-	ai_grant_province = {
-		factor = 1
-		modifier = {
-			factor = 10
-			has_owner_culture = no
-			unrest = 5
-		}
-		modifier = {
-			factor = 4
-			local_autonomy = 25
-		}
-		modifier = {
-			factor = 0.25
-			NOT = { local_autonomy = 25 }
-		}
-	}	
-	
-	# Does the AI want to give any extra territory beyond the minimum?
-	ai_territory_modifier = {
-		trigger = {
-			primary_culture = al_misr_arabic
-			num_of_cities = 15
-		}	
-		value = 100	# Code has a sanity check against pushing influence too high
 	}
 
 	#Names
@@ -219,649 +172,29 @@ estate_mamluks =
 			primary_culture = andalucian
 		}
 	}
+	
+	privileges = {
+		estate_mamluks_import_mamluks
+		estate_mamluks_advisors
+		estate_mamluks_guaranteed_autonomy
+		estate_mamluks_mamluk_host
+		estate_mamluks_recruit_mamluk_generals
+		estate_mamluks_monopoly_of_slaves
+	}
 
-	#Interactions
-	interaction = {
-		name = "RAISE_MAMLUKS_HOST"
-		icon = 13
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			estate_loyalty = {
-				estate = estate_mamluks
-				loyalty = 50
-			}
-			estate_influence = {
-				estate = estate_mamluks
-				influence = 40
-			}
-			custom_trigger_tooltip = {
-				tooltip = tooltip_own_mamluks_province
-				any_owned_province = {
-					has_estate = estate_mamluks
-				}
-			}
-		}
-		
-		effect = {
-			random_owned_province = {
-				limit = { has_estate = estate_mamluks }
-				cavalry = ROOT
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 2
-								has_estate = estate_mamluks
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 3
-								has_estate = estate_mamluks
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 4
-								has_estate = estate_mamluks
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 5
-								has_estate = estate_mamluks
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 6
-								has_estate = estate_mamluks
-							}
-							estate_influence = {
-								estate = estate_mamluks
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 7
-								has_estate = estate_mamluks
-							}
-							estate_influence = {
-								estate = estate_mamluks
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 8
-								has_estate = estate_mamluks
-							}
-							estate_influence = {
-								estate = estate_mamluks
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 9
-								has_estate = estate_mamluks
-							}
-							estate_influence = {
-								estate = estate_mamluks
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 10
-								has_estate = estate_mamluks
-							}
-							estate_influence = {
-								estate = estate_mamluks
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-			}
-			add_estate_loyalty = {
-				estate = estate_mamluks
-				loyalty = -15
-			}
-			add_estate_influence_modifier = {
-				estate = estate_mamluks
-				desc = EST_VAL_RAISED_MAMLUKS_HOST
-				influence = 10
-				duration = 1825
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				estate_influence = {
-					estate = estate_mamluks
-					influence = 70
-				}				
-			}	
-		}
+	agendas = {
+		estate_mamluks_develop_x
+		estate_mamluks_build_government_building_in_y
+		estate_mamluks_build_temple_in_y
+		estate_mamluks_build_university_in_y
+		estate_mamluks_jihad
+		estate_mamluks_take_slave_province
+		estate_mamluks_increase_autonomy_in_province_x
+		estate_mamluks_three_privileges
+		estate_mamluks_relations_with_X
+		estate_mamluks_hire_advisor
+		estate_mamluks_fire_advisor
 	}
-	interaction = {
-		name = "MAMLUKS_GENERAL"
-		icon = 29
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			estate_loyalty = {
-				estate = estate_mamluks
-				loyalty = 50
-			}
-			estate_influence = {
-				estate = estate_mamluks
-				influence = 40
-			}
-		}
-		effect = {
-			create_general = { tradition = 40 }
-			add_estate_influence_modifier = {
-				estate = estate_mamluks
-				desc = EST_VAL_MAMLUKS_GENERAL
-				influence = 20
-				duration = 10950
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0			
-		}
-	}
-	interaction = {
-		name = "RECRUIT_MINISTER"
-		icon = 10
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			estate_influence = {
-				estate = estate_mamluks
-				influence = 40
-			}
-		}
-		
-		effect = {
-			hidden_effect = {
-				random_owned_province = {
-					limit = {
-						has_estate = estate_mamluks
-					}
-					save_event_target_as = estate_estate_province
-				}
-			}
-			if = {
-				limit = {
-					monthly_income = 25
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					cost_multiplier = 0.5
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					cost_multiplier = 0.5
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					cost_multiplier = 0.75
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					cost_multiplier = 0.75
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					has_saved_event_target = estate_estate_province
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					NOT = { has_saved_event_target = estate_estate_province }
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.5
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.5
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.75
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_mamluks
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.75
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					has_saved_event_target = estate_estate_province
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					NOT = { has_saved_event_target = estate_estate_province }
-					NOT = {
-						estate_influence = {
-							estate = estate_mamluks
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-				}
-			}
-			
-			add_estate_influence_modifier = {
-				estate = estate_mamluks
-				desc = EST_VAL_MAMLUKS_MINISTER
-				influence = 20
-				duration = 10950
-			}
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = -15 #Taking offense
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0			
-		}
-	}
-	interaction = {
-		name = "INCREASE_MAMLUK_IMPORTS"
-		icon = 12
-		
-		years_between_use = 20
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-			any_active_trade_node = {
-				has_merchant = PREV
-				superregion = caucasia_superregion
-			}
-		}
-		
-		trigger = {
-			estate_loyalty = {
-				estate = estate_mamluks
-				loyalty = 50
-			}
-		}
-		
-		effect = {
-			random_active_trade_node = {
-				limit = {
-					has_merchant = PREV
-					superregion = caucasia_superregion
-				}
-				add_trade_modifier = {
-					who = root
-					duration = 3650
-					power = 20
-					key = mamluks_increased
-				}
-			}
-			add_estate_influence_modifier = {
-				estate = estate_mamluks
-				desc = EST_VAL_MAMLUK_IMPORTS
-				influence = 20
-				duration = 3650
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0		
-		}	
-	}
-	interaction = {
-		name = "THROTTLE_SLAVE_TRADE"
-		icon = 6
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-			slaves = 1
-		}
-		
-		trigger = {
-			dip_power = 100
-			estate_influence = {
-				estate = estate_mamluks
-				influence = 40
-			}
-		}
-		
-		effect = {
-			add_dip_power = -100
-			every_owned_province = {
-				limit = { trade_goods = slaves }
-				add_province_modifier = {
-					name = slave_trade_throttled
-					duration = 3650
-				}
-			}
-			add_estate_loyalty = {
-				estate = estate_mamluks
-				loyalty = 10
-			}
-		}
-		
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				NOT = {
-					OR = {
-						primary_culture = moroccan
-						primary_culture = tunisian
-						primary_culture = algerian
-					}
-				}
-			}
-		}	
-	}	
-	interaction = {
-		name = "PERMIT_SELF_GOVERNANCE"
-		icon = 16
-		
-		years_between_use = 10
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-			NOT = { current_age = age_of_absolutism }
-			NOT = { current_age = age_of_revolutions }
-			NOT = { current_age = age_of_ideology }
-			any_owned_province = {
-				has_estate = estate_mamluks
-			}
-		}
-		
-		trigger = {
-			NOT = { current_age = age_of_absolutism }
-			NOT = { current_age = age_of_revolutions }
-			NOT = { current_age = age_of_ideology }
-			custom_trigger_tooltip = {
-				tooltip = tooltip_own_mamluks_province
-				any_owned_province = {
-					has_estate = estate_mamluks
-				}
-			}
-		}
-		
-		effect = {
-			every_owned_province = {
-				limit = {
-					has_estate = estate_mamluks
-				}
-				add_local_autonomy = 10
-			}
-			add_estate_loyalty = {
-				estate = estate_mamluks
-				loyalty = 5
-			}
-			add_estate_influence_modifier = {
-				estate = estate_mamluks
-				desc = EST_VAL_SELF_GOVERNANCE
-				influence = -15
-				duration = 7300
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				estate_loyalty = {
-					estate = estate_mamluks
-					loyalty = 40
-				}
-			}			
-		}		
-	}
+
+	color = { 190 170 90 }
 }

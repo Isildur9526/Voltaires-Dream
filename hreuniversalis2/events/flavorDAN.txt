@@ -1140,10 +1140,7 @@ country_event = {
 				estate = estate_nobles
 				loyalty = -10
 			}
-			random_owned_province = {
-				limit = { has_estate = estate_nobles }
-				remove_estate = estate_nobles
-			}
+			take_estate_land_share_small = { estate = estate_nobles }
 		}
 	}
 	option = {
@@ -1161,6 +1158,7 @@ country_event = {
 				estate = estate_nobles
 				loyalty = 10
 			}
+			give_estate_land_share_small = { estate = estate_nobles }
 		}
 	}
 }

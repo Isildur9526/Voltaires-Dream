@@ -8,6 +8,8 @@ province_event = {
 	desc = dev_events.1.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	goto = ROOT
+
 	trigger = {
 		NOT = { devastation = 0.01 }
 		NOT = { development = 25 }
@@ -147,7 +149,50 @@ province_event = {
 
 	immediate = {
 		hidden_effect = {
-			owner = { highest_monarch_skill_effect = yes }
+			owner = { 
+				save_event_target_as = dispersed_owner
+				highest_monarch_skill_effect = yes 
+			}
+			random_neighbor_province = {
+				limit = {
+					owned_by = event_target:dispersed_owner
+					NOT = {
+						OR = {
+							has_province_flag = dev_dispersed_prov1
+							has_province_flag = dev_dispersed_prov2
+						}
+					}
+					NOT = { 
+						OR = {
+							has_province_modifier = dev_dispersed 
+							has_province_modifier = dev_concentrated
+							has_province_flag = vn_province_rose
+							has_province_flag = vn_province_rose_dispersed
+						}
+					}
+				}
+				set_province_flag = dev_dispersed_prov1
+			}
+			random_neighbor_province = {
+				limit = {
+					owned_by = event_target:dispersed_owner
+					NOT = {
+						OR = {
+							has_province_flag = dev_dispersed_prov1
+							has_province_flag = dev_dispersed_prov2
+						}
+					}
+					NOT = { 
+						OR = {
+							has_province_modifier = dev_dispersed 
+							has_province_modifier = dev_concentrated
+							has_province_flag = vn_province_rose
+							has_province_flag = vn_province_rose_dispersed
+						}
+					}
+				}
+				set_province_flag = dev_dispersed_prov2
+			}
 		}
 	}
 
@@ -259,17 +304,11 @@ province_event = {
 		custom_tooltip = vn_province_rose.tt
 		random_neighbor_province = {
 			limit = { 
-				owned_by = ROOT
-				NOT = { 
-					OR = {
-						has_province_modifier = dev_dispersed 
-						has_province_modifier = dev_concentrated
-						has_province_flag = vn_province_rose
-						has_province_flag = vn_province_rose_dispersed
-					}
-				}
+				owned_by = event_target:dispersed_owner
+				has_province_flag = dev_dispersed_prov1
 			}
 			set_province_flag = vn_province_rose_dispersed
+			clr_province_flag = dev_dispersed_prov1
 			random_list = {
 				33 = {
 					add_base_tax = 1
@@ -294,17 +333,11 @@ province_event = {
 		}
 		random_neighbor_province = {
 			limit = { 
-				owned_by = ROOT
-				NOT = { 
-					OR = {
-						has_province_modifier = dev_dispersed 
-						has_province_modifier = dev_concentrated
-						has_province_flag = vn_province_rose
-						has_province_flag = vn_province_rose_dispersed
-					}
-				}
+				owned_by = event_target:dispersed_owner
+				has_province_flag = dev_dispersed_prov2
 			}
 			set_province_flag = vn_province_rose_dispersed
+			clr_province_flag = dev_dispersed_prov2
 			random_list = {
 				33 = {
 					add_base_tax = 1
@@ -336,6 +369,8 @@ province_event = {
 	title = dev_events.2.t
 	desc = dev_events.2.d
 	picture = FAMINE_eventPicture
+
+	goto = ROOT
 
 	trigger = {
 		calc_true_if = {
@@ -787,11 +822,47 @@ province_event = {
 		trigger = { province_id = 2247 }
 		desc = dev_events.3.d15
 	}
+	desc = {
+		#London
+		trigger = { province_id = 2268 }
+		desc = dev_events.3.d16
+	}
+	desc = {
+		#Sevilla
+		trigger = { province_id = 1867 }
+		desc = dev_events.3.d17
+	}
+	desc = {
+		#Lisboa
+		trigger = { province_id = 1135 }
+		desc = dev_events.3.d18
+	}
+	desc = {
+		#Bergen
+		trigger = { province_id = 6038 }
+		desc = dev_events.3.d19
+	}
+	desc = {
+		#Copenhagen
+		trigger = { province_id = 411 }
+		desc = dev_events.3.d20
+	}
+	desc = {
+		#Stockholm
+		trigger = { province_id = 6109 }
+		desc = dev_events.3.d21
+	}
+	desc = {
+		#Nantes
+		trigger = { province_id = 2173 }
+		desc = dev_events.3.d22
+	}
 	#x
 	picture = GREAT_BUILDING_eventPicture
 
+	goto = ROOT
 	major = yes
-
+	
 	trigger = {
 		controlled_by = owner
 		is_core = owner
@@ -902,6 +973,55 @@ province_event = {
 				liberalism = 100
 				owner = { has_institution = liberalism }
 			}
+			#London
+			AND = {
+				province_id = 2268
+				enlightenment = 100
+				NOT = { industrialism = 100 }
+				owner = { has_institution = enlightenment }
+			}
+			#Sevilla
+			AND = {
+				province_id = 1867
+				new_world_i = 100
+				NOT = { printing_press = 100 }
+				owner = { has_institution = new_world_i }
+			}
+			#Lisboa
+			AND = {
+				province_id = 1135
+				new_world_i = 100
+				NOT = { printing_press = 100 }
+				owner = { has_institution = new_world_i }
+			}
+			#Bergen
+			AND = {
+				province_id = 6038
+				chivalry = 100
+				NOT = { publichealth = 100 }
+				owner = { has_institution = chivalry }
+			}
+			#Copenhagen
+			AND = {
+				province_id = 411
+				chivalry = 100
+				NOT = { publichealth = 100 }
+				owner = { has_institution = chivalry }
+			}
+			#Stockholm
+			AND = {
+				province_id = 6109
+				chivalry = 100
+				NOT = { publichealth = 100 }
+				owner = { has_institution = chivalry }
+			}
+			#Nantes
+			AND = {
+				province_id = 2173
+				manufactories = 100
+				NOT = { enlightenment = 100 }
+				owner = { has_institution = manufactories }
+			}
 			#x
 		}
 	}
@@ -964,6 +1084,12 @@ province_event = {
 	}
 
 	immediate = {
+		if = {
+			limit = { tag = FLA }
+			hidden_effect = {
+				set_global_flag = fla_province_rise_event
+			}
+		}
 		hidden_effect = {
 			set_province_flag = vn_rise_major
 			set_province_flag = vn_province_rose
@@ -995,10 +1121,6 @@ province_event = {
 				duration = -1
 			}
 		}
-		owner = { 
-			add_prestige = 25
-			add_years_of_income = 0.5
-		}
 	}
 }
 
@@ -1019,6 +1141,7 @@ province_event = {
 	#x
 	picture = PLAGUE_eventPicture
 
+	goto = ROOT
 	major = yes
 
 	trigger = {
@@ -1148,7 +1271,6 @@ province_event = {
 				duration = -1
 			}
 		}
-		owner = { add_prestige = -20 }
 	}
 }
 
@@ -1167,6 +1289,7 @@ province_event = {
 	#x
 	picture = SIEGE_eventPicture
 
+	goto = ROOT
 	is_triggered_only = yes
 	major = yes
 

@@ -1141,7 +1141,17 @@ country_event = {
     option = {
         name = "vn_crusade_events.5.a"
         if = {
-        	limit = { religion = catholic }
+        	limit = {
+        		religion = catholic
+        		has_dlc = "Emperor"
+        	}
+        	add_curia_treasury = 50
+        }
+        else_if = {
+        	limit = {
+        		religion = catholic
+        		NOT = { has_dlc = "Emperor" }
+        	}
         	add_years_of_income = 0.1
         }
         else = { add_years_of_income = 0.5 }
@@ -1623,6 +1633,10 @@ country_event = {
 	trigger = {
 		any_owned_province = { has_port = yes }
 		religion = catholic
+		OR = {
+			NOT = { has_dlc = "Emperor" }
+			curia_treasury_size = 50
+		}
 		capital_scope = { continent = europe }
 		is_in_war = {
 			casus_belli = cb_grand_crusade
@@ -1639,6 +1653,10 @@ country_event = {
 
     option = {
         name = "vn_crusade_events.11.a"
+        if = {
+			limit = { has_dlc = "Emperor" }
+			add_curia_treasury = -50
+		}
         add_country_modifier = {
 			name = "vn_crusade_transports"
 			duration = 1825

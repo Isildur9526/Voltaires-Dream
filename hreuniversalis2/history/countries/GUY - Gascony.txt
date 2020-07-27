@@ -51,4 +51,3 @@ capital = 2324
 1362.1.1 = { government_rank = 4 }
 #resigns 1372.9.18
 1560.1.1 = { religion = reformed }
-1589.8.3 = { set_legacy_government = administrative_monarchy }

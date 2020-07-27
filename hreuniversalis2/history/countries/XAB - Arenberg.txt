@@ -417,6 +417,5 @@ capital = 2006
 }
 1803.2.25 = { 
 	capital = 875
-	set_legacy_government = administrative_monarchy
 	government_rank = 3
 }

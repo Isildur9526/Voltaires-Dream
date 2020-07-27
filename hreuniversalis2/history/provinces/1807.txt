@@ -15,7 +15,6 @@ discovered_by = eastern
 discovered_by = ottoman
 discovered_by = western
 discovered_by = muslim
-estate = estate_church
 
 1332.8.2 = {
 	owner = SWE

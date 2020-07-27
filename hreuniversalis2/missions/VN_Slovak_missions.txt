@@ -232,7 +232,7 @@ vn_slo_missions_slot_2_a = {
 				capital_scope = {
 					is_part_of_hre = yes
 				}
-				total_development = 100
+				total_development = 150
 			}
 		}
 		effect = {
@@ -670,7 +670,7 @@ vn_slo_missions_slot_3_c = {
 				total_development = BOH
 			}
 			else = {
-				total_development = 150
+				total_development = 200
 			}
 		}
 		effect = {

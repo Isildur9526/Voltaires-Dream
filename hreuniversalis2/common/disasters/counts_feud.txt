@@ -66,6 +66,9 @@ counts_feud = {
 			has_spawned_rebels = pretender_rebels
 		}
 		stability = 3
+		hidden_trigger = {
+			NOT = { has_country_flag = counts_feud_start_event }
+		}
 	}
 	
 

@@ -20,12 +20,10 @@ fixed_capital = 1943
 1798.1.1 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 }
 1810.2.16 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = administrative_monarchy
 	government_rank = 4
 	monarch = {
 		name = "Karl Theodor"

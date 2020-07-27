@@ -67,6 +67,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = ROM
+			restore_country_name_effect = yes
 			custom_tooltip = roman_culture_provinces_tooltip
 			set_country_flag = unformable
 			hidden_effect = {

@@ -81,7 +81,7 @@ post_office = {
 canal = {
 	cost = 100
 	time = 12
-	trigger = {
+	build_trigger = {
 		has_port = yes
 	}
 	modifier = {
@@ -226,6 +226,7 @@ watchman = {
 	modifier = {
 		local_state_maintenance_modifier = -0.1
 		local_unrest = -1
+		local_governing_cost = -0.1
 	}
 
 	ai_will_do = {
@@ -290,7 +291,7 @@ barracks = {
 shipyard = {
 	cost = 100
 	time = 12
-	trigger = {
+	build_trigger = {
 		has_port = yes
 	}
 	modifier = {
@@ -328,6 +329,21 @@ fort_15th = {
 	}
 }
 
+coastal_defence = {
+	cost = 100
+	time = 12
+	build_trigger = {
+		has_port = yes
+	}
+	modifier = {
+		blockade_force_required = 0.5
+		hostile_disembark_speed = 1.0
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
 
 ################################################
 # Tier 2, 16th Century Buildings
@@ -338,6 +354,7 @@ courthouse = {
 	modifier = {
 		local_state_maintenance_modifier = -0.25
 		local_autonomy = -0.1
+		local_governing_cost = -0.25
 	}
 
 	ai_will_do = {
@@ -348,7 +365,7 @@ courthouse = {
 dock = {
 	cost = 100
 	time = 12
-	trigger = {
+	build_trigger = {
 		has_port = yes
 	}
 	modifier = {
@@ -357,6 +374,9 @@ dock = {
 
 	ai_will_do = {
 		factor = 1
+		modifier = {
+			factor = 0.5
+		}
 	}
 }
 
@@ -392,6 +412,23 @@ fort_16th = {
 
 	influencing_fort = yes
 
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+naval_battery = {
+	make_obsolete = coastal_defence
+	cost = 200
+	time = 12
+	build_trigger = {
+		has_port = yes
+	}
+	modifier = {
+		blockade_force_required = 1.0
+		hostile_disembark_speed = 2.0
+		hostile_fleet_attrition = 5
+	}
 	ai_will_do = {
 		factor = 1
 	}
@@ -470,7 +507,7 @@ grand_shipyard = {
 
 	make_obsolete = shipyard
 
-	trigger = {
+	build_trigger = {
 		has_port = yes
 	}
 	modifier = {
@@ -575,6 +612,7 @@ town_hall = {
 	modifier = {
 		local_state_maintenance_modifier = -0.5
 		local_autonomy = -0.2
+		local_governing_cost = -0.5
 	}
 
 	ai_will_do = {
@@ -588,7 +626,7 @@ drydock = {
 
 	make_obsolete = dock
 
-	trigger = {
+	build_trigger = {
 		has_port = yes
 	}
 
@@ -822,6 +860,122 @@ furnace = {
 	onmap = yes
 	show_separate = yes
 
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+ramparts = {
+	manufactory = {
+		all
+	}
+	modifier = {
+		local_hostile_attrition = 1
+		local_defensiveness = 0.15
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+soldier_households = {
+	manufactory = {
+		all
+	}
+	bonus_manufactory = { # Will apply an extra modifier if these goods
+		grain
+		fish
+		livestock
+		wine
+	}
+	modifier = {
+		local_manpower = 0.75
+	}
+	bonus_modifier = {
+		local_manpower = 0.75
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+impressment_offices = {
+	manufactory = {
+		all
+	}
+	bonus_manufactory = { # Will apply an extra modifier if these goods
+		salt
+		fish
+		naval_supplies
+		lumber
+	}
+	build_trigger = {
+		has_port = yes
+	}
+	modifier = {
+		local_sailors = 250
+	}
+	bonus_modifier = {
+		local_sailors = 250
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+state_house = {
+	manufactory = {
+		all
+	}
+	bonus_manufactory = { # Will apply an extra modifier if these goods
+		paper
+		glass
+		gems
+	}
+	build_trigger = {
+		NOT = {
+			area_for_scope_province = {
+				owner = {
+					tag = ROOT
+				}
+				OR = {
+					has_building = state_house
+					has_construction = state_house
+				}
+			}
+		}
+	}
+	
+	keep_trigger = {
+		NOT = {
+			area_for_scope_province = {
+				NOT = { province_id = root }
+				owner = {
+					tag = ROOT
+				}
+				OR = {
+					has_building = state_house
+					has_construction = state_house
+				}
+			}
+		}
+	}
+	modifier = {
+		statewide_governing_cost = -0.2
+		min_local_autonomy = -5
+	}
+	bonus_modifier = {
+		statewide_governing_cost = -0.2
+		min_local_autonomy = -5
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
 	ai_will_do = {
 		factor = 1
 	}

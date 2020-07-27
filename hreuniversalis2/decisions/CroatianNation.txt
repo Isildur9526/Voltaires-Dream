@@ -68,6 +68,10 @@ country_decisions = {
 				}
 				set_government_rank = 5
 			}
+			if = {
+				limit = { NOT = { accepted_culture = dalmatian } }
+				add_accepted_culture = dalmatian
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -91,8 +95,7 @@ country_decisions = {
 				limit = {
 					government = republic
 				}
-				change_government = monarchy
-				add_government_reform = feudalism_reform
+				change_government_to_monarchy = yes
 			}
 			if = {
 				limit = { has_custom_ideas = no }

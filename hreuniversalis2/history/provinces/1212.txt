@@ -35,7 +35,6 @@ add_core = BDJ
 	religion = catholic
 	culture = leonese
 	capital = "Badajoz"
-	estate = estate_nobles
 }
 1301.1.1 = {
 	owner = CAS

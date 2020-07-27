@@ -91,7 +91,9 @@ country_event = {
 		}
 		any_active_trade_node = {
 			has_merchant = PREV
-			superregion = africa_superregion
+			any_trade_node_member_province = {
+				superregion = africa_superregion
+			}
 		}	
 	}
 	
@@ -669,6 +671,7 @@ country_event = {
 				influence = -10
 				duration = 9125
 			}
+			take_estate_land_share_small = { estate = estate_church }
 		}
 	}
 	option = {
@@ -681,6 +684,7 @@ country_event = {
 				estate = estate_church
 				loyalty = 10
 			}
+			give_estate_land_share_small = { estate = estate_church }
 		}
 	}
 }
@@ -785,7 +789,7 @@ country_event = {
 		has_country_flag = albrecht_achilles_flag #Bra Starts with this
 		ANS = {
 			exists = yes
-			has_ruler = "Albrecht II Achilles"
+			has_ruler = "Albrecht I Achilles"
 		}
 	}
 	
@@ -1883,6 +1887,8 @@ country_event = {
 				estate = estate_burghers
 				loyalty = 10
 			}
+			take_estate_land_share_small = { estate = estate_nobles }
+			give_estate_land_share_small = { estate = estate_burghers }
 		}
 	}
 	option = {
@@ -1903,6 +1909,8 @@ country_event = {
 				estate = estate_burghers
 				loyalty = -10
 			}
+			take_estate_land_share_small = { estate = estate_burghers }
+			give_estate_land_share_small = { estate = estate_nobles }
 		}
 	}
 }

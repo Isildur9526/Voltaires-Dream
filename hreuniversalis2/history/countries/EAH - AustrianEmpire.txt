@@ -1,6 +1,5 @@
 government = monarchy
 add_government_reform = feudalism_reform
-set_legacy_government = enlightened_despotism
 government_rank = 6
 technology_group = western
 religion = catholic
@@ -115,4 +114,7 @@ capital = 2172
 		mil = 2
 	}
 }
-1860.1.1 = { set_legacy_government = constitutional_monarchy }
+1867.5.29 = {
+	government = monarchy
+	add_government_reform = austrian_dual_monarchy	
+}

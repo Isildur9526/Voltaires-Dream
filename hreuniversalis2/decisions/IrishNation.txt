@@ -13,7 +13,7 @@ country_decisions = {
 			NOT = { tag = ENG }
 			NOT = { tag = ASE }
 			NOT = { tag = GBR }
-			NOT = { tag = GLY }
+			NOT = { tag = LOI }
 			NOT = { tag = MAF }
 			NOT = { has_country_flag = unformable }
 			capital_scope = { superregion = irish_superregion }

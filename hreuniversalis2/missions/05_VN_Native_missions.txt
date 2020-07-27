@@ -9,7 +9,7 @@ VN_tribal_missions = {
 	
 	vn_tribal_federation = {
 		icon = mission_noble_council
-		required_missions = {}
+		required_missions = { }
 		trigger = {
 			if = {
 				limit = { has_dlc = "Conquest of Paradise" primitives = yes }
@@ -37,6 +37,11 @@ VN_tribal_missions = {
 					owned_by = ROOT
 				}
 			}
+			NOT = {
+				any_neighbor_country = {
+					army_size = ROOT
+				}
+			}
 		}
 		effect = {
 			add_country_modifier = {
@@ -48,23 +53,35 @@ VN_tribal_missions = {
 	vn_tribal_capital = {
 		icon = mission_tribe
 		required_missions = { vn_expand_tribal_territory }
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
 		trigger = {
 			if = {
 				limit = { has_dlc = "Conquest of Paradise" primitives = yes }
-				capital_scope = {
-					has_building = native_irrigation
-					has_building = native_fortified_house
-					has_building = native_ceremonial_fire_pit
-					has_building = native_sweat_lodge
-					has_building = native_longhouse
+				calc_true_if = {
+					desc = vn_tribal_capital.tt
+					capital_scope = {
+						has_building = native_irrigation
+						has_building = native_fortified_house
+						has_building = native_ceremonial_fire_pit
+						has_building = native_sweat_lodge
+						has_building = native_longhouse
+						has_building = native_earthwork
+						has_building = native_great_trail
+						has_building = native_palisade
+						has_building = native_storehouse
+						has_building = native_three_sisters_field
+					}
+					amount = 5
 				}
 			}
 			else = {
 				capital_scope = {
-					base_tax = 6
-					base_production = 6
-					base_manpower = 6
-					num_of_times_improved = 10
+					base_tax = 4
+					base_production = 4
+					base_manpower = 4
+					NOT = { unrest = 1 }
 					NOT = { devastation = 1 }
 				}
 			}
@@ -73,9 +90,7 @@ VN_tribal_missions = {
 			if = {
 				limit = { has_dlc = "Conquest of Paradise" primitives = yes }
 				capital_scope = {
-					add_base_tax = 1
-					add_base_production = 1
-					add_base_manpower = 1
+					add_base_tax = 2
 				}
 			}
 			add_country_modifier = {
@@ -95,6 +110,7 @@ VN_tribal_missions = {
 			NOT = { government = native }
 		}
 		effect = {
+			swap_non_generic_missions = yes
 			add_country_modifier = {
 				name = "introduce_feudalism_mission"
 				duration = 9125

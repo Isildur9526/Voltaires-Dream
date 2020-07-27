@@ -62,10 +62,13 @@ country_event = {
 		define_heir = {
 			dynasty = "von Habsburg"
 			culture = austrian
-			adm = 1
-			dip = 2
-			mil = 1
+			adm = 3
+			dip = 3
+			mil = 2
+			block_disinherit = yes
 		}
+		custom_tooltip = hun_ladislaus_postumus_warning_tooltip
+		hidden_effect = { set_country_flag = hun_ladislaus_postumus_heir }
 		every_country = {
 			limit = {
 				NOT = { tag = ROOT }
@@ -107,8 +110,18 @@ country_event = {
 		tag = HUN
 		is_year = 1450
 		NOT = { is_year = 1457 }
+		OR = {
+			heir_age = 15
+			has_heir = no
+		}
+		if = {
+			limit = {
+				has_heir = no
+			}
+			NOT = { has_country_flag = hun_matyas_already_existed }
+		}
 		has_regency = no
-		NOT = { personal_union = 1 }
+		is_lesser_in_union = no
 		HAB = {
 			is_subject = no
 			government = monarchy
@@ -116,10 +129,17 @@ country_event = {
 		started_in = 1444.11.11
 		NOT = { started_in = 1452.1.1 }
 		has_government_attribute = heir
+		NOT = { has_country_flag = hun_has_had_matthias_corvinus_event }
 	}
 	
 	mean_time_to_happen = {
 		months = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = hun_has_had_matthias_corvinus_event #for missions
+		}
 	}
 	
 	option = {
@@ -127,6 +147,7 @@ country_event = {
 		name = flavor_hun.2.a
 		remove_historical_friend = HAB
 		HAB = { remove_historical_friend = HUN }
+		hidden_effect = { clr_country_flag = hun_ladislaus_postumus_heir }
 		define_heir = {
 			name = "Mátyás"
 			dynasty = "Hunyadi"
@@ -692,11 +713,11 @@ country_event = {
 		if = {
 			limit = {
 				silesia_region = {
-					owns_or_non_sovereign_subject_of = BOH
+					country_or_non_sovereign_subject_holds = BOH
 				}
 			}
 			silesia_region = {
-				limit = { owns_or_non_sovereign_subject_of = BOH }
+				limit = { country_or_non_sovereign_subject_holds = BOH }
 				add_permanent_claim = HUN
 			}
 		}
@@ -780,11 +801,11 @@ country_event = {
 			if = {
 				limit = {
 					silesia_region = {
-						owns_or_non_sovereign_subject_of = BOH
+						country_or_non_sovereign_subject_holds = BOH
 					}
 				}
 				silesia_region = {
-					limit = { owns_or_non_sovereign_subject_of = BOH }
+					limit = { country_or_non_sovereign_subject_holds = BOH }
 					add_permanent_claim = HUN
 				}
 			}
@@ -890,7 +911,6 @@ country_event = {
 	option = {
 		name = flavor_hun.16.a
 		add_years_of_income = -0.75
-		add_army_professionalism = 0.05
 		add_country_modifier = {
 			name = hun_black_army
 			duration = -1
@@ -905,7 +925,6 @@ country_event = {
 	}
 	option = {
 		name = flavor_hun.16.b
-		add_army_tradition = 20
 		add_mil_power = 50
 		if = {
 			limit = {
@@ -932,6 +951,7 @@ country_event = {
 		tag = HUN
 		has_regency = no
 		has_country_modifier = hun_black_army
+		NOT = { has_reform = black_army_reform }
 	}
 	
 	option = {
@@ -960,7 +980,6 @@ country_event = {
 	option = {
 		name = flavor_hun.17.b
 		add_prestige = 10
-		add_years_of_income = -1
 		if = {
 			limit = {
 				has_estate = estate_nobles
@@ -983,8 +1002,9 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		current_age = age_of_absolutism
+		current_age = age_of_reformation
 		has_country_modifier = hun_black_army
+		NOT = { has_reform = black_army_reform }
 	}
 	
 	mean_time_to_happen = {
@@ -995,12 +1015,31 @@ country_event = {
 		name = flavor_hun.18.a
 		remove_country_modifier = hun_black_army
 		add_army_tradition = 20
+		add_absolutism = 10
 		add_mil_power = 75
 		if = {
 			limit = {
 				has_estate = estate_nobles
 			}
 			custom_tooltip = end_of_black_army_tooltip
+		}
+	}
+	option = { # new option, keep the black army
+		name = flavor_hun.18.b
+		trigger = {
+			is_subject = no
+			has_dlc = "Emperor"
+		}
+		set_country_flag = black_army_reform_flag
+		add_government_reform = black_army_reform
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -15
+			}
 		}
 	}
 }
@@ -1026,6 +1065,7 @@ country_event = {
 			NOT = { has_province_modifier = mercenary_concessions }
 		}
 		num_of_mercenaries = 1
+		NOT = { has_reform = black_army_reform }
 	}
 	
 	immediate = {
@@ -1444,7 +1484,7 @@ country_event = {
 		name = flavor_hun.23.a
 		add_adm_power = 50
 		define_advisor = {
-			name = "Támas Nádasdy"
+			name = "Tamás Nádasdy"
 			culture = hungarian
 			type = master_of_mint
 			skill = 3
@@ -1455,7 +1495,7 @@ country_event = {
 		name = flavor_hun.23.b
 		add_dip_power = 50
 		define_advisor = {
-			name = "Támas Nádasdy"
+			name = "Tamás Nádasdy"
 			culture = hungarian
 			type = diplomat
 			skill = 3
@@ -1466,7 +1506,7 @@ country_event = {
 		name = flavor_hun.23.c
 		add_mil_power = 50
 		define_advisor = {
-			name = "Támas Nádasdy"
+			name = "Tamás Nádasdy"
 			type = fortification_expert
 			culture = hungarian
 			skill = 3
@@ -1534,9 +1574,12 @@ country_event = {
 			dynasty = "Zápolya"
 			culture = hungarian
 			claim = 95
-			ADM = 3
-			DIP = 3
-			MIL = 3
+			adm = 4
+			dip = 3
+			mil = 2
+			max_random_adm = 5
+			max_random_dip = 4
+			max_random_mil = 3
 		}
 		if = {
 			limit = {
@@ -2284,6 +2327,7 @@ country_event = {
 			adm = 4
 			dip = 5
 			mil = 4
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2304,7 +2348,8 @@ country_event = {
 				type = pretender_rebels
 				size = 2
 				culture = hungarian
-				leader = "Ferenc II Rákóczy"
+				leader = "Ferenc"
+				leader_dynasty = "Rákóczy"
 			}
 		}
 	}
@@ -2352,6 +2397,7 @@ country_event = {
 						adm = 4
 						dip = 5
 						mil = 4
+						fixed = yes
 					}
 				}
 			}
@@ -2374,7 +2420,8 @@ country_event = {
 				type = pretender_rebels
 				culture = hungarian
 				size = 3
-				leader = "Ferenc II Rákóczy"
+				leader = "Ferenc"
+				leader_dynasty = "Rákóczy"
 			}
 		}
 	}
@@ -2405,6 +2452,7 @@ country_event = {
 					adm = 4
 					dip = 5
 					mil = 4
+					fixed = yes
 				}
 			}
 		}
@@ -2483,6 +2531,247 @@ country_event = {
 				size = 3
 				leader = "Ferenc II Rákóczy"
 			}
+		}
+	}
+}
+
+########################################
+# More Events for Hungary
+#
+# written by Pierre du Plessis
+########################################
+namespace = new_flavour_hun
+#Ask the Emperor to become part of the Empire?
+country_event = {
+	id = new_flavour_hun.1
+	title = new_flavour_hun.1.name
+	desc = new_flavour_hun.1.desc
+	picture = HRE_eventPicture
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = Hungary
+		}
+	}
+	is_triggered_only = yes
+	option = { #Go for it
+		name = new_flavour_hun.1.A
+		set_country_flag = hungary_flag_incident
+		set_imperial_incident = incident_hungary_mission
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { prestige = 0 }
+					emperor = {
+						NOT = { tag = HAB }
+					}
+				}
+				emperor = {
+					OR = {
+						ai_attitude = {
+							who = root
+							attitude = attitude_threatened
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_hostile
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_outraged
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { #Nah
+		name = new_flavour_hun.1.B
+		add_prestige = 15
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#Hungary Joins the Empire? - Incident
+country_event = {
+	id = new_flavour_hun.201
+	title = new_flavour_hun.2.name
+	desc = new_flavour_hun.2.desc
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = hungary_flag_incident
+				}
+				save_event_target_as = hungary_country
+			}
+		}
+	}
+	option = { #Sure
+		name = new_flavour_hun.2.A
+		BOH = {
+			elector = no
+		}
+		event_target:hungary_country = {
+			set_in_empire = yes
+			elector = yes
+		}
+		event_target:hungary_country = {
+			add_opinion = {
+				who = root
+				modifier = opinion_hun_let_into_empire
+			}
+		}
+		BOH = {
+			add_opinion = {
+				who = root
+				modifier = opinion_bav_repealed_electorate
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				OR = {
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_allied
+					}
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_friendly
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = event_target:hungary_country
+					value = 50
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = event_target:hungary_country
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.5
+				NOT = {
+					has_opinion = {
+						who = event_target:hungary_country
+						value = -15
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_outraged
+					}
+					NOT = {
+						has_opinion = {
+							who = event_target:hungary_country
+							value = -100
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { #No way in h...
+		name = new_flavour_hun.2.B
+		event_target:hungary_country = {
+			add_opinion = {
+				who = root
+				modifier = opinion_hun_didnt_let_into_empire
+			}
+		}
+		if = {
+			limit = {
+				tag = HAB
+			}
+			austria_region = {
+				limit = {
+					NOT = { is_claim = event_target:hungary_country }
+					NOT = { is_core = event_target:hungary_country }
+				}
+				add_claim = event_target:hungary_country
+			}
+			inneraustria_region = {
+				limit = {
+					NOT = { is_claim = event_target:hungary_country }
+					NOT = { is_core = event_target:hungary_country }
+				}
+				add_claim = event_target:hungary_country
+			}
+			carniola_region = {
+				limit = {
+					NOT = { is_claim = event_target:hungary_country }
+					NOT = { is_core = event_target:hungary_country }
+				}
+				add_claim = event_target:hungary_country
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				OR = {
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_allied
+					}
+					ai_attitude = {
+						who = event_target:hungary_country
+						attitude = attitude_friendly
+					}
+				}
+			}
+		}
+	}
+}
+#The Greeks in Constantinople (used by Austria too)
+country_event = {
+	id = new_flavour_hun.3
+	title = new_flavour_hun.3.name
+	desc = new_flavour_hun.3.desc
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	option = { #Bring back the Greeks
+		name = new_flavour_hun.3.A
+		2233 = {
+			change_culture = greek
+			change_religion = orthodox
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { #Leave it as is
+		name = new_flavour_hun.3.B
+		2233 = {
+			add_nationalism = -5
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 }

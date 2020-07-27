@@ -7,6 +7,18 @@ add_accepted_culture = scanian
 religion = catholic
 technology_group = western
 capital = 5243
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 8
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 7
+}
 
 1047.10.25 = {
 	monarch = {
@@ -883,7 +895,6 @@ capital = 5243
 1660.1.1 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = administrative_monarchy
 }
 1670.2.10 = {
 	monarch = {
@@ -1154,7 +1165,6 @@ capital = 5243
 	}
 }
 1848.1.20 = {
-	set_legacy_government = constitutional_monarchy
 	monarch = {
 		name = "Frederik VII"
 		dynasty = "von Oldenburg"

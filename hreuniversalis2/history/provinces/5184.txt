@@ -10,7 +10,6 @@ hre = yes
 owner = MLO
 controller = MLO
 add_core = MLO
-estate = estate_burghers
 
 1092.1.1 = {
 	owner = XKK

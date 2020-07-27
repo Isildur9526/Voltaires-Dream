@@ -812,7 +812,7 @@ lor_subdue_luxembourg_mission = {
 }
 lor_subjugate_brabant_mission = {
     mercenary_cost = -0.2
-    possible_mercenaries = 0.1
+    mercenary_manpower = 0.1
 }
 lor_trois_eveches_mission = {
     improve_relation_modifier = 0.25
@@ -1592,6 +1592,7 @@ nor_a_rulers_saga_mission = {
 	prestige_decay = -0.01
 }
 nor_curb_lendmenn_mission = {
+	global_unrest = -1
 	global_autonomy = -0.05
 }
 nor_archdiocese_of_nidaros_mission = {
@@ -2351,6 +2352,125 @@ fri_develop_wetlands_mission = {
 	global_prov_trade_power_modifier = 0.1
 	local_monthly_devastation = -0.05
 }
+
+#Serbia
+ser_fortify_danube_mission = {
+	defensiveness = 0.2
+	fort_maintenance_modifier = -0.15
+}
+ser_white_city_of_danube_mission = {
+	local_defensiveness = 0.15
+	local_institution_spread = 0.25
+}
+ser_mines_of_serbia_mission = {
+	global_trade_goods_size_modifier = 0.15
+}
+ser_legacy_of_krusevac_mission = {
+	prestige_decay = -0.01
+	build_cost = -0.1
+	build_time = -0.1
+}
+ser_serbian_empire_mission = {
+	all_power_cost = -0.01
+}
+ser_deal_with_bogomils_mission = {
+	global_missionary_strength = 0.02
+}
+ser_serbian_patriarch_mission = {
+	prestige = 0.5
+	ae_impact = -0.05
+}
+ser_nomocanon_of_saint_sava_mission = {
+	stability_cost_modifier = -0.1
+	global_autonomy = -0.03
+}
+ser_venetian_rivalry_mission = {
+	heavy_ship_power = 0.1
+	leader_naval_fire = 1
+	leader_naval_shock = 1
+}
+ser_elite_hussars_mission = {
+	cavalry_power = 0.15
+	cavalry_flanking = 0.5
+}
+ser_banners_of_serbs_mission = {
+	infantry_power = 0.15
+	recover_army_morale_speed = 0.05
+}
+ser_deal_with_romania_mission = {
+	improve_relation_modifier = 0.25
+	diplomats = 1
+}
+ser_incorporate_macva_mission = {
+	local_years_of_nationalism = -5
+	local_unrest = -1
+	local_core_creation = -0.2
+}
+ser_dusans_code_mission = {
+	same_culture_advisor_cost = -0.25
+	yearly_corruption = -0.05
+}
+ser_unite_south_slavs_mission = {
+	num_accepted_cultures = 2
+}
+ser_defeat_bulgaria_mission = {
+	local_tax_modifier = 0.1
+	local_culture_conversion_cost = -0.15
+}
+ser_dalmatian_conquest_mission = {
+	local_sailors_modifier = 0.25
+	local_ship_cost = -0.1
+}
+ser_into_macedonia_mission = {
+	siege_ability = 0.1
+	land_attrition = -0.25
+}
+ser_capture_constantinople_mission = {
+	local_defensiveness = 0.25
+	local_monthly_devastation = -0.05
+	trade_goods_size_modifier = 0.15
+}
+
+#Salzburg
+slz_papal_backing_mission = {
+	improve_relation_modifier = 0.25
+	diplomatic_reputation = 1
+}
+slz_prince_archbishopric_mission = {
+	global_tax_modifier = 0.1
+	prestige = 0.5
+	devotion = 0.5
+}
+slz_sachsenburg_riches_mission = {
+	trade_goods_size_modifier = 0.1
+}
+slz_counter_bavaria_mission = {
+	land_morale = 0.1
+	movement_speed = 0.1
+}
+slz_operate_salt_mines_mission = {
+	trade_goods_size = 2
+}
+slz_facilitate_trading_hub_mission = {
+	merchants = 1
+	trade_efficiency = 0.15
+}
+slz_festung_hohensalzburg_mission = {
+	local_defensiveness = 0.2
+}
+slz_survive_mediatization_mission = {
+	unjustified_demands = -0.5
+	core_creation = -0.1
+}
+slz_connect_our_exclaves_mission = {
+	global_autonomy = -0.03
+	state_maintenance_modifier = -0.15
+}
+slz_edict_of_expulsion_mission = {
+	global_heretic_missionary_strength = 0.02
+	global_unrest = -1
+}
+
 
 #Misc
 ned_beeldenstorm1 = {

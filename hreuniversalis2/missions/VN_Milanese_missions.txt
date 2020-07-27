@@ -109,37 +109,61 @@ vn_mlo_missions_slot_1_b = {
         icon = mission_rule_italy
         required_missions = { vn_mlo_support_from_city_states }
         trigger = {
-            #NOT = { is_year = 1250 }
-            #is_emperor = no
-            #emperor = {
-            #    capital_scope = {
-            #        NOT = { superregion = italy_superregion }
-			#	}
-			#}
-			#num_of_cities = 10
-            #calc_true_if = {
-            #    all_ally = {
-            #        custom_trigger_tooltip = {
-			#			tooltip = vn_mlo_support_from_city_states.tt
-			#			capital_scope = {
-			#				superregion = italy_superregion
-			#			}
-			#		}
-            #    }
-            #    amount = 4
-            #}
-            #add - Is member of the Lombard League when it forms
+            if = {
+                limit = { has_dlc = "Emperor" }
+                custom_trigger_tooltip = {
+                    tooltip = vn_mlo_lombard_league.tt
+                    OR = {
+                        had_country_flag = { flag = lombard_league_leader days = 1 }
+                        had_country_flag = { flag = lombard_league_member days = 1 }
+                    }  
+                }
+            }
+            else = {
+                is_emperor = no
+                emperor = {
+                    NOT = {
+                        capital_scope = {
+                            superregion = italy_superregion
+                        }
+                    }
+                }
+                num_of_cities = 10
+                calc_true_if = {
+                    all_ally = {
+                        custom_trigger_tooltip = {
+                			tooltip = vn_mlo_support_from_city_states.tt
+                			capital_scope = {
+                				superregion = italy_superregion
+                			}
+                		}
+                    }
+                    amount = 4
+                }
+            }
         }
         effect = {
-            #custom_tooltip = vn_mlo_lombard_league.tt
-            #country_event = {
-            #    id = vn_missions.66
-            #}
-            #add new effect
+            if = {
+                limit = {
+                    had_country_flag = { flag = lombard_league_leader days = 1 }
+                }
+                add_power_projection = {
+                    type = mission_rewards_power_projection
+                    amount = 20
+                }
+                add_prestige = 15
+            }
+            else = {
+                add_power_projection = {
+                    type = mission_rewards_power_projection
+                    amount = 10
+                }
+                add_prestige = 5
+            }
         }
     }
     vn_mlo_cast_out_emperor = {
-        icon = mission_king_of_franks
+        icon = milan_victorious
         required_missions = { vn_mlo_lombard_league }
         trigger = {
 			NOT = { is_part_of_hre = yes }	
@@ -167,44 +191,9 @@ vn_mlo_missions_slot_1_c = {
     }
     has_country_shield = yes
 
-    vn_mlo_growth_of_milan = {
-        icon = mission_big_city
-        position = 8
-        required_missions = { }
-        provinces_to_highlight = {
-            province_id = 1818
-        }
-        trigger = {
-            1818 = {
-				owned_by = ROOT
-                num_of_times_improved = 3
-                development = 30
-                calc_true_if = {
-                    has_fort_trigger = yes
-                    has_production_building_trigger = yes
-                    has_trade_building_trigger = yes
-                    has_tax_building_trigger = yes
-                    has_shipyard_building_trigger = yes
-                    has_manpower_building_trigger = yes
-                    amount = 3
-                }
-            }
-        }
-        effect = {
-            1818 = {
-                add_scaled_local_adm_power = 2
-                add_scaled_local_dip_power = 2
-                add_scaled_local_mil_power = 2
-                add_next_institution_embracement = 10
-                if = {
-                    limit = { has_dlc = "Mandate of Heaven" }
-                    add_prosperity = 25
-                }
-            }
-        }
-    }
     vn_mlo_embrace_renaissance = {
         icon = mission_early_modern_university
+        position = 9
         required_missions = { vn_mlo_growth_of_milan }
         trigger = {
 			has_institution = renaissance
@@ -358,22 +347,40 @@ vn_mlo_missions_slot_2_c = {
     }
     has_country_shield = yes
 
-    vn_mlo_cathedral_of_monza = {
-        icon = italian_riches
-        position = 9
-        required_missions = { vn_mlo_growth_of_milan }
+    vn_mlo_growth_of_milan = {
+        icon = mission_big_city
+        position = 8
+        required_missions = { }
         provinces_to_highlight = {
             province_id = 1818
         }
         trigger = {
             1818 = {
 				owned_by = ROOT
-                has_building = cathedral
+                num_of_times_improved = 3
+                development = 30
+                calc_true_if = {
+                    has_fort_trigger = yes
+                    has_production_building_trigger = yes
+                    has_trade_building_trigger = yes
+                    has_tax_building_trigger = yes
+                    has_shipyard_building_trigger = yes
+                    has_manpower_building_trigger = yes
+                    amount = 3
+                }
             }
         }
         effect = {
-            1818 = { add_base_tax = 2 }
-            add_religious_influence_effect_large = yes
+            1818 = {
+                add_scaled_local_adm_power = 2
+                add_scaled_local_dip_power = 2
+                add_scaled_local_mil_power = 2
+                add_next_institution_embracement = 10
+                if = {
+                    limit = { has_dlc = "Mandate of Heaven" }
+                    add_prosperity = 25
+                }
+            }
         }
     }
 }
@@ -696,6 +703,36 @@ vn_mlo_missions_slot_3_b = {
                 }
                 add_permanent_claim = ROOT
             }
+        }
+    }
+}
+
+vn_mlo_missions_slot_3_c = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = MLO
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_mlo_cathedral_of_monza = {
+        icon = italian_riches
+        position = 9
+        required_missions = { vn_mlo_growth_of_milan }
+        provinces_to_highlight = {
+            province_id = 1818
+        }
+        trigger = {
+            1818 = {
+				owned_by = ROOT
+                has_building = cathedral
+            }
+        }
+        effect = {
+            1818 = { add_base_tax = 2 }
+            add_religious_influence_effect_large = yes
         }
     }
 }

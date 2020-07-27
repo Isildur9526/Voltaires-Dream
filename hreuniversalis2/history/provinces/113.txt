@@ -11,7 +11,6 @@ owner = MAN
 controller = MAN
 add_core = MAN
 add_core = FER
-estate = estate_church
 
 1115.7.24 = {
 	owner = FER

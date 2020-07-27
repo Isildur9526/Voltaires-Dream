@@ -603,17 +603,18 @@ historical_friend = PIE
 		mil = 2
 	}
 	queen = {
-		country_of_origin = FRA
+		country_of_origin = CYP
 		name = "Anne"
 		dynasty = "de Lusignan"
 		birth_date = 1418.9.24
 		death_date = 1462.11.11
-		culture = cosmopolitan_french
+		culture = outremer
 		female = yes
 		dip = 2
 		mil = 2
 		adm = 2
 	}
+	add_queen_personality = embezzler_personality
 }
 1435.2.1 = {
 	heir = {

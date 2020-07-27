@@ -117,8 +117,7 @@ country_decisions = {
 			add_prestige = 25
 			if = {
 				limit = { is_tribal = yes }
-				change_government = monarchy
-				add_government_reform = autocracy_reform
+				change_government_to_monarchy = yes
 			}
 			change_primary_culture = moroccan
 			set_country_flag = formed_morocco_flag
@@ -240,8 +239,7 @@ country_decisions = {
 				limit = {
 					is_tribal = yes	#Desert tribes settling down.
 				}
-				change_government = monarchy
-				add_government_reform = autocracy_reform
+				change_government_to_monarchy = yes
 			}
 			add_prestige = 25
 			set_country_flag = formed_algiers_flag
@@ -355,8 +353,7 @@ country_decisions = {
 				limit = {
 					is_tribal = yes
 				}
-				change_government = monarchy
-				add_government_reform = autocracy_reform
+				change_government_to_monarchy = yes
 			}
 			add_prestige = 25
 			set_country_flag = formed_tunisia_flag
@@ -461,8 +458,7 @@ country_decisions = {
 			}
 			if = {
 				limit = { is_tribal = yes }
-				change_government = monarchy
-				add_government_reform = autocracy_reform
+				change_government_to_monarchy = yes
 			}
 			add_prestige = 25
 			set_country_flag = formed_tripoli_flag

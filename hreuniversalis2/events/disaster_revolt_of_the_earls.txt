@@ -80,7 +80,6 @@ country_event = {
 				any_owned_province = {
 					culture = anglosaxon
 					is_capital = no
-					NOT = { has_estate = yes }
 					NOT = { has_province_modifier = foreign_ruler }
 				}
 			}
@@ -106,11 +105,9 @@ country_event = {
 				limit = {
 					culture = anglosaxon
 					is_capital = no
-					NOT = { has_estate = yes }
 					NOT = { has_province_modifier = foreign_ruler }
 				}
 				change_culture = english
-				set_estate = estate_nobles
 				add_province_modifier = {
 					name = foreign_ruler
 					duration = 3650
@@ -152,7 +149,6 @@ country_event = {
 		random_owned_province = {
 			limit = {
 				culture = anglosaxon
-				NOT = { has_estate = yes }
 				NOT = { has_province_modifier = foreign_ruler }
 			}
 			add_province_modifier = {
@@ -223,10 +219,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				has_dlc = "The Cossacks"
-				has_estate = estate_nobles
-			}
+			limit = { has_estate = estate_nobles }
 			add_estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 10
@@ -266,7 +259,8 @@ country_event = {
    				type = pretender_rebels
    				culture = anglosaxon
     			size = 4
-    			leader = "Eadgar Cerdicing"
+    			leader = "Eadgar"
+    			leader_dynasty = "Cerdicing"
     			win = yes
 			}
 		}
@@ -317,7 +311,6 @@ country_event = {
 			factor = 90
 			modifier = {
 				factor = 0
-				has_dlc = "The Cossacks"
 				NOT = {
 					estate_loyalty = {
 						estate = estate_nobles
@@ -331,9 +324,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				has_dlc = "The Cossacks"
-			}
+			limit = { has_estate = estate_nobles }
 			add_estate_loyalty = {
 				estate = estate_nobles
 				loyalty = -15
@@ -359,14 +350,11 @@ country_event = {
 			spawn_rebels = {
 				culture = anglosaxon
    				type = pretender_rebels
-   				leader = "Eadgar Cerdicing"
+   				leader = "Eadgar"
+   				leader_dynasty = "Cerdicing"
     			size = 2
 			}
 			remove_province_modifier = foreign_ruler
-			if = {
-				limit = { has_estate = estate_nobles }
-				remove_estate = estate_nobles
-			}
 		}
 	}
 }
@@ -381,7 +369,6 @@ country_event = {
 		months = 6
 		modifier = {
 			factor = 2
-			has_dlc = "The Cossacks"
 			estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 60
@@ -389,7 +376,6 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			has_dlc = "The Cossacks"
 			estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 80
@@ -645,19 +631,10 @@ country_event = {
 
 	trigger = {
 		senior_union_with = NRM
-		OR = {
-			AND = {
-				has_dlc = "The Cossacks"
-				NOT = {
-					estate_loyalty = {
-						estate = estate_nobles
-						loyalty = 36
-					}
-				}
-			}
-			AND = {
-				NOT = { has_dlc = "The Cossacks" }
-				NOT = { stability = 1 }
+		NOT = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 36
 			}
 		}
 	}

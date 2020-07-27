@@ -1,0 +1,60 @@
+incident_investiture_controversy = {
+	event = incident_investiture_controversy.2
+	default_option = 1
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				exists = PAP
+			}
+			PAP = { is_subject = yes }
+			emperor = {
+				NOT = { religion = catholic }
+			}
+		}
+	}
+	
+	0 = { # fight for supremacy
+		factor = 1
+		modifier = {
+			factor = 100
+			government = monarchy
+		}
+	}
+	
+	1 = { # accept papal supremacy
+		factor = 1
+		modifier = {
+			factor = 100
+			culture_group = latin
+		}
+		modifier = {
+			factor = 100
+			government = theocracy
+		}
+		modifier = {
+			factor = 100
+			num_of_cardinals = 1
+		}
+		modifier = {
+			factor = 1000
+			is_papal_controller = yes
+		}
+		modifier = {
+			factor = 1000
+			tag = PAP
+		}
+	}
+
+	2 = { #compromise
+		factor = 1
+		modifier = {
+			factor = 100
+			culture_group = latin
+		}
+		modifier = {
+			factor = 100
+			government = theocracy
+		}
+	}
+}

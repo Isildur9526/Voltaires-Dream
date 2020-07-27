@@ -43,7 +43,6 @@ add_core = ALP
 	religion = catholic
 	culture = aragonese
 	capital = "Ademuz"
-	estate = estate_holy_orders
 }
 1259.1.1 = {
 	owner = ARA

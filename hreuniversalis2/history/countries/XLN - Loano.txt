@@ -126,7 +126,6 @@ capital = 650
 #1505 under GEN
 #1547.1.2 under MLO
 1575.1.1 = {
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Gianandrea I"
 		dynasty = "Doria"

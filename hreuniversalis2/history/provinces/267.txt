@@ -52,8 +52,7 @@ fort_14th = yes
 	controller = CAS
 	add_core = CMU
 	remove_core = XMA
-	capital = "Murcia" 
-	estate = estate_burghers
+	capital = "Murcia"
 	culture = mozarabic
 }
 1296.1.1 = { religion = catholic }

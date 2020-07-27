@@ -649,4 +649,3 @@ add_army_professionalism = 0.05
 1499.1.1 = { leader = { name = "Pedro Navarro"		type = general	fire = 3	shock = 2	manuever = 2	siege = 3	death_date = 1512.4.11 } } # Captured by French, after that in their service
 1508.1.1 = { leader = {	name = "Ramón de Cardona"       type = general	fire = 3	shock = 3	manuever = 2	siege = 1	death_date = 1516.1.23 } }
 1512.1.1 = { leader = { name = "Fernando d'Avalos"	 	type = general	fire = 3	shock = 3	manuever = 3	siege = 1	death_date = 1525.11.4 } }
-1724.1.20 = { set_legacy_government = administrative_monarchy }

@@ -234,112 +234,47 @@ country_event = {
 				loyalty = 30
 			}
 		}
+		any_owned_province = {
+			religion = hinduism
+			is_capital = no
+			is_city = yes
+		}
+		estate_territory = { 
+			estate = estate_brahmins
+			territory = 10
+		}
 	}
 	
 	immediate = {
 		hidden_effect = {
-			random_owned_province = {
-				limit = { has_estate = estate_brahmins }
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_brahmins
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_brahmins
-							value = 15
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = peasant_brahmins_revolt
+							value = estate
+							estate = estate_brahmins
 						}
 					}
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_brahmins
-							value = 15
-						}
+					any_owned_province = {
+						religion = hinduism
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = peasant_brahmins_revolt }
 					}
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_brahmins
-							value = 15
-						}
+					check_reducing_estate_revolt_size_trigger = {
+						FLAG = peasant_brahmins_revolt
 					}
-					NOT = { has_province_flag = peasant_brahmins_revolt }
 				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_brahmins
-							value = 15
-						}
+				random_owned_province = {
+					limit = {
+						religion = hinduism
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = peasant_brahmins_revolt }
 					}
-					NOT = { has_province_flag = peasant_brahmins_revolt }
+					set_province_flag = peasant_brahmins_revolt
 				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_brahmins
-							value = 20
-						}
-					}
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_brahmins
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_brahmins
-							value = 20
-						}
-					}
-					NOT = { has_province_flag = peasant_brahmins_revolt }
-				}
-				set_province_flag = peasant_brahmins_revolt
 			}
 		}
 	}
@@ -352,7 +287,7 @@ country_event = {
 		name = brahmins_estate_events.6.a #Ok
 		add_stability = -1
 		if = {
-			limit = { any_owned_province = { has_estate = estate_brahmins } } #Prevents faulty tooltip.
+			limit = { any_owned_province = { religion = hinduism } } #Prevents faulty tooltip.
 			every_owned_province = {
 				limit = { has_province_flag = peasant_brahmins_revolt }
 				clr_province_flag = peasant_brahmins_revolt
@@ -378,10 +313,14 @@ country_event = {
 	trigger = {
 		has_estate = estate_brahmins
 		has_estate = estate_vaisyas
+		estate_influence = {
+			estate = estate_brahmins
+			influence = 55
+		}
 		any_owned_province = {
-			has_estate = estate_brahmins
 			province_trade_power = 3
 			development = 10
+			is_city = yes
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -405,9 +344,9 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					has_estate = estate_brahmins
 					province_trade_power = 3
 					development = 10
+					is_city = yes
 				}
 				save_event_target_as = brahmin_trade_province
 			}
@@ -430,7 +369,7 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_vaisyas
-						loyalty = 40
+						loyalty = 30
 					}
 				}
 			}
@@ -445,6 +384,7 @@ country_event = {
 			estate = estate_vaisyas
 			loyalty = -10
 		}
+		scaled_estate_brahmins_land_share_effect = yes
 		event_target:brahmin_trade_province = {
 			add_province_modifier = {
 				name = "brahmins_alienating_merchants"
@@ -468,7 +408,7 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_brahmins
-						loyalty = 40
+						loyalty = 30
 					}
 				}
 			}
@@ -479,13 +419,12 @@ country_event = {
 			influence = 10
 			duration = 5475
 		}
+		scaled_estate_vaisyas_land_share_effect = yes
 		add_estate_loyalty = {
 			estate = estate_brahmins
 			loyalty = -10
 		}
 		event_target:brahmin_trade_province = {
-			remove_estate = estate_brahmins
-			set_estate = estate_vaisyas
 			add_province_modifier = {
 				name = "brahmins_stopped_alienating_merchants"
 				duration = 5475
@@ -534,6 +473,12 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 1
+		modifier = {
+			factor = 2
+			NOT = {
+				religion = zoroastrian
+			}
+		}
 	}
 
 	option = {
@@ -554,10 +499,21 @@ country_event = {
 			influence = 15
 			duration = 7300
 		}
-		add_country_modifier = {
-			name = "brahmin_peshwa"
-			duration = 7300
-		}	
+		if = {
+			limit = {
+				religion = zoroastrian
+			}
+			add_country_modifier = {
+				name = "brahmin_peshwa"
+				duration = 7300
+			}
+		}		
+		else = {
+			add_country_modifier = {
+				name = "brahmin_peshwa_nonhindu"
+				duration = 7300
+			}
+		}
 	}
 	option = {
 		name = brahmins_estate_events.8.b
@@ -619,8 +575,9 @@ country_event = {
 
 	trigger = {
 		has_estate = estate_brahmins
-		any_owned_province = {
-			has_estate = estate_brahmins
+		estate_territory = { 
+			estate = estate_brahmins
+			territory = 1
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -633,6 +590,10 @@ country_event = {
 				estate = estate_brahmins
 				modifier = EST_VAL_NONBRAHMIN_MOVEMENTS
 			}
+		}
+		any_owned_province = {
+			religion = hinduism
+			is_city = yes
 		}
 	}
 	
@@ -656,7 +617,7 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_brahmins
-						loyalty = 40
+						loyalty = 30
 					}
 				}
 			}
@@ -673,13 +634,32 @@ country_event = {
 		}
 		custom_tooltip = non_brahmin_tooltip
 		hidden_effect = {
-			every_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_brahmins
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = add_brahmin_orthodoxy_enforced
+							value = estate
+							estate = estate_brahmins
+						}
+					}
+					any_owned_province = {
+						religion = hinduism
+						is_city = yes
+						NOT = { has_province_flag = add_brahmin_orthodoxy_enforced }
+					}
 				}
-				add_province_modifier = {
-					name = "brahmin_orthodoxy_enforced"
-					duration = 5475
+				random_owned_province = {
+					limit = {
+						religion = hinduism
+						is_city = yes
+						NOT = { has_province_flag = add_brahmin_orthodoxy_enforced }
+					}
+					add_province_modifier = {
+						name = "brahmin_orthodoxy_enforced"
+						duration = 5475
+					}
+					set_province_flag = add_brahmin_orthodoxy_enforced
 				}
 			}
 		}
@@ -718,14 +698,45 @@ country_event = {
 		}
 		custom_tooltip = brahmins_estate_events.9.b.tt
 		hidden_effect = {
-			every_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_brahmins
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = add_nonbrahmin_movements
+							value = estate
+							estate = estate_brahmins
+						}
+					}
+					any_owned_province = {
+						religion = hinduism
+						is_city = yes
+						NOT = { has_province_flag = add_nonbrahmin_movements }
+					}
 				}
-				add_province_modifier = {
-					name = "nonbrahmin_movements"
-					duration = 5475
+				random_owned_province = {
+					limit = {
+						religion = hinduism
+						is_city = yes
+						NOT = { has_province_flag = add_nonbrahmin_movements }
+					}
+					add_province_modifier = {
+						name = "nonbrahmin_movements"
+						duration = 5475
+					}
+					set_province_flag = add_nonbrahmin_movements
 				}
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_flag = add_brahmin_orthodoxy_enforced }
+				clr_province_flag = add_brahmin_orthodoxy_enforced
+			}
+			every_owned_province = {
+				limit = { has_province_flag = add_nonbrahmin_movements }
+				clr_province_flag = add_nonbrahmin_movements
 			}
 		}
 	}
@@ -749,12 +760,15 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_rajput
-						loyalty = 40
+						loyalty = 30
 					}
 				}
+				estate_territory = {
+					estate = estate_rajput
+					territory = 5
+				}
 				any_owned_province = {
-					religion = hinduism
-					has_estate = estate_rajput
+					religion = zoroastrian
 					fort_level = 2
 				}
 			}
@@ -763,19 +777,22 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_maratha
-						loyalty = 40
+						loyalty = 30
 					}
 				}
+				estate_territory = {
+					estate = estate_maratha
+					territory = 5
+				}
 				any_owned_province = {
-					religion = hinduism
-					has_estate = estate_maratha
+					religion = zoroastrian
 					fort_level = 2
 				}
 			}
 		}
 		estate_loyalty = {
 			estate = estate_brahmins
-			loyalty = 40
+			loyalty = 30
 		}
 		NOT = {
 			any_owned_province = {
@@ -801,22 +818,20 @@ country_event = {
 					NOT = {
 						estate_loyalty = {
 							estate = estate_rajput
-							loyalty = 40
+							loyalty = 30
 						}
 					}
 					any_owned_province = {
-						has_estate = estate_rajput
 						is_capital = no
 						fort_level = 2
-						religion = hinduism
+						religion = zoroastrian
 					}
 				}
 				random_owned_province = {
 					limit = { 
-						has_estate = estate_rajput
 						is_capital = no
 						fort_level = 2
-						religion = hinduism
+						religion = zoroastrian
 					}
 					set_province_flag = brahmin_fort_flag
 					save_event_target_as = brahmin_fort_province
@@ -828,13 +843,13 @@ country_event = {
 					NOT = {
 						estate_loyalty = {
 							estate = estate_maratha
-							loyalty = 40
+							loyalty = 30
 						}
 					}
 					any_owned_province = {
-						has_estate = estate_maratha
 						is_capital = no
 						fort_level = 2
+						religion = zoroastrian
 					}
 					NOT = {
 						any_owned_province = {
@@ -844,10 +859,9 @@ country_event = {
 				}
 				random_owned_province = {
 					limit = { 
-						has_estate = estate_maratha
 						is_capital = no
 						fort_level = 2
-						religion = hinduism
+						religion = zoroastrian
 					}
 					set_province_flag = brahmin_fort_flag
 					save_event_target_as = brahmin_fort_province
@@ -872,7 +886,7 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_brahmins
-						loyalty = 40
+						loyalty = 30
 					}
 				}
 			}
@@ -887,20 +901,20 @@ country_event = {
 			influence = 10
 			duration = 7300
 		}
+		if = {
+			limit = {
+				has_estate = estate_rajput
+			}
+			scaled_estate_rajput_negative_land_share_effect = yes
+		}
+		if = {
+			limit = {
+				has_estate = estate_maratha
+			}
+			scaled_estate_maratha_negative_land_share_effect = yes
+		}
+		scaled_estate_brahmins_land_share_effect = yes
 		event_target:brahmin_fort_province = {
-			if = {
-				limit = {
-					has_estate = estate_rajput
-				}
-				remove_estate = estate_rajput
-			}
-			if = {
-				limit = {
-					has_estate = estate_maratha
-				}
-				remove_estate = estate_maratha
-			}
-			set_estate = estate_brahmins
 			add_province_modifier = {
 				name = brahmin_fort
 				duration = 7300
@@ -919,33 +933,31 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 1.5
-				event_target:brahmin_fort_province = {
-					has_estate = estate_rajput
-				}
+				has_estate = estate_rajput
 				NOT = {
 					estate_loyalty = {
 						estate = estate_rajput
-						loyalty = 40
+						loyalty = 30
 					}
 				}
 			}
 			modifier = {
 				factor = 1.5
-				event_target:brahmin_fort_province = {
-					has_estate = estate_maratha
-				}
+				has_estate = estate_maratha
 				NOT = {
 					estate_loyalty = {
 						estate = estate_maratha
-						loyalty = 40
+						loyalty = 30
 					}
 				}
 			}
 		}
 		if = {
 			limit = {
-				event_target:brahmin_fort_province = {
-					has_estate = estate_rajput
+				has_estate = estate_rajput
+				estate_territory = { 
+					estate = estate_rajput
+					territory = 5
 				}
 			}
 			add_estate_loyalty = {
@@ -953,15 +965,43 @@ country_event = {
 				loyalty = 10
 			}
 		}
+		else_if = {
+			limit = {
+				has_estate = estate_rajput
+				estate_territory = { 
+					estate = estate_rajput
+					territory = 5
+				}
+			}
+			add_estate_loyalty = {
+				estate = estate_rajput
+				loyalty = 5
+			}
+		}
 		if = {
 			limit = {
-				event_target:brahmin_fort_province = {
-					has_estate = estate_maratha
+				has_estate = estate_maratha
+				estate_territory = { 
+					estate = estate_maratha
+					territory = 5
 				}
 			}
 			add_estate_loyalty = {
 				estate = estate_maratha
 				loyalty = 10
+			}
+		}
+		else_if = {
+			limit = {
+				has_estate = estate_maratha
+				estate_territory = { 
+					estate = estate_maratha
+					territory = 5
+				}
+			}
+			add_estate_loyalty = {
+				estate = estate_maratha
+				loyalty = 5
 			}
 		}
 		event_target:brahmin_fort_province = {
@@ -977,5 +1017,3 @@ country_event = {
 		}
 	}
 }
-
-# brahmins_estate_events.11 removed

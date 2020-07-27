@@ -10,7 +10,6 @@ hre = no
 owner = ORK
 controller = ORK
 add_core = ORK
-estate = estate_nobles
 
 1210.1.1 = {
 	owner = HSC

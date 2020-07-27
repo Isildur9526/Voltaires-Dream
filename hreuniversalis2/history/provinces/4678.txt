@@ -39,7 +39,6 @@ add_core = TFL
 	owner = DAA
 	controller = DAA
 	add_core = DAA
-	remove_core = MOR
 }
 1549.1.1 = {
 	owner = MOR

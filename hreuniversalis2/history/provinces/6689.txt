@@ -25,7 +25,6 @@ center_of_trade = 2
 	culture = russian
 	religion = orthodox
 	fort_14th = yes
-	estate = estate_nobles
 }
 1252.1.1 = {
 	owner = GLH

@@ -183,3 +183,13 @@
  apache_guerillaDESCR: "As the largest entity within the eastern European Commonwealth, Lithuania was involved extensively in early-modern warfare, trained in firearms as well as more traditional infantry tactics."
  american_western_franchise_warfare: "Napoleonic Lithuanian Musket"
  american_western_franchise_warfareDESCR: "Napoleon's alliance with Saxony, which ruled Poland in personal union, brought Napoleonic tactics to Lithuania."
+#Mercenary Companies
+ crusade_start: "The Papacy has called for a Crusade"
+ merc_order_of_alcantara: "Order of Alcántara"
+ merc_order_of_montesa: "Order of Montesa"
+ merc_order_of_santiago: "Order of Santiago"
+ merc_order_of_aviz: "Order of Aviz"
+ merc_order_of_calatrava: "Order of Calatrava"
+ reconquista_knights: "Iberian Holy Orders were established"
+ merc_order_of_assassins: "Hashashins"
+ hashashins: "The Order of Assassins settled in Syria"

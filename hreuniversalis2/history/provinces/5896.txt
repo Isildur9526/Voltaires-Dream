@@ -17,7 +17,6 @@ add_core = WIE
 	add_core = LIV
 	remove_core = WIE
 	religion = catholic
-	estate = estate_nobles
 }
 1238.1.1 = {
 	owner = EST

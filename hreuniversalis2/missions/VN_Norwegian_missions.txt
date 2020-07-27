@@ -168,15 +168,19 @@ vn_nor_missions_slot_1_a = {
 			has_adm_advisor_2 = yes
 			has_dip_advisor_2 = yes
 			has_mil_advisor_2 = yes
-			has_estate = estate_church
-			has_estate = estate_nobles
-			estate_loyalty = {
-				estate = estate_church
-				loyalty = 50
+			if = {
+				limit = { has_estate = estate_church }
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 60
+				}
 			}
-			estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 50
+			if = {
+				limit = { has_estate = estate_nobles }
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
 			}
         }
         effect = {
@@ -396,9 +400,7 @@ vn_nor_missions_slot_2_c = {
         required_missions = { vn_nor_institute_landslov }
         trigger = {
             if = {
-				limit = {
-					has_estate = estate_nobles
-				}
+				limit = { has_estate = estate_nobles }
 				NOT = {
 					estate_influence = {
 						estate = estate_nobles
@@ -408,32 +410,18 @@ vn_nor_missions_slot_2_c = {
 				NOT = {
 					estate_territory = {
 						estate = estate_nobles
-						territory = 25
+						territory = 15
 					}
 				}
 			}
 			else = {
-				NOT = { average_autonomy = 25 }
+				NOT = { average_autonomy = 10 }
 			}
         }
         effect = {
 			add_ruler_modifier = {
 				name = "nor_curb_lendmenn_mission"
 				duration = -1
-			}
-			custom_tooltip = vn_nor_curb_lendmenn.tt
-			hidden_effect = {
-				every_owned_province = {
-					limit = {
-						OR = {
-							region = austlandet_region
-							region = vestlandet_region
-						}
-						has_estate = yes
-					}
-					add_unrest = -1
-					add_local_autonomy = -5
-				}
 			}
         }
 	}
@@ -1076,17 +1064,13 @@ vn_nor_missions_slot_5_a = {
 				AND = {
 					if = {
 						limit = { has_estate = estate_church }
-						estate_loyalty = {
+						num_of_estate_agendas_completed = {
 							estate = estate_church
-							loyalty = 60
+							value = 3
 						}
 					}
 					uses_papacy = yes
 					papal_influence = 100
-					num_of_owned_provinces_with = {
-						value = 10
-						has_estate = estate_church
-					}
 					custom_trigger_tooltip = {
 						tooltip = vn_nor_archdiocese_of_nidaros.tt
 						any_known_country = {
@@ -1100,7 +1084,6 @@ vn_nor_missions_slot_5_a = {
 				}
 				uses_papacy = no
 			}
-			
         }
         effect = {
 			add_religious_influence_effect_large = yes

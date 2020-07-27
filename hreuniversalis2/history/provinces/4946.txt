@@ -65,7 +65,6 @@ add_core = LEB
 	controller = BIR
 	add_core = BIR
 	remove_core = SID
-	estate = estate_holy_orders
 }
 1268.1.1 = {
 	owner = TEM

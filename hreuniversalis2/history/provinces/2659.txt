@@ -17,7 +17,6 @@ fort_14th = yes
 1420.7.1 = {
 	owner = VEN
 	add_core = VEN
-	estate = estate_church
 	hre = no
 }
 1511.2.27 = {

@@ -9,7 +9,6 @@ capital = 930
 1831.7.21 = {
 	set_global_flag = belgian_revolution
 	add_accepted_culture = wallonian
-	set_legacy_government = constitutional_monarchy
 	monarch = {
 		name = "Leopold I"
 		dynasty = "von Wettin"

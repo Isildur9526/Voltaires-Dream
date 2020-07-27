@@ -1,6 +1,5 @@
 government = monarchy
 add_government_reform = feudalism_reform
-set_legacy_government = administrative_monarchy
 government_rank = 3
 technology_group = western
 religion = catholic
@@ -77,7 +76,6 @@ capital = 1009 # Piedomont
 1785.1.1 = { leader = {	name = "Michel Colli"		type = general	fire = 3	shock = 2	manuever = 3	siege = 0	death_date = 1796.4.28 } }
 1792.11.27 = { capital = 651 }
 1796.10.14 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "Carlo Emanuele IV"
 		dynasty = "di Savoia"

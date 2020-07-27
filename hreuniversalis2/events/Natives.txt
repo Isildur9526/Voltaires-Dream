@@ -2,11 +2,16 @@
 province_event = {
 	id = 3072
 	title = "EVTNAME3072"
-	desc = "EVTDESC3072"
+	desc = "EVTDESC3072.TC"
 	picture = NATIVES_eventPicture
 	
 	trigger = {
-		owner = { has_country_flag = NF_ruthless }
+		owner = { 
+			OR = {
+				has_country_flag = NF_ruthless
+				native_policy = native_policy_hostile
+			}
+		}
 		is_colony = yes
 		native_hostileness = 5
 		native_size = 3
@@ -46,21 +51,23 @@ province_event = {
 			NOT = { native_ferocity = 2 }
 		}
 	}
+	
+	goto = ROOT
 
 	option = {
 		name = "EVTOPTA3072" # Defend the settlement
 		ai_chance = { factor = 60 }
+		owner = { add_treasury = -100 }
 		change_native_hostileness = 3
 		change_native_ferocity = 2
-		change_native_size = -3
-		add_colonysize = -50
 	}
 	option = {
 		name = "EVTOPTB3072" # Abandon the settlement
 		ai_chance = { factor = 40 }
-		change_native_hostileness = 1
-		change_native_ferocity = 1
-		add_colonysize = -150
+		custom_tooltip = destroyed_colony_tt
+		hidden_effect = {
+			add_colonysize = -1000
+		}
 	}
 }
 
@@ -73,12 +80,17 @@ province_event = {
 	picture = NATIVES_eventPicture
 
 	trigger = {
-		owner = { has_country_flag = NF_ruthless }
+		owner = { 
+			OR = {
+				has_country_flag = NF_ruthless
+				native_policy = native_policy_hostile
+			}
+		}
 		is_colony = yes
 		NOT = { colonysize = 200 }
 		native_size = 5
 	}
-
+	
 	mean_time_to_happen = {
 		months	= 240
 
@@ -94,6 +106,8 @@ province_event = {
 			}
 		}
 	}
+	
+	goto = ROOT
 
 	option = {
 		name = "EVTOPTA3073"			# Ignore their suffering
@@ -117,10 +131,10 @@ province_event = {
 		name = "EVTOPTB3073"			# Attempt to assuage their pain
 		ai_chance = { factor = 25 }
 		owner = {
-			add_treasury = -40
+			add_treasury = -20
 			add_country_modifier = {
 				name = "aid_natives"
-				duration = 730
+				duration = 365
 			}
 		}
 	}
@@ -131,20 +145,23 @@ province_event = {
 province_event = {
 	id = 3074
 	title = "EVTNAME3074"
-	desc = "EVTDESC3074"
+	desc = "EVTDESC3074.TC"
 	picture = COLONIZATION_eventPicture
 	
 	trigger = {
 		is_colony = yes
-		owner = {
-			has_country_flag = NF_ruthless
+		owner = { 
+			OR = {
+				has_country_flag = NF_ruthless
+				native_policy = native_policy_hostile
+			}
 			mil = 2	
 		}
 		any_neighbor_province = {
 			owned_by = ROOT 
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months	= 240
 
@@ -165,6 +182,8 @@ province_event = {
 			owner = { num_of_cities = 30 }
 		}
 	}
+	
+	goto = ROOT
 	
 	option = {
 		name = "EVTOPTA3074"			# Expand colonial borders
@@ -200,16 +219,16 @@ province_event = {
 	
 	trigger = {
 		owner = {
-			has_country_flag = NF_trader
+			OR = {
+				has_country_flag = NF_trader
+				native_policy = native_policy_trade
+			}
 			trade_efficiency = 0.5
-		}
-		any_neighbor_province = {
-			is_colony = yes
-			owned_by = ROOT
 		}
 		NOT = {
 			has_province_modifier = merchant_investement
 		}
+		NOT = { culture = ROOT }
 	}
 	
 	mean_time_to_happen = {
@@ -285,6 +304,8 @@ province_event = {
 			}
 		}
 	}
+	
+	goto = ROOT
 
 	option = {
 		name = "EVTOPTA3075"		# Put into the treasury
@@ -319,12 +340,17 @@ province_event = {
 	picture = PLAGUE_eventPicture
 
 	trigger = {
-		owner = { has_country_flag = NF_trader }
+		owner = { 
+			OR = {
+				has_country_flag = NF_trader
+				native_policy = native_policy_trade
+			}
+		}
 		NOT = { colonysize = 200 }
 		is_colony = yes
 		native_size = 5
 	}
-
+	
 	mean_time_to_happen = {
 		months	= 240
 
@@ -358,6 +384,8 @@ province_event = {
 			}
 		}
 	}
+	
+	goto = ROOT
 
 	option = {
 		name = "EVTOPTA3076"			# Ignore their suffering
@@ -391,29 +419,72 @@ province_event = {
 	}
 }
 
-# Attempt to convert the natives. (Protestantism)
+# Attempt to convert the natives.
 province_event = {
 	id = 3077
 	title = "EVTNAME3077"
-	desc = "EVTDESC3077"
+	desc = {
+		trigger = {
+			owner = {
+				has_reform = mission_to_civilize_reform
+			}
+		}
+		desc = "EVTDESC3077.C"
+	}
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_country_flag = NF_peacenik
+					native_policy = native_policy_coexist
+				}
+			}
+		}
+		desc = "EVTDESC3077.A"
+	}
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_country_flag = NF_trader
+					native_policy = native_policy_trade
+				}
+			}
+		}
+		desc = "EVTDESC3077.B"
+	}
 	picture = NATIVES_eventPicture
 	
 	trigger = {
 		owner = {
-			has_country_flag = NF_peacenik
-			religion = protestant
+			OR = {
+				has_country_flag = NF_peacenik
+				has_country_flag = NF_trader
+				native_policy = native_policy_coexist
+				native_policy = native_policy_trade
+				has_reform = mission_to_civilize_reform
+			}
 		}
-		
+
 		OR = {
 			AND = {
-				religion = protestant
+				religion = owner
 				native_size = 1
 			}
-			NOT = { religion_group = christian }
+			NOT = { religion = owner }
 		}
 		is_colony = yes
 		NOT = { native_hostileness = 4 }
 		NOT = { has_province_modifier = converted_natives_colony_timer }
+		NOT = {
+			owner = {
+				any_owned_province = {
+					expulsion_target = {
+						province_id = root
+					}
+				}
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -442,6 +513,8 @@ province_event = {
 			}
 		}
 	}
+	
+	goto = ROOT
 
 	option = {
 		name = "EVTOPTA3077"			# Try to convert of all them
@@ -451,9 +524,9 @@ province_event = {
 		
 		if = {
 			limit = {
-				NOT = { religion = protestant }
+				NOT = { religion = owner }
 			}
-			change_religion = protestant
+			change_religion = owner
 		}
 		else = {
 			add_colonysize = 100
@@ -469,96 +542,25 @@ province_event = {
 }
 
 
-# Attempt to convert the natives (Catholicism)
-province_event = {
-	id = 3078
-	title = "EVTNAME3077"
-	desc = "EVTDESC3077"
-	picture = NATIVES_eventPicture
-	
-	trigger = {
-		owner = {
-			has_country_flag = NF_peacenik
-			religion = catholic
-		}
-		is_colony = yes
-		OR = {
-			AND = {
-				religion = catholic
-				native_size = 1
-			}
-			NOT = { religion_group = christian }
-		}
-		NOT = { native_hostileness = 4 }
-		NOT = { has_province_modifier = converted_natives_colony_timer }
-	}
-	
-	immediate = {
-		hidden_effect = {
-			add_province_modifier = {
-				name = converted_natives_colony_timer
-				duration = 11000
-				hidden = yes
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		months	= 320
-
-		modifier = {
-			factor = 0.9
-			NOT = { native_hostileness = 3 }
-		}
-		modifier = {
-			factor = 0.8
-			NOT = { native_hostileness = 2 }
-		}
-		modifier = {
-			factor = 0.9
-			owner = { colonial_governor = 1 }
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA3077"
-		ai_chance = { factor = 70 }		# Convert
-		change_native_hostileness = 3
-		change_native_ferocity = 2
-
-		if = {
-			limit = {
-				NOT = { religion = catholic }
-			}
-			change_religion = catholic
-		}
-		else = {
-			add_colonysize = 100
-		}
-	}
-	option = {
-		name = "EVTOPTB3077"			# Let them be.
-		ai_chance = { factor = 30 }
-		change_native_hostileness = -2
-		change_native_ferocity = -2
-	}
-}
-
-
 # Spread of diseases as new colonies are established
 province_event = {
 	id = 3079
-	title = "EVTNAME3076"
-	desc = "EVTDESC3076"
+	title = "EVTNAME3079"
+	desc = "EVTDESC3079"
 	picture = PLAGUE_eventPicture
 	
 	trigger = {
-		owner = { has_country_flag = NF_peacenik }
+		owner = { 
+			OR = {
+				has_country_flag = NF_peacenik
+				native_policy = native_policy_coexist
+			} 
+		}
 		NOT = { colonysize = 200 }
 		is_colony = yes
 		native_size = 5
 	}
-
+	
 	mean_time_to_happen = {
 		months	= 240
 
@@ -575,11 +577,14 @@ province_event = {
 		}
 	}
 	
+	goto = ROOT
+	
 	option = {
-		name = "EVTOPTA3076"			# Ignore their suffering
+		name = "EVTOPTA3079"			# Ignore their suffering
 		ai_chance = { factor = 30 }
 		change_native_size = -5
 		owner = {
+			add_stability = -1
 			random_owned_province = {
 				limit = {
 					is_colony = yes
@@ -594,13 +599,13 @@ province_event = {
 		}
 	}
 	option = {
-		name = "EVTOPTB3076"			# Alleviate
+		name = "EVTOPTB3079"			# Alleviate
 		ai_chance = { factor = 70 }
 		owner = {
-			add_treasury = -40
+			add_treasury = -80
 			add_country_modifier = {
 				name = "aid_natives"
-				duration = 730
+				duration = 1460
 			}
 		}
 	}
@@ -616,7 +621,27 @@ province_event = {
 	trigger = {
 		is_colony = yes
 		native_size = 3
+		if = {
+			limit = {
+				has_dlc = "The Cossacks"
+			}
+			owner = {
+				OR = {
+					native_policy = native_policy_coexist
+					native_policy = native_policy_trade
+				}
+			}
+		}
+		else = {
+			owner = {
+				OR = {
+					has_country_flag = NF_peacenik
+					has_country_flag = NF_trader
+				}
+			}
+		}
 	}
+	
 	mean_time_to_happen = {
 		years = 20
 		modifier = {
@@ -645,6 +670,8 @@ province_event = {
 		}
 	}
 	
+	goto = ROOT
+	
 	option = {
 		name = "EVTOPTA4900"
 		add_colonysize = 100
@@ -663,9 +690,15 @@ province_event = {
 		native_size = 3
 		native_ferocity = 1
 		native_hostileness = 1
+		NOT = { has_province_modifier = colonial_accommodation_mod }
 		OR = {
 			units_in_province = 1
-			owner = { has_country_flag = NF_peacenik }
+			owner = { 
+				OR = {
+					has_country_flag = NF_peacenik
+					native_policy = native_policy_coexist
+				}
+			}
 		}
 	}
 	
@@ -692,12 +725,41 @@ province_event = {
 		}
 		modifier = {	
 			factor = 0.5	
-			owner = { has_country_flag = NF_peacenik }
+			owner = { 
+				OR = {
+					has_country_flag = NF_peacenik
+					native_policy = native_policy_coexist
+				} 
+			}
 		}
 	}
 	
+	goto = ROOT
+	
 	option = { 
 		name = "EVTOPTA4901"
-		change_native_ferocity = -1
+		if = {
+			limit = {
+				NOT = { has_dlc = "The Cossacks" }
+			}
+			change_native_ferocity = -1
+		}
+		add_province_modifier = {
+			name = colonial_accommodation_mod
+			duration = 3650
+		}
+		if = {
+			limit = {
+				owner = { 
+					NOT = { has_country_modifier = colonial_assimilation_of_natives_mod } 
+				}
+			}
+			owner = {
+				add_country_modifier = {
+					name = colonial_assimilation_of_natives_mod
+					duration = 1825
+				}
+			}
+		}
 	}
 }

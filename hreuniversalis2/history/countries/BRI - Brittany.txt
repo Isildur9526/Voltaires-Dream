@@ -763,4 +763,3 @@ historical_friend = KNV
 	}
 }
 #done 1532.8.4
-1589.8.3 = { set_legacy_government = administrative_monarchy }

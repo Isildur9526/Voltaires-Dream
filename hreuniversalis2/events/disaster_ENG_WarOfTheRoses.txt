@@ -15,19 +15,24 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
-
+		
 	immediate = {
 		set_country_flag = had_war_of_the_roses
-	}	
+		hidden_effect = {
+			add_country_modifier = {
+				name = wotr_one_year_timer
+				duration = 365
+				hidden = yes
+			}
+		}
+	}
 	
 	option = {		# Support the House of Lancaster
 		name = war_of_the_roses.1.a
 
+		add_stability = -2
 		set_country_flag = war_of_the_roses
 		set_country_flag = supports_house_of_lancaster
-
-
-	
 
 		define_ruler = {
 			dynasty = Lancaster
@@ -51,30 +56,6 @@ country_event = {
 			limit = {
 				owns = 1799		# Yorkshire
 				1799 = {
-					units_in_province = 1
-				}
-			}
-			random_owned_province = {
-				limit = {
-					superregion = british_isles_superregion
-					NOT = { units_in_province = 1 }
-				}
-				add_province_modifier = {
-					name = wotr_local_support_for_york
-					duration = 3650
-				}
-				spawn_rebels = {
-					type = pretender_rebels
-					size = 4
-					leader = "Richard York"
-					win = yes
-				}
-			}
-		}
-		if = {
-			limit = {
-				owns = 1799		# Yorkshire
-				1799 = {
 					NOT = { units_in_province = 1 }
 				}
 			}
@@ -86,16 +67,47 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 4
-					leader = "Richard York"
+					leader = "Richard"
+					leader_dynasty = "York"
+					win = yes
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					superregion = british_isles_superregion
+					OR = {
+						NOT = {
+							root = {
+								any_owned_province = {
+									superregion = british_isles_superregion
+									NOT = { units_in_province = 1 }
+								}
+							}
+						}
+						NOT = { units_in_province = 1 }
+					}
+				}
+				add_province_modifier = {
+					name = wotr_local_support_for_york
+					duration = 3650
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 4
+					leader = "Richard"
+					leader_dynasty = "York"
 					win = yes
 				}
 			}
 		}
 	}
-	
+
 	option = {		# Support the House of York
 		name = war_of_the_roses.1.b
 
+		add_stability = -2
 		set_country_flag = supports_house_of_york
 		define_ruler = {
 			dynasty = York
@@ -118,29 +130,6 @@ country_event = {
 			limit = {
 				owns = 2261		# Lancashire
 				2261 = {
-					units_in_province = 1
-				}
-			}
-			random_owned_province = {
-				limit = {
-					superregion = british_isles_superregion
-					NOT = { units_in_province = 1 }
-				}
-				add_province_modifier = {
-					name = wotr_local_support_for_lancaster
-					duration = 3650
-				}
-				spawn_rebels = {
-					type = pretender_rebels
-					size = 4
-					leader = "Edward Lancaster"
-				}
-			}
-		}
-		if = {
-			limit = {
-				owns = 2261		# Lancashire
-				2261 = {
 					NOT = { units_in_province = 1 }
 				}
 			}
@@ -152,7 +141,38 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 4
-					leader = "Edward Lancaster"
+					leader = "Edward"
+					leader_dynasty = "Lancaster"
+					win = yes
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					superregion = british_isles_superregion
+					OR = {
+						NOT = {
+							root = {
+								any_owned_province = {
+									superregion = british_isles_superregion
+									NOT = { units_in_province = 1 }
+								}
+							}
+						}
+						NOT = { units_in_province = 1 }
+					}
+				}
+				add_province_modifier = {
+					name = wotr_local_support_for_lancaster
+					duration = 3650
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 4
+					leader = "Edward"
+					leader_dynasty = "Lancaster"
+					win = yes
 				}
 			}
 		}
@@ -231,6 +251,10 @@ country_event = {
 	
 	
 	trigger = {
+		OR = {
+			has_spawned_rebels = pretender_rebels
+			has_country_flag = war_of_the_roses_pretender_fled
+		}
 		has_country_flag = supports_house_of_york
 		any_owned_province = {
 			is_overseas = no
@@ -247,17 +271,24 @@ country_event = {
 		days = 1
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					NOT = { has_province_modifier = wotr_local_support }
+					NOT = { has_province_modifier = wotr_local_support_for_lancaster }
+					NOT = { has_province_modifier = wotr_local_support_for_york }
+				}
+				save_event_target_as = disloyal_province
+			}
+		}
+	}
 	
 	option = { # Dire news
 		name = war_of_the_roses.3.a
 	
-		random_owned_province = {
-			limit = {
-				is_overseas = no
-				NOT = { has_province_modifier = wotr_local_support }
-				NOT = { has_province_modifier = wotr_local_support_for_lancaster }
-				NOT = { has_province_modifier = wotr_local_support_for_york }
-			}
+		event_target:disloyal_province = {
 			add_province_modifier = {
 				name = wotr_local_support_for_lancaster
 				duration = 3650
@@ -286,6 +317,10 @@ country_event = {
 	picture = WAR_OF_THE_ROSES_eventPicture
 	
 	trigger = {
+		OR = {
+			has_spawned_rebels = pretender_rebels
+			has_country_flag = war_of_the_roses_pretender_fled
+		}
 		has_country_flag = supports_house_of_lancaster
 		any_owned_province = {
 			is_overseas = no
@@ -301,18 +336,25 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					NOT = { has_province_modifier = wotr_local_support }
+					NOT = { has_province_modifier = wotr_local_support_for_lancaster }
+					NOT = { has_province_modifier = wotr_local_support_for_york }
+				}
+				save_event_target_as = disloyal_province
+			}
+		}
+	}
 	
 	option = {		# Dire news
 		name = war_of_the_roses.4.a
 		
-		
-		random_owned_province = {
-			limit = {
-				is_overseas = no
-				NOT = { has_province_modifier = wotr_local_support }
-				NOT = { has_province_modifier = wotr_local_support_for_lancaster }
-				NOT = { has_province_modifier = wotr_local_support_for_york }
-			}
+		event_target:disloyal_province = {
 			add_province_modifier = {
 				name = wotr_local_support_for_york
 				duration = 3650
@@ -358,9 +400,6 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
-		
-	
-
 	
 	option = {		# These gifts should show our gratitude
 		name = war_of_the_roses.5.a
@@ -395,6 +434,10 @@ province_event = {
 	
 	trigger = {
 		FROM = { tag = REB }
+		OR = { #so that is isn't unrelated rebels
+			superregion = british_isles_superregion
+			NOT = { nationalism = 1 }
+		}
 		owner = {
 			has_disaster = war_of_the_roses
 			tag = ENG
@@ -432,6 +475,9 @@ country_event = {
 	desc = war_of_the_roses.7.d
 	picture = WAR_OF_THE_ROSES_eventPicture
 	
+	trigger = { #otherwise option A is too easy
+		manpower_percentage = 0.1
+	}
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -522,14 +568,12 @@ country_event = {
 		}
 	}
 	
-	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		days = 1
 	}
-	
 	
 	option = {		# Send money to help the local authorities
 		name = war_of_the_roses.9.a
@@ -559,9 +603,6 @@ country_event = {
 				duration = 3650
 			}
 		}
-		
-		
-		
 	}
 }
 
@@ -630,17 +671,39 @@ country_event = {
 	picture = WAR_OF_THE_ROSES_eventPicture
 	
 	trigger = {
-		is_neighbor_of = ENG
-
-		OR = {
-			capital_scope = {
-				superregion = british_isles_superregion
-			}
-			tag = FRA
-		}
 		ENG = {
 			has_disaster = war_of_the_roses
 			has_country_flag = supports_house_of_york
+			has_spawned_rebels = pretender_rebels
+		}
+		NOT = { tag = ENG }
+		OR = {
+			is_neighbor_of = ENG
+			AND = {
+				num_of_cities = 2
+				capital_scope = {
+					superregion = british_isles_superregion
+				}
+			}
+			AND = {
+				OR = {
+					is_rival = ENG
+					ENG = { is_rival = prev }
+				}
+				any_owned_province = {
+					has_port = yes
+				}
+				2268 = { range = root }
+			}
+		}
+		is_subject = no
+		NOT = { alliance_with = ENG }
+		NOT = { overlord_of = ENG }
+		NOT = {
+			has_opinion = {
+				who = ENG
+				value = 0
+			}
 		}
 		NOT = { has_country_flag = support_for_war_of_the_roses }
 		NOT = { has_country_flag = no_support_for_rose_rebels }
@@ -652,44 +715,122 @@ country_event = {
 					}
 					has_port = yes
 				}
+				if = {
+					limit = {
+						ROOT = {
+							capital_scope = {
+								superregion = british_isles_superregion
+							}
+						}
+					}
+					superregion = british_isles_superregion
+				}
 				unit_in_siege = no
 			}
 		}
 	}
 	
 	mean_time_to_happen = {
-		months = 60
+		months = 24
 		modifier = {
 			factor = 0.75
 			ENG = { has_country_modifier = rebel_leaders_executed }
+		}
+		modifier = {
+			factor = 0.5
+			ENG = { has_country_modifier = wotr_one_year_timer }
+		}
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 2 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 3 }
+		}
+		modifier = {
+			factor = 3
+			ENG = { num_of_rebel_armies = 3 }
+		}
+		modifier = {
+			factor = 0.25
+			ENG = { has_country_modifier = wotr_rebels_resurgent }
 		}
 	}
 	
 	option = {		# Send them a token force
 		name = war_of_the_roses.12.a
-		ai_chance = { factor = 50 }
+		trigger = {
+			manpower = 5
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { manpower = 7 }
+			}
+			modifier = {
+				factor = 0.5
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 2
+				manpower = 20
+			}
+		}
 		set_country_flag = support_for_war_of_the_roses
-		add_manpower = -3
+		add_manpower = -5
 		hidden_effect = {
 			ENG = {
-				country_event = { id = war_of_the_roses.14 days = 1 }
+				country_event = { id = war_of_the_roses.14 }
 			}
 		}
 	}
 	option = {		# Send them some money
 		name = war_of_the_roses.12.b
-		ai_chance = { factor = 25 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.5 }
+				num_of_loans = 5
+			}
+		}
+		trigger = { is_bankrupt = no }
 		set_country_flag = support_for_war_of_the_roses
 		add_years_of_income = -0.5
 		hidden_effect = {
 			ENG = {
-				country_event = { id = war_of_the_roses.14 days = 1 }
+				country_event = { id = war_of_the_roses.14 }
 			}
 		}
 	}
 	option = {		# We will not support rebels
 		name = war_of_the_roses.12.c
-		ai_chance = { factor = 25 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.1
+				OR = {
+					is_rival = ENG
+					ENG = { is_rival = prev }
+				}
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {
+					who = ENG
+					value = -15
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = ENG
+					value = -25
+				}
+			}
+		}
 		set_country_flag = no_support_for_rose_rebels
 		add_prestige = 10
 	}
@@ -703,16 +844,39 @@ country_event = {
 	picture = WAR_OF_THE_ROSES_eventPicture
 	
 	trigger = {
-		is_neighbor_of = ENG
-		OR = {
-			capital_scope = {
-				superregion = british_isles_superregion
-			}
-			tag = FRA
-		}
 		ENG = {
 			has_disaster = war_of_the_roses
 			has_country_flag = supports_house_of_lancaster
+			has_spawned_rebels = pretender_rebels
+		}
+		NOT = { tag = ENG }
+		OR = {
+			is_neighbor_of = ENG
+			AND = {
+				num_of_cities = 2
+				capital_scope = {
+					superregion = british_isles_superregion
+				}
+			}
+			AND = {
+				OR = {
+					is_rival = ENG
+					ENG = { is_rival = prev }
+				}
+				any_owned_province = {
+					has_port = yes
+				}
+				2268 = { range = root }
+			}
+		}
+		is_subject = no
+		NOT = { alliance_with = ENG }
+		NOT = { overlord_of = ENG }
+		NOT = {
+			has_opinion = {
+				who = ENG
+				value = 0
+			}
 		}
 		NOT = { has_country_flag = support_for_war_of_the_roses }
 		NOT = { has_country_flag = no_support_for_rose_rebels }
@@ -724,6 +888,16 @@ country_event = {
 					}
 					has_port = yes
 				}
+				if = {
+					limit = {
+						ROOT = {
+							capital_scope = {
+								superregion = british_isles_superregion
+							}
+						}
+					}
+					superregion = british_isles_superregion
+				}
 				unit_in_siege = no
 			}
 		}
@@ -731,38 +905,106 @@ country_event = {
 
 	
 	mean_time_to_happen = {
-		months = 60
+		months = 24
 		modifier = {
 			factor = 0.75
 			ENG = { has_country_modifier = rebel_leaders_executed }
+		}
+		modifier = {
+			factor = 0.5
+			ENG = { has_country_modifier = wotr_one_year_timer }
+		}
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 2 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 3 }
+		}
+		modifier = {
+			factor = 3
+			ENG = { num_of_rebel_armies = 3 }
+		}
+		modifier = {
+			factor = 0.25
+			ENG = { has_country_modifier = wotr_rebels_resurgent }
 		}
 	}
 	
 	option = {		# Send them a token force
 		name = war_of_the_roses.13.a
-		ai_chance = { factor = 50 }
+		trigger = {
+			manpower = 5
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { manpower = 7 }
+			}
+			modifier = {
+				factor = 0.5
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 2
+				manpower = 20
+			}
+		}
 		set_country_flag = support_for_war_of_the_roses
-		add_manpower = -3
+		add_manpower = -5
 		hidden_effect = {
 			ENG = {
-				country_event = { id = war_of_the_roses.14 days = 1 }
+				country_event = { id = war_of_the_roses.14 }
 			}
 		}
 	}
 	option = {		# Send them some money
 		name = war_of_the_roses.13.b
-		ai_chance = { factor = 25 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.5 }
+				num_of_loans = 5
+			}
+		}
+		trigger = { is_bankrupt = no }
 		set_country_flag = support_for_war_of_the_roses
 		add_years_of_income = -0.5
 		hidden_effect = {
 			ENG = {
-				country_event = { id = war_of_the_roses.14 days = 1 }
+				country_event = { id = war_of_the_roses.14 }
 			}
 		}
 	}
 	option = {		# We will not support rebels
 		name = war_of_the_roses.13.c
-		ai_chance = { factor = 25 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.1
+				OR = {
+					is_rival = ENG
+					ENG = { is_rival = prev }
+				}
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {
+					who = ENG
+					value = -15
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = ENG
+					value = -25
+				}
+			}
+		}
 		set_country_flag = no_support_for_rose_rebels
 		add_prestige = 10
 	}
@@ -777,34 +1019,10 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = {		# How dare they!
-		name = war_of_the_roses.14.a
-		if = {
-			limit = {
-				any_owned_province = {
-					any_neighbor_province = {
-						owned_by = FROM
-					}
-					unit_in_siege = no
-				}
-			}
-			random_owned_province = {
+	immediate = {
+		hidden_effect = { #This is necessary because it breaks the whole disaster if you wait until you have defeated the initial pretender rebels before clicking the option.
+			if = {
 				limit = {
-					any_neighbor_province = {
-						owned_by = FROM
-					}
-					unit_in_siege = no
-				}
-				spawn_rebels = {
-					type = pretender_rebels
-					size = 2
-					friend = FROM
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
 					any_owned_province = {
 						any_neighbor_province = {
 							owned_by = FROM
@@ -812,16 +1030,76 @@ country_event = {
 						unit_in_siege = no
 					}
 				}
-				any_owned_province = {
-					has_port = yes
-					unit_in_siege = no
+				random_owned_province = {
+					limit = {
+						any_neighbor_province = {
+							owned_by = FROM
+						}
+						unit_in_siege = no
+					}
+					save_event_target_as = the_province
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 2
+						friend = FROM
+					}
 				}
 			}
-			random_owned_province = {
+			else_if = {
 				limit = {
-					has_port = yes
-					unit_in_siege = no
+					NOT = {
+						any_owned_province = {
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							unit_in_siege = no
+						}
+					}
+					any_owned_province = {
+						has_port = yes
+						unit_in_siege = no
+						if = {
+							limit = {
+								ROOT = {
+									capital_scope = {
+										superregion = british_isles_superregion
+									}
+								}
+							}
+							superregion = british_isles_superregion
+						}
+					}
 				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+						unit_in_siege = no
+						if = {
+							limit = {
+								ROOT = {
+									capital_scope = {
+										superregion = british_isles_superregion
+									}
+								}
+							}
+							superregion = british_isles_superregion
+						}
+					}
+					save_event_target_as = the_province
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 2
+						friend = FROM
+					}
+				}
+			}
+		}
+	}
+
+	option = {		# How dare they!
+		name = war_of_the_roses.14.a
+		tooltip = {
+			event_target:the_province = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 2
@@ -846,11 +1124,7 @@ country_event = {
 	
 	major = yes
 	
-	
 	is_triggered_only = yes
-	
-	
-
 	
 	immediate = {
 		hidden_effect = {
@@ -1300,6 +1574,176 @@ country_event = {
 			add_province_modifier = {
 				name = add_unrest_5_modifier
 				duration = 3650
+			}
+		}
+	}
+}
+
+
+#####Pretender flees (prevents very fast end to the disaster)
+#From on_battle_won_province
+country_event = {
+	id = war_of_the_roses.200
+	title = war_of_the_roses.200.name
+	desc = {
+		trigger = {
+			has_country_flag = supports_house_of_lancaster
+		}
+		desc = war_of_the_roses.200.desc.york
+	}
+	desc = {
+		trigger = {
+			has_country_flag = supports_house_of_york
+		}
+		desc = war_of_the_roses.200.desc.lancaster
+	}
+	picture = WAR_OF_THE_ROSES_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			NOT = { has_spawned_rebels = pretender_rebels }
+			NOT = { num_of_rebel_armies = 1 }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = war_of_the_roses_pretender_fled
+			country_event = { id = war_of_the_roses.201 days = 60 random = 45 }
+			add_country_modifier = {
+				name = wotr_rebels_resurgent
+				duration = 30
+				hidden = yes
+			}
+		}
+	}
+
+	option = {
+		name = war_of_the_roses.200.opt
+	}
+}
+
+country_event = {
+	id = war_of_the_roses.201
+	title = war_of_the_roses.201.name
+	desc = {
+		trigger = {
+			has_country_flag = supports_house_of_lancaster
+		}
+		desc = war_of_the_roses.201.desc.york
+	}
+	desc = {
+		trigger = {
+			has_country_flag = supports_house_of_york
+		}
+		desc = war_of_the_roses.201.desc.lancaster
+	}
+	picture = WAR_OF_THE_ROSES_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+						OR = {
+							has_province_modifier = wotr_local_support_for_lancaster
+							has_province_modifier = wotr_local_support_for_york
+							has_province_modifier = rebel_stronghold
+						}
+						NOT = { units_in_province = 1 }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+						OR = {
+							has_province_modifier = wotr_local_support_for_lancaster
+							has_province_modifier = wotr_local_support_for_york
+							has_province_modifier = rebel_stronghold
+						}
+						NOT = { units_in_province = 1 }
+					}
+					save_event_target_as = new_revolt_province
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+						superregion = british_isles_superregion
+						NOT = { units_in_province = 1 }
+						NOT = { has_province_modifier = wotr_local_support }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+						superregion = british_isles_superregion
+						NOT = { units_in_province = 1 }
+						NOT = { has_province_modifier = wotr_local_support }
+					}
+					save_event_target_as = new_revolt_province
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+						NOT = { has_province_modifier = wotr_local_support }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+						NOT = { has_province_modifier = wotr_local_support }
+					}
+					save_event_target_as = new_revolt_province
+				}
+			}
+			else = {
+				random_owned_province = {
+					save_event_target_as = new_revolt_province
+				}
+			}
+		}
+	}
+
+	option = {
+		name = war_of_the_roses.201.opt
+		event_target:new_revolt_province = {
+			if = {
+				limit = {
+					ROOT = { has_country_flag = supports_house_of_york }
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+					leader = "Edward"
+					leader_dynasty = "Lancaster"
+					win = yes
+				}
+			}
+			else = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+					leader = "Richard"
+					leader_dynasty = "York"
+					win = yes
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			clr_country_flag = war_of_the_roses_pretender_fled
+			if = {
+				limit = { has_country_modifier = wotr_one_year_timer }
+				remove_country_modifier = wotr_one_year_timer
 			}
 		}
 	}

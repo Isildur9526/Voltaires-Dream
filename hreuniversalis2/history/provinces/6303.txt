@@ -10,7 +10,6 @@ hre = no
 owner = MTQ
 controller = MTQ
 add_core = MTQ
-estate = estate_church
 add_province_triggered_modifier = religious_center
 
 1162.1.1 = {

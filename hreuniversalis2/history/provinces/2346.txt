@@ -43,7 +43,6 @@ discovered_by = north_american
 	controller = VEN
 	add_core = VEN
 	remove_core = ATH
-	estate = estate_nobles
 	culture = arvanite
 }
 1390.1.1 = {

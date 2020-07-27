@@ -283,6 +283,12 @@ country_event = {
 			war_exhaustion = 10
 		}
 	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = avoid_choosing_madhhab_flag
+		}
+	}
 	
 	option = {
 		name = "HREMA8"
@@ -317,7 +323,10 @@ country_event = {
 			add_ruler_personality = inspiring_leader_personality
 			add_ruler_personality = lawgiver_personality
 			add_ruler_personality = conqueror_personality
+			override_country_name = AYYUBIDS_NAME
+			set_country_flag = ayyubids_name_flag
 		}
+		clr_country_flag = avoid_choosing_madhhab_flag
 	}
 	option = {
 		name = "HREMB8"
@@ -326,12 +335,14 @@ country_event = {
 			limit = { religion = sunni }
 			spawn_rebels = {
 				type = sunni_rebels
-				leader = "Yûsuf Banû Ayyûb"
+				leader = "Yûsuf"
+				leader_dynasty = "Banû Ayyûb"
 				size = 5
 				unrest = 15
 				win = yes
 			}
 		}
+		clr_country_flag = avoid_choosing_madhhab_flag
 	}
 }
 
@@ -990,6 +1001,7 @@ country_event = {
 				TEM = { num_of_cities = 10 }
 			}
 		}
+		add_treasury = -100
 		TEM = { country_event = { id = hremodevents.47 } }
 	}
 	option = {
@@ -1036,6 +1048,7 @@ country_event = {
 				KNI = { num_of_cities = 10 }
 			}
 		}
+		add_treasury = -100
 		KNI = { country_event = { id = hremodevents.47 } }
 	}
 	option = {
@@ -1082,6 +1095,7 @@ country_event = {
 				TEU = { num_of_cities = 20 }
 			}
 		}
+		add_treasury = -100
 		TEU = { country_event = { id = hremodevents.47 } }
 	}
 	option = {
@@ -1128,6 +1142,7 @@ country_event = {
 				LIV = { num_of_cities = 20 }
 			}
 		}
+		add_treasury = -100
 		LIV = { country_event = { id = hremodevents.47 } }
 	}
 }
@@ -2142,7 +2157,8 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 2
-					leader = "Manfred von Hohenstaufen"
+					leader = "Manfred"
+					leader_dynasty = "von Hohenstaufen"
 					win = yes
 				}
 			}
@@ -2253,6 +2269,8 @@ country_event = {
 					fixed = yes
 				}
 				swap_free_idea_group = yes
+				override_country_name = ABBASIDS_NAME
+				set_country_flag = abbasids_name_flag
 			}
 		}
 		BGH = {
@@ -2272,7 +2290,8 @@ country_event = {
 				size = 3
 				unrest = 15
 				win = yes
-				leader = "al-Mustarshid Banû ‘Abbâs"
+				leader = "al-Mustarshid"
+				leader_dynasty = "Banû ‘Abbâs"
 			}
 		}
 	}
@@ -2996,7 +3015,7 @@ country_event = {
 		name = "HREMB67"
 		ai_chance = { factor = 10 }
 		POR = { country_event = { id = hremodevents.69 } }
-		tooltip = { POR = { add_claim = 5541 } }
+		tooltip = { 5541 = { add_claim = POR } }
 	}
 }
 
@@ -3020,13 +3039,14 @@ country_event = {
 	title = "HREMT69"
 	desc = "HREMD69"
 	picture = RELIGIOUS_TURMOIL_eventPicture
+	goto = 5541
 
 	is_triggered_only = yes
 	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "HREMA69"
-		POR = { add_claim = 5541 }
+		5541 = { add_claim = POR }
 	}
 }
 
@@ -3035,6 +3055,14 @@ country_event = {
 	title = "HREMT70"
 	desc = "HREMD70"
 	picture = DEATH_OF_HEIR_eventPicture
+
+	major = yes
+	major_trigger = {
+		OR = {
+			capital_scope = { superregion = british_isles_superregion }
+			alliance_with = ENG
+		}
+	}
 
 	fire_only_once = yes
 
@@ -3280,7 +3308,8 @@ country_event = {
 					size = 3
 					type = zikri_rebels
 					win = yes
-					leader = "al-Mustafâ Banû Fâtimah"
+					leader = "al-Mustafâ"
+					leader_dynasty = "Banû Fâtimah"
 				}
 			}
 		}
@@ -3294,7 +3323,8 @@ country_event = {
 					size = 4
 					type = zikri_rebels
 					win = yes
-					leader = "al-Mustafâ Banû Fâtimah"
+					leader = "al-Mustafâ"
+					leader_dynasty = "Banû Fâtimah"
 				}
 			}
 		}
@@ -3305,11 +3335,9 @@ country_event = {
 		ai_chance = { factor = 10 }
 		add_stability = 1
 		change_religion = zikri
-		hidden_effect = {
-			set_religious_school = {
-				group = muslim
-				school = nizari_school
-			}
+		set_religious_school = {
+			group = muslim
+			school = nizari_school
 		}
 		random_owned_province = {
 			limit = {
@@ -3325,7 +3353,8 @@ country_event = {
 				type = pretender_rebels
 				win = yes
 				religion = shiite
-				leader = "al-Musta‘lî Banû Fâtimah"
+				leader = "al-Musta‘lî"
+				leader_dynasty = "Banû Fâtimah"
 			}
 		}
 		clr_country_flag = avoid_choosing_madhhab_flag
@@ -3846,6 +3875,7 @@ country_event = {
 				}
 			}
 		}
+		set_global_flag = hashashins_spawned_flag
 	}
 }
 
@@ -4143,7 +4173,7 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = { months = 120 }
+	mean_time_to_happen = { months = 60 }
 
 	option = {
 		name = "HREMA86"
@@ -4276,6 +4306,7 @@ country_event = {
     title = "HREMT89"
 	desc = "HREMD89"
 	picture = HARBOUR_eventPicture
+	goto = 5793
 
 	fire_only_once = yes
 
@@ -4685,6 +4716,7 @@ country_event = {
 				type = nationalist_rebels
 				friend = OPO
 				leader = "Mieszko"
+				leader_dynasty = "Piast"
 				win = yes
 			}
 		}
@@ -4706,7 +4738,7 @@ country_event = {
 		current_age = age_of_dynasticism
 		NOT = { started_in = 1382.7.27 }
 		NOT = { has_reform = celestial_empire }
-		NOT = { hre_reform_level = 5 }
+		NOT = { hre_reform_passed = emperor_perpetual_diet }
 		is_emperor = yes
 		NOT = {
 			capital_scope = {
@@ -4734,7 +4766,16 @@ country_event = {
 		months = 600
 		modifier = {
 			factor = 0.5
-			NOT = { hre_reform_level = 1 }
+			OR = {
+				AND = {
+					has_dlc = "Emperor"
+					NOT = { hre_reform_passed = emperor_statutumprincipum }
+				}
+				AND = {
+					NOT = { has_dlc = "Emperor" }
+					NOT = { hre_reform_passed = pactumcalixtinum }
+				}
+			}
 		}
 		modifier = {
 			factor = 0.75
@@ -5262,7 +5303,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { empire_of_china_reform_level = 4 }
 		culture_group = east_slavic
 		has_reform = principality
 		OR = {
@@ -5532,5 +5572,924 @@ country_event = {
 			who = FROM
 			modifier = tributary_state_broke_free
 		}
+	}
+}
+
+country_event = {
+    id = hremodevents.103
+    title = "HREMT103"
+    desc = "HREMD103"
+    picture = BATTLE_eventPicture
+    
+    fire_only_once = yes
+
+    trigger = {
+        tag = FLA
+        war_with = FRA
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 10
+            NOT = {
+                stability = 0
+            }
+        }
+        modifier = {
+            factor = 10
+            average_unrest = 0
+        }
+        modifier = {
+            factor = 10
+            war_exhaustion = 10
+        }
+        modifier = {
+            factor = 0.25 #Local Militias
+            any_owned_province = {
+                unit_in_battle = yes
+            }
+        }
+        modifier = {
+            factor = 0.5
+            land_morale = FRA
+        }
+        modifier = {
+            factor = 0.5
+            army_tradition = FRA
+        }
+        modifier = {
+            factor = 0.5
+            OR = {
+                mil = 4
+                heir_mil = 4
+            }
+        }
+        modifier = {
+            factor = 0.5
+            has_commanding_three_star = yes
+        }
+    }
+
+    option = {
+        name = "HREMA103"
+        add_army_tradition = 10
+        add_prestige = 10
+        add_country_modifier = {
+            name = "golden_spurs_legacy"
+            duration = -1
+        }
+    }
+}
+
+country_event = {
+    id = hremodevents.104
+    title = "HREMT104"
+    desc = "HREMD104"
+    picture = ECONOMY_eventPicture
+    
+    fire_only_once = yes
+
+    trigger = {
+        tag = FLA
+		has_institution = guilds
+        NOT = { has_institution = chivalry }
+    }
+
+    mean_time_to_happen = {
+        months = 1200 #Double MTTH of a VN rise event, but more generous modifiers. Chance to not fire due to institutions every 50 years.
+        modifier = {
+            factor = 0
+            NOT = {
+                stability = 0
+            }
+        }
+        modifier = {
+            factor = 0
+			is_bankrupt = yes
+        }
+        modifier = {
+            factor = 0.25
+			has_global_flag = fla_province_rise_event
+        }
+        modifier = {
+            factor = 0.25
+            trading_bonus = {
+                trade_goods = cloth
+                value = yes
+            }
+        }
+        modifier = {
+            factor = 0.25
+			production_leader = {
+				trade_goods = cloth
+			}
+        }
+        modifier = {
+            factor = 0.25
+            any_owned_province = {
+				province_has_center_of_trade_of_level = 3
+			}
+        }
+        modifier = {
+            factor = 0.5
+			896 = { #Brugges
+				has_most_province_trade_power = ROOT
+			}
+        }
+        modifier = {
+            factor = 0.75
+            any_owned_province = {
+				province_has_center_of_trade_of_level = 2
+			}
+        }
+        modifier = {
+            factor = 0.75
+            OR = {
+				advisor = trader
+				advisor = natural_scientist 
+			}
+        }
+        modifier = {
+            factor = 0.75
+			896 = { #Brugges
+				base_production = 10
+			}
+        }
+        modifier = {
+            factor = 0.75
+			90 = { #Ghent
+				base_production = 10
+			}
+        }
+    }
+
+    option = {
+        name = "HREMA104"
+		add_prestige = 10
+        add_years_of_income = 1
+		every_owned_province = {
+			if = {	
+				limit = { 
+					has_dlc = "Dharma" 
+					province_has_center_of_trade_of_level = 1
+					NOT = { province_has_center_of_trade_of_level = 3 }
+				}
+				add_center_of_trade_level = 1
+			}	
+			if = {
+				limit = { 
+					province_has_center_of_trade_of_level = 3
+				}
+				add_base_production = 2
+			}
+		}
+        add_country_modifier = {
+            name = "flemish_cloth_event"
+            duration = -1
+        }
+    }
+}
+
+country_event = {
+    id = hremodevents.105
+    title = "HREMT105"
+    desc = "HREMD105"
+	picture = HRE_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		NOT = { started_in = 1354.1.1 }
+		has_global_flag = free_city_allowed
+		is_year = 1200
+		NOT = { is_year = 1400 }
+		capital_scope = {
+			region = alsace_region
+		}
+		has_reform = free_city
+		is_at_war = no
+		prestige = 1
+		calc_true_if = {
+			amount = 3
+			all_country = {
+				NOT = { tag = ROOT }
+				capital_scope = {
+					region = alsace_region
+				}
+				ai = yes
+				has_reform = free_city
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "HREMA105"
+		add_prestige = 25
+		every_country = {
+			limit = {
+				NOT = { tag = ROOT }
+				capital_scope = {
+					region = alsace_region
+				}
+				ai = yes
+				has_reform = free_city
+			}
+			if = {
+				limit = { has_dlc = "Mare Nostrum" }
+				join_trade_league = ROOT
+			}
+			else = {
+				create_alliance = ROOT
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							is_rival = ROOT
+							ROOT = { is_rival = THIS }
+						}
+					}
+					remove_rival = ROOT
+					ROOT = { remove_rival = THIS }
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = hrema105_opinion
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = hrema105_opinion
+			}
+		}
+	}
+}
+
+country_event = {
+    id = hremodevents.106
+    title = "HREMT106"
+    desc = "HREMD106"
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_year = 1100
+		NOT = { started_in = 1127.1.1 }
+		tag = DIE
+		BRN = { is_subject_of = ROOT }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			is_emperor = no
+		}
+	}
+
+	option = {
+		name = "HREMA106"
+		add_prestige = 10
+		BRN = {
+			grant_independence = yes
+			change_government = republic
+			add_government_reform = oligarchy_reform
+		}
+	}
+	option = {
+		name = "HREMB106"
+		BRN = {
+			add_liberty_desire = 40
+			add_opinion = { who = ROOT modifier = opinion_tyrant_overlord }
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.111
+	title = "HREMT111"
+	desc = "HREMD111"
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA111"
+		add_mil_power = -25
+	}
+	option = {
+		name = "HREMB112"
+		add_yearly_manpower = -0.25
+		add_faction_influence = {
+			faction = cla_flatha
+			influence = 10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.112
+	title = "HREMT112"
+	desc = "HREMD112"
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA112"
+		add_legitimacy = 10
+		add_faction_influence = {
+			faction = cla_filid
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMB112"
+		add_legitimacy = -10
+	}
+}
+
+country_event = {
+	id = hremodevents.113
+	title = "HREMT113"
+	desc = "HREMD113"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA113"
+		add_years_of_income = 0.4
+		add_inflation = 1
+	}
+	option = {
+		name = "HREMB113"
+		add_years_of_income = 0.2
+		add_faction_influence = {
+			faction = cla_druid
+			influence = 10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.114
+	title = "HREMT114"
+	desc = "HREMD114"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA114"
+		create_general = { tradition = 40 }
+		add_faction_influence = {
+			faction = cla_flatha
+			influence = -10
+		}
+	}
+	option = {
+		name = "HREMB114"
+		add_army_tradition = 5
+		add_faction_influence = {
+			faction = cla_flatha
+			influence = 10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.115
+	title = "HREMT115"
+	desc = "HREMD115"
+	picture = FEAST_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA115"
+		goto = capital
+		capital_scope = {
+			add_base_tax = 1
+		}
+		add_faction_influence = {
+			faction = cla_filid
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMB115"
+		add_faction_influence = {
+			faction = cla_filid
+			influence = -10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.116
+	title = "HREMT116"
+	desc = "HREMD116"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+		NOT = { has_country_modifier = druid_administration_m }
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA116"
+		add_country_modifier = {
+			name = druid_administration_m
+			duration = 1825
+		}
+		add_faction_influence = {
+			faction = cla_druid
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMB116"
+		add_stability = 1
+		add_faction_influence = {
+			faction = cla_druid
+			influence = -10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.117
+	title = "HREMT117"
+	desc = "HREMD117"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "HREMA117"
+		add_mil_power = 25
+		add_faction_influence = {
+			faction = cla_flatha
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMB117"
+		add_dip_power = 25
+		add_faction_influence = {
+			faction = cla_filid
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMC117"
+		add_adm_power = 25
+		add_faction_influence = {
+			faction = cla_druid
+			influence = 10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.118
+	title = "HREMT118"
+	desc = "HREMD118"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+		NOT = { has_country_modifier = architectural_enthusiasts_m }
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA118"
+		add_country_modifier = {
+			name = architectural_enthusiasts_m
+			duration = 1825
+		}
+		add_faction_influence = {
+			faction = cla_filid
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMB118"
+		define_advisor = {
+			type = fortification_expert
+			skill = 2
+			discount = yes
+		}
+		add_faction_influence = {
+			faction = cla_flatha
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMC118"
+		trigger = { religion_group = christian }
+		add_papal_influence = 10
+		add_church_power = 25
+		add_fervor = 10
+		add_faction_influence = {
+			faction = cla_druid
+			influence = 10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.119
+	title = "HREMT119"
+	desc = "HREMD119"
+	picture = CORRUPTION_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "HREMA119"
+		add_corruption = 1
+		add_adm_power = 50
+	}
+	option = {
+		name = "HREMB119"
+		add_adm_power = 25
+		add_faction_influence = {
+			faction = cla_druid
+			influence = 10
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.120
+	title = "HREMT120"
+	desc = "HREMD120"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = tribal_kingdom
+		any_neighbor_country = { NOT = { war_with = ROOT } }
+	}
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "HREMA120"
+		add_prestige = 10
+		add_faction_influence = {
+			faction = cla_filid
+			influence = 10
+		}
+	}
+	option = {
+		name = "HREMB120"
+		add_dip_power = 50
+		random_neighbor_country = {
+			limit = { NOT = { war_with = ROOT } }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_good_relations
+			}
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.121
+	title = "HREMT121"
+	desc = "HREMD121"
+	picture = HRE_eventPicture
+
+	major = yes
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.1
+			OR = {
+				hre_reform_passed = emperor_statutumprincipum
+				hre_reform_passed = pactumcalixtinum
+			}
+		}
+	}
+	
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor = yes
+		NOT = { has_global_flag = italian_monarchy_allowed }
+		OR = {
+			current_age = age_of_holy_wars
+			hre_reform_passed = emperor_statutumprincipum
+			hre_reform_passed = pactumcalixtinum
+		}
+		any_province = {
+			any_core_country = { 
+				exists = no 
+				culture_group = latin
+				NOT = { has_country_flag = commune_released }
+			}
+			superregion = italy_superregion
+			is_capital = no
+			is_part_of_hre = yes
+			controlled_by = owner
+			owner = {
+				capital_scope = { superregion = italy_superregion }
+				is_emperor = no
+				is_part_of_hre = yes
+				is_subject = no
+				ai = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = italian_monarchy_allowed
+		}
+	}
+	
+	option = {
+		name = "HREMA121"
+		custom_tooltip = HREMA121TT
+		hidden_effect = {
+			if = {
+				limit = {
+					any_province = {
+						is_in_capital_area = no
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+							is_subject = no
+							ai = yes
+						}
+					}
+				}
+				random_province = {
+					limit = {
+						is_in_capital_area = no
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+							is_subject = no
+							ai = yes
+						}
+					}
+					save_event_target_as = italian_commune_province
+					owner = {
+						country_event = {
+							id = hremodevents.122
+							days = 10
+							random = 5
+						}
+					}
+				}
+			}
+			else = {
+				random_province = {
+					limit = {
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+							is_subject = no
+							ai = yes
+						}
+					}
+					save_event_target_as = italian_commune_province
+					owner = {
+						country_event = {
+							id = hremodevents.122
+							days = 10
+							random = 5
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.122
+	title = "HREMT122"
+	desc = "HREMD122"
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "HREMA122"
+		hidden_effect = {
+			event_target:italian_commune_province = {
+				random_core_country = {
+					limit = {
+						exists = no
+						culture_group = latin
+						NOT = { has_country_flag = commune_released }
+					}
+					set_country_flag = commune_released
+					ROOT = { release = PREV }
+					every_owned_province = {
+						limit = { is_core = ROOT }
+						remove_core = ROOT
+					}
+					change_government = republic
+					add_government_reform = italian_monarchy
+					every_core_province = {
+						limit = {
+							NOT = { owned_by = PREV }
+							owner = { ai = yes }
+							is_capital = no
+						}
+						remove_core = owner
+						cede_province = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_province = {
+						is_in_capital_area = no
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+							is_subject = no
+							ai = yes
+						}
+					}
+				}
+				random_province = {
+					limit = {
+						is_in_capital_area = no
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+							is_subject = no
+							ai = yes
+						}
+					}
+					save_event_target_as = italian_commune_province
+					owner = {
+						country_event = {
+							id = hremodevents.122
+							days = 10
+							random = 5
+						}
+					}
+				}
+			}
+			else = {
+				random_province = {
+					limit = {
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+							is_subject = no
+							ai = yes
+						}
+					}
+					save_event_target_as = italian_commune_province
+					owner = {
+						country_event = {
+							id = hremodevents.122
+							days = 10
+							random = 5
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = hremodevents.123
+	title = "HREMT123"
+	desc = "HREMD123"
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		current_age = age_of_holy_wars
+		NOT = { has_construction = missionary }
+		superregion = iberia_superregion
+		religion = sunni
+		owner = {
+			religion = catholic
+			OR = {
+				culture_group = iberian
+				primary_culture = basque
+			}
+		}
+	}
+
+	mean_time_to_happen = { months = 60 }
+
+	option = {
+		name = "HREMA123"
+		change_religion = catholic
+		change_culture = owner
 	}
 }

@@ -373,7 +373,6 @@ capital = 67
 	}
 }
 1735.5.17 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "Friedrich VIII"
 		dynasty = "von Hohenzollern"

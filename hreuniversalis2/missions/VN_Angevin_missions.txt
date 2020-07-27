@@ -188,7 +188,9 @@ vn_anj_missions_slot_2_a = {
             add_mil_power = 100
             if = {
                 limit = {
+                    valid_for_personal_unions_trigger = yes
                     exists = ASE
+                    ASE = { valid_for_personal_unions_trigger = yes }
                     NOT = { exists = ENG }
                 }
                 add_casus_belli = {
@@ -199,7 +201,9 @@ vn_anj_missions_slot_2_a = {
             }
             else_if = {
                 limit = {
+                    valid_for_personal_unions_trigger = yes
                     exists = ENG
+                    ENG = { valid_for_personal_unions_trigger = yes }
                     NOT = { exists = ASE }
                 }
                 add_casus_belli = {
@@ -748,12 +752,11 @@ vn_anj_missions_slot_5_b = {
 				owned_by = ROOT
                 has_tax_building_trigger = yes
             }
-            OR = {
-                2489 = {
-                    has_estate = estate_church
-                }
-                2177 = {
-                    has_estate = estate_church
+            if = {
+                limit = { has_estate = estate_church }
+                estate_territory = {
+                    estate = estate_church
+                    territory = 15
                 }
             }
         }

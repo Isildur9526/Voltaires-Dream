@@ -39,7 +39,6 @@ add_core = ARR
 	owner = ARA
 	controller = ARA
 	add_core = ARA
-	remove_core = ARR
 	remove_core = XMA
 	culture = aragonese
 	religion = catholic

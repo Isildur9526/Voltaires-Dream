@@ -33,6 +33,7 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -40,6 +41,12 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
 	}
 
 	option = {
@@ -95,6 +102,8 @@ country_event = {
 		picture = MUSLIM_SCHOLAR_WRITING_eventPicture
 	}
 
+	goto = institution_origin
+
 	is_triggered_only = yes
 	
 
@@ -123,12 +132,20 @@ country_event = {
 	
 	is_triggered_only = yes
 
+	goto = institution_origin
+
 	trigger = {
 		always = yes			#
 	}
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
 	}
 
 	option = {
@@ -170,7 +187,7 @@ country_event = {
 	picture = EXPLORERS_eventPicture
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -204,7 +221,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -212,6 +229,12 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
 	}
 
 	option = {
@@ -309,7 +332,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -386,7 +409,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -394,6 +417,12 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
 	}
 
 	option = {
@@ -474,7 +503,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -482,6 +511,12 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
 	}
 
 	option = {
@@ -530,7 +565,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -564,7 +599,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -572,6 +607,12 @@ country_event = {
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
 	}
 
 	option = {
@@ -620,7 +661,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-	
+	goto = institution_origin
 
 	trigger = {
 		always = yes			#
@@ -658,17 +699,27 @@ country_event = {
 		}
 	}
 
+	goto = feudalism_province
+
 	mean_time_to_happen = {
 		days = 1
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { feudalism = 50 }
+					feudalism = 25
+				}
+				save_event_target_as = feudalism_province
+			}
+		}
+	}
+
 	option = {
 		name = institution_events.8.a
-		random_owned_province = {
-			limit = {
-				NOT = { feudalism = 50 }
-				feudalism = 25
-			}
+		event_target:feudalism_province = {
 			add_institution_embracement = {
 				value = 50
 				which = "feudalism"
@@ -690,11 +741,7 @@ country_event = {
 	}
 	option = {
 		name = institution_events.8.b
-		random_owned_province = {
-			limit = {
-				NOT = { feudalism = 100 }
-				feudalism = 25
-			}
+		event_target:feudalism_province = {
 			add_institution_embracement = {
 				value = -25
 				which = "feudalism"
@@ -725,6 +772,8 @@ country_event = {
 		}
 	}
 
+	goto = urban_province
+
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -739,12 +788,13 @@ country_event = {
 					NOT = { feudalism = 50 }
 				}
 				set_province_flag = growing_urbanism
+				save_event_target_as = urban_province
 			}
 		}
 	}
 
 	option = {
-		name = institution_events.9.b
+		name = institution_events.9.a
 		random_owned_province = {
 			limit = {
 				has_province_flag = growing_urbanism
@@ -756,31 +806,32 @@ country_event = {
 			}
 			add_base_manpower = -1
 			
-			if = {
-				limit = {
-					has_estate = estate_nomadic_tribes
-				}
-				remove_estate = estate_nomadic_tribes
-				owner = {
+			owner = {
+				if = {
+					limit = {
+						has_estate = estate_nomadic_tribes
+					}
 					add_estate_loyalty = {
 						estate = estate_nomadic_tribes
 						loyalty = -10
 					}
+					scaled_estate_land_share_reduce_effect = {
+						estate = estate_nomadic_tribes
+					}
 				}
-			}
-			if = {
-				limit = {
-					owner = {
+				if = {
+					limit = {
 						has_estate = estate_burghers
 					}
-					NOT = { has_estate = estate_burghers }
+					scaled_estate_land_share_add_effect = {
+						estate = estate_burghers
+					}
 				}
-				set_estate = estate_burghers
 			}
 		}
 	}
 	option = {
-		name = institution_events.9.a
+		name = institution_events.9.b
 		add_horde_unity = 5
 		add_legitimacy = 5
 		add_republican_tradition = 2.5
@@ -827,16 +878,26 @@ country_event = {
 		}
 	}
 
+	goto = feudalism_province
+
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					feudalism = 100
+				}
+				save_event_target_as = feudalism_province
+			}
+		}
 	}
 	
 	option = {
 		name = institution_events.10.b
-		random_owned_province = {
-			limit = {
-				feudalism = 100
-			}
+		event_target:feudalism_province = {
 			area = {
 				limit = {
 					owned_by = ROOT
@@ -891,9 +952,18 @@ country_event = {
 			}
 		}
 	}
+	goto = capital
 
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
 	}
 
 	option = {
@@ -921,8 +991,17 @@ country_event = {
 	title = institution_events.12.t
 	desc = institution_events.12.d
 	picture = BIG_BOOK_eventPicture
+	goto = capital
 
 	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
+	}
 	
 	trigger = {
 		is_institution_enabled = renaissance
@@ -1020,8 +1099,23 @@ country_event = {
 		any_owned_province = { continent = africa }
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_port = yes
+					OR ={
+						is_state = yes
+						is_capital = yes
+					}
+				}
+				save_event_target_as = institution_province
+			}
+		}
+	}
+
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 0.5
 			any_known_country = {
@@ -1033,6 +1127,7 @@ country_event = {
 	
 	option = {
 		name = institution_events.20.a #
+		goto = institution_province
 		ai_chance = {
 			factor = 90
 			modifier = {
@@ -1120,7 +1215,7 @@ country_event = {
 	
 	trigger = {
 		is_institution_enabled = new_world_i
-		current_age = age_of_absolutism
+		is_year = 1550
 		NOT = { has_institution = new_world_i }
 		has_institution = feudalism #State must be influential enough to be able to influence this.
 		any_active_trade_node = {
@@ -1166,6 +1261,7 @@ country_event = {
 							base_manpower = 4
 						}
 					}
+					save_event_target_as = institution_province
 					area = {
 						limit = {
 							owned_by = ROOT
@@ -1183,7 +1279,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 0.5
 			any_known_country = {
@@ -1198,6 +1294,7 @@ country_event = {
 		ai_chance = {
 			factor = 90
 		}
+		goto = institution_province
 		every_owned_province = {
 			limit = {
 				has_province_flag = new_world_crops_event
@@ -1296,6 +1393,7 @@ country_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = GLOBAL_TRADE_eventPicture
 	}
+	goto = slaver_capital
 	
 	trigger = {
 		is_institution_enabled = new_world_i
@@ -1326,6 +1424,9 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = non_european_country_capital
+			}
 			random_neighbor_country = {
 				limit = {
 					has_institution = new_world_i
@@ -1340,6 +1441,9 @@ country_event = {
 					NOT = { any_owned_province = { has_province_modifier = slave_entrepot } }
 				}
 				save_event_target_as = slaver_country
+				capital_scope = {
+					save_event_target_as = slaver_capital
+				}
 			}
 			random_owned_province = {
 				limit = {
@@ -1353,7 +1457,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 500
+		months = 250
 		modifier = {
 			factor = 0.8
 			num_of_cities = 20
@@ -1365,9 +1469,11 @@ country_event = {
 		ai_chance = {
 			factor = 90
 		}
+		goto = non_european_country_capital
 		event_target:slaver_country = {
 			country_event = { id = institution_events.23 }
 		}
+		custom_tooltip = institution_events.22.a.tt
 		tooltip = {
 			capital_scope = {
 				if = {
@@ -1390,6 +1496,7 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
+		goto = slaver_province
 		event_target:slaver_province = {
 			add_province_modifier = {
 				name = "local_slave_chief"
@@ -1413,6 +1520,7 @@ country_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = GLOBAL_TRADE_eventPicture
 	}
+	goto = non_european_country_capital
 
 	is_triggered_only = yes
 	
@@ -1434,6 +1542,7 @@ country_event = {
 		ai_chance = {
 			factor = 90
 		}
+		goto = slaving_point
 		FROM = {
 			country_event = { id = institution_events.24 }
 		}
@@ -1474,6 +1583,14 @@ country_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = GLOBAL_TRADE_eventPicture
 	}
+	goto = capital
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
+	}
 
 	is_triggered_only = yes
 	
@@ -1509,6 +1626,7 @@ country_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = GLOBAL_TRADE_eventPicture
 	}
+	goto = slaver_province
 
 	is_triggered_only = yes
 	
@@ -1559,6 +1677,7 @@ province_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = FEUDALISM_eventPicture
 	}
+	goto = root
 	
 	trigger = {
 		is_capital = no
@@ -1566,10 +1685,7 @@ province_event = {
 		owner = { has_country_modifier = slave_empire }
 		NOT = { has_province_flag = had_slave_raids }
 		any_neighbor_province = {
-			OR = {
-				NOT = { owned_by = ROOT }
-				is_wasteland = yes
-			}
+			NOT = { owned_by = ROOT }
 		}
 	}
 	
@@ -1622,13 +1738,14 @@ country_event = {
 			any_neighbor_province = {
 				owned_by = ROOT
 				area = PREV
-				printing_press = 1
+				NOT = { printing_press = 100 }
 			}
 		}
 	}
+	goto = institution_province
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 0.8
 			current_age = age_of_reformation
@@ -1639,9 +1756,11 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = { printing_press = 100 }
+				save_event_target_as = institution_province
 				area = {
 					limit = {
 						owned_by = ROOT
+						NOT = { printing_press = 100 }
 					}
 					set_province_flag = hostile_publications_flag
 				}
@@ -1733,9 +1852,18 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
+
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
+	}
 	
 	option = {
 		name = institution_events.50.a
+		goto = capital
 		ai_chance = {
 			factor = 0.25
 		}
@@ -1784,16 +1912,12 @@ country_event = {
 		NOT = { has_ruler_flag = heir_went_on_grand_tour }
 		heir_age = 14
 		NOT = { heir_age = 30 } #We can be a bit generous here.
-		OR = {
-			any_known_country = {
-				has_institution = global_trade
+		any_known_country = {
+			has_institution = global_trade
+			capital_scope = { continent = europe }
+			OR = {
 				overlord_of = ROOT
-				capital_scope = { continent = europe }
-			}
-			any_known_country = {
-				has_institution = global_trade
 				alliance_with = ROOT
-				capital_scope = { continent = europe }
 			}
 		}
 		NOT = {
@@ -1803,12 +1927,37 @@ country_event = {
 		}
 	}
 
+	goto = institution_country_capital
+
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					has_institution = global_trade
+					capital_scope = { continent = europe }
+					OR = {
+						overlord_of = ROOT
+						alliance_with = ROOT
+					}
+				}
+				save_event_target_as = institution_country
+				capital_scope = {
+					save_event_target_as = institution_country_capital
+				}
+			}
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
 	}
 	
 	option = {
 		name = institution_events.51.a
+		goto = capital
 		ai_chance = {
 			factor = 0.25
 		}
@@ -1821,21 +1970,7 @@ country_event = {
 				value = 50
 			}
 		}
-		random_known_country = {
-			limit = {
-				OR = {
-					AND = {
-						capital_scope = { continent = europe }
-						has_institution = global_trade
-						alliance_with = ROOT
-					}
-					AND = {
-						has_institution = global_trade
-						overlord_of = ROOT
-						capital_scope = { continent = europe }
-					}
-				}
-			}
+		event_target:institution_country = {
 			add_opinion = {
 				who = ROOT
 				modifier = opinion_went_on_grand_tour
@@ -1888,15 +2023,24 @@ country_event = {
 		any_owned_province = {
 			has_port = yes
 			province_trade_power = 10
+			NOT = { global_trade = 100 }
 			NOT = { has_province_flag = foreign_factory }
 		}
 	}
+
+	goto = trade_company_province
 	
 	immediate = {
 		hidden_effect = {
 			random_known_country = {
 				limit = {
 					has_institution = global_trade
+					OR = {
+						has_country_modifier = india_trade_co
+						has_country_modifier = dutch_india_trade_co
+						has_country_modifier = hab_ostende_company
+						has_country_modifier = portuguese_india_trade_co
+					}
 					NOT = { war_with = ROOT }
 					NOT = { is_rival = ROOT }
 					NOT = { is_enemy = ROOT }
@@ -1987,6 +2131,7 @@ country_event = {
 		picture = GLOBAL_TRADE_eventPicture
 	}
 	is_triggered_only = yes
+	goto = trade_company_province
 	
 	option = {
 		name = institution_events.53.a
@@ -2009,6 +2154,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
+	goto = trade_company_province
 	
 	option = {
 		name = institution_events.54.a
@@ -2050,6 +2196,7 @@ province_event = {
 		trigger = { trade_goods = cloth }
 		desc = institution_events.60.dd
 	}
+	goto = root
 	
 	trigger = {
 		is_institution_enabled = manufactories
@@ -2159,8 +2306,17 @@ country_event = {
 		days = 1
 	}
 	
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
+	}
+
 	option = {
 		name = institution_events.70.a
+		goto = capital
 		ai_chance = {
 			factor = 0.25
 		}
@@ -2209,16 +2365,12 @@ country_event = {
 		NOT = { has_ruler_flag = heir_went_on_grand_tour }
 		heir_age = 14
 		NOT = { heir_age = 30 } #We can be a bit generous here.
-		OR = {
-			any_known_country = {
-				has_institution = enlightenment
+		any_known_country = {
+			has_institution = enlightenment
+			capital_scope = { continent = europe }
+			OR = {
 				overlord_of = ROOT
-				capital_scope = { continent = europe }
-			}
-			any_known_country = {
-				has_institution = enlightenment
 				alliance_with = ROOT
-				capital_scope = { continent = europe }
 			}
 		}
 		NOT = {
@@ -2228,12 +2380,37 @@ country_event = {
 		}
 	}
 
+	goto = institution_country_capital
+
 	mean_time_to_happen = {
 		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					has_institution = enlightenment
+					capital_scope = { continent = europe }
+					OR = {
+						overlord_of = ROOT
+						alliance_with = ROOT
+					}
+				}
+				save_event_target_as = institution_country
+				capital_scope = {
+					save_event_target_as = institution_country_capital
+				}
+			}
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
 	}
 	
 	option = {
 		name = institution_events.71.a
+		goto = capital
 		ai_chance = {
 			factor = 0.25
 		}
@@ -2246,21 +2423,7 @@ country_event = {
 				value = 50
 			}
 		}
-		random_known_country = {
-			limit = {
-				OR = {
-					AND = {
-						capital_scope = { continent = europe }
-						has_institution = enlightenment
-						alliance_with = ROOT
-					}
-					AND = {
-						has_institution = enlightenment
-						overlord_of = ROOT
-						capital_scope = { continent = europe }
-					}
-				}
-			}
+		event_target:institution_country = {
 			add_opinion = {
 				who = ROOT
 				modifier = opinion_went_on_grand_tour
@@ -2308,6 +2471,7 @@ country_event = {
 			}
 		}
 	}
+	goto = capital
 	
 	immediate = {
 		hidden_effect = {
@@ -2331,6 +2495,7 @@ country_event = {
 						NOT = { enlightenment = 100 }
 						is_capital = yes
 					}
+					save_event_target_as = capital
 					area = {
 						limit = { owned_by = ROOT }
 						set_province_flag = apostles_of_the_enlightenment_flag
@@ -2355,7 +2520,10 @@ country_event = {
 			duration = 5475
 		}
 		random_owned_province = {
-			limit = { has_province_flag = apostles_of_the_enlightenment_flag }
+			limit = {
+				has_province_flag = apostles_of_the_enlightenment_flag
+				is_capital = yes
+			}
 			clr_province_flag = apostles_of_the_enlightenment_flag
 			add_institution_embracement = {
 				which = enlightenment
@@ -2363,7 +2531,10 @@ country_event = {
 			}
 		}
 		every_owned_province = {
-			limit = { has_province_flag = apostles_of_the_enlightenment_flag }
+			limit = {
+				has_province_flag = apostles_of_the_enlightenment_flag
+				is_capital = no
+			}
 			clr_province_flag = apostles_of_the_enlightenment_flag
 			add_institution_embracement = {
 				which = enlightenment
@@ -2403,6 +2574,8 @@ province_event = {
 		desc = institution_events.73.db #Shadowplay
 	}
 	
+	goto = root
+
 	is_mtth_scaled_to_size = 1
 	
 	trigger = {
@@ -2421,6 +2594,7 @@ province_event = {
 			religion_group = muslim
 			religion_group = christian
 		}
+		religion_group = owner
 	}
 
 	mean_time_to_happen = {

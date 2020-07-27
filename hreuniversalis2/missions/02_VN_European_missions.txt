@@ -50,7 +50,8 @@ vn_hre_missions_1 = {
 		NOT = {
 			is_emperor = yes
 		}
-		NOT = { has_reform = pirate_republic_reform }
+		NOT = { government = theocracy }
+		NOT = { government = republic }
 	}
 	has_country_shield = no
 	
@@ -58,15 +59,28 @@ vn_hre_missions_1 = {
 		icon = mission_alliances
 		required_missions = { }
 		position = 10
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = {
+				NOT = { tag = ROOT }
+				is_elector = yes
+			}
+		}
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = gen_hre_electors.tooltip
+			if = {
+				limit = {
+					hre_size = 1
+				}
 				calc_true_if = {
+					desc = gen_hre_electors.tooltip
 					all_elector = {
 						preferred_emperor = ROOT
 					}
 					amount = 2
 				}
+			}
+			else = {
+				num_of_allies = 3
 			}
 		}
 		effect = {
@@ -79,46 +93,9 @@ vn_hre_missions_1 = {
 	}
 }
 
-#Take Frankish Throne
-vn_franks_missions_1 = {
-	slot = 2
-	generic = yes
-	ai = yes
-	potential_on_load = {
-		has_dlc = "Mandate of Heaven"
-	}
-	potential = {
-		has_dlc = "Mandate of Heaven"
-		capital_scope = {
-			continent = europe
-			NOT = { superregion = caucasia_superregion }
-			NOT = { superregion = anatolia_superregion }
-		}
-		NOT = { has_reform = pirate_republic_reform }
-		is_emperor_of_china = no
-	}
-	has_country_shield = no
-	
-	vn_king_of_the_franks = {
-		position = 9
-		icon = mission_king_of_franks
-		required_missions = { }
-		trigger = {
-			is_emperor_of_china = yes
-		}
-		effect = {
-			add_prestige = 25
-			add_country_modifier = {
-				name = "frankish_throne_mission"
-				duration = 9125
-			}
-		}
-	}
-}
-
-#Emperor/imperial ban
-vn_hre_missions_2 = {
-	slot = 2
+#Republic Relation with Emperor
+gen_europe_hre_relations_1 = {
+	slot = 1
 	generic = yes
 	ai = yes
 	potential = {
@@ -128,46 +105,111 @@ vn_hre_missions_2 = {
 			NOT = { superregion = anatolia_superregion }
 		}
 		is_part_of_hre = yes
+		NOT = {
+			is_emperor = yes
+		}
+		government = republic
 		NOT = { has_reform = pirate_republic_reform }
 	}
 	has_country_shield = no
 	
-	gen_hre_emperor = {
-		icon = mission_empire
+	gen_hre_relations_with_emperor = {
+		icon = mission_monarch_in_throne_room
 		required_missions = { }
 		position = 10
+		provinces_to_highlight = {
+			is_capital_of = emperor
+		}
 		trigger = {
-			is_emperor = yes
+			alliance_with = emperor
+			emperor = {
+				has_opinion = {
+					who = root
+					value = 120
+				}
+			}
 		}
 		effect = {
 			add_country_modifier = {
-				name = "gen_hre_emperor_mod"
+				name = imperial_beneficience
 				duration = 5475
 			}
 		}
 	}
-	gen_hre_imperial_ban = {
-		icon = mission_cannons_firing
-		required_missions = { gen_hre_emperor }
+}
+
+#Theocratic relations with Emperor
+gen_europe_hre_theocracy = {
+	slot = 1
+	generic = yes
+	ai = yes
+	potential = {
+		capital_scope = {
+			continent = europe
+			NOT = { superregion = caucasia_superregion }
+			NOT = { superregion = anatolia_superregion }
+		}
+		is_part_of_hre = yes
+		NOT = {
+			is_emperor = yes
+		}
+		government = theocracy
+	}
+	has_country_shield = no
+	
+	gen_hre_theocracy_house_of_god = {
+		icon = mission_hands_praying
+		required_missions = { }
+		position = 10
 		provinces_to_highlight = {
-			AND = {
-				is_part_of_hre = yes
-				owner = {
-					is_part_of_hre = no
+			owned_by = root
+			has_tax_building_trigger = no
+		}
+		trigger = {
+			if = {
+				limit = { NOT = { num_of_cities = 10 } }
+				all_owned_province = {
+					has_tax_building_trigger = yes
+				}
+			}
+			else = {
+				capital_scope = {
+					has_tax_building_trigger = yes
+				}
+				num_of_owned_provinces_with = {
+					value = 10
+					has_tax_building_trigger = yes
 				}
 			}
 		}
-		trigger = {
-			hre_reform_level = 1
-			is_emperor = yes
-			NOT = { num_of_foreign_hre_provinces = 1 }
-		}
 		effect = {
-			add_prestige = 10
-			add_imperial_influence = 10
-			add_country_modifier = {
-				name = "gen_hre_imperial_ban_mod"
-				duration = 5475
+			capital_scope = {
+				if = {
+					limit = {
+						NOT = { has_building = temple }
+						NOT = { has_building = cathedral }
+					}
+					remove_building = monument
+					add_building = temple
+				}
+				else_if = {
+					limit = {
+						NOT = { has_building = cathedral }
+					}
+					remove_building = temple
+					add_building = cathedral
+				}
+				else = { add_base_tax = 2 }
+			}
+			if = {
+				limit = {
+					NOT = { legitimacy_equivalent = 85 }
+				}
+				add_devotion = 20
+				add_legitimacy = 20
+			}
+			else = {
+				add_stability_or_adm_power = yes
 			}
 		}
 	}
@@ -222,6 +264,316 @@ vn_hre_missions_3 = {
 			}
 			else = {
 				custom_tooltip = vn_hanseatic_cities.tt
+			}
+		}
+	}
+}
+
+#Take Frankish Throne
+vn_franks_missions_1 = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Mandate of Heaven"
+	}
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		capital_scope = {
+			continent = europe
+			NOT = { superregion = caucasia_superregion }
+			NOT = { superregion = anatolia_superregion }
+		}
+		NOT = { has_reform = pirate_republic_reform }
+		is_emperor_of_china = no
+	}
+	has_country_shield = no
+	
+	vn_king_of_the_franks = {
+		position = 9
+		icon = mission_king_of_franks
+		required_missions = { }
+		trigger = {
+			is_emperor_of_china = yes
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = "frankish_throne_mission"
+				duration = 9125
+			}
+		}
+	}
+}
+
+#Emperor/imperial ban
+vn_hre_missions_2 = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential = {
+		capital_scope = {
+			continent = europe
+			NOT = { superregion = caucasia_superregion }
+			NOT = { superregion = anatolia_superregion }
+		}
+		is_part_of_hre = yes
+		NOT = {
+			is_emperor = yes
+		}
+		NOT = { government = theocracy }
+		NOT = { government = republic }
+	}
+	has_country_shield = no
+	
+	gen_hre_emperor = {
+		icon = mission_empire
+		required_missions = { }
+		position = 10
+		trigger = {
+			if = {
+				limit = {
+					hre_size = 1
+				}
+				is_emperor = yes
+			}
+			else = {
+				government_rank = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gen_hre_emperor_mod"
+				duration = 5475
+			}
+		}
+	}
+	gen_hre_imperial_ban = {
+		icon = mission_cannons_firing
+		required_missions = { gen_hre_emperor }
+		provinces_to_highlight = {
+			AND = {
+				is_part_of_hre = yes
+				owner = {
+					is_part_of_hre = no
+				}
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					hre_size = 1
+					NOT = { has_dlc = "Emperor" }
+				}
+				hre_reform_passed = reichsreform
+				is_emperor = yes
+				NOT = { num_of_foreign_hre_provinces = 1 }
+			}
+			else_if = {
+				limit = {
+					hre_size = 1
+					has_dlc = "Emperor"
+				}
+				hre_reform_passed = emperor_reichsreform
+				is_emperor = yes
+				NOT = { num_of_foreign_hre_provinces = 1 }
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = imperial_ban_fallback_tt
+					NOT = {
+						any_core_province = {
+							NOT = { owned_by = ROOT }
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			if = {
+				limit = {
+					hre_size = 1
+				}
+				add_imperial_influence = 10
+				add_country_modifier = {
+					name = "gen_hre_imperial_ban_mod"
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+
+#Further Republic missions
+gen_europe_hre_relations_2 = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		is_part_of_hre = yes
+		NOT = {
+			is_emperor = yes
+		}
+		government = republic
+		NOT = { has_reform = pirate_republic_reform }
+	}
+	has_country_shield = no
+	
+	gen_hre_financial_centre = {
+		icon = mission_high_income
+		required_missions = { }
+		position = 10
+		provinces_to_highlight = {
+			is_capital_of = root
+		}
+		trigger = {
+			capital_scope = {
+				development = 25
+				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
+				has_trade_building_trigger = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = republic_bourgeois_center
+				duration = 5475
+			}
+		}
+	}
+	gen_hre_republic_reform_government = {
+		icon = mission_early_modern_university
+		required_missions = { gen_hre_financial_centre }
+		trigger = {
+			has_final_tier_reforms_trigger = yes
+			OR = {
+				crown_land_share = 70
+				AND = {
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 60
+					}
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 60
+					}
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 60
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = republic_reformed_government
+				duration = 10950
+			}
+		}
+	}
+}
+
+#Further Theocratic missions
+gen_europe_hre_theocracy = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential = {
+		capital_scope = {
+			continent = europe
+			NOT = { superregion = caucasia_superregion }
+			NOT = { superregion = anatolia_superregion }
+		}
+		is_part_of_hre = yes
+		NOT = {
+			is_emperor = yes
+		}
+		government = theocracy
+	}
+	has_country_shield = no
+	
+	gen_hre_theocracy_lords_army = {
+		icon = mission_teutonic_knights
+		required_missions = { }
+		position = 10
+		provinces_to_highlight = {
+			owner = {
+				is_neighbor_of = root
+				army_size = root
+			}
+			root = {
+				NOT = { army_size = 30 }
+			}
+		}
+		trigger = {
+			OR = {
+				army_size = 30
+				all_neighbor_country = {
+					NOT = { army_size = root }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = theocracy_lords_army_mod
+				duration = 5475
+			}
+		}
+	}
+	gen_hre_theocracy_divine_empire = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { gen_hre_theocracy_lords_army }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				superregion = germanynorth_superregion
+				superregion = germanysouth_superregion
+			}
+			NOT = { religion = root }
+			NOT = {
+				root = {
+					calc_true_if = {
+						amount = 250
+						all_province = {
+							OR = {
+								superregion = germanynorth_superregion
+								superregion = germanysouth_superregion
+							}
+							religion = root
+						}
+					}
+				}
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = emp_bav_center_of_counter_reformation_tooltip2
+				had_global_flag = {
+					flag = reformation_started
+					days = 18250
+				}
+			}
+			calc_true_if = {
+				desc = gen_hre_theocracy_divine_empire_trigger_tooltip
+				amount = 250
+				all_province = {
+					OR = {
+						superregion = germanynorth_superregion
+						superregion = germanysouth_superregion
+					}
+					religion = root
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = theocracy_divine_empire_mod
+				duration = 5475
 			}
 		}
 	}

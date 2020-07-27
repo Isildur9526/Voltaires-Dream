@@ -12,7 +12,6 @@ controller = ASE
 add_core = ASE
 add_core = MCI
 latent_trade_goods = { coal }
-estate = estate_nobles
 
 1066.10.14 = {
 	owner = ENG

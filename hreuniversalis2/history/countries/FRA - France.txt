@@ -6,6 +6,18 @@ religion = catholic
 technology_group = western
 capital = 548 # Paris
 national_focus = DIP
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -5
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = -5
+}
 
 1000.1.1 = { set_country_flag = unformable }
 1031.7.20 = {
@@ -1237,7 +1249,6 @@ national_focus = DIP
 	add_ruler_personality = naive_personality
 	add_ruler_personality = loose_lips_personality
 }
-1785.1.1 = { set_country_flag = revolution }
 1785.3.27 = {
 	heir = {
 		name = "Louis"

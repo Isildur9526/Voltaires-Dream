@@ -28,7 +28,6 @@ discovered_by = north_american
 	controller = TSS
 	add_core = TSS
 	remove_core = BYZ
-	estate = estate_holy_orders
 }
 1218.1.1 = {
 	owner = EPI

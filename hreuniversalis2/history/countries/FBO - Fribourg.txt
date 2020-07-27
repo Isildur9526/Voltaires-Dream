@@ -150,4 +150,4 @@ capital = 1092
 	}
 } 
 
-1417.8.3 = { set_legacy_government = administrative_republic capital = 1092 }
+1417.8.3 = { capital = 1092 }

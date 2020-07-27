@@ -6,6 +6,18 @@ religion = ibadi
 religious_school = ibadi_school
 primary_culture = berber
 capital = 2854
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
 
 1054.1.1 = {
 	monarch = {

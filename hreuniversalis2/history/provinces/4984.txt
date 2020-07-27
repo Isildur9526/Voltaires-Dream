@@ -34,7 +34,6 @@ add_core = FTM
 1136.1.1 = {
 	owner = KOJ
 	controller = KOJ
-	estate = estate_holy_orders
 }
 1187.9.1 = {
 	owner = MAM

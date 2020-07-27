@@ -11,7 +11,6 @@ owner = NOV
 controller = NOV
 add_core = NOV
 fort_14th = yes
-estate = estate_church
 
 1478.1.15 = {
 	owner = MOS 

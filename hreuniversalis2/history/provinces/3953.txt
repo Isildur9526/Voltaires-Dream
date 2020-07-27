@@ -10,7 +10,6 @@ hre = no
 owner = SMO
 controller = SMO
 add_core = SMO
-estate = estate_church
 
 1377.1.1 = {
 	owner = LIT

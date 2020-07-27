@@ -206,13 +206,14 @@ vn_atc_missions_slot_3_a = {
             vn_atc_develop_holy_sites 
         }
         trigger = {
+            has_estate = estate_holy_orders
             estate_territory = {
                 estate = estate_holy_orders
                 territory = 25
             }
-            num_of_owned_provinces_with = {
-                value = 15
-                has_estate = estate_holy_orders
+            num_of_estate_privileges = {
+                estate = estate_holy_orders
+                value = 2
             }
         }
         effect = {

@@ -17,7 +17,6 @@ add_core = REE
 	add_core = FRA
 	remove_core = REE
 	add_core = CHP
-	estate = estate_church
 }
 1418.5.29 = { controller = BUR }
 1422.10.22 = { controller = FRA }

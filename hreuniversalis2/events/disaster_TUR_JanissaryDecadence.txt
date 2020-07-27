@@ -54,7 +54,6 @@ country_event = {
 		remove_country_modifier = strictly_enforced_janissary_discipline
 		remove_country_modifier = janissaries_disciplined
 		remove_country_modifier = janissaries_denied_reward
-		remove_country_modifier = janissaries_denied_reward
 	}
 }
 

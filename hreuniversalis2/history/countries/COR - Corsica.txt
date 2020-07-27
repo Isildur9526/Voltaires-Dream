@@ -106,11 +106,9 @@ capital = 2296	# Ajaccio
 		leader = {	name = "Théodore de Neuhoff"	type = general	fire = 3	shock = 3	manuever = 2	siege = 1 }
 	}
 }
-1736.4.16 = { set_legacy_government = administrative_monarchy }
 1753.10.1 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = administrative_republic
 }
 1753.10.1 = {
 	monarch = {

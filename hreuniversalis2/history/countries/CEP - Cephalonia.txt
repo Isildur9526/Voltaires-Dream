@@ -140,7 +140,6 @@ fixed_capital = 623
 1799.3.1 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "National Assembly"
 		regent = yes

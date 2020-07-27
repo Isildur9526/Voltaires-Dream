@@ -83,12 +83,13 @@ country_decisions = {
 				set_capital = 4974 #Jerusalem
 				change_religion = catholic
 				if = {
-					limit = {
-						NOT = { has_reform = elective_monarchy }
-					}
-					change_government = monarchy
-					add_government_reform = elective_monarchy
-					set_legacy_government = elective_monarchy
+					limit = { NOT = { government = theocracy } }
+					change_government_to_monarchy = yes
+					add_government_reform = holy_state_reform
+				}
+				else_if = {
+					limit = { government = theocracy }
+					add_government_reform = holy_state_reform
 				}
 				if = {
 					limit = {
@@ -97,6 +98,7 @@ country_decisions = {
 					set_government_rank = 5
 				}
 				set_country_flag = formed_jerusalem
+				swap_non_generic_missions = yes
 			}
 		}
 		ai_will_do = {

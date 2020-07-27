@@ -119,8 +119,14 @@ country_event = {
 		NOT = {
 			has_country_modifier = jain_resistance
 		}
+		estate_territory = { 
+			estate = estate_jains
+			territory = 1
+		}
 		any_owned_province = {
-			has_estate = estate_jains
+			NOT = { has_province_modifier = passive_resistance }
+			is_capital = no
+			is_city = yes
 		}
 	}
 	
@@ -128,6 +134,37 @@ country_event = {
 		days = 1
 	}
 	
+	immediate = {
+		hidden_effect = {
+			while = {
+				limit = {
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = jain_passive_resistance
+							value = estate
+							estate = estate_jains
+						}
+					}
+					any_owned_province = {
+						NOT = { has_province_modifier = passive_resistance }
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = jain_passive_resistance }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						NOT = { has_province_modifier = passive_resistance }
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = jain_passive_resistance }
+					}
+					set_province_flag = jain_passive_resistance
+				}
+			}
+		}
+	}
+
 	option = {
 		name = jains_estate_events.4.a
 		add_country_modifier = {
@@ -136,12 +173,21 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_jains
+				has_province_flag = jain_passive_resistance
 			}
 			add_province_modifier = {
 				name = passive_resistance
 				duration = 5475
 			}
+		}
+	}
+
+	after = {
+		every_owned_province = {
+			limit = {
+				has_province_flag = jain_passive_resistance
+			}
+			clr_province_flag = jain_passive_resistance
 		}
 	}
 }
@@ -549,12 +595,49 @@ country_event = {
 			}
 		}
 		any_owned_province = {
-			has_estate = estate_jains
+			is_territory = no
+			is_capital = no
+			is_city = yes
+		}
+		estate_territory = { 
+			estate = estate_jains
+			territory = 1
 		}
 	}
 	
 	mean_time_to_happen = {
 		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			while = {
+				limit = {
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = paryushana_prov_flag
+							value = estate
+							estate = estate_jains
+						}
+					}
+					any_owned_province = {
+						is_territory = no
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = paryushana_prov_flag }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_territory = no
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = paryushana_prov_flag }
+					}
+					set_province_flag = paryushana_prov_flag
+				}
+			}
+		}
 	}
 	
 	option = {
@@ -601,11 +684,17 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_jains
+				has_province_flag = paryushana_prov_flag
 			}
 			add_province_modifier = {
 				name = paryushana
 				duration = 5475
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_flag = paryushana_prov_flag }
+				clr_province_flag = paryushana_prov_flag
 			}
 		}
 	}
@@ -648,17 +737,21 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_jains
+				has_province_flag = paryushana_prov_flag
 			}
 			add_province_modifier = {
 				name = suppressed_jain_festivals
 				duration = 5475
 			}
 		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_flag = paryushana_prov_flag }
+				clr_province_flag = paryushana_prov_flag
+			}
+		}
 	}
 }
-
-# jains_estate_events.9 removed
 
 # Jains make demands
 country_event = {

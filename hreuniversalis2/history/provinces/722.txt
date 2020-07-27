@@ -12,7 +12,6 @@ controller = ASE
 add_core = ASE
 add_core = WSX
 latent_trade_goods = { steel }
-estate = estate_nobles
 fort_14th = yes
 
 1066.10.14 = {

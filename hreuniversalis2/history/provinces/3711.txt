@@ -47,7 +47,6 @@ add_core = CMN
 	add_core = RUS 
 	remove_core = CRI
 	remove_core = NOG
-	estate = estate_cossacks
 	culture = crimean
 	fort_15th = yes
 }

@@ -44,7 +44,6 @@ center_of_trade = 2
 	culture = turkish
 	capital = "Hüdavendigar"
 }
-1399.1.1 = { estate = estate_burghers }
 1402.7.20 = {
 	owner = AHI
 	controller = AHI

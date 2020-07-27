@@ -27,7 +27,6 @@ add_core = BDJ
 	controller = PCA
 	remove_core = CBR
 	remove_core = GAL
-	estate = estate_nobles
 }
 1139.7.25 = {
 	owner = POR

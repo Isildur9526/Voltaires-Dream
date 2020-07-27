@@ -27,7 +27,7 @@ add_core = LER
 	owner = MOR
 	controller = MOR
 	add_core = MOR
-	remove_core = ZGZ
+	remove_core = TTO
 }
 1145.3.25 = {
 	owner = VLK

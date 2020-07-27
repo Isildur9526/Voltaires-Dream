@@ -77,7 +77,7 @@ capital = 3190
 }
 1143.1.1 = {
 	monarch = {
-		name = "Dairmait II"
+		name = "Diarmait II"
 		dynasty = "Mac Cárthaigh"
 		birth_date = 1128.1.1 #est
 		adm = 2
@@ -88,6 +88,7 @@ capital = 3190
 1171.5.1 = { primary_culture = irish }
 # Earls of Desmond
 1172.1.1 = {
+	override_country_name = DESMOND
 	government = monarchy
 	add_government_reform = feudalism_reform
 	primary_culture = hiberno_norman

@@ -16,7 +16,6 @@ add_core = GEH
 	controller = MAI
 	add_core = MAI
 	remove_core = GEH
-	estate = estate_nobles
 }
 1241.1.1 = {
 	owner = ISE

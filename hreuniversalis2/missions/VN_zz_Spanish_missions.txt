@@ -1466,9 +1466,8 @@ vn_spa_missions_slot_5_a = {
             if = {
 				limit = { exists = GEN }
 				GEN = { NOT = { navy_size = ROOT } }
-				war_score_against = {
+				has_won_war_against = {
 					who = GEN
-					value = 75
 				}
 			}
 			else = {
@@ -1507,9 +1506,8 @@ vn_spa_missions_slot_5_a = {
             if = {
 				limit = { exists = VEN }
 				VEN = { NOT = { navy_size = ROOT } }
-				war_score_against = {
+				has_won_war_against = {
 					who = VEN
-					value = 75
 				}
 			}
 			else = {

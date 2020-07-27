@@ -12,7 +12,6 @@ is_city = yes
 add_core = TUS
 add_core = AZZ
 fort_14th = yes
-estate = estate_church
 
 1098.1.1 = {
 	owner = AZZ

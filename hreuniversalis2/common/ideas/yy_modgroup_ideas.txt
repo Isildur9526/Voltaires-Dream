@@ -540,7 +540,7 @@ DGC_ideas = {
 
 NSG_ideas = {
     start = {
-        possible_mercenaries = 0.5
+        mercenary_manpower = 0.5
         merc_maintenance_modifier = -0.15
     }
     bonus = {
@@ -841,7 +841,7 @@ abbacy_ideas = {
     }
     
     trigger = {
-        government = monastic_order_government
+        has_reform = monastic_order_reform
     }
     free = yes
     
@@ -957,7 +957,7 @@ freecity_ideas = {
     }
     
     trigger = {
-        government = imperial_city
+        has_reform = free_city
     }
     free = yes
         
@@ -1105,7 +1105,7 @@ molducal_ideas = {
 
 SWI_ideas = {
     start = {
-        global_manpower_modifier = 0.15
+        merc_maintenance_modifier = -0.15
         infantry_power = 0.1
     }
     
@@ -1122,25 +1122,27 @@ SWI_ideas = {
             }
         }
     }
-    free = yes
+    free = yes  #will be triggered at load
     
-    the_swiss_confederation = {
-        stability_cost_modifier = -0.1
-    }
     swiss_mercenaries = {
-        merc_maintenance_modifier = -0.15
-    }
-    alpine_defensiveness = {
-        fort_maintenance_modifier = -0.15
-    }
-    oasis_of_peace_and_prosperity = {
-        development_cost = -0.1
+        mercenary_discipline = 0.05
+        mercenary_manpower = 0.5
     }
     swiss_tolerance = {
         tolerance_heretic = 2
     }
+    the_swiss_confederation = {
+        stability_cost_modifier = -0.1
+    }
+    alpine_defensiveness = {
+        fort_maintenance_modifier = -0.2
+        defensiveness = 0.25
+    }
+    oasis_of_peace_and_prosperity = {
+        development_cost = -0.1
+    }
     haven_for_refugees = {
-        prestige = 0.5
+        prestige = 1
     }
     clockwork = {
         production_efficiency = 0.1
@@ -1355,7 +1357,7 @@ taifa_ideas = {
     }
     taifa_idea_2 = {
         merc_maintenance_modifier = -0.1
-        possible_mercenaries = 0.25
+        mercenary_manpower = 0.25
     }
     taifa_idea_3 = {
         culture_conversion_cost = -0.1

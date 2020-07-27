@@ -43,9 +43,7 @@ capital = 402
 	historical_friend = SOE
 	historical_friend = RGS
 }
-1540.1.1 = { set_legacy_government = administrative_republic }
 1550.1.1 = { religion = protestant }
-1750.1.1 = { set_legacy_government = constitutional_republic }
 1807.7.9 = {
 	monarch = {
 		name = "Francois Joseph"

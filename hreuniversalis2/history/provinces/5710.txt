@@ -15,7 +15,7 @@ add_core = SEO
 	owner = LIT
 	controller = LIT
 	add_core = LIT
-	remove_core = DLT
+	remove_core = SEO
 	religion = animism
 	culture = lithuanian
 }

@@ -3,13 +3,35 @@ namespace = colonial
 province_event = {
 	id =  colonial.1
 	title = "EVTNAME6138"
-	desc = "EVTDESC6138"
+	desc = {
+		trigger = {
+			is_colony = yes
+		}
+		desc = "EVTDESC6138"
+	}
+	desc = {
+		trigger = {
+			is_colony = no
+		}
+		desc = "colonial.1.d"
+	}
 	picture = COLONIZATION_eventPicture
 	
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = {
+			random_empty_neighbor_province = {
+				save_event_target_as = empty_neighbor_target
+			}
+		}
+	}
+	
 	trigger = {
-		owner = { has_idea_group = exploration_ideas }
+		OR = {
+			owner = { has_idea_group = exploration_ideas }
+			owner = { has_idea_group = expansion_ideas }
+		}
 		has_empty_adjacent_province = yes
 		owner = { NOT = { num_of_colonies = 2 } }
 	}
@@ -20,8 +42,13 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA6138"
-		random_empty_neighbor_province = {
+		goto = empty_neighbor_target
+		event_target:empty_neighbor_target = {
 			create_colony = 200
+			add_province_modifier = {
+				name = "colonial_boom"
+				duration = 7300
+			}
 		}
 	}
 	option = {
@@ -31,12 +58,17 @@ province_event = {
 			num_of_colonies = 1
 			}
 		}
+		goto = root
 		owner = {
 			random_owned_province = {
 				limit = {
 					is_colony = yes
 				}
-				add_colonysize = 50
+				add_province_modifier = {
+					name = "colonial_boom"
+					duration = 1825
+				}
+				add_colonysize = 100
 			}
 		}
 	}
@@ -54,15 +86,14 @@ province_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		OR = {
-			current_age = age_of_revolutions
-			current_age = age_of_ideology
+		OR = {	
+			current_age = age_of_revolutions	
+			current_age = age_of_ideology	
 		}
 		is_overseas = yes
 		is_colony = no
-		religion_group = christian
+		religion_group = owner
 		owner = {
-			religion_group = christian
 			NOT = { has_country_modifier = narrowminded_modifier }
 			NOT = { has_country_modifier = serfdom_modifier }
 		}
@@ -79,6 +110,7 @@ province_event = {
 		ai_chance = {
 			factor = 100
 		}
+		goto = ROOT
 		add_province_modifier = {
 			name = "founding_father"
 			duration = -1
@@ -110,9 +142,9 @@ province_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			current_age = age_of_revolutions
-			current_age = age_of_ideology
+		OR = {	
+			current_age = age_of_revolutions	
+			current_age = age_of_ideology	
 		}
 		is_colony = no
 		is_overseas = yes
@@ -127,6 +159,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1421"
+		goto = ROOT
 		add_unrest = 3
 	}
 }
@@ -136,18 +169,17 @@ province_event = {
 	title = "EVTNAME1422"
 	desc = "EVTDESC1422"
 	picture = DIPLOMACY_eventPicture
-	
+	goto = ROOT
 	is_triggered_only = yes
 	
 	trigger = {
-		OR = {
-			current_age = age_of_revolutions
-			current_age = age_of_ideology
+		OR = {	
+			current_age = age_of_revolutions	
+			current_age = age_of_ideology	
 		}
 		is_overseas = yes
 		is_colony = no
-		religion_group = christian
-		owner = { religion_group = christian }
+		religion_group = owner
 		NOT = { has_province_modifier = founding_father }
 		NOT = { has_province_modifier = loyalist_stronghold }
 	}
@@ -175,7 +207,85 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTB1422"
-		nationalist_rebels = 1
+		particularist_rebels  = 1
+	}
+}
+
+
+### Events to give persecuted minorities into colonies ###
+
+province_event = {
+	id = colonial.5
+	title = "EVTNAME1423"
+	desc = "EVTDESC1423"
+	picture = STREET_SPEECH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_overseas = yes
+		is_colony = yes
+		colonysize = 600
+		religion = owner
+		NOT = { has_province_modifier = religious_migration }
+		owner = {
+			NOT = {
+				any_owned_province = {
+					expulsion_target = {
+						province_id = root
+					}
+				}
+			}
+			any_owned_province = {
+				is_overseas = no
+				religion_group = ROOT
+				NOT = { religion = ROOT }
+				expelling_minorities = no
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			owner = {
+				random_owned_province = {
+					limit = {
+						is_overseas = no
+						religion_group = ROOT
+						NOT = { religion = ROOT }
+						expelling_minorities = no
+					}
+					save_event_target_as = heretics_from_here
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA1423"
+		goto = ROOT
+		change_religion = event_target:heretics_from_here
+		change_culture = owner
+		add_colonysize = 400
+		add_province_modifier = {
+			name = "religious_migration"
+			duration = 8760
+		}
+	}
+	option = {
+		name = "colonial.5.b"
+		goto = heretics_from_here
+		event_target:heretics_from_here = {
+			add_province_modifier = {
+				name = "enforcing_unity"
+				duration = 3650
+			}
+		}
+		add_colonysize = -100
 	}
 }
 
@@ -185,6 +295,7 @@ province_event = {
 	title = "colonial.EVTNAME9"
 	desc = "colonial.EVTDESC9"
 	picture = COLONIZATION_eventPicture
+	goto = ROOT
 	
 	is_triggered_only = yes
 
@@ -198,7 +309,7 @@ province_event = {
 	
 	option = {
 		name = "colonial.EVTOPTA9"
-		owner = { add_prestige = 10 }
+		add_colonysize = 100
 	}
 	option = {
 		name = "colonial.EVTOPTB9"
@@ -213,6 +324,7 @@ province_event = {
 	title = "colonial.EVTNAME10"
 	desc = "colonial.EVTDESC10"
 	picture = COLONIZATION_eventPicture
+	goto = ROOT
 	
 	is_triggered_only = yes
 	
@@ -227,10 +339,12 @@ province_event = {
 	option = {
 		name = "colonial.EVTOPTA10"
 		owner = {  add_dip_power = 10 }
+		add_base_production = 1
 	}
 	option = {
 		name = "colonial.EVTOPTB10"
 		owner = {  add_adm_power = 10 }
+		add_base_tax = 1
 	}	
 }
 
@@ -240,6 +354,7 @@ province_event = {
 	title = "colonial.EVTNAME11"
 	desc = "colonial.EVTDESC11"
 	picture = COLONIZATION_eventPicture
+	goto = ROOT
 	
 	is_triggered_only = yes
 	
@@ -269,6 +384,7 @@ province_event = {
 	title = "colonial.EVTNAME13"
 	desc = "colonial.EVTDESC13"
 	picture = MERCHANTS_TALKING_eventPicture
+	goto = ROOT
 	
 	is_triggered_only = yes
 	
@@ -311,12 +427,16 @@ province_event = {
 	title = "colonial.EVTNAME15"
 	desc = "colonial.EVTDESC15"
 	picture = PLAGUE_eventPicture
+	goto = ROOT
 	
 	is_triggered_only = yes
 	
 	trigger = {
 		is_colony = yes
-		continent = africa
+		OR = {
+			continent = asia
+			continent = africa
+		}
 		NOT = {
 			owner = {
 				has_country_modifier = roman_fever_timer
@@ -386,12 +506,23 @@ province_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		
 		has_empty_adjacent_province = yes
 		any_empty_neighbor_province = {
 			has_discovered = ROOT
 		}
 		owner = { NOT = { num_of_colonies = 3 } }
-
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_empty_neighbor_province = {
+				limit = {
+					has_discovered = ROOT
+				}
+				save_event_target_as = wanderer_province
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -400,15 +531,18 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA6400"
-		random_empty_neighbor_province = {
-			limit = {
-				has_discovered = ROOT
-			}
+		goto = wanderer_province
+		event_target:wanderer_province = {
 			create_colony = 200
+			add_province_modifier = {
+				name = "colonial_boom"
+				duration = 7300
+			}
 		}
 	}
 	option = {
 		name = "EVTOPTB6400"
+		goto = ROOT
 		trigger = {
 			owner = { num_of_colonies = 1 }
 		}
@@ -417,7 +551,11 @@ province_event = {
 				limit = {
 					is_colony = yes
 				}
-				add_colonysize = 50
+				add_province_modifier = {
+					name = "colonial_boom"
+					duration = 1825
+				}
+				add_colonysize = 100
 			}
 		}
 	}
@@ -429,6 +567,7 @@ province_event = {
 	title = "EVTNAME6401"
 	desc = "EVTDESC6401"
 	picture = COLONIZATION_eventPicture
+	goto = ROOT
 
 	is_triggered_only = yes
 
@@ -443,6 +582,21 @@ province_event = {
 			}
 		}
 	}
+	
+	immediate = {
+		hidden_effect = {
+			owner = {
+				random_owned_province = {
+					limit = {
+						is_colony = yes
+						colonysize = 500
+						NOT = { province_id = ROOT }
+					}
+					save_event_target_as = migration_province_target
+				}
+			}
+		}
+	}
 
 	mean_time_to_happen = {
 		days = 1
@@ -450,16 +604,10 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA6401"
+		goto = migration_province_target
 		add_colonysize = -200
-		owner = {
-			random_owned_province = {
-				limit = {
-					is_colony = yes
-					colonysize = 500
-					NOT = { province_id = ROOT }
-				}
-				add_colonysize = 200
-			}
+		event_target:migration_province_target = {
+			add_colonysize = 200
 		}
 	}
 }

@@ -307,7 +307,6 @@ capital = 1775
 	}
 }
 1640.11.14 = {
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Philipp I"
 		dynasty = "zur Lippe"

@@ -11,7 +11,6 @@ trade_goods = lumber
 base_manpower = 1
 capital = "Tzepaina"
 is_city = yes
-estate = estate_nomadic_tribes
 
 1185.1.1 = { unrest = 10 }
 1189.7.1 = { controller = WWS }
@@ -70,7 +69,6 @@ estate = estate_nomadic_tribes
 	owner = TUR
 	controller = TUR
 	add_core = TUR
-	estate = estate_nobles
 }
 1554.1.1 = { religion = sunni }
 1555.1.1 = { unrest = 5 }

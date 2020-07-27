@@ -26,7 +26,6 @@ add_core = BYZ
 	controller = CYP
 	add_core = CYP
 	remove_core = BYZ
-	estate = estate_nobles
 }
 1207.3.5 = {
 	owner = RUM

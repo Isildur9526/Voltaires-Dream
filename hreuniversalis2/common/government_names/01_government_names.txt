@@ -402,3 +402,34 @@ gov_tribal_democracy = {
 		}
 	}
 }
+
+brewing_order = {
+	rank = {
+		1 = TRAPPIST_STATE
+		2 = TRAPPIST_STATE
+		3 = MONASTIC_STATE
+		4 = MONASTIC_STATE
+		5 = MONASTIC_STATE
+		6 = BREWING_EMPIRE
+	}
+	ruler_male = {
+		1 = TRAPPIST
+		2 = TRAPPIST
+		3 = ARCH_TRAPPIST
+		4 = ARCH_TRAPPIST
+		5 = ARCH_TRAPPIST
+		6 = BREWMASTER
+	}
+	ruler_female = {
+		1 = TRAPPISTINE
+		2 = TRAPPISTINE
+		3 = ARCH_TRAPPISTINE
+		4 = ARCH_TRAPPISTINE
+		5 = ARCH_TRAPPISTINE
+		6 = BREWMISTRESS
+	}
+	trigger = {
+		has_reform = monastic_breweries_reform
+		religion = catholic
+	}
+}

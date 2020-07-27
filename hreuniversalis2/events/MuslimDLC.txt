@@ -1593,10 +1593,7 @@ province_event = {
 		}
 		development = 30
 		is_territory = no
-		AND = {
-			NOT = { has_estate = yes }
-			has_seat_in_parliament = no
-		}
+		has_seat_in_parliament = no
 	}
 	
 	mean_time_to_happen = {
@@ -1607,7 +1604,11 @@ province_event = {
 		name = "muslim_dlc.EVTOPTA25"
 		if = {
 			limit = { owner = { has_estate = estate_dhimmi } }
-			set_estate = estate_dhimmi
+			owner = {
+				scaled_estate_land_share_add_effect = {
+					estate = estate_dhimmi
+				}
+			}
 		}
 		if = {
 			limit = { NOT = { owner = { has_estate = estate_dhimmi } } }

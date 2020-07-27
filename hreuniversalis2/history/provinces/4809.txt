@@ -41,7 +41,6 @@ add_core = BTH
 	controller = SDL
 	add_core = SDL
 }
-1286.9.1 = { estate = estate_holy_orders }
 1295.7.12 = {
 	add_core = WGS
 	remove_core = POM

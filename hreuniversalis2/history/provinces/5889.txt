@@ -30,7 +30,6 @@ center_of_trade = 1
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1346.1.1 = {
-	estate = estate_burghers
 	owner = LIV
 	controller = LIV
 	add_core = LIV

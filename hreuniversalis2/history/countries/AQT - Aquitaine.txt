@@ -164,4 +164,3 @@ national_focus = DIP
 	add_heir_personality = greedy_personality
 }
 1204.3.6 = { capital = 322 }
-1589.8.3 = { set_legacy_government = administrative_monarchy }

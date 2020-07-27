@@ -52,7 +52,6 @@ native_hostileness = 2
  	controller = RUS
  	add_core = RUS
  	remove_core = CRI
- 	estate = estate_cossacks
  	capital = "Stavropol"
 }
 1777.1.1 = { religion = orthodox culture = russian }

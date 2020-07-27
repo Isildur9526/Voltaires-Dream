@@ -1,6 +1,5 @@
 government = republic
 add_government_reform = oligarchy_reform
-set_legacy_government = administrative_republic
 government_rank = 1
 mercantilism = 25
 technology_group = western
@@ -34,5 +33,4 @@ historical_friend = RGS
 1803.2.25 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = administrative_republic
 }

@@ -17,7 +17,6 @@ add_core = KRA
 	controller = KRA
 	remove_core = POL
 }
-1234.1.1 = { estate = estate_church }
 1300.1.1 = {
 	owner = POL
 	controller = POL

@@ -2182,4 +2182,203 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/event_pictures_BYZANTINE/HARBOUR_eventPicture.dds"
 		allwaystransparent = yes
 	}
+
+	#Emperor Reforms
+
+	spriteType = {
+		name = "GFX_emperor_reichsreform"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_call_for_reichsreform.dds"
+		loadType = "INGAME"
+	}
+						
+	spriteType = {
+		name = "GFX_emperor_reichsregiment"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_institute_reichsregiment.dds"
+		loadType = "INGAME"
+	}
+						
+	spriteType = {
+		name = "GFX_emperor_reichsstabilitaet"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_absolute_reichsstabilitat.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_emperor_gemeinerpfennig"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_enact_gemeiner_pfennig.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_emperor_perpetual_diet"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_perpetual_diet.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_emperor_landsknechtswesen"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_create_the_landsknechtswesen.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_emperor_landfriede"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_ewiger_landfriede.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_licetiuris"
+		texturefile = "gfx/interface/imperial_diet_reforms/licetiuris.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_emperor_licetiuris"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_licetiuris.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_statutumprincipum"
+		texturefile = "gfx/interface/imperial_diet_reforms/statutumprincipum.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_emperor_statutumprincipum"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_statutumprincipum.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_chrysobull"
+		texturefile = "gfx/interface/imperial_diet_reforms/chrysobull.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_emperor_chrysobull"
+		texturefile = "gfx/interface/imperial_diet_reforms/emp_chrysobull.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_gelnhauserurkunde"
+		texturefile = "gfx/interface/imperial_diet_reforms/gelnhauserurkunde.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_emperor_gelnhauserurkunde"
+		texturefile = "gfx/interface/imperial_diet_reforms/gelnhauserurkunde.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_roncagliergesetze"
+		texturefile = "gfx/interface/imperial_diet_reforms/roncagliergesetze.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_emperor_roncagliergesetze"
+		texturefile = "gfx/interface/imperial_diet_reforms/roncagliergesetze.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_pactumcalixtinum"
+		texturefile = "gfx/interface/imperial_diet_reforms/pactumcalixtinum.dds"
+		loadType = "INGAME"
+	}
+
+	# VN imperial incidents
+
+	spriteType = {
+        name = "GFX_incident_investiture_controversy.2.a"
+        texturefile = "gfx/interface/imperial_incident_hre.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_investiture_controversy.2.b"
+        texturefile = "gfx/interface/imperial_incident_catholic_religion.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_investiture_controversy.2.c"
+        texturefile = "gfx/interface/imperial_incident_generosity.dds"
+        loadType = "INGAME"
+    }
+	
+	spriteType = {
+        name = "GFX_incident_mediatization.3.a"
+        texturefile = "gfx/interface/imperial_incident_generosity.dds"
+        loadType = "INGAME"
+    }
+	spriteType = {
+        name = "GFX_incident_mediatization.3.b"
+        texturefile = "gfx/interface/imperial_incident_denial_of_request.dds"
+        loadType = "INGAME"
+	}
+	
+	spriteType = {
+        name = "GFX_incident_hohenstaufer_inheritance.2.a"
+        texturefile = "gfx/interface/imperial_incident_diplomat.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_hohenstaufer_inheritance.2.b"
+        texturefile = "gfx/interface/imperial_incident_hre.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_hohenstaufer_inheritance.2.c"
+        texturefile = "gfx/interface/imperial_incident_legitimacy.dds"
+        loadType = "INGAME"
+	}
+	
+	spriteType = {
+        name = "GFX_incident_wendish_crusade.2.a"
+        texturefile = "gfx/interface/imperial_incident_sword.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_wendish_crusade.2.b"
+        texturefile = "gfx/interface/imperial_incident_diplomat.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_wendish_crusade.2.c"
+        texturefile = "gfx/interface/imperial_incident_denial_of_request.dds"
+        loadType = "INGAME"
+    }
+	
+	spriteType = {
+        name = "GFX_incident_lombard_league.3.a"
+        texturefile = "gfx/interface/imperial_incident_diplomat.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_lombard_league.3.b"
+        texturefile = "gfx/interface/imperial_incident_sword.dds"
+        loadType = "INGAME"
+    }
+
+    #Estate Privileges
+    spriteType = {
+		name = "privilege_monopoly_of_goods_beer"
+		texturefile = "gfx/interface/privileges/privilege_monopoly_of_goods_beer.dds"
+	}
+	spriteType = {
+		name = "privilege_heir_knight"
+		texturefile = "gfx/interface/privileges/privilege_heir_knight.dds"
+	}
+	spriteType = {
+		name = "privilege_order_court"
+		texturefile = "gfx/interface/privileges/privilege_order_court.dds"
+	}
+	spriteType = {
+		name = "privilege_settle_templars"
+		texturefile = "gfx/interface/privileges/privilege_settle_templars.dds"
+	}
+	spriteType = {
+		name = "privilege_circassian_slaves"
+		texturefile = "gfx/interface/privileges/privilege_circassian_slaves.dds"
+	}
 }

@@ -211,13 +211,13 @@ country_event = {
 	trigger = {
 		has_estate = estate_rajput
 		any_owned_province = {
-			has_estate = no
 			religion = zoroastrian
 			is_state_core = ROOT
 			NOT = {
 				development = 10
 			}
 			is_capital = no
+			is_city = yes
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -237,13 +237,13 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					has_estate = no
 					religion = zoroastrian
 					is_state_core = ROOT
 					NOT = {
 						development = 10
 					}
 					is_capital = no
+					is_city = yes
 				}
 				save_event_target_as = rajput_scion_province
 			}
@@ -266,19 +266,14 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				has_estate = estate_rajput
-			}
-			add_estate_influence_modifier = {
-				estate = estate_rajput
-				desc = EST_VAL_RAJPUT_SCION
-				influence = 15
-				duration = 5475
-			}
+		give_estate_land_share_small = { estate = estate_rajput }
+		add_estate_influence_modifier = {
+			estate = estate_rajput
+			desc = EST_VAL_RAJPUT_SCION
+			influence = 10
+			duration = 5475
 		}
 		event_target:rajput_scion_province = {
-			set_estate = estate_rajput
 			add_base_manpower = 1
 			add_province_modifier = {
 				name = rajput_scion_province_modifier # development cost
@@ -367,7 +362,7 @@ country_event = {
 			duration = 5475
 		}
 		every_owned_province = {
-			limit = { has_estate = estate_rajput }
+			limit = { religion = zoroastrian }
 			add_local_autonomy = 33
 		}
 	}
@@ -446,11 +441,16 @@ country_event = {
 			influence = -15
 			duration = 5475
 		}
-		add_estate_influence_modifier = {
-			estate = estate_maratha
-			desc = EST_VAL_RAJPUT_INTEGRATION
-			influence = 15
-			duration = 5475
+		if = {
+			limit = {
+				has_estate = estate_maratha
+			}
+			add_estate_influence_modifier = {
+				estate = estate_maratha
+				desc = EST_VAL_RAJPUT_INTEGRATION
+				influence = 15
+				duration = 5475
+			}
 		}
 	}
 	
@@ -480,11 +480,16 @@ country_event = {
 			influence = 15
 			duration = 5475
 		}
-		add_estate_influence_modifier = {
-			estate = estate_maratha
-			desc = EST_VAL_RAJPUT_INTEGRATION_DISCOURAGED
-			influence = -15
-			duration = 5475
+		if = {
+			limit = {
+				has_estate = estate_maratha
+			}
+			add_estate_influence_modifier = {
+				estate = estate_maratha
+				desc = EST_VAL_RAJPUT_INTEGRATION_DISCOURAGED
+				influence = -15
+				duration = 5475
+			}
 		}
 	}
 }
@@ -507,8 +512,9 @@ country_event = {
 				loyalty = 30
 			}
 		}
-		any_owned_province = {
-			has_estate = estate_rajput
+		estate_territory = { 
+			estate = estate_rajput
+			territory = 10
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -522,55 +528,43 @@ country_event = {
 				modifier = EST_VAL_RAJPUT_REVOLT
 			}
 		}
+		any_owned_province = {
+			religion = zoroastrian
+			is_capital = no
+			is_city = yes
+		}
 	}
 	
 	immediate = {
 		hidden_effect = {
-			random_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_rajput
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = rajput_estate_revolt
+							value = estate
+							estate = estate_rajput
+						}
+					}
+					any_owned_province = {
+						religion = zoroastrian
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = rajput_estate_revolt }
+					}
+					check_reducing_estate_revolt_size_trigger = {
+						FLAG = rajput_estate_revolt
+					}
 				}
-				set_province_flag = rajput_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_rajput
-					NOT = { has_province_flag = rajput_estate_revolt }
-					owner = { num_of_cities = 8 }
+				random_owned_province = {
+					limit = {
+						religion = zoroastrian
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = rajput_estate_revolt }
+					}
+					set_province_flag = rajput_estate_revolt
 				}
-				set_province_flag = rajput_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_rajput
-					NOT = { has_province_flag = rajput_estate_revolt }
-					owner = { num_of_cities = 14 }
-				}
-				set_province_flag = rajput_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_rajput
-					NOT = { has_province_flag = rajput_estate_revolt }
-					owner = { num_of_cities = 18 }
-				}
-				set_province_flag = rajput_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_rajput
-					NOT = { has_province_flag = rajput_estate_revolt }
-					owner = { num_of_cities = 25 }
-				}
-				set_province_flag = rajput_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_rajput
-					NOT = { has_province_flag = rajput_estate_revolt }
-					owner = { num_of_cities = 30 }
-				}
-				set_province_flag = rajput_estate_revolt
 			}
 		}
 	}
@@ -591,7 +585,7 @@ country_event = {
 			duration = 5475
 		}
 		every_owned_province = {
-			limit = { has_estate = estate_rajput }
+			limit = { has_province_flag = rajput_estate_revolt }
 			add_local_autonomy = 33
 		}
 		hidden_effect = {
@@ -662,8 +656,6 @@ country_event = {
 	}
 }
 
-# rajputs_estate_events.10 removed
-
 # Rajput clan connections
 country_event = {
 	id = rajputs_estate_events.11
@@ -675,13 +667,20 @@ country_event = {
 	
 	trigger = {
 		has_estate = estate_rajput
-		any_owned_province = {
-			has_estate = estate_rajput
+		estate_territory = { 
+			estate = estate_rajput
+			territory = 1
 		}
 		any_neighbor_country = {
 			NOT = { is_subject_of = ROOT }
+			estate_territory = { 
+				estate = estate_rajput
+				territory = 1
+			}
 			any_owned_province = {
-				has_estate = estate_rajput
+				is_territory = no
+				religion = zoroastrian
+				is_city = yes
 			}
 		}
 		is_subject = no
@@ -698,14 +697,17 @@ country_event = {
 			random_neighbor_country = {
 				limit = {
 					NOT = { is_subject_of = ROOT }
-					any_owned_province = {
-						has_estate = estate_rajput
+					estate_territory = { 
+						estate = estate_rajput
+						territory = 1
 					}
 				}
 				save_event_target_as = rajput_connection_country
 				random_owned_province = {
 					limit = {
-						has_estate = estate_rajput
+						is_territory = no
+						religion = zoroastrian
+						is_city = yes
 					}
 					save_event_target_as = rajput_connection_province
 				}
@@ -737,7 +739,7 @@ country_event = {
 			desc = EST_VAL_RAJPUT_CONNECTIONS
 			influence = 15
 			duration = 5475
-		}
+		}			
 		add_country_modifier = { # diprep
 			name = rajput_connections
 			duration = 5475

@@ -10,7 +10,6 @@ hre = no
 owner = CPU
 controller = CPU
 add_core = CPU
-estate = estate_church
 
 1154.2.26 = {
 	owner = SIC

@@ -289,3 +289,12 @@ government_rank = 4
 	}
 }
 # To Venice in 1420
+1439.12.18 = {
+	monarch = {
+		name = "Lodovico III"
+		dynasty = "Trevisano"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}

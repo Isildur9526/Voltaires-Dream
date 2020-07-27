@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Tonna"
 is_city = yes
 add_core = THU
-estate = estate_nobles
 
 1162.1.1 = {
 	owner = GCH

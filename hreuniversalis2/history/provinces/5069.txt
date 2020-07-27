@@ -10,7 +10,6 @@ base_tax = 4
 base_production = 4
 base_manpower = 2
 is_city = yes
-estate = estate_nobles
 discovered_by = eastern
 discovered_by = ottoman
 discovered_by = western
@@ -51,6 +50,7 @@ discovered_by = north_american
 1768.1.1 = {
 	owner = MAM
 	controller = MAM
+	add_core = MAM
 	remove_core = TUR
 }
 1789.10.22 = { unrest = 6 }

@@ -43,7 +43,6 @@ add_core = LUX
 	owner = FRA
 	add_core = FRA
 	remove_core = TRI
-	remove_core = PUM
 	hre = no
 }
 1815.6.9 = {

@@ -10,7 +10,6 @@ base_manpower = 2
 capital = "Châtellerault"
 is_city = yes
 add_core = XLO
-estate = estate_nobles
 
 1360.10.24 = {
 	owner = GUY
@@ -38,7 +37,6 @@ estate = estate_nobles
 	owner = MNE
 	controller = MNE
 	add_core = MNE
-	remove_core = FRA
 }
 1472.1.1 = {
 	owner = ANJ

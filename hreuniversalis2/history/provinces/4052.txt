@@ -30,7 +30,6 @@ center_of_trade = 1
 	owner = POL
 	controller = POL
 	add_core = POL
-	estate = estate_burghers
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1569.7.1 = {

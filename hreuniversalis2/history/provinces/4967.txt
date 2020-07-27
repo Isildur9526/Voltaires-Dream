@@ -36,7 +36,6 @@ add_core = FTM
 	controller = ARF
 }
 1229.2.1 = { remove_core = KOJ }
-1261.1.1 = { estate = estate_holy_orders }
 1265.1.1 = {
 	owner = MAM
 	controller = MAM

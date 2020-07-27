@@ -54,7 +54,7 @@ fort_14th = yes
 	controller = TUR
 	add_core = TUR
 }
-1459.1.1 = { culture = turkish religion = sunni estate = estate_dhimmi }
+1459.1.1 = { culture = turkish religion = sunni }
 1502.1.1 = { remove_core = BYZ }
 1555.1.1 = { unrest = 5 }
 1556.1.1 = { unrest = 0 }

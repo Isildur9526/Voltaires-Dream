@@ -54,7 +54,6 @@ fort_14th = yes
 	remove_core = MOR
 	religion = catholic
 	culture = castillian
-	estate = estate_holy_orders
 	capital = "Ciudad Real"
 }
 1365.6.1 = { controller = GAL }

@@ -12,7 +12,6 @@ controller = POL
 add_core = POL
 add_core = KRA
 latent_trade_goods = { steel }
-estate = estate_nobles
 
 1138.10.28 = {
 	owner = KRA

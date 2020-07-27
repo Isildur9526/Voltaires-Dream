@@ -57,7 +57,6 @@ fort_14th = yes
 	add_core = BER
 	remove_core = GUY
 	remove_core = FRA
-	estate = estate_burghers
 }
 1416.6.15 = {
 	owner = FRA

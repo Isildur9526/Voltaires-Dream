@@ -10,7 +10,6 @@ hre = no
 owner = CCS
 controller = CCS
 add_core = CCS
-estate = estate_nobles
 
 1224.1.1 = {
 	owner = FRA

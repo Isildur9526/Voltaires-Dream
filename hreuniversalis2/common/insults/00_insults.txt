@@ -304,7 +304,7 @@ insult_revolutionary = {
 		FROM = {
 			OR = {
 				has_reform = revolutionary_empire_reform
-				has_reform = revolutionary_republic_reform
+				is_revolutionary_republic_trigger = yes
 			}
 		}
 	}
@@ -532,5 +532,15 @@ insult_jungle = {
 				has_terrain = marsh
 			}
 		}
+	}
+}
+
+insult_german_humor = {
+	trigger = {
+		FROM = {
+			NOT = { culture_group = germanic }
+		}
+		is_germanic_but_not_swamp = yes
+		is_germanic_but_not_mountains = yes
 	}
 }

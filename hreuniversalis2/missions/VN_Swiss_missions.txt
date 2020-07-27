@@ -65,14 +65,14 @@ vn_swi_missions_slot_1 = {
         }
     }
     vn_swi_alpine_fortifications = {
-        icon = mission_fort
+        icon = alpine_defenses
         position = 3
         required_missions = { vn_swi_reichsfreier_status }
         trigger = {
-			number_of_owned_provinces_with = {
+			num_of_owned_provinces_with = {
+                value = 10
 				has_fort_trigger = yes
 			}
-			value = 10
         }
         effect = {
             add_mil_power = 50
@@ -83,7 +83,7 @@ vn_swi_missions_slot_1 = {
         }
     }
     vn_swi_important_city_state = {
-        icon = mission_big_city
+        icon = alpine_fortifications
         position = 5
         required_missions = { vn_swi_alpine_fortifications }
         trigger = {
@@ -105,14 +105,14 @@ vn_swi_missions_slot_1 = {
         required_missions = { vn_swi_important_city_state vn_swi_tradition_of_free_trade }
         trigger = {
 			trade_income_percentage = 0.33
-			number_of_owned_provinces_with = {
+			num_of_owned_provinces_with = {
+                value = 5
 				OR = {
-					province_has_center_of_trade_level = 1
-					province_has_center_of_trade_level = 2
-					province_has_center_of_trade_level = 3					
+					province_has_center_of_trade_of_level = 1
+					province_has_center_of_trade_of_level = 2
+					province_has_center_of_trade_of_level = 3					
 				}
-			}
-			value = 5            
+			}       
         }
         effect = {
             add_years_of_income = 0.5
@@ -202,7 +202,7 @@ vn_swi_missions_slot_2 = {
     has_country_shield = yes
 
     vn_swi_imperial_rivalry = {
-        icon = mission_empire_new
+        icon = humiliate_austria
         position = 1
         required_missions = {  }
         trigger = {
@@ -232,7 +232,7 @@ vn_swi_missions_slot_2 = {
         }
     }
     vn_swi_eidgenossenschaft = {
-        icon = mission_alliances
+        icon = reorganize_the_confederacy
         position = 3
         required_missions = { vn_swi_imperial_rivalry vn_swi_reichsfreier_status }
         trigger = {
@@ -256,7 +256,7 @@ vn_swi_missions_slot_2 = {
         }
     }
     vn_swi_imperial_immediacy = {
-        icon = mission_noble_council
+        icon = join_the_empire
         position = 4  
         required_missions = { vn_swi_eidgenossenschaft }
         trigger = { #Finish in post-Emperor with decentralization
@@ -455,7 +455,7 @@ vn_swi_missions_slot_3 = {
         }
     }
     vn_swi_unite_switzerland = {
-        icon = mission_unite_home_region 
+        icon = sway_geneva
         position = 4
         required_missions = { vn_swi_major_swiss_canton vn_swi_eidgenossenschaft }
 		provinces_to_highlight = {
@@ -483,7 +483,7 @@ vn_swi_missions_slot_3 = {
         }
     }
     vn_swi_a_swiss_identity = {
-        icon = mission_unite_home_region #Placeholder
+        icon = switzerland_and_the_empire 
         position = 6
         required_missions = { vn_swi_unite_switzerland }
 		provinces_to_highlight = {
@@ -506,19 +506,23 @@ vn_swi_missions_slot_3 = {
         }
         effect = {
             1745 = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
 			}          
             265 = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
-			}
+            }
             dauphine_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -543,7 +547,7 @@ vn_swi_missions_slot_3 = {
         }
     }
     vn_swi_the_french_alps = {
-        icon = mission_european_castle
+        icon = prosper_in_piedmont
         position = 7
         required_missions = { vn_swi_a_swiss_identity }
 		provinces_to_highlight = {
@@ -629,7 +633,7 @@ vn_swi_missions_slot_4 = {
 			}
         }
         effect = {
-            add_religious_effect_small = yes
+            add_religious_influence_effect_small = yes
         }
     }
     vn_swi_reformation_center = {
@@ -637,26 +641,27 @@ vn_swi_missions_slot_4 = {
         position = 6
         required_missions = { vn_swi_join_the_reformation }
         trigger = {
-            calc_if_true = {
-				every_owned_province = {
-					limit = { superregion = switzerland_superregion }
-					religion_group = christian
-					NOT = {
-						OR = {
-							religion = catholic
-							religion = catholique
-						}
-					}
-				}
-			}
+            religion_group = christian
+            NOT = {
+                OR = {
+                    religion = catholic
+                    religion = catholique
+                }
+            }
+            all_owned_province = {
+                OR = {
+                    NOT = { superregion = switzerland_superregion }
+                    religion = ROOT
+                }
+            }
         }
         effect = {
-            add_religious_effect_small = yes
+            add_religious_influence_effect_small = yes
             add_stability = 1
         }
     }
     vn_swi_control_sondrio_valley = {
-        icon = mission_european_church
+        icon = up_the_adige
         position = 7
         required_missions = { vn_swi_a_swiss_identity }
 		provinces_to_highlight = {
@@ -739,7 +744,7 @@ vn_swi_missions_slot_5 = {
         }
     }
     vn_swi_famous_discipline = {
-        icon = mission_soldiers_in_line
+        icon = swiss_mercenaries
         position = 2
         required_missions = { vn_swi_reform_the_army }
         trigger = {
@@ -769,7 +774,7 @@ vn_swi_missions_slot_5 = {
         }
     }
     vn_swi_swiss_guard = {
-        icon = mission_landsknecht_soldier
+        icon = form_the_swiss_guard
         position = 4 #PLACEHOLDER and will be finished post-Emperor
         required_missions = { vn_swi_schweizer_reislauferei vn_swi_papal_relations }
         trigger = {
@@ -821,7 +826,7 @@ vn_swi_missions_slot_5 = {
         }
     }
     vn_swi_gain_the_austrian_alps = {
-        icon = mission_conquer_50_development
+        icon = claim_tirol
         position = 7
         required_missions = { vn_swi_a_swiss_identity }
 		provinces_to_highlight = {

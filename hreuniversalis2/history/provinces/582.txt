@@ -59,7 +59,6 @@ is_city = yes
 1459.1.1 = { 
 	culture = turkish 
 	religion = sunni 
-	estate = estate_dhimmi
 }
 1481.6.1 = { unrest = 6 }
 1482.7.26 = { unrest = 0 }

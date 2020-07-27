@@ -1128,11 +1128,16 @@ vn_por_missions_slot_4_c = {
 			vn_por_kingdom_of_portugal
 		}
         position = 5
+        provinces_to_highlight = {
+            OR = {
+                region = beiras_region
+                region = alentejo_region
+            }
+            consolidated_region_trigger = no
+        }
         trigger = {
             if = {
-				limit = {
-					has_estate = estate_nobles
-				}
+				limit = { has_estate = estate_nobles }
 				estate_loyalty = {
 					estate = estate_nobles
 					loyalty = 60
@@ -1142,9 +1147,7 @@ vn_por_missions_slot_4_c = {
 				has_mil_advisor_2 = yes
 			}
 			if = {
-				limit = {
-					has_estate = estate_church
-				}
+				limit = { has_estate = estate_church }
 				estate_loyalty = {
 					estate = estate_church
 					loyalty = 60
@@ -1154,9 +1157,7 @@ vn_por_missions_slot_4_c = {
 				has_adm_advisor_2 = yes
 			}
 			if = {
-				limit = {
-					has_estate = estate_burghers
-				}
+				limit = { has_estate = estate_burghers }
 				estate_loyalty = {
 					estate = estate_burghers
 					loyalty = 60
@@ -1169,13 +1170,13 @@ vn_por_missions_slot_4_c = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
-				NOT = { unrest = 1 }
+				consolidated_region_trigger = yes
 			}
 			alentejo_region = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
-				NOT = { unrest = 1 }
+				consolidated_region_trigger = yes
 			}
         }
         effect = {

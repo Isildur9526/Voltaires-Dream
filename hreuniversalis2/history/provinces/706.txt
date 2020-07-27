@@ -11,13 +11,11 @@ owner = MAZ
 controller = MAZ
 add_core = MAZ
 
-1228.4.23 = { estate = estate_holy_orders }
 1233.1.1 = { add_core = KUJ }
 1248.2.25 = {
 	owner = KUJ
 	controller = KUJ
 	remove_core = MAZ
-	estate = estate_nobles
 }
 1331.9.27 = {
 	owner = TEU

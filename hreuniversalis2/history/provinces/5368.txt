@@ -11,7 +11,6 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = BUL
-estate = estate_nomadic_tribes
 
 1071.1.1 = {
 	revolt = { type = nationalist_rebels size = 0 }

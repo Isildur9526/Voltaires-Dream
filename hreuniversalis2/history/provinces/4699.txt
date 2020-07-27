@@ -10,7 +10,6 @@ hre = no
 owner = MRY
 controller = MRY
 add_core = MRY
-estate = estate_nobles
 
 1130.1.1 = {
 	owner = HSC

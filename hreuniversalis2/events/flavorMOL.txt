@@ -181,7 +181,8 @@ country_event = {
 			spawn_rebels = {
 				size = 1
 				type = pretender_rebels
-				leader = "Roman Musat"
+				leader = "Roman"
+				leader_dynasty = "Musat"
 			}
 		}
 		hidden_effect = {

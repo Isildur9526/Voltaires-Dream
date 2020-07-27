@@ -371,4 +371,3 @@ fixed_capital = 1222
 }
 
 1560.1.1 = { religion = reformed }
-1562.11.18 = { set_legacy_government = administrative_monarchy }

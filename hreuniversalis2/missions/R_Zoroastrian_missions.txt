@@ -70,10 +70,9 @@ vn_zoroastrian_missions = {
 					estate = estate_church
 					loyalty = 60
 				}
-				num_of_owned_provinces_with = {
-					value = 10
-					development = 20
-					has_estate = estate_church
+				estate_territory = {
+					estate = estate_church
+					territory = 20
 				}
 			}
 			else_if = {
@@ -82,10 +81,9 @@ vn_zoroastrian_missions = {
 					estate = estate_brahmins
 					loyalty = 60
 				}
-				num_of_owned_provinces_with = {
-					value = 10
-					development = 20
-					has_estate = estate_brahmins
+				estate_territory = {
+					estate = estate_brahmins
+					territory = 20
 				}
 			}
 			else = {

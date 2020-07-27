@@ -99,10 +99,24 @@ country_event = {
 
 	option = {
 		name = russian_principality_events.1.a #
-		event_target:appanage_province = {
-			spawn_rebels = {
-				type = pretender_rebels
-				size = 1
+		if = {
+			limit = {
+				dynasty = "Rurikovich"
+			}
+			event_target:appanage_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+					leader_dynasty = "Rurikovich"
+				}
+			}
+		}
+		else = {
+			event_target:appanage_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+				}
 			}
 		}
 	}
@@ -159,10 +173,6 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					is_capital = no
-					OR = {
-						has_estate = estate_nobles
-						has_estate = estate_church
-					}
 					NOT = { development = 15 }
 				}
 				save_event_target_as = agricultural_intensification_province
@@ -170,10 +180,6 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					is_capital = no
-					OR = {
-						has_estate = estate_nobles
-						has_estate = estate_church
-					}
 					NOT = { development = 10 }
 				}
 				save_event_target_as = agricultural_intensification_province
@@ -735,7 +741,6 @@ country_event = {
 					has_owner_culture = yes
 					trade_goods = grain
 					NOT = { has_province_modifier = restricted_movement }
-					has_estate = estate_nobles
 				}
 				save_event_target_as = serfdom_province
 			}

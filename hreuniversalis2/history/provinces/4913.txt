@@ -42,7 +42,6 @@ add_core = KRA
 	add_core = POL
 	add_core = KRA
 	remove_core = OSW
-	estate = estate_nobles
 	hre = no
 }
 1569.7.1 = {

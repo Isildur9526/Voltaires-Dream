@@ -11,7 +11,6 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = ARM
-estate = estate_church
 
 1055.1.1 = { religion = coptic }
 1071.8.26 = {

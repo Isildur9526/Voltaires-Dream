@@ -7,7 +7,7 @@ country_event = {
 	id = almoravids_events.1
     title = "almoravids_events.1.t"
     desc = "almoravids_events.1.d"
-	picture = RELIGIOUS_WARS_eventPicture
+    picture = RELIGIOUS_WARS_eventPicture
 
 	fire_only_once = yes
 	major = yes
@@ -23,6 +23,7 @@ country_event = {
         NOT = { is_year = 1080 }
 		tag = DAA
         dynasty = "al-Murâbit"
+        religion = sunni
         has_regency = no
         is_at_war = no
         NOT = { exists = TFL }
@@ -43,24 +44,14 @@ country_event = {
 			limit = { SOS = { ai = yes was_player = no } }
 			inherit = SOS
         }
-        declare_war_with_cb = {
-            casus_belli = cb_heretic
-            who = FEZ
-        }
-        declare_war_with_cb = {
-            casus_belli = cb_heretic
-            who = SLE
-        }
-		add_country_modifier = {
-			name = armed_jihad_m
-			duration = 9125
-		}
 		hidden_effect = {
 			set_government_rank = 5
 			change_government = monarchy
 			add_government_reform = iqta
 			set_capital = 4762
             add_accepted_culture = moroccan
+            override_country_name = ALMORAVIDS_NAME
+            set_country_flag = almoravids_name_flag
             add_treasury = 200
             add_stability = 3
             add_prestige = 40
@@ -82,6 +73,10 @@ country_event = {
                 every_owned_province = {
                     add_claim = ROOT
                 }
+            }
+            add_country_modifier = {
+                name = armed_jihad_m
+                duration = 7300
             }
 		}
 	}
@@ -450,6 +445,7 @@ country_event = {
     title = "almoravids_events.7.t"
     desc = "almoravids_events.7.d"
     picture = OVEREXTENSION_eventPicture
+    goto = 761
 
     is_triggered_only = yes
 
@@ -611,5 +607,73 @@ country_event = {
         every_owned_province = {
             add_claim = FROM
         }
+    }
+}
+
+#Make MOR attack its neighbors
+country_event = {
+    id = almoravids_events.10
+    title = "almoravids_events.10.t"
+    desc = "almoravids_events.10.d"
+    picture = SIEGE_eventPicture
+
+    trigger = {
+        normal_or_historical_nations = yes
+        current_age = age_of_empire
+        tag = MOR
+        dynasty = "al-Murâbit"
+        religion = sunni
+        has_regency = no
+        is_at_war = no
+        any_neighbor_country = {
+            religion_group = muslim
+            NOT = { religion = sunni }
+            capital_scope = {
+                continent = africa
+            }
+            NOT = { is_subject_of = ROOT }
+            NOT = { alliance_with = ROOT }
+            NOT = { truce_with = ROOT }
+            NOT = { guaranteed_by = ROOT }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_neighbor_country = {
+                limit = {
+                    religion_group = muslim
+                    NOT = { religion = sunni }
+                    capital_scope = {
+                        continent = africa
+                    }
+                    NOT = { is_subject_of = ROOT }
+                    NOT = { alliance_with = ROOT }
+                    NOT = { truce_with = ROOT }
+                    NOT = { guaranteed_by = ROOT }
+                }
+                save_event_target_as = target_of_almoravids
+            }
+        }
+    }
+
+    option = {
+        name = "almoravids_events.10.a"
+        ai_chance = { factor = 75 }
+        add_prestige = 10
+        add_yearly_manpower = 1
+        declare_war_with_cb = {
+            casus_belli = cb_heretic
+            who = event_target:target_of_almoravids
+        }
+    }
+    option = {
+        name = "almoravids_events.10.b"
+        ai_chance = { factor = 25 }
+        add_prestige = -5
     }
 }

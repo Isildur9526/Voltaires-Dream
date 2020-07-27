@@ -14,6 +14,7 @@ monarchy = {
 				ottoman_government
 				prussian_monarchy
 				eastern_monarchy
+				austrian_dual_monarchy
 				principality
 				tsardom
 				mamluk_government
@@ -21,6 +22,8 @@ monarchy = {
 				celestial_empire
 				english_monarchy
 				revolutionary_empire_reform
+				holy_state_reform
+				austrian_archduchy_reform
 			}
 		}
 		hereditary_vs_nobility = {
@@ -28,12 +31,18 @@ monarchy = {
 				enforce_privileges_reform
 				quash_noble_power_reform
 				enforce_trader_privileges_reform
+				black_army_reform
+				legion_of_honor_reform
+				imperial_nobility_reform
 			}
 		}
 		bureaucracy = {
 			reforms = {
 				centralize_reform
 				decentralize_reform
+				penal_colonies_reform
+				liberte_reform
+				fraternite_reform
 			}
 		}
 		growth_of_administration = {
@@ -48,6 +57,9 @@ monarchy = {
 				askeri_officials_reform
 				chivalrous_confederations_reform
 				mamluk_leadership_reform
+				revolutionary_principle_reform
+				equality_principle_reform
+				imperial_principle_reform
 			}
 		}
 		deliberative_assembly = {
@@ -57,12 +69,19 @@ monarchy = {
 				aristocratic_court_reform
 				general_estates_reform
 				states_general_reform
+				legislative_sejm
+				integrated_sejmiks
+				feuillant_reform
+				two_chamber_reform
+				imperial_decree_reform
 			}
 		}
 		absolute_rule_vs_constitutional = {
 			reforms = {
 				letat_cest_moi_reform
 				regional_representation_reform
+				consulate_reform
+				military_electorate_reform
 			}
 		}
 		separation_of_power = {
@@ -71,6 +90,9 @@ monarchy = {
 				legislative_houses_reform
 				become_a_republic_reform
 				install_theocratic_government_reform
+				emperor_of_the_revolution_reform
+				enlightened_monarchy_reform
+				become_rev_republic_reform
 			}
 		}
 	}
@@ -96,6 +118,7 @@ monarchy = {
 		iqta_legacy
 		principality_legacy
 		tsardom_legacy
+		holy_state_legacy
 	}
 
 	# Each group of exclusive reforms are mutually exclusive to each other
@@ -109,6 +132,17 @@ monarchy = {
 		parliamentary_reform
 		english_monarchy
 		states_general_reform
+	}
+
+	# Dictatorships etc
+	exclusive_reforms = {
+		military_dictatorship_reform
+		protectorate_parliament_reform
+		prussian_republic_reform
+		admiralty_reform
+		nepotism_reform
+		lottery_reform
+		dutch_republic
 	}
 
 	#States General works with few others
@@ -129,6 +163,12 @@ monarchy = {
 	exclusive_reforms = {
 		states_general_reform
 		parliamentary_reform
+	}
+
+	#Effects conflict with each other
+	exclusive_reforms = {
+		great_mongol_state_reform
+		decentralize_reform
 	}
 
 	color = { 179 25 25 }
@@ -163,6 +203,11 @@ republic = {
 		pirate_kingdom
 		war_against_the_world_government
 		black_market_consortium_government
+		military_dictatorship
+		signoria
+		protectorate_parliament_legacy
+		prussian_republic
+		united_cantons_legacy
 	}
 	reform_levels = {
 		oligarchy_merchant_class_noble_elite = {
@@ -183,8 +228,14 @@ republic = {
 				italian_monarchy
 				peasants_republic
 				revolutionary_republic_reform
+				junior_revolutionary_republic_reform
 				presidential_despot_reform
 				cossacks_reform
+				military_dictatorship_reform
+				signoria_reform
+				protectorate_parliament_reform
+				prussian_republic_reform
+				united_cantons_reform
 			}
 		}
 		republican_virtues = {
@@ -195,16 +246,23 @@ republic = {
 				council_of_captains_reform
 				articles_of_agreement_reform
 				smugglers_haven_reform
+				liberte_reform
+				egalite_reform
+				fraternite_reform
 			}
 		}
 		frequent_elections_vs_consolidation_of_power = {
 			reforms = {
 				frequent_elections_reform
 				consolidation_of_power_reform
+				consolidate_power_in_doge_reform
+				consolidate_power_in_cities_reform
 				permanent_marathas_council_reform
 				governmental_purbias_register_reform
 				lottery_reform
 				council_of_the_indies_reform
+				legislative_assembly_reform
+				national_constituent_reform
 			}
 		}
 		federalism_vs_unitarism_vs_confederacy = {
@@ -212,6 +270,7 @@ republic = {
 				provincial_governments_reform
 				administrative_divisions_reform
 				union_of_states_reform
+				penal_colonies_reform
 			}
 		}
 		parliamentary_vs_presidential = {
@@ -221,12 +280,18 @@ republic = {
 				pirate_king_reform
 				war_against_the_world_doctrine_reform
 				black_market_consortium_reform
+				imperial_diplomacy_reform
+				municipal_self_defense_reform
+				feuillant_reform
+				two_chamber_reform
 			}
 		}
 		consolidation_of_power_category = {
 			reforms = {
 				broaden_executive_powers_reform
 				devolution_of_powers_reform
+				absolute_president_reform
+				revolutionary_council_reform
 			}
 		}
 		guiding_principle_of_administration = {
@@ -234,12 +299,19 @@ republic = {
 				political_principle_reform
 				moral_principle_reform
 				mamluk_leadership_reform
+				revolutionary_principle_reform
+				equality_principle_reform
+				imperial_principle_reform
 			}
 		}
 		electorate = {
 			reforms = {
 				landholders_reform
 				citizenry_reform
+				admiralty_reform
+				equal_electorate_reform
+				three_classes_reform
+				military_electorate_reform
 			}
 		}
 		office_selection = {
@@ -256,6 +328,9 @@ republic = {
 				strengthen_executive_powers_reform
 				reinforce_republican_values_reform
 				pirates_become_republic_reform
+				president_for_life_reform
+				government_for_people_reform
+				become_rev_empire_reform
 			}
 		}
 	}
@@ -269,12 +344,29 @@ republic = {
 		american_republic
 		revolutionary_republic_reform
 		pirate_republic_reform
+		protectorate_parliament_reform
+		prussian_republic_reform
 	}
 	exclusive_reforms = {
 		lottery_reform
 		venice_merchants_reform
 		dutch_republic
 		pirate_republic_reform
+		admiralty_reform
+		prussian_republic_reform
+		military_dictatorship_reform
+	}
+	exclusive_reforms = {
+		free_city
+		administrative_divisions_reform
+	}
+	exclusive_reforms = {
+		free_city
+		presidential_reform
+	}
+	exclusive_reforms = {
+		feuillant_reform
+		military_electorate_reform
 	}
 }
 
@@ -322,6 +414,8 @@ tribal = {
 		}
 		tribal_reformation = {
 			reforms = {
+				horde_barbaric_despoilers_reform
+				horde_tribal_unity_reform
 				tribe_becomes_monarchy_reform
 				tribe_becomes_republic_reform
 				tribe_becomes_theocracy_reform
@@ -351,6 +445,7 @@ theocracy = {
 		monastic_order_government
 		crusader_order_government
 		sufi_reform_legacy
+		holy_state_legacy
 	}
 	reform_levels = {
 		theocratic_leadership = {
@@ -360,12 +455,16 @@ theocracy = {
 				crusader_order_reform
 				papacy_reform
 				sufi_reform
+				holy_state_reform
+				united_cantons_reform
 			}
 		}
 		internal_vs_external_mission = {
 			reforms = {
 				internal_mission_reform
 				external_mission_reform
+				mission_to_civilize_reform
+				mission_to_kill_pirates_reform
 			}
 		}
 		divine_cause = {
@@ -376,6 +475,7 @@ theocracy = {
 				ora_et_labora_reform
 				monastic_conservatism_reform
 				acquisition_of_granges_reform
+				kingdom_of_god_reform
 			}
 		}
 		clergy_in_administration = {
@@ -384,15 +484,52 @@ theocracy = {
 				religious_administrators_reform
 				permanent_marathas_council_reform
 				governmental_purbias_register_reform
+				loyal_nobility_reform
+				pious_merchants_reform
+				monastic_breweries_reform
 			}
 		}
 		secularization = {
 			reforms = {
+				partial_secularisation_reform
 				maintain_religious_head_reform
 				hereditary_religious_leadership_reform
 				crown_leader_reform
 				proclaim_republic_reform
 				battle_pope_reform
+				conciliarism_reform
+			}
+		}
+		separation_of_power_theocracy = {
+			reforms = {
+				clerical_commission_reform
+				divine_guidance_reform
+				theocratic_democracy_reform
+				regionally_elected_commanders
+				monastic_elections_reform
+				strenghten_abbatial_hierarchy_reform
+				noble_chanceries_reform
+				episcopal_competences_reform
+				commander_king_reform
+				admiral_king_reform
+			}
+		}
+		nature_of_faith = {
+			reforms = {
+				church_and_state_reform
+				religious_harmony_reform
+				god_and_man_reform
+				organising_our_religion_reform
+			}
+		}
+		faith_and_the_world = {
+			reforms = {
+				religion_in_one_country_reform
+				religious_permanent_revolution_reform
+				many_fingers_of_god_reform
+				priestly_autonomy_reform
+				proclaim_religious_head_reform
+				all_under_tengri_reform
 			}
 		}
 	}

@@ -10,7 +10,6 @@ hre = no
 owner = TET
 controller = TET
 add_core = TET
-estate = estate_nobles
 
 1084.1.1 = {
 	owner = MOR

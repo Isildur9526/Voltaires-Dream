@@ -512,5 +512,4 @@ fixed_capital = 1951
 1806.7.12 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = constitutional_monarchy
 }

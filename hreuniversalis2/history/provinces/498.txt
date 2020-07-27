@@ -10,7 +10,6 @@ base_manpower = 2
 capital = "Canterbury"
 is_city = yes	
 add_core = ASE
-estate = estate_church
 
 1066.10.14 = {
 	owner = ENG

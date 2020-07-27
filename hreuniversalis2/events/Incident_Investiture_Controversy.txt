@@ -1,0 +1,532 @@
+namespace = incident_investiture_controversy
+# event for owner of milan to start the incident
+country_event = {
+	id = incident_investiture_controversy.1
+	title = incident_investiture_controversy.1.t
+	desc = incident_investiture_controversy.1.d
+	picture = BAD_POPE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		normal_or_historical_nations = yes
+		NOT = { started_in = 1070.1.1 }
+		current_age = age_of_empire
+		NOT = { active_imperial_incident = any }
+		NOT = { has_reform = papacy_reform }
+		owns = 1818
+		religion = catholic
+		papacy_active = yes
+		is_part_of_hre = yes
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = incident_investiture_controversy.1.a
+		add_stability = -1
+		if = {
+			limit = { government = theocracy }
+			tooltip = { kill_ruler = yes }
+			define_ruler = {
+				adm = -1
+				dip = -1
+				mil = -1
+			}
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_influence_modifier = {
+				estate = estate_church
+				desc = EST_VAL_PATARIA_COUP
+				influence = 15
+				duration = 5475
+			}
+		}
+		else = {
+			1818 = {
+				catholic_rebels = 2
+			}
+		}
+		set_imperial_incident = incident_investiture_controversy
+	}
+}
+
+# let emperor decide to fight the pope
+country_event = {
+	id = incident_investiture_controversy.2
+	title = "incident_investiture_controversy.2.t"
+	desc = "incident_investiture_controversy.2.d"
+	picture = BAD_POPE_eventPicture
+
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "incident_investiture_controversy.2.a"
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 1000
+				is_rival = PAP
+			}
+			modifier = {
+				factor = 100
+				is_elector = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { num_of_cities = 5 }
+			}
+		}
+		add_papal_influence = -50
+		custom_tooltip = incident_investiture_controversy.2.tt
+		reverse_add_opinion = {
+			who = PAP
+			modifier = opinion_investiture_controversy
+		}
+		set_global_flag = investiture_controversy_active
+		hidden_effect = {
+			PAP = {
+				country_event = {
+					id = incident_investiture_controversy.3
+				}
+			}
+		}
+	}
+	option = {
+		name = "incident_investiture_controversy.2.b"
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 1000
+				alliance_with = PAP
+			}
+		}
+		add_prestige = -10
+		add_legitimacy = -10
+		set_global_flag = papal_supremacy_accepted
+		custom_tooltip = incident_investiture_controversy.2.tt2
+		hidden_effect = {
+			PAP = {
+				country_event = {
+					id = incident_investiture_controversy.3
+				}
+			}
+		}
+	}
+	option = {
+		name = "incident_investiture_controversy.2.c"
+		ai_chance = {
+			factor = 15
+		}
+		set_global_flag = papal_imperial_compromise
+		custom_tooltip = incident_investiture_controversy.2.tt3
+		reverse_add_opinion = {
+			who = PAP
+			modifier = opinion_imperial_papal_ties
+		}
+		every_elector = {
+			limit = { NOT = { government = theocracy } }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_made_pope_to_elector
+			}
+		}
+		hidden_effect = {
+			PAP = {
+				country_event = {
+					id = incident_investiture_controversy.3
+				}
+			}
+		}
+	}
+}
+
+# response for pope
+country_event = {
+	id = incident_investiture_controversy.3
+	title = "incident_investiture_controversy.3.t"
+	desc = {
+		trigger = {
+			has_global_flag = investiture_controversy_active
+		}
+		desc = "incident_investiture_controversy.3.d"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = papal_supremacy_accepted
+		}
+		desc = "incident_investiture_controversy.3.d2"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = papal_imperial_compromise
+		}
+		desc = "incident_investiture_controversy.3.d3"
+	}
+	picture = COUNCIL_TRENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_investiture_controversy.3.a
+		trigger = {
+			has_global_flag = investiture_controversy_active
+		}
+		custom_tooltip = incident_investiture_controversy.2.tt
+		reverse_add_opinion = {
+			who = FROM
+			modifier = opinion_investiture_controversy
+		}
+	}
+	option = {
+		name = incident_investiture_controversy.3.b
+		trigger = {
+			has_global_flag = papal_supremacy_accepted
+		}
+		add_prestige = 25
+		hidden_effect = {
+			every_province = {
+				limit = {
+					OR = {
+						owned_by = ROOT
+						region = umbria_region
+						region = campania_region
+						region = apulia_region
+						region = sicilia_region
+						area = urbino_area
+						area = cesena_area
+					}
+				}
+				set_in_empire = no
+				add_claim = PAP
+			}
+		}
+		clr_global_flag = papal_supremacy_accepted
+	}
+	option = {
+		name = incident_investiture_controversy.3.c
+		trigger = {
+			has_global_flag = papal_imperial_compromise
+		}
+		add_prestige = 10
+		elector = yes
+		reverse_add_opinion = {
+			who = FROM
+			modifier = opinion_imperial_papal_ties
+		}
+		clr_global_flag = papal_imperial_compromise
+	}
+}
+
+# ends Investiture Controversy by time
+country_event = {
+    id = incident_investiture_controversy.4
+    title = "incident_investiture_controversy.4.t"
+    desc = "incident_investiture_controversy.4.d"
+    picture = BAD_POPE_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+    trigger = {
+		has_global_flag = investiture_controversy_active
+		NOT = { current_age = age_of_empire }
+		is_emperor = yes
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_imperial_supremacy
+			}
+		}
+		PAP = { has_institution = investiture }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = investiture_controversy_active
+		}
+	}
+
+    option = {
+        name = "incident_investiture_controversy.4.a"
+		add_imperial_influence = -20
+		add_prestige = -20
+		add_legitimacy = -20
+    }
+}
+
+# controversy is won by war
+country_event = {
+    id = incident_investiture_controversy.5
+    title = "incident_investiture_controversy.5.t"
+    desc = "incident_investiture_controversy.5.d"
+    picture = HRE_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+    trigger = {
+		has_global_flag = investiture_controversy_active
+		is_emperor = yes
+		religion = catholic
+		OR = {
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = PAP
+				war_score = 75
+				casus_belli = cb_imperial_supremacy
+			}
+			papacy_active = no
+			NOT = { exists = PAP }
+			PAP = { is_subject = yes }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = investiture_controversy_active
+		}
+	}
+
+    option = {
+        name = "incident_investiture_controversy.5.a"
+		add_imperial_influence = 20
+		add_prestige = 20
+		add_legitimacy = 20
+    }
+}
+
+# minor events
+# emperor gets excommunicated - walk to canossa
+country_event = {
+	id = incident_investiture_controversy.6
+	title = "incident_investiture_controversy.6.t"
+	desc = "incident_investiture_controversy.6.d"
+	picture = BAD_POPE_eventPicture
+
+	trigger = {
+		normal_or_historical_nations = yes
+		current_age = age_of_empire
+		had_global_flag = {
+			flag = investiture_controversy_active
+			days = 3650
+		}
+		is_emperor = yes
+		religion = catholic
+		papacy_active = yes
+		NOT = { war_with = PAP }
+		NOT = { has_truce = PAP }
+		PAP = { is_subject = no }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = "incident_investiture_controversy.6.a"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				reverse_has_opinion = {
+					who = PAP
+					value = 100
+				}
+			}
+		}
+		custom_tooltip = incident_investiture_controversy.6.tt
+		add_years_of_income = -0.5
+		set_ruler_flag = excommunicated_emperor
+		add_ruler_modifier = {
+			name = investiture_excommunication_m
+			duration = -1
+		}
+	}
+	option = {
+		name = "incident_investiture_controversy.6.b"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				OR = {
+					has_any_disaster = yes
+					NOT = { manpower_percentage = 0.5 }
+				}
+			}
+			modifier = {
+				factor = 2
+				army_size = PAP
+			}
+		}
+		add_prestige = 20
+		declare_war_with_cb = {
+			casus_belli = cb_imperial_supremacy
+			who = PAP
+		}
+		add_ruler_modifier = {
+			name = investiture_excommunication_m
+			duration = -1
+		}
+	}
+	option = {
+		name = "incident_investiture_controversy.6.c"
+		ai_chance = {
+			factor = 20
+		}
+		add_legitimacy = -10
+		add_ruler_modifier = {
+			name = investiture_excommunication_m
+			duration = -1
+		}
+	}
+}
+
+# let pope lift the excommunication
+country_event = {
+	id = incident_investiture_controversy.7
+	title = "incident_investiture_controversy.7.t"
+	desc = "incident_investiture_controversy.7.d"
+	picture = FORT_eventPicture
+
+	trigger = {
+		tag = PAP
+		emperor = {
+			has_ruler_flag = excommunicated_emperor
+			has_ruler_modifier = investiture_excommunication_m
+			religion = catholic
+		}
+	}
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "incident_investiture_controversy.7.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = emperor
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = emperor
+					value = 150
+				}
+			}
+		}
+		emperor = {
+			set_country_flag = excommunication_is_lifted
+			tooltip = {
+				remove_country_modifier = investiture_excommunication_m
+			}
+			hidden_effect = {
+				country_event = {
+					id = incident_investiture_controversy.8
+				}
+			}
+		}
+	}
+	option = {
+		name = "incident_investiture_controversy.7.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = {
+					has_opinion = {
+						who = emperor
+						value = 0
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					has_opinion = {
+						who = emperor
+						value = -100
+					}
+				}
+			}
+		}
+		emperor = {
+			set_country_flag = excommunication_is_not_lifted
+			tooltip = {
+				add_prestige = -10
+				add_legitimacy = -10
+			}			
+			hidden_effect = {
+				country_event = {
+					id = incident_investiture_controversy.8
+				}
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+#response for emperor
+country_event = {
+	id = incident_investiture_controversy.8
+	title = "incident_investiture_controversy.8.t"
+	desc = {
+		trigger = {
+			has_country_flag = excommunication_is_lifted
+		}
+		desc = incident_investiture_controversy.8.d
+	}
+	desc = {
+		trigger = {
+			has_country_flag = excommunication_is_not_lifted
+		}
+		desc = incident_investiture_controversy.8.d2
+	}
+	picture = {
+		trigger = {
+			has_country_flag = excommunication_is_lifted
+		}
+		picture = HRE_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_country_flag = excommunication_is_not_lifted
+		}
+		picture = BAD_POPE_eventPicture
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "incident_investiture_controversy.8.a"
+		trigger = { has_country_flag = excommunication_is_lifted }
+		clr_country_flag = excommunication_is_lifted
+		remove_country_modifier = investiture_excommunication_m
+	}
+	option = {
+		name = "incident_investiture_controversy.8.b"
+		trigger = { has_country_flag = excommunication_is_not_lifted }
+		clr_country_flag = excommunication_is_not_lifted
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}

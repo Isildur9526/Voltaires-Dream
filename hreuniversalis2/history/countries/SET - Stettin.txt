@@ -7,6 +7,7 @@ capital = 889
 
 1000.1.1 = { set_country_flag = natives_flag }
 1054.1.1 = {
+	override_country_name = PRISSANI
 	monarch = {
 		name = "Prissani"
 		regent = yes
@@ -81,7 +82,10 @@ capital = 889
 	clear_scripted_personalities = yes
 	add_ruler_personality = architectural_visionary_personality
 }
-1240.1.1 = { primary_culture = pommeranian }
+1240.1.1 = {
+	restore_country_name = yes
+	primary_culture = pommeranian
+}
 1248.1.1 = {
 	heir = {
 		name = "Boguslaw"
@@ -195,7 +199,7 @@ capital = 889
 		death_date = 1451.9.30
 		claim = 95
 		adm = 2
-		dip = 5
+		dip = 3
 		mil = 2
 	}
 }
@@ -205,8 +209,21 @@ capital = 889
 		dynasty = "Gryf"
 		birth_date = 1424.1.1
 		adm = 2
-		dip = 5
+		dip = 3
 		mil = 2
+	}
+}
+1443.1.1 = {
+	queen = {
+		country_of_origin = BRA
+		name = "Elisabeth"
+		dynasty = "von Hohenzollern"
+		birth_date = 1425.1.1
+		death_date = 1465.1.13
+		female = yes
+		adm = 4
+		dip = 4
+		mil = 4
 	}
 }
 1444.5.29 = {

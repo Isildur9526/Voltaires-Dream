@@ -1,33 +1,59 @@
 peasant_war = {
 	potential = {
 		OR = {
+			current_age = age_of_crisis	
+			current_age = age_of_dynasticism
+			current_age = age_of_reformation
+			current_age = age_of_discovery
+		}
+		OR = {
 			government = monarchy
 			government = theocracy
 		}
 		is_emperor_of_china = no
-		NOT = { has_reform = steppe_horde }	
-		num_of_cities = 10
+		NOT = { has_reform = steppe_horde }		
+		uses_doom = no
 		is_free_or_tributary_trigger = yes
-		NOT = { has_country_flag = had_peasant_war }
-		NOT = { is_year = 1600 }
+		num_of_cities = 10
 		OR = {
-			current_age = age_of_discovery
-			current_age = age_of_crisis
-			current_age = age_of_dynasticism
+			NOT = { has_country_flag = had_peasant_war }
+			AND = {
+				has_global_flag = great_peasants_war_flag
+				is_part_of_hre = yes
+			}
 		}
 	}
 	
 	
 	can_start = {
 		OR = {
-			current_age = age_of_discovery
-			current_age = age_of_crisis
+			current_age = age_of_crisis	
 			current_age = age_of_dynasticism
+			current_age = age_of_reformation
+			current_age = age_of_discovery
 		}
 		is_at_war = no
 		has_any_disaster = no
-		NOT = { manpower_percentage = 0.25 }
-		NOT = { stability = 0 }
+		if = {
+			limit = {
+				has_global_flag = great_peasants_war_flag
+				is_part_of_hre = yes
+			}
+			NOT = { manpower_percentage = 0.33 }
+		}
+		else = {
+			NOT = { manpower_percentage = 0.25 }
+		}
+		if = {
+			limit = {
+				has_global_flag = great_peasants_war_flag
+				is_part_of_hre = yes
+			}
+			NOT = { stability = 1 }
+		}
+		else = {
+			NOT = { stability = 0 }
+		}
 	}
 	
 	can_stop = {
@@ -38,6 +64,11 @@ peasant_war = {
 	}
 	
 	progress = {
+		modifier = {
+			factor = 5
+			has_global_flag = great_peasants_war_flag
+			is_part_of_hre = yes
+		}
 		modifier = {
 			factor = 1
 			war_exhaustion = 10
@@ -75,7 +106,6 @@ peasant_war = {
 	can_end = {
 		NOT = { num_of_rebel_controlled_provinces = 1 }
 		stability = 1
-		#TODO, trigger on support for antitax rebels
 	}
 	
 

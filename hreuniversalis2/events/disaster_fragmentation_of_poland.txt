@@ -887,7 +887,6 @@ country_event = {
 				has_estate = no 
 				is_capital = no
 			}
-			set_estate = estate_nobles
 			add_province_modifier = {
 				name = "acts_of_cienia_province"
 				duration = 9125
@@ -898,7 +897,6 @@ country_event = {
 				has_estate = no 
 				is_capital = no
 			}
-			set_estate = estate_church
 			add_province_modifier = {
 				name = "acts_of_cienia_province"
 				duration = 9125

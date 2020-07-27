@@ -1390,8 +1390,8 @@ vn_bgh_missions_slot_3 = {
 				}
 			}
 			else = { 
-				every_rival_country = { 
-					NOT = { 
+                NOT = {
+					any_rival_country = { 
 						army_strength = {
 							who = ROOT
 							value = 1

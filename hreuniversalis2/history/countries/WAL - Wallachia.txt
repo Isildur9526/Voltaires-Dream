@@ -662,7 +662,6 @@ capital = 5685 # Tîrgoviste
 	}
 }
 1848.6.23 = {
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "Guvernul Vremelnicesc"
 		regent = yes

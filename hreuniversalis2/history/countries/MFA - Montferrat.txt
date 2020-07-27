@@ -398,4 +398,3 @@ add_army_professionalism = 0.05
 		mil = 1
 	}
 }
-1627.12.26 = { set_legacy_government = administrative_monarchy }

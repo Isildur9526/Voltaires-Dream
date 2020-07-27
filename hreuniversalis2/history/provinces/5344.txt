@@ -33,7 +33,6 @@ discovered_by = north_american
 	owner = ACH
 	controller = ACH
 	remove_core = MOE
-	estate = estate_nobles
 }
 1302.1.1 = {
 	owner = BYZ

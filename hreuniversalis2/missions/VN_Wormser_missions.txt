@@ -254,7 +254,10 @@ vn_die_missions_slot_2 = {
 		required_missions = { vn_die_saxon_rebellion }
 		trigger = {
             is_emperor = yes
-            hre_reform_level = 4
+            OR = {
+                hre_reform_passed = emperor_licetiuris
+                hre_reform_passed = licetiuris
+            }
             grown_by_development = 200
             num_of_electors = 7
             custom_trigger_tooltip = {

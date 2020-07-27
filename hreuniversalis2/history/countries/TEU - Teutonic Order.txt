@@ -7,6 +7,18 @@ technology_group = western
 historical_friend = LIV
 capital = 508
 add_army_professionalism = 0.1
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 25
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = -10
+}
 
 1209.1.1 = {
 	monarch = {

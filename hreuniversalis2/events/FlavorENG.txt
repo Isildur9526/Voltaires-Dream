@@ -10,7 +10,18 @@ country_event = {
 	id = flavor_eng.9100
 	title = "flavor_eng.EVTNAME9100"
 	desc = "flavor_eng.EVTDESC9100"
-	picture = RELIGION_eventPicture
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = ADULT_BAPTISME_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = RELIGION_eventPicture
+	}
 
 	fire_only_once = yes
 	major = yes
@@ -184,6 +195,8 @@ country_event = {
 	desc = "flavor_eng.EVTDESC9104"
 	picture = DIPLOMACY_eventPicture
 	
+	fire_only_once = yes
+
 	trigger = {
 		NOT = { is_year = 1500 }
 		NOT = { has_global_flag = eng_had_end_of_hundred_years_war }
@@ -659,7 +672,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 2
-				leader = "Jane Grey"
+				leader = "Jane"
+				leader_dynasty = "Grey"
 				female = yes
 			}
 		}
@@ -1150,7 +1164,8 @@ country_event = {
 			spawn_rebels = {
 				type = noble_rebels
 				size = 2
-				leader = "Hugh O'Neill"
+				leader = "Hugh"
+				leader_dynasty = "O'Neill"
 			}
 		}
 	}
@@ -1541,7 +1556,8 @@ country_event = {
 					culture = scottish
 					type = pretender_rebels
 					size = 2
-					leader = "James Stuart"
+					leader = "James"
+					leader_dynasty = "Stuart"
 				}
 			}
 		}
@@ -1558,7 +1574,8 @@ country_event = {
 					culture = scottish
 					type = pretender_rebels
 					size = 2
-					leader = "James Stuart"
+					leader = "James"
+					leader_dynasty = "Stuart"
 				}
 			}
 		}
@@ -1722,7 +1739,8 @@ country_event = {
 					culture = scottish
 					type = pretender_rebels
 					size = 2
-					leader = "James Stuart"
+					leader = "James"
+					leader_dynasty = "Stuart"
 				}
 			}
 		}
@@ -1739,7 +1757,8 @@ country_event = {
 					culture = scottish
 					type = pretender_rebels
 					size = 2
-					leader = "James Stuart"
+					leader = "James"
+					leader_dynasty = "Stuart"
 				}
 			}
 		}
@@ -2431,6 +2450,47 @@ country_event = {
 			dip = 4
 			mil = 2
 			age = 24
+		}
+	}
+}
+
+# Emperor - Votes for Women (by James Beaumont)
+country_event = {
+	id = flavor_eng.99
+	title = flavor_eng.99.t
+	desc = flavor_eng.99.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		capital_scope = {
+			superregion = british_isles_superregion
+		}
+		OR = {
+			culture_group = british
+			culture_group = celtic
+			primary_culture = anglosaxon
+		}
+		has_reform = revolutionary_republic_reform
+	}
+	mean_time_to_happen = {
+		years = 2
+	}
+	
+	option = {
+		name = flavor_eng.99.a
+		add_country_modifier = {
+			name = sister_suffragettes
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = flavor_eng.99.b
+		add_country_modifier = {
+			name = sexist_revolution
+			duration = 3650
 		}
 	}
 }

@@ -29,6 +29,9 @@ granada_succession_war = {
 		NOT = {
 			is_year = 1455
 		}
+		NOT = { heir_adm = 5 }
+		NOT = { heir_dip = 5 }
+		NOT = { heir_mil = 5 }
 	}
 	
 	

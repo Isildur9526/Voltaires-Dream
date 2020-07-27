@@ -165,7 +165,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 25
+		months = 50
 	}
 	
 	option = {
@@ -567,43 +567,6 @@ country_event = {
 	option = {
 		name = "EVTOPTB9460"
 		add_heir_claim = -10
-	}
-}
-
-# Scheming Bureaucracy
-country_event = {
-	id = 9462
-	title = "EVTNAME9462"
-	desc = "EVTDESC9462"
-	picture = DEBATE_REPUBLICAN_eventPicture
-	
-	trigger = {
-		government = monarchy
-		NOT = { has_dlc = "Dharma" }
-		is_free_or_tributary_trigger = yes
-		NOT = { has_reform = ottoman_government }
-		is_emperor_of_china = no
-		adm_tech = 20
-		adm_power = 200
-		has_factions = no
-	}
-	
-	mean_time_to_happen = {
-		months = 5000
-	}
-	
-	option = {
-		name = "EVTOPTA9462"
-		ai_chance = { factor = 100 }
-		add_adm_power = -100
-		add_stability = -1
-	}
-	option = {
-		name = "EVTOPTB9462"
-		ai_chance = { factor = 0 }
-		set_legacy_government = bureaucratic_despotism
-		kill_ruler = yes
-		add_stability = -6
 	}
 }
 
@@ -1015,6 +978,7 @@ country_event = {
 		is_lesser_in_union = no
 		num_of_royal_marriages = 4
 		has_government_attribute = heir
+		has_states_general_mechanic = no
 		any_country = {
 			religion_group = christian
 			government = monarchy
@@ -1023,6 +987,8 @@ country_event = {
 			marriage_with = ROOT
 			NOT = { dynasty = ROOT }
 			has_heir = no
+			has_government_attribute = heir
+			has_states_general_mechanic = no
 			is_lesser_in_union = no
 		}
 	}
@@ -1036,6 +1002,8 @@ country_event = {
 					NOT = { dynasty = ROOT }
 					has_heir = no
 					is_lesser_in_union = no
+					has_government_attribute = heir
+					has_states_general_mechanic = no
 				}
 				save_event_target_as = marriage_policy_paid_off_here
 			}
@@ -1174,6 +1142,10 @@ province_event = {
 	
 	mean_time_to_happen = {
 		months = 4000
+		modifier = {
+			factor = 0.75
+			owner = { ruler_has_personality = malevolent_personality }
+		}
 	}
 	
 	option = {
@@ -1318,6 +1290,7 @@ country_event = {
 			is_lesser_in_union = no
 			alliance_with = ROOT
 			ai = yes
+			NOT = { marriage_with = root }
 		}
 	}
 	
@@ -1334,6 +1307,7 @@ country_event = {
 				is_lesser_in_union = no
 				alliance_with = ROOT
 				ai = yes
+				NOT = { marriage_with = root }
 			}
 			create_marriage = ROOT
 		}
@@ -1544,6 +1518,12 @@ country_event = {
 		has_regency = no
 		num_of_royal_marriages = 1
 		has_government_attribute = heir
+		if = {
+			limit = {
+				has_dlc = "Rights of Man"
+			}
+			has_consort = yes
+		}
 		NOT = {
 			has_country_modifier = a_woman_scorned
 		}
@@ -2218,6 +2198,11 @@ country_event = {
 	picture = COURT_eventPicture
 	
 	is_triggered_only = yes
+
+	trigger = {
+		has_states_general_mechanic = no
+		has_government_attribute = heir
+	}
 	
 	option = {
 		name = dynastic_events.8.a

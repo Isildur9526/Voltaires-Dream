@@ -423,6 +423,7 @@ country_event = {
 					type = pretender_rebels
 					size = 4
 					leader = "Dimitri"
+					leader_dynasty = "Rurikovich"
 					friend = FROM
 				}
 			}
@@ -441,6 +442,7 @@ country_event = {
 					type = pretender_rebels
 					size = 2
 					leader = "Dimitri"
+					leader_dynasty = "Rurikovich"
 					friend = FROM
 				}
 			}
@@ -459,6 +461,7 @@ country_event = {
 					type = pretender_rebels
 					size = 1
 					leader = "Dimitri"
+					leader_dynasty = "Rurikovich"
 					friend = FROM
 				}
 			}
@@ -586,6 +589,8 @@ country_event = {
 			adm = 4
 			dip = 2
 			mil = 3
+			max_random_dip = 4
+			max_random_mil = 5
 		}
 	}
 }

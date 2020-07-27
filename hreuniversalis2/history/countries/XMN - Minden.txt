@@ -372,6 +372,5 @@ fixed_capital = 155
 1599.1.21 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = administrative_monarchy
 }
 #TOTALLY DONE 1648

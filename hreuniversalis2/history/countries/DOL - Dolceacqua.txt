@@ -150,7 +150,6 @@ capital = 1812
 }
 1651.1.1 = {
 	government_rank = 2
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Francesco I"
 		dynasty = "Doria"

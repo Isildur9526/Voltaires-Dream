@@ -562,7 +562,6 @@ historical_friend = BAR
 		mil = 1
 	}
 }
-1624.9.1 = { set_legacy_government = administrative_monarchy }
 1634.1.1 = { join_league = catholic }
 1634.1.20 = {
 	monarch = {

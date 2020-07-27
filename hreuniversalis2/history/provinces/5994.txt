@@ -48,7 +48,7 @@ add_core = SIR
 	owner = POL
 	controller = POL
 	add_core = POL
-	remove_core = KRA
+	remove_core = SDZ
 }
 1569.7.1 = {
 	owner = PLC

@@ -10,7 +10,6 @@ base_manpower = 2
 capital = "Palencia"
 is_city = yes
 add_core = LON
-estate = estate_church
 
 1301.1.1 = {
 	owner = CAS

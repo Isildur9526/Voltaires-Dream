@@ -9,6 +9,10 @@ technology_group = eastern
 historical_neutral = POL
 historical_neutral = KRA
 capital = 2370
+change_estate_land_share = {
+	estate = estate_church
+	share = -5
+}
 
 1046.9.1 = {
 	monarch = {
@@ -782,7 +786,6 @@ capital = 2370
 		mil = 3
 	}
 }
-1540.8.30 = { set_legacy_government = administrative_monarchy }
 1541.1.1 = { capital = 442 }
 1596.1.1 = { leader = {	name = "Istvan Bocskai"        	type = general	fire = 3	shock = 2	manuever = 3	siege = 0	death_date = 1606.1.1 } }
 1649.1.1 = { leader = {	name = "Miklos Zrinyi II"      	type = general	fire = 3	shock = 3	manuever = 4	siege = 0	death_date = 1664.1.1 } }
@@ -794,7 +797,6 @@ capital = 2370
 	capital = 1185
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "Lajos Batthyány"
 		birth_date = 1807.2.10
@@ -810,5 +812,4 @@ capital = 2370
 	capital = 5475
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = administrative_monarchy
 }

@@ -253,7 +253,6 @@ capital = 2384
 		mil = 2
 	}
 }
-1660.1.1 = { set_legacy_government = administrative_monarchy }
 1668.11.18 = {
 	heir = {
 		name = "Frederik Vilhelm"

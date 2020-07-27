@@ -10,7 +10,6 @@ hre = yes
 owner = BMM
 controller = BMM	
 add_core = BMM
-estate = estate_church
 
 1552.1.15 = {
 	owner = FRA

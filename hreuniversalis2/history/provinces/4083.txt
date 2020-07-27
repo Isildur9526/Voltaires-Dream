@@ -10,7 +10,6 @@ hre = no
 owner = XSP
 controller = XSP
 add_core = XSP
-estate = estate_nobles
 
 1125.1.1 = {
 	owner = FLA

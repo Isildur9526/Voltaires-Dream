@@ -11,7 +11,6 @@ owner = POL
 controller = POL	
 add_core = POL
 add_core = WKP
-estate = etstate_church
 
 1138.10.28 = {
 	owner = WKP

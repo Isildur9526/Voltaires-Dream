@@ -541,7 +541,10 @@ vn_ire_missions_slot_4_a = {
             NOT = { 2268 = { is_capital_of = ROOT } }
         }
         effect = {
-            #add - 1.30 power projection effect
+            add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 20
+			}
             country_event = {
                 id = vn_missions.83
             }

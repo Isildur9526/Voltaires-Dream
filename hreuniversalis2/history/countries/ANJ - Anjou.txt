@@ -241,4 +241,3 @@ fixed_capital = 1289
 	}
 }
 #1389 various PUs
-1589.8.3 = { set_legacy_government = administrative_monarchy }

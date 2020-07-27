@@ -488,6 +488,7 @@ country_event = {
 			duration = -1
 		}
 		add_innovativeness_small_effect = yes
+		custom_tooltip = generic_more_mercs_available_indefinite_tt
 	}
 	option = {		# Naval Expansion
 		name = "flavor_swe.EVTOPTC3228"
@@ -1943,7 +1944,6 @@ country_event = {
 		name = "flavor_swe.EVTOPTA3262"
 		remove_country_modifier = age_of_fredom
 		add_government_reform = political_absolutism_reform
-		set_legacy_government = enlightened_despotism
 	}
 	option = {		# No more tyrants!
 		name = "flavor_swe.EVTOPTB3262"

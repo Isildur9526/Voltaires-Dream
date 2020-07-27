@@ -298,18 +298,18 @@ fixed_capital = 198
 		name = "Leonhard"
 		dynasty = "von Laiming"
 		birth_date = 1381.1.1
-		dip = 2
-		adm = 2
-		mil = 2
+		dip = 4
+		adm = 3
+		mil = 0
 	}
 }
 1451.6.24 = {
 	monarch = {
 		name = "Ulrich III"
-		dynasty = "von Nussdorf"
-		adm = 4
+		dynasty = "von Nußdorf"
+		adm = 3
 		dip = 2
-		mil = 2
+		mil = 1
 	}
 }
 1479.9.2 = {
@@ -317,28 +317,28 @@ fixed_capital = 198
 		name = "Georg II"
 		dynasty = "von Hessler"
 		birth_date = 1427.1.1
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 0
+		dip = 1
+		mil = 0
 	}
 }
 1481.9.21 = {
 	monarch = {
 		name = "Friedrich I"
 		dynasty = "Mauerkircher"
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }
 1485.11.22 = {
 	monarch = {
 		name = "Friedrich II"
-		dynasty = "von Oettingen"
+		dynasty = "von Öttingen"
 		birth_date = 1459.1.1
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 1
+		dip = 0
+		mil = 0
 	}
 }
 1490.3.3 = {
@@ -346,9 +346,9 @@ fixed_capital = 198
 		name = "Christoph"
 		dynasty = "von Schachner"
 		birth_date = 1447.1.1
-		adm = 2
+		adm = 3
 		dip = 2
-		mil = 2
+		mil = 0
 	}
 }
 1500.1.3 = {
@@ -356,9 +356,9 @@ fixed_capital = 198
 		name = "Wiguleus"
 		dynasty = "Fröschl"
 		birth_date = 1445.4.4
-		adm = 4
-		dip = 3
-		mil = 2
+		adm = 2
+		dip = 2
+		mil = 1
 	}
 }
 1517.11.6 = {
@@ -376,8 +376,8 @@ fixed_capital = 198
 		name = "Wolfgang I"
 		dynasty = "von Salm"
 		birth_date = 1514.1.1
-		adm = 2
-		dip = 3
+		adm = 3
+		dip = 4
 		mil = 2
 	}
 }
@@ -386,9 +386,9 @@ fixed_capital = 198
 		name = "Wolfgang II"
 		dynasty = "von Closen"
 		birth_date = 1503.1.1
-		adm = 3
-		dip = 2
-		mil = 2
+		adm = 0
+		dip = 0
+		mil = 1
 	}
 }
 1561.8.7 = {
@@ -396,8 +396,8 @@ fixed_capital = 198
 		name = "Urban"
 		dynasty = "von Trennbach"
 		birth_date = 1525.5.10
-		adm = 2
-		dip = 2
+		adm = 5
+		dip = 5
 		mil = 2
 	}
 }
@@ -406,9 +406,9 @@ fixed_capital = 198
 		name = "Leopold V"
 		dynasty = "von Habsburg"
 		birth_date = 1586.10.9
-		adm = 1
-		dip = 3
-		mil = 1
+		adm = 2
+		dip = 2
+		mil = 3
 	} 
 }
 1618.11.2 = {
@@ -417,8 +417,8 @@ fixed_capital = 198
 		dynasty = "von Habsburg"
 		birth_date = 1614.1.5
 		adm = 2
-		dip = 1
-		mil = 2
+		dip = 2
+		mil = 4
 	}
 }
 1662.11.2 = {
@@ -426,9 +426,9 @@ fixed_capital = 198
 		name = "Karl Joseph"
 		dynasty = "von Habsburg"
 		birth_date = 1649.8.7
-		adm = 1
+		adm = 0
 		dip = 1
-		mil = 1
+		mil = 0
 	}
 }
 1664.1.27 = {
@@ -436,9 +436,9 @@ fixed_capital = 198
 		name = "Wenzeslaus"
 		dynasty = "von Thun"
 		birth_date = 1629.8.13
-		adm = 2
+		adm = 5
 		dip = 2
-		mil = 2
+		mil = 1
 	}
 }
 1673.1.8 = {
@@ -447,8 +447,8 @@ fixed_capital = 198
 		dynasty = "von Pötting"
 		birth_date = 1628.1.1
 		adm = 2
-		dip = 2
-		mil = 2
+		dip = 3
+		mil = 0
 	}
 }
 1689.3.16 = {
@@ -457,8 +457,8 @@ fixed_capital = 198
 		dynasty = "von Lamberg"
 		birth_date = 1652.5.25
 		adm = 3
-		dip = 3
-		mil = 2
+		dip = 4
+		mil = 0
 	}
 }
 1712.10.30 = {
@@ -467,8 +467,8 @@ fixed_capital = 198
 		dynasty = "von Rabatta"
 		birth_date = 1669.2.4
 		adm = 2
-		dip = 2
-		mil = 2
+		dip = 1
+		mil = 0
 	}
 }
 1722.10.25 = {
@@ -476,9 +476,9 @@ fixed_capital = 198
 		name = "Joseph Dominikus"
 		dynasty = "von Lamberg"
 		birth_date = 1680.7.8
-		adm = 2
+		adm = 5
 		dip = 2
-		mil = 2
+		mil = 0
 	}
 }
 1761.8.31 = {
@@ -486,9 +486,9 @@ fixed_capital = 198
 		name = "Joseph Maria"
 		dynasty = "von Thun"
 		birth_date = 1713.5.24
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }
 1763.6.16 = {
@@ -497,8 +497,8 @@ fixed_capital = 198
 		dynasty = "von Firmian"
 		birth_date = 1708.9.22
 		adm = 4
-		dip = 3
-		mil = 2
+		dip = 2
+		mil = 1
 	}
 }
 1783.3.13 = {
@@ -506,9 +506,9 @@ fixed_capital = 198
 		name = "Josepf Franz"
 		dynasty = "von Auersperg"
 		birth_date = 1734.1.31
-		adm = 3
-		dip = 2
-		mil = 2
+		adm = 1
+		dip = 1
+		mil = 0
 	}
 }
 1795.8.21 = {
@@ -516,9 +516,9 @@ fixed_capital = 198
 		name = "Thomas Johann"
 		dynasty = "von Thun"
 		birth_date = 1737.5.16
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }
 1796.10.7 = {
@@ -526,8 +526,8 @@ fixed_capital = 198
 		name = "Leopold Leonhard"
 		dynasty = "von Thun"
 		birth_date = 1748.4.17
-		adm = 2
-		dip = 2
-		mil = 1
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }

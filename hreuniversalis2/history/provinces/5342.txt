@@ -22,7 +22,6 @@ discovered_by = north_american
 	controller = ACH
 	add_core = ACH
 	remove_core = BYZ
-	estate = estate_nobles
 }
 1428.1.1 = {
 	owner = MOE

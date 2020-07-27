@@ -544,24 +544,22 @@ vn_swe_missions_slot_2_b = {
         required_missions = { vn_swe_abolish_serfdom }
         trigger = {
             if = {
-				limit = {
-					has_estate = estate_nobles
-				}
+				limit = { has_estate = estate_nobles }
 				NOT = {
 					estate_territory = {
 						estate = estate_nobles
-						territory = 20
+						territory = 10
 					}
 				}
 				NOT = {
 					estate_influence = {
 						estate = estate_nobles
-						influence = 50
+						influence = 25
 					}
 				}
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 40
+					loyalty = 50
 				}
 			}
         }
@@ -2008,9 +2006,11 @@ vn_swe_missions_slot_5_c = {
 			OR = {
 				any_known_country = {
 					capital_scope = { superregion = poland_superregion }
-					war_score_against = {
-						who = ROOT
-						value = -50
+					NOT = {
+						war_score_against = {
+							who = ROOT
+							value = -50
+						}
 					}
 				}
 				calc_true_if = {

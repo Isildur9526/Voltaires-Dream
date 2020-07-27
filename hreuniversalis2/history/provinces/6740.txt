@@ -12,7 +12,6 @@ controller = BYZ
 add_core = BYZ
 add_core = PHR
 fort_14th = yes
-estate = estate_nobles
 extra_cost = 8
 center_of_trade = 1
 

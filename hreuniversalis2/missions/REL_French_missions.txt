@@ -63,18 +63,13 @@ VN_frankish_missions = {
 						current_age = age_of_empire
 					}
 				}
-				custom_trigger_tooltip = {
-					tooltip = vn_support_of_the_templars.tt
-					calc_true_if = {
-						all_owned_province = {
-							has_estate = estate_holy_orders
-						}
-						amount = 10
-					}
-				}
 				estate_loyalty = {
 					estate = estate_holy_orders
-					loyalty = 70
+					loyalty = 60
+				}
+				estate_territory = {
+					estate = estate_holy_orders
+					territory = 20
 				}
 			}
 			else = {

@@ -12,6 +12,7 @@ province_event = {
 	title = "aow_events.1.t"
 	desc = "aow_events.1.d"
 	picture = FAMINE_eventPicture
+	goto = root
 	
 	is_mtth_scaled_to_size = 1
 
@@ -49,12 +50,352 @@ province_event = {
 	}
 }
 
+# Removed for now
+## Skirting the Borders
+#country_event = {
+#	id = aow_events.2
+#	title = "aow_events.2.t"
+#	desc = "aow_events.2.d"
+#	picture = SIEGE_eventPicture
+#
+#	trigger = {
+#		is_at_war = yes
+#		any_known_country = {
+#			war_with = ROOT
+#			any_owned_province = {
+#				sieged_by = ROOT
+#				any_neighbor_province = {
+#					owner = {
+#						NOT = { war_with = ROOT }
+#						NOT = { tag = ROOT }
+#					}
+#				}
+#			}
+#		}
+#	}
+#
+#	mean_time_to_happen = {
+#		months = 480
+#	}
+#
+#	# Raid neighboring province
+#	option = {
+#		name = "aow_events.2.a"
+#		random_province = {
+#			limit = {
+#				sieged_by = ROOT
+#				owner = { war_with = ROOT }
+#				any_neighbor_province = {
+#					owner = {
+#						NOT = { war_with = ROOT }
+#						NOT = { tag = ROOT }
+#					}
+#				}
+#			}
+#			change_siege = 2
+#			random_neighbor_province = {
+#				limit = {
+#					owner = {
+#						NOT = { war_with = ROOT }
+#						NOT = { tag = ROOT }
+#					}
+#				}
+#				province_event = {
+#					id = aow_events.3
+#					days = 1
+#					tooltip = "aow_events.2.a.tt"
+#				}
+#			}
+#		}
+#	}
+#
+#	# Keep the conflicts between the warring parties
+#	option = {
+#		name = "aow_events.2.b"
+#		random_province = {
+#			limit = {
+#				sieged_by = ROOT
+#				owner = { war_with = ROOT }
+#				any_neighbor_province = {
+#					owner = {
+#						NOT = { war_with = ROOT }
+#					}
+#				}
+#			}
+#			change_siege = -1
+#		}
+#	}
+#}
+#
+## [From] Assaulting our Borders
+#province_event = {
+#	id = aow_events.3
+#	title = "aow_events.3.t"
+#	desc = "aow_events.3.d"
+#	picture = BORDER_TENSION_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	# Object to their violation of our territory
+#	option = {
+#		name = "aow_events.3.a"
+#		add_province_modifier = {
+#			name = "plundered_in_war"
+#			duration = 1095
+#		}
+#		owner = {
+#			add_opinion = {
+#				who = FROM
+#				modifier = violated_territory
+#			}
+#			add_casus_belli = {
+#				target = FROM
+#				type = cb_insult
+#				months = 12
+#			}
+#		}
+#	}
+#
+#	# Ignore it
+#	option = {
+#		name = "aow_events.3.b"
+#		add_province_modifier = {
+#			name = "plundered_in_war"
+#			duration = 1095
+#		}
+#		owner = { add_prestige = -10 }
+#	}
+#}
+
+# Resistance
+#province_event = {
+#	id = aow_events.4
+#	title = "aow_events.4.t"
+#	desc = "aow_events.4.d"
+#	picture = ANGRY_MOB_eventPicture
+#
+#	trigger = {
+#		owner = {
+#			is_at_war = yes
+#		}
+#		culture = owner
+#		NOT = { controlled_by = owner }
+#		NOT = { controlled_by = REB }
+#	}
+#
+#	mean_time_to_happen = {
+#		months = 1200
+#	}
+#
+#	# Long live the resistance!
+#	option = {
+#		name = "aow_events.4.a"
+#		owner = { add_years_of_income = -0.4 }
+#		spawn_rebels = {
+#			type = nationalist_rebels
+#			size = 2
+#			friend = ROOT
+#		}
+#	}
+#
+#	# Join the main forces instead
+#	option = {
+#		name = "aow_events.4.b"
+#		owner = { add_manpower = 3 }
+#	}
+#}
+
+# Plague at the Siege of [Province] [Defender]
+#province_event = {
+#	id = aow_events.5
+#	title = "aow_events.5.t"
+#	desc = "aow_events.5.d"
+#	picture = SIEGE_eventPicture
+#
+#	trigger = {
+#		has_siege = yes
+#		NOT = { sieged_by = ROOT }
+#		NOT = { sieged_by = REB }
+#		NOT = { has_province_modifier = plague_at_siege }
+#	}
+#
+#	mean_time_to_happen = {
+#		months = 480
+#	}
+#
+#	immediate = {
+#		hidden_effect = {
+#			random_known_country = {
+#				limit = {
+#					ROOT = { sieged_by = PREV }
+#				}
+#				country_event = { id = aow_events.6 days = 1 }
+#				# Followup events for attacker
+#				country_event = { id = aow_events.7 days = 160 }
+#				country_event = { id = aow_events.10 days = 160 }
+#			}
+#			add_province_modifier = {
+#				name = "plague_at_siege"
+#				duration = 170
+#			}
+#			# Followup events for defender
+#			owner = { country_event = { id = aow_events.8 days = 160 } }
+#			province_event = { id = aow_events.9 days = 160 }
+#		}
+#	}
+#
+#	# Evacuate
+#	option = {
+#		name = "aow_events.5.a"
+#		custom_tooltip = aow_events.5.a.tt
+#		add_province_modifier = {
+#			name = "defender_evacuated_siege"
+#			duration = 170
+#			hidden = yes
+#		}
+#	}
+#
+#	# Don't evacuate
+#	option = {
+#		name = "aow_events.5.b"
+#		custom_tooltip = "aow_events.5.b.tt"
+#	}
+#}
+
+
+## Plague at the Siege of [Province] [Attacker]
+#country_event = {
+#	id = aow_events.6
+#	title = "aow_events.6.t"
+#	desc = "aow_events.6.d"
+#	picture = SIEGE_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	# Evacuate
+#	option = {
+#		name = "aow_events.6.a"
+#		custom_tooltip = aow_events.5.a.tt
+#		FROM = {
+#			add_province_modifier = {
+#				name = "attacker_evacuated_siege"
+#				duration = 170
+#				hidden = yes
+#			}
+#		}
+#	}
+#
+#	# Don't evacuate
+#	option = {
+#		name = "aow_events.6.b"
+#		custom_tooltip = "aow_events.6.b.tt"
+#	}
+#}
+
+# [Defender] Evacuate Siege
+#country_event = {
+#	id = aow_events.7
+#	title = "aow_events.7.t"
+#	desc = "aow_events.7.d"
+#	picture = SIEGE_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		FROM = {
+#			has_province_modifier = defender_evacuated_siege
+#			NOT = { has_province_modifier = attacker_evacuated_siege }
+#		}
+#	}
+#
+#	# Their walls will crumble!
+#	option = {
+#		name = "aow_events.7.a"
+#		FROM = { change_siege = 10 }
+#	}
+#}
+
+# Attackers Evacuate Siege
+#country_event = {
+#	id = aow_events.8
+#	title = "aow_events.8.t"
+#	desc = "aow_events.8.d"
+#	picture = SIEGE_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		FROM = {
+#			has_province_modifier = attacker_evacuated_siege
+#			NOT = { has_province_modifier = defender_evacuated_siege }
+#		}
+#	}
+#
+#	# Their forces will perish!
+#	option = {
+#		name = "aow_events.8.a"
+#		FROM = { change_siege = -10 }
+#	}
+#}
+
+
+# Plague Grows Worse [Defender]
+#province_event = {
+#	id = aow_events.9
+#	title = "aow_events.9.t"
+#	desc = "aow_events.9.d"
+#	picture = PLAGUE_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_province_modifier = defender_evacuated_siege }
+#		NOT = { has_province_modifier = attacker_evacuated_siege }
+#	}
+#
+#	# We are both fools
+#	option = {
+#		name = "aow_events.9.a"
+#		remove_province_modifier = plague_at_siege
+#		add_province_modifier = {
+#			name = "lingering_plague"
+#			duration = 1095
+#		}
+#	}
+#}
+
+# Plague Grows Worse [Attacker]
+#country_event = {
+#	id = aow_events.10
+#	title = "aow_events.10.t"
+#	desc = "aow_events.10.d"
+#	picture = PLAGUE_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		FROM = {
+#			NOT = { has_province_modifier = defender_evacuated_siege }
+#			NOT = { has_province_modifier = attacker_evacuated_siege }
+#		}
+#	}
+#
+#	# We are both fools
+#	option = {
+#		name = "aow_events.9.a"
+#		FROM = {
+#			custom_tooltip = "aow_events.10.a.tt"
+#		}
+#	}
+#}
+
 # Spread of Pestilence
 province_event = {
 	id = aow_events.11
 	title = "aow_events.11.t"
 	desc = "aow_events.11.d"
 	picture = PLAGUE_eventPicture
+	goto = root
 
 	trigger = {
 		any_neighbor_province = {
@@ -83,21 +424,51 @@ country_event = {
 	title = "aow_events.12.t"
 	desc = "aow_events.12.d"
 	picture = BORDER_TENSION_eventPicture
+	goto = war_province
 
 	trigger = {
 		is_at_war = yes
-		num_of_mercenaries = 1
+		num_of_hired_mercenary_companies = 1
 		NOT = { has_country_modifier = curtailed_mercenaries }
-		any_known_country = {
-			war_with = ROOT
-			any_owned_province = {
-				controlled_by = ROOT
+		any_hired_mercenary_company = {
+			location = {
+				NOT = { owned_by = root }
+				owner = {
+					war_with = ROOT
+				}
+				area_for_scope_province = {
+					owned_by = prev
+					controlled_by = root
+				}
 			}
 		}
 	}
 
 	mean_time_to_happen = {
 		months = 240
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_hired_mercenary_company = {
+				limit = {
+					location = {
+						NOT = { owned_by = root }
+						owner = {
+							war_with = ROOT
+						}
+						area_for_scope_province = {
+							owned_by = prev
+							controlled_by = root
+						}
+					}
+				}
+				save_event_target_as = hired_mercenary_band
+				location = {
+					save_event_target_as = war_province
+				}
+			}
+		}
 	}
 
 	# Rein them in
@@ -114,10 +485,12 @@ country_event = {
 	option = {
 		name = "aow_events.12.b"
 		add_prestige = -10
-		random_province = {
-			limit = {
-				controlled_by = ROOT
-				NOT = { owned_by = ROOT }
+		event_target:war_province = {
+			hidden_effect = {
+				random = {
+					chance = 25
+					province_event = { id = aow_events.13 days = 30 }
+				}
 			}
 			area = {
 				limit = {
@@ -139,22 +512,31 @@ province_event = {
 	title = "aow_events.13.t"
 	desc = "aow_events.13.d"
 	picture = BORDER_TENSION_eventPicture
+	goto = root
 
 	trigger = {
-		has_province_modifier = terrorized_by_mercenaries
-		NOT = { has_province_modifier = plundered_in_war }
+		area_for_scope_province = {
+			owned_by = root
+			controlled_by = from
+			has_province_modifier = terrorized_by_mercenaries
+			NOT = { has_province_modifier = plundered_in_war }
+		}
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	is_triggered_only = yes
 
 	# Greed corrupts men's hearts...
 	option = {
 		name = "aow_events.13.a"
-		add_province_modifier = {
-			name = "plundered_in_war"
-			duration = 1095
+		area = {
+			limit = {
+				NOT = { controlled_by = ROOT }
+				owned_by = ROOT
+			}
+			add_province_modifier = {
+				name = "plundered_in_war"
+				duration = 1095
+			}
 		}
 	}
 }
@@ -165,6 +547,7 @@ province_event = {
 	title = "aow_events.14.t"
 	desc = "aow_events.14.d"
 	picture = FAMINE_eventPicture
+	goto = root
 
 	trigger = {
 		OR = {
@@ -247,6 +630,7 @@ province_event = {
 	title = "aow_events.16.t"
 	desc = "aow_events.16.d"
 	picture = ANGRY_MOB_eventPicture
+	goto = root
 
 	trigger = {
 		OR = {
@@ -265,6 +649,23 @@ province_event = {
 
 	mean_time_to_happen = {
 		months = 480
+		modifier = {
+			factor = 0.75
+			owner = {
+				government = theocracy
+			}
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+		modifier = {
+			factor = 2
+			current_age = age_of_revolutions
+		}
 	}
 
 	# Allow them to proceed with the local trials.
@@ -273,6 +674,10 @@ province_event = {
 		add_province_modifier = {
 			name = "local_witch_hunts"
 			duration = 3650
+		}
+		hidden_effect = {
+			province_event = { id = aow_events.17 days = 1080 random = 4800 }
+			province_event = { id = aow_events.18 days = 1080 random = 4800 }
 		}
 	}
 
@@ -308,6 +713,7 @@ province_event = {
 	title = "aow_events.17.t"
 	desc = "aow_events.17.d"
 	picture = ANGRY_MOB_eventPicture
+	goto = root
 
 	trigger = {
 		has_province_modifier = local_witch_hunts
@@ -316,9 +722,7 @@ province_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 480
-	}
+	is_triggered_only = yes
 
 	# Cease this madness!
 	option = {
@@ -348,7 +752,10 @@ province_event = {
 	# Let them exact justice as they see fit.
 	option = {
 		name = "aow_events.17.e"
-		trigger = { is_capital = no }
+		trigger = {
+			is_capital = no
+			NOT = { local_autonomy = 80 }
+		}
 		add_local_autonomy = 25
 	}
 }
@@ -359,17 +766,46 @@ province_event = {
 	title = "aow_events.18.t"
 	desc = "aow_events.18.d"
 	picture = ANGRY_MOB_eventPicture
+	goto = root
 
 	trigger = {
 		has_province_modifier = local_witch_hunts
 		owner = {
 			is_at_war = no
+			any_neighbor_country = {
+				any_owned_province = {
+					NOT = {
+						province_distance = {
+							who = root
+							distance = 150
+						}
+					}
+				}
+			}
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 480
+	immediate = {
+		hidden_effect = {
+			owner = {
+				random_neighbor_country = {
+					limit = {
+						any_owned_province = {
+							NOT = {
+								province_distance = {
+									who = root
+									distance = 120
+								}
+							}
+						}
+					}
+					save_event_target_as = they_send_us_witches
+				}
+			}
+		}
 	}
+
+	is_triggered_only = yes
 
 	# This fear of the unfamiliar must be stopped.
 	option = {
@@ -380,12 +816,10 @@ province_event = {
 	# Witches, spies, who know what they're up to?
 	option = {
 		name = "aow_events.18.b"
-		owner = {
-			random_neighbor_country = {
-				add_opinion = {
-					who = PREV
-					modifier = accused_compatriot_of_witchcraft
-				}
+		event_target:they_send_us_witches = {
+			add_opinion = {
+				who = PREV
+				modifier = accused_compatriot_of_witchcraft
 			}
 		}
 	}
@@ -476,6 +910,9 @@ country_event = {
 		war_score = 10
 		is_lesser_in_union = no
 		is_monarch_leader = yes
+		any_army = {
+			is_ruler_commanding_unit = yes
+		}
 		is_at_war = yes
 		NOT = { ruler_has_personality = immortal_personality }
 		any_known_country = {
@@ -545,6 +982,7 @@ country_event = {
 	title = "aow_events.23.t"
 	desc = "aow_events.23.d"
 	picture = SIEGE_eventPicture
+	goto = war_province
 
 	trigger = {
 		is_at_war = yes
@@ -555,26 +993,35 @@ country_event = {
 				religion = ROOT
 				NOT = { religion = owner }
 				religion_group = owner
+				NOT = { is_religious_center_province = yes }
 				NOT = { has_province_modifier = religious_center}
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					sieged_by = ROOT
+					religion = ROOT
+					NOT = { religion = owner }
+					religion_group = owner
+					NOT = { is_religious_center_province = yes }
+					NOT = { has_province_modifier = religious_center}
+				}
+				save_event_target_as = war_province
 			}
 		}
 	}
 
 	mean_time_to_happen = {
-		months = 480
+		months = 400
 	}
 
 	# Spare the faithful
 	option = {
 		name = "aow_events.23.a"
-		random_province = {
-			limit = {
-				sieged_by = ROOT
-				religion = ROOT
-				NOT = { religion = owner }
-				religion_group = owner
-				NOT = { has_province_modifier = religious_center}
-			}
+		event_target:war_province = {
 			change_siege = -2
 		}
 	}
@@ -582,14 +1029,7 @@ country_event = {
 	# No mercy for enemies of [Country]!
 	option = {
 		name = "aow_events.23.b"
-		random_province = {
-			limit = {
-				sieged_by = ROOT
-				religion = ROOT
-				NOT = { religion = owner }
-				religion_group = owner
-				NOT = { has_province_modifier = religious_center}
-			}
+		event_target:war_province = {
 			tooltip = {
 				change_religion = owner
 			}
@@ -607,6 +1047,7 @@ province_event = {
 	title = "aow_events.24.t"
 	desc = "aow_events.24.d"
 	picture = BORDER_TENSION_eventPicture
+	goto = root
 
 	is_triggered_only = yes
 
@@ -624,6 +1065,7 @@ province_event = {
 	title = "aow_events.25.t"
 	desc = "aow_events.25.d"
 	picture = RELIGIOUS_TURMOIL_eventPicture
+	goto = root
 
 	trigger = {
 		owner = {
@@ -634,20 +1076,17 @@ province_event = {
 		NOT = { religion = owner }
 		NOT = { is_core = controller }
 		religion = controller
-		any_neighbor_province = {
-			owned_by = controller
-		}
 	}
 
 	mean_time_to_happen = {
 		months = 640
 		modifier = {
 			factor = 1.5
-			owner = { tolerance_to_this = 0 }
+			tolerance_to_this = 0
 		}
 		modifier = {
 			factor = 2.0
-			owner = { tolerance_to_this = 1 }
+			tolerance_to_this = 1
 		}
 	}
 
@@ -677,6 +1116,7 @@ country_event = {
 	title = "aow_events.26.t"
 	desc = "aow_events.26.d"
 	picture = RELIGIOUS_CONVERSION_eventPicture
+	goto = from
 
 	is_triggered_only = yes
 
@@ -693,16 +1133,20 @@ province_event = {
 	title = "aow_events.27.t"
 	desc = "aow_events.27.d"
 	picture = RELIGIOUS_TURMOIL_eventPicture
+	goto = root
+	
+	is_mtth_scaled_to_size = 1
 
 	trigger = {
 		NOT = { religion = owner }
+		controlled_by = owner
+		NOT = { tolerance_to_this = 0 }
 		owner = {
 			is_at_war = yes
 			any_known_country = {
 				war_with = PREV
 				religion = ROOT
 			}
-			NOT = { tolerance_to_this = 0 }
 		}
 		
 	}
@@ -727,11 +1171,13 @@ province_event = {
 	title = "aow_events.28.t"
 	desc = "aow_events.28.d"
 	picture = RELIGIOUS_TURMOIL_eventPicture
+	goto = root
 	
 	is_mtth_scaled_to_size = 1
 
 	trigger = {
 		NOT = { religion = owner }
+		controlled_by = owner
 		owner = {
 			is_at_war = yes
 			any_known_country = {
@@ -740,11 +1186,13 @@ province_event = {
 			}
 		}
 		
+		NOT = { is_religious_center_province = yes }
 		NOT = { has_province_modifier = religious_center }
 		any_neighbor_province = {
 			owned_by = ROOT
 			religion = owner
 			is_reformation_center = no
+			NOT = { is_religious_center_province = yes }
 			NOT = { has_province_modifier = religious_center }
 		}
 	}
@@ -753,20 +1201,30 @@ province_event = {
 		months = 800
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_neighbor_province = {
+				limit = {
+					owned_by = ROOT
+					religion = owner
+					is_reformation_center = no
+					NOT = { is_religious_center_province = yes }
+					NOT = { has_province_modifier = religious_center }
+				}
+				save_event_target_as = neighbour_province
+			}
+		}
+	}
+
 	# Like the war, this conflict must take its course.
 	option = {
 		name = "aow_events.28.a"
+		goto = neighbour_province
 		owner = { add_manpower = -4 }
 		random_list = {
 			75 = { change_religion = owner }
 			25 = {
-				random_neighbor_province = {
-					limit = {
-						owned_by = ROOT
-						religion = owner
-						is_reformation_center = no
-						NOT = { has_province_modifier = religious_center }
-					}
+				event_target:neighbour_province = {
 					change_religion = ROOT
 				}
 			}
@@ -840,12 +1298,14 @@ province_event = {
 	title = "aow_events.30.t"
 	desc = "aow_events.30.d"
 	picture = ANGRY_MOB_eventPicture
+	goto = root
 	
 	is_mtth_scaled_to_size = 1
 
 	trigger = {
 		religion = owner
 		NOT = { religion = cathar }
+		NOT = { religion = buddhism }
 		has_siege = no
 		controlled_by = owner
 		any_neighbor_province = {
@@ -854,11 +1314,12 @@ province_event = {
 				NOT = { religion = ROOT }
 			}
 			religion = owner
+			controlled_by = owner
 		}
 	}
 
 	mean_time_to_happen = {
-		months = 1200
+		months = 1000
 	}
 
 	# Forward, sentinels of the truth!
@@ -945,8 +1406,8 @@ country_event = {
 		OR = {
 			religion = protestant
 			religion = reformed
-			religion = anabaptist
 			religion = anglican
+			religion = anabaptist
 		}
 		any_owned_province = {
 			is_reformation_center = yes
@@ -955,8 +1416,8 @@ country_event = {
 			OR = {
 				religion = protestant
 				religion = reformed
-				religion = anabaptist
 				religion = anglican
+				religion = anabaptist
 			}
 			NOT = { religion = ROOT }
 			any_owned_province = {
@@ -978,8 +1439,8 @@ country_event = {
 				OR = {
 					religion = protestant
 					religion = reformed
-					religion = anabaptist
 					religion = anglican
+					religion = anabaptist
 				}
 				NOT = { religion = ROOT }
 				any_owned_province = {
@@ -999,8 +1460,8 @@ country_event = {
 				OR = {
 					religion = protestant
 					religion = reformed
-					religion = anabaptist
 					religion = anglican
+					religion = anabaptist
 				}
 				NOT = { religion = ROOT }
 				any_owned_province = {
@@ -1106,8 +1567,8 @@ country_event = {
 			OR = {
 				religion = protestant
 				religion = reformed
-				religion = anabaptist
 				religion = anglican
+				religion = anabaptist
 			}
 			any_owned_province = {
 				is_reformation_center = yes
@@ -1117,8 +1578,8 @@ country_event = {
 			OR = {
 				religion = protestant
 				religion = reformed
-				religion = anabaptist
 				religion = anglican
+				religion = anabaptist
 			}
 		}
 	}
@@ -1135,8 +1596,8 @@ country_event = {
 				OR = {
 					religion = protestant
 					religion = reformed
-					religion = anabaptist
 					religion = anglican
+					religion = anabaptist
 				}
 				any_owned_province = {
 					is_reformation_center = yes
@@ -1167,9 +1628,9 @@ country_event = {
 
 	trigger = {
 		has_spawned_rebels = protestant_rebels
-		OR = {
-			religion = catholic
-			religion = catholique
+		OR = {	
+			religion = catholic	
+			religion = catholique	
 		}
 		any_neighbor_country = {
 			religion = protestant
@@ -1204,50 +1665,46 @@ country_event = {
 	}
 }
 
-# The Cause of the Anabaptist Plague
-country_event = {
-	id = aow_events.377
-	title = "aow_events.377.t"
-	desc = "aow_events.377.d"
-	picture = RELIGIOUS_TURMOIL_eventPicture
-
-	trigger = {
-		has_spawned_rebels = anabaptist_rebels
-		OR = {
-			religion = catholic
-			religion = catholique
-		}
-		any_neighbor_country = {
-			religion = anabaptist
-			any_owned_province = {
-				is_reformation_center = yes
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 240
-	}
-
-	# They better have an answer for us!
-	option = {
-		name = "aow_events.377.a"
-		random_neighbor_country = {
-			limit = {
-				religion = anabaptist
-				any_owned_province = {
-					is_reformation_center = yes
-				}
-			}
-			country_event = { id = aow_events.39 days = 30 }
-		}
-	}
-
-	# Let us not stir up more trouble over this.
-	option = {
-		name = "aow_events.377.b"
-		add_prestige = -10
-	}
+# The Cause of the Anabaptist Plague	
+country_event = {	
+	id = aow_events.377	
+	title = "aow_events.377.t"	
+	desc = "aow_events.377.d"	
+	picture = RELIGIOUS_TURMOIL_eventPicture	
+	trigger = {	
+		has_spawned_rebels = anabaptist_rebels	
+		OR = {	
+			religion = catholic	
+			religion = catholique	
+		}	
+		any_neighbor_country = {	
+			religion = anabaptist	
+			any_owned_province = {	
+				is_reformation_center = yes	
+			}	
+		}	
+	}	
+	mean_time_to_happen = {	
+		months = 240	
+	}	
+	# They better have an answer for us!	
+	option = {	
+		name = "aow_events.377.a"	
+		random_neighbor_country = {	
+			limit = {	
+				religion = anabaptist	
+				any_owned_province = {	
+					is_reformation_center = yes	
+				}	
+			}	
+			country_event = { id = aow_events.39 days = 30 }	
+		}	
+	}	
+	# Let us not stir up more trouble over this.	
+	option = {	
+		name = "aow_events.377.b"	
+		add_prestige = -10	
+	}	
 }
 
 # The Cause of the Calvinist Plague
@@ -1410,23 +1867,14 @@ country_event = {
 				create_revolt = 2
 			}
 		}
-		if = {
-			limit = {
-				FROM = { religion = anabaptist }
-			}
-			random_owned_province = {
-				limit = { likely_rebels = anabaptist_rebels }
-				create_revolt = 2
-			}
-		}
-		if = {
-			limit = {
-				FROM = { religion = anglican }
-			}
-			random_owned_province = {
-				limit = { likely_rebels = anglican_rebels }
-				create_revolt = 2
-			}
+		if = {	
+			limit = {	
+				FROM = { religion = anabaptist }	
+			}	
+			random_owned_province = {	
+				limit = { likely_rebels = anabaptist_rebels }	
+				create_revolt = 2	
+			}	
 		}
 		add_casus_belli = {
 			target = FROM
@@ -1444,12 +1892,13 @@ country_event = {
 	title = "aow_events.43.t"
 	desc = "aow_events.43.d"
 	picture = RELIGION_eventPicture
+	goto = receive_cardinal_province
 
 	trigger = {
 		papacy_active = yes
-		OR = {
-			religion = catholic
-			religion = catholique
+		OR = {	
+			religion = catholic	
+			religion = catholique	
 		}
 		NOT = { tag = PAP }
 		NOT = { tag = AVI }
@@ -1457,9 +1906,9 @@ country_event = {
 		any_owned_province = {
 			development = 10
 			has_cardinal = no
-			OR = {
-				religion = catholic
-				religion = catholique
+			OR = {	
+				religion = catholic	
+				religion = catholique	
 			}
 			any_neighbor_province = {
 				has_cardinal = yes
@@ -1483,54 +1932,61 @@ country_event = {
 			chance_of_tertiary = 5
 			chance_of_secondary = 25
 		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_cardinal = no
+					OR = {	
+						religion = catholic	
+						religion = catholique	
+					}
+					development = 10
+					any_neighbor_province = {
+						has_cardinal = yes
+						religion = ROOT
+						NOT = { owned_by = ROOT }
+					}
+				}
+				save_event_target_as = receive_cardinal_province
+				random_neighbor_province = {
+					limit = {
+						has_cardinal = yes
+						NOT = { owned_by = ROOT }
+					}
+					save_event_target_as = send_cardinal_province
+				}
+			}
+		}
 	}
-
+	
 	# 
 	option = {
 		name = "aow_events.43.a"
 		add_years_of_income = -0.05
 		add_corruption = 0.5
-		random_owned_province = {
-			limit = {
-				has_cardinal = no
-				OR = {
-					religion = catholic
-					religion = catholique
-				}
-				development = 10
-				any_neighbor_province = {
-					has_cardinal = yes
-					religion = ROOT
-					NOT = { owned_by = ROOT }
-				}
-			}
+		event_target:receive_cardinal_province = {
 			add_cardinal = yes
-			random_neighbor_province = {
-				limit = {
-					has_cardinal = yes
-					religion = ROOT
-					NOT = { owned_by = ROOT }
+		}
+		event_target:send_cardinal_province = {
+			remove_cardinal = yes
+			random = {
+				chance = 50
+				hidden_effect = {
+					province_event = {
+						id = aow_events.44
+						days = 7
+					}
 				}
-				remove_cardinal = yes
-				random = {
-					chance = 50
-						hidden_effect = {
-							province_event = {
-								id = aow_events.44
-								days = 7
-							}
+				owner = {
+					tooltip = {
+						add_casus_belli = {
+							target = ROOT
+							type = cb_insult
+							months = 32
 						}
-					owner = {
-						tooltip = {
-							add_casus_belli = {
-								target = ROOT
-								type = cb_insult
-								months = 32
-							}
-							add_opinion = {
-								who = ROOT
-								modifier = bribed_cardinal
-							}
+						add_opinion = {
+							who = ROOT
+							modifier = bribed_cardinal
 						}
 					}
 				}
@@ -1558,6 +2014,7 @@ province_event = {
 	title = "aow_events.44.t"
 	desc = "aow_events.44.d"
 	picture = CORRUPTION_eventPicture
+	goto = root
 
 	is_triggered_only = yes
 
@@ -1585,6 +2042,7 @@ province_event = {
 	title = "aow_events.45.t"
 	desc = "aow_events.45.d"
 	picture = PRAYING_eventPicture
+	goto = root
 
 	trigger = {
 		has_cardinal = yes
@@ -1607,14 +2065,14 @@ province_event = {
 		owner = {
 			add_years_of_income = -0.1
 		}
-		random = {
-			chance = 40
-			province_event = {
-				id = aow_events.46
-				days = 180
-				tooltip = "aow_events.45.a.tt"
+			random = {
+				chance = 40
+				province_event = {
+					id = aow_events.46
+					days = 180
+					tooltip = "aow_events.45.a.tt"
+				}
 			}
-		}
 
 	}
 
@@ -1630,33 +2088,43 @@ province_event = {
 	title = "aow_events.46.t"
 	desc = "aow_events.46.d"
 	picture = POPE_PREACHING_eventPicture
+	goto = root
 
 	is_triggered_only = yes
 
 	trigger = {
-		exists = PAP
+		OR = {
+			AND = {
+				religion = catholic
+				exists = PAP
+			}
+			AND = {
+				religion = catholique
+				exists = AVI
+			}
+		}
 	}
 
 	# 
 	option = {
 		name = "aow_events.46.a"
-		if = {
-			limit = { religion = catholic }
-			PAP = {
-				add_opinion = {
-					who = ROOT
-					modifier = bribed_cardinal
-				}
-			}
-		}
-		if = {
-			limit = { religion = catholique }
-			AVI = {
-				add_opinion = {
-					who = ROOT
-					modifier = bribed_cardinal
-				}
-			}
+		if = {	
+			limit = { religion = catholic }	
+			PAP = {	
+				add_opinion = {	
+					who = ROOT	
+					modifier = bribed_cardinal	
+				}	
+			}	
+		}	
+		if = {	
+			limit = { religion = catholique }	
+			AVI = {	
+				add_opinion = {	
+					who = ROOT	
+					modifier = bribed_cardinal	
+				}	
+			}	
 		}
 	}
 }
@@ -1667,11 +2135,13 @@ province_event = {
 	title = "aow_events.47.t"
 	desc = "aow_events.47.d"
 	picture = RELIGIOUS_TURMOIL_eventPicture
+	goto = root
 
 	trigger = {
 		has_cardinal = yes
 		any_neighbor_province = {
 			NOT = { religion_group = christian }
+			owned_by = root
 		}
 		NOT = { owner = { has_country_modifier = distrusts_heathens } }
 	}
@@ -1705,36 +2175,36 @@ country_event = {
 	picture = RELIGION_eventPicture
 
 	trigger = {
-		papacy_active = yes
-		OR = {
-			AND = {
-				religion = catholic
-				OR = {
-					employed_advisor = {
-						type = theologian
-						religion = catholic
-					}
-					employed_advisor = {
-						type = inquisitor
-						religion = catholic
-					}
-				}
-			}
-			AND = {
-				religion = catholique
-				OR = {
-					employed_advisor = {
-						type = theologian
-						religion = catholique
-					}
-					employed_advisor = {
-						type = inquisitor
-						religion = catholique
-					}
-				}
-			}
-		}
-		NOT = { tag = PAP }
+		papacy_active = yes	
+		OR = {	
+			AND = {	
+				religion = catholic	
+				OR = {	
+					employed_advisor = {	
+						type = theologian	
+						religion = catholic	
+					}	
+					employed_advisor = {	
+						type = inquisitor	
+						religion = catholic	
+					}	
+				}	
+			}	
+			AND = {	
+				religion = catholique	
+				OR = {	
+					employed_advisor = {	
+						type = theologian	
+						religion = catholique	
+					}	
+					employed_advisor = {	
+						type = inquisitor	
+						religion = catholique	
+					}	
+				}	
+			}	
+		}	
+		NOT = { tag = PAP }	
 		NOT = { tag = AVI }
 		NOT = { num_of_cardinals = 7 }
 		NOT = { total_number_of_cardinals = 49 }
@@ -1834,20 +2304,33 @@ country_event = {
 		months = 1200
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						is_capital = yes
+						owned_by = ROOT
+					}
+				}
+				save_event_target_as = rebel_province
+			}
+			random_owned_province = {
+				limit = { has_cardinal = yes }
+				save_event_target_as = cardinal_province
+			}
+		}
+	}
+
 	# 
 	option = {
 		name = "aow_events.50.a"
+		goto = rebel_province
 		add_country_modifier = {
 			name = "centralization_modifier"
 			duration = 3650
 		}
-		random_owned_province = {
-			limit = {
-				any_neighbor_province = {
-					is_capital = yes
-					owned_by = ROOT
-				}
-			}
+		event_target:rebel_province = {
 			spawn_rebels = {
 				type = noble_rebels
 				size = 2
@@ -1858,9 +2341,9 @@ country_event = {
 	#
 	option = {
 		name = "aow_events.50.b"
+		goto = cardinal_province
 		remove_country_modifier = cardinal_in_administration
-		random_owned_province = {
-			limit = { has_cardinal = yes }
+		event_target:cardinal_province = {
 			remove_cardinal = yes
 		}
 	}
@@ -1875,9 +2358,9 @@ country_event = {
 
 	trigger = {
 		has_idea_group = spy_ideas
-		OR = {
-			religion = catholic
-			religion = catholique
+		OR = {	
+			religion = catholic	
+			religion = catholique	
 		}
 		any_neighbor_country = {
 			num_of_cardinals = 1
@@ -1930,6 +2413,7 @@ province_event = {
 	title = "aow_events.52.t"
 	desc = "aow_events.52.d"
 	picture = ACCUSATION_eventPicture
+	goto = root
 
 	is_triggered_only = yes
 

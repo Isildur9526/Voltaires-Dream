@@ -109,6 +109,7 @@ french_wars_of_religion = {
 		events = {
 			french_wars_of_religion.14
 			french_wars_of_religion.15
+			french_wars_of_religion.17
 		}
 		
 		random_events = { 

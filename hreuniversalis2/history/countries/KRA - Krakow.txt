@@ -8,23 +8,11 @@ historical_neutral = HUN
 capital = 2419
 fixed_capital = 2419
 
-#1138.10.28 under SIL
 1138.10.28 = { set_global_flag = had_fragmentation_of_poland }
-#1146.1.1 under MAZ
-#1173.1.5 under WKP
-#1177.1.1 under SDZ
-#1227.11.24 under WRC
-#1243.1.1 under SDZ
-#1288.9.30 under WRC
-#1290.6.23 under WKP
-#1291.1.1 under BOH
-#1300 changes to POL
 1540.1.1 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = administrative_republic
 }
-1750.1.1 = { set_legacy_government = constitutional_republic }
 1814.4.11 = {
 	monarch = {
 		name = "National Assembly"

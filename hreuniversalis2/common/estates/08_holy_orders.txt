@@ -1,31 +1,39 @@
-estate_holy_orders =
-{
+estate_holy_orders = {
 	icon = 12
-	
-	color = { 200 200 200 }
 	
 	# Used for when declaring independence
 	independence_government = theocracy
 	starting_reform = crusader_order_reform
-	independence_trigger = {
-		has_estate = estate_holy_orders
-	}
-	
-	# Is estate kept in control of province on conquest?
-	keep_on_conquest = no
+	independence_tech_group = western
 
-	# Estate will always be removed when conquered by a different religion than previous owner
-	always_remove_on_religious_conquest = yes
-	
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			NOT = { religion = ROOT }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 0.75
+			development = 15
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+	}
+
 	# If true, country will get estate
 	
 	trigger = {	
-		has_dlc = "The Cossacks"
-		government = monarchy
 		OR = {
 			religion = catholic
 			religion = catholique
 		}
+		government = monarchy
 		primitives = no
 		is_nomad = no
 		OR =  {
@@ -37,24 +45,6 @@ estate_holy_orders =
 		}
 		NOT = { has_country_flag = removed_templars }
 	}
-	
-	# If true, province can be granted to estate
-	province_trigger = {
-		religion = ROOT
-	}	
-
-	# Giving territory affects power this much compared to base
-	territory_power_modifier = 2.0
-
-	# Is used to weigh importance compared to other estates
-	start_territory_weight = 10
-	
-	# Min autonomy in estate provinces
-	min_autonomy = 25
-	
-	# Estate cancels out the following multiplicative local autonomy effects:
-	autonomy_does_not_affect = local_manpower_modifier
-	autonomy_does_not_affect = land_forcelimit_modifier
 
 	# These scale with loyalty & power
 	country_modifier_happy = {
@@ -69,21 +59,12 @@ estate_holy_orders =
 		inflation_action_cost = 0.25
 		interest = 1
 	}
-	
-	# These do not scale, but only applied in provinces owned by the estate
-	province_modifier_happy = {	
-		local_hostile_attrition = 1
-		local_manpower_modifier = 0.2
+	land_ownership_modifier = {
+		holy_orders_loyalty_modifier = 0.2
 	}
-	province_modifier_neutral = {
-		local_hostile_attrition = 1
-	}	
-	province_modifier_angry = {
-		local_unrest = 5
-	}
-	
+
 	# Influence modifiers
-	base_influence = 10
+	base_influence = 0
 	influence_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER
 		trigger = {
@@ -91,6 +72,10 @@ estate_holy_orders =
 				has_disaster = estate_nobility_disaster
 				has_disaster = estate_church_disaster
 				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+				has_disaster = estate_cossacks_disaster
 			}
 		}
 		influence = -40
@@ -99,7 +84,7 @@ estate_holy_orders =
 		desc = EST_VAL_TEUTON_INF
 		trigger = {
 			any_country = {
-				government = crusader_order_government
+				has_reform = crusader_order_reform
 				religion = catholic
 				alliance_with = ROOT
 			}
@@ -110,7 +95,7 @@ estate_holy_orders =
 		desc = EST_VAL_KINGDOM
 		trigger = {
 			government_rank = 5
-			is_emperor_of_china = no
+			NOT = { has_reform = celestial_empire }
 		}
 		influence = 10
 	}
@@ -130,7 +115,7 @@ estate_holy_orders =
 	influence_modifier = {
 		desc = EST_VAL_FRANKS
 		trigger = {
-			government = celestial_empire
+			has_reform = celestial_empire
 		}
 		influence = 20
 	}
@@ -142,7 +127,8 @@ estate_holy_orders =
 		influence = 10
 	}
 
-
+	influence_from_dev_modifier = 2.0
+	
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
 		trigger = {
@@ -150,6 +136,10 @@ estate_holy_orders =
 				has_disaster = estate_nobility_disaster
 				has_disaster = estate_church_disaster
 				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+				has_disaster = estate_cossacks_disaster
 			}
 		}
 		loyalty = -20
@@ -158,7 +148,7 @@ estate_holy_orders =
 		desc = EST_VAL_TEUTON_LOY
 		trigger = {
 			any_country = {
-				government = crusader_order_government
+				has_reform = crusader_order_reform
 				religion = catholic
 				war_with = ROOT
 			}
@@ -171,31 +161,6 @@ estate_holy_orders =
 			has_reform = chivalrous_confederations_reform
 		}
 		loyalty = 5
-	}
-	
-	# For province assignment
-	ai_grant_province = {
-		factor = 1
-		modifier = {
-			factor = 0.1
-			NOT = { fort_level = 1 }
-		}
-		modifier = {
-			factor = 4
-			local_autonomy = 25
-		}
-		modifier = {
-			factor = 0.25
-			NOT = { local_autonomy = 25 }
-		}
-	}	
-	
-	# Does the AI want to give any extra territory beyond the minimum?
-	ai_territory_modifier = {
-		trigger = {
-			num_of_cities = 15
-		}	
-		value = 10	# Code has a sanity check against pushing influence too high
 	}
 
 	#Names
@@ -268,751 +233,29 @@ estate_holy_orders =
 		}
 	}
 
-	#Interactions
-	interaction = {
-		name = "EXPAND_HOLY_ORDERS_REGISTRY"
-		icon = 17
-		
-		years_between_use = 20
-		
-		trigger = {
-			always = yes
-		}
-		
-		effect = {
-			add_prestige = -5
-			add_estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = 15
-			}
-			add_estate_influence_modifier = {
-				estate = estate_holy_orders
-				desc = EST_VAL_HOLY_ORDERS_REGISTER_EXPANDED
-				influence = 10
-				duration = 7300
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				estate_influence = {
-					estate = estate_holy_orders
-					influence = 60
-				}				
-			}
-			modifier = {
-				factor = 0
-				estate_loyalty = {
-					estate = estate_holy_orders
-					loyalty = 30
-				}				
-			}			
-		}
+	privileges = {
+		estate_holy_orders_land_rights
+		estate_holy_orders_heir_knight
+		estate_holy_orders_settle_templars
+		estate_holy_orders_monopoly_of_beer
+		estate_holy_orders_banking_rights
+		estate_holy_orders_monopoly_on_banking
+		estate_holy_orders_court_representation
 	}
-	
-	interaction = {
-		name = "RAISE_HOLY_ORDERS_HOST"
-		icon = 13
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = 50
-			}
-			estate_influence = {
-				estate = estate_holy_orders
-				influence = 40
-			}
-			custom_trigger_tooltip = {
-				tooltip = tooltip_own_holy_orders_province
-				any_owned_province = {
-					has_estate = estate_holy_orders
-				}
-			}
-		}
-		
-		effect = {
-			random_owned_province = {
-				limit = { has_estate = estate_holy_orders }
-				cavalry = ROOT
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 2
-								has_estate = estate_holy_orders
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 3
-								has_estate = estate_holy_orders
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 4
-								has_estate = estate_holy_orders
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 5
-								has_estate = estate_holy_orders
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 6
-								has_estate = estate_holy_orders
-							}
-							estate_influence = {
-								estate = estate_holy_orders
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 7
-								has_estate = estate_holy_orders
-							}
-							estate_influence = {
-								estate = estate_holy_orders
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 8
-								has_estate = estate_holy_orders
-							}
-							estate_influence = {
-								estate = estate_holy_orders
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 9
-								has_estate = estate_holy_orders
-							}
-							estate_influence = {
-								estate = estate_holy_orders
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-				if = {
-					limit = {
-						owner = {
-							num_of_owned_provinces_with = {
-								value = 10
-								has_estate = estate_holy_orders
-							}
-							estate_influence = {
-								estate = estate_holy_orders
-								influence = 60
-							}
-						}
-					}
-					cavalry = ROOT
-				}
-			}
-			add_estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = -15
-			}
-			add_estate_influence_modifier = {
-				estate = estate_holy_orders
-				desc = EST_VAL_RAISED_HOLY_ORDERS_HOST
-				influence = 10
-				duration = 1825
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				estate_influence = {
-					estate = estate_holy_orders
-					influence = 70
-				}				
-			}	
-		}
+
+	agendas = {
+		estate_holy_orders_develop_x
+		estate_holy_orders_build_hospital_in_y
+		estate_holy_orders_build_temple_in_y
+		estate_holy_orders_build_university_in_y
+		estate_holy_orders_crusade
+		estate_holy_orders_grand_crusade
+		estate_holy_orders_convert_province_x
+		estate_holy_orders_three_privileges
+		estate_holy_orders_relations_with_crusaders
+		estate_holy_orders_hire_advisor
+		estate_holy_orders_fire_advisor
 	}
-	interaction = {
-		name = "HOLY_ORDERS_CONQUISTADOR"
-		icon = 40
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = 50
-			}
-			estate_influence = {
-				estate = estate_holy_orders
-				influence = 35
-			}
-			has_heir = yes
-			has_female_heir = no
-		}
-		effect = {
-			add_prestige = 20
-			add_estate_influence_modifier = {
-				estate = estate_holy_orders
-				desc = EST_VAL_HOLY_ORDERS_CONQUISTADOR
-				influence = 20
-				duration = 10950
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0			
-		}
-	}
-	interaction = {
-		name = "RECRUIT_MINISTER"
-		icon = 10
-		
-		years_between_use = 30
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			estate_influence = {
-				estate = estate_holy_orders
-				influence = 40
-			}
-		}
-		
-		effect = {
-			hidden_effect = {
-				random_owned_province = {
-					limit = {
-						has_estate = estate_holy_orders
-					}
-					save_event_target_as = estate_estate_province
-				}
-			}
-			if = {
-				limit = {
-					monthly_income = 25
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					cost_multiplier = 0.5
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					cost_multiplier = 0.5
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					cost_multiplier = 0.75
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					cost_multiplier = 0.75
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					has_saved_event_target = estate_estate_province
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-				}
-			}
-			else_if = {
-				limit = {
-					monthly_income = 25
-					NOT = { has_saved_event_target = estate_estate_province }
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 3
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.5
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 80
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.5
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					has_saved_event_target = estate_estate_province
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.75
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-					
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					NOT = { has_saved_event_target = estate_estate_province }
-					estate_influence = {
-						estate = estate_holy_orders
-						influence = 60
-					}
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 80
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					cost_multiplier = 0.75
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					has_saved_event_target = estate_estate_province
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-					culture = event_target:estate_estate_province
-					religion = event_target:estate_estate_province
-					location = event_target:estate_estate_province
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 25 }
-					NOT = { has_saved_event_target = estate_estate_province }
-					NOT = {
-						estate_influence = {
-							estate = estate_holy_orders
-							influence = 60
-						}
-					}
-				}
-				define_advisor = {
-					type = army_reformer
-					skill = 2
-				}
-			}
-			
-			add_estate_influence_modifier = {
-				estate = estate_holy_orders
-				desc = EST_VAL_HOLY_ORDERS_MINISTER
-				influence = 20
-				duration = 10950
-			}
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = -15 #Taking offense
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0			
-		}
-	}
-	interaction = {
-		name = "CONSCRIPT_HOLY_ORDERS_ELITE"
-		icon = 41
-		
-		years_between_use = 24
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = tooltip_own_holy_orders_province
-				any_owned_province = {
-					has_estate = estate_holy_orders
-				}
-			}
-		}
-		
-		effect = {
-			add_army_tradition = 10
-			add_estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = -15
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = {
-					estate_loyalty = {
-						estate = estate_holy_orders
-						loyalty = 60
-					}
-				}
-			}			
-		}		
-	}
-	interaction = {
-		name = "SUPPLY_ARMS"
-		icon = 29
-		
-		years_between_use = 20
-		
-		potential = {
-			religion = catholique
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = tooltip_own_holy_orders_province
-				any_owned_province = {
-					has_estate = estate_holy_orders
-				}
-			}
-		}
-		
-		effect = {
-			add_mil_power = -15
-			add_country_modifier = {
-				name = "armed_holy_orders"
-				duration = 7300
-			}
-			add_estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = 5
-			}
-			add_estate_influence_modifier = {
-				estate = estate_holy_orders
-				desc = EST_VAL_SUPPLY_ARMS
-				influence = 15
-				duration = 7300
-			}
-		}
-		
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				estate_influence = {
-					estate = estate_holy_orders
-					influence = 60
-				}
-			}
-		}	
-	}	
-	interaction = {
-		name = "donate_to_holy_order"
-		icon = 29
-		
-		years_between_use = 20
-		
-		potential = {
-			religion = catholic
-			normal_or_historical_nations = yes
-			any_country = {
-				NOT = { num_of_cities = 30 }
-				NOT = { war_with = ROOT }
-				NOT = { is_enemy = ROOT }
-				NOT = { is_rival = ROOT }
-				has_reform = crusader_order_reform
-				is_free_or_tributary_trigger = yes
-				religion = catholic
-				OR = {
-					tag = TEU
-					tag = LIV
-					tag = KNI
-					tag = TEM
-				}
-			}
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-		}
-		
-		trigger = { treasury = 100 }
-		
-		effect = {
-			country_event = { id = hremodevents.23 }
-			add_treasury = -100
-			add_country_modifier = {
-				name = "donated_ho"
-				duration = 3650
-			}
-			add_estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = 10
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					NOT = { treasury = 200 }
-					is_at_war = yes
-				}
-			}
-			modifier = {
-				factor = 0
-				is_defender_of_faith = no
-				OR = {
-					NOT = { ruler_has_personality = zealot_personality }
-					NOT = { ruler_has_personality = naive_personality }
-				}
-			}		
-		}
-	}
-	interaction = {
-		name = "PERMIT_SELF_GOVERNANCE"
-		icon = 16
-		
-		years_between_use = 10
-		
-		potential = {
-			NOT = { has_disaster = estate_burghers_disaster }
-			NOT = { has_disaster = estate_church_disaster }
-			NOT = { has_disaster = estate_nobility_disaster }
-			NOT = { current_age = age_of_absolutism }
-			NOT = { current_age = age_of_revolutions }
-			NOT = { current_age = age_of_ideology }
-			any_owned_province = {
-				has_estate = estate_holy_orders
-			}
-		}
-		
-		trigger = {
-			NOT = { current_age = age_of_absolutism }
-			NOT = { current_age = age_of_revolutions }
-			NOT = { current_age = age_of_ideology }
-			custom_trigger_tooltip = {
-				tooltip = tooltip_own_holy_orders_province
-				any_owned_province = {
-					has_estate = estate_holy_orders
-				}
-			}
-		}
-		
-		effect = {
-			every_owned_province = {
-				limit = {
-					has_estate = estate_holy_orders
-				}
-				add_local_autonomy = 10
-			}
-			add_estate_loyalty = {
-				estate = estate_holy_orders
-				loyalty = 5
-			}
-			add_estate_influence_modifier = {
-				estate = estate_holy_orders
-				desc = EST_VAL_SELF_GOVERNANCE
-				influence = 15
-				duration = 7300
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				estate_loyalty = {
-					estate = estate_holy_orders
-					loyalty = 40
-				}
-			}			
-		}		
-	}
+
+	color = { 200 200 200 }
 }

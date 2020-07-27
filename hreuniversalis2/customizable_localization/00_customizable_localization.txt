@@ -412,6 +412,26 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = GetFancyTradeGood
+	random = no
+
+	text = {
+		localisation_key = string_crystal
+		trigger = { always = yes }
+	}
+}
+
+defined_text = {
+	name = GetFancyTradeGood_LOW
+	random = no
+
+	text = {
+		localisation_key = string_l_crystal
+		trigger = { always = yes }
+	}
+}
+
 #Definite Article before name? (ie for country names in plural form)
 defined_text = {
     name = GetDefiniteArticleBeforePluralCountry
@@ -626,6 +646,45 @@ defined_text = {
 	}
 }
 
+#Makes the country name usable (grammatically) in normal text. So examples of what comes out are "France", "the Ottoman Sultanate", "the Ming Empire" and "the Iroquoi Tribe" (I am open to suggestions on the last) rather than "France", "Ottomans", "Ming" and "Iroquoi"
+defined_text = {
+	name = GetUsableName
+	random = no
+	
+	text = {
+		localisation_key = plural_country_name
+		trigger = {
+			OR = {
+				technology_group = north_american
+				tag_with_plural_name_trigger = yes
+			}
+			NOT = { has_country_flag = is_revolutionary_turkey_flag }
+			NOT = { has_country_flag = is_turkey_flag }
+		}
+	}
+	text = {
+		localisation_key = PLC_country_string
+		trigger = {
+			tag = PLC
+		}
+	}
+	text = {
+		localisation_key = already_has_proper_name
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						technology_group = north_american
+						tag_with_plural_name_trigger = yes
+					}
+				}
+				has_country_flag = is_revolutionary_turkey_flag
+				has_country_flag = is_turkey_flag
+			}
+		}
+	}
+}
+
 
 #Makes the country name usable (grammatically) in normal text at the start of the sentence. So examples of what comes out are "France", "The Ottoman Sultanate", "The Ming Empire" and "The Iriquoi Tribe" (I am open to suggestions on the last) rather than "France", "Ottomans", "Ming" and "Iriquoi"
 defined_text = {
@@ -639,16 +698,32 @@ defined_text = {
 				technology_group = north_american
 				tag_with_plural_name_trigger = yes
 			}
+			NOT = { has_country_flag = is_revolutionary_turkey_flag }
+			NOT = { has_country_flag = is_turkey_flag }
+			NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+			NOT = { has_country_flag = is_gurkani_flag }
+		}
+	}
+	text = {
+		localisation_key = PLC_country_string_CAP
+		trigger = {
+			tag = PLC
 		}
 	}
 	text = {
 		localisation_key = already_has_proper_name
 		trigger = {
-			NOT = {
-				OR = {
-					technology_group = north_american
-					tag_with_plural_name_trigger = yes
+			OR = {
+				NOT = {
+					OR = {
+						technology_group = north_american
+						tag_with_plural_name_trigger = yes
+					}
 				}
+				has_country_flag = is_revolutionary_turkey_flag
+				has_country_flag = is_turkey_flag
+				has_country_flag = is_revolutionary_gurkani_flag
+				has_country_flag = is_gurkani_flag
 			}
 		}
 	}
@@ -808,5 +883,1788 @@ defined_text = {
 		trigger = {
 			has_regency = yes
 		}
+	}
+}
+
+#Used to create a dynamic mission title for emp_sax_spread_wettins_title and emp_hab_spread_dynasties_title
+defined_text = {
+	name = GetSpreadDynastyOrFallbackMissionTitle
+
+	text = {
+		localisation_key = emp_mission_spread_dynasty_title
+		trigger = {
+			government = monarchy
+			has_government_attribute = heir
+		}
+	}
+	text = {
+		localisation_key = emp_mission_spread_nodynasty_title
+		trigger = {
+			OR = {
+				NOT = { government = monarchy }
+				NOT = { has_government_attribute = heir }
+			}
+		}
+	}
+}
+
+#Used to create a dynamic mission title for emp_sax_spread_wettins_title and emp_hab_spread_dynasties_title
+defined_text = {
+	name = GetSAXSpreadDynastyOrFallbackMissionDesc
+
+	text = {
+		localisation_key = emp_sax_mission_spread_dynasty_desc
+		trigger = {
+			government = monarchy
+			has_government_attribute = heir
+		}
+	}
+	text = {
+		localisation_key = emp_sax_mission_spread_nodynasty_desc
+		trigger = {
+			OR = {
+				NOT = { government = monarchy }
+				NOT = { has_government_attribute = heir }
+			}
+		}
+	}
+}
+
+#Used to create a dynamic mission title for emp_hab_power_to_habsburg_title
+defined_text = {
+	name = GetGloryToDynastyOrFallbackMissionTitle
+
+	text = {
+		localisation_key = emp_mission_power_to_dynasty_title
+		trigger = {
+			government = monarchy
+			has_government_attribute = heir
+		}
+	}
+	text = {
+		localisation_key = emp_mission_power_to_country_title
+		trigger = {
+			OR = {
+				NOT = { government = monarchy }
+				NOT = { has_government_attribute = heir }
+			}
+		}
+	}
+}
+
+#Used to create a dynamic mission description emp_hab_spread_dynasties_desc
+defined_text = {
+	name = GetHABDynastyOrFallbackMissionDesc
+
+	text = {
+		localisation_key = emp_hab_spread_dynasties_has_dynasty_desc
+		trigger = {
+			government = monarchy
+			has_government_attribute = heir
+		}
+	}
+	text = {
+		localisation_key = emp_hab_spread_dynasties_nodynasty_desc
+		trigger = {
+			OR = {
+				NOT = { government = monarchy }
+				NOT = { has_government_attribute = heir }
+			}
+		}
+	}
+}
+
+#Used to create a dynamic mission title for emp_mlo_university_rules_title
+defined_text = {
+	name = GetMLOMissionUniversityRulesTitle
+
+	text = {
+		localisation_key = emp_mlo_university_rules_monarchy_title
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = emp_mlo_university_rules_democracy_title
+		trigger = {
+			government = republic
+		}
+	}
+}
+
+#Used to create a dynamic mission desc for emp_mlo_university_rules_title
+defined_text = {
+	name = GetMLOMissionUniversityRulesDesc
+
+	text = {
+		localisation_key = emp_mlo_university_rules_monarchy_desc
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = emp_mlo_university_rules_democracy_desc
+		trigger = {
+			government = republic
+		}
+	}
+}
+
+#Used to create a dynamic mission title for emp_hab_crush_the_revolution
+defined_text = {
+	name = GetEmbraceOrCrushRevolutionMissionTitle
+
+	text = {
+		localisation_key = emp_crush_the_revolution_title
+		trigger = {
+			NOT = { is_revolutionary_republic_trigger = yes }
+		}
+	}
+	text = {
+		localisation_key = emp_embrace_the_revolution_title
+		trigger = {
+			is_revolutionary_republic_trigger = yes
+		}
+	}
+}
+
+#Used to create a dynamic mission desc for emp_hab_crush_the_revolution
+defined_text = {
+	name = GetEmbraceOrCrushRevolutionMissionDesc
+
+	text = {
+		localisation_key = emp_crush_the_revolution_desc
+		trigger = {
+			NOT = { is_revolutionary_republic_trigger = yes }
+		}
+	}
+	text = {
+		localisation_key = emp_embrace_the_revolution_desc
+		trigger = {
+			is_revolutionary_republic_trigger = yes
+		}
+	}
+}
+
+#Used to get "Kingdom", "Republic" or "Theocratic State" in a Milanese mission. It is likely to be one of the first two. Can add more if more cases are needed later, or amend the third if someone comes up with better.
+defined_text = {
+	name = GetTier2GovernmentType
+
+	text = {
+		localisation_key = string_republic
+		trigger = {
+			government = republic
+		}
+	}
+	text = {
+		localisation_key = string_kingdom
+		trigger = {
+			government = monarchy
+		}
+	}
+	text = {
+		localisation_key = string_theocratic_state
+		trigger = {
+			government = theocracy
+		}
+	}
+}
+
+#Used to customise the description for emp_sav_union_with_naples
+defined_text = {
+	name = GetMissionSavUnionNaples
+
+	text = {
+		localisation_key = GetMissionSavUnionNaples_italian
+		trigger = {
+			culture_group = latin
+		}
+	}
+	text = {
+		localisation_key = GetMissionSavUnionNaples_french
+		trigger = {
+			NOT = { culture_group = latin }
+		}
+	}
+}
+
+#Used to customise the title for emp_sav_powerhouse_of_the_north
+defined_text = {
+	name = GetSavPowerhouseNorthOrSouthTitle
+
+	text = {
+		localisation_key = emp_sav_powerhouse_of_the_north_title2
+		trigger = {
+			culture_group = latin
+		}
+	}
+	text = {
+		localisation_key = emp_sav_powerhouse_of_the_south_title
+		trigger = {
+			culture_group = french
+		}
+	}
+	text = {
+		localisation_key = emp_sav_powerhouse_generic_title
+		trigger = {
+			capital_scope = {
+				NOT = { culture_group = latin }
+				NOT = { culture_group = french }
+			}
+		}
+	}
+}
+
+#Used to customise the desc for emp_sav_powerhouse_of_the_north
+defined_text = {
+	name = GetSavPowerhouseNorthOrSouthDesc
+
+	text = {
+		localisation_key = emp_sav_powerhouse_of_the_north_desc2
+		trigger = {
+			culture_group = latin
+		}
+	}
+	text = {
+		localisation_key = emp_sav_powerhouse_of_the_south_desc
+		trigger = {
+			culture_group = french
+		}
+	}
+	text = {
+		localisation_key = emp_sav_powerhouse_generic_desc
+		trigger = {
+			capital_scope = {
+				NOT = { culture_group = latin }
+				NOT = { culture_group = french }
+			}
+		}
+	}
+}
+
+#Used to customise the desc for new_flavour_bur.4's descriptions
+defined_text = {
+	name = GetBurHREAscensionText
+
+	text = {
+		localisation_key = BUR_HRE_positive
+		trigger = {
+			is_part_of_hre = yes
+			emperor = {
+				OR = {
+					ai_attitude = {
+						who = root
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = root
+						attitude = attitude_allied
+					}
+					has_opinion = {
+						who = root
+						value = 75
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = BUR_HRE_neutral
+		trigger = {
+			is_part_of_hre = yes
+			emperor = {
+				NOT = {
+					OR = {
+						ai_attitude = {
+							who = root
+							attitude = attitude_friendly
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_allied
+						}
+						has_opinion = {
+							who = root
+							value = 75
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_outraged
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_hostile
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_rivalry
+						}
+						ai_attitude = {
+							who = root
+							attitude = attitude_domineering
+						}
+						NOT = {
+							has_opinion = {
+								who = root
+								value = -50
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = BUR_HRE_hostile
+		trigger = {
+			is_part_of_hre = yes
+			emperor = {
+				OR = {
+					ai_attitude = {
+						who = root
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = root
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = root
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = root
+						attitude = attitude_domineering
+					}
+					NOT = {
+						has_opinion = {
+							who = root
+							value = -50
+						}
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = BUR_HRE_nostring
+		trigger = {
+			OR = {
+				is_part_of_hre = no
+				NOT = {
+					any_country = {
+						is_emperor = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+
+###Event Advisors (if you want to use this system, remember to set the flags and remove them once they are no longer needed so the custom locs can be used again for the next event)
+
+#GetName of the correct advisor
+defined_text = {
+	name = GetEventAdvisorName
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorName.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorName.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorName.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetTitle of the correct advisor
+defined_text = {
+	name = GetEventAdvisorTitle
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorTitle.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorTitle.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorTitle.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetSheHeCap of the correct advisor
+defined_text = {
+	name = GetEventAdvisorSheHeCap
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorSheHeCap.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHeCap.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHeCap.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetSheHe of the correct advisor
+defined_text = {
+	name = GetEventAdvisorSheHe
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorSheHe.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHe.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHe.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetHerHisCap of the correct advisor
+defined_text = {
+	name = GetEventAdvisorHerHisCap
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorHerHisCap.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHisCap.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHisCap.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetHerHis of the correct advisor
+defined_text = {
+	name = GetEventAdvisorHerHis
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorHerHis.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHis.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHis.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetHerHim of the correct advisor
+defined_text = {
+	name = GetEventAdvisorHerHim
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorHerHim.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHim.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHim.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+
+
+###Estate scripted locs: Get current estate name, or if the country lacks one, use the basic one
+
+defined_text = {
+	name = GetNobilityOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_nobles_name
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+	
+	text = {
+		localisation_key = estate_nobles
+		trigger = {
+			NOT = { has_estate = estate_nobles }
+		}
+	}
+}
+
+defined_text = {
+	name = GetBurghersOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_burghers_name
+		trigger = {
+			has_estate = estate_burghers
+		}
+	}
+	
+	text = {
+		localisation_key = estate_burghers
+		trigger = {
+			NOT = { has_estate = estate_burghers }
+		}
+	}
+}
+
+defined_text = {
+	name = GetChurchOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_church_name
+		trigger = {
+			has_estate = estate_church
+		}
+	}
+	
+	text = {
+		localisation_key = estate_church
+		trigger = {
+			NOT = { has_estate = estate_church }
+		}
+	}
+}
+
+defined_text = {
+	name = GetTribesOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_nomadic_tribes_name
+		trigger = {
+			has_estate = estate_nomadic_tribes
+		}
+	}
+	
+	text = {
+		localisation_key = estate_nomadic_tribes
+		trigger = {
+			NOT = { has_estate = estate_nomadic_tribes }
+		}
+	}
+}
+
+defined_text = {
+	name = GetDhimmiOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_dhimmi_name
+		trigger = {
+			has_estate = estate_dhimmi
+		}
+	}
+	
+	text = {
+		localisation_key = estate_dhimmi
+		trigger = {
+			NOT = { has_estate = estate_dhimmi }
+		}
+	}
+}
+
+defined_text = {
+	name = GetCossacksOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_cossacks_name
+		trigger = {
+			has_estate = estate_cossacks
+		}
+	}
+	
+	text = {
+		localisation_key = estate_cossacks
+		trigger = {
+			NOT = { has_estate = estate_cossacks }
+		}
+	}
+}
+
+defined_text = {
+	name = GetVaisyasOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_vaisyas_name
+		trigger = {
+			has_estate = estate_vaisyas
+		}
+	}
+	
+	text = {
+		localisation_key = estate_vaisyas
+		trigger = {
+			NOT = { has_estate = estate_vaisyas }
+		}
+	}
+}
+
+defined_text = {
+	name = GetBrahminsOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_brahmins_name
+		trigger = {
+			has_estate = estate_brahmins
+		}
+	}
+	
+	text = {
+		localisation_key = estate_brahmins
+		trigger = {
+			NOT = { has_estate = estate_brahmins }
+		}
+	}
+}
+
+defined_text = {
+	name = GetJainsOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_jains_name
+		trigger = {
+			has_estate = estate_jains
+		}
+	}
+	
+	text = {
+		localisation_key = estate_jains
+		trigger = {
+			NOT = { has_estate = estate_jains }
+		}
+	}
+}
+
+defined_text = {
+	name = GetRajputOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_rajput_name
+		trigger = {
+			has_estate = estate_rajput
+		}
+	}
+	
+	text = {
+		localisation_key = estate_rajput
+		trigger = {
+			NOT = { has_estate = estate_rajput }
+		}
+	}
+}
+
+defined_text = {
+	name = GetMarathaOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_maratha_name
+		trigger = {
+			has_estate = estate_maratha
+		}
+	}
+	
+	text = {
+		localisation_key = estate_maratha
+		trigger = {
+			NOT = { has_estate = estate_maratha }
+		}
+	}
+}
+
+defined_text = {
+	name = GetLegitimacyOrMeritocracy
+	random = no
+	
+	text = {
+		localisation_key = meritocracy
+		trigger = {
+			has_reform = celestial_empire
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+	
+	text = {
+		localisation_key = legitimacy
+		trigger = {
+			OR = {
+				NOT = { has_reform = celestial_empire }
+				NOT = { has_dlc = "Mandate of Heaven" }
+			}
+		}
+	}
+}
+
+#a Trader, an Inquisitor. Just used in one event, always masculine
+defined_text = {
+	name = GetExileAdvisorAAnTitle
+	random = no
+	
+	text = {
+		localisation_key = a_philosopher
+		trigger = {
+			has_country_flag = court_flavour_philosopher
+		}
+	}
+	text = {
+		localisation_key = a_natural_scientist
+		trigger = {
+			has_country_flag = court_flavour_natural_scientist
+		}
+	}
+	text = {
+		localisation_key = an_artist
+		trigger = {
+			has_country_flag = court_flavour_artist
+		}
+	}
+	text = {
+		localisation_key = a_treasurer
+		trigger = {
+			has_country_flag = court_flavour_treasurer
+		}
+	}
+	text = {
+		localisation_key = a_theologian
+		trigger = {
+			has_country_flag = court_flavour_theologian
+		}
+	}
+	text = {
+		localisation_key = a_master_of_mint
+		trigger = {
+			has_country_flag = court_flavour_master_of_mint
+		}
+	}
+	text = {
+		localisation_key = an_inquisitor
+		trigger = {
+			has_country_flag = court_flavour_inquisitor
+		}
+	}
+	text = {
+		localisation_key = a_statesman
+		trigger = {
+			has_country_flag = court_flavour_statesman
+		}
+	}
+	text = {
+		localisation_key = a_naval_reformer
+		trigger = {
+			has_country_flag = court_flavour_naval_reformer
+		}
+	}
+	text = {
+		localisation_key = a_trader
+		trigger = {
+			has_country_flag = court_flavour_trader
+		}
+	}
+	text = {
+		localisation_key = a_spymaster
+		trigger = {
+			has_country_flag = court_flavour_spymaster
+		}
+	}
+	text = {
+		localisation_key = a_diplomat
+		trigger = {
+			has_country_flag = court_flavour_diplomat
+		}
+	}
+	text = {
+		localisation_key = an_army_reformer
+		trigger = {
+			has_country_flag = court_flavour_army_reformer
+		}
+	}
+	text = {
+		localisation_key = an_army_organiser
+		trigger = {
+			has_country_flag = court_flavour_army_organiser
+		}
+	}
+	text = {
+		localisation_key = a_commandant
+		trigger = {
+			has_country_flag = court_flavour_commandant
+		}
+	}
+	text = {
+		localisation_key = a_quartermaster
+		trigger = {
+			has_country_flag = court_flavour_quartermaster
+		}
+	}
+	text = {
+		localisation_key = a_recruitmaster
+		trigger = {
+			has_country_flag = court_flavour_recruitmaster
+		}
+	}
+	text = {
+		localisation_key = a_fortification_expert
+		trigger = {
+			has_country_flag = court_flavour_fortification_expert
+		}
+	}
+	text = {
+		localisation_key = a_grand_captain
+		trigger = {
+			has_country_flag = court_flavour_grand_captain
+		}
+	}
+	text = {
+		localisation_key = a_colonial_governor
+		trigger = {
+			has_country_flag = court_flavour_colonial_governor
+		}
+	}
+	text = {
+		localisation_key = a_navigator
+		trigger = {
+			has_country_flag = court_flavour_navigator
+		}
+	}
+}
+
+
+#Prints the province's manufactory (if one is built)
+defined_text = {
+	name = GetManufactory
+	random = no
+	text = {
+		localisation_key = building_wharf
+		trigger = {
+			OR = {
+				trade_goods = fish
+				trade_goods = whales
+				trade_goods = crabs
+				trade_goods = naval_supplies
+				trade_goods = salt
+				trade_goods = tar
+				trade_goods = pearls
+				trade_goods = wax
+				trade_goods = slaves
+			}
+		}
+	}
+	text = {
+		localisation_key = building_weapons
+		trigger = {
+			OR = {
+				trade_goods = iron
+				trade_goods = copper
+				trade_goods = plumbum
+				trade_goods = munitions
+				trade_goods = minerals
+				trade_goods = zinc
+				trade_goods = tin
+				trade_goods = gold
+				trade_goods = mercury
+			}
+		}
+	}
+	text = {
+		localisation_key = building_textile
+		trigger = {
+			OR = {
+				trade_goods = silk
+				trade_goods = cloth
+				trade_goods = carpey
+				trade_goods = wool
+				trade_goods = dyes
+				trade_goods = hemp
+				trade_goods = leather
+				trade_goods = paper
+				trade_goods = cotton
+			}
+		}
+	}
+	text = {
+		localisation_key = building_plantations
+		trigger = {
+			OR = {
+				trade_goods = sugar
+				trade_goods = tobacco
+				trade_goods = vegetables
+				trade_goods = coffee
+				trade_goods = tea
+				trade_goods = dates
+				trade_goods = peaches
+				trade_goods = bananas
+				trade_goods = olive
+			}
+		}
+	}
+	text = {
+		localisation_key = building_tradecompany
+		trigger = {
+			OR = {
+				trade_goods = gems
+				trade_goods = glass
+				trade_goods = chinaware
+				trade_goods = marble
+				trade_goods = pepper
+				trade_goods = spices
+				trade_goods = incense
+				trade_goods = ivory
+				trade_goods = fur
+			}
+		}
+	}
+	text = {
+		localisation_key = building_farm_estate
+		trigger = {
+			OR = {
+				trade_goods = horses
+				trade_goods = livestock
+				trade_goods = pigs
+				trade_goods = venison
+				trade_goods = camels
+				trade_goods = honey
+				trade_goods = cheese
+				trade_goods = oil
+			}
+		}
+	}
+	text = {
+		localisation_key = building_mills
+		trigger = {
+			OR = {
+				trade_goods = grain
+				trade_goods = barley
+				trade_goods = rye
+				trade_goods = rice
+				trade_goods = corn
+				trade_goods = lumber
+				trade_goods = wine
+				trade_goods = beer
+				trade_goods = spirits
+			}
+		}
+	}
+	text = {
+		localisation_key = building_furnace
+		trigger = {
+			OR = {
+				trade_goods = coal
+				trade_goods = steel
+			}
+		}
+	}
+}
+
+#Prints the noun associated with the religion e.g. "Catholicism" or "Sunni Islam". Works in country and province scope.
+defined_text = {
+	name = GetReligionNoun
+	random = no
+	text = {
+		localisation_key = catholicism_string
+		trigger = {
+			religion = catholic
+		}
+	}
+	text = {
+		localisation_key = anglicanism_string
+		trigger = {
+			religion = anglican
+		}
+	}
+	text = {
+		localisation_key = protestantism_string
+		trigger = {
+			religion = protestant
+		}
+	}
+	text = {
+		localisation_key = reformed_christianity_string
+		trigger = {
+			religion = reformed
+		}
+	}
+	text = {
+		localisation_key = orthodox_christianity_string
+		trigger = {
+			religion = orthodox
+		}
+	}
+	text = {
+		localisation_key = coptic_christianity_string
+		trigger = {
+			religion = coptic
+		}
+	}
+	text = {
+		localisation_key = sunni_islam_string
+		trigger = {
+			religion = sunni
+		}
+	}
+	text = {
+		localisation_key = shia_islam_string
+		trigger = {
+			religion = shiite
+		}
+	}
+	text = {
+		localisation_key = ibadism_string
+		trigger = {
+			religion = ibadi
+		}
+	}
+	text = {
+		localisation_key = theravada_buddhism_string
+		trigger = {
+			religion = buddhism
+		}
+	}
+	text = {
+		localisation_key = animism_string
+		trigger = {
+			religion = animism
+		}
+	}
+	text = {
+		localisation_key = fetishism_string
+		trigger = {
+			religion = shamanism
+		}
+	}
+	text = {
+		localisation_key = norse_paganism_string
+		trigger = {
+			religion = norse_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = tengrianism_string
+		trigger = {
+			religion = tengri_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = judaism_string
+		trigger = {
+			religion = jewish
+		}
+	}
+	text = {
+		localisation_key = zoroastrianism_string
+		trigger = {
+			religion = zoroastrian
+		}
+	}
+
+	#Mod
+	text = {
+		localisation_key = catholique_string
+		trigger = {
+			religion = catholique
+		}
+	}
+	text = {
+		localisation_key = anabaptist_string
+		trigger = {
+			religion = anabaptist
+		}
+	}
+	text = {
+		localisation_key = lollardy_string
+		trigger = {
+			religion = lollardy
+		}
+	}
+	text = {
+		localisation_key = cathar_string
+		trigger = {
+			religion = cathar
+		}
+	}
+	text = {
+		localisation_key = fraticelli_string
+		trigger = {
+			religion = fraticelli
+		}
+	}
+	text = {
+		localisation_key = waldensian_string
+		trigger = {
+			religion = waldensian
+		}
+	}
+	text = {
+		localisation_key = bogomilist_string
+		trigger = {
+			religion = bogomilist
+		}
+	}
+	text = {
+		localisation_key = paulician_string
+		trigger = {
+			religion = paulician
+		}
+	}
+	text = {
+		localisation_key = finnish_pagan_string
+		trigger = {
+			religion = finnish_pagan
+		}
+	}
+	text = {
+		localisation_key = slavic_pagan_string
+		trigger = {
+			religion = slavic_pagan
+		}
+	}
+	text = {
+		localisation_key = hellenic_pagan_string
+		trigger = {
+			religion = hellenic_pagan
+		}
+	}
+	text = {
+		localisation_key = dievturiba_string
+		trigger = {
+			religion = dievturiba
+		}
+	}
+	text = {
+		localisation_key = druwi_string
+		trigger = {
+			religion = druwi
+		}
+	}
+	text = {
+		localisation_key = nestorian_string
+		trigger = {
+			religion = nestorian
+		}
+	}
+	text = {
+		localisation_key = druze_string
+		trigger = {
+			religion = druze
+		}
+	}
+	text = {
+		localisation_key = yazidi_string
+		trigger = {
+			religion = yazidi
+		}
+	}
+	text = {
+		localisation_key = iconoclast_string
+		trigger = {
+			religion = iconoclast
+		}
+	}
+	text = {
+		localisation_key = monothelite_string
+		trigger = {
+			religion = monothelite
+		}
+	}
+	text = {
+		localisation_key = zikri_string
+		trigger = {
+			religion = zikri
+		}
+	}
+	text = {
+		localisation_key = egyptian_religion_string
+		trigger = {
+			religion = egyptian_religion
+		}
+	}
+	text = {
+		localisation_key = vainakh_string
+		trigger = {
+			religion = vainakh
+		}
+	}
+	text = {
+		localisation_key = maausko_string
+		trigger = {
+			religion = maausko
+		}
+	}
+	text = {
+		localisation_key = uralinisko_string
+		trigger = {
+			religion = uralinisko
+		}
+	}
+	text = {
+		localisation_key = khabze_string
+		trigger = {
+			religion = khabze
+		}
+	}
+	text = {
+		localisation_key = uatsdin_string
+		trigger = {
+			religion = uatsdin
+		}
+	}
+	text = {
+		localisation_key = mandaeism_string
+		trigger = {
+			religion = mandaeism
+		}
+	}
+}
+
+#Prints the estate related to the event advisor via e.g. [This.GetBurghersName]
+defined_text = {
+	name = GetEventAdvisorEstate
+	random = no
+	text = {
+		localisation_key = this_brahmins
+		trigger = {
+			has_country_flag = advisor_events_adm
+			has_estate = estate_brahmins
+			OR = {
+				NOT = { has_estate = estate_church }
+				employed_advisor = {
+					category = ADM
+					religion = zoroastrian
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = this_dhimmi
+		trigger = {
+			has_country_flag = advisor_events_adm
+			has_estate = estate_dhimmi
+			employed_advisor = {
+				category = ADM
+				religion = heathen
+			}
+		}
+	}
+	text = {
+		localisation_key = this_clergy
+		trigger = {
+			has_country_flag = advisor_events_adm
+			has_estate = estate_church
+		}
+	}
+	text = {
+		localisation_key = this_vaisyas
+		trigger = {
+			has_country_flag = advisor_events_dip
+			has_estate = estate_vaisyas
+		}
+	}
+	text = {
+		localisation_key = this_jains
+		trigger = {
+			has_country_flag = advisor_events_dip
+			has_estate = estate_jains
+		}
+	}
+	text = {
+		localisation_key = this_burghers
+		trigger = {
+			has_country_flag = advisor_events_dip
+			has_estate = estate_burghers
+		}
+	}
+	text = {
+		localisation_key = this_rajputs
+		trigger = {
+			has_country_flag = advisor_events_mil
+			has_estate = estate_rajput
+			OR = {
+				NOT = { has_estate = estate_nobles }
+				employed_advisor = {
+					category = MIL
+					religion = zoroastrian
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = this_marathas
+		trigger = {
+			has_country_flag = advisor_events_mil
+			has_estate = estate_maratha
+			OR = {
+				NOT = { has_estate = estate_nobles }
+				employed_advisor = {
+					category = MIL
+					religion = zoroastrian
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = this_nobles
+		trigger = {
+			has_country_flag = advisor_events_mil
+			has_estate = estate_nobles
+		}
+	}
+	text = {
+		localisation_key = this_nomadic_tribes
+		trigger = {
+			has_estate = estate_nomadic_tribes
+		}
+	}
+	text = { #is used if none of the above ones are true e.g. if you have no estates
+		localisation_key = fallback_string_nobility
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+
+#Prints the estate related to the event advisor via e.g. [This.GetBurghersName]
+defined_text = {
+	name = GetVaishyasOrBurghersName
+	random = no
+	text = {
+		localisation_key = this_vaisyas
+		trigger = {
+			has_estate = estate_vaisyas
+		}
+	}
+	text = {
+		localisation_key = this_burghers
+		trigger = {
+			has_estate = estate_burghers
+		}
+	}
+}
+
+#Prints the estate related to the event advisor via e.g. [This.GetBurghersName]
+defined_text = {
+	name = GetMarathasOrRajputsOrNoblesName
+	random = no
+	text = {
+		localisation_key = this_nobles
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+	text = {
+		localisation_key = this_rajputs
+		trigger = {
+			has_estate = estate_rajput
+			NOT = { has_estate = estate_nobles }
+		}
+	}
+	text = {
+		localisation_key = this_marathas
+		trigger = {
+			has_estate = estate_maratha
+			NOT = { has_estate = estate_nobles }
+		}
+	}
+}
+
+#Prints the parliament name with or without "the" before it, e.g. "they want a seat in Parliament/the National Assembly"
+defined_text = {
+	name = GetParliamentWithGrammar
+	random = no
+
+	text = {
+		localisation_key = this_parliament
+		trigger = {
+			NOT = {
+				OR = {
+					tag = AHI
+					tag = ANY
+					tag = BFR
+					tag = DNM
+					tag = DVR
+					tag = ESH
+					tag = GYN
+					tag = HCM
+					tag = HMD
+					tag = INL
+					tag = KBT
+					tag = KMU
+					tag = KSI
+					tag = KTL
+					tag = LAD
+					tag = MGJ
+					tag = PRV
+					tag = SHP
+					tag = SLT
+					tag = TCT
+					tag = TKK
+					tag = TSN
+					tag = TVS
+					tag = AYD
+					tag = CND
+					tag = DUL
+					tag = ERE
+					tag = FRA
+					tag = GEN
+					tag = GRM
+					tag = HLR
+					tag = KAR
+					tag = MEN
+					tag = MOS
+					tag = NED
+					tag = PLC
+					tag = POL
+					tag = PSK
+					tag = RAM
+					tag = RUS
+					tag = SPA
+					tag = SRU
+					tag = SWI
+					tag = TUR
+					tag = VEN
+					tag = WES
+					tag = CRO
+					tag = HUN
+					culture_group = altaic
+					culture_group = germanic
+					tag = GER
+					tag = SWE
+					tag = DAN
+					tag = NOR
+					tag = ICE
+					culture_group = iberian
+					culture_group = east_slavic
+					tag = LIT
+					culture_group = oghuz
+					culture_group = turko_semitic
+					culture_group = maghrebi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = this_the_parliament
+		trigger = {
+			OR = {
+				tag = AHI
+				tag = ANY
+				tag = BFR
+				tag = DNM
+				tag = DVR
+				tag = ESH
+				tag = GYN
+				tag = HCM
+				tag = HMD
+				tag = INL
+				tag = KBT
+				tag = KMU
+				tag = KSI
+				tag = KTL
+				tag = LAD
+				tag = MGJ
+				tag = PRV
+				tag = SHP
+				tag = SLT
+				tag = TCT
+				tag = TKK
+				tag = TSN
+				tag = TVS
+				tag = AYD
+				tag = CND
+				tag = DUL
+				tag = ERE
+				tag = FRA
+				tag = GEN
+				tag = GRM
+				tag = HLR
+				tag = KAR
+				tag = MEN
+				tag = MOS
+				tag = NED
+				tag = PLC
+				tag = POL
+				tag = PSK
+				tag = RAM
+				tag = RUS
+				tag = SPA
+				tag = SRU
+				tag = SWI
+				tag = TUR
+				tag = VEN
+				tag = WES
+				tag = CRO
+				tag = HUN
+				culture_group = altaic
+				culture_group = germanic
+				tag = GER
+				tag = SWE
+				tag = DAN
+				tag = NOR
+				tag = ICE
+				culture_group = iberian
+				culture_group = east_slavic
+				tag = LIT
+				culture_group = oghuz
+				culture_group = turko_semitic
+				culture_group = maghrebi
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetParliamentWithGrammarCap
+	random = no
+
+	text = {
+		localisation_key = this_parliament
+		trigger = {
+			NOT = {
+				OR = {
+					tag = AHI
+					tag = ANY
+					tag = BFR
+					tag = DNM
+					tag = DVR
+					tag = ESH
+					tag = GYN
+					tag = HCM
+					tag = HMD
+					tag = INL
+					tag = KBT
+					tag = KMU
+					tag = KSI
+					tag = KTL
+					tag = LAD
+					tag = MGJ
+					tag = PRV
+					tag = SHP
+					tag = SLT
+					tag = TCT
+					tag = TKK
+					tag = TSN
+					tag = TVS
+					tag = AYD
+					tag = CND
+					tag = DUL
+					tag = ERE
+					tag = FRA
+					tag = GEN
+					tag = GRM
+					tag = HLR
+					tag = KAR
+					tag = MEN
+					tag = MOS
+					tag = NED
+					tag = PLC
+					tag = POL
+					tag = PSK
+					tag = RAM
+					tag = RUS
+					tag = SPA
+					tag = SRU
+					tag = SWI
+					tag = TUR
+					tag = VEN
+					tag = WES
+					tag = CRO
+					tag = HUN
+					culture_group = altaic
+					culture_group = germanic
+					tag = GER
+					tag = SWE
+					tag = DAN
+					tag = NOR
+					tag = ICE
+					culture_group = iberian
+					culture_group = east_slavic
+					tag = LIT
+					culture_group = oghuz
+					culture_group = turko_semitic
+					culture_group = maghrebi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = this_the_parliament_cap
+		trigger = {
+			OR = {
+				tag = AHI
+				tag = ANY
+				tag = BFR
+				tag = DNM
+				tag = DVR
+				tag = ESH
+				tag = GYN
+				tag = HCM
+				tag = HMD
+				tag = INL
+				tag = KBT
+				tag = KMU
+				tag = KSI
+				tag = KTL
+				tag = LAD
+				tag = MGJ
+				tag = PRV
+				tag = SHP
+				tag = SLT
+				tag = TCT
+				tag = TKK
+				tag = TSN
+				tag = TVS
+				tag = AYD
+				tag = CND
+				tag = DUL
+				tag = ERE
+				tag = FRA
+				tag = GEN
+				tag = GRM
+				tag = HLR
+				tag = KAR
+				tag = MEN
+				tag = MOS
+				tag = NED
+				tag = PLC
+				tag = POL
+				tag = PSK
+				tag = RAM
+				tag = RUS
+				tag = SPA
+				tag = SRU
+				tag = SWI
+				tag = TUR
+				tag = VEN
+				tag = WES
+				tag = CRO
+				tag = HUN
+				culture_group = altaic
+				culture_group = germanic
+				tag = GER
+				tag = SWE
+				tag = DAN
+				tag = NOR
+				tag = ICE
+				culture_group = iberian
+				culture_group = east_slavic
+				tag = LIT
+				culture_group = oghuz
+				culture_group = turko_semitic
+				culture_group = maghrebi
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetRandom_Sin
+
+	text = {
+		localisation_key = sin_sexual_immorality
+	}
+	text = {
+		localisation_key = sin_greedy_landlord
+	}
+	text = {
+		localisation_key = sin_impiety
+	}
+	text = {
+		localisation_key = sin_wroth
+	}
+	text = {
+		localisation_key = sin_adultery
 	}
 }

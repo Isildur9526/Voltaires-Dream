@@ -14,7 +14,6 @@ discovered_by = eastern
 discovered_by = ottoman
 discovered_by = western
 discovered_by = muslim
-estate = estate_nobles
 
 1240.1.1 = {
 	owner = LUX

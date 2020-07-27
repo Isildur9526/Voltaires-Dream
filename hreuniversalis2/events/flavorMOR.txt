@@ -220,7 +220,8 @@ country_event = {
 				size = 4
 				culture = atlas_berber
 				religion = sunni
-				leader = "Muhammad Banû Wattâs"
+				leader = "Muhammad"
+				leader_dynasty = "Banû Wattâs"
 			}
 		}
 	}
@@ -279,7 +280,8 @@ country_event = {
 				size = 4
 				religion = sunni
 				culture = atlas_berber
-				leader = "Muhammad Banû Wattâs"
+				leader = "Muhammad"
+				leader_dynasty = "Banû Wattâs"
 			}
 		}
 	}

@@ -27,7 +27,7 @@ just_personality = {
 		chance = {
 			modifier = {
 				factor = 1
-				ADM = 6
+				heir_ADM = 6
 			}
 		}
 	}
@@ -40,7 +40,7 @@ just_personality = {
 		chance = {
 			modifier = {
 				factor = 1
-				ADM = 6
+				consort_ADM = 6
 			}
 		}
 	}
@@ -104,6 +104,7 @@ righteous_personality = {
 	
 	legitimacy = 1
 	republican_tradition = 0.5
+	wants_ecumenical_council = yes
 	nation_designer_cost = 2
 } #1 better, 1 less bad
 
@@ -113,6 +114,7 @@ tolerant_personality = {
 		allow = {
 			NOT = { ruler_has_personality = zealot_personality }
 			NOT = { ruler_has_personality = free_thinker_personality }
+			NOT = { ruler_has_personality = pious_personality }
 		}
 	}
 
@@ -120,6 +122,7 @@ tolerant_personality = {
 		allow = {
 			NOT = { heir_has_personality = zealot_personality }
 			NOT = { heir_has_personality = free_thinker_personality }
+			NOT = { heir_has_personality = pious_personality }
 		}
 	}
 	
@@ -127,6 +130,7 @@ tolerant_personality = {
 		allow = {
 			NOT = { consort_has_personality = zealot_personality }
 			NOT = { consort_has_personality = free_thinker_personality }
+			NOT = { consort_has_personality = pious_personality }
 		}
 	}
 	
@@ -156,6 +160,7 @@ tolerant_personality = {
 	
 	tolerance_heretic = 1
 	tolerance_heathen = 1
+	wants_ecumenical_council = yes
 	nation_designer_cost = 2
 }
 
@@ -719,6 +724,7 @@ zealot_personality = {
 			NOT = { ruler_has_personality = tolerant_personality }
 			NOT = { ruler_has_personality = free_thinker_personality }
 			NOT = { ruler_has_personality = drunkard_personality }
+			NOT = { ruler_has_personality = sinner_personality }
 		}
 	}
 
@@ -727,6 +733,7 @@ zealot_personality = {
 			NOT = { heir_has_personality = tolerant_personality }
 			NOT = { heir_has_personality = free_thinker_personality }
 			NOT = { heir_has_personality = drunkard_personality }
+			NOT = { heir_has_personality = sinner_personality }
 		}
 	}
 	
@@ -735,6 +742,7 @@ zealot_personality = {
 			NOT = { consort_has_personality = tolerant_personality }
 			NOT = { consort_has_personality = free_thinker_personality }
 			NOT = { consort_has_personality = drunkard_personality }
+			NOT = { consort_has_personality = sinner_personality }
 		}
 	}
 	
@@ -781,6 +789,7 @@ pious_personality = {
 		allow = {
 			NOT = { ruler_has_personality = sinner_personality }
 			NOT = { ruler_has_personality = drunkard_personality }
+			NOT = { ruler_has_personality = tolerant_personality }
 		}
 	}
 
@@ -788,6 +797,7 @@ pious_personality = {
 		allow = {
 			NOT = { heir_has_personality = sinner_personality }
 			NOT = { heir_has_personality = drunkard_personality }
+			NOT = { heir_has_personality = tolerant_personality }
 		}
 	}
 
@@ -807,6 +817,7 @@ pious_personality = {
 	heretic_ally_acceptance = -30
 	
 	devotion = 1
+	wants_ecumenical_council = yes
 	nation_designer_cost = 2
 } #1 Less bad
 
@@ -1621,6 +1632,7 @@ strict_personality = {
 	
 	wants_avoid_debase = yes
 	wants_avoid_loans = yes
+	wants_ecumenical_council = yes
 	
 	discipline = 0.05
 	nation_designer_cost = 5
@@ -1772,7 +1784,13 @@ navigator_personality = {
 				has_game_started = no
 				is_playing_custom_nation = yes
 			}
-			num_of_ports = 1
+			AND = {
+				num_of_ports = 1
+				navy_size = 1
+			}
+		}
+		NOT = {
+			has_reform = native_basic_reform
 		}
 	}
 	
@@ -2027,6 +2045,7 @@ embezzler_personality = {
 	}
 	
 	wants_debase = yes
+	wants_to_appoint_cardinals_in_his_own_land = yes
 	#wants_sell_ships = yes
 	wants_sell_provinces = yes
 	
@@ -2243,6 +2262,7 @@ sinner_personality =  {
 	ruler_allow = {
 		allow = {
 			NOT = { ruler_has_personality = pious_personality }
+			NOT = { ruler_has_personality = zealot_personality }
 		}
 	
 		chance = {
@@ -2269,6 +2289,7 @@ sinner_personality =  {
 	heir_allow = {
 		allow = {
 			NOT = { heir_has_personality = pious_personality }
+			NOT = { heir_has_personality = zealot_personality }
 		}
 	
 		chance = {
@@ -2295,6 +2316,7 @@ sinner_personality =  {
 	consort_allow = {
 		allow = {
 			NOT = { consort_has_personality = pious_personality }
+			NOT = { consort_has_personality = zealot_personality }
 		}
 
 		chance = {
@@ -2330,6 +2352,7 @@ sinner_personality =  {
 	
 	different_religion_war_multiplier = 0.8
 	razing = yes
+	wants_to_appoint_cardinals_in_his_own_land = yes
 	
 	tolerance_own = -2
 	nation_designer_cost = -2
@@ -2420,6 +2443,7 @@ greedy_personality = {
 	}
 	
 	wants_gold = yes
+	wants_to_appoint_cardinals_in_his_own_land = yes
 	gift_chance = -100
 	
 	war_priority = {

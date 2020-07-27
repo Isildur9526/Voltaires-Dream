@@ -327,6 +327,7 @@ technology = {
 	naval_maintenance		=	0.1	
 	trade_efficiency 		= 	0.02
 	trade_range				=	25
+	coastal_defence = yes
 }
 
 technology = {
@@ -351,6 +352,7 @@ technology = {
 	
 	naval_morale			=	0.3
 	range					= 	50
+	impressment_offices 	= yes
 }
 
 technology  = {
@@ -404,6 +406,7 @@ technology = {
 	year = 1559
 	naval_morale			=	0.2
 	may_slander_merchants = yes
+	naval_battery = yes
 }
 
 technology = {
@@ -476,7 +479,7 @@ technology = {
 	year = 1648
 	
 	naval_maintenance		= 	0.1	
-	grand_shipyard = yes 
+	drydock = yes 
 	
 	enable = wargalleon
 }
@@ -542,7 +545,7 @@ technology = {
 	# Tech 61
 	year = 1725
 	
-	drydock = yes 
+	grand_shipyard = yes 
 
 	trade_efficiency 		= 	0.02
 	trade_range				=	25

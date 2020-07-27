@@ -17,7 +17,7 @@ add_core = SME
 	owner = GUR
 	controller = GUR
 	add_core = GUR
-	remove_core = IME
+	remove_core = SME
 }
 1547.1.1 = { owner = TUR controller = TUR }
 1564.1.1 = { owner = GUR controller = GUR }
@@ -28,7 +28,6 @@ add_core = SME
 	controller = TUR
 	add_core = TUR
 	religion = sunni
-	estate = estate_nobles
 }
 
 discovered_by = muslim

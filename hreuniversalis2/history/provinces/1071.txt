@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Backnang" 
 is_city = yes	
 add_core = GMU
-estate = estate_nobles
 
 1090.5.18 = {
 	owner = WWS

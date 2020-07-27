@@ -10,7 +10,6 @@ hre = no
 owner = RYA
 controller = RYA
 add_core = RYA
-estate = estate_nobles
 
 1115.8.27 = { religion = orthodox }
 1164.2.15 = {

@@ -6,10 +6,10 @@ chivalrous_confederations_reform = {
 	}
 	modifiers = {
 		leader_land_shock = 1
-		#holy_orders_influence_modifier = 0.1
-		#holy_orders_loyalty_modifier = 0.05
-		#nobles_influence_modifier = -0.1
-		#nobles_loyalty_modifier = -0.05
+		holy_orders_influence_modifier = 0.1
+		holy_orders_loyalty_modifier = 0.05
+		nobles_influence_modifier = -0.1
+		nobles_loyalty_modifier = -0.05
 	}
 	#custom_attributes = {
 	#	add a custom attribute to improve one of the holy order privileges in 1.30
@@ -23,10 +23,10 @@ mamluk_leadership_reform = {
 	}
 	modifiers = {
 		infantry_power = 0.1
-		#mamluks_influence_modifier = 0.1
-		#mamluks_loyalty_modifier = 0.05
-		#nobles_influence_modifier = -0.1
-		#nobles_loyalty_modifier = -0.05
+		mamluks_influence_modifier = 0.1
+		mamluks_loyalty_modifier = 0.05
+		nobles_influence_modifier = -0.1
+		nobles_loyalty_modifier = -0.05
 	}
 	#custom_attributes = {
 	#	add a custom attribute to improve one of the mamluk privileges in 1.30
@@ -107,7 +107,6 @@ acquisition_of_granges_reform = {
 	}
 }
 
-#The next three reforms are meant to be included into one of the new tiers added in 1.30
 strenghten_abbatial_hierarchy_reform = {
 	potential = {
 		has_reform = monastic_order_reform
@@ -116,7 +115,7 @@ strenghten_abbatial_hierarchy_reform = {
 	allow_normal_conversion = yes
 	modifiers = {
 		abb_benedictines_influence = 0.1
-		devotion = 0.5
+		devotion = 0.25
 		diplomatic_reputation = 1
 	}
 }
@@ -136,13 +135,13 @@ noble_chanceries_reform = {
 
 episcopal_competences_reform = {
 	potential = {
-		has_reform = regionally_elected_commanders
+		has_reform = monastic_order_reform
 	}
 	icon = "pope"
 	allow_normal_conversion = yes
 	modifiers = {
 		abb_cistercians_influence = 0.1
-		max_absolutism = 10
+		governing_capacity = 100
 		stability_cost_modifier = -0.1
 	}
 }

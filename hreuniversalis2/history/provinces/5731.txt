@@ -16,7 +16,6 @@ add_core = DZK
 	controller = LIT
 	add_core = LIT
 	remove_core = DZK
-	estate = estate_bughers
 }
 1387.1.1 = { religion = catholic }
 1543.1.1 = { unrest = 3 }

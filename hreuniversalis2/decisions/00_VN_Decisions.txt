@@ -319,6 +319,7 @@ country_decisions = {
             }
         }
         effect = {
+        	override_country_name = ALLESGRAVIATE
             add_country_modifier = {
                 name = all_graviates_titles_acquired
                 duration = -1
@@ -2012,6 +2013,59 @@ country_decisions = {
 					is_enemy = AVI
 				}	
 			}
+		}
+	}
+
+	wendish_germanization = {
+		major = yes
+		potential = {
+			primitives = no
+			is_tribal = no
+			OR = {
+				primary_culture = polabian
+				primary_culture = kashubian
+			}
+			any_neighbor_country = {
+				culture_group = germanic
+			}
+			OR = {
+				current_age = age_of_holy_wars
+				current_age = age_of_crisis
+			}
+		}
+		allow = {
+			capital_scope = {
+				culture_group = germanic
+				has_owner_accepted_culture = yes
+			}
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			add_stability = -1
+			hidden_effect = {
+				restore_country_name = yes
+				export_to_variable = {
+					variable_name = formerprimaryculture
+					value = primary_culture
+				}
+				capital_scope = {
+					export_to_variable = {
+						variable_name = capitalculture
+						value = culture
+					}
+				}
+				change_primary_culture = variable:capitalculture
+				add_accepted_culture = variable:formerprimaryculture
+			}
+			if = {
+				limit = { religion = slavic_pagan }
+				change_religion = catholic
+			}
+			custom_tooltip = wendish_germanization.tt
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }

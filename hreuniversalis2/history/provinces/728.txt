@@ -10,7 +10,6 @@ base_manpower = 2
 capital = "Bragança"
 is_city = yes
 add_core = PCA
-estate = estate_nobles
 fort_14th = yes
 
 1065.12.24 = {

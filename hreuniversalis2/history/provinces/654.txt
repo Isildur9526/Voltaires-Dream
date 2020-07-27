@@ -11,7 +11,6 @@ owner = DAN
 controller = DAN	
 add_core = DAN
 add_core = SKN
-estate = estate_nobles
 fort_14th = yes
 
 1332.8.2 = {

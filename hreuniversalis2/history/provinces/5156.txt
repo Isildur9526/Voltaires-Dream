@@ -10,7 +10,6 @@ hre = yes
 owner = PFE
 controller = PFE
 add_core = PFE
-estate = estate_nobles
 
 1056.1.1 = {
 	owner = STY

@@ -904,3 +904,67 @@ add_religious_influence_effect_large = {
 		}
 	}
 }
+
+anglicize_irish_tag_effect = {
+	trigger_switch = {
+		on_trigger = tag
+		OSS = { override_country_name = OSSORY }
+		OIE = { override_country_name = ORIEL }
+		BRF = { override_country_name = BREFFNY }
+		TRY = { override_country_name = TYRCONNELL }
+		MCM = { override_country_name = MUNSTER }
+		ORD = { override_country_name = ORMOND }
+		MNS = { override_country_name = THOMOND }
+		DMS = { override_country_name = DESMOND }
+		#WXF
+		ICN = { override_country_name = EAST_CONNACHT }
+		ACN = { override_country_name = WEST_CONNACHT }
+		UML = { override_country_name = MAYO }
+		XKY = { override_country_name = KERRY }
+		#WTY
+		IAB = { override_country_name = WEST_BREFFNY }
+		YBR = { override_country_name = LOUTH }
+		SLN = { override_country_name = SLIGO }
+		ULS = { override_country_name = ULSTER }
+		TYR = { override_country_name = TYRONE }
+		KID = { override_country_name = KILDARE }
+		MTH = { override_country_name = MEATH }
+		KEE = { override_country_name = KEENAGHT }
+		FMA = { override_country_name = FERMANAGH }
+		FLY = { override_country_name = OFFALY }
+		UIS = { override_country_name = WESTMEATH }
+		TBE = { override_country_name = ANNALY }
+		BNA = { override_country_name = BALLINACOR }
+		FWS = { override_country_name = FEWS }
+		IVE = { override_country_name = IVEAGH }
+		CBY = { override_country_name = ANTRIM }
+		INH = { override_country_name = INISHOWEN }
+		UMA = { override_country_name = HY_MANY }
+		CCL = { override_country_name = BEAR }
+		EIL = { override_country_name = ELY }
+		CCU = { override_country_name = TULLA }
+		GLN = { override_country_name = GALLEN }
+		LEI = { override_country_name = LEINSTER }
+		CBL = { override_country_name = CREBILLY }
+		FCH = { override_country_name = TIRERAGH }
+		LGO = { override_country_name = LEIX }
+		MGL = { override_country_name = MOYLURG }
+		UID = { override_country_name = ATHENRY }
+		LRG = { override_country_name = LURG }
+		FHM = { override_country_name = FERMOY }
+		BEE = { override_country_name = BREGA }
+		LCH = { override_country_name = LOGHER }
+		CHB = { override_country_name = CARBERY }
+		UIL = { override_country_name = MUSKERRY }
+		BNN = { override_country_name = BURREN }
+		UIB = { override_country_name = CARLOW }
+		AIN = { override_country_name = BANAGH }
+		TUC = { override_country_name = TULLYHOGUE }
+		TYH = { override_country_name = TULLYHAW }
+		LCN = { override_country_name = LECAN }
+		CRK = { override_country_name = CORK }
+		DBL = { override_country_name = DUBLIN }
+		XDG = { override_country_name = DONEGAL }
+		#CNN
+	}
+}

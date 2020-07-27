@@ -8,6 +8,7 @@ capital = 3108
 government_rank = 2
 
 1132.1.1 = {
+	set_global_flag = hashashins_spawned_flag
 	monarch = {
 		name = "Kiyâ"
 		dynasty = "Nizâriyya"

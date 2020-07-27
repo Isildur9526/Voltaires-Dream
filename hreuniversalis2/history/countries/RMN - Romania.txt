@@ -9,7 +9,6 @@ capital = 5685	# Tîrgoviste
 #Domnitor of Romania
 1866.4.22 = {
 	government_rank = 4
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Carol I"
 		dynasty = "von Hohenzollern"

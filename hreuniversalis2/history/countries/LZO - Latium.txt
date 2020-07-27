@@ -114,7 +114,6 @@ add_army_professionalism = 0.05
 1798.2.15 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic
 	monarch = {
 		name = "Repubblica Romana"
 		regent = yes

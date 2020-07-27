@@ -21,7 +21,6 @@ add_core = MSK
 	owner = LIT
 	controller = LIT
 	add_core = LIT
-	estate = estate_nobles
 }
 1569.7.1 = {
 	owner = PLC

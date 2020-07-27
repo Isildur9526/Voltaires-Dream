@@ -9,6 +9,8 @@
  GOLDDEPLETED_1: "Die Silbermine in"
  GOLDDEPLETED_LOG: "Silbermine in $PROV$ erschöpft."
 #Vanilla fixes
+ desc_wine_bonus_prod: "Unsere Brauereien steigern die Wein- oder Spirituosenproduktion in dieser Provinz."
+ desc_grain_bonus_prod: "Unsere Brauereien steigern die Bierproduktion in dieser Provinz."
  livestock: "Vieh"
  grain: "Weizen"
  tobacco: "Inhalationsmittel"

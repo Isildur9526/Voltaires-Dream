@@ -12,7 +12,7 @@ vn_lux_missions_slot_1 = {
     has_country_shield = yes
 
     vn_lux_integrate_neighbors = {
-        icon = mission_unite_home_region
+        icon = generality_lands
         position = 1
         required_missions = {  }
         provinces_to_highlight = {
@@ -150,7 +150,7 @@ vn_lux_missions_slot_2 = {
         }
     }
     vn_lux_rule_over_trier = {
-        icon = mission_religious
+        icon = rhineland_conquest
         position = 2
         required_missions = { vn_lux_integrate_neighbors vn_lux_religious_influence }
         provinces_to_highlight = {
@@ -181,7 +181,7 @@ vn_lux_missions_slot_2 = {
         }
     }
     vn_lux_influence_in_the_empire = {
-        icon = mission_alliances
+        icon = influence_the_princes
         position = 3
         required_missions = { vn_lux_elevate_to_duchy }
         trigger = {
@@ -207,10 +207,12 @@ vn_lux_missions_slot_2 = {
         position = 4
         required_missions = { vn_lux_influence_in_the_empire vn_lux_dynastic_success }
         trigger = {
-            is_emperor = yes #!
+            is_emperor = yes 
+			imperial_influence = 50
         }
         effect = {
             add_dip_power = 50
+			add_imperial_influence = 10
             add_country_modifier = {
                 name = lux_emperorship_mission
                 duration = 9125
@@ -290,7 +292,7 @@ vn_lux_missions_slot_3 = {
         }
     }
     vn_lux_king_of_bohemia = {
-        icon = mission_coronation
+        icon = bohemian_commonwealth
         position = 4
         required_missions = { vn_lux_dynastic_success }
         provinces_to_highlight = {
@@ -321,7 +323,7 @@ vn_lux_missions_slot_3 = {
         }
     }
     vn_lux_lusatia = {
-        icon = mission_unite_home_region
+        icon = bohemian_borderlands
         position = 5
         required_missions = { vn_lux_king_of_bohemia }
         provinces_to_highlight = {
@@ -354,7 +356,7 @@ vn_lux_missions_slot_3 = {
         }
     }
     vn_lux_elector_of_brandenburg = {
-        icon = mission_kingdom
+        icon = electorate_of_brandenburg
         position = 6
         required_missions = { vn_lux_lusatia }
         provinces_to_highlight = {
@@ -416,19 +418,19 @@ vn_lux_missions_slot_4 = {
         }
     }
     vn_lux_masters_of_diplomacy = {
-        icon = mission_alliances
+        icon = friends_in_high_places
         position = 2
         required_missions = { vn_lux_improve_our_reputation }
         trigger = {
             dip = 4
 			NOT = { num_of_free_diplomatic_relations = 1 }
-			OR = {
-				statesman = 2
-				diplomat = 2
+			any_ally = {
+				development = 100
 			}
         }
         effect = {
-            add_dip_power = 25
+            add_prestige = 10
+			add_legitimacy = 10
 			change_dip = 1
             add_country_modifier = {
                 name = lux_masters_of_diplomacy_mission
@@ -437,7 +439,7 @@ vn_lux_missions_slot_4 = {
         }
     }
     vn_lux_french_alliance = {
-        icon = mission_noble_council
+        icon = king_of_france
         position = 3
         required_missions = { vn_lux_masters_of_diplomacy }
         trigger = {
@@ -509,7 +511,7 @@ vn_lux_missions_slot_4 = {
         }
     }
     vn_lux_fight_the_habsburgs = {
-        icon = mission_soldiers_in_line
+        icon = humiliate_austria
         position = 4
         required_missions = { vn_lux_french_alliance }
         trigger = {
@@ -577,11 +579,11 @@ vn_lux_missions_slot_4 = {
         }
     }
     vn_lux_hungarian_realm = {
-        icon = mission_unite_home_region
+        icon = king_of_hungary
         position = 6
         required_missions = { vn_lux_margravate_of_moravia }
         provinces_to_highlight = {
-	    region = danubia_region
+			region = danubia_region
             NOT = { country_or_non_sovereign_subject_holds = ROOT }          
         }
         trigger = {

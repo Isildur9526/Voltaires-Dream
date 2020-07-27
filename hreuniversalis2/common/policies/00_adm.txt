@@ -834,6 +834,7 @@ the_pioneer_policy = {
 	}
 
 	auto_explore_adjacent_to_colony = yes
+	colonist_placement_chance = 0.05
 	
 	ai_will_do = {
 		factor = 0.6

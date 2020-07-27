@@ -67,9 +67,20 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.2
+				has_estate = estate_burghers
 				NOT = {
 					estate_loyalty = {
 						estate = estate_burghers
+						loyalty = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.2
+				has_estate = estate_vaisyas
+				NOT = {
+					estate_loyalty = {
+						estate = estate_vaisyas
 						loyalty = 30
 					}
 				}
@@ -79,9 +90,23 @@ country_event = {
 			estate = estate_nobles
 			loyalty = 15
 		}
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = -20
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -20
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = -20
+			}
 		}
 		add_country_modifier = {
 			name = "only_noble_officers"
@@ -100,9 +125,20 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0.1
+				has_estate = estate_burghers
 				NOT = {
 					estate_loyalty = {
 						estate = estate_burghers
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				has_estate = estate_vaisyas
+				NOT = {
+					estate_loyalty = {
+						estate = estate_vaisyas
 						loyalty = 40
 					}
 				}
@@ -121,9 +157,23 @@ country_event = {
 			estate = estate_nobles
 			loyalty = -20
 		}
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = 15
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = 15
+			}
 		}
 		add_army_professionalism = 0.02
 		add_estate_influence_modifier = {
@@ -191,9 +241,8 @@ country_event = {
 	
 	trigger = {
 		has_estate = estate_nobles
-		num_of_cities = 15
+		num_of_cities = 25
 		any_owned_province = {
-			NOT = { has_estate = yes }
 			is_overseas = no
 			is_capital = no
 			is_colony = no
@@ -208,14 +257,13 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					NOT = { has_estate = yes }
 					is_capital = no
 					is_overseas = no
 					is_colony = no
 					has_seat_in_parliament = no
 					is_territory = no
 				}
-				set_province_flag = noble_encroachment
+				save_event_target_as = noble_encroachment
 			}
 		}
 	}
@@ -265,13 +313,10 @@ country_event = {
 				}
 			}
 		}
-		random_owned_province = {
-			limit = {
-				has_province_flag = noble_encroachment
-			}
-			set_estate = estate_nobles
-			clr_province_flag = noble_encroachment
+		event_target:noble_encroachment = {
+			add_local_autonomy = 25
 		}
+		give_estate_land_share_small = { estate = estate_nobles }
 	}
 	option = {
 		name = nobles_estate_events.3.b #Take it Back.
@@ -296,10 +341,7 @@ country_event = {
 				}
 			}
 		}
-		random_owned_province = {
-			limit = {
-				has_province_flag = noble_encroachment
-			}
+		event_target:noble_encroachment = {
 			random_list = {
 				50 = {
 					spawn_rebels = {
@@ -309,7 +351,6 @@ country_event = {
 				}
 				50 = {  }
 			}
-			clr_province_flag = noble_encroachment
 		}
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -327,9 +368,14 @@ country_event = {
 	
 	trigger = {
 		has_estate = estate_nobles
+		estate_territory = { 
+			estate = estate_nobles
+			territory = 1
+		}
 		any_owned_province = {
-			has_estate = estate_nobles
+			is_territory = no
 			base_tax = 2
+			is_city = yes
 		}
 	}
 	
@@ -362,8 +408,9 @@ country_event = {
 		}
 		random_owned_province = {
 			limit = {
-				has_estate = estate_nobles
+				is_territory = no
 				base_tax = 2
+				is_city = yes
 			}
 			add_base_tax = -1
 		}
@@ -454,12 +501,26 @@ country_event = {
 country_event = {
 	id = nobles_estate_events.6
 	title = nobles_estate_events.6.t
-	desc = nobles_estate_events.6.d
+	desc = {
+		trigger = {
+			has_estate = estate_burghers
+		}
+		desc = nobles_estate_events.6.d
+	}
+	desc = {
+		trigger = {
+			has_estate = estate_vaisyas
+		}
+		desc = nobles_estate_events.6.d.1
+	}
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 	
 	trigger = {
 		has_estate = estate_nobles
-		has_estate = estate_burghers
+		OR = {
+			has_estate = estate_burghers
+			has_estate = estate_vaisyas
+		}
 		estate_influence = {
 			estate = estate_nobles
 			influence = 70
@@ -515,15 +576,35 @@ country_event = {
 			influence = 10
 			duration = 5475
 		}
-		add_estate_influence_modifier = {
-			estate = estate_burghers
-			desc = EST_VAL_BURGHERS_SUMPTUARY_RESTRICTIONS
-			influence = -10
-			duration = 5475
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_influence_modifier = {
+				estate = estate_burghers
+				desc = EST_VAL_BURGHERS_SUMPTUARY_RESTRICTIONS
+				influence = -10
+				duration = 5475
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -20
+			}
 		}
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = -20
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_influence_modifier = {
+				estate = estate_vaisyas
+				desc = EST_VAL_BURGHERS_SUMPTUARY_RESTRICTIONS
+				influence = -10
+				duration = 5475
+			}
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = -20
+			}
 		}
 	}
 	option = {
@@ -557,12 +638,28 @@ country_event = {
 			influence = -10
 			duration = 5475
 		}
-		add_estate_influence_modifier = {
-			estate = estate_burghers
-			desc = EST_VAL_NOBILITY_NO_SUMPTUARY_RESTRICTIONS
-			influence = 10
-			duration = 5475
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_influence_modifier = {
+				estate = estate_burghers
+				desc = EST_VAL_NOBILITY_NO_SUMPTUARY_RESTRICTIONS
+				influence = 10
+				duration = 5475
+			}
 		}
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_influence_modifier = {
+				estate = estate_vaisyas
+				desc = EST_VAL_NOBILITY_NO_SUMPTUARY_RESTRICTIONS
+				influence = 10
+				duration = 5475
+			}
+		}		
 	}
 }
 
@@ -705,8 +802,9 @@ country_event = {
 				loyalty = 30
 			}
 		}
-		any_owned_province = {
-			has_estate = estate_nobles
+		estate_territory = { 
+			estate = estate_nobles
+			territory = 10
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -720,57 +818,45 @@ country_event = {
 				modifier = EST_VAL_NOBLES_DENIED_RIGHTS
 			}
 		}
+		any_owned_province = {
+			is_territory = no
+			is_capital = no
+			is_city = yes
+		}
 	}
 	
 	is_triggered_only = yes
 	
 	immediate = {
 		hidden_effect = {
-			random_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_nobles
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = noble_estate_revolt
+							value = estate
+							estate = estate_nobles
+						}
+					}
+					any_owned_province = {
+						is_territory = no
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = noble_estate_revolt }
+					}
+					check_reducing_estate_revolt_size_trigger = {
+						FLAG = noble_estate_revolt
+					}
 				}
-				set_province_flag = noble_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_nobles
-					NOT = { has_province_flag = noble_estate_revolt }
-					owner = { num_of_cities = 10 }
+				random_owned_province = {
+					limit = {
+						is_territory = no
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = noble_estate_revolt }
+					}
+					set_province_flag = noble_estate_revolt
 				}
-				set_province_flag = noble_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_nobles
-					NOT = { has_province_flag = noble_estate_revolt }
-					owner = { num_of_cities = 18 }
-				}
-				set_province_flag = noble_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_nobles
-					NOT = { has_province_flag = noble_estate_revolt }
-					owner = { num_of_cities = 25 }
-				}
-				set_province_flag = noble_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_nobles
-					NOT = { has_province_flag = noble_estate_revolt }
-					owner = { num_of_cities = 35 }
-				}
-				set_province_flag = noble_estate_revolt
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_nobles
-					NOT = { has_province_flag = noble_estate_revolt }
-					owner = { num_of_cities = 50 }
-				}
-				set_province_flag = noble_estate_revolt
 			}
 		}
 	}
@@ -791,7 +877,7 @@ country_event = {
 			duration = 5475
 		}
 		every_owned_province = {
-			limit = { has_estate = estate_nobles }
+			limit = { has_province_flag = noble_estate_revolt }
 			add_local_autonomy = 33
 		}
 		hidden_effect = {
@@ -849,6 +935,12 @@ country_event = {
 		}
 		NOT = {
 			has_estate_influence_modifier = {
+				estate = estate_vaisyas
+				modifier = EST_VAL_BURGHER_OFFICERS
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
 				estate = estate_nobles
 				modifier = EST_VAL_DHIMMI_OFFICERS
 			}
@@ -892,17 +984,44 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_estate = estate_burghers
-			estate_loyalty = {
-				estate = estate_burghers
-				loyalty = 60
+			OR = {
+				AND = {
+					has_estate = estate_burghers
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 60
+					}
+				}
+				AND = {
+					has_estate = estate_vaisyas
+					estate_loyalty = {
+						estate = estate_vaisyas
+						loyalty = 60
+					}
+				}
 			}
 		}
-		add_estate_influence_modifier = {
-			estate = estate_burghers
-			desc = EST_VAL_BURGHER_OFFICERS
-			influence = 10
-			duration = 3650
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_influence_modifier = {
+				estate = estate_burghers
+				desc = EST_VAL_BURGHER_OFFICERS
+				influence = 10
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_influence_modifier = {
+				estate = estate_vaisyas
+				desc = EST_VAL_BURGHER_OFFICERS
+				influence = 10
+				duration = 3650
+			}
 		}
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -930,17 +1049,45 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_estate = estate_dhimmi
-			estate_loyalty = {
-				estate = estate_dhimmi
-				loyalty = 60
+			OR = {
+				AND = {
+					religion_group = muslim
+					has_estate = estate_brahmins
+					estate_loyalty = {
+						estate = estate_brahmins
+						loyalty = 60
+					}
+				}
+				AND = {
+					has_estate = estate_dhimmi
+					estate_loyalty = {
+						estate = estate_dhimmi
+						loyalty = 60
+					}
+				}
 			}
 		}
-		add_estate_influence_modifier = {
-			estate = estate_dhimmi
-			desc = EST_VAL_DHIMMI_OFFICERS
-			influence = 10
-			duration = 3650
+		if = {
+			limit = {
+				has_estate = estate_dhimmi
+			}
+			add_estate_influence_modifier = {
+				estate = estate_dhimmi
+				desc = EST_VAL_DHIMMI_OFFICERS
+				influence = 10
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_brahmins
+			}
+			add_estate_influence_modifier = {
+				estate = estate_brahmins
+				desc = EST_VAL_DHIMMI_OFFICERS
+				influence = 10
+				duration = 3650
+			}
 		}
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -968,18 +1115,46 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_estate = estate_church
-			religion = hinduism
-			estate_loyalty = {
-				estate = estate_church
-				loyalty = 60
+			OR = {
+				AND = {
+					has_estate = estate_church
+					religion = zoroastrian
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 60
+					}
+				}
+				AND = {
+					has_estate = estate_brahmins
+					religion = zoroastrian
+					estate_loyalty = {
+						estate = estate_brahmins
+						loyalty = 60
+					}
+				}
 			}
 		}
-		add_estate_influence_modifier = {
-			estate = estate_church
-			desc = EST_VAL_CHURCH_OFFICERS
-			influence = 10
-			duration = 3650
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_influence_modifier = {
+				estate = estate_church
+				desc = EST_VAL_CHURCH_OFFICERS
+				influence = 10
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_brahmins
+			}
+			add_estate_influence_modifier = {
+				estate = estate_brahmins
+				desc = EST_VAL_CHURCH_OFFICERS
+				influence = 10
+				duration = 3650
+			}
 		}
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -998,7 +1173,18 @@ country_event = {
 country_event = {
 	id = nobles_estate_events.10
 	title = nobles_estate_events.10.t
-	desc = nobles_estate_events.10.d
+	desc = {
+		trigger = {
+			has_estate = estate_burghers
+		}
+		desc = nobles_estate_events.10.d
+	}
+	desc = {
+		trigger = {
+			has_estate = estate_vaisyas
+		}
+		desc = nobles_estate_events.10.d.1
+	}
 	picture = NOBLE_ESTATE_eventPicture
 	
 	trigger = {
@@ -1017,13 +1203,31 @@ country_event = {
 		}
 		NOT = {
 			has_estate_influence_modifier = {
+				estate = estate_vaisyas
+				modifier = EST_VAL_MINISTER_BURGHERS
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
 				estate = estate_church
 				modifier = EST_VAL_MINISTER_CHURCH
 			}
 		}
 		NOT = {
 			has_estate_influence_modifier = {
+				estate = estate_brahmins
+				modifier = EST_VAL_MINISTER_CHURCH
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
 				estate = estate_dhimmi
+				modifier = EST_VAL_MINISTER_DHIMMI
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_brahmins
 				modifier = EST_VAL_MINISTER_DHIMMI
 			}
 		}
@@ -1050,9 +1254,20 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
+				has_estate = estate_burghers
 				NOT = {
 					estate_loyalty = {
 						estate = estate_burghers
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_estate = estate_vaisyas
+				NOT = {
+					estate_loyalty = {
+						estate = estate_vaisyas
 						loyalty = 40
 					}
 				}
@@ -1085,9 +1300,30 @@ country_event = {
 			estate = estate_nobles
 			loyalty = 15
 		}
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = -20
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -20
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = -20
+			}
+		}
+		if = {
+			limit = {
+				NOT = {	has_estate = estate_vaisyas }
+				NOT = { has_estate = estate_burghers }
+			}
+			add_mercantilism = -1
 		}
 		add_estate_influence_modifier = {
 			estate = estate_nobles
@@ -1098,13 +1334,30 @@ country_event = {
 	}
 	option = {
 		name = nobles_estate_events.10.b #Burgher
+		trigger = {
+			OR = {
+				has_estate = estate_burghers
+				has_estate = estate_vaisyas
+			}
+		}
 		ai_chance = {
 			factor = 25
 			modifier = {
 				factor = 1.5
+				has_estate = estate_burghers
 				NOT = {
 					estate_loyalty = {
 						estate = estate_burghers
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_estate = estate_vaisyas
+				NOT = {
+					estate_loyalty = {
+						estate = estate_vaisyas
 						loyalty = 40
 					}
 				}
@@ -1120,6 +1373,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.5
+				has_estate = estate_burghers
 				estate_loyalty = {
 					estate = estate_burghers
 					loyalty = 50
@@ -1137,6 +1391,26 @@ country_event = {
 					}
 				}
 			}
+			modifier = {
+				factor = 1.5
+				has_estate = estate_vaisyas
+				estate_loyalty = {
+					estate = estate_vaisyas
+					loyalty = 50
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_vaisyas
+						loyalty = 60
+					}
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_vaisyas
+						influence = 60
+					}
+				}
+			}
 		}
 		add_country_modifier = {
 			name = "burgher_minister"
@@ -1146,20 +1420,48 @@ country_event = {
 			estate = estate_nobles
 			loyalty = -20
 		}
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = 15
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 15
+			}
+			add_estate_influence_modifier = {
+				estate = estate_burghers
+				desc = EST_VAL_MINISTER_BURGHERS
+				influence = 15
+				duration = 3650
+			}
 		}
-		add_estate_influence_modifier = {
-			estate = estate_burghers
-			desc = EST_VAL_MINISTER_BURGHERS
-			influence = 15
-			duration = 3650
+		if = {
+			limit = {
+				has_estate = estate_vaisyas
+			}
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = 15
+			}
+			add_estate_influence_modifier = {
+				estate = estate_vaisyas
+				desc = EST_VAL_MINISTER_BURGHERS
+				influence = 15
+				duration = 3650
+			}
 		}
-		
 	}
 	option = {
 		name = nobles_estate_events.10.c #Clergy
+		trigger = {
+			has_estate = estate_church
+			NOT = {
+				AND = {
+					religion = zoroastrian
+					has_estate = estate_brahmins
+				}
+			}
+		}
 		ai_chance = {
 			factor = 25
 			modifier = {
@@ -1219,16 +1521,84 @@ country_event = {
 			duration = 3650
 		}
 	}
-	option = { #Special Case
-		name = nobles_estate_events.10.dd #Dhimmi
-		trigger = { has_estate = estate_dhimmi }
+	option = {
+		name = nobles_estate_events.10.c.2 # Brahmins
+		trigger = {
+			has_estate = estate_brahmins
+			religion = zoroastrian
+		}
 		ai_chance = {
 			factor = 25
 			modifier = {
 				factor = 1.5
 				NOT = {
 					estate_loyalty = {
-						estate = estate_dhimmi
+						estate = estate_brahmins
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				estate_loyalty = {
+					estate = estate_brahmins
+					loyalty = 50
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_brahmins
+						loyalty = 60
+					}
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_brahmins
+						influence = 60
+					}
+				}
+			}
+		}
+		add_country_modifier = {
+			name = "church_minister"
+			duration = 3650
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		add_estate_loyalty = {
+			estate = estate_brahmins
+			loyalty = 15
+		}
+		add_estate_influence_modifier = {
+			estate = estate_brahmins
+			desc = EST_VAL_MINISTER_CHURCH
+			influence = 15
+			duration = 3650
+		}
+	}
+	option = { #Special Case
+		name = nobles_estate_events.10.c.2 # Brahmins dhimmi
+		trigger = { 
+			has_estate = estate_brahmins
+			religion_group = muslim
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.5
+				NOT = {
+					estate_loyalty = {
+						estate = estate_brahmins
 						loyalty = 40
 					}
 				}
@@ -1254,18 +1624,18 @@ country_event = {
 			modifier = {
 				factor = 1.5
 				estate_loyalty = {
-					estate = estate_dhimmi
+					estate = estate_brahmins
 					loyalty = 50
 				}
 				NOT = {
 					estate_loyalty = {
-						estate = estate_dhimmi
+						estate = estate_brahmins
 						loyalty = 60
 					}
 				}
 				NOT = {
 					estate_influence = {
-						estate = estate_dhimmi
+						estate = estate_brahmins
 						influence = 60
 					}
 				}
@@ -1276,7 +1646,7 @@ country_event = {
 			duration = 3650
 		}
 		add_estate_influence_modifier = {
-			estate = estate_dhimmi
+			estate = estate_brahmins
 			desc = EST_VAL_MINISTER_DHIMMI
 			influence = 15
 			duration = 3650
@@ -1290,7 +1660,7 @@ country_event = {
 			loyalty = -20
 		}
 		add_estate_loyalty = {
-			estate = estate_dhimmi
+			estate = estate_brahmins
 			loyalty = 15
 		}
 	}
@@ -1316,8 +1686,9 @@ country_event = {
 			estate = estate_nobles
 			influence = 60
 		}
-		any_owned_province = {
-			has_estate = estate_nobles
+		estate_territory = { 
+			estate = estate_nobles
+			territory = 1
 		}
 	}
 
@@ -1342,7 +1713,10 @@ country_event = {
 				}
 			}
 			random_owned_province = {
-				limit = { has_estate = estate_nobles }
+				limit = {
+					is_territory = no
+					is_city = yes
+				}
 				save_event_target_as = noble_province
 			}
 		}
@@ -1363,7 +1737,9 @@ country_event = {
 				clr_country_flag = noble_general
 			}
 			noble_admiral = {
-				create_admiral = { tradition = 50 }
+				create_admiral = {
+					tradition = 50
+				}
 				clr_country_flag = noble_admiral
 			}
 			noble_statesman = {

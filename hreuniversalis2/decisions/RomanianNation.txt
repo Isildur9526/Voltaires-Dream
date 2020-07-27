@@ -24,9 +24,9 @@ country_decisions = {
 			OR = {
 				province_id = 448
 				province_id = 2061
-				province_id = 2429
-				province_id = 587
-				province_id = 1832
+				province_id = 5660
+				province_id = 5685
+				province_id = 5647
 				province_id = 676
 			}
 			OR = {
@@ -41,9 +41,9 @@ country_decisions = {
 			NOT = { exists = BYZ }
 			owns_core_province = 448	# Transylvania
 			owns_core_province = 2061	# Silistria
-			owns_core_province = 2429	# Oltenia
-			owns_core_province = 587	# Wallachia
-			owns_core_province = 1832	# Bessarabia
+			owns_core_province = 5660	# Oltenia
+			owns_core_province = 5685	# Wallachia
+			owns_core_province = 5647	# Bessarabia
 			owns_core_province = 676	# Budjak
 		}
 		effect = {
@@ -66,7 +66,7 @@ country_decisions = {
 			}
 			add_prestige = 25
 			RMN = {
-				set_capital = 587
+				set_capital = 5685
 			}
 			if = {
 				limit = { has_custom_ideas = no }

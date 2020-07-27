@@ -63,11 +63,19 @@ vn_pru_missions_slot_1_b = {
 				limit = { has_estate = estate_nobles }
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 70
+					loyalty = 60
 				}
 				estate_influence = {
 					estate = estate_nobles
-					influence = 50
+					influence = 40
+				}
+				num_of_estate_privileges = {
+					estate = estate_nobles 
+					value = 2
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 3
 				}
 			}
         }
@@ -1127,9 +1135,8 @@ vn_pru_missions_slot_4_a = {
 				AND = {
 					exists = FRA
 					OR = {
-						war_score_against = {
+						has_won_war_against = {
 							who = FRA
-							value = 75
 						}
 						AND = {
 							num_of_cities = FRA

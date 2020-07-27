@@ -279,7 +279,6 @@ capital = 2262
 	}
 }
 1633.1.1 = {
-	set_legacy_government = administrative_monarchy
 	government_rank = 4
 }
 1642.7.25 = {

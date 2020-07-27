@@ -26,7 +26,6 @@ add_core = JRK
 	add_core = LIT
 	add_core = LVA
 	remove_core = RIG
-	estate = estate_nobles
 	capital = "Cesvaine"
 }
 1569.7.1 = {

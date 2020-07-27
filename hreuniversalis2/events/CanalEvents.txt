@@ -10,6 +10,7 @@ province_event = {
 	title = "canal_events.EVTNAME1"
 	desc = "canal_events.EVTDESC1"
 	picture = BANKRUPTCY_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -54,6 +55,7 @@ province_event = {
 	title = "canal_events.EVTNAME2"
 	desc = "canal_events.EVTDESC2"
 	picture = ACCUSATION_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -98,6 +100,7 @@ province_event = {
 	title = "canal_events.EVTNAME3"
 	desc = "canal_events.EVTDESC3"
 	picture = CONQUEST_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -142,6 +145,7 @@ province_event = {
 	title = "canal_events.EVTNAME4"
 	desc = "canal_events.EVTDESC4"
 	picture = COLONIZATION_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -186,6 +190,7 @@ province_event = {
 	title = "canal_events.EVTNAME5"
 	desc = "canal_events.EVTDESC5"
 	picture = PLAGUE_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -230,6 +235,7 @@ province_event = {
 	title = "canal_events.EVTNAME6"
 	desc = "canal_events.EVTDESC6"
 	picture = FAMINE_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -274,6 +280,7 @@ province_event = {
 	title = "canal_events.EVTNAME7"
 	desc = "canal_events.EVTDESC7"
 	picture = PLAGUE_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -318,6 +325,7 @@ province_event = {
 	title = "canal_events.EVTNAME8"
 	desc = "canal_events.EVTDESC8"
 	picture = LIBERUM_VETO_ebentPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -368,6 +376,7 @@ province_event = {
 	title = "canal_events.EVTNAME11"
 	desc = "canal_events.EVTDESC11"
 	picture = ACCUSATION_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -448,7 +457,8 @@ province_event = {
 	title = "canal_events.EVTNAME9"
 	desc = "canal_events.EVTDESC9"
 	picture = REFORM_eventPicture
-	
+	goto = root
+
 	trigger = {
 		has_construction = canal
 		owner = {
@@ -512,6 +522,7 @@ province_event = {
 	title = "canal_events.EVTNAME10"
 	desc = "canal_events.EVTDESC10"
 	picture = REFORM_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -556,6 +567,7 @@ province_event = {
 	title = "canal_events.EVTNAME12"
 	desc = "canal_events.EVTDESC12"
 	picture = ADVISOR_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -592,6 +604,7 @@ province_event = {
 	title = "canal_events.EVTNAME13"
 	desc = "canal_events.EVTDESC13"
 	picture = COLONIZATION_eventPicture
+	goto = root
 	
 	trigger = {
 		has_construction = canal
@@ -628,6 +641,7 @@ province_event = {
 	title = "canal_events.25.t"
 	desc = "canal_events.25.d"
 	picture = HARBOUR_eventPicture
+	goto = root
 	
 	fire_only_once = yes
 
@@ -651,6 +665,7 @@ province_event = {
 	title = "canal_events.26.t"
 	desc = "canal_events.26.d"
 	picture = HARBOUR_eventPicture
+	goto = root
 	
 	fire_only_once = yes
 
@@ -674,6 +689,7 @@ province_event = {
 	title = "canal_events.27.t"
 	desc = "canal_events.27.d"
 	picture = HARBOUR_eventPicture
+	goto = root
 	
 	fire_only_once = yes
 
@@ -697,6 +713,7 @@ province_event = {
 	title = "canal_events.28.t"
 	desc = "canal_events.28.d"
 	picture = HARBOUR_eventPicture
+	goto = root
 	
 	is_triggered_only = yes
 
@@ -711,6 +728,7 @@ province_event = {
 	title = "canal_events.29.t"
 	desc = "canal_events.29.d"
 	picture = HARBOUR_eventPicture
+	goto = root
 	
 	is_triggered_only = yes
 

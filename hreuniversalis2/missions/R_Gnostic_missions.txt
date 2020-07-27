@@ -17,7 +17,7 @@ vn_gnostic_missions = {
 				num_of_owned_provinces_with = {
 					value = 3
 					has_fort_trigger = yes
-					has_estate = estate_church
+					NOT = { unrest = 0.01 }
 					has_owner_religion = yes
 				}
 			}

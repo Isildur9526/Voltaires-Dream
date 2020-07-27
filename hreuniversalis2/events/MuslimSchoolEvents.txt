@@ -1583,7 +1583,6 @@ country_event = {
 			NOT = { religion_group = muslim }
 			NOT = { has_province_modifier = local_sufi }
 			NOT = { has_province_modifier = local_sufi_chased_away }
-			NOT = { has_estate = estate_dhimmi }
 		}
 	}
 	
@@ -1594,7 +1593,6 @@ country_event = {
 					NOT = { religion_group = muslim }
 					NOT = { has_province_modifier = local_sufi }
 					NOT = { has_province_modifier = local_sufi_chased_away }
-					NOT = { has_estate = estate_dhimmi }
 				}
 				save_event_target_as = sufi_province
 			}
@@ -1603,7 +1601,6 @@ country_event = {
 					NOT = { religion_group = muslim }
 					NOT = { has_province_modifier = local_sufi }
 					NOT = { has_province_modifier = local_sufi_chased_away }
-					NOT = { has_estate = estate_dhimmi }
 					NOT = { continent = europe }
 					same_continent = ROOT
 				}
@@ -1667,7 +1664,6 @@ country_event = {
 				limit = {
 					owned_by = ROOT
 					NOT = { religion_group = ROOT }
-					NOT = { has_estate = estate_dhimmi }
 				}
 				add_province_modifier = {
 					name = "local_sufi"
@@ -1685,7 +1681,6 @@ country_event = {
 				limit = {
 					owned_by = ROOT
 					NOT = { religion_group = ROOT }
-					NOT = { has_estate = estate_dhimmi }
 				}
 				add_province_modifier = {
 					name = "local_sufi_chased_away"
@@ -2330,6 +2325,8 @@ country_event = {
 	desc = muslim_school_events.13.d
 	picture = REVOLT_eventPicture
 
+	goto = protest_province
+
 	trigger = {
 		has_dlc = "Cradle of Civilization"
 		religion_group = muslim
@@ -2432,6 +2429,8 @@ country_event = {
 	title = muslim_school_events.14.t
 	desc = muslim_school_events.14.d
 	picture = SOUP_KITCHEN_eventPicture
+
+	goto = urbanization_province
 
 	trigger = {
 		has_dlc = "Cradle of Civilization"
@@ -3342,7 +3341,14 @@ country_event = {
 			limit = {
 				has_estate = estate_church
 			}
-			custom_tooltip = muslim_school_events.21.a.ttb 
+			tooltip = {
+				add_estate_influence_modifier = {
+					estate = estate_church
+					desc = EST_VAL_NEO_SUFISM
+					influence = 10
+					duration = -1
+				}
+			}
 		}
 	}
 }

@@ -118,7 +118,7 @@ fixed_capital = 874
 	}
 }
 1797.11.19 = {
-	set_legacy_government = constitutional_republic
+	add_government_reform = oligarchy_reform
 	government_rank = 1
 	monarch = {
 		name = "Repubblica Anconitana"

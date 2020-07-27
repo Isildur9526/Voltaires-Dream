@@ -48,7 +48,6 @@ add_core = CMN
 	remove_core = ZAZ
 	remove_core = CRI
 	capital = "Rostov-na-Donu"
-	estate = estate_cossacks
 }
 1822.1.1 = { religion = orthodox culture = russian }
 

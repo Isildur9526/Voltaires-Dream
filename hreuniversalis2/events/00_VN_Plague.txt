@@ -7,6 +7,7 @@ province_event = {
 	title = vn_plagues.1.t
 	desc = vn_plagues.1.d
 	picture = PLAGUE_eventPicture
+	goto = ROOT
 
 	trigger = {
 		owner = { 
@@ -315,6 +316,7 @@ province_event = {
 	title = vn_plagues.2.t
 	desc = vn_plagues.2.d
 	picture = PLAGUE_eventPicture
+	goto = ROOT
 
 	is_triggered_only = yes
 

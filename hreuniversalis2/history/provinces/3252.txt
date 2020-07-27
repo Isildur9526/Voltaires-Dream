@@ -18,7 +18,6 @@ fort_14th = yes
 	controller = FIN
 	add_core = FIN
 	remove_core = SUO
-	estate = estate_church
 }
 1323.8.12 = {
 	owner = SWE

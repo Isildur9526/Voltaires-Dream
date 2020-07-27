@@ -10,12 +10,14 @@ country_event = {
 	picture = HRE_eventPicture
 	
 	fire_only_once = yes 
+	major = yes
 	
 	trigger = {
+		has_dlc = "Emperor"
 		is_institution_enabled = enlightenment
 		num_of_foreign_hre_provinces = 100
 		NOT = { started_in = 1789.7.14 }
-		#NOT = { active_imperial_incident = any } #add - uncomment in 1.30
+		NOT = { active_imperial_incident = any }
 		is_part_of_hre = no
 		is_at_war = no
 		NOT = {
@@ -44,13 +46,13 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 24
+		months = 300
 	}
 	
 	immediate = {
 		hidden_effect = {
-			save_event_target_as = med_demander
 			set_country_flag = med_demander_country
+			save_global_event_target_as = med_demander
 		}
 	}
 	
@@ -69,22 +71,12 @@ country_event = {
 					}
 				}
 				country_event = {
-					id = incident_mediatization.2	#All theocracies/free cities informed of their fate
-					days = 20
-					random = 10
+					id = incident_mediatization.2
+					days = 1
 				}
 			}
 		}
-		#add - replace this block with set_imperial_incident = incident_mediatization
-		#### start of block
-		emperor = {
-			country_event = {
-				id = incident_mediatization.3	#incident event
-				days = 60
-				random = 10
-			}
-		}
-		#### end of block
+		set_imperial_incident = incident_mediatization
 	}
 	
 	option = {	#Back down
@@ -110,7 +102,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = {	#Prepare for the worst...
+	option = {
 		ai_chance = { factor = 100 }
 		name = incident_mediatization.2.a
 	}
@@ -132,34 +124,19 @@ country_event = {
 	}
 	
 	is_triggered_only = yes
-	major = yes
 	
 	option = {	#Accept
 		name = incident_mediatization.3.a
 		ai_chance = { 
-			factor = 75
+			factor = 1
 			modifier = {
-				factor = 100
-				event_target:med_demander = {
-					num_of_cities = ROOT
-				}
+				factor = 1000
+				government = monarchy
 			}
 			modifier = {
 				factor = 100
-				event_target:med_demander = {
-					reverse_has_opinion = {
-						who = ROOT
-						value = 100
-					}
-				}
-			}
-			modifier = {
-				factor = 100
-				event_target:med_demander = {
-					army_strength = {
-						who = ROOT
-						value = 1.0
-					}
+				any_neighbor_country = {
+					has_country_flag = med_demanding_country
 				}
 			}
 		}
@@ -245,9 +222,11 @@ country_event = {
 				}
 			}
 			else = {
-				country_event = {
-					id = incident_mediatization.9	#Failsafe in event of no eligible tags existing
-					days = 1
+				hidden_effect = {
+					country_event = {
+						id = incident_mediatization.9	#Failsafe in event of no eligible tags existing
+						days = 1
+					}
 				}
 			}
 		}
@@ -256,38 +235,24 @@ country_event = {
 	option = {	#Decline and fight
 		name = incident_mediatization.3.b
 		ai_chance = { 
-			factor = 25 
+			factor = 1
 			modifier = {
-				factor = 100
-				event_target:med_demander = {
-					NOT = { num_of_cities = ROOT }
-				}
-			}
-			modifier = {
-				factor = 100
-				event_target:med_demander = {
-					is_enemy = ROOT
-				}
-			}
-			modifier = {
-				factor = 100
-				event_target:med_demander = {
-					NOT = {
-						army_strength = {
-							who = ROOT
-							value = 1.0
-						}
-					}
+				factor = 1000
+				OR = {
+					government = republic
+					government = theocracy
 				}
 			}
 		}
-		add_stability = -1
-		custom_tooltip = incident_mediatization.3.b.tt1
-		hidden_effect = { 
-			set_country_flag = med_attacker 
-			declare_war_with_cb = {
-				who = event_target:med_demander
-				type = cb_insult
+		emperor = {
+			add_stability = -1
+			custom_tooltip = incident_mediatization.3.b.tt1
+			hidden_effect = { 
+				set_country_flag = med_attacker 
+				declare_war_with_cb = {
+					who = event_target:med_demander
+					casus_belli = cb_insult
+				}
 			}
 		}
 		custom_tooltip = incident_mediatization.3.b.tt2
@@ -380,10 +345,12 @@ country_event = {
 				}
 			}
 			else = {
-				emperor = {
-					country_event = {
-						id = incident_mediatization.9	#Failsafe in event of no eligible tags existing
-						days = 1
+				hidden_effect = {
+					emperor = {
+						country_event = {
+							id = incident_mediatization.9
+							days = 1
+						}
 					}
 				}
 			}
@@ -669,10 +636,12 @@ country_event = {
 				}
 			}
 			else = {
-				emperor = {
-					country_event = {
-						id = incident_mediatization.9
-						days = 1
+				hidden_effect = {
+					emperor = {
+						country_event = {
+							id = incident_mediatization.9
+							days = 1
+						}
 					}
 				}
 			}
@@ -825,6 +794,7 @@ country_event = {
 				}
 			}
 		}
+		
 	}
 	option = {		#Fight back
 		ai_chance = { factor = 0 }
@@ -854,6 +824,7 @@ country_event = {
 			modifier = mediatize_fightback_malus
 		}
 	}
+	
 	option = {	#We survive!
 		ai_chance = { factor = 100 }
 		name = incident_mediatization.5.c
@@ -952,10 +923,11 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
-	
-	trigger = {
-		has_country_flag = med_attacker
-		FROM = { has_country_flag = med_demander_country }
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = med_attacker
+		}
 	}
 	
 	option = {	#Terrible! (Mediatization enforced)
@@ -965,36 +937,68 @@ country_event = {
 		add_prestige = -10
 		custom_tooltip = incident_mediatization.7.a.tt
 		hidden_effect = {
-			clr_country_flag = med_attacker
-			random_country = {
+			if = {
 				limit = {
-					is_part_of_hre = yes
-					NOT = { has_reform = papacy_reform }
-					government = theocracy
-					NOT = { has_country_flag = had_mediatization_event }
-					any_neighbor_country = {
-						government = monarchy
+					any_country = {
+						OR = {
+							AND = {
+								is_part_of_hre = yes
+								NOT = { has_reform = papacy_reform }
+								government = theocracy
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+							AND = {
+								is_part_of_hre = yes
+								has_reform = free_city
+								NOT = { has_country_flag = had_mediatization_event }
+								any_neighbor_country = {
+									government = monarchy
+								}
+							}
+						}
 					}
 				}
-				country_event = {
-					id = incident_mediatization.4
-					days = 15
-					random = 5
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						NOT = { has_reform = papacy_reform }
+						government = theocracy
+						NOT = { has_country_flag = had_mediatization_event }
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					country_event = {
+						id = incident_mediatization.4
+						days = 10
+						random = 5
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						has_reform = free_city
+						NOT = { has_country_flag = had_mediatization_event }
+						any_neighbor_country = {
+							government = monarchy
+						}
+					}
+					country_event = {
+						id = incident_mediatization.5
+						days = 10
+						random = 5
+					}
 				}
 			}
-			random_country = {
-				limit = {
-					is_part_of_hre = yes
-					has_reform = free_city
-					NOT = { has_country_flag = had_mediatization_event }
-					any_neighbor_country = {
-						government = monarchy
+			else = {
+				hidden_effect = {
+					country_event = {
+						id = incident_mediatization.9
+						days = 1
 					}
-				}
-				country_event = {
-					id = incident_mediatization.5
-					days = 15
-					random = 5
 				}
 			}
 		}
@@ -1010,10 +1014,11 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
-	
-	trigger = {
-		has_country_flag = med_attacker
-		FROM = { has_country_flag = med_demander_country }
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = med_attacker
+		}
 	}
 	
 	option = {	#Great! (Mediatization stopped)
@@ -1022,10 +1027,10 @@ country_event = {
 		add_imperial_influence = 20
 		add_prestige = 10
 		custom_tooltip = incident_mediatization.8.a.tt
-		clr_country_flag = med_attacker
 	}
 }
 
+#fallback
 country_event = {
 	id = incident_mediatization.9
 	title = incident_mediatization.9.t
@@ -1036,7 +1041,10 @@ country_event = {
 	major = yes
 	
 	immediate = {
-		#add - Disallow anyone in HRE reforming to Free City or Theocracy in future.
+		#Disallow anyone in HRE reforming to Free City or Theocracy in future.
+		hidden_effect = {
+			set_global_flag = mediatization_disallows_reforming
+		}
 	}
 	
 	option = {

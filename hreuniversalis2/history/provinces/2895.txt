@@ -10,7 +10,6 @@ hre = yes
 owner = MRV
 controller = MRV	
 add_core = MRV
-estate = estate_church
 
 1469.1.1 = { controller = HUN }
 1479.1.1 = { controller = MRV }

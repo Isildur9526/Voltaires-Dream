@@ -1,27 +1,5 @@
 country_decisions = {
 
-	institute_prussian_monarchy = {
-		major = yes
-		potential = {
-			NOT = { has_dlc = "Dharma" }
-			normal_or_historical_nations = yes
-			tag = PRU
-			government = monarchy
-			NOT = { has_reform = prussian_monarchy_legacy }
-		}
-
-		allow = {
-			OR = {
-				religion = protestant
-				religion = reformed
-			}
-		}
-
-		effect = {
-			add_government_reform = prussian_monarchy
-		}
-	}
-
 	form_kingdom_of_prussia = {
 		major = yes
 		potential = {
@@ -81,9 +59,15 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PRU
+			restore_country_name_effect = yes
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
+					OR = {
+						NOT = { has_dlc = "Emperor" }
+						NOT = { hre_size = 1 }
+					}
 					NOT = { government_rank = 5 }
 				}
 				set_government_rank = 5
@@ -102,15 +86,15 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 3650
 			}
-			if = {
-				limit = { has_dlc = "Rights of Man" }
-				change_government = monarchy
+			if =  {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government_to_monarchy = yes
 				add_government_reform = prussian_monarchy
 			}
-			if = {
-				limit = { NOT = { has_dlc = "Rights of Man" } }
-				change_government = monarchy
-				add_government_reform = feudalism_reform
+			else = {
+				add_government_reform = prussian_republic_reform
 			}
 			if = {
 				limit = {
@@ -228,6 +212,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PTH
+			restore_country_name_effect = yes
 			ostpreussen_region = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -256,7 +241,7 @@ country_decisions = {
 					exists = BRA
 					government = theocracy
 				}
-				change_government = monarchy
+				change_government_to_monarchy = yes
 				add_government_reform = feudalism_reform
 				every_neighbor_country = {
 					limit = { government = monarchy }
@@ -268,7 +253,7 @@ country_decisions = {
 			}
 			if = {
 				limit = { is_tribal = yes }
-				change_government = monarchy
+				change_government_to_monarchy = yes
 				add_government_reform = feudalism_reform
 			}
 			if = {
@@ -351,9 +336,15 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PRU
+			restore_country_name_effect = yes
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
+					OR = {
+						NOT = { has_dlc = "Emperor" }
+						NOT = { hre_size = 1 }
+					}
 					NOT = { government_rank = 5 }
 					government = monarchy
 				}
@@ -371,16 +362,13 @@ country_decisions = {
 				}
 				add_permanent_claim = PRU
 			}
-			if = {
-				limit = { has_dlc = "Rights of Man" }
-				change_government = monarchy
+			if =  {
+				limit = { NOT = { government = republic } }
+				change_government_to_monarchy = yes
 				add_government_reform = prussian_monarchy
 			}
-			if = {
-				limit = { NOT = { has_dlc = "Rights of Man" } }
-				change_government = monarchy
-				add_government_reform = feudalism_reform
-				set_legacy_government = administrative_monarchy
+			else = {
+				add_government_reform = prussian_republic_reform
 			}
 			if = {
 				limit = {

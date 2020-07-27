@@ -1,25 +1,31 @@
 pactumcalixtinum  = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		global_unrest = -1
 	}
 	emperor = {
 		papal_influence = 1
 	}
+	gui_container = nodlc
 }
 
 gelnhauserurkunde = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		fabricate_claims_cost = -0.10
 	}
 	emperor = {
 		fabricate_claims_cost = -0.10
 	}
+	required_reform = pactumcalixtinum
+	gui_container = nodlc
 }
 
 statutumprincipum = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		global_tax_modifier = 0.05
 		global_manpower_modifier = 0.05
@@ -35,10 +41,13 @@ statutumprincipum = {
 	off_effect = {
 		clr_global_flag = free_city_allowed
 	}
+	required_reform = gelnhauserurkunde
+	gui_container = nodlc
 }
 
 licetiuris = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		prestige_decay = -0.01
 	}
@@ -46,10 +55,13 @@ licetiuris = {
 		imperial_authority = 0.10
 		prestige_decay = -0.01
 	}
+	required_reform = statutumprincipum
+	gui_container = nodlc
 }
 
 roncagliergesetze = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		mercenary_cost = 0.1
 		war_exhaustion_cost = -0.05
@@ -65,10 +77,13 @@ roncagliergesetze = {
 	off_effect = {
 		clr_global_flag = mod_sk_allowed
 	}
+	required_reform = licetiuris
+	gui_container = nodlc
 }
 
 chrysobull = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		advisor_cost = -0.05
 	}
@@ -84,33 +99,42 @@ chrysobull = {
 		imperial_ban_allowed = no
 		clr_global_flag = remove_electorate_allowed
 	}
+	required_reform = roncagliergesetze
+	gui_container = nodlc
 }
 
 reichsreform = {
 	empire = hre
-	member = {
-		build_cost = -0.05
-		development_cost = -0.05
+	potential = { NOT = { has_dlc = "Emperor" } }
+	province = {
+		local_build_cost = -0.05
+		local_development_cost = -0.05
 	}
 	emperor = {
 		build_cost = -0.05
 		development_cost = -0.05
 	}
+	required_reform = chrysobull
+	gui_container = nodlc
 }
 
 reichsregiment = {
 	empire = hre
-	member = {
+	potential = { NOT = { has_dlc = "Emperor" } }
+	province = {
 		global_unrest = -1
 	}
 	emperor = {
 		diplomatic_reputation = 1
 		diplomats = 1
 	}
+	required_reform = reichsreform
+	gui_container = nodlc
 }
 
 hofgericht = { 
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		legitimacy = 0.5
 	}
@@ -125,25 +149,34 @@ hofgericht = {
 	off_effect = {
 		clr_global_flag = demand_unlawful_allowed
 	}
+	required_reform = reichsregiment
+	gui_container = nodlc
 }
 
 gemeinerpfennig = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		diplomatic_reputation = 1
 	}
-	emperor = {
-		global_tax_income = 20
+	emperor_per_prince = {
+		global_tax_income = 0.05
 	}
+	required_reform = hofgericht
+	gui_container = nodlc
 }
 
 landfriede = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		technology_cost = -0.05
 	}
 	emperor = {
 		prestige = 0.5
+	}
+	province = {
+		local_institution_spread = 0.1
 	}
 	on_effect = {
 		internal_hre_cb = no
@@ -151,10 +184,13 @@ landfriede = {
 	off_effect = {
 		internal_hre_cb = yes
 	}
+	required_reform = gemeinerpfennig
+	gui_container = nodlc
 }
 
 erbkaisertum = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	member = {
 		legitimacy = 0.5
 	}
@@ -174,11 +210,14 @@ erbkaisertum = {
 	off_effect = {
 		hre_inheritable = no
 	}
+	required_reform = landfriede
+	gui_container = nodlc
 }
 
 privilegia_de_non_appelando = {
 	empire = hre
-	war = yes			#this may cause a war, so special AI check needed, to not lose many.
+	war = yes
+	potential = { NOT = { has_dlc = "Emperor" } }
 	
 	member = {
 		stability_cost_modifier = -0.10
@@ -202,14 +241,19 @@ privilegia_de_non_appelando = {
 				country_event = { id = 9074 }
 			}
 		}
-	}	
+	}
+	required_reform = erbkaisertum
+	gui_container = nodlc	
 }
 
 renovatio = {
 	empire = hre
+	potential = { NOT = { has_dlc = "Emperor" } }
 	on_effect = {
 		emperor = {
 			country_event = { id = 9075 tooltip = renovatio_effect }
 		}
 	}
+	required_reform = privilegia_de_non_appelando
+	gui_container = nodlc
 }

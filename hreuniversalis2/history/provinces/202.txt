@@ -36,7 +36,6 @@ add_province_triggered_modifier = religious_center
 	add_core = XVL
 	remove_core = AVI
 }
-1417.10.18 = { estate = estate_church }
 1670.1.1 = { add_core = FRA }
 1791.9.14 = {
 	owner = FRA

@@ -247,7 +247,6 @@ capital = 2703
 #1409 done
 1429.7.26 = { religion = catholic }
 
-1806.3.11 = { set_legacy_government = enlightened_despotism }
 1806.3.11 = {
 	monarch = {
 		name = "Ferrante IV"

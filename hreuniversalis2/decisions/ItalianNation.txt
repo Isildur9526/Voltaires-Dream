@@ -115,6 +115,7 @@ country_decisions = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			swap_non_generic_missions = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -137,7 +138,6 @@ country_decisions = {
 			NOT = { exists = ITA }
 			NOT = { exists = KOG }
 			tag = PAP
-			NOT = { has_country_modifier = kingdom_of_god }
 			OR = {
 				ai = no
 				AND = {
@@ -191,13 +191,8 @@ country_decisions = {
 		effect = {
 			remove_non_electors_emperors_from_empire_effect = yes
 			change_tag = KOG
-			change_government = monarchy
-			add_government_reform = feudalism_reform
+			add_government_reform = kingdom_of_god_reform
 			set_country_flag = unformable
-			add_country_modifier = {
-				name = "kingdom_of_god"
-				duration = -1
-			}
 			country_event  = { id = catholic_flavor.2 }
 			italy_superregion = {
 				limit = {

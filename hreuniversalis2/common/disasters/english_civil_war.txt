@@ -1,4 +1,5 @@
 english_civil_war = {
+	ended_by_country_breaking_to_rebels = no
 	potential = {
 		OR = {
 			AND = {
@@ -34,8 +35,8 @@ english_civil_war = {
 	
 	
 	can_stop = {
-		stability = 3
 		OR = {
+			stability = 3
 			has_any_disaster = yes
 			NOT = { has_reform = english_monarchy }
 		}
@@ -75,6 +76,10 @@ english_civil_war = {
 		NOT = { num_of_rebel_controlled_provinces = 1 }
 		NOT = { average_unrest = 1 }
 		stability = 1
+		hidden_trigger = {
+			NOT = { has_country_modifier = just_lost_to_rebels }
+			NOT = { has_country_flag = english_civil_war_start_event }
+		}
 	}
 
 	

@@ -74,7 +74,8 @@ country_event = {
 				type = pretender_rebels
 				size = 1
 				culture = wallachian
-				leader = "Vlad Tepes Draculesti"
+				leader = "Vlad Tepes"
+				leader_dynasty = "Draculesti"
 			}
 		}
 		TUR = {

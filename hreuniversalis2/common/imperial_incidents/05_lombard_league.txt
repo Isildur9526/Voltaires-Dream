@@ -1,0 +1,59 @@
+incident_lombard_league = {
+	event = incident_lombard_league.3
+	default_option = 1
+	
+	can_stop = {
+		OR = {
+			emperor = {
+				capital_scope = {
+					superregion = italy_superregion
+				}
+			}
+			NOT = {
+				any_country = {
+					exists = yes
+					has_country_flag = lombard_league_member
+				}
+			}
+			has_global_flag = italy_out_of_HRE
+		}
+	}
+	
+	0 = {
+		factor = 1
+		modifier = {
+			factor = 100
+			has_ruler_modifier = guelph_ruler
+		}
+		modifier = {
+			factor = 100
+			has_country_flag = lombard_league_member
+		}
+		modifier = {
+			factor = 100
+			alliance_with = event_target:lombard_league_founder
+		}
+	}
+	1 = {
+		factor = 1
+		modifier = {
+			factor = 100
+			has_ruler_modifier = ghib_ruler
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				capital_scope = {
+					superregion = italy_superregion
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				is_rival = event_target:lombard_league_founder
+				is_enemy = event_target:lombard_league_founder
+			}
+		}
+	}
+}

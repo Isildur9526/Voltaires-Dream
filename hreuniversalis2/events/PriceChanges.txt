@@ -95,6 +95,7 @@ country_event = {
 	title = prices.3.t
 	desc = prices.3.d
 	picture = TRADEGOODS_eventPicture
+	goto = 502
 
 	fire_only_once = yes
 	
@@ -109,6 +110,10 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1
 	}
+
+	immediate = {
+		hidden_effect = { set_global_flag = bottger_happened }
+	}
 	
 	option = {
 		name = prices.3.a
@@ -120,7 +125,6 @@ country_event = {
 		}
 		502 = {
 			add_base_tax = 4
-			change_trade_goods = chinaware
 		}
 		add_prestige = 20
 	}
@@ -1221,6 +1225,7 @@ country_event = {
 	title = prices.31.t
 	desc = prices.31.d
 	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	goto = java_coffee_here
 
 	fire_only_once = yes
 	
@@ -1278,6 +1283,7 @@ country_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = PRINTING_PRESS_eventPicture
 	}
+	goto = bookmarket_here
 
 	fire_only_once = yes
 	
@@ -1364,6 +1370,7 @@ country_event = {
 		trigger = { has_dlc = "Rights of Man" }
 		picture = PRINTING_PRESS_eventPicture
 	}
+	goto = hollender_beater_province
 
 	fire_only_once = yes
 	
@@ -1582,6 +1589,7 @@ country_event = {
 	title = prices.36.t
 	desc = prices.36.d
 	picture = BIG_BOOK_eventPicture
+	goto = lending_libraries_here
 
 	fire_only_once = yes
 	
@@ -1731,6 +1739,7 @@ country_event = {
 	title = prices.38.t
 	desc = prices.38.d
 	picture = TRADEGOODS_eventPicture
+	goto = diamond_city
 
 	fire_only_once = yes
 	
@@ -1888,6 +1897,7 @@ country_event = {
 	title = prices.41.t
 	desc = prices.41.d
 	picture = TRADEGOODS_eventPicture
+	goto = perfume_city_grass
 
 	fire_only_once = yes
 	
@@ -2046,19 +2056,35 @@ country_event = {
 	title = prices.43.t
 	desc = prices.43.d
 	picture = TRADEGOODS_eventPicture
+	goto = 808
 
 	fire_only_once = yes
 	
 	major = yes
 
 	trigger = {
-		NOT = { has_global_flag = bohemian_glass }
-		owns = 808
-		dip_tech = 52
+		OR = {
+			has_country_flag = bohemian_crystal_flag
+			AND = {
+				OR = {
+					NOT = { has_dlc = Emperor }
+					NOT = { BOH = { owns = 808 } }
+				}
+				NOT = { has_global_flag = bohemian_glass }
+				owns = 808
+				dip_tech = 52
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
 		months = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = bohemian_glass_flag
+		}
 	}
 	
 	option = {
@@ -2121,6 +2147,7 @@ country_event = {
 	title = prices.45.t
 	desc = prices.45.d
 	picture = TRADEGOODS_eventPicture
+	goto = glass_province
 
 	fire_only_once = yes
 	

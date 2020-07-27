@@ -25,10 +25,7 @@ add_core = MAZ
 		duration = -1
 	}
 }
-1411.1.1 = {
-	remove_province_modifier = hanseatic_city
-	estate = estate_burghers
-}
+1411.1.1 = { remove_province_modifier = hanseatic_city }
 1454.2.10 = { add_core = POL } 
 1466.10.19 = {
 	owner = POL

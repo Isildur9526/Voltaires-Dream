@@ -52,8 +52,31 @@ polish_noble_rebels = {
 			}
 		}
 		modifier = {
-			factor = 10
-			has_estate = estate_nobles
+			factor = 3.0
+			owner = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 40
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1
@@ -99,6 +122,13 @@ polish_noble_rebels = {
 	}
 	siege_won_effect = {
 		add_local_autonomy = 5
+		owner = {
+			change_estate_land_share = {
+				estate = estate_nobles
+				share = 10.0
+				province = ROOT
+			}
+		}
 	}
 	
 	# Country scope
@@ -116,6 +146,13 @@ polish_noble_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		every_owned_province = {
 			limit = {
 				has_rebel_faction = REB
@@ -125,8 +162,8 @@ polish_noble_rebels = {
 		add_legitimacy = -50
 		if = {
 			limit = { NOT = { government = monarchy } }
-			change_government = monarchy
-			set_legacy_government = feudal_monarchy
+			change_government_to_monarchy = yes
+			#set_legacy_government = feudal_monarchy
 		}
 		if = {
 			limit = {
@@ -149,6 +186,10 @@ polish_noble_rebels = {
 				}
 			}
 			add_government_reform = elective_monarchy
+		}
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = 10.0
 		}
 	}
 }

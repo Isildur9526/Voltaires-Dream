@@ -10,7 +10,6 @@ capital = 1818
 1797.6.29 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = constitutional_republic 
 	government_rank = 4
 	add_accepted_culture = friulan
 	monarch = {
@@ -33,7 +32,6 @@ capital = 1818
 1805.3.18 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = constitutional_monarchy
 	government_rank = 5
 }
 1861.3.20 = {

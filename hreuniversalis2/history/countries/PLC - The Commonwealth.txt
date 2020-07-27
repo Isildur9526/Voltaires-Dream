@@ -9,6 +9,10 @@ religion = catholic
 technology_group = eastern
 capital = 2419 # Krakow
 
+1000.1.1 = {
+	set_estate_privilege = estate_nobles_golden_liberty
+}
+
 1569.7.1 = {
 	monarch = {
 		name = "Zygmunt II August"

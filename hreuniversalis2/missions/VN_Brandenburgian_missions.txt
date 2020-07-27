@@ -1291,7 +1291,7 @@ vn_bra_missions_slot_5_a = {
 				NOT = {
 					estate_territory = {
 						estate = estate_nobles
-						territory = 30
+						territory = 25
 					}
 				}
 				NOT = {
@@ -1300,39 +1300,24 @@ vn_bra_missions_slot_5_a = {
 						influence = 50
 					}
 				}
-				num_of_owned_provinces_with = {
-					value = 3
-					has_estate = estate_nobles
-					region = brandenburg_region
-					consolidated_region_trigger = yes
-				}
 			}
-			else = {
-				num_of_owned_provinces_with = {
-					value = 6
-					region = brandenburg_region
-					NOT = { unrest = 1 }
-					NOT = { local_autonomy = 10 }
-				}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = brandenburg_region
+				consolidated_region_trigger = yes
 			}
         }
         effect = {
+			brandenburg_region = {
+				limit = { owned_by = ROOT }
+				add_province_modifier = {
+					name = "bra_curb_robber_baronry_mission"
+					duration = 7300
+				}
+			}
 			add_country_modifier = {
 				name = "bra_curb_robber_baronry_mission2"
 				duration = 9125
-			}
-			custom_tooltip = vn_bra_curb_robber_baronry.tt
-			hidden_effect = {
-				every_owned_province = {
-					limit = { 
-						has_estate = estate_nobles
-						region = brandenburg_region
-					}
-					add_province_modifier = {
-						name = "bra_curb_robber_baronry_mission"
-						duration = 7300
-					}
-				}
 			}
         }
 	}
@@ -1493,7 +1478,7 @@ vn_bra_missions_slot_5_c = {
 						NOT = {
 							estate_territory = {
 								estate = estate_church
-								territory = 25
+								territory = 10
 							}
 						}
 					}
@@ -1504,7 +1489,7 @@ vn_bra_missions_slot_5_c = {
 						}
 						estate_territory = {
 							estate = estate_church
-							territory = 30
+							territory = 20
 						}
 					}
 				}
@@ -1524,7 +1509,7 @@ vn_bra_missions_slot_5_c = {
 						NOT = {
 							estate_territory = {
 								estate = estate_church
-								territory = 25
+								territory = 10
 							}
 						}
 					}
@@ -1534,10 +1519,6 @@ vn_bra_missions_slot_5_c = {
 					desc = bra_fate_of_bishoprics_modifier
 					influence = -10
 					duration = -1
-				}
-				add_estate_loyalty = {
-					estate = estate_church
-					loyalty = -10
 				}
 				add_years_of_income = 1
 			}
@@ -1551,7 +1532,7 @@ vn_bra_missions_slot_5_c = {
 						}
 						estate_territory = {
 							estate = estate_church
-							territory = 30
+							territory = 20
 						}
 					}
 				}

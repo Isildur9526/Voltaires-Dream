@@ -365,7 +365,6 @@ capital = 1196
 1803.2.25 = {
 	government = monarchy
 	add_government_reform = feudalism_reform
-	set_legacy_government = administrative_monarchy
 	government_rank = 1
 	monarch = {
 		name = "Johann I"

@@ -24,7 +24,6 @@ add_core = WKP
 	remove_core = WKP
 	capital = "Zielenzig"
 	culture = central_margravian
-	estate = estate_holy_orders
 	hre = yes
 }
 1539.1.1 = { religion = protestant }

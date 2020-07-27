@@ -152,21 +152,21 @@ vn_fri_missions_slot_2_a = {
                 limit = { has_estate = estate_church }
                 estate_loyalty = {
                     estate = estate_church
-                    loyalty = 70
+                    loyalty = 60
                 }
             }
             if = {
                 limit = { has_estate = estate_burghers }
                 estate_loyalty = {
                     estate = estate_burghers
-                    loyalty = 70
+                    loyalty = 60
                 }
             }
             if = {
                 limit = { has_estate = estate_nobles }
                 estate_loyalty = {
                     estate = estate_nobles
-                    loyalty = 70
+                    loyalty = 60
                 }
             }
             NOT = { corruption = 1 }
@@ -789,9 +789,9 @@ vn_fri_missions_slot_4_b = {
                     estate = estate_burghers
                     loyalty = 60
                 }
-                estate_influence = {
+                num_of_estate_privileges = {
                     estate = estate_burghers
-                    influence = 40
+                    value = 2
                 }
             }
             1238 = {

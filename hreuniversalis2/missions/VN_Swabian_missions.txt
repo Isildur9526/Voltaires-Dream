@@ -812,7 +812,10 @@ vn_wws_missions_slot_3 = {
 			if = {
 				limit = { hre_size = 1 }
 				is_emperor = yes
-				hre_reform_level = 12
+				OR = {
+                    hre_reform_passed = emperor_erbkaisertum
+                    hre_reform_passed = erbkaisertum
+                }
 			}
 			else = {
 				government_rank = 6
@@ -1319,7 +1322,6 @@ vn_wws_missions_slot_5 = {
         required_missions = { vn_wws_swabian_antikings }
         trigger = {
 			is_emperor = yes
-			hre_reform_level = 1
 			prestige = 50
         }
         effect = {
@@ -1354,7 +1356,10 @@ vn_wws_missions_slot_5 = {
         required_missions = { vn_wws_become_emperor }
         trigger = {
 			is_emperor = yes
-			hre_reform_level = 3
+			OR = {
+                hre_reform_passed = emperor_statutumprincipum
+                hre_reform_passed = statutumprincipum
+            }
             custom_trigger_tooltip = {
                 tooltip = wws_proclaim_free_cities.tt
                 calc_true_if = {
@@ -1379,7 +1384,10 @@ vn_wws_missions_slot_5 = {
         required_missions = { vn_wws_proclaim_free_cities }
         trigger = {
 			is_emperor = yes
-            hre_reform_level = 5
+            OR = {
+                hre_reform_passed = emperor_roncagliergesetze
+                hre_reform_passed = roncagliergesetze
+            }
             OR = {
                 is_papal_controller = yes
                 invested_papal_influence = 50
@@ -1406,7 +1414,10 @@ vn_wws_missions_slot_5 = {
         required_missions = { vn_wws_decisions_of_roncaglia }
         trigger = {
             is_emperor = yes
-            hre_reform_level = 7
+            OR = {
+                hre_reform_passed = emperor_hofgericht
+                hre_reform_passed = hofgericht
+            }
             OR = {
                 custom_trigger_tooltip = {
                     tooltip = vn_wws_restore_honor_imperii.tt

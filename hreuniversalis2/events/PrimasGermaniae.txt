@@ -46,7 +46,7 @@ country_event = {
 			has_reform = leading_clergy_reform
 			government_rank = 2
 			religion = catholic
-			NOT = { reverse_has_opinion = { who = ROOT value = 0 } }
+			NOT = { has_opinion = { who = ROOT value = 0 } }
 		}
 	}
 
@@ -83,7 +83,7 @@ country_event = {
 					has_reform = leading_clergy_reform
 					government_rank = 2
 					religion = catholic
-					NOT = { reverse_has_opinion = { who = ROOT value = 100 } }
+					NOT = { has_opinion = { who = ROOT value = 100 } }
 					prestige = 10
 					NOT = { has_country_flag = primas_germaniae_declined }
 				}

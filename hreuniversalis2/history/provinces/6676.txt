@@ -12,7 +12,6 @@ controller = VDR
 add_core = VDR
 
 1078.1.1 = { religion = orthodox }
-1175.1.1 = { estate = estate_nobles }
 1302.1.1 = {
 	owner = MOS
 	controller = MOS

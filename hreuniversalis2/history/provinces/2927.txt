@@ -28,7 +28,6 @@ discovered_by = north_american
 	controller = XCY
 	add_core = XCY
 	remove_core = VLW
-	estate = estate_nobles
 }
 1191.1.1 = {
 	owner = FRA

@@ -12,7 +12,6 @@ controller = WBG
 add_core = WBG
 add_core = HOO
 
-1100.1.1 = { estate = estate_holy_orders }
 1153.1.1 = {
 	owner = HOO
 	controller = HOO

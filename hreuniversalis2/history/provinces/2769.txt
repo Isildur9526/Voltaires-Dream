@@ -35,11 +35,6 @@ discovered_by = north_american
 	controller = KSZ
 	remove_core = WKP
 }
-1249.1.1 = {
-	owner = KSZ
-	controller = KSZ
-	remove_core = WKP
-}
 1250.1.1 = {
 	owner = WKP
 	controller = WKP

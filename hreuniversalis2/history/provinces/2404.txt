@@ -61,7 +61,7 @@ discovered_by = north_american
 1401.1.1 = {
 	owner = LPT
 	controller = LPT
-	remove_core = ARA
+	remove_core = ATA
 }
 1407.1.1 = {
 	owner = VEN

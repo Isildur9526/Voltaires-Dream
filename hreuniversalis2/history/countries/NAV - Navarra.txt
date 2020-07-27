@@ -572,7 +572,7 @@ capital = 2160	# Pamplona
 		leader = { 	name = "Enrique III"		type = general	fire = 4	shock = 4	manuever = 2	siege = 0 }
 	}
 }
-1560.1.1 = { religion = reformed set_legacy_government = administrative_monarchy }
+1560.1.1 = { religion = reformed }
 1562.1.1 = { leader = {	name = "Louis I de Condé"	type = general	fire = 2	shock = 3	manuever = 4	siege = 3	death_date = 1569.1.1 } }
 1572.6.9 = {
 	monarch = {

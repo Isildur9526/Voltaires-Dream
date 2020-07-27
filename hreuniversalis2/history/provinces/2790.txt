@@ -44,7 +44,6 @@ add_core = DNZ
 	remove_core = WKP
 	remove_core = PML
 }
-1380.1.1 = { estate = estate_church }
 1454.2.10 = {
 	add_core = POL
 	revolt = { type = revolutionary_rebels size = 0 }

@@ -6,6 +6,7 @@ religion = catholic
 primary_culture = umbrian
 capital = 2607
 add_army_professionalism = 0.05
+set_estate_privilege = estate_church_papal_emissary
 
 #Counts Chiusi Orvietoque
 1038.1.1 = {
@@ -185,9 +186,9 @@ add_army_professionalism = 0.05
 		name = "Braccio I"
 		dynasty = "Baglioni"
 		birth_date = 1419.1.1
-		adm = 3
-		dip = 3
-		mil = 6
+		adm = 2
+		dip = 4
+		mil = 4
 	}
 }
 1479.12.8 = {

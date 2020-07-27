@@ -275,7 +275,7 @@ country_event = {
 		set_country_flag = nrm_was_invaded
 		custom_tooltip = nrm_invasions.2.a.tt
 		set_global_flag = norman_invasion_started
-		#add - CHANGE TAG NAME in 1.30
+		anglicize_irish_tag_effect = yes
 	}
 	after = {
 		if = {
@@ -413,7 +413,7 @@ country_event = {
 			}
 		}
 		add_truce_with = ENG
-		#add - CHANGE TAG NAME in 1.30
+		anglicize_irish_tag_effect = yes
 	}
 	option = {	#Fight Norman ruler
 		name = nrm_invasions.3.b
@@ -542,7 +542,7 @@ country_event = {
 			culture = hiberno_norman
 		}
 		add_truce_with = ENG
-		#add - CHANGE TAG NAME in 1.30
+		anglicize_irish_tag_effect = yes
 	}
 }
 

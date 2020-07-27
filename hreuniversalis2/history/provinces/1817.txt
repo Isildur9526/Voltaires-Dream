@@ -36,7 +36,6 @@ discovered_by = north_american
 	owner = ACH
 	controller = ACH
 	remove_core = MOE
-	estate = estate_nobles
 	fort_14th = yes
 }
 1320.1.1 = {

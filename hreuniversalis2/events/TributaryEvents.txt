@@ -337,9 +337,6 @@ country_event = {
 				modifier = tributary_forced_brain_drain
 			}
 		}
-		capital_scope = {
-			#Adds 50 to latest institution
-		}
 	}
 	option = {
 		name = "tributary_events.5.c" #Let us allow them their freedom

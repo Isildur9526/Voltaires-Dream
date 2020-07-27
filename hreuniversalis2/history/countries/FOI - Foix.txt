@@ -355,5 +355,4 @@ fixed_capital = 1273
 		mil = 3
 	}
 }
-1555.5.30 = { set_legacy_government = administrative_monarchy }
 1560.1.1 = { religion = reformed }

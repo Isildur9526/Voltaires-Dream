@@ -332,9 +332,9 @@ capital = 2926
 		name = "Ernst I"
 		dynasty = "von Wettin"
 		birth_date = 1441.3.24
-		dip = 1
+		dip = 2
 		adm = 2
-		mil = 1
+		mil = 2
 	}
 	heir = {
 		name = "Friedrich"
@@ -647,7 +647,6 @@ capital = 2926
 		dip = 5
 		mil = 3
 	}
-	set_legacy_government = enlightened_despotism
 }
 1783.2.2 = {
 	heir = {

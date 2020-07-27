@@ -17,7 +17,6 @@ add_core = HRR
 	add_core = EST
 	remove_core = HRR
 	religion = catholic
-	estate = estate_church
 }
 1346.1.1 = {
 	owner = LIV

@@ -1093,7 +1093,7 @@ vn_kie_missions_slot_3 = {
 					NOT = { has_global_flag = empire_of_china_dismantled }
 				}
 				is_emperor_of_china = yes
-				empire_of_china_reform_level = 1
+				empire_of_china_reform_passed = establish_gaituguiliu_decision
 				imperial_mandate = 50
 			}
 			else = {
@@ -1147,7 +1147,7 @@ vn_kie_missions_slot_3 = {
 					NOT = { has_global_flag = empire_of_china_dismantled }
 				}
 				is_emperor_of_china = yes
-				empire_of_china_reform_level = 2
+				empire_of_china_reform_passed = seaban_decision
 				imperial_mandate = 50
 			}
 			else = {
@@ -1201,7 +1201,7 @@ vn_kie_missions_slot_3 = {
 					NOT = { has_global_flag = empire_of_china_dismantled }
 				}
 				is_emperor_of_china = yes
-				empire_of_china_reform_level = 3
+				empire_of_china_reform_passed = reform_land_tax_decision
 				imperial_mandate = 50
 			}
 			else = {
@@ -1248,7 +1248,7 @@ vn_kie_missions_slot_3 = {
 					NOT = { has_global_flag = empire_of_china_dismantled }
 				}
 				is_emperor_of_china = yes
-				empire_of_china_reform_level = 4
+				empire_of_china_reform_passed = military_governors_decision
 				imperial_mandate = 50
 			}
 			else = {
@@ -1278,7 +1278,7 @@ vn_kie_missions_slot_3 = {
 				}
 				else = {
 					is_emperor_of_china = yes
-					empire_of_china_reform_level = 5
+					empire_of_china_reform_passed = centralizing_top_government_decision
 				}
 			}
 			else = {

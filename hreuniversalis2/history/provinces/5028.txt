@@ -10,7 +10,6 @@ hre = no
 owner = FTM
 controller = FTM
 add_core = FTM
-estate = estate_nobles
 
 1171.9.13 = {
 	owner = MAM

@@ -17,8 +17,13 @@ country_event = {
 			has_reform = steppe_horde
 			has_reform = eastern_monarchy
 		}
+		has_estate = estate_nomadic_tribes
+		estate_territory = {
+			estate = estate_nomadic_tribes
+			territory = 10
+		}
 		any_owned_province = {
-			has_estate = estate_nomadic_tribes
+			culture_group = root
 			NOT = { base_manpower = 3 }
 		}
 	}
@@ -32,7 +37,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					has_estate = estate_nomadic_tribes
+					culture_group = root
 					NOT = { base_manpower = 3 }
 				}
 				save_event_target_as = friendly_tribe_province
@@ -848,31 +853,5 @@ country_event = {
 			chance = 15
 			add_stability = -1
 		}
-	}
-}
-
-#No tag should be in the nomad tech group without the corresponding government.
-country_event = {
-	id = randomeventsstapehordes.25
-	title = "randomeventsstapehordes.25.t"
-	desc = "randomeventsstapehordes.25.d"
-	picture = HORDE_ON_HORSEBACK_eventPicture	
-
-	trigger = {
-		technology_group = nomad_group
-		NOT = { has_institution = feudalism }
-		NOT = { has_reform = steppe_horde }
-		is_emperor_of_china = no
-		NOT = { has_dlc = "Dharma" }
-	}
-
-	mean_time_to_happen = {
-		months = 12
-	}
-
-	option = {
-		name = "randomeventsstapehordes.25.a" #Ok.
-		change_government = monarchy
-		set_legacy_government = despotic_monarchy
 	}
 }

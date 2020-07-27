@@ -10,7 +10,6 @@ hre = yes
 owner = FLA
 controller = FLA
 add_core = FLA
-estate = estate_nobles
 
 1249.1.1 = { controller = HAI }
 1253.7.4 = { controller = FLA }

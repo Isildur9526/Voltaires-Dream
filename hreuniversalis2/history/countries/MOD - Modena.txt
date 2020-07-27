@@ -149,7 +149,6 @@ capital = 972	# Modena
 	}
 }
 1662.7.6 = {
-	set_legacy_government = administrative_monarchy
 	monarch = {
 		name = "Francesco II"
 		dynasty = "d'Este"
@@ -194,7 +193,6 @@ capital = 972	# Modena
 	}
 }
 1737.10.27 = {
-	set_legacy_government = enlightened_despotism
 	monarch = {
 		name = "Francesco III"
 		dynasty = "d'Este"

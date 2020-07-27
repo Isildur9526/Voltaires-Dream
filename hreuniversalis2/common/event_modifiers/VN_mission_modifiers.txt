@@ -32,6 +32,8 @@ build_roads_mission = {
 }
 embrace_guilds_mission = {
 	production_efficiency = 0.1
+	burghers_loyalty_modifier = 0.05
+	vaisyas_loyalty_modifier = 0.05
 }
 control_trade_centers_mission = {
 	global_trade_power = 0.1
@@ -55,6 +57,8 @@ fortify_frontiers_mission = {
 high_tradition_mission = {
 	land_morale = 0.05
 	recover_army_morale_speed = 0.05
+	nobles_loyalty_modifier = 0.05
+	maratha_loyalty_modifier = 0.05
 }
 professional_armies_mission = {
 	infantry_power = 0.1
@@ -63,6 +67,8 @@ professional_armies_mission = {
 }
 build_hospitals_mission = {
 	local_institution_spread = 0.33
+	church_loyalty_modifier = 0.05
+	brahmins_hindu_loyalty_modifier = 0.05
 	global_unrest = -2
 }
 technological_might_mission = {
@@ -93,28 +99,39 @@ loyal_estates_mission = {
 }	
 absolute_power_mission = {
 	max_absolutism = 10
+	max_revolutionary_zeal = 10
 	global_autonomy = -0.05
 }
 sizeable_state_mission = {
 	legitimacy = 1
 	republican_tradition = 0.5
+	devotion = 1
+	horde_unity = 0.5
 }
 regional_power_mission = {
 	prestige = 1
 	legitimacy = 1
 	republican_tradition = 0.5
+	devotion = 1
+	horde_unity = 0.5
 }
 major_power_mission = {
 	prestige = 1
 	legitimacy = 1
 	republican_tradition = 0.5
+	devotion = 1
+	horde_unity = 0.5
 	yearly_absolutism = 1
+	yearly_revolutionary_zeal = 1
 }
 hegemon_mission = {
 	prestige = 1
 	legitimacy = 1
 	republican_tradition = 0.5
+	devotion = 1
+	horde_unity = 0.5
 	yearly_absolutism = 1
+	yearly_revolutionary_zeal = 1
 	prestige_decay = -0.01
 }
 hanseatic_cities_mission = {
@@ -136,13 +153,17 @@ religious_wars_mission = {
 }
 defend_faith_mission = {
 	recover_army_morale_speed = 0.05
-	global_manpower_modifier = 0.25
+	manpower_in_true_faith_provinces = 0.25
 	shock_damage_received = -0.05
 }
 pious_state_mission = {
 	papal_influence = 1
 	devotion = 0.5
 	church_power_modifier = 0.33
+	yearly_karma_decay = 0.005
+	monthly_fervor_increase = 0.5
+	yearly_harmony = 0.5
+	yearly_patriarch_authority = 0.005
 }
 question_of_reform_mission = {
 	missionaries = 1
@@ -181,7 +202,7 @@ turkish_pirate_fleet_mission = {
 	capture_ship_chance = 0.4
 }
 support_sufism_mission = {
-	missionaries = 1
+	church_loyalty_modifier = 0.05
 	global_tax_modifier = 0.1
 }
 defeat_rum_mission = {
@@ -235,7 +256,7 @@ pious_ruler_mission = {
 	legitimacy = 0.5
 	papal_influence = 1
 	church_power_modifier = 0.25
-	monthly_fervor_increase = 1
+	monthly_fervor_increase = 0.5
 }
 new_monasteries_mission = {
 	tolerance_own = 1
@@ -310,6 +331,7 @@ riches_of_italy_mission = {
 }
 reform_government_mission = {
 	yearly_absolutism = 1
+	yearly_revolutionary_zeal = 1
 	global_autonomy = -0.03
 }
 
@@ -631,8 +653,9 @@ christian_chartiy_mission = {
 	diplomatic_upkeep = 1
 }
 church_equipment_mission = {
-	global_unrest = -2
-	missionary_maintenance_cost = -0.25
+	global_unrest = -1
+	missionary_maintenance_cost = -0.33
+	church_loyalty_modifier = 0.05
 }
 oriental_empire_mission = {
 	global_autonomy = -0.05
@@ -649,11 +672,12 @@ reach_the_sea_mission = {
 	sailors_recovery_speed = 0.2
 }
 establish_polish_crown_tribunal_mission = {
-	yearly_corruption = -0.1
+	nobles_loyalty_modifier = 0.05
 	advisor_cost = -0.2
 }
 curtail_polish_magnates_mission = {
 	yearly_absolutism = 0.5
+	yearly_revolutionary_zeal = 0.5
 	global_autonomy = -0.1
 }
 polish_heartland_mission = {
@@ -886,7 +910,7 @@ templar_forts_mission = {
 }
 crusader_army_mission = {
 	missionaries = 1
-	 land_morale = 0.1
+	land_morale = 0.1
 }
 
 #Scandinavian
@@ -937,6 +961,7 @@ antemurale_christianitatis_mission = {
 balkans_silver_mines_mission = {
 	inflation_reduction = 0.1
 	global_trade_goods_size_modifier = 0.1
+	burghers_loyalty_modifier = 0.05
 }
 metropolises_of_the_balkans_mission = {
 	trade_efficiency = 0.1

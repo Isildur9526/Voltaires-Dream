@@ -1,133 +1,72 @@
 namespace = ostsiedlung
 
-# accept german settlers?
-country_event = {
+# culture convert province
+province_event = {
 	id = ostsiedlung.1
 	title = ostsiedlung.1.t
 	desc = ostsiedlung.1.d
 	picture = COLONIZATION_eventPicture
+	goto = root
 
 	trigger = {
 		normal_or_historical_nations = yes
 		OR = {
 			current_age = age_of_holy_wars
 			current_age = age_of_crisis
-			current_age = age_of_dynasticism
 		}
 		OR = {
-			primary_culture = germanic
-			AND = {
-				OR = {
-					primary_culture = polabian
-					primary_culture = kashubian
-					primary_culture = sorbian
-				}
-				any_neighbor_country = {
-					culture_group = germanic
-				}
-			}
+			culture = polabian
+			culture = kashubian
+			culture = pruthenian
+			culture = sorbian
 		}
-		any_owned_province = {
-			NOT = { has_province_flag = ostsiedlung_ongoing_flag }
-			OR = {
-				culture = polabian
-				culture = kashubian
-				culture = sorbian
-				culture = pruthenian
-			}
+		any_neighbor_province = {
+			culture_group = germanic
+		}
+		owner = {
+			primary_culture = polabian
+			primary_culture = kashubian
+			primary_culture = pruthenian
+			primary_culture = sorbian
+			culture_group = germanic
 		}
 	}
 
-	mean_time_to_happen = { months = 60 }
-
-	immediate = {
-		hidden_effect = {
-			random_owned_province = {
-				limit = {
-					NOT = { has_province_flag = ostsiedlung_ongoing_flag }
-					OR = {
-						culture = polabian
-						culture = kashubian
-						culture = sorbian
-						culture = pruthenian
-					}
-				}
-				save_event_target_as = new_ostsiedlung_province
-				random_list = {
-					20 = { set_province_flag = increase_dev_by_1a }
-					20 = { set_province_flag = increase_dev_by_1b }
-					15 = { set_province_flag = increase_dev_by_2a }
-					15 = { set_province_flag = increase_dev_by_2b }
-					10 = { set_province_flag = increase_dev_by_3a }
-					10 = { set_province_flag = increase_dev_by_3b }
-					10 = { set_province_flag = increase_dev_by_3c }
-				}
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = germanic
 			}
+		}
+		modifier = {
+			factor = 1.5
+			culture = schlesian
 		}
 	}
 
 	option = {
 		name = ostsiedlung.1.a
-		ai_chance = { factor = 85 }
-		add_years_of_income = -0.25
-		event_target:new_ostsiedlung_province = {
-			trigger_switch = {
-				on_trigger = has_province_flag
-				increase_dev_by_1a = { add_base_tax = 1 }
-				increase_dev_by_1b = { add_base_production = 1 }
-				increase_dev_by_2a = { add_base_tax = 1 add_base_production = 1 }
-				increase_dev_by_2b = { add_base_production = 1 add_base_manpower = 1 }
-				increase_dev_by_3a = { add_base_tax = 2 add_base_manpower = 1 }
-				increase_dev_by_3b = { add_base_production = 2 add_base_manpower = 1 }
-				increase_dev_by_3c = { add_base_tax = 1 add_base_production = 1 add_base_manpower = 1 }
-			}
-			set_province_flag = ostsiedlung_ongoing_flag
-			add_province_modifier = {
-				name = ostsiedlung_province
-				duration = 9125
-			}
-			province_event = {
-				id = ostsiedlung.2
-				days = 3650
-				random = 5475
-				tooltip = ostsiedlung.1.tt
-			}
+		ai_chance = {
+			factor = 1
 		}
-	}
-	option = {
-		name = ostsiedlung.1.b
-		ai_chance = { factor = 15 }
-		add_prestige = -5
-	}
-
-	after = {
-		event_target:new_ostsiedlung_province = {
-			clr_province_flag = increase_dev_by_1a
-			clr_province_flag = increase_dev_by_1b
-			clr_province_flag = increase_dev_by_2a
-			clr_province_flag = increase_dev_by_2b
-			clr_province_flag = increase_dev_by_3a
-			clr_province_flag = increase_dev_by_3b
-			clr_province_flag = increase_dev_by_3c
-		}
-	}
-}
-
-# culture convert province
-province_event = {
-	id = ostsiedlung.2
-	title = ostsiedlung.2.t
-	desc = ostsiedlung.2.d
-	picture = COLONIZATION_eventPicture
-
-	is_triggered_only = yes
-
-	mean_time_to_happen = { days = 1 }
-
-	option = {
-		name = ostsiedlung.2.a
-		clr_province_flag = ostsiedlung_ongoing_flag
 		if = {
+			limit = {
+				culture = pruthenian
+			}
+			change_culture = prussian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture = sorbian
+					culture = schlesian
+				}
+			}
+			change_culture = prussian
+		}
+		else_if = {
 			limit = {
 				OR = {
 					region = mecklenburg_region
@@ -136,15 +75,6 @@ province_event = {
 				}
 			}
 			change_culture = pommeranian
-		}
-		else_if = {
-			limit = {
-				OR = {
-					region = westpreussen_region
-					region = ostpreussen_region
-				}
-			}
-			change_culture = prussian
 		}
 		else_if = {
 			limit = {
@@ -164,337 +94,17 @@ province_event = {
 			change_culture = low_elbish
 		}
 		else = {
-			change_culture = saxon
-		}
-	}
-}
-
-# change primary culture
-country_event = {
-	id = ostsiedlung.3
-	title = ostsiedlung.3.t
-	desc = ostsiedlung.3.d
-	picture = BIG_BOOK_eventPicture
-
-	trigger = {
-		normal_or_historical_nations = yes
-		OR = {
-			current_age = age_of_holy_wars
-			current_age = age_of_crisis
-			current_age = age_of_dynasticism
-		}
-		OR = {
-			primary_culture = polabian
-			primary_culture = kashubian
-		}
-		primitives = no
-		is_tribal = no
-		is_at_war = no
-		any_neighbor_country = {
-			culture_group = germanic
-		}
-		any_owned_province = {
-			culture_group = germanic
-		}
-		NOT = { has_country_flag = had_germanization_question }
-	}
-
-	mean_time_to_happen = {
-		months = 200
-		modifier = {
-			factor = 0.5
-			OR = {
-				dominant_culture = pommeranian
-				dominant_culture = central_margravian
-				dominant_culture = low_elbish
-				dominant_culture = saxon
-			}
-		}
-		modifier = {
-			factor = 0.75
-			religion_group = christian
-		}
-	}
-
-	immediate = {
-		hidden_effect = {
-			set_country_flag = had_germanization_question
-			if = {
-				limit = { primary_culture = polabian }
-				set_country_flag = polabian_primary_culture
-			}
-			if = {
-				limit = { primary_culture = kashubian }
-				set_country_flag = kashubian_primary_culture
-			}
-		}
-	}
-
-	option = {
-		name = ostsiedlung.3.a
-		ai_chance = { factor = 90 }
-		#rename tags in 1.30
-		set_country_flag = formerly_wendish
-		if = {
-			limit = {
-				capital_scope = {
-					OR = {
-						region = mecklenburg_region
-						area = stolp_area
-						area = kolberg_area
-					}
-				}
-			}
-			change_primary_culture = pommeranian
-		}
-		else_if = {
-			limit = {
-				capital_scope = {
-					OR = {
-						region = brandenburg_region
-						area = neumark_area
-					}
-				}
-			}
-			change_primary_culture = central_margravian
-		}
-		else_if = {
-			limit = {
-				capital_scope = {
-					region = holstein_region
-				}
-			}
-			change_primary_culture = low_elbish
-		}
-		else = {
-			change_primary_culture = saxon
-		}
-		trigger_switch = {
-			on_trigger = has_country_flag
-			polabian_primary_culture = { add_accepted_culture = polabian }
-			kashubian_primary_culture = { add_accepted_culture = kashubian }
-		}
-		if = {
-			limit = { has_custom_ideas = no }
-			swap_free_idea_group = yes
-		}
-		every_neighbor_country = {
-			limit = { culture_group = east_slavic }
-			add_opinion = {
-				who = ROOT
-				modifier = opinion_mildly_displeased
-			}
+			change_culture = prussian
 		}
 	}
 	option = {
-		name = ostsiedlung.3.b
-		ai_chance = { factor = 10 }
-		add_prestige = 10
-		every_neighbor_country = {
-			limit = { culture_group = germanic }
-			add_opinion = {
-				who = ROOT
-				modifier = opinion_mildly_displeased
-			}
+		name = ostsiedlung.1.b
+		ai_chance = {
+			factor = 0
 		}
-	}
-
-	after = {
-		clr_country_flag = polabian_primary_culture
-		clr_country_flag = kashubian_primary_culture
-	}
-}
-
-# change religion
-country_event = {
-	id = ostsiedlung.4
-	title = ostsiedlung.4.t
-	desc = ostsiedlung.4.d
-	picture = RELIGIOUS_CONVERSION_eventPicture
-
-	trigger = {
-		normal_or_historical_nations = yes
-		OR = {
-			current_age = age_of_holy_wars
-			current_age = age_of_crisis
-			current_age = age_of_dynasticism
-		}
-		OR = {
-			primary_culture = polabian
-			primary_culture = kashubian			
-		}
-		religion_group = pagan
-		primitives = no
-		is_tribal = no
-		is_at_war = no
-		any_neighbor_country = {
-			culture_group = germanic
-			religion_group = christian
-		}
-		NOT = { has_country_flag = had_christianization_question }
-	}
-
-	mean_time_to_happen = {
-		months = 200
-		modifier = {
-			factor = 0.5
-			dominant_religion = catholic
-		}
-		modifier = {
-			factor = 0.75
-			OR = {
-				dominant_culture = pommeranian
-				dominant_culture = central_margravian
-				dominant_culture = low_elbish
-				dominant_culture = saxon
-			}
-		}
-	}
-
-	immediate = {
-		hidden_effect = {
-			set_country_flag = had_christianization_question
-		}
-	}
-
-	option = {
-		name = ostsiedlung.4.a
-		ai_chance = { factor = 90 }
-		change_religion = catholic
-		add_country_modifier = {
-			name = slavic_christianization
+		add_province_modifier = {
+			name = add_country_unrest_5_modifier
 			duration = 3650
 		}
-	}
-	option = {
-		name = ostsiedlung.4.b
-		ai_chance = { factor = 10 }
-		add_prestige = 10
-		every_neighbor_country = {
-			limit = { religion = catholic }
-			add_opinion = {
-				who = ROOT
-				modifier = opinion_mildly_displeased
-			}
-		}
-	}
-}
-
-# join hre
-country_event = {
-	id = ostsiedlung.5
-	title = ostsiedlung.5.t
-	desc = ostsiedlung.5.d
-	picture = HRE_eventPicture
-
-	trigger = {
-		normal_or_historical_nations = yes
-		OR = {
-			current_age = age_of_holy_wars
-			current_age = age_of_crisis
-			current_age = age_of_dynasticism
-		}
-		culture_group = germanic
-		religion = christian
-		primitives = no
-		is_tribal = no
-		is_at_war = no
-		is_subject = no
-		hre_size = 1
-		is_part_of_hre = no
-		is_emperor_of_china = no
-		has_country_flag = formerly_wendish
-		any_neighbor_country = {
-			culture_group = germanic
-			religion_group = christian
-			is_part_of_hre = yes
-		}
-		NOT = { has_country_flag = had_hre_question }
-	}
-
-	mean_time_to_happen = {
-		months = 200
-		modifier = {
-			factor = 0.5
-			emperor = {
-				alliance_with = ROOT
-			}
-		}
-		modifier = {
-			factor = 2
-			emperor = {
-				is_rival = ROOT
-			}
-		}
-	}
-
-	immediate = {
-		hidden_effect = {
-			set_country_flag = had_hre_question
-			random_country = {
-				limit = { is_emperor = yes }
-				save_event_target_as = current_emperor
-			}
-		}
-	}
-
-	option = {
-		name = ostsiedlung.5.a
-		ai_chance = { factor = 90 }
-		set_in_empire = yes
-		every_neighbor_country = {
-			limit = {
-				OR = {
-					is_part_of_hre = yes
-					is_emperor = yes
-				}
-			}
-			add_opinion = {
-				who = ROOT
-				modifier = opinion_pleased
-			}
-		}
-	}
-	option = {
-		name = ostsiedlung.5.b
-		ai_chance = { factor = 10 }
-		add_prestige = 10
-		every_neighbor_country = {
-			limit = {
-				OR = {
-					is_part_of_hre = yes
-					is_emperor = yes
-				}
-			}
-			add_opinion = {
-				who = ROOT
-				modifier = opinion_displeased
-			}
-		}
-	}
-}
-
-country_event = {
-	id = ostsiedlung.0
-	title = ostsiedlung.0.t
-	desc = ostsiedlung.0.d
-	picture = COLONIZATION_eventPicture
-
-	hidden = yes
-
-	trigger = {
-		NOT = { has_country_flag = formerly_wendish }
-		has_country_flag = is_a_wendish_tag
-		culture_group = germanic
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = ostsiedlung.0.a
-		clr_country_flag = is_a_wendish_tag
-		set_country_flag = formerly_wendish
 	}
 }

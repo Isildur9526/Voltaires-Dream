@@ -81,10 +81,7 @@ country_decisions = {
 		allow = {
 			NOT = { exists = RUS }
 			adm_tech = 44
-			if = {
-				limit = { has_dlc = "Dharma" }
-				NOT = { has_reform = states_general_reform }
-			}
+			NOT = { has_reform = states_general_reform }
 			is_subject = no
 			is_nomad = no
 			is_at_war = no
@@ -107,11 +104,14 @@ country_decisions = {
 			change_tag = RUS
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
-				limit = { NOT = { government = monarchy } }
-				change_government = monarchy
+				limit = {
+					NOT = { government = monarchy }
+					is_revolutionary = no
+				}
+				change_government_to_monarchy = yes
 			}
 			if = {
-				limit = { NOT = { has_reform = tsardom } }
+				limit = { is_revolutionary = no }
 				add_government_reform = tsardom
 			}
 			if = {

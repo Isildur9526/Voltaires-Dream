@@ -8,9 +8,13 @@ vn_cas_missions_slot_1_a = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -65,20 +69,14 @@ vn_cas_missions_slot_1_a = {
         required_missions = { vn_cas_cortes_of_castile }
         trigger = {
             if = {
-                limit = {
-                    has_estate = estate_church
-                }
+                limit = { has_estate = estate_church }
                 estate_loyalty = {
                     estate = estate_church
-                    loyalty = 65
+                    loyalty = 60
                 }
-                estate_influence = {
+                num_of_estate_privileges = {
                     estate = estate_church
-                    influence = 40
-                }
-                num_of_owned_provinces_with = {
-                    value = 5
-                    has_estate = estate_church
+                    value = 3
                 }
             }
             else = {
@@ -90,9 +88,7 @@ vn_cas_missions_slot_1_a = {
         }
         effect = {
             if = {
-                limit = {
-                    has_estate = estate_church
-                }
+                limit = { has_estate = estate_church }
                 add_estate_loyalty = {
                     estate = estate_church
                     loyalty = 10
@@ -113,7 +109,6 @@ vn_cas_missions_slot_1_a = {
             any_owned_province = {
                 trade_goods = wool
                 development = 10
-                has_estate = no
             }
         }
         effect = {
@@ -122,7 +117,7 @@ vn_cas_missions_slot_1_a = {
                     superregion = iberia_superregion
                     trade_goods = wool 
                 }
-                add_local_autonomy = 10
+                add_base_production = 2
                 add_province_modifier = {
                     name = "cas_establish_mesta_mission"
                     duration = 9125
@@ -139,9 +134,13 @@ vn_cas_missions_slot_1_b = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -153,26 +152,60 @@ vn_cas_missions_slot_1_b = {
         required_missions = { }
         position = 5
         trigger = {
+            custom_trigger_tooltip = {
+                tooltip = vn_cas_dynastic_claims.tt
+                has_global_flag = lon_split_flag
+            }
             legitimacy = 100
             stability = 1
             is_free_or_tributary_trigger = yes
             num_of_royal_marriages = 2
         }
         effect = {
-			add_stability_or_adm_power = yes
-            leonese_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
+            add_stability_or_adm_power = yes
+            if = {
+                limit = {
+                    OR = {
+                        tag = CAS
+                        was_tag = CAS
+                    }
+                }
+                leonese_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                asturian_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
             }
-            asturian_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = LON
+                        was_tag = LON
+                    }
+                }
+                castile_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                asturian_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
             }
         }
     }
@@ -432,9 +465,13 @@ vn_cas_missions_slot_2_a = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -542,9 +579,13 @@ vn_cas_missions_slot_2_b = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -559,42 +600,78 @@ vn_cas_missions_slot_2_b = {
             OR = {
                 region = leonese_region
                 area = asturias_area
+                region = castile_region
             }
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            leonese_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            if = {
+                limit = {
+                    OR = {
+                        tag = CAS
+                        was_tag = CAS
+                    }
+                }
+                leonese_region = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
+                asturias_area = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
             }
-            asturias_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = LON
+                        was_tag = LON
+                    }
+                }
+                castile_region = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
             }
         }
         effect = {
             add_prestige = 10
-			add_adm_power = 25
-			leon_area = {
-				limit = { NOT = { is_core = LON } }
-				add_core = LON
-			}
-			salamanca_area = {
-				limit = { NOT = { is_core = LON } }
-				add_core = LON
-			}
-            leonese_region = {
-                limit = { country_or_non_sovereign_subject_holds = ROOT }
-                add_province_modifier = {
-                    name = "cas_subjugate_galicia_mission"
-                    duration = 1825
+            add_adm_power = 25
+            if = {
+                limit = {
+                    OR = {
+                        tag = CAS
+                        was_tag = CAS
+                    }
+                }
+                leonese_region = {
+                    limit = { country_or_non_sovereign_subject_holds = ROOT }
+                    add_province_modifier = {
+                        name = "cas_subjugate_galicia_mission"
+                        duration = 1825
+                    }
+                }
+                asturias_area = {
+                    limit = { country_or_non_sovereign_subject_holds = ROOT }
+                    add_province_modifier = {
+                        name = "cas_subjugate_galicia_mission"
+                        duration = 1825
+                    }
                 }
             }
-            asturias_area = {
-                limit = { country_or_non_sovereign_subject_holds = ROOT }
-                add_province_modifier = {
-                    name = "cas_subjugate_galicia_mission"
-                    duration = 1825
+            else_if = {
+                limit = {
+                    OR = {
+                        tag = LON
+                        was_tag = LON
+                    }
+                }
+                castile_region = {
+                    limit = { country_or_non_sovereign_subject_holds = ROOT }
+                    add_province_modifier = {
+                        name = "cas_subjugate_galicia_mission"
+                        duration = 1825
+                    }
                 }
             }
         }
@@ -608,9 +685,13 @@ vn_cas_missions_slot_2_c = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -653,9 +734,13 @@ vn_cas_missions_slot_2_d = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -746,9 +831,13 @@ vn_cas_missions_slot_3_a = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -767,7 +856,12 @@ vn_cas_missions_slot_3_a = {
 				province_id = 4370
 				province_id = 4369
 				province_id = 2337
-				province_id = 4474
+                province_id = 4474
+                province_id = 4344
+				province_id = 2718
+				province_id = 4346
+				province_id = 4345
+				province_id = 4347
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -794,7 +888,12 @@ vn_cas_missions_slot_3_a = {
 				owns = 4370
 				owns = 4369
 				owns = 2337
-				owns = 4474
+                owns = 4474
+                owns = 4344
+                owns = 2718
+                owns = 4346
+                owns = 4345
+                owns = 4347
 			}
         }
         effect = {
@@ -831,9 +930,13 @@ vn_cas_missions_slot_3_b = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -1196,9 +1299,13 @@ vn_cas_missions_slot_4_a = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -1295,9 +1402,13 @@ vn_cas_missions_slot_4_b = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -1354,9 +1465,13 @@ vn_cas_missions_slot_4_c = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -1457,9 +1572,13 @@ vn_cas_missions_slot_4_d = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -1495,9 +1614,13 @@ vn_cas_missions_slot_5_a = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }
@@ -1612,9 +1735,13 @@ vn_cas_missions_slot_5_b = {
     potential = {
         OR = {
             tag = CAS
+            tag = LON
             AND = {
                 tag = SPA
-                was_tag = CAS
+                OR = {
+                    was_tag = CAS
+                    was_tag = LON
+                }
             }
         }
         NOT = { map_setup = map_setup_random }

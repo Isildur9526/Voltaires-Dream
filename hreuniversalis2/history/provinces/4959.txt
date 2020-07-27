@@ -56,7 +56,6 @@ add_core = FTM
 	controller = HFA
 	add_core = HFA
 	remove_core = IBE
-	estate = estate_holy_orders
 }
 1229.2.1 = { remove_core = KOJ }
 1265.1.1 = {

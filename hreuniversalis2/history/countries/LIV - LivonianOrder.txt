@@ -11,6 +11,14 @@ historical_friend = OSL
 historical_friend = DPT
 capital = 5840
 add_army_professionalism = 0.1
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 10
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = -10
+}
 
 1206.1.1 = {
 	monarch = {

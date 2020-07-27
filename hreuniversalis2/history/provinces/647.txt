@@ -42,7 +42,6 @@ add_core = CST
 	add_core = LAN
 	remove_Core = XPR
 	remove_core = CST
-	estate = estate_burghers
 	hre = yes
 }
 1495.1.1 = { hre = no }

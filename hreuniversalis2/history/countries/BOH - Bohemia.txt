@@ -8,6 +8,10 @@ technology_group = western
 add_accepted_culture = moravian
 add_accepted_culture = sorbian
 add_army_professionalism = 0.1
+change_estate_land_share = {
+	estate = estate_burghers
+	share = -5
+}
 
 1034.1.1 = {
 	monarch = {
@@ -731,7 +735,6 @@ add_army_professionalism = 0.1
 }
 #pu under HUN 1490 to 1526
 1526.8.30 = { elector = no }
-1556.10.2 = { set_legacy_government = administrative_monarchy }
 1618.5.22 = {
 	monarch = {
 		name = "(Interregnum)"

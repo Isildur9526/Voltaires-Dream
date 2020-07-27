@@ -17,10 +17,17 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		tag = ARA
-		is_year = 1248
-		NOT = { is_year = 1500 }
-		NOT = { has_country_modifier = ara_consulate_sea }
+		OR = {
+			AND = {
+				NOT = { has_dlc = "Golden Century" }
+				tag = ARA
+				NOT = { is_year = 1500 }
+				NOT = {
+					has_country_modifier = ara_consulate_sea
+				}
+			}
+			has_country_flag = ara_consulate_flag
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -65,7 +72,7 @@ country_event = {
 			add_reform_progress_small_effect = yes
 		}
 		remove_country_modifier = ara_consulate_sea
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = ara_book_consulate_sea
 			duration = -1
 		}
@@ -88,7 +95,6 @@ country_event = {
 	trigger = {
 		tag = ARA
 		NOT = { is_year = 1471 }
-		is_year = 1434
 		OR = {
 			dip = 3
 			adm = 3
@@ -126,7 +132,6 @@ country_event = {
 	trigger = {
 		tag = ARA
 		NOT = { is_year = 1503 }
-		is_year = 1450
 		OR = {
 			dip = 3
 			adm = 3
@@ -287,6 +292,277 @@ country_event = {
 			spawn_rebels = {
 				type = anti_tax_rebels
 				size = 1
+			}
+		}
+	}
+}
+
+
+
+########################################
+# Additions by Michael Kundak Cowall
+########################################
+
+# The Neapolitan Succession
+country_event = {
+	id = flavor_ara.7
+	title = "flavor_ara.EVTNAME7"
+	desc = "flavor_ara.EVTDESC7"
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+	
+	trigger = {
+		tag = ARA
+		NOT = { has_ruler = "Alfons V" }
+		NOT = { has_country_flag = alfonso_died_yes_really }
+		NAP = { junior_union_with = ARA }
+		NOT = { is_year = 1500 }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	immediate = {
+		set_country_flag = alfonso_died_yes_really
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTA7"
+		ai_chance = {
+			factor = 20
+		}
+		custom_tooltip = flavor_ara7_naples_goes_free
+		hidden_effect = {
+			NAP = {
+				country_event = { id = flavor_ara.8 }
+			}
+		}
+		set_ruler_flag = alfonsos_successor
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTB7"
+		ai_chance = {
+			factor = 1
+		}
+		
+		add_legitimacy = -25
+		NAP = { add_liberty_desire = 50 }
+	}
+}
+
+country_event = {
+	id = flavor_ara.8
+	title = "flavor_ara.EVTNAME8"
+	desc = "flavor_ara.EVTDESC8"
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "flavor_ara.EVTOPTA8"
+		define_ruler = {
+			name = "Ferrando I"
+			dynasty = "de Trastámara"
+			dip = 4
+			mil = 4
+			adm = 2
+			claim = 50
+			fixed = yes
+		}
+		if = {
+			limit = { ARA = { religion = catholic } }
+			PAP = { country_event = { id = flavor_ara.9 days = 1 } }
+		}
+		if = {
+			limit = { ARA = { religion = catholique } }
+			AVI = { country_event = { id = flavor_ara.9 days = 1 } }
+		}
+		break_union = ARA
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTB8"
+		define_ruler = {
+			name = "Ferrando I"
+			dynasty = "de Trastámara"
+			dip = 4
+			mil = 4
+			adm = 2
+			claim = 50
+			fixed = yes
+		}
+		break_union = ARA
+		add_legitimacy = -20
+		add_treasury = -100
+		if = {
+			limit = { ARA = { religion = catholic } }
+			PAP = { country_event = { id = flavor_ara.10 days = 1 } }
+		}
+		if = {
+			limit = { ARA = { religion = catholique } }
+			AVI = { country_event = { id = flavor_ara.10 days = 1 } }
+		}
+		set_country_flag = naples_submits_to_the_pope
+	}
+}
+
+
+country_event = {
+	id = flavor_ara.9
+	title = "flavor_ara.EVTNAME9"
+	desc = "flavor_ara.EVTDESC9"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_ara.EVTOPTA9"
+		trigger = {
+			FRA = {
+				NOT = { has_country_flag = claimed_naples }
+			}
+		}
+		FRA = {
+			country_event = { id = flavor_fra.3105 days = 7 }
+		}
+		NAP = {
+			add_opinion = {
+				who = PAP
+				modifier = opinion_interfering_pope
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTB9"
+		trigger = {
+			OR = {
+				FRA = {
+					has_country_flag = claimed_naples
+				}
+				ai = no
+			}
+		}
+		add_casus_belli = {
+			type = cb_vassalize_mission
+			months = 600
+			target = NAP
+		}
+		NAP = {
+			add_opinion = {
+				who = PAP
+				modifier = opinion_interfering_pope
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTC9"
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -40
+	}
+}
+
+country_event = {
+	id = flavor_ara.10
+	title = "flavor_ara.EVTNAME10"
+	desc = "flavor_ara.EVTDESC10"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_ara.EVTOPTA10"
+		add_treasury = 100
+		add_opinion = {
+			who = NAP
+			modifier = opinion_NAP_paid_tribute
+		}
+	}
+}
+
+country_event = {
+	id = flavor_ara.11
+	title = "flavor_ara.EVTNAME11"
+	desc = "flavor_ara.EVTDESC11"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NAP = {
+			exists = yes
+			is_subject = no
+		}
+		NOT = {
+			has_casus_belli = {
+				type = cb_restore_personal_union
+				target = NAP
+			}
+		}
+		OR = {
+			AND = {
+				tag = ARA
+				government = monarchy
+				has_country_flag = alfonso_died_yes_really
+				NOT = { has_ruler_flag = alfonsos_successor }
+				is_subject = no
+			}
+			AND = {
+				NOT = { exists = ARA }
+				tag = SPA
+				government = monarchy
+				is_subject = no
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTA11"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				alliance_with = NAP
+			}
+		}
+		add_casus_belli = {
+			type = cb_restore_personal_union
+			months = 600
+			target = NAP
+		}
+		NAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = fra_claimed_naples
+			}
+		}
+	}
+	option = {
+		name = "flavor_ara.EVTOPTB11"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { alliance_with = NAP }
+			}
+		}
+		NAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = fra_did_not_claim_naples
 			}
 		}
 	}

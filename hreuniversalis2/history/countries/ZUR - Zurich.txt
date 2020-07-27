@@ -64,7 +64,6 @@ fixed_capital = 1123
 1218.2.18 = {
 	government = republic
 	add_government_reform = oligarchy_reform
-	set_legacy_government = administrative_republic
 	monarch = {
 		name = "Patriziat"
 		adm = 2

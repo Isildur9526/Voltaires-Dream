@@ -118,7 +118,11 @@ vn_nav_missions_slot_1_b = {
         effect = {
 			add_adm_power = 50
 			if = {
-				limit = { exists = FRA }
+				limit = { 
+					valid_for_personal_unions_trigger = yes
+                    exists = FRA
+                    FRA = { valid_for_personal_unions_trigger = yes }
+				}
 				add_casus_belli = {
 					target = FRA
 					type = cb_fabricated_claims

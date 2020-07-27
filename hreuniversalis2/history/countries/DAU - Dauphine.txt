@@ -272,4 +272,3 @@ capital = 544	# Vienne
 	}
 }
 #1349 done
-1589.8.3 = { set_legacy_government = administrative_monarchy }

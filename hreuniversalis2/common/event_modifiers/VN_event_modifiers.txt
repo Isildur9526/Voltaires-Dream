@@ -220,17 +220,6 @@ kilkennystatutesmod = {
 }
 
 #Institutions
-investiture_controversy_m = {
-    imperial_authority = -0.5
-    papal_influence = -5
-    legitimacy = -1
-}
-investiture_controversy_won_m = {
-    yearly_corruption = -0.1
-    tolerance_own = 1
-    legitimacy = 1
-    devotion = 1
-}
 thirst_for_knowledge_m = {
     technology_cost = -0.1
 }
@@ -239,6 +228,18 @@ kalands_brethren_m = {
 }
 
 #Others
+estate_holy_orders_monopoly_of_beer_mod = {
+	local_production_efficiency = -10
+}
+estate_mamluks_guaranteed_autonomy_mod = {
+	local_culture_conversion_cost = 10
+	local_unrest = -2
+}
+investiture_excommunication_m = {
+	nobles_loyalty_modifier = -0.05
+	church_loyalty_modifier = -0.05
+	imperial_authority = -0.25
+}
 kremnica_gold = {
 	trade_goods_size = 4.0
 }
@@ -307,11 +308,9 @@ almoravid_assistance = {
 	land_forcelimit = 10
 }
 armed_jihad_m = {
-	global_missionary_strength = 0.05
-	global_unrest = -5
-	land_forcelimit = 20
+	global_missionary_strength = 0.1
+	global_unrest = -3
 	global_manpower = 25
-	land_morale = 0.2
 	religion = yes
 }
 guelph_ruler = {
@@ -345,11 +344,6 @@ normanconquestmod = {
 vn_crusade_transports = {
 	naval_attrition = -1
 	naval_forcelimit = 10
-}
-ostsiedlung_province = {
-	local_development_cost = -0.2
-	local_tax_modifier = 0.2
-	local_manpower_modifier = 0.2
 }
 edwardian_isolation = {
 	naval_forcelimit_modifier = -0.5
@@ -442,7 +436,7 @@ invasion_nation_m = {
 all_graviates_titles_acquired = {
     legitimacy = 1
     prestige = 1
-    max_states = 1
+    governing_capacity = 50
 }
 teu_moderate_inquisition = {
 	global_missionary_strength = 0.02
@@ -695,8 +689,23 @@ ghazali_fiqh = {
 	adm_tech_cost_modifier = -0.025
 }
 ghazali_tasawwuf = {
-	global_missionary_strength = 0.0025
+	global_missionary_strength = 0.005
 	religious_unity = 0.1
+}
+golden_spurs_legacy = {
+    land_morale = 0.1
+    infantry_power = 0.1
+    war_exhaustion = -0.03 #Second-most powerful NI
+}
+flemish_cloth_event = {
+    trade_goods_size_modifier = 0.1
+}
+
+#Imperial Incidents
+lombard_league_winner = {
+	prestige = 0.5
+	legitimacy = 1
+	republican_tradition = 0.3
 }
 
 #Institution Birthplaces

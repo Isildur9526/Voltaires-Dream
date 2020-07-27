@@ -566,7 +566,7 @@ country_event = {
 		event_target:heir_revolter = {
 			spawn_rebels = {
 				type = pretender_rebels
-				size = 1
+				size = 1.5
 				use_heir_as_leader = yes
 				culture = ROOT
 				religion = ROOT
@@ -674,7 +674,7 @@ country_event = {
 				type = pretender_rebels
 				culture = ROOT
 				religion = ROOT
-				size = 1
+				size = 1.5
 			}
 		}
 	}
@@ -1022,7 +1022,9 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = pretender_rebels
-				size = 1.5
+				culture = ROOT
+				religion = ROOT
+				size = 2
 				use_heir_as_leader = yes
 			}
 			random_neighbor_province = {
@@ -1081,7 +1083,7 @@ country_event = {
 				type = pretender_rebels 
 				culture = ROOT
 				religion = ROOT
-				size = 0.5
+				size = 1
 				use_heir_as_leader = yes
 			}
 		}
@@ -1542,7 +1544,7 @@ country_event = {
 				type = pretender_rebels
 				culture = ROOT
 				religion = ROOT
-				size = 1
+				size = 1.5
 			}
 		}
 	}

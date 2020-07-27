@@ -22,7 +22,6 @@ add_core = COV
 	controller = WAL
 	add_core = WAL
 	remove_core = OLT
-	estate = estate_nobles
 }
 1650.1.1 = {
 	revolt = { type = noble_rebels size = 0 }

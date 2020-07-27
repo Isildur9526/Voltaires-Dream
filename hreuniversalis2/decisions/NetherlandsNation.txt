@@ -55,17 +55,19 @@ country_decisions = {
 	 	effect = {
 			if = {
 				limit = {
-					any_owned_province = {
-						is_part_of_hre = yes
-					}
 					is_elector = no
 					is_emperor = no
-				}
-				every_owned_province = {
-					limit = {
+					OR = {
 						is_part_of_hre = yes
+						any_owned_province = { is_part_of_hre = yes }
 					}
-					set_in_empire = no
+				}
+				set_in_empire = no
+				hidden_effect = {
+					every_owned_province = {
+						limit = { is_part_of_hre = yes }
+						set_in_empire = no
+					}
 				}
 			}
 	  		if = {
@@ -74,46 +76,6 @@ country_decisions = {
 	  			}
 	  			change_primary_culture = dutch
 	  			set_capital = 328
-			}
-			if = {
-				limit = {
-					government = theocracy
-					religion = catholic
-				}
-				change_government = monarchy
-				add_government_reform = feudalism_reform
-				set_legacy_government = administrative_monarchy
-				PAP = {
-					add_opinion = {
-						who = ROOT
-						modifier = opinion_displeased
-					}
-				}
-			}
-			if = {
-				limit = {
-					government = theocracy
-					religion = catholique
-				}
-				change_government = monarchy
-				add_government_reform = feudalism_reform
-				set_legacy_government = administrative_monarchy
-				AVI = {
-					add_opinion = {
-						who = ROOT
-						modifier = opinion_displeased
-					}
-				}
-			}
-			if = {
-				limit = {
-					government = theocracy
-					NOT = { religion = catholic }
-					NOT = { religion = catholique }
-				}
-				change_government = monarchy
-				add_government_reform = feudalism_reform
-				set_legacy_government = administrative_monarchy
 			}
 			change_tag = NED
 			swap_non_generic_missions = yes

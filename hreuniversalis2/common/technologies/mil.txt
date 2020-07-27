@@ -784,7 +784,6 @@ technology = {
 	year = 1802
 	
 	#Impulse Warfare
-	sprite_level = 5	
 	
 	land_morale			=	0.75
 	

@@ -12,7 +12,6 @@ controller = PML
 add_core = PML
 
 1116.1.1 = { religion = catholic }
-1282.1.1 = { estate = estate_church }
 1294.12.29 = {
 	owner = KUJ
 	controller = KUJ

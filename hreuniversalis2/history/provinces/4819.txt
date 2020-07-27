@@ -18,7 +18,6 @@ add_core = DNZ
 	remove_core = DNZ
 }
 1121.1.1 = { religion = catholic }
-1229.1.1 = { estate = estate_church }
 1294.12.29 = {
 	owner = KUJ
 	controller = KUJ

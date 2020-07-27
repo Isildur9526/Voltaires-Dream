@@ -27,7 +27,6 @@ add_core = CEA
 	add_core = MOL
 	remove_core = CEA
 }
-1497.1.1 = { estate = estate_church }
 1653.1.1 = { revolt = { type = noble_rebels size = 0 } controller = REB }
 1654.1.1 = { revolt = {} controller = MOL }
 1739.1.1 = { controller = RUS }

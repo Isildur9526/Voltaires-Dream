@@ -7,6 +7,7 @@ capital = 13
 
 1000.1.1 = { set_country_flag = natives_flag }
 1054.1.1 = {
+	override_country_name = WAGIRI
 	monarch = {
 		name = "Krut"
 		adm = 2
@@ -47,6 +48,7 @@ capital = 13
 	religion = catholic
 	primary_culture = low_elbish
 	technology_group = western
+	restore_country_name = yes
 }
 1261.7.8 = {
 	capital = 360

@@ -19,15 +19,9 @@ vn_ase_missions_slot_1_a = {
 			is_subject = no
 			OR = {
 				AND = {
-					is_in_war = {
-						attacker_leader = NOL
-						defender_leader = ROOT
-						casus_belli = cb_independence_war
-					}
-					war_score_against = {
-						who = NOL
-						value = 75
-					}
+					has_won_war_against = {
+                        who = NOL
+                    }
 					all_owned_province = {
 						NOT = { controlled_by = REB }
 					}
@@ -543,7 +537,9 @@ vn_ase_missions_slot_3_a = {
 				}
 				AND = {
 					is_year = 1070
-					NOT = { war_with = NRM }
+					has_won_war_against = {
+                        who = NRM
+                    }
 					custom_trigger_tooltip = {
 						tooltip = vn_ase_elect_new_king.tt
 						NOT = { has_ruler_flag = edward_the_confessor_flag }
@@ -596,7 +592,7 @@ vn_ase_missions_slot_3_c = {
     has_country_shield = yes
 
     vn_ase_beyond_offas_dyke = {
-        icon = mission_cannons_firing
+        icon = mission_unite_home_region
         position = 6
         required_missions = { vn_ase_build_up_fyrd }
         provinces_to_highlight = {

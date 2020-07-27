@@ -18,7 +18,6 @@ add_core = KSZ
 	add_core = KRA
 	remove_core = POL
 }
-1145.1.1 = { estate = estate_church }
 1181.1.1 = {
 	owner = WKP
 	controller = WKP

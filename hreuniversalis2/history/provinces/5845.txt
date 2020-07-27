@@ -45,7 +45,6 @@ add_core = SMA
 	controller = SWE
 	add_core = SWE
 	remove_core = DAN
-	estate = estate_nobles
 }
 1710.9.20 = { controller = RUS }
 1721.8.30 = {

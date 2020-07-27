@@ -10,7 +10,6 @@ hre = yes
 owner = IVR
 controller = IVR
 add_core = IVR
-estate = estate_nobles
 
 1092.1.1 = {
 	owner = XKK

@@ -56,9 +56,7 @@ noble_rebels = {
 		}
 		modifier = {
 			factor = 0.05
-			owner = {
-				has_country_modifier = lost_mandate_of_heaven
-			}
+			owner = { has_country_modifier = lost_mandate_of_heaven }
 		}
 		modifier = {
 			factor = 20
@@ -68,8 +66,31 @@ noble_rebels = {
 			}
 		}	
 		modifier = {
-			factor = 10
-			has_estate = estate_nobles
+			factor = 3.0
+			owner = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 40
+				}
+			}
 		}
 		modifier = {
 			factor = 10
@@ -125,6 +146,39 @@ noble_rebels = {
 	}
 	siege_won_effect = {
 		add_local_autonomy = 10
+		owner = {
+			if = {
+				limit = { has_estate = estate_nobles }
+				change_estate_land_share = {
+					estate = estate_nobles
+					share = 10.0
+					province = ROOT
+				}
+			}
+			else_if = {
+				limit = { has_estate = estate_maratha }
+				change_estate_land_share = {
+					estate = estate_maratha
+					share = 10.0
+					province = ROOT
+				}
+			}
+			else_if = {
+				limit = { has_estate = estate_rajput }
+				change_estate_land_share = {
+					estate = estate_rajput
+					share = 10.0
+					province = ROOT
+				}
+			}
+			else = { # Fallback
+				change_estate_land_share = {
+					estate = all
+					share = 10.0
+					province = ROOT
+				}
+			}
+		}
 	}
 	
 	# Country scope
@@ -142,6 +196,13 @@ noble_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				has_estate = estate_nobles
@@ -181,6 +242,56 @@ noble_rebels = {
 			set_country_flag = court_and_country_surrendered_to_rebels
 			hidden_effect = { country_event = { id = court_and_country_events.100 } }
 			end_disaster = court_and_country
+		}
+		if = {
+			limit = {
+				has_country_modifier = recently_repealed_elective_monarchy_timer
+				NOT = {
+					has_reform = papacy_reform
+					has_reform = steppe_horde
+					has_reform = celestial_empire
+					has_reform = iqta
+					has_reform = eastern_monarchy
+					has_reform = principality
+					has_reform = tsardom
+					has_reform = colonial_government
+					government = native
+					has_reform = elective_monarchy
+					has_reform = english_monarchy
+					has_reform = ottoman_government
+					has_reform = tribal_federation
+					has_reform = feudal_theocracy
+					has_reform = mamluk_government
+				}
+			}
+			add_government_reform = elective_monarchy
+		}
+		if = {
+			limit = { has_estate = estate_nobles }
+			change_estate_land_share = {
+				estate = estate_nobles
+				share = 10.0
+			}
+		}
+		else_if = {
+			limit = { has_estate = estate_maratha }
+			change_estate_land_share = {
+				estate = estate_maratha
+				share = 10.0
+			}
+		}
+		else_if = {
+			limit = { has_estate = estate_rajput }
+			change_estate_land_share = {
+				estate = estate_rajput
+				share = 10.0
+			}
+		}
+		else = { # Fallback
+			change_estate_land_share = {
+				estate = all
+				share = 10.0
+			}
 		}
 	}
 }

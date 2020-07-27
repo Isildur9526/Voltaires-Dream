@@ -54,8 +54,39 @@ vn_boh_missions_slot_1 = {
             }
         }
     }
+    vn_boh_bohemia_crystal = {
+        icon = bohemian_crystal
+        position = 3
+        required_missions = { }
+        trigger = {
+			OR = {
+				trading_bonus = {
+					trade_goods = glass
+					value = yes
+				}
+				production_leader = {
+					trade_goods = glass
+				}				
+				any_owned_province = {
+					trade_goods = glass
+					base_production = 10
+				}
+			}
+        }
+        effect = {
+			add_years_of_income = 0.5
+			add_prestige = 10
+			every_owned_province = {
+				limit = { trade_goods = glass }
+				add_province_modifier = {
+					name =  boh_bohemia_crystal_mission
+					duration = 9125
+				}
+            }
+        }
+    }
     vn_boh_rivalry_with_austria = {
-        icon = mission_humiliate_provence
+        icon = boh_humiliate_austria
         position = 4
         required_missions = {  }
         trigger = {
@@ -211,7 +242,7 @@ vn_boh_missions_slot_2 = {
     has_country_shield = yes
 
     vn_boh_bohemian_independence = {
-        icon = mission_unite_home_region
+        icon = bohemian_commonwealth
         position = 1
         required_missions = {  }
         trigger = {
@@ -249,7 +280,7 @@ vn_boh_missions_slot_2 = {
         }
     }
     vn_boh_conquer_moravia = {
-        icon = mission_unite_home_region
+        icon = bohemian_borderlands
         position = 2
 		required_missions = { vn_boh_bohemian_independence }
 		provinces_to_highlight = {
@@ -301,7 +332,7 @@ vn_boh_missions_slot_2 = {
         }
     }
     vn_boh_conquer_lower_silesia = {
-        icon = mission_unite_home_region
+        icon = take_silesia
         position = 3
 		required_missions = { vn_boh_conquer_moravia }
 		provinces_to_highlight = {
@@ -369,7 +400,7 @@ vn_boh_missions_slot_2 = {
         }
     }
     vn_boh_conquer_upper_silesia = {
-        icon = mission_unite_home_region
+        icon = take_silesia
         position = 4
 		required_missions = { vn_boh_conquer_lower_silesia }
 		provinces_to_highlight = {
@@ -449,7 +480,7 @@ vn_boh_missions_slot_2 = {
         }
     }
     vn_boh_conquer_poland = {
-        icon = mission_unite_home_region
+        icon = restore_great_moravia
         position = 5
 		required_missions = { vn_boh_conquer_upper_silesia }
 		provinces_to_highlight = {
@@ -484,7 +515,7 @@ vn_boh_missions_slot_2 = {
         }
     }
     vn_boh_conquer_mazovia = {
-        icon = mission_unite_home_region
+        icon = king_of_poland
         position = 6
 		required_missions = { vn_boh_conquer_poland }
 		provinces_to_highlight = {
@@ -570,7 +601,7 @@ vn_boh_missions_slot_3 = {
     has_country_shield = yes
 
     vn_boh_conquer_nitra = {
-        icon = mission_unite_home_region
+        icon = restore_great_moravia
         position = 3
 		required_missions = { vn_boh_conquer_moravia }
 		provinces_to_highlight = {
@@ -627,7 +658,7 @@ vn_boh_missions_slot_3 = {
         }
     }
     vn_boh_conquer_hungary = {
-        icon = mission_unite_home_region
+        icon = king_of_hungary
         position = 4
 		required_missions = { vn_boh_conquer_nitra }
 		provinces_to_highlight = {
@@ -786,7 +817,7 @@ vn_boh_missions_slot_4 = {
     has_country_shield = yes
 
     vn_boh_conquer_oberlausitz = {
-        icon = mission_unite_home_region
+        icon = bohemian_borderlands
         position = 2
 		required_missions = { vn_boh_bohemian_independence }
 		provinces_to_highlight = {
@@ -1060,7 +1091,7 @@ vn_boh_missions_slot_5 = {
         }
     }
     vn_boh_conquer_saxony = {
-        icon = mission_unite_home_region
+        icon = electorate_of_saxony
         position = 4
         required_missions = { vn_boh_conquer_niederlausitz }
 		provinces_to_highlight = {
@@ -1103,7 +1134,7 @@ vn_boh_missions_slot_5 = {
         }
     }
     vn_boh_conquer_brandenburg = {
-        icon = mission_unite_home_region
+        icon = electorate_of_brandenburg
         position = 5
 		required_missions = { vn_boh_conquer_saxony }
 		provinces_to_highlight = {

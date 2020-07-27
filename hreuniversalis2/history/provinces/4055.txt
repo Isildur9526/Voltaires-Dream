@@ -10,7 +10,6 @@ base_manpower = 1
 capital = "Murat"
 is_city = yes
 add_core = AUV
-estate = estate_nobles
 
 1204.3.6 = {
 	owner = FRA

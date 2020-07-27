@@ -63,7 +63,7 @@ discovered_by = north_american
 	owner = GEN
 	controller = GEN
 	add_core = GEN
-	remove_core = GLH
+	remove_core = CRI
 }
 1475.6.6 = {
 	owner = TUR

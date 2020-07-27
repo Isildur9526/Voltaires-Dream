@@ -8,6 +8,14 @@ country_event = {
 	picture = CIVIL_WAR_eventPicture
 	
 	major = yes
+	major_trigger = {
+		capital_scope = {
+			OR = {
+				superregion = iberia_superregion
+				region = rif_region	
+			}
+		}
+	}
 	
 	is_triggered_only = yes
 	
@@ -29,7 +37,8 @@ country_event = {
 						type = pretender_rebels
 						religion = ROOT
 						size = 2
-						leader = "Yûsuf Banû Nasr"
+						leader = "Yûsuf"
+						leader_dynasty = "Banû Nasr"
 						win = yes
 					}
 					add_local_autonomy = 25
@@ -41,7 +50,8 @@ country_event = {
 						type = pretender_rebels
 						religion = ROOT
 						size = 2
-						leader = "Yûsuf Banû Nasr"
+						leader = "Yûsuf"
+						leader_dynasty = "Banû Nasr"
 					}
 				}
 			}
@@ -111,6 +121,7 @@ country_event = {
 			mil = 4
 			culture = ROOT
 			religion = ROOT
+			block_disinherit = yes
 		}
 		hidden_effect = {
 			disband_rebels = pretender_rebels

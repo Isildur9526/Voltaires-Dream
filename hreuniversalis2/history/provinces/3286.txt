@@ -11,7 +11,6 @@ owner = KIE
 controller = KIE 
 add_core = KIE
 add_core = TUV
-estate = estate_church
 
 1078.10.3 = {
 	owner = TUV

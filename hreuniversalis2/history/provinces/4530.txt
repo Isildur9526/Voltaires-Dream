@@ -15,7 +15,7 @@ add_core = SMT
 1115.7.24 = {
 	owner = SMT
 	controller = SMT
-	remove_core = PST
+	remove_core = TUS
 }
 1281.1.1 = {
 	owner = LUC

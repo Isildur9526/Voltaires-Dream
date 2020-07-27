@@ -16,7 +16,6 @@ native_hostileness = 0
 	add_core = LON
 	trade_goods = zinc
 	is_city = yes
-	estate = estate_church
 }
 1301.1.1 = {
 	owner = CAS

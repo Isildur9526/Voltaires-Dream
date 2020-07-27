@@ -960,121 +960,6 @@ country_event = {
 	}
 }
 
-###BAVARIA###
-#Take over Palantine Electoral Dignity
-country_event = {
-	id = vn_missions.19
-	title = vn_missions.19.t
-	desc = {
-        trigger = { is_elector = no }
-        desc = vn_missions.19.d1
-    }
-    desc = {
-        trigger = { is_elector = yes }
-        desc = vn_missions.19.d2
-    }
-	picture = HRE_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = "vn_missions.19.a"
-		trigger = { is_elector = no }
-		add_dip_power = -100
-		add_prestige = 20
-		if = {
-			limit = {
-				PAL = {
-					junior_union_with = ROOT
-					is_elector = yes
-				}
-			}
-			PAL = { elector = no }
-			elector = yes
-		}
-		else = {
-			random_subject_country = {
-				limit = { is_elector = yes }
-				elector = no
-			}
-			elector = yes
-		}
-		emperor = {
-			add_opinion = {
-				who = ROOT
-				modifier = bav_claimed_electorship
-			}
-		}
-		every_elector = {
-			limit = { is_emperor = no }
-			add_opinion = {
-				who = ROOT
-				modifier = bav_claimed_electorship
-			}
-		}
-	}
-	option = {
-		name = "vn_missions.19.b"
-		trigger = { is_elector = no }
-		add_country_modifier = {
-			name = bav_bavarian_electorate_mission
-			duration = 9125
-		}
-	}
-	option = {
-		name = "vn_missions.19.c"
-		highlight = yes
-		trigger = { is_elector = yes }
-	}
-}
-
-#Turn Cologne into a duchy
-country_event = {
-	id = vn_missions.20
-	title = vn_missions.20.t
-	desc = vn_missions.20.d
-	picture = REFORM_eventPicture
-
-	is_triggered_only = yes
-	major = yes
-
-	option = {
-		name = "vn_missions.20.a"
-		ai_chance = { factor = 90 }
-		add_prestige = 25
-		add_historical_friend = KOL
-		KOL = {
-			change_government = monarchy
-			add_government_reform = feudalism_reform
-			change_religion = ROOT
-			change_primary_culture = ROOT
-			add_historical_friend = ROOT
-			define_ruler = {
-				dynasty = ROOT
-				claim = 90
-			}
-		}
-		emperor = {
-			add_opinion = {
-				who = ROOT
-				modifier = bav_feudalized_cologne
-			}
-		}
-		every_elector = {
-			limit = { NOT = { tag = KOL } is_emperor = no }
-			add_opinion = {
-				who = ROOT
-				modifier = bav_feudalized_cologne
-			}
-		}
-	}
-	option = {
-		name = "vn_missions.20.b"
-		ai_chance = { factor = 10 }
-		add_prestige = -1
-	}
-}
-
 ###VENICE###
 #The Kingdom of Candia
 country_event = {
@@ -1095,6 +980,7 @@ country_event = {
 		release = CRT
 		create_vassal = CRT
 		CRT = {
+			override_country_name = CANDIA
 			change_religion = ROOT
 			change_primary_culture = ROOT
 			define_ruler = {

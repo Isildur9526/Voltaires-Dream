@@ -20,7 +20,6 @@ discovered_by = north_american
 
 1060.1.1 = {
 	religion = catholic
-	estate = estate_church
 }
 1066.9.1 = {
 	owner = GTH

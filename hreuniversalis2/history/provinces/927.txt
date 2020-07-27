@@ -10,7 +10,6 @@ base_manpower = 3
 capital = "Giessen"
 is_city = yes
 add_core = MUZ
-estate = estate_nobles
 
 1158.1.1 = {
 	owner = TUB

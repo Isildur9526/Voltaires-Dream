@@ -47,6 +47,7 @@ capital = 4718
 
 #Barons
 1172.1.1 = {
+	override_country_name = WESTMEATH
 	government = monarchy
 	add_government_reform = feudalism_reform
 	primary_culture = hiberno_norman

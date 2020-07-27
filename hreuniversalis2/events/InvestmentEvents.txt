@@ -1,0 +1,378 @@
+namespace = investment_events
+
+# Corupt Factor
+country_event = {
+    id = investment_events.4
+    title = investment_events.4.t
+    desc = investment_events.4.d
+    picture = 16_Trade_Company_eventPicture
+    is_triggered_only = yes
+    trigger = {
+		any_owned_province = {
+			is_owned_by_trade_company = yes
+			OR = {
+				has_trade_company_investment_in_area  = {
+					investment = officers_mess
+					investor = ROOT
+				}
+				has_trade_company_investment_in_area  = {
+					investment = admiralty
+					investor = ROOT
+				}
+				has_trade_company_investment_in_area  = {
+					investment = governor_general_mansion
+					investor = ROOT
+				}
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = company_and_personal_interests
+			}
+		}
+		NOT = {
+			has_country_modifier = honorable_company
+		}
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_owned_by_trade_company = yes
+					OR = {
+						has_trade_company_investment_in_area  = {
+							investment = officers_mess
+							investor = ROOT
+						}
+						has_trade_company_investment_in_area  = {
+							investment = admiralty
+							investor = ROOT
+						}
+						has_trade_company_investment_in_area  = {
+							investment = governor_general_mansion
+							investor = ROOT
+						}
+					}
+				}
+				save_event_target_as = corrupt_factor_province
+			}
+			set_saved_name = {
+				key = corrupt_factor_name
+				type = advisor
+				scope = ROOT
+			}
+		}
+	}
+
+    option = {      
+        name = investment_events.4.a # buy him out
+		add_mercantilism = 1
+        event_target:corrupt_factor_province = {
+			add_province_modifier = {
+				name = "company_and_personal_interests"
+				duration = 7300
+			}
+		}
+    }
+    option = {      
+        name = investment_events.4.b # rein in corruption
+		add_corruption = -0.5
+		add_country_modifier = {
+			name = "honorable_company"
+			duration = 7300
+		}
+    }
+	after = {
+		clear_saved_name = corrupt_factor_name
+	}
+}
+
+# Company Rule
+country_event = {
+    id = investment_events.5
+    title = investment_events.5.t
+    desc = investment_events.5.d
+    picture = 17_Trade_Company_eventPicture
+    is_triggered_only = yes
+    trigger = {
+		any_owned_province = {
+			is_owned_by_trade_company = yes
+			OR = {
+				num_investments_in_trade_company_region = {
+					investment = company_administration
+					value = 3
+				}
+				num_investments_in_trade_company_region = {
+					investment = military_administration
+					value = 3
+				}
+			}
+			has_trade_company_investment_in_area  = {
+				investment = governor_general_mansion
+				investor = ROOT
+			}
+		}
+		NOT = {
+			has_country_modifier = trade_company_rule
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_owned_by_trade_company = yes
+					OR = {
+						num_investments_in_trade_company_region = {
+							investment = company_administration
+							value = 3
+						}
+						num_investments_in_trade_company_region = {
+							investment = military_administration
+							value = 3
+						}
+					}
+					has_trade_company_investment_in_area  = {
+						investment = governor_general_mansion
+						investor = ROOT
+					}
+				}
+				save_event_target_as = company_rule_province
+			}
+		}
+	}
+	
+    option = {      
+        name = investment_events.5.a
+		add_country_modifier = {
+			name = "trade_company_rule"
+			duration = 7300
+		}
+    }
+}
+
+# Missionaries in Trade Company area
+country_event = {
+    id = investment_events.6
+    title = investment_events.6.t
+   	desc = investment_events.6.d
+    picture = 15_Trade_Company_eventPicture
+    is_triggered_only = yes
+    trigger = {
+		any_owned_province = {
+			NOT = { religion_group = ROOT }
+			is_owned_by_trade_company = yes
+			OR = {
+				has_trade_company_investment_in_area  = {
+					investment = settlements
+					investor = ROOT
+				}
+				has_trade_company_investment_in_area  = {
+					investment = district
+					investor = ROOT
+				}
+				has_trade_company_investment_in_area  = {
+					investment = townships
+					investor = ROOT
+				}
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = company_missionary_activity
+			}
+		}
+		NOT = {
+			has_country_modifier = restricted_company_missionaries
+		}
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			full_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 1.5
+			full_idea_group = humanist_ideas
+		}
+	}
+
+    immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_owned_by_trade_company = yes
+					NOT = { religion_group = ROOT }
+					OR = {
+						has_trade_company_investment_in_area  = {
+							investment = settlements
+							investor = ROOT
+						}
+						has_trade_company_investment_in_area  = {
+							investment = district
+							investor = ROOT
+						}
+						has_trade_company_investment_in_area  = {
+							investment = townships
+							investor = ROOT
+						}
+					}
+				}
+				save_event_target_as = company_missionary_province
+			}
+		}
+	}
+	
+    option = {      
+        name = investment_events.6.a
+        ai_chance = {
+            factor = 0
+        }
+		increase_religious_currency_effect = yes
+		event_target:company_missionary_province = {
+			change_religion = ROOT
+			add_province_modifier = { # unrest
+				name = company_missionary_activity
+				duration = 7300
+			}
+		}
+    }
+    option = {      
+        name = investment_events.6.b
+        ai_chance = {
+            factor = 1
+        }
+		reduce_religious_currency_effect = yes
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		add_country_modifier = { # tolerance heathen
+			name = "restricted_company_missionaries"
+			duration = 7300
+		}
+    }
+}
+
+# Flourishing [Root.GetAdjective] Settlements
+# Schools, hospitals, churches
+country_event = {
+    id = investment_events.8
+    title = investment_events.8.t
+    desc = investment_events.8.d
+    picture = 16_Trade_Company_eventPicture
+    is_triggered_only = yes
+    trigger = {
+		any_owned_province = {
+			is_owned_by_trade_company = yes
+			OR = {
+				has_trade_company_investment_in_area  = {
+					investment = settlements
+					investor = ROOT
+				}
+				has_trade_company_investment_in_area  = {
+					investment = district
+					investor = ROOT
+				}
+				has_trade_company_investment_in_area  = {
+					investment = townships
+					investor = ROOT
+				}
+			}
+			NOT = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = developing_company_settlement
+			}
+		}
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_owned_by_trade_company = yes
+					OR = {
+						has_trade_company_investment_in_area  = {
+							investment = settlements
+							investor = ROOT
+						}
+						has_trade_company_investment_in_area  = {
+							investment = district
+							investor = ROOT
+						}
+						has_trade_company_investment_in_area  = {
+							investment = townships
+							investor = ROOT
+						}
+					}
+					NOT = {
+						OR = {
+							has_building = temple
+							has_building = cathedral
+						}
+					}
+				}
+				save_event_target_as = company_settlement
+			}
+		}
+    }
+
+    option = {
+        name = investment_events.8.a
+        event_target:company_settlement = {
+			add_building = temple
+		}
+    }
+    option = { #  
+        name = investment_events.8.b
+		event_target:company_settlement = {
+			add_province_modifier = { # build cost
+				name = "developing_company_settlement"
+				duration = 7300
+			}
+		}
+    }
+}
+
+# Notification of support
+country_event = {
+    id = investment_events.11
+    title = investment_events.11.t
+    desc = investment_events.11.d
+    picture = 15_Trade_Company_eventPicture
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = investment_events.11.a
+		add_yearly_manpower = 0.5
+		add_years_of_income = 0.25
+	}
+}

@@ -10,7 +10,6 @@ hre = yes
 owner = UTR
 controller = UTR
 add_core = UTR
-estate = estate_church
 
 1227.1.1 = {
 	revolt = { type = noble_rebels size = 0 }

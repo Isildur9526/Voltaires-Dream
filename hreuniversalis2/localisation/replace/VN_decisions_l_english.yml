@@ -206,3 +206,6 @@
  new_diocese.tt: "We will donate a part of our realm to the Church to create a new ecclesiastical vassal"
  breton_nation_title: "Form Breton Nation"
  breton_nation_desc: "We guard the Three Great Cities of Brittany and control its heartlands, yet we are not kings of Breizh in our own right. We must solidify our legitimacy to this region as a Breton nation ourselves and resurrect the fallen kingdom of Breizh!"
+ wendish_germanization: "Germanize"
+ wendish_germanization_desc: "Since the 10th century, German emigrants have deliberately been settled in Wendish territory on the border to the Holy Roman Empire. Up to this day, they have merged with our generations, leading to the emergence of new languages and cultures. In view of the constant growth of German culture in our realm, we might want to abandon our Slavic prinvciples altogether and consider ourselves as 'Germans' from now on."
+ wendish_germanization.tt: "Adopt the culture of our capital as new primary culture and get our former primary culture as accepted culture"
