@@ -325,7 +325,8 @@ PixelShader =
 			// Region colors (provinces)
 			float2 flippedUV = Input.uv;
 			flippedUV.y = 1.0f - flippedUV.y;
-			float4 vSample = GetProvinceColorSampled( flippedUV, IndirectionMap, ProvinceIndirectionMapSize, ProvinceColorMap, ProvinceColorMapSize );
+			float4 vSample = GetProvinceColorSampled( flippedUV, IndirectionMap, ProvinceIndirectionMapSize,
+													ProvinceColorMap, ProvinceColorMapSize, 1 );
 			waterColor.rgb = lerp( waterColor.rgb, vSample.rgb, saturate( vSample.a ) );
 
 			float vIceFade = 0.0f;
