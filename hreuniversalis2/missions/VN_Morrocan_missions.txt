@@ -1241,7 +1241,7 @@ vn_mor_missions_slot_5 = {
             }
         }
         effect = {
-            #get black guard mercenary company in 1.30
+            custom_tooltip = vn_mor_the_black_guard.tt
         }
     }
     vn_mor_support_the_brotherhoods = {

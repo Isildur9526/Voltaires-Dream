@@ -12,18 +12,18 @@ controller = ZGL
 add_core = ZGL
 
 1255.1.1 = {
-	owner = ZMG
-	controller = ZMG
-	add_core = ZMG
+	owner = LIV
+	controller = LIV
+	add_core = LIV
 	remove_core = ZGL
 	culture = lithuanian
 	religion = animism
 }
-1309.1.1 = {
+1328.1.1 = {
 	owner = LIT
 	controller = LIT
 	add_core = LIT
-	remove_core = ZMG
+	remove_core = LIV
 }
 1387.1.1 = { religion = catholic }
 1569.7.1 = {

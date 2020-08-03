@@ -1394,133 +1394,6 @@ estate_burghers_colonial_nation = {
     }
 }
 
-
-
-#Get X provinces in a trade company in X region
-estate_burghers_expand_trade_company = {
-	can_select = {
-		num_of_ports = 1
-		any_owned_province = {
-			is_owned_by_trade_company = yes
-			NOT = { trade_company_size = 10 }
-		}
-	}
-	selection_weight = {
-		factor = 2.5
-		modifier = {
-			factor = 2
-			OR = {
-				tag = POR
-				tag = CAS
-				tag = GBR
-				tag = NED
-			}
-		}
-		modifier = {
-			factor = 1.5
-			num_of_colonists = 1
-		}
-		modifier = {
-			factor = 2
-			num_of_trade_companies = 2
-		}
-		modifier = {
-			factor = 2
-			num_of_strong_trade_companies = 2
-		}
-	}
-	pre_effect = {
-		set_variable = {
-			which = estate_burghers_expand_trade_company_variable
-			value = 0
-		}
-		random_owned_province = {
-			limit = {
-				is_owned_by_trade_company = yes
-				NOT = { trade_company_size = 10 }
-			}
-			save_event_target_as = agenda_province
-
-			if = {
-				limit = {
-					NOT = { trade_company_size = 4 }
-				}
-				root = {
-					set_variable = {
-						which = estate_burghers_expand_trade_company_variable
-						value = 1
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { trade_company_size = 6 }
-				}
-				root = {
-					set_variable = {
-						which = estate_burghers_expand_trade_company_variable
-						value = 2
-					}
-				}
-			}
-			else = {
-				root = {
-					set_variable = {
-						which = estate_burghers_expand_trade_company_variable
-						value = 3
-					}
-				}
-			}
-		}
-	}
-	provinces_to_highlight = {
-		trade_company_region = event_target:agenda_province
-	}
-	task_requirements = {
-		if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_expand_trade_company_variable
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				trade_company_size = 10
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_expand_trade_company_variable
-					value = 2
-				}
-			}
-			event_target:agenda_province = {
-				trade_company_size = 8
-			}
-		}
-		else = {
-			event_target:agenda_province = {
-				trade_company_size = 5
-			}
-		}
-	}
-	task_completed_effect = {
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = 15
-		}
-	}
-    failing_effect = {
-        add_estate_loyalty_modifier = {
-            estate = estate_burghers
-			desc = EST_VAL_AGENDA_DENIED
-			loyalty = -5
-			duration = 7300
-        }
-    }
-}
-
 #Get 3 silk provinces
 estate_burghers_silk_trade = {
 	can_select = {
@@ -1535,14 +1408,6 @@ estate_burghers_silk_trade = {
 		modifier = {
 			factor = 1.5
 			num_of_colonists = 1
-		}
-		modifier = {
-			factor = 2
-			num_of_trade_companies = 3
-		}
-		modifier = {
-			factor = 2
-			num_of_strong_trade_companies = 2
 		}
 	}
 	provinces_to_highlight = {
@@ -1595,14 +1460,6 @@ estate_burghers_spice_trade = {
 			factor = 1.5
 			num_of_colonists = 1
 		}
-		modifier = {
-			factor = 2
-			num_of_trade_companies = 3
-		}
-		modifier = {
-			factor = 2
-			num_of_strong_trade_companies = 2
-		}
 	}
 	provinces_to_highlight = {
 		trade_goods = spices
@@ -1652,14 +1509,6 @@ estate_burghers_tea_trade = {
 		modifier = {
 			factor = 1.5
 			num_of_colonists = 1
-		}
-		modifier = {
-			factor = 2
-			num_of_trade_companies = 3
-		}
-		modifier = {
-			factor = 2
-			num_of_strong_trade_companies = 2
 		}
 		modifier = {
 			factor = 2.5

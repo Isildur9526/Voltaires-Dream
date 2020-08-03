@@ -91,6 +91,10 @@ lux_masters_of_diplomacy_mission = {
 	monarch_diplomatic_power = 1
 	ae_impact = -0.1
 }
+lux_dynastic_success_mission = {
+	diplomatic_annexation_cost = -0.1
+	diplomatic_upkeep = 1
+}
 lux_french_alliance_mission = {
 	improve_relation_modifier = 0.2	
 }
@@ -149,7 +153,7 @@ bgh_spread_of_islam_mission = { #25 years
 bgh_trade_in_baghdad_mission = { #Province
 	province_trade_power_modifier = 0.1
 }
-bgh_umayyads_wiped_out_mission = { #25 years
+bgh_umayyads_wiped_out = { #25 years
 	years_of_nationalism = -5
 }
 bgh_the_holy_city_mission = { #Province
@@ -266,7 +270,7 @@ bgh_a_professional_army_mission = { #25 years
 	drill_gain_modifier = 0.1
 	army_tradition = 0.5
 }
-bgh_ship_research_mission = { #25 years
+bgh_ship_research_event = { #25 years
 	ship_durability = 0.1
 }
 bgh_denied_ship_research_event = { #25 years
@@ -280,6 +284,10 @@ bgh_repeal_the_crusaders_mission = { #25 years
 }
 bgh_avoided_mongols_mission = { #50 years
 	legitimacy = 1
+}
+bgh_umayyads_wiped_out_mission = {
+	legitimacy = 1
+	global_unrest = -1
 }
 
 #Seljuk
@@ -396,8 +404,8 @@ sjk_turkicization_of_anatolia_mission_c = { #50 years
 	num_accepted_cultures = 1
 	culture_conversion_cost = -0.25	
 }
-sjk_atabegs_mission = { #25 years #Finish post-Emperor with governing capacity
-	governing_capacity = 500
+sjk_atabegs_mission = { #25 years 
+	governing_capacity_modifier = 0.1
 }
 sjk_control_of_the_beyliks_mission = { #25 years
 	global_autonomy = -0.05
@@ -519,6 +527,7 @@ karling_conquer_brittany_mission = {
 #Sicily
 sic_defeat_byzantium_mission = {
 	core_creation = -0.25
+	army_tradition = 0.5
 }
 sic_conquer_achaea_mission = {
 	galley_cost = -0.2
@@ -541,7 +550,7 @@ sic_latin_sicily_mission = {
 	global_unrest = -2
 }
 sic_defeat_the_vespers_mission = {
-	diplomatic_reputation = 1
+	years_of_nationalism = -5
 	legitimacy = 1
 }
 sic_build_universities_mission = {
@@ -558,11 +567,11 @@ sic_conquer_epirus_mission = {
 }
 sic_religious_war_mission = {
 	warscore_cost_vs_other_religion = -0.1
-	discipline = 0.025
+	discipline = 0.05
 }
 sic_conquer_jerusalem_mission = {
 	tolerance_own = 1
-	papal_influence = 1
+	papal_influence = 2
 }
 sic_conquer_islands_mission = {
 	trade_steering = 0.2
@@ -577,6 +586,7 @@ sic_conquer_egypt_mission = {
 	missionary_maintenance_cost = -0.33
 }
 sic_conquer_genoa_mission = {
+	trade_efficiency = 0.1
 	placed_merchant_power = 35
 }
 sic_challenge_genoa_mission = {
@@ -588,7 +598,8 @@ sic_conquer_milan_mission = {
 	land_morale = 0.1
 }
 sic_conquer_provence_mission = {
-	ae_impact = -0.2
+	core_creation = -0.1
+	ae_impact = -0.1
 }
 sic_conquer_albania_mission = {
 	infantry_cost = -0.1
@@ -598,7 +609,7 @@ sic_imperial_power_mission = {
 	improve_relation_modifier = 0.25
 	imperial_authority = 0.1
 }
-our_ancestral_domain_mission = { 
+sic_our_ancestral_domain_mission = { 
 	legitimacy = 1
 	diplomatic_reputation = 1
 }
@@ -740,6 +751,18 @@ boh_muster_our_strength_event = {
 	army_tradition = 0.5
 }
 
+#Brabant
+brb_a_new_government_event = {
+	global_regiment_cost = -0.1
+	global_manpower_modifier = 0.25
+	discipline = 0.05
+}
+brb_rise_event = {
+	global_tax_modifier = 0.1
+	trade_efficiency = 0.1
+	development_cost = -0.1
+}
+
 #Pavia
 pva_rebirth_mission = {
 	global_tax_modifier = 0.1
@@ -752,6 +775,7 @@ pva_reclaim_our_glory_mission = {
 	core_creation = -0.1
 }
 pva_rise_event = {
+	legitimacy = 1
 	diplomatic_reputation = 1
 }
 
@@ -777,6 +801,14 @@ fla_fight_event = {
 	ae_impact = -0.1
 	army_tradition = 0.5
 	diplomatic_reputation = 1
+}
+
+#Byzantium
+byz_nka_major_reforms_event = {
+	
+}
+byz_nka_fight_event = {
+
 }
 
 #Holland/Netherlands
@@ -906,7 +938,7 @@ hol_claim_the_throne_mission = {
 	land_morale = 0.1
 }
 hol_master_of_britian_mission = {
-	governing_capacity = 250
+	governing_capacity_modifier = 0.1
 	core_creation = -0.1
 }
 hol_raided_medway = {
@@ -930,6 +962,10 @@ swi_important_city_state_mission = {
 	improve_relation_modifier = 0.2
 }
 swi_trade_center_in_mulhouse_mission = {
+	province_trade_power_modifier = 0.2
+	trade_value_modifier = 0.1
+}
+swi_rottweiler_trade_mission = {
 	province_trade_power_modifier = 0.2
 	trade_value_modifier = 0.1
 }

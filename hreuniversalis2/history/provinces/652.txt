@@ -1,4 +1,4 @@
-capital = "Costa Rei" 
+capital = "Crabonaxa" 
 culture = sardinian
 religion = catholic 
 trade_goods = silver

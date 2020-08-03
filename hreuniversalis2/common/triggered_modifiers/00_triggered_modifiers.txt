@@ -18,7 +18,6 @@ catholic_rome = {
 		owns_or_vassal_of = 2708 # Roma		
 		NOT = { tag = ITA }
 		NOT = { tag = ROM }
-		NOT = { tag = KOG }
 		NOT = { tag = LZO }
 		NOT = { tag = SPI }
 	}

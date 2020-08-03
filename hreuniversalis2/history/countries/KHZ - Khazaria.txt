@@ -5,6 +5,7 @@ primary_culture = khazar
 religion = jewish
 technology_group = nomad_group
 capital = 3763
+religious_school = mizrahi_school
 historical_friend = HNS
 historical_rival = GLH
 

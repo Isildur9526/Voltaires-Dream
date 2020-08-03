@@ -170,7 +170,7 @@ vn_eng_missions_slot_1_a = {
         effect = {
             wales_region = {
                 limit = { owned_by = ROOT }
-                add_country_modifier = {
+                add_province_modifier = {
                     name = "eng_laws_in_wales_acts_mission"
                     duration = 9125
                 }

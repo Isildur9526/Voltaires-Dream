@@ -1286,6 +1286,13 @@ defined_text = {
 			religion = norse_pagan_reformed
         }
     }
+    #Jewish
+	text = {
+        localisation_key = string_start_religion_jewish
+        trigger = {
+			religion = jewish
+        }
+    }
     #Baltic
 	text = {
         localisation_key = string_start_religion_animism
@@ -1351,7 +1358,10 @@ defined_text = {
 	text = {
         localisation_key = string_muslim_school #Has to end with \n
         trigger = {
-			religion_group = muslim
+			OR = {
+				religion_group = muslim
+				religion_group = jewish_group
+			}
 			has_dlc = "Cradle of Civilization"
         }
     }

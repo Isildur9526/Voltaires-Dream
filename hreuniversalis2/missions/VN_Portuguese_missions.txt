@@ -128,7 +128,8 @@ vn_por_missions_slot_1_a = {
 	}
 	vn_por_land_in_madeira = {
         icon = mission_invade_island
-		required_missions = { }
+        required_missions = { }
+        completed_by = 1425.1.1
 		provinces_to_highlight = {
 			province_id = 5115
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -630,6 +631,7 @@ vn_por_missions_slot_3_a = {
     vn_por_levy_crusaders = {
         icon = mission_crusade_for_varna
         required_missions = { }
+        completed_by = 1055.1.1
         position = 1
         trigger = {
             army_size_percentage = 0.75
@@ -688,6 +690,7 @@ vn_por_missions_slot_3_a = {
     vn_por_beyond_douro = {
         icon = mission_advance_to_the_dnieper
         required_missions = { vn_por_levy_crusaders }
+        completed_by = 1146.1.1
         provinces_to_highlight = {
 			area = coimbra_area
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -714,7 +717,8 @@ vn_por_missions_slot_3_a = {
 		required_missions = { vn_por_beyond_douro }
 		provinces_to_highlight = {
 			province_id = 2243
-		}
+        }
+        completed_by = 1290.1.1
         trigger = {
             2243 = {
                 owned_by = ROOT
@@ -759,6 +763,7 @@ vn_por_missions_slot_3_b = {
         icon = mission_crusade_for_varna
         required_missions = { vn_por_gates_of_lisbon }
         position = 4
+        completed_by = 1238.1.1
         provinces_to_highlight = {
             OR = {
 				area = avis_area
@@ -790,6 +795,7 @@ vn_por_missions_slot_3_b = {
     vn_por_seize_algarve = {
         icon = mission_portuguese_interference
         required_missions = { vn_por_conquer_alentejo }
+        completed_by = 1249.1.1
         provinces_to_highlight = {
             area = algarve_area
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -812,6 +818,7 @@ vn_por_missions_slot_3_b = {
 	vn_por_claim_ceuta = {
         icon = mission_retake_ceuta
         required_missions = { vn_por_seize_algarve }
+        completed_by = 1415.8.21
         provinces_to_highlight = {
 			province_id = 4626
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -1042,6 +1049,7 @@ vn_por_missions_slot_4_b = {
     vn_por_gates_of_lisbon = {
         icon = mission_tear_down_spanish_strongholds
         required_missions = { vn_por_beyond_douro }
+        completed_by = 1165.1.1
         position = 3
         provinces_to_highlight = {
             area = lisboa_area
@@ -1077,6 +1085,7 @@ vn_por_missions_slot_4_b = {
     vn_por_a_new_capital = {
         icon = mission_guilds_of_barcelona
         required_missions = { vn_por_gates_of_lisbon }
+        completed_by = 1255.1.1
         provinces_to_highlight = {
             province_id = 1135
         }
@@ -1221,6 +1230,7 @@ vn_por_missions_slot_4_c = {
         icon = mission_arts_and_letters
         required_missions = { }
         position = 6
+        completed_by = 1450.1.1
         trigger = {
             has_institution = renaissance
 			all_state_province = {
@@ -1280,11 +1290,13 @@ vn_por_missions_slot_4_d = {
                 }
                 OR = {
                     is_enemy = ROOT
-					is_rival = ROOT
-					has_opinion = {
-						who = ROOT
-						value = -125
-					}
+                    is_rival = ROOT
+                    NOT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = -125
+                        }
+                    }
                 }
 			}
         }
@@ -1319,10 +1331,11 @@ vn_por_missions_slot_5_a = {
     vn_por_achieve_independence = {
         icon = mission_soldiers_in_line
         required_missions = { }
+        completed_by = 1096.1.1
         position = 1
         trigger = {
 			is_subject = no
-			num_of_allies = 1
+			num_of_allies = 2
         }
         effect = {
             add_legitimacy = 10
@@ -1353,6 +1366,7 @@ vn_por_missions_slot_5_a = {
             vn_por_achieve_independence
         }
         position = 4
+        completed_by = 1147.10.25
         trigger = {
             government_rank = 5
             is_subject = no
@@ -1393,6 +1407,7 @@ vn_por_missions_slot_5_a = {
         icon = mission_religious
         required_missions = { vn_por_kingdom_of_portugal }
         position = 6
+        completed_by = 1179.5.23
         trigger = {
             government_rank = 5
             is_subject = no
@@ -1413,6 +1428,7 @@ vn_por_missions_slot_5_a = {
     vn_por_alliance_with_england = {
         icon = mission_rb_invade_england
         required_missions = { vn_por_papal_relations }
+        completed_by = 1373.1.1
         trigger = {
             government_rank = 5
             is_subject = no

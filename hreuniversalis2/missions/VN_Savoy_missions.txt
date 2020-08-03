@@ -19,7 +19,7 @@ vn_sav_missions_slot_1 = {
 
     vn_sav_conquer_saluzzo = {
         position = 1
-        icon = mission_unite_home_region
+        icon = the_great_school
         required_missions = { }
         provinces_to_highlight = {
             area = torino_area
@@ -43,7 +43,7 @@ vn_sav_missions_slot_1 = {
         }
     }
     vn_sav_conquer_nice = {
-        icon = mission_unite_home_region
+        icon = brest_dockyards
         required_missions = { vn_sav_conquer_saluzzo }
         provinces_to_highlight = {
             area = nice_area
@@ -104,7 +104,7 @@ vn_sav_missions_slot_1 = {
         }
     }
     vn_sav_conquer_sardinia = {
-        icon = mission_invade_island
+        icon = unite_with_sardinia
         required_missions = { vn_sav_build_navy }
         provinces_to_highlight = {
             OR = {
@@ -153,7 +153,7 @@ vn_sav_missions_slot_2 = {
 
     vn_sav_conquer_savoy = {
         position = 1
-        icon = mission_european_castle
+        icon = assert_our_sovereignty
         required_missions = { }
         provinces_to_highlight = {
             area = savoy_area
@@ -173,7 +173,7 @@ vn_sav_missions_slot_2 = {
         }
     }
     vn_sav_fortify_chambery = {
-        icon = mission_fort
+        icon = up_the_adige
         required_missions = { vn_sav_conquer_savoy }
         provinces_to_highlight = {
             province_id = 1087
@@ -181,13 +181,7 @@ vn_sav_missions_slot_2 = {
         trigger = {
             1087 = {
                 owned_by = ROOT
-                OR = {
-                    has_building = fort_14th
-                    has_building = fort_15th
-                    has_building = fort_16th
-                    has_building = fort_17th
-                    has_building = fort_18th
-                }
+                has_fort_trigger = yes
             }
         }
         effect = {
@@ -200,7 +194,7 @@ vn_sav_missions_slot_2 = {
         }
     }
     vn_sav_order_of_saint_maurice = {
-        icon = mission_crusade
+        icon = knights_of_the_new_world
         required_missions = { vn_sav_fortify_chambery }
         trigger = {
 			if = {
@@ -242,18 +236,7 @@ vn_sav_missions_slot_2 = {
             }
         }
         effect = {
-            if = {
-                limit = {
-                    OR = {
-                        religion = catholic
-                        religion = catholique
-                    }
-                }
-                country_event = { id = vn_missions.13 }
-            }
-            else = {
-                add_prestige = 25
-            }
+            
         }
     }
 }
@@ -274,7 +257,7 @@ vn_sav_missions_slot_3 = {
 
     vn_sav_conquer_aosta = {
         position = 1
-        icon = mission_unite_home_region
+        icon = expand_the_terraferma
         required_missions = { }
         provinces_to_highlight = {
             area = aosta_area
@@ -294,7 +277,7 @@ vn_sav_missions_slot_3 = {
         }
     }
     vn_sav_become_a_duchy = {
-        icon = mission_coronation
+        icon = become_king
         required_missions = { vn_sav_conquer_montferrat vn_sav_conquer_aosta vn_sav_conquer_savoy }
         trigger = {
             if = {
@@ -324,7 +307,7 @@ vn_sav_missions_slot_3 = {
         }
     }
     vn_sav_defy_france = {
-        icon = mission_humiliate_provence
+        icon = unite_the_wittelsbachs
         required_missions = { vn_sav_become_a_duchy }
         trigger = {
             OR = {
@@ -352,19 +335,18 @@ vn_sav_missions_slot_3 = {
         }
     }
     vn_sav_fortify_cisjurania = {
-        icon = mission_conquer_50_development
+        icon = alpine_defenses
         required_missions = { vn_sav_defy_france }
+        provinces_to_highlight = {
+            region = dauphine_region
+            owned_by = ROOT
+            has_non_outdated_fort = no
+        }
         trigger = {
             num_of_owned_provinces_with = {
                 value = 5
                 region = dauphine_region
-                OR = {
-                    has_building = fort_14th
-                    has_building = fort_15th
-                    has_building = fort_16th
-                    has_building = fort_17th
-                    has_building = fort_18th
-                }
+                has_non_outdated_fort = yes
             }
         }
         effect = {
@@ -392,7 +374,7 @@ vn_sav_missions_slot_4 = {
 
     vn_sav_conquer_montferrat = {
         position = 1
-        icon = mission_unite_home_region
+        icon = the_italian_league
         required_missions = { }
         provinces_to_highlight = {
             area = monferrato_area
@@ -410,7 +392,7 @@ vn_sav_missions_slot_4 = {
     }
     vn_sav_move_to_turin = {
         position = 4
-        icon = mission_found_havana
+        icon = glory_to_turin
         required_missions = { vn_sav_defy_france }
         provinces_to_highlight = {
             province_id = 1009

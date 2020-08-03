@@ -59,7 +59,7 @@ vn_pol_missions_slot_1 = {
         }
     }
     vn_pol_conquer_pomerelia = {
-        icon = mission_unite_home_region
+        icon = claim_the_borderlands
         position = 2
         required_missions = { vn_pol_join_northern_crusades vn_pol_invite_german_settlers }
         provinces_to_highlight = {
@@ -207,7 +207,7 @@ vn_pol_missions_slot_1 = {
         }
     }
     vn_pol_conquer_vorpommern = {
-        icon = mission_unite_home_region
+        icon = protect_against_austria
         position = 5
         required_missions = { vn_pol_conquer_hinterpommern }
         provinces_to_highlight = {
@@ -251,7 +251,7 @@ vn_pol_missions_slot_1 = {
         }
     }
     vn_pol_royal_residences = {
-        icon = mission_fort
+        icon = eastern_catholicization
         position = 6
         required_missions = {  }
         trigger = {
@@ -293,7 +293,7 @@ vn_pol_missions_slot_1 = {
         }
     }
     vn_pol_polish_renaissance = {
-        icon = mission_rb_weather_the_reformation
+        icon = the_great_school
         position = 7
         required_missions = { vn_pol_royal_residences }
         trigger = {
@@ -329,7 +329,7 @@ vn_pol_missions_slot_2 = {
     has_country_shield = yes
 
     vn_pol_invite_german_settlers = {
-        icon = mission_colonial
+        icon = settle_north_america
         position = 1
         required_missions = {  }
         trigger = {
@@ -358,7 +358,7 @@ vn_pol_missions_slot_2 = {
         }
     }
     vn_pol_conquer_west_prussia = {
-        icon = mission_unite_home_region
+        icon = mission_large_army
         position = 3
         required_missions = { vn_pol_conquer_pomerelia }
         provinces_to_highlight = {
@@ -408,7 +408,7 @@ vn_pol_missions_slot_2 = {
         }
     }
     vn_pol_conquer_east_prussia = {
-        icon = mission_unite_home_region
+        icon = develop_konigsberg
         position = 4
         required_missions = { vn_pol_conquer_west_prussia }
         provinces_to_highlight = {
@@ -451,7 +451,7 @@ vn_pol_missions_slot_2 = {
         }
     }
     vn_pol_conquer_sorbia = {
-        icon = mission_unite_home_region
+        icon = unite_the_realm
         position = 5
         required_missions = { vn_pol_conquer_east_prussia }
         provinces_to_highlight = {
@@ -479,7 +479,7 @@ vn_pol_missions_slot_2 = {
         }
 	}
     vn_pol_royal_cathedrals = {
-        icon = mission_european_church
+        icon = despot_stefans_legacy
         position = 6
         required_missions = { }
         trigger = {
@@ -530,7 +530,7 @@ vn_pol_missions_slot_2 = {
         }
 	}
     vn_pol_polish_bible = {
-        icon = mission_hands_praying
+        icon = standardize_relazioni
         position = 7
         required_missions = { vn_pol_royal_cathedrals }
         trigger = {
@@ -567,7 +567,7 @@ vn_pol_missions_slot_2 = {
         }
     }
     vn_pol_statute_of_kalisz = {
-        icon = mission_rb_monopolize_the_channel
+        icon = reform_the_nomocanon
         position = 8
         required_missions = { vn_pol_polish_bible }
         trigger = {
@@ -625,7 +625,7 @@ vn_pol_missions_slot_3 = {
         }
     }
     vn_pol_conquer_silesia = {
-        icon = mission_unite_home_region
+        icon = take_silesia
         position = 2
         required_missions = { vn_pol_grody_fortifications vn_pol_avoid_fragmentation }
         provinces_to_highlight = {
@@ -675,7 +675,7 @@ vn_pol_missions_slot_3 = {
         }
     }
     vn_pol_conquer_bohemia = {
-        icon = mission_empire
+        icon = the_hungarian_question
         position = 3
         required_missions = { vn_pol_conquer_silesia }
         provinces_to_highlight = {
@@ -704,7 +704,7 @@ vn_pol_missions_slot_3 = {
         }
     }
     vn_pol_slavic_empire = {
-        icon = mission_empire
+        icon = encroach_on_the_germans
         position = 4
         required_missions = { vn_pol_conquer_bohemia }
         trigger = {
@@ -790,7 +790,7 @@ vn_pol_missions_slot_3 = {
         }
     }
     vn_pol_conquer_turov = {
-        icon = mission_unite_home_region
+        icon = mission_have_two_subjects
         position = 6
         required_missions = { vn_pol_conquer_pripyat }
         provinces_to_highlight = {
@@ -853,7 +853,7 @@ vn_pol_missions_slot_3 = {
         }
     }
     vn_pol_conquer_lithuania = {
-        icon = mission_unite_home_region
+        icon = hungarian_union
         position = 7
         required_missions = { vn_pol_conquer_turov }
         provinces_to_highlight = {
@@ -893,7 +893,7 @@ vn_pol_missions_slot_3 = {
         }
     }
     vn_pol_the_commonwealth = {
-        icon = mission_empire
+        icon = invest_in_the_provinces
         position = 8
         required_missions = { vn_pol_conquer_lithuania vn_pol_conquer_kiev }
         trigger = {
@@ -931,7 +931,7 @@ vn_pol_missions_slot_4 = {
     has_country_shield = yes
 
     vn_pol_avoid_fragmentation = {
-        icon = mission_restore_faith_in_the_throne
+        icon = avoid_fragmentation
         position = 1
         required_missions = {  }
         trigger = {
@@ -967,7 +967,7 @@ vn_pol_missions_slot_4 = {
         }
     }
     vn_pol_conquer_mazovia = {
-        icon = mission_unite_home_region
+        icon = king_of_poland
         position = 3
         required_missions = { vn_pol_avoid_fragmentation }
         provinces_to_highlight = {
@@ -1002,7 +1002,7 @@ vn_pol_missions_slot_4 = {
         }
     }
     vn_pol_conquer_red_ruthenia = {
-        icon = mission_unite_home_region
+        icon = revenge_for_nicopolis
         position = 4
         required_missions = { vn_pol_conquer_mazovia }
         provinces_to_highlight = {
@@ -1200,7 +1200,7 @@ vn_pol_missions_slot_5 = {
         }
     }
     vn_pol_establish_salt_mines = {
-        icon = mission_big_city
+        icon = reform_bergordnung
         position = 2
         required_missions = { vn_pol_establish_folwarks }
         provinces_to_highlight = {
@@ -1229,7 +1229,7 @@ vn_pol_missions_slot_5 = {
         }
     }
     vn_pol_polish_hussars = {
-        icon = mission_conquer_5_states
+        icon = jageillonian_union
         position = 3
         required_missions = {  }
         trigger = {
@@ -1258,7 +1258,7 @@ vn_pol_missions_slot_5 = {
         }
     }
     vn_pol_conquer_nitra = {
-        icon = mission_unite_home_region
+        icon = fortress_switzerland
         position = 4
         required_missions = { vn_pol_polish_hussars vn_pol_conquer_mazovia }
         provinces_to_highlight = {
@@ -1315,7 +1315,7 @@ vn_pol_missions_slot_5 = {
         }
     }
     vn_pol_conquer_hungary = {
-        icon = mission_noble_council
+        icon = king_of_hungary
         position = 5
         required_missions = { vn_pol_conquer_nitra }
         provinces_to_highlight = {

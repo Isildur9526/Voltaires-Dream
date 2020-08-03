@@ -346,6 +346,21 @@ spriteTypes = {
 		texturefile = "gfx/interface/icon_muslim_school_qarmati.dds"
 	}
 
+	spriteType = {
+		name = "GFX_icon_muslim_school_ashkenazi"
+		texturefile = "gfx/interface/icon_muslim_school_ashkenazi.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_muslim_school_sephardi"
+		texturefile = "gfx/interface/icon_muslim_school_sephardi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_icon_muslim_school_mizrahi"
+		texturefile = "gfx/interface/icon_muslim_school_mizrahi.dds"
+	}
+
 	#Blessings
 	spriteType = {
 		name = "GFX_holy_site_default"
@@ -2358,6 +2373,49 @@ spriteTypes = {
         name = "GFX_incident_lombard_league.3.b"
         texturefile = "gfx/interface/imperial_incident_sword.dds"
         loadType = "INGAME"
+	}
+	
+	spriteType = {
+        name = "GFX_incident_hussite_wars.1.a"
+        texturefile = "gfx/interface/imperial_incident_shield.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_hussite_wars.1.b"
+        texturefile = "gfx/interface/imperial_incident_denial_of_request.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_hussite_wars.1.c"
+        texturefile = "gfx/interface/imperial_incident_sword.dds"
+        loadType = "INGAME"
+	}
+	
+	spriteType = {
+        name = "GFX_incident_jewish_suffering.2.a"
+        texturefile = "gfx/interface/imperial_incident_shield.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_jewish_suffering.2.b"
+        texturefile = "gfx/interface/imperial_incident_denial_of_request_.dds"
+        loadType = "INGAME"
+    }
+	
+	spriteType = {
+        name = "GFX_incident_mongol_raids.3.a"
+        texturefile = "gfx/interface/imperial_incident_shield.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_mongol_raids.3.b"
+        texturefile = "gfx/interface/imperial_incident_diplomat.dds"
+        loadType = "INGAME"
+    }
+    spriteType = {
+        name = "GFX_incident_mongol_raids.3.c"
+        texturefile = "gfx/interface/imperial_incident_generosity.dds"
+        loadType = "INGAME"
     }
 
     #Estate Privileges
@@ -2380,5 +2438,9 @@ spriteTypes = {
 	spriteType = {
 		name = "privilege_circassian_slaves"
 		texturefile = "gfx/interface/privileges/privilege_circassian_slaves.dds"
+	}
+	spriteType = {
+		name = "privilege_circassian_female"
+		texturefile = "gfx/interface/privileges/privilege_circassian_female.dds"
 	}
 }

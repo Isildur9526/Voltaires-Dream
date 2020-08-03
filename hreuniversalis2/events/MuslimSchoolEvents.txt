@@ -2018,7 +2018,10 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Cradle of Civilization"
-		religion_group = muslim
+		OR = {
+			religion_group = muslim
+			religion_group = jewish_group
+		}
 		has_religious_scholars_trigger = yes
 	}
 	
@@ -2849,6 +2852,7 @@ country_event = {
 					has_owner_religion = no
 					NOT = { has_province_modifier = alevi_modifier }
 				}
+				change_religion = zikri
 				save_event_target_as = alevi_province
 			}
 		}
@@ -2947,7 +2951,10 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
-		religion_group = muslim
+		OR = {
+			religion_group = muslim
+			religion_group = jewish_group
+		}
 		NOT = { has_country_flag = avoid_choosing_madhhab_flag }
 		OR = {
 			has_religious_school = no
@@ -3139,10 +3146,42 @@ country_event = {
 				school = ibadi_school
 			}
 		}
-		else = { #Fallback for Zikri
+		else_if = { #Fallback for Zikri
+			limit = { religion = zikri }
 			set_religious_school = {
 				group = muslim
 				school = alevi_school
+			}
+		}
+		else_if = {
+			limit = {
+				religion = jewish
+				capital_scope = { superregion = iberia_superregion }
+			}
+			set_religious_school = {
+				group = jewish_group
+				school = sephardi_school
+			}
+		}
+		else_if = {
+			limit = {
+				religion = jewish
+				capital_scope = {
+					OR = {
+						continent = africa
+						continent = asia
+					}
+				}
+			}
+			set_religious_school = {
+				group = jewish_group
+				school = mizrahi_school
+			}
+		}
+		else = { #Fallback for Jews
+			set_religious_school = {
+				group = jewish_group
+				school = ashkenazi_school
 			}
 		}
 	}
@@ -3298,6 +3337,39 @@ country_event = {
 		set_religious_school = {
 			group = muslim
 			school = qarmati_school
+		}
+	}
+	option = {
+		name = muslim_school_events.20.p #Ashkenazi
+		trigger = {
+			religion = jewish
+			ai = no
+		}
+		set_religious_school = {
+			group = jewish_group
+			school = ashkenazi_school
+		}
+	}
+	option = {
+		name = muslim_school_events.20.q #Sephardi
+		trigger = {
+			religion = jewish
+			ai = no
+		}
+		set_religious_school = {
+			group = jewish_group
+			school = sephardi_school
+		}
+	}
+	option = {
+		name = muslim_school_events.20.r #Mizrahi
+		trigger = {
+			religion = jewish
+			ai = no
+		}
+		set_religious_school = {
+			group = jewish_group
+			school = mizrahi_school
 		}
 	}
 }

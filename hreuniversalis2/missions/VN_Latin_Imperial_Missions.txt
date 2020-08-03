@@ -13,7 +13,7 @@ vn_lem_missions_slot_1 = {
 
     vn_lem_mollify_clergy = {
         position = 1
-        icon = mission_religious
+        icon = immaculate_government
         required_missions = { }
         trigger = {
             if = {
@@ -33,7 +33,7 @@ vn_lem_missions_slot_1 = {
         }
     }
     vn_lem_spread_catholicism = {
-        icon = mission_hands_praying
+        icon = a_center_of_religion
         required_missions = { vn_lem_mollify_clergy }
         trigger = {
 			religious_unity = 1
@@ -45,7 +45,7 @@ vn_lem_missions_slot_1 = {
     }
     vn_lem_conquer_epirus = {
         position = 4
-        icon = mission_crusade_for_varna
+        icon = despot_of_epirus
         required_missions = { vn_lem_conquer_thessalionica }
         provinces_to_highlight = {
             OR = {
@@ -94,7 +94,7 @@ vn_lem_missions_slot_1 = {
         }
     }
     vn_lem_conquer_rumelia = {
-        icon = mission_build_up_to_force_limit
+        icon = push_on_to_bulgaria
         required_missions = { vn_lem_conquer_epirus }
         provinces_to_highlight = {
             OR = {
@@ -143,7 +143,7 @@ vn_lem_missions_slot_1 = {
         }
     }
     vn_lem_conquer_serbia = {
-        icon = mission_build_up_to_force_limit
+        icon = fortress_of_belgrade
         required_missions = { vn_lem_conquer_rumelia }
         provinces_to_highlight = {
             OR = {
@@ -175,7 +175,7 @@ vn_lem_missions_slot_1 = {
         }
     }
     vn_lem_conquer_flanders = {
-        icon = mission_city_of_the_world's_desire
+        icon = contracts_of_correspondence
         required_missions = { vn_lem_build_navy }
         provinces_to_highlight = {
             area = flanders_area
@@ -197,7 +197,7 @@ vn_lem_missions_slot_1 = {
     }
     vn_lem_conquer_crete = {
         position = 8
-        icon = mission_dominate_the_mediterranean
+        icon = mission_invade_island
         required_missions = { vn_lem_conquer_aegean_islands }
         provinces_to_highlight = {
             OR = {
@@ -234,7 +234,7 @@ vn_lem_missions_slot_2 = {
 
     vn_lem_crusader_alliances = {
         position = 1
-        icon = mission_alliances
+        icon = knights_of_the_new_world
         required_missions = { }
         trigger = {
             num_of_allies = 5
@@ -269,7 +269,7 @@ vn_lem_missions_slot_2 = {
     }
     vn_lem_conquer_thessalionica = {
         position = 3
-        icon = mission_unite_hindustan
+        icon = retake_thessaly
         required_missions = { vn_lem_crusader_alliances }
         provinces_to_highlight = {
             OR = {
@@ -299,7 +299,7 @@ vn_lem_missions_slot_2 = {
         }
     }
     vn_lem_conquer_athens = {
-        icon = mission_build_up_to_force_limit
+        icon = foothold_in_greece
         required_missions = { vn_lem_conquer_thessalionica }
         provinces_to_highlight = {
             OR = {
@@ -343,7 +343,7 @@ vn_lem_missions_slot_2 = {
         }
     }
     vn_lem_conquer_peloponnese = {
-        icon = mission_have_two_subjects
+        icon = protect_against_austria
         required_missions = { vn_lem_conquer_athens }
         provinces_to_highlight = {
             OR = {
@@ -375,7 +375,7 @@ vn_lem_missions_slot_2 = {
         }
     }
     vn_lem_build_navy = {
-        icon = mission_south_indian_trade
+        icon = crusader_fleet
         required_missions = { vn_lem_conquer_peloponnese }
         trigger = {
             navy_size = 40
@@ -465,7 +465,7 @@ vn_lem_missions_slot_2 = {
     }
     vn_lem_conquer_aegean_islands = {
         position = 7
-        icon = mission_conquer_andhra_bah
+        icon = build_a_roman_navy
         required_missions = { vn_lem_build_navy }
         provinces_to_highlight = {
             OR = {
@@ -524,7 +524,7 @@ vn_lem_missions_slot_3 = {
 
     vn_lem_reinforce_the_army = {
         position = 1
-        icon = mission_conquer_5_states
+        icon = restore_the_hospitallers
         required_missions = { }
         trigger = {
             is_at_war = no
@@ -587,7 +587,7 @@ vn_lem_missions_slot_3 = {
     }
     vn_lem_conquer_antioch = {
         position = 7
-        icon = mission_break_sicily
+        icon = convert_the_holy_land
         required_missions = { vn_lem_a_new_crusade vn_lem_build_navy }
         provinces_to_highlight = {
             region = cilicia_region
@@ -617,7 +617,7 @@ vn_lem_missions_slot_3 = {
         }
     }
     vn_lem_conquer_lebanon = {
-        icon = mission_arabian_fort
+        icon = levantine_missions
         required_missions = { vn_lem_conquer_antioch vn_lem_conquer_isauria }
         provinces_to_highlight = {
             OR = {
@@ -647,7 +647,7 @@ vn_lem_missions_slot_3 = {
         }
     }
     vn_lem_conquer_jerusalem = {
-        icon = mission_arabian_fort
+        icon = jerusalem
         required_missions = { vn_lem_conquer_lebanon }
         provinces_to_highlight = {
             region = palestine_region
@@ -752,7 +752,7 @@ vn_lem_missions_slot_4 = {
 
     vn_lem_recover_from_crusade = {
         position = 1
-        icon = mission_high_income
+        icon = la_latinocrazia
         required_missions = { }
         trigger = {
             stability = 2
@@ -777,7 +777,7 @@ vn_lem_missions_slot_4 = {
         }
     }
     vn_lem_conquer_thrace = {
-        icon = mission_upper_burma_campaign
+        icon = the_latin_empire
         required_missions = { vn_lem_recover_from_crusade }
         provinces_to_highlight = {
             region = thrace_region
@@ -792,7 +792,7 @@ vn_lem_missions_slot_4 = {
         effect = {
             add_country_modifier = {
                 name = lem_conquer_thrace_mission
-                duration = 7300
+                duration = 9125
             }
         }
     }
@@ -835,7 +835,7 @@ vn_lem_missions_slot_4 = {
         }
     }
     vn_lem_conquer_phrygia = {
-        icon = mission_control_surat
+        icon = take_the_littoral
         required_missions = { vn_lem_conquer_bithynia vn_lem_a_new_crusade }
         provinces_to_highlight = {
             OR = {
@@ -876,7 +876,7 @@ vn_lem_missions_slot_4 = {
         }
     }
     vn_lem_conquer_isauria = {
-        icon = mission_control_surat
+        icon = expand_to_the_south
         required_missions = { vn_lem_conquer_phrygia }
         provinces_to_highlight = {
             OR = {
@@ -914,7 +914,7 @@ vn_lem_missions_slot_4 = {
     }
     vn_lem_conquer_cappadocia = {
         position = 9
-        icon = mission_control_the_ganges_delta
+        icon = anatolian_frontier
         required_missions = { vn_lem_conquer_isauria }
         provinces_to_highlight = {
             OR = {
@@ -952,7 +952,7 @@ vn_lem_missions_slot_5 = {
 
     vn_lem_root_out_devastation = {
         position = 1
-        icon = mission_rb_war_of_the_roses
+        icon = prosperity_for_all
         required_missions = { }
         trigger = {
             prestige = 50
@@ -968,7 +968,7 @@ vn_lem_missions_slot_5 = {
         }
     }
     vn_lem_pearl_of_the_mediterranean = {
-        icon = mission_dominate_persian_gulf
+        icon = take_constantinople
         required_missions = { vn_lem_root_out_devastation vn_lem_recover_from_crusade }
         provinces_to_highlight = {
             province_id = 2233
@@ -990,20 +990,20 @@ vn_lem_missions_slot_5 = {
         }
     }
     vn_lem_fortify_adrianople = {
-        icon = mission_restore_rule_over_mysore
+        icon = fixed_garrison_system
         required_missions = { vn_lem_conquer_thrace }
         provinces_to_highlight = {
             region = thrace_region
             OR = {
                 NOT = { owned_by = ROOT }
-                NOT = { has_fort_trigger = yes }
+                NOT = { has_non_outdated_fort = yes }
             }
         }
         trigger = {
             num_of_owned_provinces_with = {
                 value = 3
                 region = thrace_region
-                has_fort_trigger = yes
+                has_non_outdated_fort = yes
             }
         }
         effect = {
@@ -1044,7 +1044,7 @@ vn_lem_missions_slot_5 = {
         }
     }
     vn_lem_conquer_bulgaria = {
-        icon = mission_impaled_soldies
+        icon = confront_the_lombards
         required_missions = { vn_lem_conquer_sofia }
         provinces_to_highlight = {
             region = bulgaria_region
@@ -1064,7 +1064,7 @@ vn_lem_missions_slot_5 = {
         }
     }
     vn_lem_conquer_nicaea = {
-        icon = mission_fortify_mandu
+        icon = a_roman_empire
         required_missions = { vn_lem_conquer_bithynia }
         provinces_to_highlight = {
             OR = {
@@ -1105,7 +1105,7 @@ vn_lem_missions_slot_5 = {
         }
     }
     vn_lem_conquer_trebizond = {
-        icon = mission_al_andalus
+        icon = kingdom_of_heaven
         required_missions = { vn_lem_conquer_nicaea }
         provinces_to_highlight = {
             OR = {

@@ -59,9 +59,17 @@ add_core = ARM
 	add_core = TUR
 }
 1402.7.20 = {
+	owner = DUL
+	controller = DUL
+	add_core = DUL
+	remove_core = TUR
+}
+1408.1.1 = {
 	owner = AHI
 	controller = AHI
 	add_core = AHI
+	add_core = TUR
+	remove_core = DUL
 }
 1413.7.5 = {
 	owner = TUR

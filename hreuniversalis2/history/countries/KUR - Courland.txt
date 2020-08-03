@@ -5,9 +5,65 @@ government_rank = 4
 technology_group = western
 primary_culture = prussian
 religion = catholic
-capital = 5799
-fixed_capital = 5799
+capital = 5721
 
+#Bishops of Selija
+1218.1.1 = {
+	monarch = {
+		name = "Bernhard I"
+		dynasty = "zur Lippe"
+		birth_date = 1145.1.1
+		culture = hannoverian
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1224.4.30 = {
+	monarch = {
+		name = "Lambert"
+		culture = picard
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}
+
+#Bishops of Zemgale
+1226.1.1 = { capital = 5789 }
+1231.1.1 = {
+	monarch = {
+		name = "Baldwin"
+		dynasty = "d'Aulne"
+		culture = wallonian
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}
+1236.1.1 = {
+	monarch = {
+		name = "Arnold"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1247.1.1 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "von Lützelburg"
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+
+#Bishops of Kurland
+1251.2.3 = {
+	capital = 5799
+	fixed_capital = 5799
+}
 1263.1.1 = {
 	monarch = {
 		name = "Edmund"
@@ -52,7 +108,7 @@ fixed_capital = 5799
 }
 1330.1.1 = {
 	monarch = {
-		name = "Bernhard"
+		name = "Bernhard II"
 		adm = 2
 		dip = 2
 		mil = 2

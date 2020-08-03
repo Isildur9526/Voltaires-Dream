@@ -14,7 +14,6 @@ country_event = {
 		NOT = { tag = LZO }
 		NOT = { tag = ROM }
 		NOT = { exists = ITA }
-		NOT = { exists = KOG }
 		NOT = { has_country_flag = no_support }
 	}
 	
@@ -100,7 +99,6 @@ country_event = {
 		papacy_active = yes
 		NOT = { exists = PAP }
 		NOT = { exists = ITA }
-		NOT = { exists = KOG }
 		religion = catholic
 		government = theocracy
 		NOT = { has_ruler_flag = refused_papacy }

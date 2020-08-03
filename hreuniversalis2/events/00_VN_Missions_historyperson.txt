@@ -49,7 +49,7 @@ country_event = {
 		name = "vn_missions.201.a"
 		add_years_of_income = -0.5
 		add_country_modifier = {
-			name = "bgh_ship_research_mission"
+			name = "bgh_ship_research_event"
 			duration = 9125
 	    }
 	}
@@ -162,7 +162,8 @@ country_event = {
 
 ###Other Events
 #IDs 300 and over
-#XPavia 0, XSicily 1, XBarcelona 2, XProvence 3, Bohemia 4, Swabia 5, Flanders 6
+#XPavia 0, XSicily 1, XBarcelona 2, XProvence 3, XBrabant 7
+#Bohemia 4, Swabia/von Hohenstaufen 5, Flanders 6
 #Unique Political Situation (Bohemia)
 country_event = {
 	id = vn_missions.304
@@ -203,50 +204,59 @@ country_event = {
 	} 
 	
 	option = {
-		name = vn_missions.304.a
-		ai_chance = { factor = 100 }
-		add_prestige = 10
-		add_adm_power = 25
-		add_dip_power = 25
-		add_mil_power = 25
-		if = {
-			limit = {
+		name = vn_missions.300.a
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = { 
 				OR = {
 					has_idea_group = aristocracy_ideas
 					has_idea_group = plutocracy_ideas
-				}
+				}	
 				war_score = 50
 			}
-			create_general = { tradition = 100 }
-			add_army_tradition = 10
-			add_adm_power = 75
-			add_dip_power = 75
-			add_mil_power = 75
-			hidden_effect = { #Possibly add opinion modifier with emperor or pope
-				add_years_of_income = 1  
-				add_country_modifier = {
-					name = "boh_aspire_for_local_control_event"
-					duration = -1
-				}
-				add_country_modifier = {
-					name = "boh_muster_our_strength_event"
-					duration = -1
-				}
-			}
-		}
+		}		
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
 	}
 	option = {
 		name = vn_missions.300.b
-		ai_chance = { factor = 0 }
-		add_prestige = 10	
+		ai_chance = { factor = 50 }
+		add_prestige = 10		
 		add_country_modifier = {
 			name = "pva_rise_event"
 			duration = 9125
-		}		
+		}
+	}
+	option = {
+		name = vn_missions.300.c
+		ai_chance = { factor = 50 }
+		trigger = {
+			OR = {
+				has_idea_group = aristocracy_ideas
+				has_idea_group = plutocracy_ideas
+			}
+			war_score = 50		
+		}
+		add_army_tradition = 10
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		hidden_effect = {
+			add_years_of_income = 1  
+			add_country_modifier = {
+				name = "boh_aspire_for_local_control_event"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "boh_muster_our_strength_event"
+				duration = -1
+			}
+		}
 	}
 }
 
-#Reunite Swabia (Swabia)
+#Reunite Swabia (Swabia/von Hohenstaufen)
 country_event = {
 	id = vn_missions.305
 	title = vn_missions.305.t
@@ -256,7 +266,13 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = { 
-		tag = WWS
+		OR = {
+			tag = WWS
+			AND = {
+				dynasty = "von Hohenstaufen"
+				mission_completed = "vn_sic_our_ancestral_domain"
+			}
+		}
 		army_size_percentage = 1
 		navy_size_percentage = 1
 		num_of_generals = 1
@@ -286,44 +302,54 @@ country_event = {
 	} 
 	
 	option = {
-		name = vn_missions.305.a
-		ai_chance = { factor = 100 }
-		add_adm_power = 25
-		add_dip_power = 25
-		add_mil_power = 25
-		if = {
-			limit = {
+		name = vn_missions.300.a
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = { 
 				OR = {
 					has_idea_group = aristocracy_ideas
 					has_idea_group = plutocracy_ideas
-				}
+				}	
 				war_score = 50
 			}
-			create_general = { tradition = 100 }
-			add_army_tradition = 10
-			add_adm_power = 75
-			add_dip_power = 75
-			add_mil_power = 75
-			hidden_effect = {
-				add_years_of_income = 1  
-				add_country_modifier = {
-					name = "wws_show_our_strength_event"
-					duration = -1
-				}
-				add_country_modifier = {
-					name = "wws_reunite_swabia_event"
-					duration = -1
-				}
-			}
-		}
+		}		
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
 	}
 	option = {
 		name = vn_missions.300.b
-		ai_chance = { factor = 0 }
-		add_prestige = 10
+		ai_chance = { factor = 50 }
+		add_prestige = 10		
 		add_country_modifier = {
 			name = "pva_rise_event"
 			duration = 9125
+		}
+	}
+	option = {
+		name = vn_missions.300.c
+		ai_chance = { factor = 50 }
+		trigger = {
+			OR = {
+				has_idea_group = aristocracy_ideas
+				has_idea_group = plutocracy_ideas
+			}
+			war_score = 50		
+		}
+		add_army_tradition = 10
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		hidden_effect = {
+			add_years_of_income = 1  
+			add_country_modifier = {
+				name = "wws_show_our_strength_event"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "wws_reunite_swabia_event"
+				duration = -1
+			}
 		}
 	}
 }
@@ -368,44 +394,54 @@ country_event = {
 	} 
 	
 	option = {
-		name = vn_missions.306.a
-		ai_chance = { factor = 100 }
-		add_adm_power = 25
-		add_dip_power = 25
-		add_mil_power = 25
-		if = {
-			limit = {
+		name = vn_missions.300.a
+		ai_chance = { factor = 50 }
+		trigger = {
+			NOT = { 
 				OR = {
 					has_idea_group = aristocracy_ideas
 					has_idea_group = plutocracy_ideas
-				}
+				}	
 				war_score = 50
 			}
-			create_general = { tradition = 100 }
-			add_army_tradition = 10
-			add_adm_power = 75
-			add_dip_power = 75
-			add_mil_power = 75
-			hidden_effect = {
-				add_years_of_income = 1  
-				add_country_modifier = {
-					name = "fla_the_wake_of_great_powers_event"
-					duration = -1
-				}
-				add_country_modifier = {
-					name = "fla_fight_event"
-					duration = -1
-				}
-			}
-		}
+		}		
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
 	}
 	option = {
 		name = vn_missions.300.b
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 50 }
 		add_prestige = 10		
 		add_country_modifier = {
 			name = "pva_rise_event"
 			duration = 9125
+		}
+	}
+	option = {
+		name = vn_missions.300.c
+		ai_chance = { factor = 50 }
+		trigger = {
+			OR = {
+				has_idea_group = aristocracy_ideas
+				has_idea_group = plutocracy_ideas
+			}
+			war_score = 50		
+		}
+		add_army_tradition = 10
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		hidden_effect = {
+			add_years_of_income = 1  
+			add_country_modifier = {
+				name = "fla_the_wake_of_great_powers_event"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "fla_fight_event"
+				duration = -1
+			}
 		}
 	}
 }

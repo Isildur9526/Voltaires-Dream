@@ -320,6 +320,39 @@ VN_repopulate_frontiers_mission = {
 					add_core = ROOT
 				}
 			}
+			4371 = {
+				if = {
+					limit = { is_city = no }
+					if = {
+						limit = {
+							CAS = { 
+								is_subject_of = ROOT 
+								any_owned_province = {
+									area = segovia_area
+								}
+							}
+						}
+						cede_province = CAS
+						add_core = CAS
+					}
+					else = {
+						cede_province = ROOT
+						add_core = ROOT
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							base_tax = 0
+							base_production = 0
+							base_manpower = 0
+						}
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
 			segovia_area = {
 				limit = {
 					OR = {
@@ -345,7 +378,13 @@ VN_repopulate_frontiers_mission = {
                     name = "cas_repopulate_frontiers_mission"
                     duration = 7300
                 }
-            }
+			}
+			4371 = {
+				add_province_modifier = {
+					name = "cas_repopulate_frontiers_mission"
+                    duration = 7300
+				}
+			}
         }
     }
 }

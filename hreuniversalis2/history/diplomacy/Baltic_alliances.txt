@@ -423,7 +423,13 @@ vassal = {
 vassal = {
 	first = LIV
 	second = KUR
-	start_date = 1290.1.1
+	start_date = 1245.1.1
+	end_date = 1251.2.3
+}
+vassal = {
+	first = LIV
+	second = KUR
+	start_date = 1253.4.4
 	end_date = 1560.5.20
 }
 

@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = germanic_monarchy
 government_rank = 5
 technology_group = western
 primary_culture = anglosaxon
@@ -11,6 +11,10 @@ historical_rival = HSC
 historical_rival = NOR
 historical_rival = NRM
 historical_friend = NOL
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
 
 1042.6.9 = {
 	add_country_modifier = {
@@ -26,14 +30,6 @@ historical_friend = NOL
 		adm = 2
 		dip = 3
 		mil = 2
-		leader = {
-			name = "Edward the Confessor"
-			type = general
-			shock = 0
-			fire = 0
-			manuever = 1
-			siege = 0
-		}
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = zealot_personality

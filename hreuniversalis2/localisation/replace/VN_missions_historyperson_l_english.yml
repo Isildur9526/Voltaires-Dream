@@ -170,6 +170,8 @@
  desc_lux_improve_our_reputation_mission: ""
  lux_masters_of_diplomacy_mission: "Masters of Diplomacy"
  desc_lux_masters_of_diplomacy_mission: ""
+ lux_dynastic_success_mission: "Dynastic Success"
+ desc_lux_dynastic_success_mission: ""
  lux_french_alliance_mission: "Alliance with France"
  desc_lux_french_alliance_mission: ""
  lux_fight_silesian_piasts_mission: "Conquered Silesia"
@@ -446,8 +448,12 @@
  desc_bgh_repeal_the_crusaders_mission: ""
  bgh_avoided_mongols_mission: "Halted the Mongols"
  desc_bgh_avoided_mongols_mission: ""
- bgh_ship_research_mission: "Naval Research"
- desc_bgh_ship_research_mission: "We chose to dedicate some of our resources into defending our navies against Greek Fire."
+ bgh_ship_research_event: "Naval Research"
+ desc_bgh_ship_research_event: "We chose to dedicate some of our resources into defending our navies against Greek Fire."
+ bgh_denied_ship_research_event: "Denied Naval Research"
+ desc_bgh_denied_ship_research_event: ""
+ bgh_umayyads_wiped_out_mission: "Umayyads Wiped Out"
+ desc_bgh_umayyads_wiped_out_mission: "The Umayyad Dynasty in Iberia has finanally been defeated."
  vn_missions.201.t: "Proposals for Naval Research"
  vn_missions.201.d: "For centuries, the navy our enemy the Byzantine Empire has been much feared by our naval fleets. Its secret weapon, known as Greek Fire, the strange substance burns everything it comes into contact with. No navy, no matter how strong, nor how well equipped, can resist. It is time that we dedicate some of our resources into defending our navies against such a substance."
  vn_missions.201.a: "No More Naval Defeats"
@@ -1444,6 +1450,8 @@
  desc_swi_universitat_basel_mission_p: ""
  swi_build_universities_mission_c: "Universität Basel"
  desc_swi_build_universities_mission_c: ""
+ swi_rottweiler_trade_mission: "Rottweiler Trade"
+ desc_swi_rottweiler_trade_mission: ""
  
 #Novgorod
  vn_nov_balance_of_power_title: "The Balance of Power"
@@ -1690,8 +1698,9 @@
 #Pavia
  vn_missions.300.t: "The Rebirth of Pavia"
  vn_missions.300.d: "From the 6th century to 774 Pavia was the capital of the Lombard Kingdom, whose control and power spanned throughout the Italian peninsula. After the kingdom's collapse at the hands of Charlemagne, the former political, social, and economic power of the city diminshed, despite Pavia remaining as the capital of the imperial Kingdom of Italy. In the pursuing political fragmentation consistent with the rest of Italy throughout the Middle Ages and beyond, Pavia, once the center of power in not only Lombardy but the entirety of Italy, became a self-governing commune, with authority only within the reaches of the city. But things changed in the 14th century. Under the dominion of its past rival Milan, Pavia was able to regain its past social power when the University of Pavia was founded. As the only university in the region for centuries, it the center of intellectual in Lombardy. The Certosa di Pavia was built, a monestary but also a marvel of architecture. If Pavia were able to muster political independence from the Milanese, time can only tell whether the city can regain its former might and glory."
- vn_missions.300.a: "The World Shall Await!"
+ vn_missions.300.a: "The World Shall Await"
  vn_missions.300.b: "We Are on the Right Path"
+ vn_missions.300.c: "The World Shall Await"
  pva_rise_event: "The Right Path"
  desc_pva_rise_event: "Our country has been prospering politically and economically."
  pva_rebirth_mission: "The Rebirth of Pavia"
@@ -1702,16 +1711,14 @@
 #Barcelona
  vn_missions.302.t: "Struggles of Barcelona"
  vn_missions.302.d: "Barcelona, being on the border between the Kingdom of France and the Muslim taifas, finds itself in a precarious state in which its independence is gravely threatened. The Saracens consistently root Christian cities throughout the Mediterranean, but Barcelona, with its close proximity, is especially affected. However, with the fragmentation and weakening of Barcelona's Muslim neighbors comes with an key opportunity to fill the power vacuum. The door has opened for the lands of Iberia to be brought back into Christian rule and Barcelona is on the footsteps to lead the campaign."
- vn_missions.302.a: "The World Shall Await!"
  brc_muster_our_strength_mission: "Muster Our Strength"
  desc_brc_muster_our_strength_mission: "Despite the general weakening of the Muslim taifas, they are still a dangerous force so victory will not come easily. Meanwhile, Morocco to the south may become our new threat."
  brc_emerge_undefeatable_mission: "Emerge Undefeatable"
  desc_brc_emerge_undefeatable_mission: "If the regions of Catalonia and around Valencia can be brought under the rule of Barcelona, we will become one of the most powerful states in the Western Mediterranean."
 
-#Swabia
+#Swabia/von Hohenstaufen
  vn_missions.305.t: "Reunite Swabia"
  vn_missions.305.d: "For centuries the lands of the old Stem Duchy of Swabia have been slipping from our control. Although the duchy remains intact, lands in the direct control of the Dukes of Swabia have been threatened by increasingly independent vassals. Swabia shall muster its strength and defeat any barrier to reestblishing dominance in the region and eventually reunite the territories of the stem duchy."
- vn_missions.305.a: "The World Shall Await!"
  wws_show_our_strength_event: "Show Our Strength"
  desc_wws_show_our_strength_event: "Swabia shall muster its strength and defeat any barrier to reestblishing dominance in the region."
  wws_reunite_swabia_event: "Reunite Swabia"
@@ -1720,9 +1727,17 @@
 #Flanders
  vn_missions.306.t: "Fight For Sovereignty"
  vn_missions.306.d: "Although surrounded by mighty dukes and kings and emperors, there is no reason for Flanders, the chief cloth exporter in Europe, a major trading partner of both Genoa and the Hanseatic League, and one of the most prosperous areas in the entirety of Christiendom, to be subject to the interests of mighty foreign rulers. Flanders must muster its strength, fight in the wake of the surrounding great powers, and show the world that the Flemish will maintain their sovereignty!"
- vn_missions.306.a: "The World Shall Await!"
  fla_the_wake_of_great_powers_event: "The Wake of Great Powers"
  desc_fla_the_wake_of_great_powers_event: "Flanders must fight and maintain its sovereignty, no matter what foreign rulers dictate!"
  fla_fight_event: "Fight For Sovereignty"
  desc_fla_fight_event: "Being surrounded by powerful monarchs, Flanders must constantly fight and prove itself on the battlefield to stay independent."
  golden_spurs_legacy: "Flanders has proved itself on the battlefield that it will fight for its independence, even if it is against someone as mighty as the King of France."
+
+#Brabant
+ vn_missions.307.t: "Fight For Sovereignty"
+ vn_missions.307.d: "Despite owning what for centuries was amongst the most prosperous cities in the world, Antwerpen, Brabant has always been subjugated to that of the interests of foreign powers, such as the Holy Roman Empire, the Kingdom of Spain, the Dukes of Burgundy, and Archdukes of Austria. If, under foreign domination, Brabant can prosper, one can only imagine what Brabant can become if goverened independently and locally."
+ brb_a_new_government_event: "Govern Independently"
+ desc_brb_a_new_government_event: "If Brabant can prosper under the foreign domination of the Holy Roman Empire, Spain, Austria, and Burgundy, one can only imagine what Brabant can become if goverened independently and locally."
+ brb_rise_event: "The Rise of Brabant"
+ desc_brb_rise_event: "The cities of Brabant, most notably Brussels and Antwerpen, are amongst the most prosperous in the entirety of the world."
+ 

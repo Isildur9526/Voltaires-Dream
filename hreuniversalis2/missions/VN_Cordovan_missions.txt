@@ -627,8 +627,8 @@ vn_crd_missions_slot_4 = {
                     limit = {
                         has_fort_trigger = yes
                     }
+                    add_base_manpower = 1
                 }
-                add_base_manpower = 1
             }
             custom_tooltip = vn_crd_construct_castles.tt
         }

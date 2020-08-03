@@ -13,7 +13,7 @@ vn_fcm_missions_slot_1 = {
     has_country_shield = yes
 
     vn_fcm_castle_supremacy = {
-        icon = mission_fort
+        icon = alpine_fortifications
         position = 1
         required_missions = {  }
         trigger = {
@@ -67,7 +67,7 @@ vn_fcm_missions_slot_1 = {
         }
     }
     vn_fcm_amis_italiens = {
-        icon = mission_noble_council
+        icon = friends_in_high_places
         position = 3
         required_missions = { vn_fcm_tete_hardie }
         trigger = {
@@ -98,7 +98,7 @@ vn_fcm_missions_slot_1 = {
         }
     }
     vn_fcm_filium_papalis = {
-        icon = mission_religious
+        icon = answer_the_roman_question
         position = 4
         required_missions = { vn_fcm_amis_italiens }
         trigger = {
@@ -141,7 +141,7 @@ vn_fcm_missions_slot_1 = {
         }
     }
     vn_fcm_royal_espionage = {
-        icon = mission_noble_council
+        icon = all_bases_covered
         position = 5
         required_missions = { vn_fcm_filium_papalis }
         trigger = {
@@ -222,7 +222,7 @@ vn_fcm_missions_slot_2 = {
     has_country_shield = yes
 
     vn_fcm_conquer_lombardy = {
-        icon = mission_italian_conquest
+        icon = prosper_in_piedmont
         position = 4
         required_missions = { vn_fcm_amis_italiens vn_fcm_conquer_transjurania }
         provinces_to_highlight = {
@@ -333,7 +333,7 @@ vn_fcm_missions_slot_3 = {
         }
     }
     vn_fcm_conquer_provence = {
-        icon = mission_unite_home_region
+        icon = the_gallic_wars
         position = 5
 		required_missions = { vn_fcm_conquer_cisjurania }
 		provinces_to_highlight = {
@@ -352,7 +352,7 @@ vn_fcm_missions_slot_3 = {
         }
     }
     vn_fcm_freigraf = {
-        icon = mission_unite_home_region
+        icon = holy_state
         position = 6
         required_missions = { vn_fcm_conquer_provence vn_fcm_comtois_knights }
         trigger = {
@@ -458,7 +458,7 @@ vn_fcm_missions_slot_4 = {
         }
     }
     vn_fcm_conquer_burgundy = {
-        icon = mission_unite_home_region
+        icon = conquer_burgundy
         position = 3
         required_missions = { vn_fcm_centralize_the_county }
         provinces_to_highlight = {
@@ -645,7 +645,7 @@ vn_fcm_missions_slot_5 = {
         }
     }
     vn_fcm_burgundian_culture = {
-        icon = mission_early_modern_university
+        icon = les_invalides
         position = 4
         required_missions = { vn_fcm_comte_cheese vn_fcm_conquer_burgundy }
         trigger = {

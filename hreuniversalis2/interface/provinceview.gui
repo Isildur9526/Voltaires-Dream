@@ -5623,6 +5623,12 @@ guiTypes = {
 			maxHeight = 18
 			text = "2000¤"	
 		}
+
+		iconType = {
+			name = "courthouse_to_watchman_arrow"
+			position = { x = 263 y = 41 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
 				
 		iconType = {
 			name = "town_hall_to_courthouse_arrow"
@@ -5874,6 +5880,12 @@ guiTypes = {
 			maxWidth = 128
 			maxHeight = 18
 			text = "2000¤"	
+		}
+
+		iconType = {
+			name = "artisan_to_workshop_house_arrow"
+			position = { x = 263 y = 121 }
+			spriteType = "GFX_building_upgrade_icon"
 		}		
 		
 		iconType = {
@@ -6051,6 +6063,12 @@ guiTypes = {
 			maxHeight = 18
 			text = "2000¤"	
 		}	
+
+		iconType = {
+			name = "monument_to_temple_arrow"
+			position = { x = 263 y = 201 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
 
 		iconType = {
 			name = "temple_to_cathedral_arrow"

@@ -1349,6 +1349,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PAL
+			swap_non_generic_missions = yes
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -1793,6 +1794,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = EFR
+			swap_non_generic_missions = yes
 			change_government = monarchy
 			add_government_reform = feudalism_reform
 			add_country_modifier = {
@@ -1876,6 +1878,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FRI
+			swap_non_generic_missions = yes
 			change_government = monarchy
 			add_government_reform = feudalism_reform
 			add_country_modifier = {
@@ -2151,6 +2154,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FKE
+			swap_non_generic_missions = yes
 			custom_tooltip = frankish_culture_provinces_tooltip
 			set_country_flag = unformable
 			hidden_effect = {
@@ -2591,6 +2595,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SER
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -3286,6 +3291,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = IFQ
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = { government = tribal }
@@ -4006,6 +4012,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = MAZ
+			swap_non_generic_missions = yes
 			set_capital = 1138
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -4076,6 +4083,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PIE
+			swap_non_generic_missions = yes
 			set_capital = 1009
 			if = {
 				limit = {
@@ -4146,6 +4154,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BRI
+			swap_non_generic_missions = yes
 			set_capital = 2173
 			if = {
 				limit = {

@@ -404,9 +404,7 @@ tribe_becomes_monarchy_reform = {
 		}
 		change_government = monarchy
 	}
-	ai = {
-		factor = 1
-	}
+	ai = { factor = 1 }
 }
 
 tribe_becomes_republic_reform = {
@@ -441,24 +439,7 @@ tribe_becomes_republic_reform = {
 		}
 		change_government = republic
 	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 0
-			OR = {
-				has_reform = steppe_horde
-				has_reform = great_mongol_state_reform
-				NOT = { trade_income_percentage = 0.3 }
-			}
-		}
-		modifier = {
-			factor = 1.5
-			OR = {
-				num_of_centers_of_trade = 5
-				trade_income_percentage = 0.4
-			}
-		}
-	}
+	ai = { factor = 0 }
 }
 
 tribe_becomes_theocracy_reform = {
@@ -495,17 +476,7 @@ tribe_becomes_theocracy_reform = {
 		}
 		change_government = theocracy
 	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 0
-			OR = {
-				has_reform = steppe_horde
-				has_reform = great_mongol_state_reform
-				NOT = { religion_group = muslim }
-			}
-		}
-	}
+	ai = { factor = 0 }
 }
 
 tribe_becomes_horde_reform = {

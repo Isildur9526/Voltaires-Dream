@@ -12,7 +12,7 @@ vn_epi_missions_slot_1 = {
     has_country_shield = yes
 
     vn_epi_defend_coasts = {
-        icon = mission_raid_christian_trade
+        icon = defeat_the_english
         position = 1
         required_missions = {  }
         trigger = {
@@ -102,7 +102,7 @@ vn_epi_missions_slot_1 = {
         }
     }
     vn_epi_conquer_apulia = {
-        icon = mission_invade_island
+        icon = dalmatian_conquest
         position = 3
         required_missions = { vn_epi_conquer_korfu }
         provinces_to_highlight = {
@@ -133,7 +133,7 @@ vn_epi_missions_slot_1 = {
         }
     }
     vn_epi_conquer_sicily = {
-        icon = mission_empire
+        icon = king_of_sicily
         position = 5
 		required_missions = { vn_epi_conquer_apulia }
 		provinces_to_highlight = {
@@ -172,7 +172,7 @@ vn_epi_missions_slot_2 = {
     has_country_shield = yes
 
     vn_epi_stabilization = {
-        icon = mission_high_income
+        icon = despot_of_epirus
         position = 1
         required_missions = {  }
         trigger = {
@@ -245,7 +245,7 @@ vn_epi_missions_slot_2 = {
         }
     }
     vn_epi_conquer_campania = {
-        icon = mission_unite_home_region
+        icon = italian_riches
         position = 4
         required_missions = { vn_epi_conquer_apulia }
         provinces_to_highlight = {
@@ -269,7 +269,7 @@ vn_epi_missions_slot_2 = {
         }
     }
     vn_epi_conquer_rome = {
-        icon = mission_unite_home_region
+        icon = answer_the_roman_question
         position = 5
         required_missions = { vn_epi_conquer_campania }
         provinces_to_highlight = {
@@ -303,7 +303,7 @@ vn_epi_missions_slot_3 = {
     has_country_shield = yes
 
     vn_epi_settle_greek_refugees = {
-        icon = mission_unite_home_region
+        icon = evengelize_the_faith
         position = 1
         required_missions = { }
         trigger = {
@@ -338,7 +338,7 @@ vn_epi_missions_slot_3 = {
         }
     }
     vn_epi_conquer_bulgaria = {
-        icon = mission_unite_home_region
+        icon = consolidate_the_stadholders
         position = 2
         required_missions = { vn_epi_stabilization }
         provinces_to_highlight = {
@@ -386,7 +386,7 @@ vn_epi_missions_slot_3 = {
         }
     }
     vn_epi_conquer_rashka = {
-        icon = mission_unite_home_region
+        icon = defeat_the_serbs
         position = 4
         required_missions = { vn_epi_conquer_albania }
         provinces_to_highlight = {
@@ -410,7 +410,7 @@ vn_epi_missions_slot_3 = {
         }
     }
     vn_epi_conquer_serbia = {
-        icon = mission_unite_home_region
+        icon = despot_stafans_legacy
         position = 5
         required_missions = { vn_epi_conquer_rashka }
         provinces_to_highlight = {
@@ -444,7 +444,7 @@ vn_epi_missions_slot_4 = {
     has_country_shield = yes
 
     vn_epi_papal_embassy = {
-        icon = mission_religious
+        icon = catholic_confraternity
         position = 1
         required_missions = {  }
         trigger = {
@@ -477,7 +477,7 @@ vn_epi_missions_slot_4 = {
         }
     }
     vn_epi_conquer_thessaly = {
-        icon = mission_unite_home_region
+        icon = retake_thessaly
         position = 2
         required_missions = { vn_epi_papal_embassy }
         provinces_to_highlight = {
@@ -522,7 +522,7 @@ vn_epi_missions_slot_4 = {
         }
     }
     vn_epi_conquer_macedonia = {
-        icon = mission_unite_home_region
+        icon = take_constantinople
         position = 3
         required_missions = { vn_epi_conquer_thessaly }
         provinces_to_highlight = {
@@ -559,7 +559,7 @@ vn_epi_missions_slot_4 = {
         }
     }
     vn_epi_conquer_thrace = {
-        icon = mission_city_of_the_world's_desire
+        icon = the_latin_empire
         position = 4
         required_missions = { vn_epi_conquer_macedonia }
         provinces_to_highlight = {
@@ -577,7 +577,7 @@ vn_epi_missions_slot_4 = {
         }
     }
     vn_epi_restore_byzantium = {
-        icon = mission_pf_cross
+        icon = a_place_among_the_great_powers
         position = 5
         required_missions = { vn_epi_conquer_thrace vn_epi_conquer_achaea }
         trigger = {
@@ -609,7 +609,7 @@ vn_epi_missions_slot_5 = {
     has_country_shield = yes
 
     vn_epi_develop_atra = {
-        icon = mission_eastern_european_city
+        icon = eastern_catholicization
         position = 1
         required_missions = {  }
         provinces_to_highlight = {
@@ -632,7 +632,7 @@ vn_epi_missions_slot_5 = {
         }
     }
     vn_epi_church_of_the_parigoritissa = {
-        icon = mission_european_church
+        icon = end_the_schism
         position = 2
         required_missions = { vn_epi_develop_atra }
         provinces_to_highlight = {
@@ -676,7 +676,7 @@ vn_epi_missions_slot_5 = {
         }
     }
     vn_epi_conquer_athens = {
-        icon = mission_unite_home_region
+        icon = foothold_in_greece
         position = 3
         required_missions = { vn_epi_conquer_thessaly }
         provinces_to_highlight = {
@@ -714,7 +714,7 @@ vn_epi_missions_slot_5 = {
         }
     }
     vn_epi_conquer_achaea = {
-        icon = mission_unite_home_region
+        icon = secure_the_republic
         position = 4
         required_missions = { vn_epi_conquer_athens }
         provinces_to_highlight = {

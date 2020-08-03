@@ -1,0 +1,999 @@
+#Papal missions
+#by ShyGuy13
+
+vn_pap_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = PAP
+        always = no
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pap_expedition_to_barbastro = {
+        icon = mission_turning_the_tables
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            owner = {
+                capital_scope = {
+                    superregion = iberia_superregion
+                }
+                religion = catholic
+                NOT = {
+                    has_opinion = {
+                        who = ROOT
+                        value = 100
+                    }
+                }
+            }
+        }
+        trigger = {
+            calc_true_if = {
+                desc = vn_pap_expedition_to_barbastro.tt
+                all_country = {
+                    capital_scope = {
+                        superregion = iberia_superregion
+                    }
+                    religion = catholic
+                    has_opinion = {
+                        who = ROOT
+                        value = 100
+                    }
+                }
+                amount = 3
+            }
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_sanction_the_reconquista = {
+        icon = king_of_aragon
+        position = 2
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            #
+        }
+    }
+    vn_pap_christian_iberia = {
+        icon = a_question_of_spain
+        position = 3
+        required_missions = {  }
+        provinces_to_highlight = {
+            superregion = iberia_superregion
+            owner = {
+                NOT = { religion_group = christian }
+            }
+        }
+        trigger = {
+            iberia_superregion = {
+                type = all
+                owner = {
+                    religion_group = christian
+                }
+            }
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_missionaries_to_sweden = {
+        #icon = 
+        position = 4
+		required_missions = {  }
+		provinces_to_highlight = {
+			owned_by = SWE
+		}
+        trigger = {
+            if = {
+				limit = {
+					exists = SWE
+				}
+				# sweden had event the cross and the raven
+				SWE = {
+					religion = catholic
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			else = {
+				gotaland_region = {
+					type = all
+					religion = catholic
+				}
+			}
+        }
+        effect = {
+            if = {
+				limit = { has_dlc = "Emperor" SWE = { religion = catholic } }
+				SWE = {
+					country_event = { id = flavor_pap.12 }
+				}
+				custom_tooltip = {
+					tooltip = vn_pap_missionaries_to_sweden.tt
+				}
+			}
+			add_prestige = 10
+        }
+    }
+    vn_pap_northern_crusades = {
+        icon = mission_crusade
+        position = 5
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_european_christianization = {
+        icon = spread_piety
+        position = 6
+        required_missions = {  }
+        provinces_to_highlight = {
+            continent = europe
+            NOT = { religion = catholic }
+        }
+        trigger = {
+            calc_true_if = {
+                desc = vn_pap_european_christianization.tt
+                all_province = {
+                    continent = europe
+                    religion = catholic
+                }
+                amount = 2500
+            }
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_milites_christianus = {
+        #icon = 
+        position = 7
+        required_missions = {  }
+        trigger = {
+            army_size = 25
+            num_of_generals = 2
+            land_maintenance = 1
+        }
+        effect = {
+            add_army_professionalism = 0.03
+        }
+	}
+    vn_pap_form_the_inquistion = {
+        icon = support_the_orders
+        position = 10
+        required_missions = { vn_pap_milites_christianus }
+        trigger = {
+            
+        }
+        effect = {
+            # event
+        }
+    }
+    vn_pap_weather_the_reformation = {
+        icon = victor_for_the_true_faith
+        position = 11
+        required_missions = { vn_pap_form_the_inquistion }
+        trigger = {
+            is_religion_enabled = protestant
+            is_religion_enabled = reformed
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_council_of_trent = {
+       # icon = 
+        position = 12
+        required_missions = { vn_pap_weather_the_reformation }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_league_wars = {
+       # icon = 
+        position = 13
+        required_missions = { vn_pap_council_of_trent }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_catholic_italy = {
+        icon = rule_italy
+        position = 14
+        required_missions = { vn_pap_league_wars }
+        provinces_to_highlight = {
+            OR = {
+                superregion = italy_superregion
+                superregion = sicily_superregion
+            }
+            NOT = { religion = catholic }
+        }
+        trigger = {
+            NOT = {
+                any_province = {
+                    superregion = italy_superregion
+                    NOT = { religion = catholic }
+                }
+            }
+            NOT = {
+                any_province = {
+                    superregion = sicily_superregion
+                    NOT = { religion = catholic }
+                }
+            }
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_pap_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = PAP
+        always = no
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pap_supremacy_and_infallibility = {
+       # icon = 
+        position = 2
+        required_missions = { vn_pap_in_nomine_domini }
+        trigger = {
+            is_part_of_hre = no
+            has_institution = investiture
+        }
+        effect = {
+            add_devotion = 5
+            add_legitimacy = 5
+            if = {
+                limit = { NOT = { adm = 6 } }
+                change_adm = 1
+            }
+            else = { add_adm_power = 50 }
+            if = {
+                limit = { NOT = { dip = 6 } }
+                change_dip = 1
+            }
+            else = { add_dip_power = 50 }
+            if = {
+                limit = { NOT = { mil = 6 } }
+                change_mil = 1
+            }
+            else = { add_mil_power = 50 }
+        }
+    }
+    vn_pap_apulian_diplomacy = {
+       # icon = 
+        position = 3
+        required_missions = {  }
+		provinces_to_highlight = {
+			
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_influence_the_electors = {
+        icon = influence_the_princes
+        position = 5
+        required_missions = { vn_pap_guelphs_and_ghibellines }
+        trigger = {
+			calc_true_if = {
+				amount = 5
+				all_elector = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+        }
+        effect = {
+            #emperor = {
+				#event
+			#}
+        }
+    }
+    vn_pap_italian_emperorship = {
+        icon = invest_in_the_provinces
+        position = 6
+        required_missions = { vn_pap_influence_the_electors vn_pap_guelphian_victory }
+        trigger = {
+            if = {
+                limit = {
+                    hre_size = 1
+                }
+                emperor = {
+                    culture_group = latin
+                    capital_scope = {
+                        OR = {
+                            superregion = italy_superregion
+                            superregion = sicily_superregion
+                        }
+                    }
+                }
+            }
+            else = {
+                total_development = 1000
+            }
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_council_of_clermont = {
+        icon = counter_reformation
+        position = 7
+        required_missions = {  }
+        trigger = {
+            NOT = { current_age = age_of_discovery }
+            custom_trigger_tooltip = {
+                tooltip = vn_pap_council_of_clermont.tt
+                OR = {
+                    is_in_war = {
+                        casus_belli = cb_grand_crusade
+                        war_score = 25
+                    }
+                    is_in_war = {
+                        casus_belli = cb_grand_heretic
+                        war_score = 25
+                    }
+                }
+            }
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_conquer_jerusalem = {
+        icon = jerusalem
+        position = 8
+        required_missions = {  }
+        provinces_to_highlight = {
+            
+        }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_revive_christian_communities = {
+        icon = eastern_catholicization
+        position = 9
+        required_missions = { vn_pap_conquer_jerusalem }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_cradle_of_christianity = {
+        icon = convert_the_holy_lands
+        position = 10
+        required_missions = { vn_pap_revive_christian_communities }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_combat_heresy = {
+        icon = crush_heretic_strongholds
+        position = 11
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_pax_et_treuga_dei = {
+        icon = peace_in_europe
+        position = 12
+        required_missions = { vn_pap_combat_heresy }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_pap_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = PAP
+        always = no
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pap_in_nomine_domini = {
+        icon = sway_the_pope
+        position = 1
+        required_missions = {  }
+        trigger = {
+			legitimacy_equivalent = 90
+            num_of_cardinals = 3
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_guelphs_and_ghibellines = {
+        icon = the_italian_league
+        position = 4
+        required_missions = {  }
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pap_guelphs_and_ghibellines.tt
+				has_global_flag = guelph_ghib_enabled
+			}
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_guelphian_victory = {
+        icon = centralized_empire
+        position = 5
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_conquer_egypt = {
+        icon = mission_arabian_fort
+        position = 9
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_conquer_tunis = {
+        icon = crusader_fleet
+        position = 10
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_mission_to_the_mongols = {
+        icon = mission_to_china
+        position = 11
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}
+
+vn_pap_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = PAP
+        always = no
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pap_conquer_latium = {
+       # icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_conquer_spoleto = {
+       # icon = 
+        position = 2
+        required_missions = { vn_pap_conquer_latium }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_empire_of_the_allmighty = {
+        icon = kingdom_of_heaven
+        position = 7
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_conquer_constantinople = {
+        icon = the_latin_empire
+        position = 8
+        required_missions = {  }
+        provinces_to_highlight = {
+            
+        }
+        trigger = {
+
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_heal_the_schism = {
+        icon = take_constantinople
+        position = 10
+        required_missions = {  }
+        provinces_to_highlight = {
+			OR = {
+				province_id = 2233	#Constaninople
+				province_id = 2708	#Vatican
+				province_id = 4974	#Jerusalem
+				province_id = 5022	#Alexandria
+				province_id = 3053	#Antioch
+			}
+            OR = {
+                NOT = { religion = catholic }
+                owner = {
+                    NOT = { religion = catholic }
+                }
+            }
+		}
+		trigger = {
+			2233 = {
+				religion = catholic
+				owner = {
+                    religion = catholic
+                }
+			}
+			2708 = {
+				religion = catholic
+				owner = {
+                    religion = catholic
+                }
+			}
+			4974 = {
+				religion = catholic
+				owner = {
+                    religion = catholic
+                }
+			}
+			5022 = {
+				religion = catholic
+				owner = {
+                    religion = catholic
+                }
+			}
+			3053 = {
+				religion = catholic
+				owner = {
+                    religion = catholic
+                }
+			}
+		}
+        effect = {
+            add_devotion = 10
+            add_legitimacy = 10
+            if = {
+                limit = { has_dlc = "Emperor" }
+                custom_tooltip = emp_pap_end_the_schism_tt
+                hidden_effect = {
+                    every_country = {
+                        limit = { 
+                            religion = orthodox 
+                            knows_country = PAP
+                        }
+                        country_event = { id = flavor_pap.11 }
+                    }
+                }
+            }
+            2233 = {
+				if = {
+                    limit = {
+                        NOT = {
+                            has_building = monument
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    add_building = monument
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = monument
+                    add_building = temple
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = temple
+                    add_building = cathedral
+                }
+                else = {
+                    add_base_tax = 3
+                }
+			}
+			2708 = {
+				if = {
+                    limit = {
+                        NOT = {
+                            has_building = monument
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    add_building = monument
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = monument
+                    add_building = temple
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = temple
+                    add_building = cathedral
+                }
+                else = {
+                    add_base_tax = 3
+                }
+			}
+			4974 = {
+				if = {
+                    limit = {
+                        NOT = {
+                            has_building = monument
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    add_building = monument
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = monument
+                    add_building = temple
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = temple
+                    add_building = cathedral
+                }
+                else = {
+                    add_base_tax = 3
+                }
+			}
+			5022 = {
+				if = {
+                    limit = {
+                        NOT = {
+                            has_building = monument
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    add_building = monument
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = monument
+                    add_building = temple
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = temple
+                    add_building = cathedral
+                }
+                else = {
+                    add_base_tax = 3
+                }
+			}
+			3053 = {
+				if = {
+                    limit = {
+                        NOT = {
+                            has_building = monument
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    add_building = monument
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = temple
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = monument
+                    add_building = temple
+                }
+                else_if = {
+                    limit = {
+                        NOT = {
+                            has_building = cathedral
+                        }
+                    }
+                    remove_building = temple
+                    add_building = cathedral
+                }
+                else = {
+                    add_base_tax = 3
+                }
+			}
+        }
+    }
+    vn_pap_establish_swiss_guard = {
+        icon = form_the_swiss_guard
+        position = 12
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            if = {
+                limit = { has_dlc = "Emperor" }
+                set_country_flag = pap_swiss_guard_mission_flag
+                custom_tooltip = emp_pap_swiss_guard_mercs_enabled
+                country_event = { id = papacy_events.1 }
+            }
+            else = {
+                add_army_tradition = 15
+                add_mil_power = 25
+            }
+        }
+	}
+}
+
+vn_pap_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = PAP
+        always = no
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pap_papal_treasuries = {
+      #  icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            if = {
+				limit = {
+					has_dlc = "Emperor"
+				}
+				curia_treasury_size = 2500
+			}
+			treasury = 500
+        }
+        effect = {
+            add_inflation = -1
+        }
+    }
+    vn_pap_catholic_splendour = {
+        icon = italian_riches
+        position = 2
+        required_missions = {  }
+        trigger = {
+			if = {
+				limit = { has_dlc = "Mandate of Heaven" }
+				OR = {
+					in_golden_age = yes
+					has_had_golden_age = yes
+				}
+            }
+            else = {
+                stability = 3
+            }
+			prestige = 80
+        }
+        effect = {
+            #add_country_modifier = {
+            #    name = pap_catholic_splendour_mission
+            #    duration = 9125
+            #}
+        }
+    }
+    vn_pap_a_courteous_gift = {
+        icon = negotiate_for_avignon
+        position = 6
+        required_missions = {  }
+        trigger = {
+			# event triggered
+            owns = 202
+        }
+        effect = {
+            #202 = {
+            #    add_province_modifier = {
+            #        name = pap_a_courteous_gift_mission
+            #        duration = 9125
+            #    }
+            #}
+        }
+    }
+    vn_pap_babylonian_captivity = {
+       # icon = 
+        position = 7
+        required_missions = {  }
+        trigger = {
+            is_religion_enabled = catholique
+        }
+        effect = {
+            #add_country_modifier = {
+            #    name = pap_babylonian_captivity_mission
+            #    duration = -1
+            #}
+        }
+    }
+    vn_pap_end_anti_papacy = {
+       # icon = 
+        position = 8
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_the_city_of_god = {
+       # icon = 
+        position = 9
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_catholic_scholasticism = {
+        icon = mission_rb_the_education_acts
+        position = 10
+        required_missions = {  }
+        trigger = {
+            has_institution = universities
+			num_of_owned_provinces_with = {
+				value = 5
+				has_education_building_trigger = yes
+			}	
+        }
+        effect = {
+            
+        }
+    }
+    vn_pap_the_vatican_library = {
+        icon = found_the_vatican_library
+        position = 12
+        required_missions = {  }
+        trigger = {
+            owns = 2708
+        }
+        effect = {
+            if = {
+				limit = { has_dlc = "Emperor" }
+				set_country_flag = vatican_library_mission_flag
+				country_event = {
+					id = papacy_events.11
+				}
+			}
+			else = {
+				add_prestige = 10
+			}
+        }
+    }
+    vn_pap_sistine_chapel = {
+        icon = new_st_peters_basilica
+        position = 13
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_apostolic_authority = {
+        icon = a_place_among_the_great_powers
+        position = 14
+        required_missions = {  }
+        trigger = {
+            has_reform_level = 8
+            absolutism = 50
+        }
+        effect = {
+            
+        }
+	}	
+}

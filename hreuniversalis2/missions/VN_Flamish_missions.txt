@@ -1,4 +1,4 @@
-#Flamish Ideas
+#Flamish missions
 #By ShyGuy13
 
 vn_fla_missions_slot_1 = {
@@ -196,7 +196,7 @@ vn_fla_missions_slot_1 = {
         }
     }
     vn_fla_conquer_the_holy_land = {
-        icon = mission_crusade
+        icon = jerusalem
         required_missions = { vn_fla_pilgrimage_to_jersualem }
         provinces_to_highlight = {
             region = palestine_region
@@ -233,7 +233,7 @@ vn_fla_missions_slot_2 = {
 
     vn_fla_join_the_hundred_years_war = {
         position = 2
-		icon = mission_humiliate_provence
+		icon = the_hundred_years_war
         required_missions = { vn_fla_twofold_fiefdom vn_fla_conquer_calais }
 		trigger = {
             OR = {
@@ -308,7 +308,7 @@ vn_fla_missions_slot_2 = {
     }
     vn_fla_conquer_brabant = {
         position = 3
-        icon = mission_have_two_subjects
+        icon = develop_naples
         required_missions = { vn_fla_conquer_antwerp }
         provinces_to_highlight = {
             area = brabant_area
@@ -331,7 +331,7 @@ vn_fla_missions_slot_2 = {
         }
     }
     vn_fla_conquer_utrecht = {
-        icon = mission_have_two_subjects
+        icon = develop_provence
         required_missions = { vn_fla_conquer_brabant }
         provinces_to_highlight = {
             area = utrecht_area
@@ -354,7 +354,7 @@ vn_fla_missions_slot_2 = {
         }
     }
     vn_fla_conquer_holland = {
-		icon = mission_have_two_subjects
+		icon = wars_of_religion
         required_missions = { vn_fla_conquer_utrecht }
         provinces_to_highlight = {
             area = holland_area
@@ -611,7 +611,7 @@ vn_fla_missions_slot_4 = {
     }
     vn_fla_conquer_luxembourg = {
         position = 5
-		icon = mission_unite_home_region
+		icon = issue_general_reglement
         required_missions = { vn_fla_conquer_liege }
         provinces_to_highlight = {
             area = luxemburg_area
@@ -645,7 +645,7 @@ vn_fla_missions_slot_5 = {
 
 	vn_fla_establish_wool_guilds = {
 		position = 1
-		icon = mission_trade_company_region_abroad
+		icon = interest_of_holland
         required_missions = {}
         provinces_to_highlight = {
             area = flanders_area
@@ -672,7 +672,7 @@ vn_fla_missions_slot_5 = {
         }
     }
     vn_fla_flamish_trade_fleet = {
-		icon = mission_south_indian_trade
+		icon = indonesian_trade
 		required_missions = { vn_fla_establish_wool_guilds }
 		trigger = {
             navy_size_percentage = 1
@@ -687,7 +687,7 @@ vn_fla_missions_slot_5 = {
         }
     }
     vn_fla_expand_brugges = {
-		icon = mission_shipyards_of_gujarat
+		icon = toulon_dockyards
         required_missions = { vn_fla_flamish_trade_fleet vn_fla_renovate_gravensteen }
         provinces_to_highlight = {
             province_id = 896
@@ -733,12 +733,12 @@ vn_fla_missions_slot_5 = {
 		effect = {
 			add_country_modifier = {
                 name = fla_establish_cloth_hall_mission
-                duration = -1
+                duration = 9125
             }
         }
     }
     vn_fla_dominate_the_channel = {
-		icon = mission_entrepot_of_india
+		icon = imperial_navy
 		required_missions = { vn_fla_establish_cloth_hall }
 		provinces_to_highlight = {
 			province_id = 2268

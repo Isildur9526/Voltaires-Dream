@@ -7,10 +7,7 @@ technology_group = western
 capital = 1055
 
 1044.1.14 = {
-	add_country_modifier = {
-		name = "priory_modifier"
-		duration = -1
-	}
+	set_estate_privilege = estate_church_priory
 	monarch = {
 		name = "Beatrix"
 		dynasty = "Salier"

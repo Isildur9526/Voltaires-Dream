@@ -1019,6 +1019,8 @@ merc_almogavars = {
 			primary_culture = andalucian
 		}
 		OR = {
+			current_age = age_of_empire
+			current_age = age_of_holy_wars
 			current_age = age_of_crisis
 			current_age = age_of_dynasticism
 			current_age = age_of_discovery

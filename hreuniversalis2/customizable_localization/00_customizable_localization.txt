@@ -410,6 +410,24 @@ defined_text = {
 			has_country_modifier = qarmati_scholar_modifier
 		}
 	}
+	text = {
+		localisation_key = ashkenazi_school
+		trigger = {
+			has_country_modifier = ashkenazi_scholar_modifier
+		}
+	}
+	text = {
+		localisation_key = sephardi_school
+		trigger = {
+			has_country_modifier = sephardi_scholar_modifier
+		}
+	}
+	text = {
+		localisation_key = mizrahi_school
+		trigger = {
+			has_country_modifier = mizrahi_scholar_modifier
+		}
+	}
 }
 
 defined_text = {
@@ -2666,5 +2684,19 @@ defined_text = {
 	}
 	text = {
 		localisation_key = sin_adultery
+	}
+}
+
+#Germanic Monarchies
+defined_text = {
+    name = GetGermanicAssembly
+
+    text = {
+        localisation_key = string_thingi
+        trigger = { culture_group = scandinavian }
+    }
+	text = {
+        localisation_key = string_witenagemot
+        trigger = { culture_group = british }
 	}
 }

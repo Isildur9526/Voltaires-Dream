@@ -4927,19 +4927,17 @@ estate_burghers_build_production_building_in_y = {
 			OR = {
 				AND = {
 					NOT = { has_building = artisan }
-					num_free_building_slots = 1
-				}
-				AND = {
-					ROOT = { adm_tech = 38 }
 					NOT = { has_building = workshop }
 					num_free_building_slots = 1
 				}
 				AND = {
+					ROOT = { adm_tech = 38 }
+					has_building = artisan
+					NOT = { has_building = workshop }
+				}
+				AND = {
 					ROOT = { adm_tech = 60 }
-					OR = {
-						has_building = workshop
-						num_free_building_slots = 1
-					}
+					has_building = workshop
 				}
 			}
 			NOT = { trade_goods = silver }
@@ -4957,19 +4955,17 @@ estate_burghers_build_production_building_in_y = {
 					OR = {
 						AND = {
 							NOT = { has_building = artisan }
-							num_free_building_slots = 1
-						}
-						AND = {
-							ROOT = { adm_tech = 38 }
 							NOT = { has_building = workshop }
 							num_free_building_slots = 1
 						}
 						AND = {
+							ROOT = { adm_tech = 38 }
+							has_building = artisan
+							NOT = { has_building = workshop }
+						}
+						AND = {
 							ROOT = { adm_tech = 60 }
-							OR = {
-								has_building = workshop
-								num_free_building_slots = 1
-							}
+							has_building = workshop
 						}
 					}
 					NOT = { trade_goods = silver }
@@ -4995,19 +4991,17 @@ estate_burghers_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -5032,19 +5026,17 @@ estate_burghers_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -5059,19 +5051,17 @@ estate_burghers_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -5096,19 +5086,17 @@ estate_burghers_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -5119,6 +5107,18 @@ estate_burghers_build_production_building_in_y = {
 			if = {
 				limit = {
 					has_building = workshop
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_burghers_build_production_building_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = artisan
+					NOT = { has_building = workshop }
 				}
 				ROOT = {
 					set_variable = {
@@ -5150,11 +5150,25 @@ estate_burghers_build_production_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_burghers_build_production_building_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = counting_house
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_burghers_build_production_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = counting_house
+					has_building = workshop
+				}
 			}
 		}
 		else = {
@@ -5862,19 +5876,17 @@ estate_vaisyas_build_production_building_in_y = {
 			OR = {
 				AND = {
 					NOT = { has_building = artisan }
-					num_free_building_slots = 1
-				}
-				AND = {
-					ROOT = { adm_tech = 38 }
 					NOT = { has_building = workshop }
 					num_free_building_slots = 1
 				}
 				AND = {
+					ROOT = { adm_tech = 38 }
+					has_building = artisan
+					NOT = { has_building = workshop }
+				}
+				AND = {
 					ROOT = { adm_tech = 60 }
-					OR = {
-						has_building = workshop
-						num_free_building_slots = 1
-					}
+					has_building = workshop
 				}
 			}
 			NOT = { trade_goods = silver }
@@ -5892,19 +5904,17 @@ estate_vaisyas_build_production_building_in_y = {
 					OR = {
 						AND = {
 							NOT = { has_building = artisan }
-							num_free_building_slots = 1
-						}
-						AND = {
-							ROOT = { adm_tech = 38 }
 							NOT = { has_building = workshop }
 							num_free_building_slots = 1
 						}
 						AND = {
+							ROOT = { adm_tech = 38 }
+							has_building = artisan
+							NOT = { has_building = workshop }
+						}
+						AND = {
 							ROOT = { adm_tech = 60 }
-							OR = {
-								has_building = workshop
-								num_free_building_slots = 1
-							}
+							has_building = workshop
 						}
 					}
 					NOT = { trade_goods = silver }
@@ -5930,19 +5940,17 @@ estate_vaisyas_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -5967,19 +5975,17 @@ estate_vaisyas_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -5994,19 +6000,17 @@ estate_vaisyas_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -6031,19 +6035,17 @@ estate_vaisyas_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -6054,6 +6056,18 @@ estate_vaisyas_build_production_building_in_y = {
 			if = {
 				limit = {
 					has_building = workshop
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_vaisyas_build_production_building_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = artisan
+					NOT = { has_building = workshop }
 				}
 				ROOT = {
 					set_variable = {
@@ -6085,11 +6099,25 @@ estate_vaisyas_build_production_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_vaisyas_build_production_building_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = counting_house
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_vaisyas_build_production_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = counting_house
+					has_building = workshop
+				}
 			}
 		}
 		else = {
@@ -6796,19 +6824,17 @@ estate_jains_build_production_building_in_y = {
 			OR = {
 				AND = {
 					NOT = { has_building = artisan }
-					num_free_building_slots = 1
-				}
-				AND = {
-					ROOT = { adm_tech = 38 }
 					NOT = { has_building = workshop }
 					num_free_building_slots = 1
 				}
 				AND = {
+					ROOT = { adm_tech = 38 }
+					has_building = artisan
+					NOT = { has_building = workshop }
+				}
+				AND = {
 					ROOT = { adm_tech = 60 }
-					OR = {
-						has_building = workshop
-						num_free_building_slots = 1
-					}
+					has_building = workshop
 				}
 			}
 			NOT = { trade_goods = silver }
@@ -6826,19 +6852,17 @@ estate_jains_build_production_building_in_y = {
 					OR = {
 						AND = {
 							NOT = { has_building = artisan }
-							num_free_building_slots = 1
-						}
-						AND = {
-							ROOT = { adm_tech = 38 }
 							NOT = { has_building = workshop }
 							num_free_building_slots = 1
 						}
 						AND = {
+							ROOT = { adm_tech = 38 }
+							has_building = artisan
+							NOT = { has_building = workshop }
+						}
+						AND = {
 							ROOT = { adm_tech = 60 }
-							OR = {
-								has_building = workshop
-								num_free_building_slots = 1
-							}
+							has_building = workshop
 						}
 					}
 					NOT = { trade_goods = silver }
@@ -6864,19 +6888,17 @@ estate_jains_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -6901,19 +6923,17 @@ estate_jains_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -6928,19 +6948,17 @@ estate_jains_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -6965,19 +6983,17 @@ estate_jains_build_production_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = artisan }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 38 }
 						NOT = { has_building = workshop }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 38 }
+						has_building = artisan
+						NOT = { has_building = workshop }
+					}
+					AND = {
 						ROOT = { adm_tech = 60 }
-						OR = {
-							has_building = workshop
-							num_free_building_slots = 1
-						}
+						has_building = workshop
 					}
 				}
 				NOT = { trade_goods = silver }
@@ -6988,6 +7004,18 @@ estate_jains_build_production_building_in_y = {
 			if = {
 				limit = {
 					has_building = workshop
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_jains_build_production_building_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = artisan
+					NOT = { has_building = workshop }
 				}
 				ROOT = {
 					set_variable = {
@@ -7019,11 +7047,25 @@ estate_jains_build_production_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_jains_build_production_building_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = counting_house
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_jains_build_production_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = counting_house
+					has_building = workshop
+				}
 			}
 		}
 		else = {
@@ -13277,19 +13319,17 @@ estate_mamluks_build_government_building_in_y = {
 			OR = {
 				AND = {
 					NOT = { has_building = watchman }
-					num_free_building_slots = 1
-				}
-				AND = {
-					ROOT = { adm_tech = 41 }
 					NOT = { has_building = courthouse }
 					num_free_building_slots = 1
 				}
 				AND = {
+					ROOT = { adm_tech = 41 }
+					has_building = watchman
+					NOT = { has_building = courthouse }
+				}
+				AND = {
 					ROOT = { adm_tech = 58 }
-					OR = {
-						has_building = courthouse
-						num_free_building_slots = 1
-					}
+					has_building = courthouse
 				}
 			}
 		}
@@ -13305,19 +13345,17 @@ estate_mamluks_build_government_building_in_y = {
 					OR = {
 						AND = {
 							NOT = { has_building = watchman }
-							num_free_building_slots = 1
-						}
-						AND = {
-							ROOT = { adm_tech = 41 }
 							NOT = { has_building = courthouse }
 							num_free_building_slots = 1
 						}
 						AND = {
+							ROOT = { adm_tech = 41 }
+							has_building = watchman
+							NOT = { has_building = courthouse }
+						}
+						AND = {
 							ROOT = { adm_tech = 58 }
-							OR = {
-								has_building = courthouse
-								num_free_building_slots = 1
-							}
+							has_building = courthouse
 						}
 					}
 				}
@@ -13331,19 +13369,17 @@ estate_mamluks_build_government_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = watchman }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 41 }
 						NOT = { has_building = courthouse }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 41 }
+						has_building = watchman
+						NOT = { has_building = courthouse }
+					}
+					AND = {
 						ROOT = { adm_tech = 58 }
-						OR = {
-							has_building = courthouse
-							num_free_building_slots = 1
-						}
+						has_building = courthouse
 					}
 				}
 			}
@@ -13367,19 +13403,17 @@ estate_mamluks_build_government_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = watchman }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 41 }
 						NOT = { has_building = courthouse }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 41 }
+						has_building = watchman
+						NOT = { has_building = courthouse }
+					}
+					AND = {
 						ROOT = { adm_tech = 58 }
-						OR = {
-							has_building = courthouse
-							num_free_building_slots = 1
-						}
+						has_building = courthouse
 					}
 				}
 			}
@@ -13393,19 +13427,17 @@ estate_mamluks_build_government_building_in_y = {
 				OR = {
 					AND = {
 						NOT = { has_building = watchman }
-						num_free_building_slots = 1
-					}
-					AND = {
-						ROOT = { adm_tech = 41 }
 						NOT = { has_building = courthouse }
 						num_free_building_slots = 1
 					}
 					AND = {
+						ROOT = { adm_tech = 41 }
+						has_building = watchman
+						NOT = { has_building = courthouse }
+					}
+					AND = {
 						ROOT = { adm_tech = 58 }
-						OR = {
-							has_building = courthouse
-							num_free_building_slots = 1
-						}
+						has_building = courthouse
 					}
 				}
 			}
@@ -13415,6 +13447,18 @@ estate_mamluks_build_government_building_in_y = {
 			if = {
 				limit = {
 					has_building = courthouse
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_mamluks_build_government_building_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = watchman
+					NOT = { has_building = courthouse }
 				}
 				ROOT = {
 					set_variable = {
@@ -13446,11 +13490,25 @@ estate_mamluks_build_government_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_mamluks_build_government_building_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = town_hall
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_mamluks_build_government_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
 			}
 		}
 		else = {

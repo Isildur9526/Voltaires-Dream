@@ -11,7 +11,7 @@ owner = SEO
 controller = SEO
 add_core = SEO
 
-1206.1.1 = {
+1255.1.1 = {
 	religion = catholic
 	culture = latvian
 	owner = LIV

@@ -1,0 +1,79 @@
+incident_mongol_raids = {
+	event = incident_mongol_raids.3
+	default_option = 0
+	
+	can_stop = {
+		NOT = { current_age = age_of_crisis }
+	}
+	
+	0 = {	#try to repel raid
+		factor = 1
+		modifier = {
+			factor = 1000
+			has_country_flag = mongol_raid_victim
+		}
+		modifier = {
+			factor = 1000
+			capital_scope = { region = saxony_region }
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_friendly
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_loyal
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_allied
+				}
+			}
+		}
+	}
+	1 = {	#knowledge share
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ruler_has_personality = scholar_personality
+				ruler_has_personality = free_thinker_personality
+			}
+		}
+	}
+	2 = {	#submit
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_disloyal
+				}
+				ai_attitude = {
+					who = emperor
+					attitude = attitude_rebellious
+				}
+			}
+		}
+	}
+}

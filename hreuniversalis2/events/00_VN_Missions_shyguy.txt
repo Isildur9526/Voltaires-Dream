@@ -38,6 +38,7 @@ country_event = {
 
 	option = {
 		name = vn_missions.2.a
+		add_innovativeness_small_effect = yes
 		add_adm_power = 100
 		add_country_modifier = {
 			name = "lan_patron_of_adm_mission"
@@ -46,6 +47,7 @@ country_event = {
 	}
 	option = {
 		name = vn_missions.2.b
+		add_innovativeness_small_effect = yes
 		add_dip_power = 100
 		add_country_modifier = {
 			name = "lan_patron_of_dip_mission"
@@ -54,6 +56,7 @@ country_event = {
 	}
 	option = {
 		name = vn_missions.2.c
+		add_innovativeness_small_effect = yes
 		add_mil_power = 100
 		add_country_modifier = {
 			name = "lan_patron_of_mil_mission"
@@ -452,150 +455,6 @@ country_event = {
 }
 
 ###BYZANTIUM###
-#Pope is asked to help the Byzantine Emperor
-country_event = {
-	id = vn_missions.9
-	title = vn_missions.9.t
-	desc = vn_missions.9.d
-	picture = BYZ_BYZANTINE_EMPEROR_eventPicture
-	
-	is_triggered_only = yes
-
-	option = {
-		name = "vn_missions.9.a"
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 0.5
-				is_rival = BYZ
-			}
-			modifier = {
-				factor = 0
-				num_of_loans = 5
-			}
-			modifier = {
-				factor = 0
-				is_bankrupt = yes
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = pious_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = midas_touched_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = just_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = tolerant_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = kind_hearted_personality
-			}
-		}
-		add_treasury = -250	#this can be changed to curia money in 1.30
-		add_manpower = -5
-		custom_tooltip = vn_missions.9.tt
-		hidden_effect = {
-			FROM = {
-				country_event = {
-					id = vn_missions.10
-					days = 30
-					random = 30
-				}
-			}
-		}
-	}
-	option = {
-		name = "vn_missions.9.b"
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = sinner_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = greedy_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = cruel_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = secretive_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = careful_personality
-			}
-		}
-		add_prestige = 5
-		custom_tooltip = vn_missions.9.tt
-		hidden_effect = {
-			FROM = {
-				country_event = {
-					id = vn_missions.11
-					days = 30
-					random = 30
-				}
-			}
-		}
-	}
-}
-
-#Support received
-country_event = {
-	id = vn_missions.10
-	title = vn_missions.10.t
-	desc = vn_missions.10.d
-	picture = GOOD_WITH_MONARCH_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = "vn_missions.10.a"
-		add_treasury = 250
-		add_manpower = 5
-		add_opinion = {
-			who = FROM
-			modifier = byz_received_support_opinion
-		}
-		reverse_add_opinion = {
-			who = FROM
-			modifier = byz_received_support_opinion
-		}
-	}
-}
-
-#No support received
-country_event = {
-	id = vn_missions.11
-	title = vn_missions.11.t
-	desc = vn_missions.11.d
-	picture = BAD_WITH_MONARCH_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = "vn_missions.11.a"
-		add_opinion = {
-			who = FROM
-			modifier = byz_refused_support_opinion
-		}
-		reverse_add_opinion = {
-			who = FROM
-			modifier = byz_refused_support_opinion
-		}
-	}
-}
-
 #Regnum Bospori
 country_event = {
 	id = vn_missions.12
@@ -637,102 +496,6 @@ country_event = {
 			add_base_tax = 2
 			add_base_production = 2
 			add_base_manpower = 2
-		}
-	}
-}
-
-###SAVOY###
-#Order of St. Maurice
-country_event = {
-	id = vn_missions.13
-	title = vn_missions.13.t
-	desc = vn_missions.13.d
-	picture = POPE_PREACHING_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = "vn_missions.13.a"
-		ai_chance = {
-			factor = 75
-			modifier = {
-				factor = 0.25
-				OR = {
-					AND = {
-						religion = catholic
-						is_rival = PAP
-					}
-					AND = {
-						religion = catholique
-						is_rival = AVI
-					}
-				}
-			}
-			modifier = {
-				factor = 0.25
-				is_excommunicated = yes
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = zealot_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = pious_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = careful_personality
-			}
-		}
-		add_country_modifier = {
-			name = sav_order_of_saint_maurice_mission_a
-			duration = -1
-		}
-	}
-	option = {
-		name = "vn_missions.13.b"
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = babbling_buffoon_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = loose_lips_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = naive_personality
-			}
-			modifier = {
-				factor = 1.1
-				ruler_has_personality = sinner_personality
-			}
-		}
-		add_prestige = 25
-		add_country_modifier = {
-			name = sav_order_of_saint_maurice_mission_b
-			duration = 9125
-		}
-		every_country = {
-			limit = {
-				OR = {
-					religion = catholic
-					religion = catholique
-				}
-				is_free_or_tributary_trigger = yes
-				OR = {
-					is_neighbor_of = ROOT
-					num_of_cities = 15
-					government = theocracy
-				}
-			}
-			add_opinion = {
-				who = ROOT
-				modifier = sav_antipope_opinion
-			}
 		}
 	}
 }
@@ -1095,13 +858,12 @@ country_event = {
 
 	option = {
 		name = "vn_missions.24.a"
-		ai_chance = { factor = 45 }
+		ai_chance = { factor = 40 }
 		add_stability = 1
 		add_country_modifier = {
 			name = "tou_weather_catharism_mission_a"
 			duration = 10950
 		}
-		set_country_flag = tou_cathar_heresy
 	}
 	option = {
 		name = "vn_missions.24.b"
@@ -1111,18 +873,16 @@ country_event = {
 			name = "tou_weather_catharism_mission_b"
 			duration = 10950
 		}
-		set_country_flag = tou_cathar_heresy
 	}
 	option = {
 		name = "vn_missions.24.c"
 		highlight = yes
-		ai_chance = { factor = 5 }
+		ai_chance = { factor = 20 }
 		change_religion = cathar
 		add_country_modifier = {
 			name = "tou_weather_catharism_mission_c"
 			duration = 10950
 		}
-		set_country_flag = tou_cathar_heresy
 	}
 }
 
@@ -1822,7 +1582,7 @@ country_event = {
 		LBV = {
 			change_religion = ROOT
 			change_government = monarchy
-			set_legacy_government = administrative_monarchy
+			add_government_reform = feudalism_reform
 			if = {
 				limit = { owns = 1818 }
 				set_capital = 1818 #Milan

@@ -1,44 +1,5 @@
 namespace = hremodevents
 
-# Harold Godwinson
-country_event = {
-	id = hremodevents.1
-	title = "HREMT1"
-	desc = "HREMD1"
-	picture = NEW_HEIR_eventPicture
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = ASE
-		government = monarchy
-		has_heir = no
-		is_lesser_in_union = no
-		has_ruler_flag = edward_the_confessor_flag
-	}
-
-	mean_time_to_happen = {
-		months = 6
-	}
-
-	immediate = {
-		clr_ruler_flag = edward_the_confessor_flag
-	}
-
-	option = {
-		name = "HREMA1"
-		define_heir = {
-			name = "Hereweald"
-			dynasty = "Godwining"
-			age = 30
-			adm = 3
-			dip = 3
-			mil = 4
-		}
-		custom_tooltip = hrema1.tt
-	}
-}
-
 #Northern Revolt
 country_event = {
 	id = hremodevents.2
@@ -2861,6 +2822,7 @@ country_event = {
 	option = {
 		name = "HREMA64"
 		change_tag = SWI
+		swap_non_generic_missions = yes
 		set_in_empire = no
 		set_government_rank = 5
 		add_country_modifier = {
@@ -3782,7 +3744,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 240
+		months = 120
 	}
 
 	option = {
@@ -5362,8 +5324,8 @@ country_event = {
 			event_target:rus_partition_country = {
 				set_country_flag = rus_country_released
 				if = {
-					limit = { NOT = { religion = orthodox } }
-					change_religion = orthodox
+					limit = { NOT = { religion = ROOT } }
+					change_religion = ROOT
 				}
 				change_government = monarchy
 				add_government_reform = principality
@@ -5870,6 +5832,114 @@ country_event = {
 		BRN = {
 			add_liberty_desire = 40
 			add_opinion = { who = ROOT modifier = opinion_tyrant_overlord }
+		}
+	}
+}
+
+province_event = {
+    id = hremodevents.107
+    title = "HREMT107"
+    desc = "HREMD107"
+	picture = COLONIZATION_eventPicture
+	goto = root
+
+	trigger = {
+		normal_or_historical_nations = yes
+		OR = {
+			current_age = age_of_holy_wars
+			current_age = age_of_crisis
+		}
+		OR = {
+			culture = polabian
+			culture = kashubian
+			culture = pruthenian
+			culture = sorbian
+		}
+		any_neighbor_province = {
+			culture_group = germanic
+		}
+		owner = {
+			primary_culture = polabian
+			primary_culture = kashubian
+			primary_culture = pruthenian
+			primary_culture = sorbian
+			culture_group = germanic
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = germanic
+			}
+		}
+		modifier = {
+			factor = 1.5
+			culture = schlesian
+		}
+	}
+
+	option = {
+		name = "HREMA107"
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				culture = pruthenian
+			}
+			change_culture = prussian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture = sorbian
+					culture = schlesian
+				}
+			}
+			change_culture = prussian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					region = mecklenburg_region
+					area = stolp_area
+					area = kolberg_area
+				}
+			}
+			change_culture = pommeranian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					region = brandenburg_region
+					area = neumark_area
+				}
+			}
+			change_culture = central_margravian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					region = holstein_region
+				}
+			}
+			change_culture = low_elbish
+		}
+		else = {
+			change_culture = saxon
+		}
+	}
+	option = {
+		name = "HREMB107"
+		ai_chance = {
+			factor = 0
+		}
+		add_province_modifier = {
+			name = add_country_unrest_5_modifier
+			duration = 3650
 		}
 	}
 }
@@ -6491,5 +6561,76 @@ province_event = {
 		name = "HREMA123"
 		change_religion = catholic
 		change_culture = owner
+	}
+}
+
+country_event = {
+	id = hremodevents.124
+	title = "HREMT124"
+	desc = "HREMD124"
+	picture = BIG_BOOK_eventPicture
+
+	fire_only_once = yes
+	trigger = { tag = KHZ }
+	mean_time_to_happen = { months = 240 }
+
+	option = {
+		name = "HREMA124"
+		add_innovativeness_big_effect = yes
+		add_adm_power = 100
+	}
+}
+
+country_event = {
+	id = hremodevents.125
+	title = "HREMT125"
+	desc = "HREMD125"
+	picture = BATTLE_eventPicture
+
+	major = yes
+	major_trigger = { capital_scope = { superregion = sicily_superregion } }
+	fire_only_once = yes
+
+	trigger = {
+		tag = BYZ
+		war_with = APL
+		current_age = age_of_empire
+		normal_or_historical_nations = yes
+		NOT = { started_in = 1071.4.15 }
+		NOT = {
+			any_owned_province = {
+				superregion = sicily_superregion
+				controlled_by = BYZ
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					superregion = sicily_superregion
+					controlled_by = APL
+				}
+				cede_province = APL
+			}
+		}
+	}
+
+	option = {
+		name = "HREMA125"
+		ai_chance = { factor = 95 }
+		white_peace = APL
+	}
+
+
+	option = {
+		name = "HREMB125"
+		ai_chance = { factor = 5 }
+		add_war_exhaustion = -5
 	}
 }

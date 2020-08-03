@@ -11,13 +11,19 @@ owner = CKL
 controller = CKL
 add_core = CKL
 
-1266.1.1 = {
-	owner = ZMG
-	controller = ZMG
+1276.1.1 = {
+	owner = LIV
+	controller = LIV
+	add_core = LIV
 	add_core = ZMG
 	remove_core = CKL
 	religion = animism
 	culture = samogitian
+}
+1323.1.1 = {
+	owner = ZMG
+	controller = ZMG
+	remove_core = LIV
 }
 1398.1.1 = {
 	owner = LIV

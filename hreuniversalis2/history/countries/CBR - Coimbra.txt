@@ -10,6 +10,7 @@ capital = 2243
 	monarch = {
 		name = "Sesnando Davidez"
 		dynasty = "Riba Douro"
+		culture = mozarabic
 		adm = 4
 		dip = 0
 		mil = 1

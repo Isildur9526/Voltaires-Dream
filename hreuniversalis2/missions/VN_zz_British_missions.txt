@@ -574,9 +574,11 @@ vn_gbr_missions_slot_4_a = {
 			}
         }
         effect = {
-			add_province_modifier = {
-				name = "gbr_growth_of_birmingham_mission"
-				duration = 18250
+			4693 = {
+				add_province_modifier = {
+					name = "gbr_growth_of_birmingham_mission"
+					duration = 18250
+				}
 			}
         }
 	}

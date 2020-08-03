@@ -16,6 +16,8 @@ fort_14th = yes
 
 1241.3.15 = { controller = GLH }
 1242.4.1 = { controller = HUN }
+1304.8.1 = { religion = waldensian }
+1307.6.1 = { religion = catholic }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1526.8.30 = {
 	owner = TRA

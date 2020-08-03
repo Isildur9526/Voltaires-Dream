@@ -251,6 +251,7 @@ vn_ase_missions_slot_2_a = {
         icon = mission_coronation
         position = 1
         required_missions = { }
+        completed_by = 1066.1.5
         trigger = {
 			OR = {
 				AND = {
@@ -536,9 +537,12 @@ vn_ase_missions_slot_3_a = {
 					}
 				}
 				AND = {
-					is_year = 1070
-					has_won_war_against = {
-                        who = NRM
+                    is_year = 1070
+                    OR = {
+                        has_won_war_against = {
+                            who = NRM
+                        }
+                        is_at_war = no
                     }
 					custom_trigger_tooltip = {
 						tooltip = vn_ase_elect_new_king.tt
@@ -1027,6 +1031,7 @@ vn_ase_missions_slot_5_a = {
         icon = mission_european_church
         position = 1
         required_missions = { }
+        completed_by = 1066.1.5
         provinces_to_highlight = {
             province_id = 2268
         }
@@ -1150,7 +1155,9 @@ vn_ase_missions_slot_5_b = {
             if = {
                 limit = { has_dlc = "Dharma" }
                 num_of_centers_of_trade = 5
-                country_has_center_of_trade_of_level = 3
+                any_owned_province = {
+                    province_has_center_of_trade_of_level = 3
+                }
             }
             else = {
                 trade_income_percentage = 0.3
@@ -1169,11 +1176,11 @@ vn_ase_missions_slot_5_b = {
         required_missions = { vn_ase_open_doors_to_trade }
         trigger = {
 			num_of_owned_provinces_with = {
-				value = 6
+				value = 10
 				development = 10
 			}
 			num_of_owned_provinces_with = {
-				value = 3
+				value = 5
 				development = 15
 			}
         }

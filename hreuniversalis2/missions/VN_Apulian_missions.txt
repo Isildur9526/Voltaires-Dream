@@ -11,7 +11,7 @@ vn_apl_missions_slot_1 = {
 			tag = APL
 			AND = {
 				tag = SIC
-				NOT = { dynasty = "von Hohenstaufen" }
+				dynasty = "de Hauteville"
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -20,7 +20,7 @@ vn_apl_missions_slot_1 = {
 	
 	vn_apl_reconquer_apulia = {
 		position = 1
-		icon = mission_crusade_for_varna
+		icon = mission_soldiers_in_line
 		required_missions = { }
 		provinces_to_highlight = {
 			area = salento_area
@@ -63,7 +63,7 @@ vn_apl_missions_slot_1 = {
 		}
 	}
 	vn_apl_conquer_napoli = {
-		icon = mission_control_the_barbary_coast
+		icon = union_with_naples
 		required_missions = { vn_apl_conquer_salerno }
 		provinces_to_highlight = {
 			area = capua_area
@@ -94,7 +94,7 @@ vn_apl_missions_slot_1 = {
 		}
 	}
 	vn_apl_conquer_abruzzo = {
-		icon = mission_unite_home_region
+		icon = rein_in_the_nobles
 		required_missions = { vn_apl_conquer_napoli } 
 		provinces_to_highlight = {
 			OR = {
@@ -129,7 +129,7 @@ vn_apl_missions_slot_1 = {
 	}
 	vn_apl_conquer_sardinia = {
 		position = 6
-		icon = mission_unite_home_region
+		icon = overshadow_venice
 		required_missions = { vn_apl_conquer_abruzzo vn_apl_kingdom_of_sicily } 
 		provinces_to_highlight = {
 			region = insular_region
@@ -157,7 +157,7 @@ vn_apl_missions_slot_2 = {
 			tag = APL
 			AND = {
 				tag = SIC
-				NOT = { dynasty = "von Hohenstaufen" }
+				dynasty = "de Hauteville"
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -166,7 +166,7 @@ vn_apl_missions_slot_2 = {
 
 	vn_apl_integrate_subjects = {
 		position = 1
-		icon = mission_alliances
+		icon = friends_in_high_places
 		required_missions = { }
 		provinces_to_highlight = {
 			OR = {
@@ -199,33 +199,37 @@ vn_apl_missions_slot_2 = {
 		}
 	}
 	vn_apl_assizes_of_ariano = {
-		icon = mission_alliances
+		icon = adjust_the_general_means
 		required_missions = { vn_apl_integrate_subjects }
 		trigger = {
+			stability = 2
+			has_reform_level = 3
 			if = {
 				limit = {
 					has_estate = estate_nobles
-					has_estate = estate_church
-					has_estate = estate_nobles
 				}
-				num_of_owned_provinces_with = {
-					value = 3
-					region = sicilia_region
-					has_estate = estate_nobles
-				}
-				num_of_owned_provinces_with = {
-					value = 3
-					region = sicilia_region
-					has_estate = estate_church
-				}
-				num_of_owned_provinces_with = {
-					value = 3
-					region = sicilia_region
-					has_estate = estate_nobles
+				estate_territory = {
+					estate = estate_nobles
+					territory = 15
 				}
 			}
-			else = {
-				NOT = { average_autonomy_above_min = 0.35 }
+			if = {
+				limit = {
+					has_estate = estate_church
+				}
+				estate_territory = {
+					estate = estate_church
+					territory = 15
+				}
+			}
+			if = {
+				limit = {
+					has_estate = estate_burghers
+				}
+				estate_territory = {
+					estate = estate_burghers
+					territory = 15
+				}
 			}
 		}
 		effect = {
@@ -237,7 +241,7 @@ vn_apl_missions_slot_2 = {
 		}
 	}
 	vn_apl_convert_sicily = {
-		icon = mission_religious
+		icon = spread_piety
 		required_missions = { vn_apl_assizes_of_ariano vn_apl_conquer_sicily }
 		provinces_to_highlight = {
 			OR = {
@@ -277,7 +281,7 @@ vn_apl_missions_slot_2 = {
 	}
 	vn_apl_kingdom_of_sicily = {
 		position = 5
-		icon = mission_intervene_in_castile
+		icon = king_of_sicily
 		required_missions = { vn_apl_convert_sicily }
 		trigger = {
 			tag = SIC
@@ -315,20 +319,29 @@ vn_apl_missions_slot_2 = {
 		}
 	}
 	vn_apl_conquer_normandy = {
-		icon = mission_unite_home_region
+		icon = reclaim_the_ducal_lands
 		required_missions = { vn_apl_kingdom_of_sicily }
 		provinces_to_highlight = {
 			region = normandy_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			normandy_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			OR = {
+				NRM = {
+					is_subject_of = ROOT
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 15
+						region = normandy_region
+					}
+				}
 			}
 		}
 		effect = {
-			add_prestige = 50
+			add_mil_power = 150
+			add_country_modifier = {
+				name = apl_conquer_normandy_mission
+				duration = -1
+			}
 		}
 	}
 }
@@ -341,7 +354,7 @@ vn_apl_missions_slot_3 = {
 			tag = APL
 			AND = {
 				tag = SIC
-				NOT = { dynasty = "von Hohenstaufen" }
+				dynasty = "de Hauteville"
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -349,7 +362,7 @@ vn_apl_missions_slot_3 = {
 	has_country_shield = yes
 
 	vn_apl_reconquer_calabria = {
-		icon = mission_cannons_firing
+		icon = conquer_east_francia
 		position = 1
 		required_missions = {}
 		provinces_to_highlight = {
@@ -363,6 +376,10 @@ vn_apl_missions_slot_3 = {
 			}
 		}
 		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
 			sicilia_region = {
 				limit = {
                     NOT = { is_core = ROOT }
@@ -373,7 +390,7 @@ vn_apl_missions_slot_3 = {
 		}
 	}
 	vn_apl_conquer_sicily = {
-		icon = mission_portuguese_malabar
+		icon = dalmatian_conquest
 		required_missions = { vn_apl_prepare_for_war vn_apl_reconquer_calabria }
 		provinces_to_highlight = {
 			region = sicilia_region
@@ -402,7 +419,7 @@ vn_apl_missions_slot_3 = {
 		}
 	}
 	vn_apl_conquer_malta = {
-		icon = mission_subjugate_saurashtra
+		icon = fortify_malta
 		required_missions = { vn_apl_conquer_sicily }
 		provinces_to_highlight = {
 			province_id = 2711
@@ -410,8 +427,11 @@ vn_apl_missions_slot_3 = {
 		trigger = {
 			2711 = {
 				country_or_non_sovereign_subject_holds = ROOT
-				has_dock_building_trigger = yes
-				has_shipyard_building_trigger = yes
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+					has_coastal_defense_building_trigger = yes
+				}
 			}
 		}
 		effect = {
@@ -432,7 +452,7 @@ vn_apl_missions_slot_3 = {
 		}
 	}
 	vn_apl_castello_della_zisa = {
-		icon = mission_arabian_fort
+		icon = protectors_of_christendom
 		required_missions = { vn_apl_convert_sicily }
 		provinces_to_highlight = {
 			province_id = 2041
@@ -440,7 +460,7 @@ vn_apl_missions_slot_3 = {
 		trigger = {
 			2041 = {
 				owned_by = ROOT
-				has_fort_trigger = yes
+				has_non_outdated_fort = yes
 			}
 		}
 		effect = {
@@ -463,19 +483,17 @@ vn_apl_missions_slot_3 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			kabylia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 16
+				region = kabylia_region
 			}
 		}
 		effect = {
 			add_mil_power = 50
 			add_prestige = 5
-			kabylia_region = {
-				add_province_modifier = {
-					name = apl_conquer_kabylia_mission
-					duration = 9125
-				}
+			add_country_modifier = {
+				name = apl_conquer_kabylia_mission
+				duration = 9125
 			}
 		}
 	}
@@ -489,7 +507,7 @@ vn_apl_missions_slot_4 = {
 			tag = APL
 			AND = {
 				tag = SIC
-				NOT = { dynasty = "von Hohenstaufen" }
+				dynasty = "de Hauteville"
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -498,18 +516,15 @@ vn_apl_missions_slot_4 = {
 	
 	vn_apl_prepare_for_war = {
 		position = 1
-		icon = mission_alliances
+		icon = catholic_confraternity
 		required_missions = { }
 		trigger = {
 			calc_true_if = {
-				amount = 3
+				desc = vn_apl_prepare_for_war.tt
 				all_ally = {
 					culture_group = latin
-					has_opinion = {
-						who = ROOT
-						value = 150
-					}
 				}
+				amount = 3
 			}
 		}
 		effect = {
@@ -521,7 +536,7 @@ vn_apl_missions_slot_4 = {
 	}
 	vn_apl_invasion_fleet = {
 		position = 3
-		icon = mission_launch_a_flagship
+		icon = crusader_fleet
 		required_missions = { vn_apl_conquer_sicily }
 		trigger = {
 			navy_size_percentage = 0.75
@@ -559,6 +574,8 @@ vn_apl_missions_slot_4 = {
 			}
 		}
 		effect = {
+			add_mil_power = 50
+			add_prestige = 5
 			mahdia_area = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -602,29 +619,17 @@ vn_apl_missions_slot_4 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			mahdia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			djerba_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			kairouan_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			kef_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_owned_provinces_with = {
+				value = 18
+				OR = {
+					area = mahdia_area
+					area = djerba_area
+					area = kairouan_area
+					area = kef_area
+				}
 			}
 		}
 		effect = {
-			4594 = {
-				add_base_tax = 1
-				add_base_production = 1
-				add_base_manpower = 1
-			}
 			kabylia_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -646,10 +651,6 @@ vn_apl_missions_slot_4 = {
                 }
                 add_permanent_claim = ROOT
             }
-			add_country_modifier = {
-				name = apl_conquer_tripolitania_mission
-				duration = 9125
-			}
 		}
 	}
 	vn_apl_conquer_alexandria = {
@@ -661,26 +662,18 @@ vn_apl_missions_slot_4 = {
 				area = alexandria_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-			is_city = yes
 		}
 		trigger = {
-			coastal_libya_region = {
-				type = all
+			num_of_owned_provinces_with = {
+				value = 14
 				OR = {
-					is_city = no
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-			}
-			alexandria_area = {
-				type = all
-				OR = {
-					is_city = no
-					country_or_non_sovereign_subject_holds = ROOT
+					region = coastal_libya_region
+					area = alexandria_area
 				}
 			}
 		}
 		effect = {
-			add_stability_or_adm_power = yes
+			add_army_tradition = 20
 			delta_area = {
 				limit = {
                     NOT = { is_core = ROOT }
@@ -718,7 +711,7 @@ vn_apl_missions_slot_5 = {
 			tag = APL
 			AND = {
 				tag = SIC
-				NOT = { dynasty = "von Hohenstaufen" }
+				dynasty = "de Hauteville"
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -727,7 +720,7 @@ vn_apl_missions_slot_5 = {
 
 	vn_apl_crumbling_empire = {
 		position = 1
-		icon = mission_pf_cross
+		icon = emperor_and_autocrat
 		required_missions = { }
 		trigger = {
 			OR = {
@@ -784,7 +777,7 @@ vn_apl_missions_slot_5 = {
 	}
 	vn_apl_conquer_ionian_islands = {
 		position = 4
-		icon = mission_portuguese_malacca
+		icon = defeat_the_english
 		required_missions = { vn_apl_crumbling_empire vn_apl_invasion_fleet }
 		provinces_to_highlight = {
 			OR = {
@@ -840,7 +833,7 @@ vn_apl_missions_slot_5 = {
 		}
 	}
 	vn_apl_conquer_greece = {
-		icon = mission_portuguese_malacca
+		icon = the_russian_campaign
 		required_missions = { vn_apl_conquer_ionian_islands }
 		provinces_to_highlight = {
 			region = furthergreece_region

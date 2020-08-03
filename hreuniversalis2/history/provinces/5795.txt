@@ -11,7 +11,7 @@ owner = KUS
 controller = KUS
 add_core = KUS
 
-1266.1.1 = {
+1242.4.19 = {
 	owner = LIV
 	controller = LIV
 	add_core = LIV

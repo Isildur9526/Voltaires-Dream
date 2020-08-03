@@ -160,6 +160,7 @@ christian = {
 				cost = 50
 				potential = {
 					government = monarchy
+					NOT = { has_reform = tsardom }
 					NOT = { tag = PAP }
 				}
 				allow = {
@@ -389,6 +390,7 @@ christian = {
 				cost = 50
 				potential = {
 					government = monarchy
+					NOT = { has_reform = tsardom }
 					NOT = { tag = AVI }
 				}
 				allow = {
@@ -1456,6 +1458,10 @@ christian = {
 					modifier = {
 						factor = 0
 						is_at_war = no
+					}
+					modifier = {
+						factor = 0
+						has_reform = eastern_monarchy
 					}
 					modifier = {
 						factor = 3
@@ -2745,6 +2751,102 @@ jewish_group = {
 	defender_of_faith = yes
 	flags_with_emblem_percentage = 33
 	flag_emblem_index_range = { 106 107 }
+
+	religious_schools = {
+		ashkenazi_school = {
+			potential_invite_scholar = {
+				knows_of_scholar_country_capital_trigger = yes
+				religion_group = jewish_group
+			}
+
+			can_invite_scholar = {
+				adm_power_cost = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = ashkenazi_scholar_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_scholar_trigger = yes
+			}
+
+			on_invite_scholar = {
+				adm_power_cost = 50
+				clear_religious_scholar_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = ashkenazi_scholar_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = ashkenazi_scholar_modifier
+
+			picture = "GFX_icon_muslim_school_ashkenazi"
+
+			idea_cost = -0.1
+		}
+		sephardi_school = {
+			potential_invite_scholar = {
+				knows_of_scholar_country_capital_trigger = yes
+				religion_group = jewish_group
+			}
+
+			can_invite_scholar = {
+				adm_power_cost = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = sephardi_scholar_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_scholar_trigger = yes
+			}
+
+			on_invite_scholar = {
+				adm_power_cost = 50
+				clear_religious_scholar_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = sephardi_scholar_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = sephardi_scholar_modifier
+
+			picture = "GFX_icon_muslim_school_sephardi"
+
+			reform_progress_growth = 0.15
+		}
+		mizrahi_school = {
+			potential_invite_scholar = {
+				knows_of_scholar_country_capital_trigger = yes
+				religion_group = jewish_group
+			}
+
+			can_invite_scholar = {
+				adm_power_cost = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = mizrahi_scholar_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_scholar_trigger = yes
+			}
+
+			on_invite_scholar = {
+				adm_power_cost = 50
+				clear_religious_scholar_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = mizrahi_scholar_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = mizrahi_scholar_modifier
+
+			picture = "GFX_icon_muslim_school_mizrahi"
+
+			placed_merchant_power = 5
+		}
+	}
 
 	jewish = {
 		icon = 20

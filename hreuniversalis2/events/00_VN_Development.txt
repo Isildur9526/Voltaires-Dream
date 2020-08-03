@@ -255,12 +255,12 @@ province_event = {
 			name = "dev_concentrated"
 			duration = 3650
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_concentrated"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_concentrated"
+		#		duration = -1
+		#	}
+		#}
 		custom_tooltip = vn_province_rose.tt
 	}
 	option = {
@@ -291,12 +291,12 @@ province_event = {
 			name = "dev_dispersed"
 			duration = 3650
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_dispersed"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_dispersed"
+		#		duration = -1
+		#	}
+		#}
 		if = {
 			limit = { has_dlc = "Mandate of Heaven" }
 			add_prosperity = 10
@@ -324,12 +324,12 @@ province_event = {
 				name = "dev_dispersed"
 				duration = 3650
 			}
-			hidden_effect = {
-				add_province_modifier = {	#for debug testing
-					name = "debug_dispersed"
-					duration = -1
-				}
-			}
+			#hidden_effect = {
+			#	add_province_modifier = {	#for debug testing
+			#		name = "debug_dispersed"
+			#		duration = -1
+			#	}
+			#}
 		}
 		random_neighbor_province = {
 			limit = { 
@@ -353,12 +353,12 @@ province_event = {
 				name = "dev_dispersed"
 				duration = 3650
 			}
-			hidden_effect = {
-				add_province_modifier = {	#for debug testing
-					name = "debug_dispersed"
-					duration = -1
-				}
-			}
+			#hidden_effect = {
+			#	add_province_modifier = {	#for debug testing
+			#		name = "debug_dispersed"
+			#		duration = -1
+			#	}
+			#}
 		}
 	}
 }
@@ -611,12 +611,12 @@ province_event = {
 			name = "dev_crisis"
 			duration = 1825
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_crisis"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_crisis"
+		#		duration = -1
+		#	}
+		#}
 		custom_tooltip = vn_province_fell.tt
 	}
 	option = {
@@ -722,12 +722,12 @@ province_event = {
 			name = "dev_lifesupport"
 			duration = 1825
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_lifesupport"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_lifesupport"
+		#		duration = -1
+		#	}
+		#}
 		if = {
 			limit = { has_dlc = "Mandate of Heaven" }
 			add_prosperity = -10
@@ -864,6 +864,7 @@ province_event = {
 	major = yes
 	
 	trigger = {
+		always = no #Zombie code, this was scrapped
 		controlled_by = owner
 		is_core = owner
 		NOT = { has_province_flag = vn_rise_major }
@@ -1115,12 +1116,12 @@ province_event = {
 			}
 			add_center_of_trade_level = 1
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_major_rise"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_major_rise"
+		#		duration = -1
+		#	}
+		#}
 	}
 }
 
@@ -1145,6 +1146,7 @@ province_event = {
 	major = yes
 
 	trigger = {
+		always = no #Zombie code, this was scrapped
 		NOT = { prosperity = 100 }
 		devastation = 0.1
 		base_tax = 3
@@ -1265,12 +1267,12 @@ province_event = {
 			limit = { has_dlc = "Mandate of Heaven" }
 			add_prosperity = -25
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_major_fall"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_major_fall"
+		#		duration = -1
+		#	}
+		#}
 	}
 }
 
@@ -1294,6 +1296,7 @@ province_event = {
 	major = yes
 
 	trigger = {
+		always = no #Zombie code, this was scrapped
 		owned_by = ROOT
 		NOT = { has_province_flag = vn_fall_major }
 		base_tax = 4
@@ -1330,12 +1333,12 @@ province_event = {
 			limit = { has_dlc = "Mandate of Heaven" }
 			add_prosperity = -100
 		}
-		hidden_effect = {
-			add_province_modifier = {	#for debug testing
-				name = "debug_major_destruction"
-				duration = -1
-			}
-		}
+		#hidden_effect = {
+		#	add_province_modifier = {	#for debug testing
+		#		name = "debug_major_destruction"
+		#		duration = -1
+		#	}
+		#}
 		owner = { add_prestige = -50 }
 	}
 }

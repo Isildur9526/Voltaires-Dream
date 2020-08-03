@@ -7,6 +7,7 @@ country_event = {
 	picture = BAD_POPE_eventPicture
 	
 	major = yes
+	fire_only_once = yes
 	
 	trigger = {
 		has_dlc = "Emperor"
@@ -192,19 +193,22 @@ country_event = {
 		add_prestige = 25
 		hidden_effect = {
 			every_province = {
-				limit = {
-					OR = {
-						owned_by = ROOT
-						region = umbria_region
-						region = campania_region
-						region = apulia_region
-						region = sicilia_region
-						area = urbino_area
-						area = cesena_area
+				if = {
+					limit = {
+						OR = {
+							owned_by = ROOT
+							region = umbria_region
+							area = urbino_area
+							area = cesena_area
+							region = campania_region
+							region = apulia_region
+							region = sicilia_region
+						}
+						is_part_of_hre = yes
 					}
+					add_claim = ROOT
+					set_in_empire = no
 				}
-				set_in_empire = no
-				add_claim = PAP
 			}
 		}
 		clr_global_flag = papal_supremacy_accepted

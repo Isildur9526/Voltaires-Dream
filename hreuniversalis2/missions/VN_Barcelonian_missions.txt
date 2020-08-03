@@ -29,7 +29,6 @@ vn_brc_missions_slot_1_a = {
 				tradition = 75
 				culture = catalan
             }
-            #add 1.30 - unlock catalan company?
             add_country_modifier = {
                 name = "brc_mercenary_companies_mission"
                 duration = 5475
@@ -77,6 +76,7 @@ vn_brc_missions_slot_2_a = {
     vn_brc_extract_parias = {
         position = 1
         required_missions = { }
+        completed_by = 1100.1.1
         icon = mission_african_gold
         trigger = {
             custom_trigger_tooltip = {
@@ -97,6 +97,7 @@ vn_brc_missions_slot_2_a = {
     vn_brc_drive_out_moors = {
         required_missions = { vn_brc_extract_parias }
         icon = mission_crusade_for_varna
+        completed_by = 1149.10.1
         provinces_to_highlight = {
             region = catalunya_region
             owner = { religion_group = muslim }
@@ -119,6 +120,7 @@ vn_brc_missions_slot_2_a = {
     vn_brc_convert_catalonia = {
         required_missions = { vn_brc_drive_out_moors }
         icon = mission_european_church
+        completed_by = 1149.10.1
         provinces_to_highlight = {
             region = catalunya_region
             NOT = { religion_group = christian }
@@ -224,6 +226,7 @@ vn_brc_missions_slot_3_a = {
         position = 1
         required_missions = { }
         icon = mission_unite_home_region
+        completed_by = 1118.1.1
         provinces_to_highlight = {
             OR = {
                 province_id = 4297

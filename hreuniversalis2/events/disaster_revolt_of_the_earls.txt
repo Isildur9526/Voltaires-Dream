@@ -97,48 +97,26 @@ country_event = {
 	option = {
 		name = revolt_of_the_earls.3.a
 		ai_chance = { factor = 80 }
-		if = {
+		random_owned_province = {
 			limit = {
-				has_dlc = "The Cossacks"
+				culture = anglosaxon
+				is_capital = no
+				NOT = { has_province_modifier = foreign_ruler }
 			}
-			random_owned_province = {
-				limit = {
-					culture = anglosaxon
-					is_capital = no
-					NOT = { has_province_modifier = foreign_ruler }
-				}
+			change_culture = english
+			add_local_autonomy = 25
+			add_province_modifier = {
+				name = foreign_ruler
+				duration = 3650
+			}
+			random_neighbor_province = {
+				limit = { culture = anglosaxon }
 				change_culture = english
-				add_province_modifier = {
-					name = foreign_ruler
-					duration = 3650
-				}
-				random_neighbor_province = {
-					limit = { culture = anglosaxon }
-					change_culture = english
-				}
 			}
 		}
-		if = {
-			limit = {
-				NOT = { has_dlc = "The Cossacks" }
-			}
-			random_owned_province = {
-				limit = {
-					culture = anglosaxon
-					is_capital = no
-					NOT = { has_province_modifier = foreign_ruler }
-				}
-				change_culture = english
-				add_local_autonomy = 25
-				add_province_modifier = {
-					name = foreign_ruler
-					duration = 3650
-				}
-				random_neighbor_province = {
-					limit = { culture = anglosaxon }
-					change_culture = english
-				}
-			}
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = 1
 		}
 	}
 	option = {
@@ -355,6 +333,10 @@ country_event = {
     			size = 2
 			}
 			remove_province_modifier = foreign_ruler
+		}
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = -1
 		}
 	}
 }

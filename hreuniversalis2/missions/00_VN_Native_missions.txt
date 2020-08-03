@@ -8,6 +8,7 @@ VN_tribal_missions = {
 	}
 	
 	vn_tribal_federation = {
+		position = 1
 		icon = mission_noble_council
 		required_missions = { }
 		trigger = {

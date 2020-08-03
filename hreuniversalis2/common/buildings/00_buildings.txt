@@ -256,7 +256,8 @@ workshop = {
 	modifier = {
 		local_production_efficiency = 0.5
 	}
-
+	
+	make_obsolete = artisan
 	allow_in_gold_provinces = no
 
 	ai_will_do = {
@@ -271,6 +272,7 @@ temple = {
 		local_tax_modifier = 0.4
 	}
 
+	make_obsolete = monument
 	ai_will_do = {
 		factor = 1
 	}
@@ -356,7 +358,8 @@ courthouse = {
 		local_autonomy = -0.1
 		local_governing_cost = -0.25
 	}
-
+	
+	make_obsolete = watchman
 	ai_will_do = {
 		factor = 1
 	}

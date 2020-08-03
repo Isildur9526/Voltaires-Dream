@@ -25,7 +25,7 @@ add_army_professionalism = 0.1
 			name = "Humphrey de Hauteville"
 			type = general
 			fire = 4
-			shock = 4
+			shock = 5
 			manuever = 1
 			siege = 4
 		}
@@ -41,20 +41,20 @@ add_army_professionalism = 0.1
 		adm = 5
 		dip = 5
 		mil = 6
-		leader = {	
-			name = "Robert Guiscard"
-			type = general
-			fire = 4
-			shock = 3
-			manuever = 3
-			siege = 2
-		}
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = strict_personality
 	add_heir_personality = conqueror_personality
 	add_heir_personality = tactical_genius_personality
 	add_heir_personality = strict_personality
+}
+1054.7.16 = {
+	define_heir_to_general = {
+		fire = 4
+		shock = 3
+		manuever = 3
+		siege = 2
+	}
 }
 1057.8.1 = {
 	monarch = {

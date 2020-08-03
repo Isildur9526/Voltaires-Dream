@@ -1,0 +1,36 @@
+incident_jewish_suffering = {
+	event = incident_jewish_suffering.2
+	default_option = 0
+	
+	can_stop = {
+		NOT = { current_age = age_of_dynasticism }
+	}
+	
+	0 = { # stop this
+		factor = 1
+		modifier = {
+			factor = 1000
+			has_reform = papacy_reform
+		}
+		modifier = {
+			factor = 100
+			government = theocracy
+		}
+		modifier = {
+			factor = 250
+			has_idea_group = humanist_ideas
+		}
+	}
+	
+	1 = { # ignore it
+		factor = 1
+		modifier = {
+			factor = 100
+			government = republic
+		}
+		modifier = {
+			factor = 250
+			has_idea_group = religious_ideas
+		}
+	}
+}

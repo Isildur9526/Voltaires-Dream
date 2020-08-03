@@ -15,7 +15,7 @@ capital = 5817
 		adm = 2
 	}
 }
-1190.1.1 = {
+1200.1.1 = {
 	monarch = {
 		name = "Imnants"
 		dip = 2
@@ -23,4 +23,4 @@ capital = 5817
 		adm = 2
 	}
 }
-1206.1.1 = { religion = catholic }
+1239.1.1 = { religion = catholic }

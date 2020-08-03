@@ -985,7 +985,7 @@ por_a_new_capital_mission = {
 }
 por_portuguese_cortes_mission = {
 	local_development_cost = -0.05
-	local_state_maintenance_modifier = -0.1
+	local_state_maintenance_modifier = -0.05
 }
 por_land_in_madeira_mission = {
 	colonists = 1

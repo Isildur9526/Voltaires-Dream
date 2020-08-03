@@ -10,6 +10,7 @@ vn_hab_missions_slot_1 = {
             tag = HAB
             tag = EAH
         }
+        always = no
 		NOT = { map_setup = map_setup_random }
 	}
     has_country_shield = yes
@@ -343,6 +344,7 @@ vn_hab_missions_slot_2 = {
             tag = HAB
             tag = EAH
         }
+        always = no
 		NOT = { map_setup = map_setup_random }
 	}
     has_country_shield = yes
@@ -862,6 +864,7 @@ vn_hab_missions_slot_3 = {
             tag = HAB
             tag = EAH
         }
+        always = no
 		NOT = { map_setup = map_setup_random }
 	}
     has_country_shield = yes
@@ -1170,6 +1173,7 @@ vn_hab_missions_slot_4 = {
             tag = HAB
             tag = EAH
         }
+        always = no
 		NOT = { map_setup = map_setup_random }
 	}
     has_country_shield = yes
@@ -1649,6 +1653,7 @@ vn_hab_missions_slot_5 = {
             tag = HAB
             tag = EAH
         }
+        always = no
 		NOT = { map_setup = map_setup_random }
 	}
     has_country_shield = yes

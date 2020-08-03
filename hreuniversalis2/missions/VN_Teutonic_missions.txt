@@ -30,7 +30,7 @@ vn_teu_missions_slot_1 = {
 		}
 	}
 	vn_teu_agrarverfassung = {
-		icon = mission_rb_import_potatoes
+		icon = prosperity_for_all
 		required_missions = { vn_teu_improve_infrastructure }
 		trigger = {
 			if = {
@@ -98,7 +98,7 @@ vn_teu_missions_slot_1 = {
 		}
 	}
 	vn_teu_build_brickworks = {
-		icon = mission_have_manufactories
+		icon = reform_bergordnung
 		required_missions = { vn_teu_urbanize_prussian_rivers }
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -167,7 +167,7 @@ vn_teu_missions_slot_2 = {
 	has_country_shield = yes
 	
 	vn_teu_relations_with_pope = {
-		icon = mission_hands_praying
+		icon = control_the_church
 		required_missions = { }
 		position = 1
 		trigger = {
@@ -396,7 +396,7 @@ vn_teu_missions_slot_2 = {
 		}
 	}
 	vn_teu_conquer_brandenburg = {
-		icon = mission_build_up_to_force_limit
+		icon = tame_brandenburg
 		required_missions = { vn_teu_conquer_neumark vn_teu_conquer_pomerania }
 		provinces_to_highlight = {
 			OR = {
@@ -422,7 +422,7 @@ vn_teu_missions_slot_2 = {
 	}
 }
 
-vn_teu__missions_slot_3 = {
+vn_teu_missions_slot_3 = {
 	slot = 8
 	generic = no
 	ai = yes
@@ -694,7 +694,7 @@ vn_teu_missions_slot_4 = {
 		}
 	}
 	vn_teu_modernize_the_army = {
-		icon = mission_build_up_to_force_limit
+		icon = establish_a_standing_army
 		required_missions = { vn_teu_conquer_nadruvia }
 		trigger = {
 			if = {

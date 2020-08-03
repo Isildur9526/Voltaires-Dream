@@ -175,6 +175,14 @@ is_lombard_league_member = {
 	opinion = 25
 	yearly_decay = 0.5
 }
+mongol_raids_knowledge_shared = {
+	opinion = -25
+	yearly_decay = 2
+}
+mongol_raids_submitted = {
+	opinion = -50
+	yearly_decay = 2
+}
 
 #Katharevousa
 opinion_guelph_ghib = {
@@ -220,11 +228,15 @@ opinion_hohenstaufer_relations = {
 }
 opinion_adopted_christianity = {
 	opinion = 50
-	yearly_decay = -2
+	yearly_decay = 2
 }
 opinion_kept_slavic_faith = {
 	opinion = 50
-	yearly_decay = -2
+	yearly_decay = 2
+}
+opinion_support_in_hussite_wars = {
+	opinion = 100
+	yearly_decay = 4
 }
 hrema24_opinion = {
 	opinion = -50
@@ -262,18 +274,6 @@ lem_refused_reparations_opinion = {
 	opinion = -50
 	yearly_decay = 2
 }
-byz_received_support_opinion = {
-	opinion = 50
-	yearly_decay = 2
-}
-byz_refused_support_opinion = {
-	opinion = -50
-	yearly_decay = 2
-}
-sav_antipope_opinion = {
-	opinion = -20
-	yearly_decay = 1
-}
 spi_evicted_from_romagna_opinion = {
 	opinion = -50
 	yearly_decay = 1
@@ -284,5 +284,9 @@ tou_principality_of_toulouse = {
 }
 lit_converted_to_our_faith_opinion = {
 	opinion = -50
+	yearly_decay = 2
+}
+bav_french_alliance_opinion = {
+	opinion = 50
 	yearly_decay = 2
 }

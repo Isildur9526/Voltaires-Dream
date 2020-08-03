@@ -349,6 +349,11 @@ pirate_republic_reform = {
 
 	removed_effect = {
 		clr_country_flag = pirate_mutineer_council
+		if = {
+			limit = { has_country_flag = is_pirates_of_omis_flag }
+			clr_country_flag = is_pirates_of_omis_flag
+			restore_country_name = yes
+		}
 	}
 	
 	potential = {

@@ -12,19 +12,13 @@ controller = VNM
 add_core = VNM
 
 1253.4.4 = {
-	owner = LIV
-	controller = LIV
-	add_core = LIV
+	owner = KUR
+	controller = KUR
 	add_core = KUR
 	remove_core = VNM
 	religion = catholic
 	capital = "Pilten"
 	culture = latvian
-}
-1290.1.1 = {
-	owner = KUR
-	controller = KUR
-	remove_core = LIV
 }
 1560.5.20 = {
 	owner = DAN

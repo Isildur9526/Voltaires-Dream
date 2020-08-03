@@ -463,6 +463,40 @@ greek_pirate_government = {
 	}
 }
 
+tenerife_kingdom = {
+	rank = {
+		1 = MENCEYATO
+		2 = MENCEYATO
+		3 = MENCEYATO
+		4 = MENCEYATO
+		5 = MENCEYATO
+		6 = MENCEYATO
+	}
+
+	ruler_male = {
+		1 = MENCEY
+		2 = MENCEY
+		3 = MENCEY
+		4 = MENCEY
+		5 = MENCEY
+		6 = MENCEY
+	}
+
+	ruler_female = {
+		1 = MENCEY
+		2 = MENCEY
+		3 = MENCEY
+		4 = MENCEY
+		5 = MENCEY
+		6 = MENCEY
+	}
+
+	trigger = {
+		tag = TNF
+		government = tribal
+	}
+}
+
 athenian_monastic_order = {
 	rank = {
 		1 = MERCENARY_COMPANY

@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = germanic_monarchy
 government_rank = 1
 technology_group = western
 primary_culture = northumbrian
@@ -64,6 +64,11 @@ historical_friend = ASE
 		dip = 2
 		mil = 2
 	}
+}
+
+1070.1.1 = {
+	government = monarchy
+	add_government_reform = feudalism_reform
 }
 
 #Resurrected

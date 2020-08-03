@@ -11,12 +11,18 @@ owner = DBE
 controller = DBE
 add_core = DBE
 
-1255.1.1 = {
+1290.1.1 = {
+	owner = LIV
+	controller = LIV
+	add_core = LIV
+	remove_core = DBE
+	culture = samogitian
+}
+1328.1.1 = {
 	owner = ZMG
 	controller = ZMG
 	add_core = ZMG
-	remove_core = DBE
-	culture = samogitian
+	remove_core = LIV
 }
 1432.8.31 = {
 	owner = LIT

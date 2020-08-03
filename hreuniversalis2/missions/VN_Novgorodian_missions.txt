@@ -1306,29 +1306,12 @@ vn_nov_missions_slot_5 = {
         position = 5
         required_missions = { vn_nov_access_baltic_sea_trade }
         trigger = {
-            any_ally = {
-				capital_scope = {
-					OR = {
-						superregion = austria_superregion 				
-						superregion = irish_superregion 
-						superregion = sicily_superregion
-						superregion = italy_superregion 
-						superregion = switzerland_superregion 
-						superregion = burgundian_superregion 
-						superregion = french_superregion 
-						superregion = iberia_superregion 
-						superregion = bohemia_superregion 
-						superregion = lowlands_superregion 
-						superregion = germanynorth_superregion 
-						superregion = germanysouth_superregion 
-						superregion = british_isles_superregion  
-						superregion = scandinavia_superregion  
-					}
-				}
+            any_ally = {			
+				technology_group = western
 				has_opinion = {
-                    who = ROOT
-                    value = 150
-                }
+					who = ROOT
+					value = 150
+				}
 			}
         }
         effect = {

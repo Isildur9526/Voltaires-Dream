@@ -75,6 +75,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = IRE
+			swap_non_generic_missions = yes
 			irish_superregion = {
 				limit = {
 					NOT = { owned_by = ROOT }

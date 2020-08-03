@@ -1225,7 +1225,11 @@ estate_church_propagate_religion = {
 				country = root
 				share = 50
 			}
-			is_node_in_trade_company_region = yes
+			OR = {
+				superregion = pontic_steppe_superregion
+				superregion = central_asia_superregion
+				superregion = caucasia_superregion
+			}
 			any_trade_node_member_province = {
 				is_city = yes
 				NOT = { religion_group = muslim }
@@ -1251,7 +1255,11 @@ estate_church_propagate_religion = {
 					country = root
 					share = 50
 				}
-				is_node_in_trade_company_region = yes
+				OR = {
+					superregion = pontic_steppe_superregion
+					superregion = central_asia_superregion
+					superregion = caucasia_superregion
+				}
 				any_trade_node_member_province = {
 					is_city = yes
 					NOT = { religion_group = muslim }

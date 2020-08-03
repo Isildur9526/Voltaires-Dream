@@ -66,7 +66,7 @@
  EST_VAL_MAMLUK_LEADERSHIP: "Mamluk Leadership: §Y$VAL$%§!"
  EST_VAL_SUPPLY_ARMS: "Supplied Arms: §Y$VAL$%§!"
  EST_VAL_SELF_GOVERNANCE: "Permitted Self Governance: §Y$VAL$%§!"
- EST_VAL_THING_POWER: "Delegated Power to the Þing: §Y$VAL$%§!"
+ EST_VAL_THING_POWER: "Delegated Power to the Assembly: §Y$VAL$%§!"
  permanent_marathas_council_reform: "Permanent Wuzurgan Council"
  permanent_marathas_council_reform_desc: "Wuzurgan generals and civic leaders are an important part of the balance of power in our nation. We should formalize their assemblies and establish a permanent council of the Wuzurgan to guide our nation."
  governmental_purbias_register_reform: "Governmental Aswaran Register"
@@ -74,6 +74,8 @@
  mechanic_maratha_general_interaction_yes: "The Wuzurgan Estate Interaction §YRecruit Minister§! will instead recruit a General with §G1§! additional Shock."
  mechanic_better_purbias_interaction_yes: "The Arteshtaran Estate Interaction §YEnlist Aswaran§! will give an additional §G5%§! discipline to Zhayedan Regiments."
 #1.30 Additions
+ estate_church_priory: "Priory"
+ estate_church_priory_desc: "A Priory is similar to an Abbacy but is staffed by women and lead by an Abbess rather than an Abbot."
  monopoly_privileges.11.d: "The monopoly on slaves we granted to the Mamluks has expired, meaning that we are now able to reclaim the income from slave trading. However, the [Root.GetClergyName] are keen to keep their privileges and are offering to pay us a lump sum in return for the monopoly being guaranteed for a further 10 years."
  estate_mamluks_guaranteed_autonomy_effect_tooltip: "Every owned province outside your culture group gains:\nLocal Culture Conversion Cost: §R+1000%§!\nLocal Unrest: §G-2§!"
  estate_mamluks_guaranteed_autonomy_revoke_effect_tooltip: "The modifier §Y'Guaranteed Mamluk Autonomy'§! is removed from all owned provinces."

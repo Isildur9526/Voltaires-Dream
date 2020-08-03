@@ -10,7 +10,7 @@ vn_kol_missions_slot_1 = {
 
     vn_kol_conquer_limburg = {
         position = 4
-        icon = mission_build_up_to_force_limit
+        icon = mission_village
         required_missions = { vn_kol_conquer_julich }
         provinces_to_highlight = {
             area = limburg_area
@@ -44,7 +44,7 @@ vn_kol_missions_slot_1 = {
         }
     }
     vn_kol_conquer_trier = {
-        icon = mission_teutonic_knights
+        icon = imperial_capitals
         required_missions = { vn_kol_conquer_limburg }
         provinces_to_highlight = {
             OR = {
@@ -82,7 +82,7 @@ vn_kol_missions_slot_1 = {
     }
     vn_kol_conquer_zweibrucken = {
         position = 6
-        icon = mission_village
+        icon = mission_european_castle
         required_missions = { vn_kol_conquer_trier }
         provinces_to_highlight = {
             OR = {
@@ -92,13 +92,12 @@ vn_kol_missions_slot_1 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            mainz_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            pfalzwest_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_owned_provinces_with = {
+                value = 10
+                OR = {
+                    area = mainz_area
+                    area = pfalzwest_area
+                }
             }
         }
         effect = {
@@ -123,7 +122,7 @@ vn_kol_missions_slot_2 = {
 
     vn_kol_archchancellor_of_italy = {
         position = 1
-        icon = mission_religious
+        icon = sway_the_pope
         required_missions = { }
         trigger = {
             custom_trigger_tooltip = {
@@ -262,7 +261,7 @@ vn_kol_missions_slot_2 = {
     }
     vn_kol_conquer_guelders = {
         position = 5
-        icon = mission_city_of_the_world's_desire
+        icon = protect_against_the_turks
         required_missions = { vn_kol_conquer_julich }
         provinces_to_highlight = {
             area = guelders_area
@@ -292,7 +291,7 @@ vn_kol_missions_slot_2 = {
         }
     }
     vn_kol_conquer_utrecht = {
-        icon = mission_sea_battles
+        icon = the_great_school
         required_missions = { vn_kol_conquer_guelders }
         provinces_to_highlight = {
             OR = {
@@ -333,7 +332,7 @@ vn_kol_missions_slot_3 = {
 
     vn_kol_gain_influence = {
         position = 1
-        icon = mission_alliances
+        icon = sponsor_the_arts
         required_missions = { }
         trigger = {
             army_size_percentage = 0.75
@@ -470,7 +469,7 @@ vn_kol_missions_slot_3 = {
         }
     }
     vn_kol_conquer_berg = {
-        icon = mission_unite_rajputana
+        icon = mission_rb_cod_wars
         required_missions = { vn_kol_gain_influence }
         provinces_to_highlight = {
             OR = {
@@ -515,7 +514,7 @@ vn_kol_missions_slot_3 = {
     }
     vn_kol_conquer_mark = {
         position = 4
-        icon = mission_rb_rein_in_the_highland_clans
+        icon = westphalian_conquest
         required_missions = { vn_kol_conquer_berg }
         provinces_to_highlight = {
             OR = {
@@ -545,7 +544,7 @@ vn_kol_missions_slot_3 = {
         }
     }
     vn_kol_conquer_westphalia = {
-        icon = mission_unite_home_region
+        icon = reclaim_the_ducal_lands
         required_missions = { vn_kol_conquer_mark }
         provinces_to_highlight = {
             region = hesse_region
@@ -587,7 +586,7 @@ vn_kol_missions_slot_3 = {
     }
     vn_kol_conquer_munster = {
         position = 5
-        icon = mission_cannons_firing
+        icon = evengelize_the_faith
         required_missions = { vn_kol_conquer_westphalia }
         provinces_to_highlight = {
             OR = {
@@ -621,7 +620,7 @@ vn_kol_missions_slot_3 = {
         }
     }
     vn_kol_ecclesiastical_enlightenment = {
-        icon = mission_hands_praying
+        icon = show_piety
         required_missions = { vn_kol_conquer_munster vn_kol_conquer_utrecht }
         trigger = {
             has_institution = enlightenment
@@ -688,7 +687,7 @@ vn_kol_missions_slot_4 = {
         }
     }
     vn_kol_finish_the_cathedral = {
-        icon = mission_rb_scottish_conquer_london
+        icon = connect_further_austria
         required_missions = { vn_kol_develop_cologne }
         provinces_to_highlight = {
             province_id = 1951
@@ -714,7 +713,7 @@ vn_kol_missions_slot_4 = {
     }
     vn_kol_residence_of_arnsberg = {
         position = 5
-        icon = mission_buildings
+        icon = ansbach_succession
         required_missions = { vn_kol_conquer_mark }
         provinces_to_highlight = {
             province_id = 82
@@ -722,8 +721,9 @@ vn_kol_missions_slot_4 = {
         trigger = {
             82 = {
                 owned_by = ROOT
-                development = 20
-                has_fort_trigger = yes
+                is_core = ROOT
+                num_of_times_improved_by_owner = 6
+                has_non_outdated_fort = yes
             }
         }
         effect = {
@@ -778,7 +778,7 @@ vn_kol_missions_slot_5 = {
         }
     }
     vn_kol_dominate_rhine_trade = {
-        icon = mission_dominate_home_trade_node
+        icon = sources_of_trade
         required_missions = { vn_kol_rhine_infrastructure }
         provinces_to_highlight = {
             OR = {
@@ -816,16 +816,16 @@ vn_kol_missions_slot_5 = {
         }
         effect = {
             add_mercantilism = 2
-            add_dip_power = 100
+            add_years_of_income = 0.5
         }
     }
     vn_kol_regulate_mining = {
-        icon = mission_rb_build_furnaces
+        icon = promote_urbanization
         required_missions = { vn_kol_dominate_rhine_trade }
         trigger = {
             num_of_owned_provinces_with = {
                 value = 10
-                base_production = 8
+                base_production = 10
                 has_manufactory_trigger = yes
             }
         }
@@ -837,17 +837,12 @@ vn_kol_missions_slot_5 = {
         }
     }
     vn_kol_siegburger_reform = {
-        icon = mission_rb_monopolize_the_channel
+        icon = balance_the_estates
         required_missions = {  }
         trigger = {
-            if = {
-                limit = { has_dlc = "Dharma" }
-                has_reform_level = 3
-            }
-            else = {
-                stability = 3
-            }
-            NOT = { corruption = 1 }
+            has_reform_level = 5
+            NOT = { average_unrest = 0.1 }
+            NOT = { corruption = 0.1 }
             NOT = { num_of_rebel_controlled_provinces = 1 }
 			NOT = { num_of_rebel_armies = 1 }
         }
@@ -858,28 +853,28 @@ vn_kol_missions_slot_5 = {
         }
     }
     vn_kol_holy_order_of_michael = {
-        icon = mission_defend_the_faith
+        icon = support_the_orders
         required_missions = { vn_kol_siegburger_reform }
         trigger = {
-            OR = {
-                temple = 8
-                cathedral = 3
+            num_of_owned_provinces_with = {
+                value = 5
+                has_tax_building_trigger = yes
             }
-            OR = {
-                regimental_camp = 8
-                conscription_center = 3
+            num_of_owned_provinces_with = {
+                value = 5
+                has_forcelimit_building_trigger = yes
             }
         }
         effect = {
             add_army_tradition = 10
             add_country_modifier = {
                 name = kol_holy_order_of_michael_mission
-                duration = -1
+                duration = 9125
             }
         }
     }
     vn_kol_seneschal_upheaval = {
-        icon = mission_luther_theses
+        icon = victor_for_the_true_faith
         required_missions = { vn_kol_holy_order_of_michael }
         trigger = {
             stability = 2

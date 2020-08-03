@@ -12,9 +12,9 @@ controller = PLS
 add_core = PLS
 
 1252.7.29 = { 
-	owner = TEU
-	controller = TEU
-	add_core = TEU
+	owner = LIV
+	controller = LIV
+	add_core = LIV
 }
 1276.1.1 = {
 	culture = pruthenian
@@ -25,6 +25,12 @@ add_core = PLS
 1299.1.1 = {
 	religion = catholic
 	unrest = 0
+}
+1328.1.1 = {
+	owner = TEU
+	controller = TEU
+	add_core = TEU
+	remove_core = LIV
 }
 1435.12.31 = {
 	owner = LIT

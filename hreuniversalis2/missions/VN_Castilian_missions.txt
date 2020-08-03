@@ -231,7 +231,15 @@ vn_cas_missions_slot_1_b = {
         }
         effect = {
             add_prestige = 10
-			add_adm_power = 25
+            add_adm_power = 25
+            galicia_area = {
+                limit = { NOT = { is_core = GAL } }
+                add_core = GAL
+            }
+            ourense_area = {
+                limit = { NOT = { is_core = GAL } }
+                add_core = GAL
+            }
             galicia_area = {
                 limit = { country_or_non_sovereign_subject_holds = ROOT }
                 add_province_modifier = {
@@ -358,7 +366,7 @@ vn_cas_missions_slot_1_b = {
         }
     }
     vn_cas_subjugate_aragon = {
-        icon = mission_unite_home_region    #placeholder
+        icon = king_of_aragon
         required_missions = { vn_cas_crown_of_castile }
         provinces_to_highlight = {
             OR = {
@@ -645,6 +653,14 @@ vn_cas_missions_slot_2_b = {
                     }
                 }
                 leonese_region = {
+                    limit = { NOT = { is_core = LON } }
+                    add_core = LON
+                }
+                asturias_area = {
+                    limit = { NOT = { is_core = ASU } }
+                    add_core = ASU
+                }
+                leonese_region = {
                     limit = { country_or_non_sovereign_subject_holds = ROOT }
                     add_province_modifier = {
                         name = "cas_subjugate_galicia_mission"
@@ -665,6 +681,10 @@ vn_cas_missions_slot_2_b = {
                         tag = LON
                         was_tag = LON
                     }
+                }
+                castile_region = {
+                    limit = { NOT = { is_core = CAS } }
+                    add_core = CAS
                 }
                 castile_region = {
                     limit = { country_or_non_sovereign_subject_holds = ROOT }
@@ -782,11 +802,25 @@ vn_cas_missions_slot_2_d = {
         }
         effect = {
             add_prestige = 10
-            add_mil_power = 25
-            add_country_modifier = {
-				name = "ara_aragonese_portugal_mission"
-				duration = 9125
-			}
+            if = {
+                limit = {
+                    beiras_region = {
+                        type = all
+                        country_or_non_sovereign_subject_holds = ROOT
+                    }
+                    alentejo_region = {
+                        type = all
+                        country_or_non_sovereign_subject_holds = ROOT
+                    }
+                }
+                add_country_modifier = {
+                    name = "ara_aragonese_portugal_mission"
+                    duration = 9125
+                }
+            }
+            else = {
+                add_dip_power = 100
+            }
         }
 	}
 	vn_cas_islas_canarias = {	
@@ -847,6 +881,7 @@ vn_cas_missions_slot_3_a = {
     vn_cas_prepare_reconquista = {
         icon = mission_build_up_to_force_limit
         required_missions = { }
+        completed_by = 1055.1.1
 		position = 1
 		provinces_to_highlight = {
 			OR = {

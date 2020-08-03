@@ -1,0 +1,409 @@
+#Mongol Raid Incident
+namespace = incident_mongol_raids
+
+#Initial event for horde
+country_event = {
+	id = incident_mongol_raids.1
+	title = incident_mongol_raids.1.t
+	desc = incident_mongol_raids.1.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	trigger = {
+		has_dlc = "Emperor"
+		OR = {
+			tag = GLH
+			tag = JMN
+			tag = ILK
+			tag = KZH
+		}
+		is_subject = no
+		current_age = age_of_crisis
+		years_of_income = 0.5
+		manpower = 5
+		NOT = { active_imperial_incident = any }
+		OR = {
+			saxony_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+			brandenburg_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+			mecklenburg_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+			lusatia_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+			hinterpommern_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+			silesia_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+		}
+		any_country = {
+			is_part_of_hre = yes
+			is_emperor = no
+			capital_scope = {
+				OR = {
+					region = saxony_region
+					region = brandenburg_region
+					region = mecklenburg_region
+					region = lusatia_region
+					region = hinterpommern_region
+					region = silesia_region
+				}
+			}
+		}
+		OR = {
+			any_neighbor_country = {
+				government = monarchy
+				any_owned_province = {
+					OR = {
+						superregion = ruthenia_superregion
+						superregion = russia_superregion
+					}
+				}
+			}
+			any_owned_province = {
+				OR = {
+					superregion = ruthenia_superregion
+					superregion = russia_superregion
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.05
+			any_neighbor_country = {
+				is_part_of_hre = yes
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			save_global_event_target_as = mongol_raider_country
+			if = {
+				limit = {
+					OR = {
+						hinterpommern_region = {
+							type = all
+							is_part_of_hre = yes
+						}
+						silesia_region = {
+							type = all
+							is_part_of_hre = yes
+						}
+					}
+				}
+				random_list = {
+					50 = {
+						hinterpommern_region = {
+							save_global_event_target_as = mongol_raid_region
+						}
+					}
+					50 = {
+						silesia_region = {
+							save_global_event_target_as = mongol_raid_region
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						brandenburg_region = {
+							type = all
+							is_part_of_hre = yes
+						}
+						mecklenburg_region = {
+							type = all
+							is_part_of_hre = yes
+						}
+						lusatia_region = {
+							type = all
+							is_part_of_hre = yes
+						}
+					}
+				}
+				random_list = {
+					33 = {
+						brandenburg_region = {
+							save_global_event_target_as = mongol_raid_region
+						}
+					}
+					33 = {
+						mecklenburg_region = {
+							save_global_event_target_as = mongol_raid_region
+						}
+					}
+					33 = {
+						lusatia_region = {
+							save_global_event_target_as = mongol_raid_region
+						}
+					}
+				}
+			}
+			else = {
+				saxony_region = {
+					save_global_event_target_as = mongol_raid_region
+				}
+			}
+			random_country = {
+				limit = {
+					is_part_of_hre = yes
+					is_emperor = no
+					capital_scope = {
+						region = event_target:mongol_raid_region
+					}
+				}
+				set_country_flag = mongol_raid_victim
+				save_global_event_target_as = mongol_raided_country
+			}
+		}
+	}
+
+	option = {
+		name = incident_mongol_raids.1.a
+		ai_chance = { factor = 100 }
+		add_manpower = -5
+		add_years_of_income = -0.5
+		add_prestige = 10
+		add_army_tradition = 10
+		event_target:mongol_raided_country = {
+			country_event = {
+				id = incident_mongol_raids.2
+				days = 180
+				random = 20
+			}
+		}
+	}
+	option = {
+		name = incident_mongol_raids.1.b
+		ai_chance = { factor = 0 }
+		add_prestige = -15
+	}
+}
+
+country_event = {
+	id = incident_mongol_raids.2
+	title = incident_mongol_raids.2.t
+	desc = incident_mongol_raids.2.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_mongol_raids.2.a
+		ai_chance = { factor = 100 }
+		add_stability = -1
+		add_years_of_income = -0.5
+		capital_scope = {
+			area = {
+				add_devastation = 25
+			}
+		}
+		set_imperial_incident = incident_mongol_raids
+	}
+}
+
+#Incident Event
+country_event = {
+	id = incident_mongol_raids.3
+	title = incident_mongol_raids.3.t
+	desc = incident_mongol_raids.3.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {	#try to repel raid
+		name = incident_mongol_raids.3.a
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_country_flag = mongol_raid_victim
+			}
+			modifier = {
+				factor = 1000
+				capital_scope = { region = event_target:mongol_raid_region }
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_loyal
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_allied
+					}
+				}
+			}
+		}
+		emperor = {
+			random_list = {
+				50 = {	#raid is stopped
+					country_event = {
+						id = incident_mongol_raids.4
+					}
+				}
+				50 = {	#mongols beat forces
+					country_event = {
+						id = incident_mongol_raids.5
+					}
+				}
+			}
+		}
+	}
+	option = {	#knowledge share
+		name = incident_mongol_raids.3.b
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 100
+				OR = {
+					ruler_has_personality = scholar_personality
+					ruler_has_personality = free_thinker_personality
+				}
+			}
+		}
+		custom_tooltip = incident_mongol_raids.3.b.tt
+		hidden_effect = {
+			every_elector = {
+				add_opinion = {
+					who = emperor
+					modifier = mongol_raids_knowledge_shared
+				}
+			}
+		}
+		emperor = {
+			add_country_modifier = {
+				name = "incident_mongol_raids_knowledge"
+				duration = 9125
+			}
+		}
+		event_target:mongol_raider_country = {
+			add_country_modifier = {
+				name = "incident_mongol_raids_knowledge"
+				duration = 9125
+			}
+		}
+	}
+	option = {	#submit
+		name = incident_mongol_raids.3.c
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 100
+				OR = {
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_disloyal
+					}
+					ai_attitude = {
+						who = emperor
+						attitude = attitude_rebellious
+					}
+				}
+			}
+		}
+		emperor = {
+			add_years_of_income = -1
+			add_prestige = -15
+		}
+		custom_tooltip = incident_mongol_raids.3.c.tt2
+		event_target:mongol_raider_country = {
+			add_years_of_income = 1
+			add_prestige = 15
+		}
+		custom_tooltip = incident_mongol_raids.3.c.tt
+		hidden_effect = {
+			every_elector = {
+				add_opinion = {
+					who = emperor
+					modifier = mongol_raids_submitted
+				}
+			}
+		}
+	}
+}
+
+#Raid Repulsed
+country_event = {
+	id = incident_mongol_raids.4
+	title = incident_mongol_raids.4.t
+	desc = incident_mongol_raids.4.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = incident_mongol_raids.4.a
+		ai_chance = { factor = 100 }
+		add_imperial_influence = 10
+		add_prestige = 15
+		event_target_mongol_raider_country = {
+			add_prestige = -15
+		}
+	}
+}
+
+#Raiders Victorious
+country_event = {
+	id = incident_mongol_raids.5
+	title = incident_mongol_raids.5.t
+	desc = incident_mongol_raids.5.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = incident_mongol_raids.5.a
+		ai_chance = { factor = 100 }
+		add_imperial_influence = -10
+		add_prestige = -15
+		event_target_mongol_raider_country = {
+			add_prestige = 15
+			add_years_of_income = 0.5
+			add_manpower = 10
+		}
+		event_target:mongol_raid_region = {
+			limit = { is_part_of_hre = yes }
+			add_devastation = 25
+		}
+	}
+}

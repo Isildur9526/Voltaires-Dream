@@ -43,7 +43,7 @@ HGA_ideas = {
         manpower_recovery_speed = 0.15
     }
     bonus = {
-        rebel_support_efficiency = 0.25
+        enforce_religion_cost = -0.25
     }
     
     trigger = {
@@ -220,7 +220,7 @@ KNV_ideas = {
         global_tax_modifier = 0.1
     }
     KNV_idea_4 = {
-        prestige = 0.5
+        church_loyalty_modifier = 0.1
     }
     KNV_idea_5 = {
         trade_steering = 0.2
@@ -277,7 +277,7 @@ MIN_ideas = {
         build_time = -0.1
     }
     bonus = {
-        ship_durability = 0.05
+        burghers_loyalty_modifier = 0.05
     }
     
     trigger = {
@@ -512,7 +512,7 @@ RMG_ideas = {
         spy_offence = 0.2
     }
     bonus = {
-        prestige = 0.5
+        church_loyalty_modifier = 0.1
     }
 
     trigger = {
@@ -947,7 +947,7 @@ SDL_ideas = {
         global_unrest = -1
     }
     SDL_idea_4 = {
-        trade_range_modifier = 0.1
+        allowed_marine_fraction = 0.1
         global_sailors_modifier = 0.2
     }
     SDL_idea_5 = {
@@ -977,7 +977,7 @@ GMU_ideas = {
     }
     free = yes
     GMU_idea_1 = {
-        prestige = 0.5
+        nobles_loyalty_modifier = 0.1
     }
     GMU_idea_2 = {
         global_garrison_growth = 0.25
@@ -1525,7 +1525,7 @@ BOU_ideas = {
         heir_chance = 0.5
     }
     BOU_bourbon_kings = {
-        prestige = 0.5
+        yearly_absolutism = 0.05
     }
 }
 
@@ -1583,6 +1583,7 @@ ETR_ideas = {
     }
     ETR_idea_2 = {
         army_tradition = 0.5
+        max_revolutionary_zeal = 10
     }
     ETR_idea_3 = {
         yearly_absolutism = 0.5
@@ -2568,7 +2569,7 @@ SSS_ideas = {
     }
     free = yes
     SSS_idea_1 = {
-		prestige = 0.5
+		church_influence_modifier = 0.1
 		devotion = 0.5
     }
     SSS_idea_2 = {
@@ -2957,7 +2958,8 @@ KLG_ideas = {
 		num_accepted_cultures = 1
     }
     KLG_idea_7 = {
-		global_tax_modifier = 0.1
+        global_tax_modifier = 0.1
+        burghers_loyalty_modifier = 0.05
     }
 }
 
@@ -3104,7 +3106,7 @@ DSD_ideas = {
 		idea_cost = -0.1
 	}
 	DSD_idea_7 = {
-		republican_tradition = 0.3
+		max_revolutionary_zeal = 10
 		tolerance_heretic = 1
 	}
 }
@@ -3150,7 +3152,7 @@ BMS_ideas = {
 Speyer_ideas = {
     start = {
 		global_trade_power = 0.1
-		prestige = 0.5
+		church_loyalty_modifier = 0.05
     }
     bonus = {
 		diplomats = 1
@@ -3357,8 +3359,8 @@ ZUR_ideas = {
         tolerance_own = 2
     }
     Establishment_of_the_zuercher_city_council = {
-		legitimacy = 1
-        republican_tradition = 0.3
+		reform_progress_growth = 0.15
+        burghers_loyalty_modifier = 0.05
     }
     Codes_Manesse = {
         prestige = 0.5
@@ -3496,7 +3498,8 @@ LEM_ideas = {
 		galley_power = 0.2
 	}
 	LEM_idea_7 = {
-		papal_influence = 2
+        papal_influence = 2
+        church_loyalty_modifier = 0.05
 	}
 }
 
@@ -3969,7 +3972,7 @@ RVA_ideas = {
     }
     Paritetic_government_of_ravensburg = {
         tolerance_heretic = 1
-        prestige = 0.5
+        governing_capacity_modifier = 0.1
     }
     Ravensburger_paper_mill = {
         production_efficiency = 0.1
@@ -4309,7 +4312,7 @@ ECH_ideas = {
         leader_land_manuever = 1
     }
     ECH_idea_2 = {
-        prestige = 0.5
+        governing_capacity_modifier = 0.1
     }
     ECH_idea_3 = {
         reinforce_speed = 0.15
@@ -4588,7 +4591,8 @@ LBO_ideas = {
         province_warscore_cost = -0.1
     }
     LBO_idea_5 = {
-        prestige = 0.5
+        may_recruit_female_generals = yes
+        female_advisor_chance = 0.5
     }
     LBO_idea_6 = {
         diplomatic_upkeep = 1
@@ -5356,7 +5360,7 @@ HAI_ideas = {
         discipline = 0.05
     }
     HAI_idea_7 = {
-        prestige = 0.5
+        burghers_loyalty_modifier = 0.1
     }
 }
 
@@ -5595,7 +5599,7 @@ THO_ideas = {
     }
 
     bonus = {
-        prestige = 0.5
+        may_recruit_female_generals = yes
     }
 
     trigger = {
@@ -5603,6 +5607,7 @@ THO_ideas = {
     }
     free = yes
     THO_idea_1 = {
+        female_advisor_chance = 0.2
         ae_impact = -0.1
     }
     THO_idea_2 = {
@@ -6153,6 +6158,7 @@ XSZ_ideas = {
     }
     XSZ_idea_4 = {
         cavalry_power = 0.15
+        cossacks_loyalty_modifier = 0.05
     }
     XSZ_idea_5 = {
         improve_relation_modifier = 0.3
@@ -6197,7 +6203,7 @@ BLR_ideas = {
         development_cost = -0.1
     }
     BLR_idea_6 = {
-        prestige = 0.5
+        nobles_loyalty_modifier = 0.1
     }
     BLR_idea_7 = {
         diplomatic_reputation = 1
@@ -6779,8 +6785,8 @@ DSS_ideas = {
         diplomatic_upkeep = 1
     }
     DSS_idea_4 = {
-		legitimacy = 1
-		republican_tradition = 0.3
+		nobles_influence_modifier = 0.1
+        nobles_loyalty_modifier = 0.05
     }
     DSS_idea_5 = {
         hostile_attrition = 1
@@ -7100,6 +7106,7 @@ FFE_ideas = {
     free = yes
     FFE_idea_1 = {
         prestige = 0.5
+        nobles_loyalty_modifier = 0.05
     }
     FFE_idea_2 = {
         leader_land_shock = 1
@@ -7492,7 +7499,7 @@ SLZ_ideas = {
         papal_influence = 2
     }
     SLZ_idea_5 = {
-        global_missionary_strength = 0.02
+        enforce_religion_cost = -0.25
     }
     SLZ_idea_6 = {
         advisor_pool = 1
@@ -8657,6 +8664,7 @@ VER_ideas = {
     }
     VER_idea_5 = {
         prestige = 0.5
+        church_loyalty_modifier = 0.05
     }
     VER_idea_6 = {
         cavalry_cost = -0.1
@@ -8701,6 +8709,7 @@ WRM_ideas = {
     }
     WRM_idea_7 = {
         war_exhaustion = -0.02
+        female_advisor_chance = 0.5
     }
 }
 
@@ -9294,6 +9303,7 @@ fatimid_ideas = {
 
     fatimid_idea_1 = {
         core_creation = -0.1
+        monthly_piety = -0.001
     }
     fatimid_idea_2 = {
         religious_unity = 0.25
@@ -9353,7 +9363,7 @@ GUY_ideas = {
         hostile_attrition = 1
     }
     GUY_idea_7 = {
-        prestige = 0.5
+        monarch_admin_power = 1
     }
 }
 
@@ -9584,6 +9594,7 @@ BER_ideas = {
         advisor_cost = -0.1
     }
     BER_idea_6 = {
+        may_recruit_female_generals = yes
         free_leader_pool = 1
     }
     BER_idea_7 = {
@@ -9844,6 +9855,7 @@ GAZ_ideas = {
     }
     GAZ_idea_2 = {
         num_accepted_cultures = 1
+        dhimmi_loyalty_modifier = 0.05
     }
     GAZ_idea_3 = {
         autonomy_change_time = -0.25
@@ -9886,6 +9898,7 @@ RAM_ideas = {
     RAM_idea_3 = {
 		legitimacy = 1
 		republican_tradition = 0.3
+        mamluks_loyalty_modifier = 0.05
     }
     RAM_idea_4 = {
         improve_relation_modifier = 0.3
@@ -10078,7 +10091,8 @@ TBR_ideas = {
         production_efficiency = 0.1
     }
     TBR_idea_5 = {
-        prestige = 0.5
+        church_loyalty_modifier = 0.1
+        monthly_piety = -0.001
     }
     TBR_idea_6 = {
         global_trade_goods_size_modifier = 0.1
@@ -10478,7 +10492,7 @@ AHI_ideas = {
     free = yes
     
     AHI_idea_1 = {
-		prestige = 0.5
+		governing_capacity_modifier = 0.1
 		republican_tradition = 0.3
     }
     AHI_idea_2 = {
@@ -10522,7 +10536,7 @@ VDR_ideas = {
         missionaries = 1
     }
     VDR_idea_3 = {
-        prestige = 0.5
+        governing_capacity_modifier = 0.1
         meritocracy = 1
     }
     VDR_idea_4 = {
@@ -11141,6 +11155,7 @@ BGH_ideas = {
     BGH_idea_3 = {
 		legitimacy = 1
 		republican_tradition = 0.3
+        monthly_piety = 0.001
     }
     BGH_idea_4 = {
         tolerance_own = 2
@@ -11268,6 +11283,7 @@ TPI_ideas = {
     }
     TPI_idea_7 = {
         diplomatic_upkeep = 1
+        church_loyalty_modifier = 0.05
     }
 }
 
@@ -11301,6 +11317,7 @@ MRK_ideas = {
     }
     MRK_idea_5 = {
         war_exhaustion = -0.02
+        reform_progress_growth = 0.15
     }
     MRK_idea_6 = {
         global_heretic_missionary_strength = 0.02
@@ -11445,8 +11462,7 @@ ASY_ideas = {
         global_missionary_strength = 0.02
     }
     ASY_idea_3 = {
-        legitimacy = 1
-        republican_tradition = 0.3
+        monarch_admin_power = 1
     }
     ASY_idea_4 = {
         improve_relation_modifier = 0.3
@@ -11484,7 +11500,7 @@ KTI_ideas = {
         land_morale = 0.1
     }
     KTI_idea_3 = {
-        prestige = 0.5
+        governing_capacity_modifier = 0.1
     }
     KTI_idea_4 = {
         hostile_attrition = 1
@@ -11516,7 +11532,7 @@ ORK_ideas = {
     free = yes
 
     ORK_idea_1 = {
-        prestige = 0.5
+        monarch_military_power = 1
     }
     ORK_idea_2 = {
         tolerance_own = 1
@@ -11602,7 +11618,7 @@ REU_ideas = {
         land_morale = 0.1
     }
     REU_idea_4 = {
-		prestige = 0.5
+		church_loyalty_modifier = 0.05
         build_cost = -0.1
     }
     REU_idea_5 = {
@@ -11647,7 +11663,8 @@ RWI_ideas = {
         diplomatic_upkeep = 1
     }
     RWI_idea_6 = {
-        prestige = 0.5
+        burghers_influence_modifier = 0.1
+		burghers_loyalty_modifier = 0.05
     }
     RWI_idea_7 = {
         global_unrest = -1
@@ -11707,7 +11724,7 @@ PVA_ideas = {
         core_creation = -0.1
     }
     PVA_idea_2 = {
-        prestige = 0.5
+        governing_capacity_modifier = 0.1
     }
     PVA_idea_3 = {
 		infantry_power = 0.1
@@ -12017,6 +12034,7 @@ VYT_ideas = {
     }
     VYT_idea_4 = {
         diplomatic_reputation = 1
+        cossacks_loyalty_modifier = 0.05
     }
     VYT_idea_5 = {
         global_trade_goods_size_modifier = 0.1
@@ -12060,7 +12078,7 @@ IGR_ideas = {
     }
     IGR_idea_6 = {
         global_ship_recruit_speed = -0.1
-        sailors_recovery_speed = 0.05
+        allowed_marine_fraction = 0.05
     }
     IGR_idea_7 = {
         spy_offence = 0.2
@@ -12480,7 +12498,8 @@ XGR_ideas = {
         diplomatic_reputation = 1
     }
     XGR_idea_3 = {
-		prestige = 0.5
+        prestige = 0.5
+        max_revolutionary_zeal = 10
     }
     XGR_idea_4 = {
 		artillery_power = 0.1

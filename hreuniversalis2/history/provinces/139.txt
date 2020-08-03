@@ -23,11 +23,23 @@ add_core = HOO
 	add_core = MAI
 	remove_core = HOO
 }
+1525.4.10 = {
+	owner = TEU
+	controller = TEU
+	add_core = TEU
+	remove_core = MAI
+}
+1691.9.29 = {
+	owner = MAI
+	controller = MAI
+	add_core = MAI
+}
 1803.2.25 = {
 	owner = WUR
 	controller = WUR
 	add_core = WUR
 	remove_core = MAI
+	remove_core = TEU
 }
 1866.8.23 = { hre = no }
 1871.1.18 = {

@@ -1122,7 +1122,7 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = nationalist_rebels
-				leader = "Georgi Voyteh"
+				leader = "Georgi Voiteh"
 				size = 4
 				win = yes
 			}
@@ -1136,8 +1136,45 @@ country_event = {
 			spawn_rebels = {
 				type = nationalist_rebels
 				leader = "Nestor Theophylact"
-				size = 5
+				size = 4
 				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture = bulgarian
+				controlled_by = ROOT
+				has_siege = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				leader = "Nikephoros"
+				leader_dynasty = "Basilakes"
+				size = 4
+				win = yes
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					culture = albanian
+					controlled_by = ROOT
+					has_siege = no
+				}
+			}
+			random_owned_province = {
+				limit = {
+					culture = albanian
+					controlled_by = ROOT
+					has_siege = no
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					leader = "Nikephoros"
+					leader_dynasty = "Bryennios"
+					size = 4
+					win = yes
+				}
 			}
 		}
 	}

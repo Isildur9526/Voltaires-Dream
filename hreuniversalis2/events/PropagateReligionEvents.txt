@@ -571,7 +571,11 @@ country_event = {
 		NOT = { dominant_religion = ROOT }
 		capital_scope = {
 			religion_group = muslim
-			is_node_in_trade_company_region = yes
+			OR = {
+				superregion = pontic_steppe_superregion
+				superregion = central_asia_superregion
+				superregion = caucasia_superregion
+			}
 		}
 		NOT = { has_country_modifier = islamic_titles }
 	}
@@ -627,7 +631,11 @@ country_event = {
 		OR = {
 			has_ruler_flag = said_no_to_islamic_titles
 			capital_scope = {
-				is_node_in_trade_company_region = yes
+				OR = {
+					superregion = pontic_steppe_superregion
+					superregion = central_asia_superregion
+					superregion = caucasia_superregion
+				}
 			}
 		}
 	}
@@ -891,7 +899,11 @@ country_event = {
 		any_owned_province = {
 			religion_group = muslim
 			has_owner_culture = yes
-			is_node_in_trade_company_region = yes
+			OR = {
+				superregion = pontic_steppe_superregion
+				superregion = central_asia_superregion
+				superregion = caucasia_superregion
+			}
 		}
 		any_active_trade_node = {
 			any_country = {
@@ -978,7 +990,11 @@ province_event = {
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
-		is_node_in_trade_company_region = yes
+		OR = {
+			superregion = pontic_steppe_superregion
+			superregion = central_asia_superregion
+			superregion = caucasia_superregion
+		}
 		has_empty_adjacent_province = yes
 		owner = {
 			NOT = { religion_group = muslim }

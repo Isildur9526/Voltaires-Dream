@@ -14,7 +14,7 @@ vn_tou_missions_slot_1 = {
 	
 	vn_tou_weather_catharism = {
 		position = 1
-		icon = mission_rb_control_state_religion
+		icon = a_center_of_religion
 		required_missions = {}
 		trigger = {
 			religion_years = { cathar = 10 }
@@ -33,24 +33,13 @@ vn_tou_missions_slot_1 = {
 		}
 	}
 	vn_tou_secure_religious_peace = {
-		icon = mission_religious
+		icon = shield_of_christendom
 		required_missions = { vn_tou_weather_catharism }
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_tou_secure_religious_peace.tt
-				had_country_flag = {
-					flag = tou_cathar_heresy
-					days = 10950
-				}
-			}
+			religion_years = { cathar = 25 }
 			religious_unity = 1
-			OR = {
-				inquisitor = 3
-				theologian = 3
-			}
 		}
 		effect = {
-			add_stability_or_adm_power = yes
 			add_country_modifier = {
 				name = "tou_secure_religious_peace_mission"
 				duration = -1
@@ -59,7 +48,7 @@ vn_tou_missions_slot_1 = {
 	}
 	vn_tou_crusading_army = {
 		position = 4
-		icon = mission_teutonic_knights
+		icon = mission_crusade
 		required_missions = { }
 		trigger = {
 			if = {
@@ -71,7 +60,7 @@ vn_tou_missions_slot_1 = {
 				}
 				estate_loyalty = {
 					estate = estate_holy_orders
-					loyalty = 65
+					loyalty = 60
 				}
 			}
 			army_size = 25
@@ -79,14 +68,6 @@ vn_tou_missions_slot_1 = {
 			num_of_generals = 2
 		}
 		effect = {
-			define_advisor = {
-				type = army_organiser
-				name = "Pierre Barthélemy"
-				religion = catholic
-				culture = occitain
-				skill = 3
-				cost_multiplier = 0.25
-			}
 			3027 = { 
 				if = {
 					limit = {
@@ -103,7 +84,7 @@ vn_tou_missions_slot_1 = {
 		}
 	}
 	vn_tou_seize_tripoli = {
-		icon = mission_crusade
+		icon = restore_the_hospitallers
 		required_missions = { vn_tou_crusading_army }
 		provinces_to_highlight = {
 			province_id = 3027
@@ -112,7 +93,14 @@ vn_tou_missions_slot_1 = {
 			3027 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
-			add_prestige = 15
+			define_advisor = {
+				type = army_organiser
+				name = "Pierre Barthélemy"
+				religion = catholic
+				culture = occitain
+				skill = 3
+				cost_multiplier = 0.25
+			}
 			add_religious_influence_effect_small = yes
 			lebanon_area = {
 				limit = {
@@ -131,7 +119,7 @@ vn_tou_missions_slot_1 = {
 		}
 	}
 	vn_tou_fortify_tripoli = {
-		icon = mission_conquer_50_development
+		icon = mission_arabian_fort
 		required_missions = { vn_tou_seize_tripoli }
 		provinces_to_highlight = {
 			province_id = 3027
@@ -170,11 +158,16 @@ vn_tou_missions_slot_2 = {
 	vn_tou_aquitaine_rivalry = {
 		position = 1
 		icon = mission_humiliate_provence
-		required_missions = {}
+		required_missions = { }
 		trigger = {
 			army_size_percentage = 0.95
-			any_rival_country = {
-				primary_culture = poitevin
+			OR = {
+				any_rival_country = {
+					primary_culture = poitevin
+				}
+				any_ally = {
+					primary_culture = poitevin
+				}
 			}
 		}
 		effect = {
@@ -227,7 +220,7 @@ vn_tou_missions_slot_2 = {
 		}
 	}
 	vn_tou_conquer_bearn = {
-		icon = mission_unite_home_region
+		icon = negotiate_for_avignon
 		required_missions = { vn_tou_conquer_foix }
 		provinces_to_highlight = {
 			OR = {
@@ -320,7 +313,7 @@ vn_tou_missions_slot_2 = {
 		}
 	}
 	vn_tou_conquer_holy_land = {
-		icon = mission_arabian_fort
+		icon = jerusalem
 		required_missions = { vn_tou_seize_tripoli }
 		provinces_to_highlight = {
 			OR = {
@@ -362,7 +355,7 @@ vn_tou_missions_slot_3 = {
 	
 	vn_tou_conquer_rouergue = {
 		position = 2
-		icon = mission_consolidate_the_state
+		icon = imperial_capitals
 		required_missions = { vn_tou_aquitaine_rivalry }
 		provinces_to_highlight = {
 			area = cahors_area
@@ -393,7 +386,7 @@ vn_tou_missions_slot_3 = {
 	}
 	vn_tou_conquer_limoges = {
 		position = 5
-		icon = mission_secure_khandesh
+		icon = claim_the_borderlands
 		required_missions = { vn_tou_conquer_rouergue vn_tou_conquer_bordeaux }
 		provinces_to_highlight = {
 			OR = {
@@ -425,7 +418,7 @@ vn_tou_missions_slot_3 = {
 		trigger = {
 			is_subject = no
 			stability = 1
-			total_development = 200
+			total_development = 400
 		}
 		effect = {
 			country_event = { id = vn_missions.23 }
@@ -453,25 +446,32 @@ vn_tou_missions_slot_4 = {
 
 	vn_tou_aragonese_rivalry = {
 		position = 1
-		icon = mission_intervene_in_castile
+		icon = italia_transalpina
 		required_missions = { }
 		trigger = {
 			if = {
-				limit = {
-					exists = ARA
-					ARA = { is_free_or_tributary_trigger = yes }
-				}
-				AND = {
-					is_rival = ARA
+				limit = { exists = ARA }
+				OR = {
+					alliance_with = ARA
 					ARA = {
-						OR = {
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = insulted
+						custom_trigger_tooltip = {
+							tooltip = rivalled_or_rival_of
+							OR = {
+								is_rival = ROOT
+								ROOT = { is_rival = REV }
 							}
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = scornfully_insulted
+						}
+						custom_trigger_tooltip = {
+							tooltip = has_been_insulted_by_root
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
 							}
 						}
 					}
@@ -504,7 +504,7 @@ vn_tou_missions_slot_4 = {
 	}
 	vn_tou_conquer_carcassonne = {
 		position = 3
-		icon = mission_junnagadh_fort
+		icon = protect_against_the_turks
 		required_missions = { vn_tou_aragonese_rivalry }
 		provinces_to_highlight = {
 			OR = {
@@ -542,7 +542,7 @@ vn_tou_missions_slot_4 = {
 	}
 	vn_tou_conquer_languedoc = {
 		position = 4
-		icon = mission_secure_hajj_ports
+		icon = renaissance_city
 		required_missions = { vn_tou_conquer_carcassonne }
 		provinces_to_highlight = {
 			OR = {
@@ -587,7 +587,7 @@ vn_tou_missions_slot_4 = {
 	}
 	vn_tou_conquer_provence = {
 		position = 5
-		icon = mission_unite_home_region
+		icon = the_gallic_wars
 		required_missions = { vn_tou_conquer_languedoc }
 		provinces_to_highlight = {
 			region = provence_region
@@ -625,17 +625,18 @@ vn_tou_missions_slot_5 = {
 		required_missions = { }
 		trigger = {
 			land_forcelimit = 25
-			if = {
-				limit = { exists = FRA }
-				total_development = FRA
-			}
-			else = {
-				total_development = 200
-			}
+			land_maintenance = 1
+			NOT = { FRA = { tech_difference = 1 } }
 		}
 		effect = {
-			add_prestige = 15
-			add_manpower = 5
+			if = {
+				limit = { is_subject_of = FRA }
+				add_liberty_desire = 50
+			}
+			else = {
+				add_prestige = 15
+			}
+			add_army_tradition = 5
 			add_country_modifier = {
 				name = "tou_challenge_the_king_mission"
 				duration = 9125
@@ -643,16 +644,16 @@ vn_tou_missions_slot_5 = {
 		}
 	}
 	vn_tou_occitan_kingdom = {
-		icon = mission_coronation
+		icon = shift_the_balance
 		required_missions = { vn_tou_challenge_the_king }
 		provinces_to_highlight = {
 			superregion = french_superregion
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			french_superregion = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_owned_provinces_with = {
+				value = 250
+				superregion = french_superregion
 			}
 		}
 		effect = {
@@ -668,13 +669,12 @@ vn_tou_missions_slot_5 = {
 		icon = mission_wine_monopolies
 		required_missions = { vn_tou_conquer_carcassonne }
 		trigger = {
-			wine = 10
 			trading_bonus = {
 				trade_goods = wine
 				value = yes
 			}
 			num_of_owned_provinces_with = {
-				value = 3
+				value = 5
 				trade_goods = wine
 				has_production_building_trigger = yes
 			}
@@ -689,7 +689,7 @@ vn_tou_missions_slot_5 = {
 	}
 	vn_tou_ports_of_languedoc = {
 		position = 5
-		icon = mission_naval_expansion
+		icon = toulon_dockyards
 		required_missions = { vn_tou_conquer_languedoc }
 		provinces_to_highlight = {
 			region = toulouse_region

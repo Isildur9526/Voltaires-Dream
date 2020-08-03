@@ -417,6 +417,7 @@ country_event = {
 	goto = 2708
 	
 	trigger = {
+		adm_tech = 36
 		has_dlc = "Common Sense"
 		tag = PAP
 		owns = 2708

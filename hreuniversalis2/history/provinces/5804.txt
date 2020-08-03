@@ -12,19 +12,13 @@ controller = PMR
 add_core = PMR
 
 1266.1.1 = {
-	owner = LIV
-	controller = LIV
-	add_core = LIV
+	owner = KUR
+	controller = KUR
 	add_core = KUR
 	remove_core = PMR
 	religion = catholic
 	capital = "Sacken"
 	culture = prussian
-}
-1290.1.1 = {
-	owner = KUR
-	controller = KUR
-	remove_core = LIV
 }
 1560.5.20 = {
 	owner = DAN

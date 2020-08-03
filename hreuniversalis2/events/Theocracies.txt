@@ -108,11 +108,7 @@ country_event = {
 				NOT = {
 					has_reform = sufi_reform
 					AND = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 				}
@@ -124,11 +120,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = ROT
-					tag = THO
-					tag = QDL
-				}
+				has_estate_privilege = estate_church_priory
 				has_reform = monastic_order_reform
 			}
 			define_heir = {
@@ -274,11 +266,7 @@ country_event = {
 					limit = {
 						NOT = {
 							AND = {
-								OR = {
-									tag = ROT
-									tag = THO
-									tag = QDL
-								}
+								has_estate_privilege = estate_church_priory
 								has_reform = monastic_order_reform
 							}
 						}
@@ -291,11 +279,7 @@ country_event = {
 				}
 				if = {
 					limit = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 					define_heir = {
@@ -363,11 +347,7 @@ country_event = {
 				NOT = {
 					has_reform = sufi_reform
 					AND = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 				}
@@ -379,11 +359,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = ROT
-					tag = THO
-					tag = QDL
-				}
+				has_estate_privilege = estate_church_priory
 				has_reform = monastic_order_reform
 			}
 			define_heir = {
@@ -457,11 +433,7 @@ country_event = {
 				NOT = {
 					has_reform = sufi_reform
 					AND = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 				}
@@ -473,11 +445,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = ROT
-					tag = THO
-					tag = QDL
-				}
+				has_estate_privilege = estate_church_priory
 				has_reform = monastic_order_reform
 			}
 			define_heir = {
@@ -568,11 +536,7 @@ country_event = {
 				NOT = {
 					has_reform = sufi_reform
 					AND = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 				}
@@ -584,11 +548,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = ROT
-					tag = THO
-					tag = QDL
-				}
+				has_estate_privilege = estate_church_priory
 				has_reform = monastic_order_reform
 			}
 			define_heir = {
@@ -659,11 +619,7 @@ country_event = {
 			limit = {
 				NOT = {
 					AND = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 				}
@@ -675,11 +631,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = ROT
-					tag = THO
-					tag = QDL
-				}
+				has_estate_privilege = estate_church_priory
 				has_reform = monastic_order_reform
 			}
 			define_heir = {
@@ -779,11 +731,7 @@ country_event = {
 			limit = {
 				NOT = {
 					AND = {
-						OR = {
-							tag = ROT
-							tag = THO
-							tag = QDL
-						}
+						has_estate_privilege = estate_church_priory
 						has_reform = monastic_order_reform
 					}
 				}
@@ -795,11 +743,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = ROT
-					tag = THO
-					tag = QDL
-				}
+				has_estate_privilege = estate_church_priory
 				has_reform = monastic_order_reform
 			}
 			define_heir = {

@@ -1246,110 +1246,27 @@ vn_swe_missions_slot_3_a = {
 				province_id = 3427
 			}
 			NOT = {
-				OR = {
-					owned_by = ROOT
-					controlled_by = ROOT
-				}
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
         trigger = {
 			calc_true_if = {
-				1084 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				429 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				13 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				2996 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				2417 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				2636 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				402 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				4854 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				5793 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				2383 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				328 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				896 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				2729 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				2230 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				5889 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
-				3427 = {
-					OR = {
-						owned_by = ROOT
-						controlled_by = ROOT
-					}
-				}
+				1084 = { country_or_non_sovereign_subject_holds = ROOT }
+				429 = { country_or_non_sovereign_subject_holds = ROOT }
+				13 = { country_or_non_sovereign_subject_holds = ROOT }
+				2996 = { country_or_non_sovereign_subject_holds = ROOT }
+				2417 = { country_or_non_sovereign_subject_holds = ROOT }
+				2636 = { country_or_non_sovereign_subject_holds = ROOT }
+				402 = { country_or_non_sovereign_subject_holds = ROOT }
+				4854 = { country_or_non_sovereign_subject_holds = ROOT }
+				5793 = { country_or_non_sovereign_subject_holds = ROOT }
+				2383 = { country_or_non_sovereign_subject_holds = ROOT }
+				328 = { country_or_non_sovereign_subject_holds = ROOT }
+				896 = { country_or_non_sovereign_subject_holds = ROOT }
+				2729 = { country_or_non_sovereign_subject_holds = ROOT }
+				2230 = { country_or_non_sovereign_subject_holds = ROOT }
+				5889 = { country_or_non_sovereign_subject_holds = ROOT }
+				3427 = { country_or_non_sovereign_subject_holds = ROOT }
 				amount = 8
 			}
 			calc_true_if = {
@@ -1410,6 +1327,7 @@ vn_swe_missions_slot_4_a = {
 			num_of_generals = 2
 			army_size_percentage = 0.75
 			stability = 1
+			army_tradition = 40
 			NOT = { war_exhaustion = 1 }
 			NOT = { num_of_loans = 1 }
         }

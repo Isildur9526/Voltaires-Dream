@@ -14,7 +14,7 @@ vn_nic_missions_slot_1 = {
 
     vn_nic_coumuna_nissarda = {
         position = 1
-		icon = mission_valencian_silk
+		icon = expand_the_arsenal
 		required_missions = { }
 		provinces_to_highlight = {
             province_id = 992
@@ -39,7 +39,7 @@ vn_nic_missions_slot_1 = {
 		}
     }
     vn_nic_carneval_de_nissa = {
-		icon = mission_trade_with_cathay
+		icon = promote_the_carnevale
 		required_missions = { vn_nic_coumuna_nissarda }
 		provinces_to_highlight = {
 			province_id = 992
@@ -80,7 +80,7 @@ vn_nic_missions_slot_2 = {
 
     vn_nic_protection_against_provence = {
         position = 1
-		icon = mission_portuguese_interference
+		icon = protect_against_austria
 		required_missions = { }
 		provinces_to_highlight = {
             province_id = 992
@@ -121,7 +121,7 @@ vn_nic_missions_slot_3 = {
 
     vn_nic_mercantile_revolution = {
         position = 2
-		icon = mission_dominate_genoa
+		icon = sources_of_trade
 		required_missions = { vn_nic_protection_against_provence vn_nic_refuse_genoese_hegemony }
 		provinces_to_highlight = {
             province_id = 992
@@ -177,12 +177,7 @@ vn_nic_missions_slot_4 = {
             OR = {
                 NOT = { base_manpower = 10 }
                 NOT = { owned_by = ROOT }
-                NOT = {
-                    OR = {
-                        has_building = shipyard
-                        has_building = grand_shipyard
-                    }
-                }
+                NOT = { has_shipyard_building_trigger = yes }
             }
 		}
         trigger = {
@@ -190,10 +185,7 @@ vn_nic_missions_slot_4 = {
             992 = {
                 owned_by = ROOT
                 base_manpower = 10
-                OR = {
-                    has_building = shipyard
-                    has_building = grand_shipyard
-                }
+                has_shipyard_building_trigger = yes
             }
         }
         effect = {

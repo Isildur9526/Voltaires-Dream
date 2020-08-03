@@ -552,9 +552,19 @@ country_event = {
 		has_dlc = "Emperor"
 		tag = PAP
 		any_country = {
-			is_in_war = {
-				attacker_leader = THIS
-				casus_belli = cb_crusade
+			OR = {
+				is_in_war = {
+					attacker_leader = THIS
+					casus_belli = cb_crusade
+				}
+				is_in_war = {
+					attacker_leader = THIS
+					casus_belli = cb_grand_crusade
+				}
+				is_in_war = {
+					attacker_leader = THIS
+					casus_belli = cb_grand_heretic
+				}
 			}
 			religion = catholic
 			NOT = { tag = PAP }
@@ -573,9 +583,19 @@ country_event = {
 		hidden_effect = {
 			random_country = {
 				limit = {
-					is_in_war = {
-						attacker_leader = THIS
-						casus_belli = cb_crusade
+					OR = {
+						is_in_war = {
+							attacker_leader = THIS
+							casus_belli = cb_crusade
+						}
+						is_in_war = {
+							attacker_leader = THIS
+							casus_belli = cb_grand_crusade
+						}
+						is_in_war = {
+							attacker_leader = THIS
+							casus_belli = cb_grand_heretic
+						}
 					}
 					religion = catholic
 					NOT = { tag = PAP }
@@ -589,10 +609,22 @@ country_event = {
 				save_event_target_as = crusading_country
 				random_country = {
 					limit = {
-						is_in_war = {
-							attacker_leader = PREV
-							defender_leader = THIS
-							casus_belli = cb_crusade
+						OR = {
+							is_in_war = {
+								attacker_leader = PREV
+								defender_leader = THIS
+								casus_belli = cb_crusade
+							}
+							is_in_war = {
+								attacker_leader = PREV
+								defender_leader = THIS
+								casus_belli = cb_grand_crusade
+							}
+							is_in_war = {
+								attacker_leader = PREV
+								defender_leader = THIS
+								casus_belli = cb_grand_heretic
+							}
 						}
 					}
 					save_event_target_as = crusade_target_country

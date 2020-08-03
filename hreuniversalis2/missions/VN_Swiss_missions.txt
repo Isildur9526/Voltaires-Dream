@@ -522,7 +522,7 @@ vn_swi_missions_slot_3 = {
                     }
                     add_permanent_claim = ROOT
                 }
-            }
+			}
             dauphine_region = {
                 limit = {
                     NOT = { is_core = ROOT }

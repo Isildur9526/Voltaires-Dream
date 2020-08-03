@@ -104,7 +104,7 @@ vn_ser_missions_slot_1_a = {
         trigger = {
             539 = {
                 is_capital_of = ROOT
-                NOT = { num_free_building_slots = 1 }
+                num_of_buildings_in_province = 3
                 development = 15
             }
         }
@@ -132,7 +132,7 @@ vn_ser_missions_slot_1_a = {
         trigger = {
             539 = {
                 is_capital_of = ROOT
-                NOT = { num_free_building_slots = 1 }
+                num_of_buildings_in_province = 6
                 development = 30
             }
         }
@@ -1232,14 +1232,15 @@ vn_ser_missions_slot_5_b = {
     vn_ser_alemannic_guard = {
         icon = mission_landsknecht_soldier
         position = 6
-        required_missions = { vn_ser_elite_hussars }
+        required_missions = { }
+        completed_by = 1331.1.1
         trigger = {
             num_of_mercenaries = 10
             is_in_deficit = no
             NOT = { num_of_loans = 1 }
         }
         effect = {
-            #add - unlock Alemannic Guard mercenary company (1.30)
+            custom_tooltip = vn_ser_alemannic_guard.tt
         }
     }
 }
@@ -1327,8 +1328,8 @@ vn_ser_missions_slot_5_d = {
                     limit = {
                         NOT = { religion = ROOT }
                     }
+                    change_religion = ROOT
                 }
-                change_religion = ROOT
                 add_province_modifier = {
                     name = "ser_capture_constantinople_mission"
                     duration = 9125

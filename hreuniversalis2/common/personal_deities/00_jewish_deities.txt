@@ -37,7 +37,7 @@ sephardi = {
 	advisor_pool = 1
 	
 	allow = { religion = jewish }
-	sprite = 99
+	sprite = 100
 	ai_will_do = {
 		factor = 1
 	}
@@ -48,7 +48,7 @@ mizrahi = {
 	caravan_power = 0.1
 	
 	allow = { religion = jewish }
-	sprite = 100	
+	sprite = 99	
 	ai_will_do = {
 		factor = 1	
 	}

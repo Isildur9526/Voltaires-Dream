@@ -797,8 +797,8 @@ vn_sjk_missions_slot_3 = {
 				army_tradition = 50
 			}
 			has_global_modifier_value = {
-				which = discipline
-                value = 0.1
+				which = discipline 
+				value = 0.1
 			}
         }
         effect = {
@@ -1641,16 +1641,13 @@ vn_sjk_missions_slot_5 = {
             }       
         }
         effect = {
+			
             lower_volga_region = {
                 limit = {
                     NOT = { is_core = ROOT }
                     NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-            }
-			add_country_modifier = {
-               	name = "bgh_cross_the_caucusus_mission"
-              	duration = 9125 
             }
         }
     }

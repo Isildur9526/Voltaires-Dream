@@ -14,7 +14,7 @@ vn_gen_missions_slot_1 = {
 
     vn_gen_prosperity_of_genoa = {
         position = 1
-        icon = mission_entrepot_of_india
+        icon = dominant_economy
         required_missions = { }
         trigger = {
             treasury = 2000
@@ -29,7 +29,7 @@ vn_gen_missions_slot_1 = {
         }
     }
     vn_gen_invest_in_maona = {
-        icon = mission_rb_the_bank_of_scotland
+        icon = interest_of_holland
         required_missions = { vn_gen_prosperity_of_genoa }
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -48,7 +48,7 @@ vn_gen_missions_slot_1 = {
         }
     }
     vn_gen_genoese_shipbuilding = {
-        icon = mission_launch_a_flagship
+        icon = toulon_dockyards
         required_missions = { }
         trigger = {
             calc_true_if = {
@@ -123,7 +123,7 @@ vn_gen_missions_slot_1 = {
         }
     }
     vn_gen_develop_genoa = {
-        icon = mission_guilds_of_barcelona
+        icon = renaissance_city
         required_missions = { }
         provinces_to_highlight = {
             province_id = 2560
@@ -201,7 +201,13 @@ vn_gen_missions_slot_1 = {
         }
         effect = {
             add_dip_power = 100
-            123 = {
+            5604 = {
+                add_trade_modifier = {
+                    who = ROOT
+                    duration = 9125
+                    power = 10
+                    key = gen_dnieper_trade_mission
+                }
                 add_province_modifier = {
                     name = gen_dnieper_trade_mission
                     duration = 9125
@@ -245,7 +251,7 @@ vn_gen_missions_slot_2 = {
     }
     vn_gen_conquer_sardinia = {
         position = 3
-        icon = mission_caribbean_cn
+        icon = seize_sardinia
         required_missions = { vn_gen_conquer_corsica }
         provinces_to_highlight = {
             OR = {
@@ -277,7 +283,7 @@ vn_gen_missions_slot_2 = {
         }
     }
     vn_gen_conquer_sicily = {
-        icon = mission_invade_island
+        icon = sources_of_trade
         required_missions = { vn_gen_conquer_sardinia }
         provinces_to_highlight = {
             region = sicilia_region
@@ -321,7 +327,7 @@ vn_gen_missions_slot_2 = {
         }
     }
     vn_gen_found_kaffa = {
-        icon = mission_great_trading_houses
+        icon = found_batavia
         required_missions = { vn_gen_conquer_crimea }
         provinces_to_highlight = {
             province_id = 3087
@@ -390,7 +396,7 @@ vn_gen_missions_slot_2 = {
         }
     }
     vn_gen_establish_the_gazaria = {
-        icon = mission_trade_company_region_abroad
+        icon = invest_in_the_rich_trades
         required_missions = { vn_gen_found_kaffa }
         provinces_to_highlight = {
             OR = {
@@ -436,7 +442,7 @@ vn_gen_missions_slot_3 = {
 
     vn_gen_marineria_genovese = {
         position = 1
-        icon = mission_establish_high_seas_navy
+        icon = imperial_navy
         required_missions = { }
         trigger = {
             is_at_war = no
@@ -458,7 +464,7 @@ vn_gen_missions_slot_3 = {
         }
     }
     vn_gen_conquer_corsica = {
-        icon = mission_retake_ceuta
+        icon = rule_corsica
         required_missions = { vn_gen_conclude_trade_contracts vn_gen_marineria_genovese }
         provinces_to_highlight = {
             area = corsica_area
@@ -501,7 +507,7 @@ vn_gen_missions_slot_3 = {
         required_missions = { vn_gen_conquer_corsica }
         trigger = {
             treasury = 200
-            any_ally = {
+            any_country = {
                 culture_group = byzantine
                 has_opinion = {
                     who = ROOT
@@ -546,7 +552,7 @@ vn_gen_missions_slot_3 = {
         }
     }
     vn_gen_dominate_greek_trade = {
-        icon = mission_south_indian_trade
+        icon = overshadow_venice
         required_missions = { vn_gen_conquer_chios }
         provinces_to_highlight = {
             province_id = 2233
@@ -598,7 +604,7 @@ vn_gen_missions_slot_3 = {
         }
     }
     vn_gen_caucasian_trade = {
-        icon = mission_divert_trade_from_bengal
+        icon = trade_with_the_natives
         required_missions = { vn_gen_found_kaffa }
         provinces_to_highlight = {
             OR = {
@@ -639,7 +645,7 @@ vn_gen_missions_slot_4 = {
 
     vn_gen_conquer_pisa = {
         position = 3
-        icon = mission_sea_battles
+        icon = pulverize_pisa
         required_missions = { vn_gen_conquer_lucca vn_gen_conquer_corsica }
         provinces_to_highlight = {
             OR = {
@@ -726,7 +732,7 @@ vn_gen_missions_slot_4 = {
         }
     }
     vn_gen_conquer_cyprus = {
-        icon = mission_invade_island
+        icon = kingdom_of_cyprus
         required_missions = { vn_gen_dominate_greek_trade }
         provinces_to_highlight = {
             area = cyprus_area
@@ -791,7 +797,7 @@ vn_gen_missions_slot_5 = {
 
     vn_gen_conquer_liguria = {
         position = 1
-        icon = mission_unite_home_region
+        icon = end_genoese_competition
         required_missions = { }
         provinces_to_highlight = {
             region = liguria_region
@@ -804,6 +810,8 @@ vn_gen_missions_slot_5 = {
             }
         }
         effect = {
+            add_navy_tradition = 5
+            add_yearly_sailors = 3
             lucca_area = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -814,7 +822,7 @@ vn_gen_missions_slot_5 = {
         }
     }
     vn_gen_conquer_lucca = {
-        icon = mission_unite_home_region
+        icon = develop_the_po_valley
         required_missions = { vn_gen_conquer_liguria }
         provinces_to_highlight = {
             area = lucca_area
@@ -885,7 +893,7 @@ vn_gen_missions_slot_5 = {
     }
     vn_gen_venetian_ship_rivalry = {
         position = 4
-        icon = mission_naval_expansion
+        icon = nuova_promissione_ducale
         required_missions = { vn_gen_conquer_pisa }
         trigger = {
             if = {
@@ -944,7 +952,9 @@ vn_gen_missions_slot_5 = {
         }
         effect = {
             add_prestige = 10
-            add_yearly_sailors = 3
+            761 = {
+                add_base_production = 2
+            }
             4749 = {
                 if = {
 					limit = {

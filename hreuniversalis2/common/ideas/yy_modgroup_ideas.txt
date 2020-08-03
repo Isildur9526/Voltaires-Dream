@@ -1450,6 +1450,7 @@ hunduc_ideas = {
     }
     hunduc_idea_7 = {
         free_leader_pool = 1
+        max_revolutionary_zeal = 10
     }
 }
 

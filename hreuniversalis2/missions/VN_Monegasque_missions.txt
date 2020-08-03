@@ -14,7 +14,7 @@ vn_mco_missions_slot_2 = {
 
 	vn_mco_develop_monaco = {
 		position = 1
-		icon = mission_golden_century
+		icon = secure_the_republic
 		required_missions = { }
 		provinces_to_highlight = {
 			province_id = 2262
@@ -39,18 +39,13 @@ vn_mco_missions_slot_2 = {
 		}
 	}
 	vn_mco_dominate_local_trade = {
-		icon = mission_trade_with_japan
+		icon = purely_for_commerce
 		required_missions = { vn_mco_develop_monaco }
 		provinces_to_highlight = {
 			province_id = 2262
 			OR = {
 				NOT = { owned_by = ROOT }
-				NOT = { 
-					OR = {
-						has_building = shipyard
-						has_building = grand_shipyard
-					}
-				}
+				NOT = { has_shipyard_building_trigger = yes }
 			}
 		}
 		trigger = {
@@ -64,10 +59,7 @@ vn_mco_missions_slot_2 = {
 			}
 			2262 = {
 				owned_by = ROOT
-				OR = {
-					has_building = shipyard
-					has_building = grand_shipyard
-				}
+				has_shipyard_building_trigger = yes
 			}
 		}
 		effect = {
@@ -91,7 +83,7 @@ vn_mco_missions_slot_3 = {
 
 	vn_mco_conquer_genoa = {
 		position = 3
-		icon = mission_city_of_the_world's_desire
+		icon = end_genoese_competition
 		required_missions = { vn_mco_dominate_local_trade vn_mco_ally_a_great_power }
 		provinces_to_highlight = {
 			province_id = 2560
@@ -121,7 +113,7 @@ vn_mco_missions_slot_4 = {
 
 	vn_mco_ally_the_papacy = {
 		position = 1
-		icon = mission_have_two_subjects
+		icon = sway_the_pope
 		required_missions = { }
 		trigger = {
 			army_size = 10
@@ -145,7 +137,7 @@ vn_mco_missions_slot_4 = {
 		}
 	}
 	vn_mco_ally_a_great_power = {
-		icon = mission_humiliate_provence
+		icon = the_spanish_succession
 		required_missions = { vn_mco_ally_the_papacy }
 		trigger = {
             if = {

@@ -1,0 +1,100 @@
+incident_hussite_wars = {
+	event = incident_hussite_wars.1
+	default_option = 1
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				exists = HGA
+			}
+			HGA = {
+				NOT = { religion = hussite }
+			}
+			emperor = {
+				war_with = HGA
+			}
+			NOT = {
+				any_country = {
+					is_part_of_hre = yes
+					has_disaster = hussite_wars
+				}
+			}
+		}
+	}
+	
+	0 = { # back BOH
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_disloyal
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_rebellious
+				}
+			}
+		}
+	}
+	1 = { # nonintervention
+		factor = 1
+		modifier = {
+			factor = 100
+			ai_attitude = {
+				who = HGA
+				attitude = attitude_neutral
+			}
+		}
+	}
+	2 = { # back HGA
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_friendly
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_loyal
+				}
+				ai_attitude = {
+					who = HGA
+					attitude = attitude_allied
+				}
+			}
+		}
+		modifier = {
+			factor = 150
+			OR = {
+				religion = cathar
+				religion = lollardy
+				religion = fraticelli
+				religion = waldensian
+			}
+		}
+		modifier = {
+			factor = 1000
+			religion = hussite
+		}
+	}
+}

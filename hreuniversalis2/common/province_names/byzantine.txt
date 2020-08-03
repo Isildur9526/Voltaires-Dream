@@ -59,6 +59,7 @@
 637 = "Konsentia"
 638 = "Kephaloidion"
 640 = "Phlorentia"
+652 = "Sarcapos"
 676 = "Aigissos"
 682 = "Polychoron"
 700 = "Konstantine"

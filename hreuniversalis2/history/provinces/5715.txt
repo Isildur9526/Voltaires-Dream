@@ -11,13 +11,19 @@ owner = LTT
 controller = LTT
 add_core = LTT
 
-1206.1.1 = {
+1239.1.1 = {
+	owner = SEO
+	controller = SEO
+	add_core = SEO
+	remove_core = LTT
+}
+1255.1.1 = {
 	religion = catholic
 	owner = LIV
 	controller = LIV
 	add_core = LIV
 	add_core = LVA
-	remove_core = LTT
+	remove_core = SEO
 	capital = "Kalkuhnen"
 }
 1561.1.1 = {

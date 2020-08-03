@@ -17,6 +17,9 @@ vn_plc_missions_slot_1 = {
         position = 8
         required_missions = {  }
         trigger = {
+			NOT = { current_age = age_of_empire }
+			NOT = { current_age = age_of_holy_wars }
+			NOT = { current_age = age_of_crisis }
             any_neighbor_country = {
 				religion_group = muslim
 				culture = turkish
@@ -37,7 +40,7 @@ vn_plc_missions_slot_1 = {
         }
     }
     vn_plc_conquer_wallachia = {
-        icon = mission_soldiers_in_line
+        icon = revenge_for_nicopolis
         position = 9
 		required_missions = { vn_plc_turkish_threat }
 		provinces_to_highlight = {
@@ -45,12 +48,13 @@ vn_plc_missions_slot_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            wallachia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_owned_provinces_with = {
+				value = 12
+				region = wallachia_region
 			}
         }
         effect = {
+			add_army_tradition = 10
 			bulgaria_region = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -79,17 +83,15 @@ vn_plc_missions_slot_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            bulgaria_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			bulgariasouth_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			num_of_owned_provinces_with = {
+				value = 24
+				OR = {
+					region = bulgaria_region
+					region = bulgariasouth_region
+				}
+			}	
         }
         effect = {
-			add_army_tradition = 20
 			thrace_region = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -112,14 +114,14 @@ vn_plc_missions_slot_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            thrace_region = {
+			thrace_region = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
         }
         effect = {
 			add_religious_influence_effect_large = yes
-			add_prestige = 25
+			add_prestige = 50
         }
 	}
 	vn_plc_export_grain = {
@@ -322,7 +324,7 @@ vn_plc_missions_slot_2 = {
         }
 	}
 	vn_plc_expand_royal_guards = {
-        icon = mission_conquer_5_states
+        icon = king_of_poland
         position = 12
         required_missions = { vn_plc_invite_lipka_tatars }
         trigger = {
@@ -380,7 +382,7 @@ vn_plc_missions_slot_3 = {
     has_country_shield = yes
 
     vn_plc_baltic_navy = {
-        icon = mission_naval_expansion
+        icon = imperial_navy
         position = 9
 		required_missions = {  }
         trigger = {
@@ -408,7 +410,7 @@ vn_plc_missions_slot_3 = {
         }
     }
     vn_plc_conquer_gotland = {
-        icon = mission_sea_battles
+        icon = mission_invade_island
         position = 10
 		required_missions = { vn_plc_baltic_navy }
 		provinces_to_highlight = {
@@ -489,7 +491,7 @@ vn_plc_missions_slot_3 = {
         }
     }
     vn_plc_conquer_sweden = {
-        icon = mission_invade_island
+        icon = mission_sea_battles
         position = 11
         required_missions = { vn_plc_conquer_gotland vn_plc_baltic_trade }
 		provinces_to_highlight = {
@@ -522,13 +524,13 @@ vn_plc_missions_slot_3 = {
         }
     }
     vn_plc_textile_industry = {
-        icon = mission_have_manufactories
+        icon = saxon_manufacturing
         position = 14
         required_missions = { vn_plc_develop_the_country_side }
         trigger = {
             num_of_owned_provinces_with = {
 				value = 10
-				has_institution = industrialism
+				manufactories = 100
 				has_building = textile
 				has_building = stock_exchange
 			}
@@ -560,7 +562,7 @@ vn_plc_missions_slot_4 = {
     has_country_shield = yes
 
     vn_plc_befriend_the_cossacks = {
-        icon = mission_recruit_the_cossacks
+        icon = jageillonian_union
         position = 9
         required_missions = {  }
         trigger = {
@@ -616,21 +618,21 @@ vn_plc_missions_slot_4 = {
         }
 	}
     vn_plc_free_royal_cities_act = {
-        icon = mission_eastern_european_city
+        icon = reissure_the_mining_code
         position = 12
         required_missions = {  }
         trigger = {
 			if = {
 				limit = {
 					has_estate = estate_burghers
-					custom_trigger_tooltip = {
-						tooltip = vn_plc_free_royal_cities_act.tt
-						num_of_owned_provinces_with = {
-							value = 5
-							has_estate = estate_burghers
-							province_has_center_of_trade_of_level = 2
-						}
-					}
+				}
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+				estate_influence = {
+					estate = estate_burghers
+					influence = 60
 				}
 			}
 			else = {
@@ -646,7 +648,7 @@ vn_plc_missions_slot_4 = {
         }
     }
     vn_plc_curtail_the_nobility = {
-        icon = mission_noble_council
+        icon = rein_in_the_nobles
         position = 13
         required_missions = { vn_plc_free_royal_cities_act }
         trigger = {
@@ -682,7 +684,7 @@ vn_plc_missions_slot_4 = {
 			absolutism = 50
 			NOT = { num_of_rebel_armies = 1 }
 			NOT = { num_of_rebel_controlled_provinces = 1 }
-			#crown land
+			crown_land_share = 50
         }
         effect = {
             add_country_modifier = {
@@ -704,7 +706,7 @@ vn_plc_missions_slot_5 = {
     has_country_shield = yes
 
     vn_plc_black_seas_ports = {
-        icon = mission_conquer_riga
+        icon = adriatic_access
         position = 9
         required_missions = {  }
 		provinces_to_highlight = {
@@ -798,7 +800,7 @@ vn_plc_missions_slot_5 = {
         }
     }
 	vn_plc_conquer_crimea = {
-        icon = mission_conquer_riga
+        icon = danubian_power
         position = 11
         required_missions = { vn_plc_conquer_poltava }
         provinces_to_highlight = {
@@ -898,7 +900,7 @@ vn_plc_missions_slot_5 = {
         }
 	}
 	vn_plc_establish_yeshivot = {
-        icon = mission_rb_weather_the_reformation
+        icon = a_strong_government
         position = 13
         required_missions = { vn_plc_free_royal_cities_act }
         trigger = {
@@ -915,7 +917,7 @@ vn_plc_missions_slot_5 = {
         }
     }
     vn_plc_repelling_foreign_influences = {
-        icon = mission_mediterranean_islands
+        icon = sponsor_the_arts
         position = 14
         required_missions = { vn_plc_establish_yeshivot }
 		provinces_to_highlight = {

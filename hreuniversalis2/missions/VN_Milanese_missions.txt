@@ -415,7 +415,7 @@ vn_mlo_missions_slot_3_a = {
 							is_core = ROOT
 						}
 					}
-					amount = 3
+					amount = 5
 				}
 			}
         }

@@ -42,7 +42,6 @@ country_event = {
 					HGA = { NOT = { num_of_cities = 20 } }
 					any_owned_province = {
 						superregion = bohemia_superregion
-						religion = hussite
 						any_neighbor_province = {
 							owned_by =  HGA
 						}
@@ -51,7 +50,6 @@ country_event = {
 				random_owned_province = {
 					limit = {
 						superregion = bohemia_superregion
-						religion = hussite
 						any_neighbor_province = {
 							owned_by =  HGA
 						}
@@ -106,6 +104,14 @@ country_event = {
 		declare_war_with_cb = {
 			casus_belli = cb_heretic
 			who = HGA
+		}
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+				is_emperor = no
+				is_part_of_hre = yes
+			}
+			set_imperial_incident = incident_hussite_wars
 		}
 	}
 }

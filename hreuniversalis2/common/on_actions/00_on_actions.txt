@@ -69,6 +69,14 @@ on_startup = {
 		override_country_name = TRAVUNIJA_NAME
 	}
 	if = {
+		limit = {
+			tag = TET
+			NOT = { started_in = 1084.1.1 }
+			normal_or_historical_nations = yes
+		}
+		override_country_name = NEKOR_NAME
+	}
+	if = {
 		limit = { NOT = { has_global_flag = custom_name_init } }
 		set_global_flag = custom_name_init
 	}
@@ -563,6 +571,7 @@ on_battle_lost_country = {
 		1000 = 0
 		100 = friendship_events.1 #Historical Friendship Broken
 		100 = fbievents.10 #Collapse of Rum
+		100 = incident_hohenstaufer_inheritance.1 #Ruler of Swabia dies
 	}
 }
 
@@ -815,7 +824,7 @@ on_siege_lost_province =  {
 		french_wars_of_religion.7 #Ravening Religious Fanatics
 		french_wars_of_religion.9 #french_wars_of_religion.9
 		hussite_wars.4			# Capital occupied by Hussites
-		dev_events.5			# Destruction of X
+		#dev_events.5			# Destruction of X
 	}
 }
 
@@ -926,33 +935,55 @@ on_monarch_death = {
 			has_country_flag = viking_invasion_flag
 		}
 		clr_country_flag = viking_invasion_flag
+		NRM = {
+			if = {
+				limit = {
+					is_lesser_in_union = no
+					has_ruler_flag = promised_throne_to_NRM
+				}
+				create_union = ASE
+			}
+		}
+		NOR = {
+			if = {
+				limit = {
+					is_lesser_in_union = no
+					has_ruler_flag = promised_throne_to_NOR
+				}
+				create_union = ASE
+			}
+		}
 		NOL = {
 			if = {
 				limit = {
 					ai = yes
 					is_subject_of = ASE
 					is_lesser_in_union = no
+					NOT = { ASE = { is_subject_of = NOR } }
 				}
 				declare_war_with_cb = {
 					who = ASE
 					casus_belli = cb_independence_war
 				}
+				ASE = { country_event = { id = hremodevents.2 } }
 			}
 			if = {
 				limit = {
 					ai = no
 					is_subject_of = ASE
 					is_lesser_in_union = no
+					NOT = { ASE = { is_subject_of = NOR } }
 				}
 				ASE = { free_vassal = NOL }
+				ASE = { country_event = { id = hremodevents.2 } }
 			}
 		}
-		country_event = { id = hremodevents.2 }
 		NRM = {
 			if = {
 				limit = {
 					is_lesser_in_union = no
 					has_ruler_flag = eng_promised_throne_flag
+					NOT = { has_ruler_flag = promised_throne_to_NRM }
 				}
 				country_event = { id = hremodevents.3 days = 20 }
 			}
@@ -962,6 +993,7 @@ on_monarch_death = {
 				limit = {
 					is_lesser_in_union = no
 					has_ruler_flag = eng_promised_throne_flag
+					NOT = { has_ruler_flag = promised_throne_to_NOR }
 				}
 				country_event = { id = hremodevents.3 days = 10 }
 			}

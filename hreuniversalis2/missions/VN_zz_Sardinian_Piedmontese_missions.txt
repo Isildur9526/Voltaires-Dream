@@ -37,7 +37,7 @@ vn_spi_missions_slot_1 = {
         }
     }
     vn_spi_statuo_albertino = {
-        icon = mission_rb_monopolize_the_channel
+        icon = subiaco_press
         position = 6
         required_missions = { vn_spi_centralize_the_state }
         trigger = {
@@ -90,7 +90,7 @@ vn_spi_missions_slot_1 = {
         }
     }
     vn_spi_conquer_romagna = {
-        icon = mission_large_army
+        icon = the_russian_campaign
         position = 8
         required_missions = { vn_spi_conquer_milan }
         provinces_to_highlight = {
@@ -127,7 +127,7 @@ vn_spi_missions_slot_2 = {
 	has_country_shield = yes
 	
 	vn_spi_prepare_the_unification = {
-        icon = mission_soldiers_in_line
+        icon = a_place_among_others
         position = 5
         required_missions = { vn_sav_conquer_sardinia vn_sav_fortify_cisjurania }
         trigger = {
@@ -206,7 +206,7 @@ vn_spi_missions_slot_2 = {
         }
     }
     vn_spi_conquer_milan = {
-        icon = mission_italian_conquest
+        icon = all_roads_lead_to_milan
         position = 7
         required_missions = { vn_spi_conquer_liguria }
 		provinces_to_highlight = {
@@ -272,7 +272,7 @@ vn_spi_missions_slot_2 = {
         }
     }
     vn_spi_conquer_emillia = {
-        icon = mission_advance_to_the_dnieper
+        icon = develop_the_po_valley
         position = 8
         required_missions = { vn_spi_conquer_milan }
 		provinces_to_highlight = {
@@ -307,7 +307,7 @@ vn_spi_missions_slot_2 = {
         }
     }
     vn_spi_conquer_tuscany = {
-        icon = mission_rb_weather_the_reformation
+        icon = tuscan_birthright
         position = 9
         required_missions = { vn_spi_conquer_emillia }
 		provinces_to_highlight = {
@@ -437,7 +437,7 @@ vn_spi_missions_slot_3 = {
         }
     }
     vn_spi_conquer_venetia = {
-        icon = mission_control_venice
+        icon = expand_the_arsenal
         position = 8
         required_missions = { vn_spi_conquer_milan }
         provinces_to_highlight = {
@@ -458,7 +458,7 @@ vn_spi_missions_slot_3 = {
         }
     }
     vn_spi_conquer_spoleto = {
-        icon = mission_restore_faith_in_the_throne
+        icon = expand_to_the_south
         position = 10
         required_missions = { vn_spi_conquer_tuscany vn_spi_conquer_naples }
 		provinces_to_highlight = {
@@ -497,7 +497,7 @@ vn_spi_missions_slot_3 = {
         }
     }
     vn_spi_risorgimento = {
-        icon = mission_rule_italy
+        icon = complete_the_risorgimento
         position = 11
         required_missions = { vn_spi_conquer_spoleto }
 		provinces_to_highlight = {
@@ -549,7 +549,7 @@ vn_spi_missions_slot_4 = {
 	has_country_shield = yes
 
 	vn_spi_foreign_support = {
-        icon = mission_alliances
+        icon = catholic_confraternity
         position = 5
         required_missions = { vn_sav_move_to_turin }
         trigger = {
@@ -582,7 +582,7 @@ vn_spi_missions_slot_4 = {
         }
     }
     vn_spi_dominate_the_empire = {
-        icon = mission_rb_control_electors
+        icon = lead_the_empire
         position = 6
         required_missions = { vn_spi_foreign_support }
         trigger = {
@@ -614,7 +614,7 @@ vn_spi_missions_slot_4 = {
         }
     }
     vn_spi_conquer_tyrol = {
-        icon = mission_unite_home_region
+        icon = the_alpine_wall
         position = 7
 		required_missions = { vn_spi_dominate_the_empire }
 		provinces_to_highlight = {
@@ -683,7 +683,7 @@ vn_spi_missions_slot_4 = {
         }
     }
     vn_spi_conquer_naples = {
-        icon = mission_trade_with_cathay
+        icon = unite_the_two_sicilies
         position = 9
         required_missions = { vn_spi_conquer_apulia }
         provinces_to_highlight = {
@@ -717,7 +717,7 @@ vn_spi_missions_slot_5 = {
 	has_country_shield = yes
 
 	vn_spi_piedmontese_industry = {
-        icon = mission_rb_build_furnaces
+        icon = saxon_manufacturing
         position = 5
         required_missions = { vn_sav_piedmontese_wine }
         provinces_to_highlight = {
@@ -746,7 +746,7 @@ vn_spi_missions_slot_5 = {
         }
     }
     vn_spi_wealthy_nation = {
-        icon = mission_african_gold
+        icon = develop_the_south
         position = 6
         required_missions = { vn_spi_piedmontese_industry }
         trigger = {
@@ -761,7 +761,7 @@ vn_spi_missions_slot_5 = {
         }
     }
     vn_spi_conquer_yugoslavia = {
-        icon = mission_conquer_50_development
+        icon = adriatic_access
         position = 8
         required_missions = { vn_spi_conquer_tyrol }
         provinces_to_highlight = {

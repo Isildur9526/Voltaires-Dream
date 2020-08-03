@@ -14,7 +14,7 @@ vn_hun_missions_slot_1 = {
 	
 	vn_hun_balkan_alliances = {
 		position = 1
-		icon = mission_noble_council
+		icon = personal_diplomacy
         required_missions = {  }
 		trigger = {
 			any_ally = {
@@ -61,7 +61,7 @@ vn_hun_missions_slot_1 = {
 		}
     }
     vn_hun_conquer_slavonia = {
-		icon = mission_unite_home_region
+		icon = jageillonian_union
         required_missions = { vn_hun_balkan_alliances }
         provinces_to_highlight = {
             OR = {
@@ -148,7 +148,7 @@ vn_hun_missions_slot_1 = {
     }
     vn_hun_conquer_croatia = {
         position = 4
-        icon = mission_restore_faith_in_the_throne
+        icon = invest_in_the_provinces
         required_missions = { vn_hun_conquer_slavonia }
         provinces_to_highlight = {
             OR = {
@@ -182,7 +182,7 @@ vn_hun_missions_slot_1 = {
     }
     vn_hun_found_buda = {
         position = 1
-        icon = mission_eastern_european_city
+        icon = the_great_city_of_buda
         required_missions = { }
         provinces_to_highlight = {
             province_id = 5475
@@ -230,7 +230,7 @@ vn_hun_missions_slot_1 = {
         }
     }
     vn_hun_silver_mining = {
-        icon = mission_jawal_silver_mine
+        icon = reform_bergordnung
         required_missions = { }
         provinces_to_highlight = {
             owned_by = ROOT
@@ -274,7 +274,7 @@ vn_hun_missions_slot_2 = {
 
     vn_hun_conquer_bosnia = {
         position = 2
-        icon = mission_unite_home_region
+        icon = fight_bosnian_heresies
         required_missions = { vn_hun_balkan_alliances }
         provinces_to_highlight = {
             region = bosnia_region
@@ -304,7 +304,7 @@ vn_hun_missions_slot_2 = {
 		}
     }
     vn_hun_conquer_serbia = {
-        icon = mission_unite_home_region
+        icon = fortress_of_belgrade
         required_missions = { vn_hun_conquer_bosnia }
         provinces_to_highlight = {
             OR = {
@@ -338,7 +338,7 @@ vn_hun_missions_slot_2 = {
 		}
     }
     vn_hun_conquer_albania = {
-        icon = mission_unite_home_region
+        icon = pacify_the_albanian_lands
         required_missions = { vn_hun_conquer_serbia }
         provinces_to_highlight = {
             region = albania_region
@@ -368,7 +368,7 @@ vn_hun_missions_slot_2 = {
 		}
     }
     vn_hun_conquer_rumelia = {
-        icon = mission_unite_home_region
+        icon = push_on_to_bulgaria
         required_missions = { vn_hun_conquer_albania }
         provinces_to_highlight = {
             OR = {
@@ -396,7 +396,7 @@ vn_hun_missions_slot_2 = {
     }
     vn_hun_early_mercantilism = {
         position = 7
-        icon = mission_dominate_home_trade_node
+        icon = danubian_power
         required_missions = { }
 		trigger = {
             num_of_owned_provinces_with = {
@@ -413,7 +413,7 @@ vn_hun_missions_slot_2 = {
 		}
     }
     vn_hun_pearl_of_the_danube = {
-        icon = mission_dominate_home_trade_node
+        icon = sources_of_trade
         required_missions = { vn_hun_early_mercantilism vn_hun_silver_mining }
         trigger = {
             
@@ -453,15 +453,32 @@ vn_hun_missions_slot_3 = {
 
     vn_hun_black_army = {
         position = 2
-        icon = mission_recruit_the_cossacks
+        icon = glory_to_the_black_army
         required_missions = { vn_hun_assimilate_the_magyars }
 		trigger = {
-            army_size = 60
+            OR = {
+				has_country_modifier = hun_black_army
+				has_reform = black_army_reform
+				custom_trigger_tooltip = {
+					tooltip = emp_hun_black_army_supreme_trigger_tooltip
+					OR = {
+						current_age = age_of_absolutism
+						current_age = age_of_revolutions
+					}
+				}
+            }
+            if = {
+                limit = { has_dlc = "Cradle of Civilization" }
+                army_professionalism = 0.25
+            }
+            army_tradition = 50
+            army_size_percentage = 0.75
+            monthly_mil = 10
 		}
 		effect = {
             add_country_modifier = {
                 name = hun_black_army_mission
-                duration = 10950
+                duration = 9125
             }
 		}
     }
@@ -514,7 +531,7 @@ vn_hun_missions_slot_3 = {
 		}
     }
     vn_hun_conquer_macedonia = {
-        icon = mission_unite_home_region
+        icon = end_the_schism
         required_missions = { vn_hun_conquer_bulgaria vn_hun_conquer_rumelia }
         provinces_to_highlight = {
             region = thrace_region
@@ -535,7 +552,7 @@ vn_hun_missions_slot_3 = {
 		}
     }
     vn_hun_convert_the_balkans = {
-        icon = mission_hands_praying
+        icon = law_of_the_pious
         required_missions = { vn_hun_conquer_macedonia }
 		trigger = {
             religious_unity = 1
@@ -600,7 +617,7 @@ vn_hun_missions_slot_4 = {
 		}
     }
     vn_hun_conquer_transylvania = {
-        icon = mission_unite_home_region
+        icon = take_the_littoral
         required_missions = { vn_hun_assimilate_the_magyars vn_hun_weaken_the_oligarchs }
         provinces_to_highlight = {
             region = transylvania_region
@@ -671,7 +688,7 @@ vn_hun_missions_slot_4 = {
 		}
     }
     vn_hun_conquer_krakow = {
-        icon = mission_unite_home_region
+        icon = polish_subjects
         required_missions = { vn_hun_conquer_moldavia vn_hun_survive_fall_of_arpads }
         provinces_to_highlight = {
             OR = {
@@ -735,7 +752,7 @@ vn_hun_missions_slot_4 = {
 		}
     }
     vn_hun_conquer_poland = {
-        icon = mission_empire
+        icon = polish_diplomacy
         required_missions = { vn_hun_conquer_krakow }
         provinces_to_highlight = {
             OR = {
@@ -767,7 +784,7 @@ vn_hun_missions_slot_4 = {
         }
     }
     vn_hun_conquer_styria = {
-        icon = mission_steppe_warriors
+        icon = boh_humiliate_austria
         required_missions = { vn_hun_humiliate_rivals }
         provinces_to_highlight = {
             OR = {
@@ -801,7 +818,7 @@ vn_hun_missions_slot_4 = {
 		}
     }
     vn_hun_conquer_austria = {
-        icon = mission_unite_home_region
+        icon = humiliate_austria
         required_missions = { vn_hun_conquer_styria vn_hun_hungarian_emperor }
         provinces_to_highlight = {
             region = austria_region
@@ -835,7 +852,7 @@ vn_hun_missions_slot_5 = {
 
     vn_hun_weaken_the_oligarchs = {
         position = 1
-        icon = mission_dethrone_the_rurikovichs
+        icon = all_bases_covered
         required_missions = { }
         trigger = {
             is_at_war = no
@@ -855,7 +872,7 @@ vn_hun_missions_slot_5 = {
     }
     vn_hun_survive_fall_of_arpads = {
         position = 3
-        icon = mission_rb_war_of_the_roses
+        icon = the_hungarian_succession
         required_missions = { vn_hun_weaken_the_oligarchs }
 		trigger = {
             stability = 2
@@ -881,7 +898,7 @@ vn_hun_missions_slot_5 = {
     }
     vn_hun_humiliate_rivals = {
         position = 5
-        icon = mission_the_french_menace
+        icon = league_of_the_public_weal
         required_missions = { vn_hun_survive_fall_of_arpads }
 		trigger = {
             grown_by_development = 250
@@ -909,7 +926,7 @@ vn_hun_missions_slot_5 = {
 		}
     }
     vn_hun_hungarian_emperor = {
-        icon = mission_intervene_in_castile
+        icon = influence_the_princes
         required_missions = { vn_hun_humiliate_rivals }
 		trigger = {
             OR = {
@@ -931,7 +948,7 @@ vn_hun_missions_slot_5 = {
         }
     }
     vn_hun_conquer_moravia = {
-        icon = mission_unite_home_region
+        icon = bohemian_borderlands
         required_missions = { vn_hun_hungarian_emperor }
         provinces_to_highlight = {
             region = moravia_region
@@ -947,12 +964,9 @@ vn_hun_missions_slot_5 = {
             if = {
                 limit = {
                     exists = BOH
-                    is_subject = no
-                    government = monarchy
-                    religion_group = christian
+                    valid_for_personal_unions_trigger = yes
                     BOH = {
-                        is_free_or_tributary_trigger = yes
-                        government = monarchy
+                        valid_for_personal_unions_trigger = yes
                     }
                 }
                 add_casus_belli = {
@@ -973,7 +987,7 @@ vn_hun_missions_slot_5 = {
 		}
     }
     vn_hun_conquer_bohemia = {
-        icon = mission_empire
+        icon = the_hungarian_question
         required_missions = { vn_hun_conquer_moravia }
         provinces_to_highlight = {
             region = bohemia_region
@@ -984,6 +998,11 @@ vn_hun_missions_slot_5 = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
             }
+            if = {
+                limit = { has_dlc = "Emperor" }
+                is_subject = no
+                NOT = { active_imperial_incident = any }
+            }
 		}
         effect = {
             add_prestige = 20
@@ -991,6 +1010,34 @@ vn_hun_missions_slot_5 = {
                 name = hun_conquer_bohemia_mission
                 duration = 9125
             }
+            if = {
+				limit = {
+                    has_dlc = "Emperor"
+					is_elector = no
+					BOH = { is_elector = yes }
+					OR = {
+						hre_religion_locked = no
+						hre_religion = root
+					}
+				}
+				if = {
+					limit = {
+						NOT = { senior_union_with = BOH }
+					}
+					custom_tooltip = emp_hun_bohemian_crown_effect_tooltip
+				}
+				tooltip = {
+					country_event = { id = new_flavour_hun.1 }
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							senior_union_with = BOH
+						}
+						country_event = { id = new_flavour_hun.1 }
+					}
+				}
+			}
         }
     }
 }

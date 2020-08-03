@@ -1,10 +1,13 @@
 has_fort_trigger = {
-	OR = {
-		has_building = fort_14th
-		has_building = fort_15th
-		has_building = fort_16th
-		has_building = fort_17th
-		has_building = fort_18th
+	custom_trigger_tooltip = {
+		tooltip = has_fort_trigger.tt
+		OR = {
+			has_building = fort_14th
+			has_building = fort_15th
+			has_building = fort_16th
+			has_building = fort_17th
+			has_building = fort_18th
+		}
 	}
 }
 
@@ -89,6 +92,13 @@ has_medical_building_trigger = {
 	OR = {
 		has_building = customs_house
 		has_building = arsenal
+	}
+}
+
+has_coastal_defense_building_trigger = {
+	OR = {
+		has_building = coastal_defence
+		has_building = naval_battery
 	}
 }
 

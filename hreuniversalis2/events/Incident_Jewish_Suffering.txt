@@ -1,0 +1,68 @@
+namespace = incident_jewish_suffering
+#trigger the incident
+country_event = {
+	id = incident_jewish_suffering.1
+	title = incident_jewish_suffering.1.t
+	desc = incident_jewish_suffering.1.d
+	picture = PLAGUE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_dlc = "Emperor"
+		normal_or_historical_nations = yes
+		current_age = age_of_dynasticism
+		NOT = { active_imperial_incident = any }
+		is_emperor = yes
+		calc_true_if = {
+			amount = 25
+			all_country = {
+				is_part_of_hre = yes
+				has_country_flag = had_black_death
+			}
+		}
+	}
+
+	option = {
+		name = incident_jewish_suffering.1.a
+		set_imperial_incident = incident_jewish_suffering
+	}
+}
+
+# let emperor decide to protect the jews
+country_event = {
+	id = incident_jewish_suffering.2
+	title = incident_jewish_suffering.2.t
+	desc = incident_jewish_suffering.2.d
+	picture = PLAGUE_eventPicture
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = incident_jewish_suffering.2.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				has_estate_privilege = estate_burghers_jewish_sanctuary
+			}
+		}
+		add_papal_influence = 10
+		set_global_flag = emperor_protected_jews_flag
+		custom_tooltip = incident_jewish_suffering.2.tt
+	}
+	option = {
+		name = incident_jewish_suffering.2.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				has_estate_privilege = estate_burghers_jewish_scapegoats
+			}
+		}
+		add_papal_influence = -20
+		add_prestige = -10
+	}
+}
+

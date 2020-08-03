@@ -13,7 +13,7 @@ vn_vgb_missions_slot_1 = {
     has_country_shield = yes
 
     vn_vgb_bulgaric_legacy = {
-        icon = mission_unite_home_region
+        icon = mission_chinese_general_riding
         position = 1
         required_missions = { }
         trigger = {
@@ -45,7 +45,7 @@ vn_vgb_missions_slot_1 = {
         }
     }
 	vn_vgb_mongol_thorn = {
-        icon = mission_unite_home_region
+        icon = mission_kowtow
         position = 2
         required_missions = { vn_vgb_bulgaric_legacy }
         trigger = {
@@ -78,7 +78,7 @@ vn_vgb_missions_slot_1 = {
         }
     }
     vn_vgb_bulgaria_unconquered = {
-        icon = mission_unite_home_region
+        icon = mission_non-western_soldiers
         position = 3
 		required_missions = { vn_vgb_mongol_thorn }
 		provinces_to_highlight = {
@@ -112,7 +112,7 @@ vn_vgb_missions_slot_1 = {
         }
     }
     vn_vgb_patronize_bolghar = {
-        icon = mission_unite_home_region
+        icon = mission_market_place_with_asian_traders
         position = 4
         required_missions = { vn_vgb_north_volga_trade }
 		provinces_to_highlight = {
@@ -148,7 +148,7 @@ vn_vgb_missions_slot_1 = {
         }
     }
     vn_vgb_muslim_emmissaries = {
-        icon = mission_unite_home_region
+        icon = mission_ottoman_harem
         position = 5
         required_missions = { vn_vgb_patronize_bolghar }
         trigger = {
@@ -184,7 +184,7 @@ vn_vgb_missions_slot_2 = {
     has_country_shield = yes
 
     vn_vgb_develop_samara = {
-        icon = mission_unite_home_region
+        icon = sources_of_trade
         position = 4
         required_missions = { vn_vgb_north_volga_trade }
         trigger = {
@@ -206,7 +206,7 @@ vn_vgb_missions_slot_2 = {
         }
     }
     vn_vgb_trade_fortresses = {
-        icon = mission_unite_home_region
+        icon = mission_fort
         position = 5
 		required_missions = { vn_vgb_develop_samara }
 		provinces_to_highlight = {
@@ -308,7 +308,7 @@ vn_vgb_missions_slot_2 = {
         }
     }
     vn_vgb_eurasian_monopoly = {
-        icon = mission_unite_home_region
+        icon = mission_entrepot_of_india
         position = 6
         required_missions = { vn_vgb_trade_fortresses }
 		provinces_to_highlight = {
@@ -396,7 +396,7 @@ vn_vgb_missions_slot_3 = {
     has_country_shield = yes
 
     vn_vgb_north_volga_trade = {
-        icon = mission_unite_home_region
+        icon = mission_dominate_home_trade_node
         position = 3
         required_missions = { vn_vgb_conquer_udmurt }
 		provinces_to_highlight = {
@@ -424,7 +424,7 @@ vn_vgb_missions_slot_3 = {
         }
     }
     vn_vgb_two_rivers = {
-        icon = mission_unite_home_region
+        icon = mission_build_up_to_force_limit
         position = 4
         required_missions = { vn_vgb_north_volga_trade }
 		provinces_to_highlight = {
@@ -445,7 +445,7 @@ vn_vgb_missions_slot_3 = {
         }
     }
     vn_vgb_russian_trade_agreements = {
-        icon = mission_unite_home_region
+        icon = mission_war_chest
         position = 5
         required_missions = { vn_vgb_two_rivers }
 		provinces_to_highlight = {
@@ -504,7 +504,7 @@ vn_vgb_missions_slot_3 = {
         }
     }
     vn_vgb_no_more_wine = {
-        icon = mission_unite_home_region
+        icon = mission_high_income
         position = 6
         required_missions = { vn_vgb_russian_trade_agreements }
         trigger = {
@@ -534,7 +534,7 @@ vn_vgb_missions_slot_3 = {
         }
     }
     vn_vgb_mother_volga = {
-        icon = mission_unite_home_region
+        icon = mission_empire
         position = 7
         required_missions = { vn_vgb_eurasian_monopoly vn_vgb_no_more_wine vn_vgb_conquer_sasqin }
         trigger = {
@@ -564,7 +564,7 @@ vn_vgb_missions_slot_4 = {
     has_country_shield = yes
 
     vn_vgb_conquer_mari = {
-        icon = mission_unite_home_region
+        icon = mission_big_city
         position = 1
         required_missions = { vn_vgb_conquer_mari }
 		provinces_to_highlight = {
@@ -607,7 +607,7 @@ vn_vgb_missions_slot_4 = {
         }
     }
     vn_vgb_conquer_udmurt = {
-        icon = mission_unite_home_region
+        icon = mission_conquer_5_states
         position = 2
         required_missions = { vn_vgb_conquer_mari }
 		provinces_to_highlight = {
@@ -644,7 +644,7 @@ vn_vgb_missions_slot_4 = {
         }
     }
     vn_vgb_conquer_bashkiria = {
-        icon = mission_unite_home_region
+        icon = mission_have_two_subjects
         position = 3
 		required_missions = { vn_vgb_conquer_udmurt }
 		provinces_to_highlight = {
@@ -701,7 +701,7 @@ vn_vgb_missions_slot_4 = {
         }
     }
     vn_vgb_conquer_nogai = {
-        icon = mission_unite_home_region
+        icon = mission_steppe_warriors
         position = 4
 		required_missions = { vn_vgb_conquer_bashkiria }
 		provinces_to_highlight = {
@@ -729,7 +729,7 @@ vn_vgb_missions_slot_4 = {
         }
     }
     vn_vgb_conquer_volga = {
-        icon = mission_unite_home_region
+        icon = expand_to_the_south
         position = 5
 		required_missions = { vn_vgb_conquer_nogai }
 		provinces_to_highlight = {
@@ -756,7 +756,7 @@ vn_vgb_missions_slot_4 = {
         }
     }
     vn_vgb_conquer_sasqin = {
-        icon = mission_unite_home_region
+        icon = pacify_the_albanian_lands
         position = 6
         required_missions = { vn_vgb_conquer_volga }
 		provinces_to_highlight = {
@@ -814,7 +814,7 @@ vn_vgb_missions_slot_5 = {
     has_country_shield = yes
 
     vn_vgb_conquer_mordovia = {
-        icon = mission_unite_home_region
+        icon = mission_non-western_cavalry_raid
         position = 4
 		required_missions = { vn_vgb_conquer_bashkiria }
 		provinces_to_highlight = {
@@ -841,7 +841,7 @@ vn_vgb_missions_slot_5 = {
         }
     }
     vn_vgb_finno_ugric_friendship = {
-        icon = mission_unite_home_region
+        icon = mission_scholar_officials
         position = 5
         required_missions = { vn_vgb_conquer_mordovia }
 		provinces_to_highlight = {

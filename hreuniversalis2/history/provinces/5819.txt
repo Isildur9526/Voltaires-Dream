@@ -12,17 +12,11 @@ controller = LTT
 add_core = LTT
 fort_14th = yes
 
-1206.1.1 = {
-	owner = PLT
-	controller = PLT
-	add_core = PLT
-	remove_core = LTT
-}
-1236.1.1 = {
+1239.1.1 = {
 	owner = NLS
 	controller = NLS
 	add_core = NLS
-	remove_core = PLT
+	remove_core = LTT
 	culture = lithuanian
 	religion = animism
 }

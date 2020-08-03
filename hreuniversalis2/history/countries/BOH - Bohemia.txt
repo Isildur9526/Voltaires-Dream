@@ -675,8 +675,7 @@ change_estate_land_share = {
 1420.5.2 = { capital = 806 set_global_flag = had_hussite_wars }
 1436.7.5 = { capital = 781 }
 # Personal Union with Hungary under Sigismund I 1419-1437
-# Personal Union with Habsburg under Albrecht II 1437-1439
-1439.10.27 = {
+1437.12.9 = {
 	monarch = {
 		name = "(Interregnum)"
 		regent = yes

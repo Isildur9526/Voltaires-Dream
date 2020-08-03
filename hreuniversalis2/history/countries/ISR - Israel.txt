@@ -5,3 +5,4 @@ religion = jewish
 technology_group = western
 capital = 4974
 government_rank = 5
+religious_school = mizrahi_school

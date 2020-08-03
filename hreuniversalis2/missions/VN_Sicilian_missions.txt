@@ -11,7 +11,7 @@ vn_sic_missions_slot_1 = {
         OR = {
             AND = {
                 tag = SIC
-                dynasty = "von Hohenstaufen"
+                NOT = { dynasty = "de Hauteville" }
             }
 			tag = TNC
         }
@@ -239,7 +239,7 @@ vn_sic_missions_slot_1 = {
         effect = {
             add_country_modifier = {
                 name = sic_build_universities_mission
-                duration = 9125
+                duration = -1
             }
         }
 	}
@@ -281,7 +281,7 @@ vn_sic_missions_slot_2 = {
         OR = {
             AND = {
                 tag = SIC
-                dynasty = "von Hohenstaufen"
+                NOT = { dynasty = "de Hauteville" }
             }
 			tag = TNC
         }
@@ -508,7 +508,7 @@ vn_sic_missions_slot_3 = {
         OR = {
             AND = {
                 tag = SIC
-                dynasty = "von Hohenstaufen"
+                NOT = { dynasty = "de Hauteville" }
             }
 			tag = TNC
         }
@@ -724,7 +724,7 @@ vn_sic_missions_slot_4 = {
         OR = {
             AND = {
                 tag = SIC
-                dynasty = "von Hohenstaufen"
+                NOT = { dynasty = "de Hauteville" }
             }
 			tag = TNC
         }
@@ -1065,7 +1065,7 @@ vn_sic_missions_slot_5 = {
         OR = {
             AND = {
                 tag = SIC
-                dynasty = "von Hohenstaufen"
+                NOT = { dynasty = "de Hauteville" }
             }
 			tag = TNC
         }
@@ -1410,7 +1410,7 @@ vn_sic_missions_slot_5 = {
             }
             add_country_modifier = {
                 name = sic_conquer_poitiers_mission
-                duration = -1
+                duration = 9125
             }
         }
     }
@@ -1507,7 +1507,7 @@ vn_sic_missions_slot_5 = {
 			add_dip_power = 50
 			add_mil_power = 50
 			add_country_modifier = {
-                name = our_ancestral_domain_mission
+                name = sic_our_ancestral_domain_mission
                 duration = 9125
             }
         }

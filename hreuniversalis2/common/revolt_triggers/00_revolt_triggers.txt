@@ -33,11 +33,6 @@ NGC = {
 	always = no
 }
 
-# God
-KOG = {
-	always = no
-}
-
 # SGC
 SGC = {
 	always = no

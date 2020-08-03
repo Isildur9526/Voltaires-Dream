@@ -12,18 +12,12 @@ controller = SEO
 add_core = SEO
 
 1255.1.1 = {
-	owner = ZMG
-	controller = ZMG
-	add_core = ZMG
-	remove_core = SEO
-	religion = animism
-	culture = lithuanian
-}
-1309.1.1 = {
 	owner = LIT
 	controller = LIT
 	add_core = LIT
-	remove_core = ZMG
+	remove_core = SEO
+	religion = animism
+	culture = lithuanian
 	fort_15th = yes
 }
 1387.1.1 = { religion = catholic }

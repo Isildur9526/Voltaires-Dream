@@ -136,7 +136,6 @@ country_decisions = {
 				is_playing_custom_nation = no
 			}
 			NOT = { exists = ITA }
-			NOT = { exists = KOG }
 			tag = PAP
 			OR = {
 				ai = no
@@ -189,18 +188,13 @@ country_decisions = {
 			owns_core_province = 1784	# Pesaro
 		}
 		effect = {
-			remove_non_electors_emperors_from_empire_effect = yes
-			change_tag = KOG
-			add_government_reform = kingdom_of_god_reform
-			set_country_flag = unformable
 			country_event  = { id = catholic_flavor.2 }
 			italy_superregion = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = KOG
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
 			}
-			add_prestige = 20
+			override_country_name = KINGDOM_OF_GOD
+			set_country_flag = is_kingdom_of_god_flag
 		}
 		ai_will_do = {
 			factor = 1

@@ -5,6 +5,7 @@ lan_conquer_florence_mission = {
 }
 lan_loyal_merchants_mission = {
 	trade_efficiency = 0.15
+	burghers_loyalty_modifier = 0.05
 }
 lan_laurentian_library_mission = {
 	global_institution_spread = 0.1
@@ -99,10 +100,6 @@ apl_castello_della_zisa_mission = {
 	garrison_growth = 0.15
 	garrison_size = 0.15
 }
-apl_conquer_tripolitania_mission = {
-	manpower_recovery_speed = 0.2
-	global_manpower_modifier = 0.1
-}
 apl_integrate_subjects_mission = {
 	global_tax_modifier = 0.1
 	diplomatic_reputation = 1
@@ -120,7 +117,7 @@ apl_crumbling_empire_mission = {
 	land_morale = 0.1
 }
 apl_conquer_ionian_islands = {
-	land_attrition = -0.2
+	leader_land_manuever = 1
 	movement_speed = 0.1 
 }
 apl_byzantine_emperorship_mission = {
@@ -136,13 +133,15 @@ apl_conquer_sicily_mission = {
 	missionaries = 1
 }
 apl_conquer_kabylia_mission = {
-	supply_limit_modifier = 0.25
-	local_build_cost = -0.1
-	trade_value_modifier = 0.1
+	manpower_recovery_speed = 0.2
+	land_attrition = -0.1
 }
 apl_conquer_abruzzo_mission = {
 	legitimacy = 1
 	prestige = 1
+}
+apl_conquer_normandy_mission = {
+	infantry_power = 0.1
 }
 
 #Latin Empire
@@ -278,7 +277,8 @@ gen_conquer_tunis_mission = {
 }
 gen_conquer_sicily_mission = {
 	trade_steering = 0.15
-	trade_efficiency = 0.1
+	trade_efficiency = 0.05
+	mercantilism_cost = -0.15
 }
 gen_genoese_shipbuilding_mission = {
 	local_sailors_modifier = 0.25
@@ -318,9 +318,6 @@ gen_develop_genoa_mission = {
 gen_caucasian_trade_mission = {
 	trade_steering = 0.2
 	trade_range_modifier = 0.2
-}
-gen_dnieper_trade_mission = {
-	placed_merchant_power = 35
 }
 gen_dominate_greek_trade_mission = {
 	embargo_efficiency = 0.25
@@ -630,13 +627,6 @@ sav_fortify_chambery_mission = {
 	local_unrest = -1
 	local_defensiveness = 0.25
 }
-sav_order_of_saint_maurice_mission_a = {
-	global_missionary_strength = 0.01
-}
-sav_order_of_saint_maurice_mission_b = {
-	land_morale = 0.15
-	core_creation = -0.1
-}
 sav_conquer_aosta_mission = {
 	global_institution_spread = 0.2
 	manpower_recovery_speed = 0.1
@@ -666,9 +656,6 @@ sar_conquer_saluzzo_mission = {
 	culture_conversion_cost = -0.1
 	ae_impact = -0.1
 }
-sar_conquer_genoa_mission = {
-	trade_steering = 0.25
-}
 sar_prepare_for_war_mission = {
 	global_unrest = -2
 	land_morale = 0.1
@@ -684,10 +671,6 @@ sar_defend_the_isles_mission = {
 sar_conquer_sardinia_mission = {
 	prestige = 0.5
 	land_morale = 0.1
-}
-sar_develop_the_isles_mission = {
-	development_cost = -0.1
-	global_trade_goods_size_modifier = 0.1
 }
 sar_influential_estates_mission = {
 	global_tax_modifier = 0.1
@@ -2135,12 +2118,11 @@ sax_saxon_army_mission = {
 	recover_army_morale_speed = 0.05
 }
 sax_promote_popular_theology_mission = {
-	missionaries = 1
-	missionary_maintenance_cost = -0.25
+	
 }
 sax_truthfully_emperor_mission = {
 	global_missionary_strength = 0.02
-	legitimacy = 1
+	missionary_maintenance_cost = -0.25
 }
 sax_defeat_robber_baronry_mission = {
 	reform_progress_growth = 0.15
@@ -2300,7 +2282,7 @@ hab_josephinism_mission = {
 	max_absolutism = 10
 }
 hab_aeiou_mission = {
-	governing_capacity = 500
+	governing_capacity = 250
 }
 hab_conquer_aargau_mission = {
 	local_unrest = -3

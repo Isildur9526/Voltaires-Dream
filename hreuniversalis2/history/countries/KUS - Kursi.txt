@@ -3,7 +3,7 @@ government_rank = 3
 technology_group = north_american
 primary_culture = curonian
 religion = druwi
-capital = 5809
+capital = 5807
 
 1000.1.1 = { set_country_flag = natives_flag }
 1054.1.1 = {

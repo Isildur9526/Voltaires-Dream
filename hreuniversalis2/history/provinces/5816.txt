@@ -11,13 +11,25 @@ owner = LTT
 controller = LTT
 add_core = LTT
 
-1206.1.1 = {
+1239.1.1 = {
 	religion = catholic
+	owner = LIV
+	controller = LIV
+	add_core = LIV
+}
+1242.1.1 = {
+	owner = PLT
+	controller = PLT
+	add_core = PLT
+	remove_core = LIV
+}
+1264.1.1 = {
 	owner = LIV
 	controller = LIV
 	add_core = LIV
 	add_core = LVA
 	remove_core = LTT
+	remove_core = PLT
 	capital = "Ludsen"
 }
 1561.1.1 = {

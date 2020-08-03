@@ -91,7 +91,7 @@ leader_names = {
 	Rhadinos Rhangabe Rhodocanakis Romanos
 	Syropoulos
 	Tornikes
-	Zarides Zimisces
+	Zarides Tzimiskes
 }
 
 ship_names = {

@@ -25,7 +25,7 @@ vn_jewish_missions = {
 		}
 	}
 	vn_jewish_innovativeness = {
-		icon = pontifical_university
+		icon = pontifical_universities
 		required_missions = { vn_jewish_healthcare }
 		trigger = {
 			if = {

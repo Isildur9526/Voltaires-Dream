@@ -11,6 +11,7 @@ vn_karling_missions_slot_1 = {
 			tag = CNY
 			tag = GUI
 			tag = XSS
+			tag = FKE
 		}
         NOT = { map_setup = map_setup_random }
     }
@@ -479,6 +480,7 @@ vn_karling_missions_slot_2 = {
 			tag = CNY
 			tag = GUI
 			tag = XSS
+			tag = FKE
 		}
         NOT = { map_setup = map_setup_random }
     }
@@ -927,6 +929,7 @@ vn_karling_missions_slot_3 = {
 			tag = CNY
 			tag = GUI
 			tag = XSS
+			tag = FKE
 		}
         NOT = { map_setup = map_setup_random }
     }
@@ -1304,6 +1307,7 @@ vn_karling_missions_slot_4 = {
 			tag = CNY
 			tag = GUI
 			tag = XSS
+			tag = FKE
 		}
         NOT = { map_setup = map_setup_random }
     }
@@ -1762,6 +1766,7 @@ vn_karling_missions_slot_5 = {
 			tag = CNY
 			tag = GUI
 			tag = XSS
+			tag = FKE
 		}
         NOT = { map_setup = map_setup_random }
     }

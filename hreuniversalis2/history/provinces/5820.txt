@@ -11,7 +11,7 @@ owner = CKL
 controller = CKL
 add_core = CKL
 
-1266.1.1 = {
+1276.1.1 = {
 	owner = ZMG
 	controller = ZMG
 	add_core = ZMG

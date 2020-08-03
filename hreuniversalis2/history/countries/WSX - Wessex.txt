@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = germanic_monarchy
 government_rank = 1
 technology_group = western
 religion = catholic
@@ -28,4 +28,8 @@ capital = 722
 	add_ruler_personality = bold_fighter_personality
 }
 
-1070.1.1 = { primary_culture = english }
+1070.1.1 = {
+	government = monarchy
+	add_government_reform = feudalism_reform
+	primary_culture = english
+}

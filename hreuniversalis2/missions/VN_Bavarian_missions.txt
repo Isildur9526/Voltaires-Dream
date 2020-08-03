@@ -14,7 +14,7 @@ vn_bav_missions_slot_1 = {
 
     vn_bav_conquer_burgau = {
         position = 2
-        icon = mission_unite_home_region
+        icon = control_swabia
         required_missions = { vn_bav_please_the_nobility }
         provinces_to_highlight = {
             OR = {
@@ -59,7 +59,7 @@ vn_bav_missions_slot_1 = {
     }
     vn_bav_conquer_argengau = {
         position = 3
-        icon = mission_unite_home_region
+        icon = mission_soldiers_in_line
         required_missions = { vn_bav_conquer_burgau }
         provinces_to_highlight = {
             OR = {
@@ -98,7 +98,7 @@ vn_bav_missions_slot_1 = {
         }
     }
     vn_bav_conquer_lower_swabia = {
-        icon = mission_unite_home_region
+        icon = confront_the_lombards
         required_missions = { vn_bav_conquer_argengau }
         provinces_to_highlight = {
             region = wurttemburg_region
@@ -121,7 +121,7 @@ vn_bav_missions_slot_1 = {
         }
     }
     vn_bav_conquer_baden = {
-        icon = mission_unite_home_region
+        icon = sway_cologne
         required_missions = { vn_bav_conquer_lower_swabia }
         provinces_to_highlight = {
             region = baden_region
@@ -165,7 +165,7 @@ vn_bav_missions_slot_1 = {
         }
     }
     vn_bav_jesuitenkolleg_ingolstadt = {
-        icon = mission_rb_the_education_acts
+        icon = wittenberg_university
         required_missions = { vn_bav_weather_reformation }
         provinces_to_highlight = {
             province_id = 2431
@@ -173,7 +173,7 @@ vn_bav_missions_slot_1 = {
         trigger = {
 			2431 = {
                 owned_by = ROOT
-                has_building = university
+                has_education_building_trigger = yes
             }
         }
         effect = {
@@ -184,7 +184,7 @@ vn_bav_missions_slot_1 = {
         }
     }
     vn_bav_lead_catholic_league = {
-        icon = mission_cannons_firing
+        icon = back_the_league
         required_missions = { vn_bav_jesuitenkolleg_ingolstadt }
         trigger = {
             OR = {
@@ -210,7 +210,7 @@ vn_bav_missions_slot_1 = {
     }
     vn_bav_reform_the_army = {
         position = 9
-        icon = mission_assemble_an_army
+        icon = army_reforms
         required_missions = { }
         trigger = {
             army_size = 80
@@ -236,28 +236,17 @@ vn_bav_missions_slot_1 = {
         }
     }
     vn_bav_french_alliance = {
-        icon = mission_humiliate_provence
+        icon = letat_cest_moi
         required_missions = { vn_bav_reform_the_army }
         trigger = {
-            if = {
-                limit = { exists = FRA }
-                alliance_with = FRA
-                reverse_has_opinion = {
-                    who = FRA
-                    value = 150
-                }
-            }
-            else = {
-                any_ally = {
-                    culture_group = french
-                }
-            }
+            exists = FRA
+			alliance_with = FRA
         }
         effect = {
-            create_general = {
-                tradition = 100
-                culture = cosmopolitan_french
-            }
+            reverse_add_opinion = {
+				who = FRA
+				modifier = bav_french_alliance_opinion
+			}
             add_country_modifier = {
                 name = bav_french_alliance_mission
                 duration = 9125
@@ -279,7 +268,7 @@ vn_bav_missions_slot_2 = {
 
     vn_bav_please_the_nobility = {
         position = 1
-        icon = mission_noble_council
+        icon = empower_the_junkers
         required_missions = { }
         trigger = {
             if = {
@@ -319,7 +308,7 @@ vn_bav_missions_slot_2 = {
         }
     }
     vn_bav_conquer_bavaria = {
-        icon = mission_unite_home_region
+        icon = duchy_of_bavaria
         required_missions = { vn_bav_please_the_nobility }
         provinces_to_highlight = {
             region = bavaria_region
@@ -361,7 +350,7 @@ vn_bav_missions_slot_2 = {
     }
     vn_bav_conquer_ansbach = {
         position = 5
-        icon = mission_unite_home_region
+        icon = ansbach_succession
         required_missions = { vn_bav_conquer_bavaria }
         provinces_to_highlight = {
             OR = {
@@ -419,7 +408,7 @@ vn_bav_missions_slot_2 = {
         }
     }
     vn_bav_conquer_bayreuth = {
-        icon = mission_unite_home_region
+        icon = unite_the_realm
         required_missions = { vn_bav_conquer_ansbach }
         provinces_to_highlight = {
             OR = {
@@ -451,14 +440,122 @@ vn_bav_missions_slot_2 = {
         }
     }
     vn_bav_conquer_brandenburg = {
-        icon = mission_unite_home_region
+        icon = tame_brandenburg
         required_missions = { vn_bav_conquer_bayreuth }
         provinces_to_highlight = {
-            province_id = 2652
-        }
-        trigger = {
-            owns_core_province = 2652
-        }
+			OR = {
+				AND = {
+					region = brandenburg_region
+					NOT = { country_or_non_sovereign_subject_holds = root }
+				}
+				AND = {
+					exists = BRA
+					owned_by = BRA
+				}
+				AND = {
+					NOT = { exists = BRA }
+					exists = PRU
+					owned_by = PRU
+				}
+			}
+			OR = {
+				NOT = {
+					brandenburg_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+				NOT = {
+					AND = {
+						exists = BRA
+						BRA = {
+							has_opinion = {
+                                who = root
+                                value = 150
+                            }
+							NOT = {
+								army_strength = {
+									who = root
+									value = 0.5
+								}
+							}
+						}
+					}
+				}
+				NOT = {
+					AND = {
+						NOT = { exists = BRA }
+						exists = PRU
+						PRU = {
+							has_opinion = {
+                                who = root
+                                value = 150
+                            }
+							NOT = {
+								army_strength = {
+									who = root
+									value = 0.5
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = BRA
+				}
+				OR = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                        value = 24
+                        region = brandenburg_region
+                    }
+					BRA = {
+						has_opinion = {
+                            who = root
+                            value = 150
+                        }
+						NOT = {
+							army_strength = {
+								who = root
+								value = 0.5
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = PRU
+				}
+				OR = {
+                    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                        value = 24
+                        region = brandenburg_region
+                    }
+					PRU = {
+						has_opinion = {
+                            who = root
+                            value = 150
+                        }
+						NOT = {
+							army_strength = {
+								who = root
+								value = 0.5
+							}
+						}
+					}
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                    value = 24
+                    region = brandenburg_region
+                }
+			}
+		}
         effect = {
             add_mil_power = 100
             add_country_modifier = {
@@ -468,7 +565,7 @@ vn_bav_missions_slot_2 = {
         }
     }
     vn_bav_ecclesiastical_restauration = {
-        icon = mission_religious
+        icon = catholic_volunteers
         required_missions = { vn_bav_jesuitenkolleg_ingolstadt }
         trigger = {
             religious_unity = 1
@@ -497,8 +594,109 @@ vn_bav_missions_slot_2 = {
             }
         }
     }
+}
+
+vn_bav_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+
+    potential = {
+        tag = BAV
+		NOT = { map_setup = map_setup_random }
+	}
+    has_country_shield = yes
+
+    vn_bav_conquer_salzburg = {
+        position = 3
+        icon = take_the_bishoprics
+        required_missions = { vn_bav_conquer_bavaria }
+        provinces_to_highlight = {
+            area = salzburg_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			salzburg_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            tirolia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = bav_conquer_salzburg_mission
+                duration = 9125
+            }
+        }
+    }
+    vn_bav_conquer_tirol = {
+        icon = fortress_switzerland
+        required_missions = { vn_bav_conquer_salzburg }
+        provinces_to_highlight = {
+            region = tirolia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			tirolia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_legitimacy = 10
+            if = {
+				limit = {
+                    valid_for_personal_unions_trigger = yes
+					exists = HAB
+					HAB = {
+						valid_for_personal_unions_trigger = yes
+					}
+				}
+				add_casus_belli = {
+					type = cb_fabricated_claims
+					months = 300
+					target = HAB
+				}
+			}
+			else = {
+				austria_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+                }
+                styria_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+                }
+                carinthia_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+                }
+                murmark_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+        }
+    }
     vn_bav_conquer_austria = {
-        position = 10
         icon = mission_the_austrian_succession
         required_missions = { vn_bav_reform_the_army }
         provinces_to_highlight = {
@@ -543,87 +741,9 @@ vn_bav_missions_slot_2 = {
             }
         }
     }
-}
-
-vn_bav_missions_slot_3 = {
-    slot = 8
-    generic = no
-    ai = yes
-
-    potential = {
-        tag = BAV
-		NOT = { map_setup = map_setup_random }
-	}
-    has_country_shield = yes
-
-    vn_bav_conquer_salzburg = {
-        position = 3
-        icon = mission_unite_home_region
-        required_missions = { vn_bav_conquer_bavaria }
-        provinces_to_highlight = {
-            area = salzburg_area
-            NOT = { country_or_non_sovereign_subject_holds = ROOT }
-        }
-        trigger = {
-			salzburg_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-        }
-        effect = {
-            if = {
-				limit = {
-					exists = TIR
-					is_free_or_tributary_trigger = yes
-					government = monarchy
-					religion_group = christian
-					TIR = {
-						is_free_or_tributary_trigger = yes
-						government = monarchy
-						religion_group = christian
-					}
-				}
-				add_casus_belli = {
-					type = cb_fabricated_claims
-					months = 300
-					target = TIR
-				}
-			}
-			else = {
-				tirolia_region = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-            }
-            add_country_modifier = {
-                name = bav_conquer_salzburg_mission
-                duration = 9125
-            }
-        }
-    }
-    vn_bav_conquer_tirol = {
-        icon = mission_unite_home_region
-        required_missions = { vn_bav_conquer_salzburg }
-        provinces_to_highlight = {
-            region = tirolia_region
-            NOT = { country_or_non_sovereign_subject_holds = ROOT }
-        }
-        trigger = {
-			tirolia_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-        }
-        effect = {
-            add_legitimacy = 10
-        }
-    }
     vn_bav_conquer_wurzburg = {
         position = 6
-        icon = mission_unite_home_region
+        icon = conquer_franconia
         required_missions = { vn_bav_conquer_ansbach }
         provinces_to_highlight = {
             OR = {
@@ -682,7 +802,7 @@ vn_bav_missions_slot_3 = {
         }
     }
     vn_bav_bavarian_kingdom = {
-        icon = mission_empire
+        icon = become_king
         required_missions = { vn_bav_build_neuschwanstein }
         trigger = {
             government_rank = 6
@@ -715,27 +835,25 @@ vn_bav_missions_slot_4 = {
 
     vn_bav_imperial_marriage = {
         position = 1
-        icon = mission_alliances
+        icon = imperial_ascendancy
         required_missions = { }
         trigger = {
             if = {
-                limit = { hre_size = 1 }
-                OR = {
-                    AND = {
-                        is_emperor = yes
-                        num_of_royal_marriages = 5
+                limit = {
+                    government = monarchy
+                    hre_size = 1
+                }
+                calc_true_if = {
+                    desc = vn_bav_imperial_marriage.tt
+                    all_country = {
+                        is_part_of_hre = yes
+                        marriage_with = ROOT
                     }
-                    AND = {
-                        marriage_with = emperor
-                        reverse_has_opinion = {
-                            who = emperor
-                            value = 150
-                        }
-                    }
+                    amount = 5
                 }
             }
             else = {
-                num_of_royal_marriages = 5
+                num_of_allies = 5
             }
         }
         effect = {
@@ -771,26 +889,21 @@ vn_bav_missions_slot_4 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-			oberpfalz_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            leuchtenburg_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 14
+                OR = {
+                    area = oberpfalz_area
+                    area = leuchtenburg_area
+                }
             }
         }
         effect = {
             if = {
 				limit = {
+                    valid_for_personal_unions_trigger = yes
 					exists = PAL
-					is_free_or_tributary_trigger = yes
-					government = monarchy
-					religion_group = christian
 					PAL = {
-						is_free_or_tributary_trigger = yes
-						government = monarchy
-						religion_group = christian
+						valid_for_personal_unions_trigger = yes
 					}
 				}
 				add_casus_belli = {
@@ -812,29 +925,25 @@ vn_bav_missions_slot_4 = {
     }
     vn_bav_conquer_palatinate = {
         position = 3
-        icon = mission_unite_home_region
+        icon = end_the_habsburgs
         required_missions = { vn_bav_conquer_nordgau vn_bav_conquer_bavaria }
         provinces_to_highlight = {
            area = pfalzeast_area
            NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-			pfalzeast_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 6
+                area = pfalzeast_area
             }
         }
         effect = {
             if = {
 				limit = {
-					exists = HAI
-					is_free_or_tributary_trigger = yes
-					government = monarchy
-					religion_group = christian
+                    valid_for_personal_unions_trigger = yes
+                    exists = HAI
 					HAI = {
-						is_free_or_tributary_trigger = yes
-						government = monarchy
-						religion_group = christian
+						valid_for_personal_unions_trigger = yes
 					}
 				}
 				add_casus_belli = {
@@ -860,29 +969,18 @@ vn_bav_missions_slot_4 = {
     }
     vn_bav_bavarian_electorate = {
         position = 5
-        icon = mission_monarch_in_throne_room
+        icon = join_the_empire
         required_missions = { vn_bav_conquer_palatinate }
         trigger = {
-            prestige = 50
-			OR = {
-                is_elector = yes
-                any_subject_country = {
-                    NOT = { liberty_desire = 25 }
-                    is_elector = yes
-                    years_in_union_under = {
-                        who = ROOT
-                        years = 50
-                    }
-                }
-            }
+            
         }
         effect = {
-            country_event = { id = vn_missions.19 }            
+                   
         }
     }
     vn_bav_wittelsbacher_rise = {
         position = 8
-        icon = mission_alliances
+        icon = unite_the_wittelsbachs
         required_missions = { vn_bav_bavarian_electorate }
         trigger = {
             government_rank = 5
@@ -897,13 +995,13 @@ vn_bav_missions_slot_4 = {
         effect = {
             add_country_modifier = {
                 name = bav_wittelsbacher_rise_mission
-                duration = 10950
+                duration = 9125
             }
         }
     }
     vn_bav_centralize_bavaria = {
         position = 10
-        icon = mission_noble_council
+        icon = centralized_empire
         required_missions = { vn_bav_bavarian_baroque }
         provinces_to_highlight = {
             region = bavaria_region
@@ -913,13 +1011,6 @@ vn_bav_missions_slot_4 = {
             }
         }
         trigger = {
-            if = {
-                limit = { has_dlc = "Dharma" }
-                has_reform_level = 6
-            }
-            else = {
-                stability = 3
-            }
 			bavaria_region = {
                 type = all
                 owned_by = ROOT
@@ -948,33 +1039,28 @@ vn_bav_missions_slot_5 = {
 
     vn_bav_bavarian_emperor = {
         position = 2
-        icon = mission_alliances
+        icon = invest_in_the_provinces
         required_missions = { vn_bav_imperial_marriage }
         trigger = {
             if = {
-                limit = { hre_size = 1 }
-                is_emperor = yes
-                custom_trigger_tooltip = {
-                    tooltip = vn_bav_bavarian_emperor.tt
-                    calc_true_if = {
-                        amount = 5
-                        all_elector = {
-                            preferred_emperor = ROOT
-                        }
-                    }
-                }
+				limit = { hre_size = 1 }
+				is_emperor = yes
+				imperial_influence = 25
             }
             else = {
                 government_rank = 6
             }
         }
         effect = {
-            add_prestige = 25
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 25
+            }
         }
     }
     vn_bav_conquer_hainaut = {
         position = 4
-        icon = mission_unite_home_region
+        icon = bavarian_netherlands
         required_missions = { vn_bav_conquer_palatinate }
         provinces_to_highlight = {
             area = hainaut_area
@@ -996,59 +1082,26 @@ vn_bav_missions_slot_5 = {
     }
     vn_bav_conquer_cologne = {
         position = 6
-        icon = mission_unite_home_region
+        icon = connect_further_austria
         required_missions = { vn_bav_bavarian_electorate }
         provinces_to_highlight = {
             area = cologne_area
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            OR = {
-                current_age = age_of_reformation
-                current_age = age_of_absolutism
-                current_age = age_of_revolutions
-                current_age = age_of_ideology
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 6
+                area = cologne_area
             }
-            OR = {
-				AND = {
-					alliance_with = KOL
-					reverse_has_opinion = {
-						who = KOL
-						value = 150
-					}
-                }
-                AND = {
-                    overlord_of = KOL
-                    reverse_has_opinion = {
-						who = KOL
-						value = 150
-					}
-                }
-				AND = {
-					NOT = { exists = KOL }
-					owns_core_province = 1951
-				}
-			}
         }
         effect = {
-            if = {
-                limit = {
-                    KOL = {
-                        ai = yes
-                        exists = yes
-                        NOT = { government = monarchy }
-                    }
-                }
-                country_event = { id = vn_missions.20 } 
-            }
-            else = {
-                add_prestige = 25
-            }
+            add_prestige = 15
+            add_religious_influence_effect_large = yes
         }
     }
     vn_bav_develop_munich = {
         position = 7
-        icon = mission_buildings
+        icon = austria_prospers
         required_missions = { }
         provinces_to_highlight = {
             province_id = 913
@@ -1056,24 +1109,21 @@ vn_bav_missions_slot_5 = {
         trigger = {
 			913 = {
                 owned_by = ROOT
+                is_core = ROOT
                 development = 24
-                OR = {
-                    has_building = temple
-                    has_building = cathedral
-                }
-                OR = {
-                    has_building = workshop
-                    has_building = counting_house
-                }
+                has_tax_building_trigger = yes
+                has_production_building_trigger = yes
+                has_trade_building_trigger = yes
             }
         }
         effect = {
             add_years_of_income = 1
+            913 = { move_capital_effect = yes }
         }
     }
     vn_bav_reinheitsgebot = {
         position = 8
-        icon = mission_have_manufactories
+        icon = geneva_conventions
         required_missions = { vn_bav_develop_munich }
         trigger = {
             trading_bonus = {
@@ -1096,18 +1146,17 @@ vn_bav_missions_slot_5 = {
     }
     vn_bav_bavarian_baroque = {
         position = 9
-        icon = mission_portico
+        icon = regal_splendour
         required_missions = { }
         trigger = {
+            total_development = 500
+            has_any_disaster = no
+            has_regency = no
+            legitimacy_equivalent = 95
             NOT = { war_exhaustion = 1 }
-            stability = 1
-            OR = {
-                temple = 10
-                cathedral = 5
-            }
+            NOT = { corruption = 1 }
         }
         effect = {
-            add_prestige = 10
             add_country_modifier = {
                 name = bav_bavarian_baroque_mission
                 duration = 9125

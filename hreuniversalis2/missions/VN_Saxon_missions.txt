@@ -16,7 +16,7 @@ vn_sax_missions_slot_1 = {
 
 	vn_sax_innerer_landesausbau = {
 		position = 1
-		icon = mission_colonial
+		icon = prosperity_for_all
 		required_missions = { }
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -38,8 +38,19 @@ vn_sax_missions_slot_1 = {
 	}
 	vn_sax_grosses_berggeschrey = {
 		position = 2
-		icon = mission_dominate_home_trade_node
+		icon = reform_bergordnung
 		required_missions = { vn_sax_innerer_landesausbau }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				trade_goods = iron
+				trade_goods = tin
+				trade_goods = plumbum
+				trade_goods = copper
+				trade_goods = gold
+			}
+			has_production_building_trigger = no
+		}
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 10
@@ -47,10 +58,13 @@ vn_sax_missions_slot_1 = {
 					trade_goods = iron
 					trade_goods = tin
 					trade_goods = plumbum
-					trade_goods = silver
+					trade_goods = copper
 					trade_goods = gold
 				}
 				has_production_building_trigger = yes
+			}
+			any_hired_mercenary_company = {
+				
 			}
 		}
 		effect = {
@@ -77,7 +91,7 @@ vn_sax_missions_slot_1 = {
 	}
 	vn_sax_saxon_trading_centers = {
 		position = 3
-		icon = mission_big_city
+		icon = bohemian_crystal
 		required_missions = { vn_sax_grosses_berggeschrey }
 		provinces_to_highlight = {
 			OR = {
@@ -109,12 +123,14 @@ vn_sax_missions_slot_1 = {
 			}
 		}
 		effect = {
-			add_years_of_income = 0.5
+			country_event = {
+				id = vn_missions.34
+			}
 		}
 	}
 	vn_sax_saxon_army = {
 		position = 4
-		icon = mission_soldiers_in_line
+		icon = a_show_of_strength
 		required_missions = { }
 		trigger = {
 			if = {
@@ -129,7 +145,7 @@ vn_sax_missions_slot_1 = {
 			num_of_artillery = 12
 		}
 		effect = {
-			add_army_tradition = 10
+			add_army_professionalism = 0.02
 			lusatia_region = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -145,7 +161,7 @@ vn_sax_missions_slot_1 = {
 	}
 	vn_sax_conquer_lusatia = {
 		position = 5
-		icon = mission_unite_home_region
+		icon = mission_big_city
 		required_missions = { vn_sax_saxon_army vn_sax_conquer_anhalt }
 		provinces_to_highlight = {
 			region = lusatia_region
@@ -158,21 +174,7 @@ vn_sax_missions_slot_1 = {
 			}
 		}
 		effect = {
-			glogow_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			legnica_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			silesiawest_area = {
+			silesia_region = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -189,41 +191,25 @@ vn_sax_missions_slot_1 = {
 	}
 	vn_sax_conquer_silesia = {
 		position = 7
-		icon = mission_unite_home_region
+		icon = take_silesia
 		required_missions = { vn_sax_conquer_lusatia }
 		provinces_to_highlight = {
-			OR = {
-				area = glogow_area
-				area = legnica_area
-				area = silesiawest_area
-			}
+			region = silesia_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			glogow_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			legnica_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			silesiawest_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = silesia_region
 			}
 		}
 		effect = {
 			if = {
 				limit = {
 					exists = PLC
-					is_free_or_tributary_trigger = yes
-					government = monarchy
-					religion_group = christian
+					valid_for_personal_unions_trigger = yes
 					PLC = {
-						is_free_or_tributary_trigger = yes
-						government = monarchy
-						religion_group = christian
+						valid_for_personal_unions_trigger = yes
 					}
 				}
 				add_casus_belli = {
@@ -235,13 +221,9 @@ vn_sax_missions_slot_1 = {
 			else_if = {
 				limit = {
 					exists = POL
-					is_free_or_tributary_trigger = yes
-					government = monarchy
-					religion_group = christian
+					valid_for_personal_unions_trigger = yes
 					POL = {
-						is_free_or_tributary_trigger = yes
-						government = monarchy
-						religion_group = christian
+						valid_for_personal_unions_trigger = yes
 					}
 				}
 				add_casus_belli = {
@@ -276,7 +258,7 @@ vn_sax_missions_slot_1 = {
 		}
 	}
 	vn_sax_conquer_poland = {
-		icon = mission_coronation
+		icon = king_of_poland
 		required_missions = { vn_sax_conquer_silesia }
 		provinces_to_highlight = {
 			OR = {
@@ -287,17 +269,13 @@ vn_sax_missions_slot_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			malopolska_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			wielkopolska_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			mazovia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 30
+				OR = {
+					region = malopolska_region
+					region = wielkopolska_region
+					region = mazovia_region
+				}
 			}
 		}
 		effect = {
@@ -351,7 +329,7 @@ vn_sax_missions_slot_2 = {
 	}
 	vn_sax_conquer_anhalt = {
 		position = 4
-		icon = mission_unite_home_region
+		icon = the_hungarian_question
 		required_missions = { vn_sax_conquer_merseburg }
 		provinces_to_highlight = {
 			area = anhalt_area
@@ -383,16 +361,160 @@ vn_sax_missions_slot_2 = {
 	}
 	vn_sax_brandenburger_diplomacy = {
 		position = 5
-		icon = mission_unite_home_region
+		icon = electorate_of_brandenburg
 		required_missions = { vn_sax_conquer_anhalt }
 		provinces_to_highlight = {
-			region = brandenburg_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			OR = {
+				AND = {
+					region = brandenburg_region
+					NOT = { country_or_non_sovereign_subject_holds = root }
+				}
+				AND = {
+					exists = BRA
+					owned_by = BRA
+				}
+				AND = {
+					NOT = { exists = BRA }
+					exists = PRU
+					owned_by = PRU
+				}
+			}
+			OR = {
+				NOT = {
+					brandenburg_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				NOT = {
+					AND = {
+						exists = BRA
+						BRA = {
+							if = {
+								limit = { is_elector = yes }
+								preferred_emperor = ROOT
+								has_opinion = {
+									who = ROOT
+									value = 150
+								}
+							}
+							else = {
+								has_opinion = {
+									who = ROOT
+									value = 150
+								}
+							}
+							NOT = {
+								army_strength = {
+									who = ROOT
+									value = 0.5
+								}
+							}
+						}
+					}
+				}
+				NOT = {
+					AND = {
+						NOT = { exists = BRA }
+						exists = PRU
+						PRU = {
+							if = {
+								limit = { is_elector = yes }
+								preferred_emperor = ROOT
+								has_opinion = {
+									who = ROOT
+									value = 150
+								}
+							}
+							else = {
+								has_opinion = {
+									who = ROOT
+									value = 150
+								}
+							}
+							NOT = {
+								army_strength = {
+									who = ROOT
+									value = 0.5
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		trigger = {
-			brandenburg_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			if = {
+				limit = {
+					exists = BRA
+				}
+				OR = {
+					brandenburg_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					BRA = {
+						if = {
+							limit = { is_elector = yes }
+							preferred_emperor = ROOT
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+						else = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+						NOT = {
+							army_strength = {
+								who = ROOT
+								value = 0.5
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = PRU
+				}
+				OR = {
+					brandenburg_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					PRU = {
+						if = {
+							limit = { is_elector = yes }
+							preferred_emperor = ROOT
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+						else = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+						NOT = {
+							army_strength = {
+								who = ROOT
+								value = 0.5
+							}
+						}
+					}
+				}
+			}
+			else = {
+				brandenburg_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
 			}
 		}
 		effect = {
@@ -404,7 +526,7 @@ vn_sax_missions_slot_2 = {
 	}
 	vn_sax_conquer_hesse = {
 		position = 6
-		icon = mission_unite_home_region
+		icon = explore_caribbean
 		required_missions = { vn_sax_conquer_brunswick }
 		provinces_to_highlight = {
 			OR = {
@@ -415,17 +537,13 @@ vn_sax_missions_slot_2 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			hessenorth_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			marburg_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			hessenorth_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 14
+				OR = {
+					area = hessenorth_area
+					area = marburg_area
+					area = hessenorth_area
+				}
 			}
 		}
 		effect = {
@@ -437,17 +555,23 @@ vn_sax_missions_slot_2 = {
 	}
 	vn_sax_modern_industry = {
 		position = 8
-		icon = mission_unite_home_region
+		icon = industrialized_rhineland
 		required_missions = { vn_sax_conquer_silesia }
 		trigger = {
 			share_of_starting_income = 25
 			num_of_owned_provinces_with = {
-				value = 25
+				value = 10
 				has_manufactory_trigger = yes
 			}
 		}
 		effect = {
-			
+			custom_tooltip = vn_sax_modern_industry.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_manufactory_trigger = yes }
+					add_base_production = 3
+				}
+			}
 		}	
 	}
 }
@@ -470,7 +594,7 @@ vn_sax_missions_slot_3 = {
 	
 	vn_sax_defeat_robber_baronry = {
 		position = 1
-		icon = mission_fort
+		icon = empower_the_junkers
 		required_missions = { }
 		trigger = {
 			stability = 2
@@ -502,7 +626,7 @@ vn_sax_missions_slot_3 = {
 	}
 	vn_sax_conquer_vogtland = {
 		position = 3
-		icon = mission_unite_home_region
+		icon = fortress_switzerland
 		required_missions = { vn_sax_conquer_meissen vn_sax_conquer_merseburg  }
 		provinces_to_highlight = {
 			OR = {
@@ -552,7 +676,7 @@ vn_sax_missions_slot_3 = {
 	}
 	vn_sax_conquer_thuringia = {
 		position = 4
-		icon = mission_duchy
+		icon = avoid_fragmentation
 		required_missions = { vn_sax_conquer_vogtland }
 		provinces_to_highlight = {
 			OR = {
@@ -563,17 +687,13 @@ vn_sax_missions_slot_3 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			helmegau_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			ostergau_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			westergau_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 12
+				OR = {
+					area = helmegau_area
+					area = ostergau_area
+					area = westergau_area
+				}
 			}
 		}
 		effect = {
@@ -603,19 +723,23 @@ vn_sax_missions_slot_3 = {
 	}
 	vn_sax_conquer_brunswick = {
 		position = 5
-		icon = mission_unite_home_region
+		icon = conquer_brunswick
 		required_missions = { vn_sax_conquer_thuringia vn_sax_conquer_anhalt }
 		provinces_to_highlight = {
 			area = brunswick_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			brunswick_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 8
+				area = brunswick_area
 			}
 		}
 		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
 			hessenorth_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -655,7 +779,7 @@ vn_sax_missions_slot_3 = {
 	}
 	vn_sax_conquer_luneburg = {
 		position = 6
-		icon = mission_unite_home_region
+		icon = conquer_lower_saxony
 		required_missions = { vn_sax_conquer_brunswick }
 		provinces_to_highlight = {
 			OR = {
@@ -665,23 +789,24 @@ vn_sax_missions_slot_3 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			luneburg_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			calenberg_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 12
+				OR = {
+					area = luneburg_area
+					area = calenberg_area
+				}
 			}
 		}
 		effect = {
 			luneburg_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
 				add_province_modifier = {
 					name = "sax_conquer_luneburg_mission"
 					duration = 9125
 				}
 			}
 			calenberg_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
 				add_province_modifier = {
 					name = "sax_conquer_luneburg_mission"
 					duration = 9125
@@ -691,7 +816,7 @@ vn_sax_missions_slot_3 = {
 	}
 	vn_sax_kingdom_of_saxony = {
 		position = 8
-		icon = mission_empire
+		icon = become_king
 		required_missions = { vn_sax_conquer_luneburg vn_sax_truthfully_emperor }
 		trigger = {
 			government_rank = 5
@@ -727,7 +852,7 @@ vn_sax_missions_slot_4 = {
 	
 	vn_sax_conquer_meissen = {
 		position = 2
-		icon = mission_unite_home_region
+		icon = porcelain_from_meissen
 		required_missions = { vn_sax_defeat_robber_baronry }
 		provinces_to_highlight = {
 			area = meissen_area
@@ -758,7 +883,7 @@ vn_sax_missions_slot_4 = {
 	}
 	vn_sax_assimilate_the_sorbs = {
 		position = 3
-		icon = mission_tribal_war
+		icon = mission_sponsor_the_arts
 		required_missions = { vn_sax_conquer_meissen }
 		provinces_to_highlight = {
 			area = meissen_area
@@ -779,8 +904,12 @@ vn_sax_missions_slot_4 = {
 			}
 		}
 		effect = {
-			add_dip_power = 50
-			2803 = { move_capital_effect = yes }
+			2803 = {
+				move_capital_effect = yes
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
 			add_country_modifier = {
 				name = sax_assimilate_the_sorbs_mission
 				duration = 9125
@@ -789,7 +918,7 @@ vn_sax_missions_slot_4 = {
 	}
 	vn_sax_conquer_franconia = {
 		position = 5
-		icon = mission_unite_home_region
+		icon = conquer_franconia
 		required_missions = { vn_sax_conquer_thuringia }
 		provinces_to_highlight = {
 			OR = {
@@ -800,26 +929,23 @@ vn_sax_missions_slot_4 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			wurzburg_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			bayreuth_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			bamberg_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 16
+				OR = {
+					area = wurzburg_area
+					area = bayreuth_area
+					area = bamberg_area
+				}
 			}
 		}
 		effect = {
-			
+			add_dip_power = 150
+			add_prestige = 10
 		}
 	}
 	vn_sax_religious_doctrines = {
 		position = 6
-		icon = mission_alliances
+		icon = mission_join_the_reformation
 		required_missions = { vn_sax_schmalkaldic_league }
 		trigger = {
 			OR = {
@@ -856,7 +982,7 @@ vn_sax_missions_slot_4 = {
 	}
 	vn_sax_truthfully_emperor = {
 		position = 7
-		icon = mission_alliances
+		icon = mission_shift_the_balance
 		required_missions = { vn_sax_religious_doctrines }
 		trigger = {
 			if = {
@@ -912,31 +1038,13 @@ vn_sax_missions_slot_5 = {
 
 	vn_sax_promote_popular_theology = {
 		position = 1
-		icon = mission_court_education
+		icon = reform_the_nomocanon
 		required_missions = { }
 		trigger = {
-			NOT = { current_age = age_of_empire }
-			NOT = { current_age = age_of_holy_wars }
-			NOT = { current_age = age_of_crisis }
-			NOT = { current_age = age_of_dynasticism }
 			OR = {
 				AND = {
-					religion = catohlic
-					num_of_cardinals = 1
-					reverse_has_opinion = {
-						who = PAP
-						value = 150
-					}
+
 				}
-				AND = {
-					religion = catholique
-					num_of_cardinals = 1
-					reverse_has_opinion = {
-						who = AVI
-						value = 150
-					}
-				}
-				has_country_modifier = the_statue_in_restraint_of_appeals
 			}
 		}
 		effect = {
@@ -948,7 +1056,7 @@ vn_sax_missions_slot_5 = {
 	}
 	vn_sax_embrace_reformation = {
 		position = 3
-		icon = mission_luther_theses
+		icon = victor_for_the_true_faith
 		required_missions = { vn_sax_promote_popular_theology }
 		trigger = {
 			OR = {
@@ -973,7 +1081,6 @@ vn_sax_missions_slot_5 = {
 				}
 			}
 			religious_unity = 0.75
-			current_age = age_of_reformation
 		}
 		effect = {
 			add_religious_influence_effect_small = yes
@@ -999,29 +1106,27 @@ vn_sax_missions_slot_5 = {
 	}
 	vn_sax_schmalkaldic_league = {
 		position = 5
-		icon = mission_alliances
+		icon = the_holy_league
 		required_missions = { vn_sax_embrace_reformation }
 		trigger = {
 			calc_true_if = {
+				desc = vn_sax_schmalkaldic_league.tt
 				amount = 5
 				all_ally = {
 					religion = ROOT
-					has_opinion = {
-						who = ROOT
-						value = 150
-					}
 				}
 			}
 		}
 		effect = {
-			country_event = {
-				id = vn_missions.34
+			add_country_modifier = {
+				name = aan_conquer_avaria_mission
+				duration = x
 			}
 		}
 	}
 	vn_sax_university_of_wittenberg = {
 		position = 6
-		icon = mission_rb_college_of_justice
+		icon = wittenberg_university
 		required_missions = { vn_sax_schmalkaldic_league }
 		provinces_to_highlight = {
 			province_id = 59
@@ -1050,30 +1155,25 @@ vn_sax_missions_slot_5 = {
 	}
 	vn_sax_saxon_architecture = {
 		position = 7
-		icon = mission_alliances
+		icon = weimar_classicism
 		required_missions = { }
 		trigger = {
 			has_3_lv3_advisors_trigger = yes
+			is_in_deficit = no
 			capital_scope = {
 				development = 30
-				calc_true_if = {
-					amount = 3
-					has_tax_building_trigger = yes
-					has_production_building_trigger = yes
-					has_courthouse_building_trigger = yes
-					has_forcelimit_building_trigger = yes
-					has_manpower_building_trigger = yes
-				}
+				num_of_buildings_in_province = 5
 			}
 		}
 		effect = {
-			add_absolutism = 5
-
+			add_estate_nobles_loyalty_effect = yes
+			add_estate_church_loyalty_effect = yes
+			add_estate_burghers_loyalty_effect = yes
 		}
 	}
 	vn_sax_game_with_great_powers = {
 		position = 8
-		icon = mission_alliances
+		icon = regal_splendour
 		required_missions = { vn_sax_saxon_architecture }
 		trigger = {
 			has_institution = enlightenment
@@ -1097,22 +1197,18 @@ vn_sax_missions_slot_5 = {
 			}
 		}
 		effect = {
-			define_advisor = {
-				name = "Thomas von Fritsch"
-				type = statesman
-				skill = 3
-				discount = yes
-			}
 			if = {
 				limit = {
 					government = monarchy
 				}
+				add_absolutism = 10
 				add_country_modifier = {
 					name = sax_game_with_great_powers_a
 					duration = 9125
 				}
 			}
 			else = {
+				add_revolutionary_zeal = 10
 				add_country_modifier = {
 					name = sax_game_with_great_powers_b
 					duration = 9125

@@ -397,6 +397,50 @@ country_decisions = {
 		}
 	}
 
+	trade_propagation_convert_to_islam = {
+		potential = {
+			has_dlc = "Cradle of Civilization"
+			NOT = { religion_group = muslim }
+			capital_scope = {
+				religion_group = muslim
+				OR = {
+					superregion = pontic_steppe_superregion
+					superregion = central_asia_superregion
+					superregion = caucasia_superregion
+				}
+			}
+		}
+		allow = {
+			legitimacy = 90
+			has_regency = no
+			is_free_or_tributary_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = the_dominant_religion_is_a_form_of_islam_tooltip
+				OR = {
+					dominant_religion = sunni
+					dominant_religion = shiite
+					dominant_religion = ibadi
+					dominant_religion = zikri
+				}
+			}
+		}
+		effect = {
+			change_religion = capital
+			add_stability = 1
+			add_legitimacy = 10
+			clr_country_flag = sultan_titles_for_non_muslims
+			remove_country_modifier = islamic_titles
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_country_flag = sultan_titles_for_non_muslims
+				had_country_flag = { flag = sultan_titles_for_non_muslims days = 10950 }
+			}
+		}
+	}
+
 	regulate_the_monastaries = {
 		potential = {
 			NOT = { has_country_modifier = regulated_monasteries }

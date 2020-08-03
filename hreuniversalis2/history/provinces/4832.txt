@@ -12,9 +12,9 @@ controller = LMT
 add_core = LMT
 
 1252.7.29 = { 
-	owner = TEU
-	controller = TEU
-	add_core = TEU
+	owner = LIV
+	controller = LIV
+	add_core = LIV
 	capital = "Memel"
 }
 1276.1.1 = {
@@ -26,6 +26,12 @@ add_core = LMT
 1299.1.1 = {
 	religion = catholic
 	unrest = 0
+}
+1328.1.1 = {
+	owner = TEU
+	controller = TEU
+	add_core = TEU
+	remove_core = LIV
 }
 1454.2.10 = {
 	revolt = { type = revolutionary_rebels size = 0 }

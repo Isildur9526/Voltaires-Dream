@@ -8,7 +8,7 @@ union = {
 union = {
 	first = BOH
 	second = SIL
-	start_date = 1439.10.27
+	start_date = 1437.12.9
 	end_date = 1453.10.28
 }
 union = {
@@ -29,7 +29,7 @@ union = {
 union = {
 	first = BOH
 	second = MRV
-	start_date = 1439.10.27
+	start_date = 1437.12.9
 	end_date = 1453.10.28
 }
 union = {
@@ -120,30 +120,10 @@ union = {
 	end_date = 1437.12.9
 }
 
-# Habsburg-Bohemia, during Albrecht II
-union = {
-	first = HAB
-	second = BOH
-	start_date = 1437.12.9
-	end_date = 1439.10.27
-}
-union = {
-	first = HAB
-	second = SIL
-	start_date = 1437.12.9
-	end_date = 1439.10.27
-}
-union = {
-	first = HAB
-	second = MRV
-	start_date = 1437.12.9
-	end_date = 1439.10.27
-}
-
 # Habsburg-Hungary, during Albrecht II
 union = {
-	first = HAB
-	second = HUN
+	first = HUN
+	second = HAB
 	start_date = 1437.12.9
 	end_date = 1439.10.27
 }

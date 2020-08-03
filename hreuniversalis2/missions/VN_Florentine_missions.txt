@@ -17,15 +17,12 @@ vn_lan_missions_slot_1 = {
 
 	vn_lan_consolidate_rulership = {
 		position = 2
-		icon = mission_rb_rein_in_the_highland_clans
+		icon = dreams_of_grandeur
 		required_missions = { vn_lan_loyal_merchants }
 		trigger = {
 			stability = 2
-			legitimacy_equivalent = 100
-			if = {
-				limit = { has_dlc = "Dharma" }
-				has_reform_level = 4
-			}
+			legitimacy_equivalent = 95
+			has_reform_level = 4
 		}
 		effect = {
 			add_country_modifier = {
@@ -34,9 +31,63 @@ vn_lan_missions_slot_1 = {
 			}
 		}
 	}
+	vn_lan_influence_the_curia = {
+		position = 3
+		icon = influence_the_church
+		required_missions = { vn_lan_consolidate_rulership }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						religion = catholic
+						religion = catholique
+					}
+					uses_papacy = yes
+				}
+				OR = {
+					papal_influence = 100
+					is_papal_controller = yes
+				}
+			}
+			else = {
+				religious_unity = 1
+				num_of_trusted_allies = 3
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Emperor"
+					religion = catholic
+					uses_papacy = yes
+					NOT = { has_global_flag = had_a_medici_pope }
+				}
+				custom_tooltip = emp_lan_next_pope_medici_tt
+				set_global_flag = had_a_medici_pope
+				set_country_flag = our_medici_pope
+				PAP = { set_country_flag = medici_pope_next }
+			}
+			else_if = {
+				limit = {
+					has_dlc = "Emperor"
+					religion = catholique
+					uses_papacy = yes
+					NOT = { has_global_flag = had_a_medici_pope }
+				}
+				custom_tooltip = emp_lan_next_pope_medici_tt
+				set_global_flag = had_a_medici_pope
+				set_country_flag = our_medici_pope
+				AVI = { set_country_flag = medici_pope_next }
+			}
+			else = {
+				add_dip_power = 100
+				add_prestige = 10
+			}
+		}
+	}
 	vn_lan_conquer_lucca = {
 		position = 4
-		icon = mission_unite_home_region
+		icon = end_genoese_competition
 		required_missions = { vn_lan_conquer_florence }
 		provinces_to_highlight = {
 			area = lucca_area
@@ -76,18 +127,21 @@ vn_lan_missions_slot_2 = {
 	
 	vn_lan_loyal_merchants = {
 		position = 1
-		icon = mission_entrepot_of_india
+		icon = sources_of_trade
 		required_missions = {}
 		trigger = {
+			home_trade_node = {
+				has_trader = ROOT
+				trade_share = {
+					country = ROOT
+					share = 15
+				}
+			}
 			if = {
 				limit = { has_estate = estate_burghers }
-				estate_influence = {
-					estate = estate_burghers
-					influence = 60
-				}
 				estate_loyalty = {
 					estate = estate_burghers
-					loyalty = 80
+					loyalty = 60
 				}
 			}
 			else = {
@@ -147,7 +201,7 @@ vn_lan_missions_slot_2 = {
 		}
 	}
 	vn_lan_conquer_arezzo = {
-		icon = mission_unite_home_region
+		icon = levee_the_arno
 		required_missions = { vn_lan_loyal_merchants }
 		provinces_to_highlight = {
 			OR = {
@@ -167,6 +221,21 @@ vn_lan_missions_slot_2 = {
 			4532 = { country_or_non_sovereign_subject_holds = ROOT}
 		}
 		effect = {
+			642 = {
+				add_local_autonomy = -10
+			}
+			646 = {
+				add_local_autonomy = -10
+			}
+			2595 = {
+				add_local_autonomy = -10
+			}
+			2705 = {
+				add_local_autonomy = -10
+			}
+			4532 = {
+				add_local_autonomy = -10
+			}
 			florence_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -174,14 +243,10 @@ vn_lan_missions_slot_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			add_country_modifier = {
-				name = "lan_conquer_arezzo_mission"
-				duration = 7300
-			}
 		}
 	}
 	vn_lan_conquer_florence = {
-		icon = mission_wine_monopolies
+		icon = conquer_tuscany
 		required_missions = { vn_lan_conquer_arezzo }
 		provinces_to_highlight = {
 			area = florence_area
@@ -239,37 +304,44 @@ vn_lan_missions_slot_3 = {
 	
 	vn_lan_laurentian_library = {
 		position = 1
-		icon = mission_rb_the_bank_of_scotland
-		required_missions = {  }
+		icon = bibliotheca_corviana
+		required_missions = { }
 		provinces_to_highlight = {
 			province_id = 640
 		}
 		trigger = {
 			640 = {
 				owned_by = ROOT
-				OR = {
-					has_building = college
-					has_building = university
-				}
+				is_core = ROOT
+				NOT = { unrest = 1 }
+				NOT = { devastation = 1 }
+				has_education_building_trigger = yes
 			}
 		}
 		effect = {
-			add_innovativeness_small_effect = yes
 			add_country_modifier = {
 				name = "lan_laurentian_library_mission"
-				duration = 7300
+				duration = 9125
 			}
 		}
 	}
 	vn_lan_innovative_developments = {
-		icon = mission_early_modern_university
+		icon = continue_the_renaissance
 		required_missions = { vn_lan_laurentian_library }
 		trigger = {
 			if = {
 				limit = { has_dlc = "Rule Britannia" }
 				innovativeness = 25
 			}
-			university = 5
+			num_of_owned_provinces_with = {
+				value = 5
+				has_education_building_trigger = yes
+			}
+			any_neighbor_country = {
+				NOT = {
+					tech_difference = 1
+				}
+			}
 		}
 		effect = {
 			country_event = { id = vn_missions.2 }
@@ -277,7 +349,7 @@ vn_lan_missions_slot_3 = {
 	}
 	vn_lan_conquer_pisa = {
 		position = 4
-		icon = mission_seize_north_sea_trade
+		icon = pulverize_pisa
 		required_missions = { vn_lan_conquer_florence }
 		provinces_to_highlight = {
 			area = pisa_area
@@ -300,7 +372,7 @@ vn_lan_missions_slot_3 = {
 		}
 	}
 	vn_lan_conquer_siena = {
-		icon = mission_dethrone_the_rurikovichs
+		icon = the_italian_league
 		required_missions = { vn_lan_conquer_pisa }
 		provinces_to_highlight = {
 			area = siena_area
@@ -313,16 +385,16 @@ vn_lan_missions_slot_3 = {
 			}
 		}
 		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
 			romagna_region = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
-			}
-			add_country_modifier = {
-				name = "lan_conquer_siena_mission"
-				duration = 9125
 			}
 		}
 	}
@@ -345,7 +417,7 @@ vn_lan_missions_slot_4 = {
 	
 	vn_lan_florentine_bank = {
 		position = 1
-		icon = mission_african_gold
+		icon = medici_bank_ledgers
 		trigger = {
 			treasury = 1000
 			monthly_income = 15
@@ -354,54 +426,53 @@ vn_lan_missions_slot_4 = {
 		effect = {
 			define_advisor = {
 				type = treasurer
-				name = "Giovanni di Bicci de' Medici"
 				skill = 3
-				discount = yes
+				cost_multiplier = 0.25
 			}
 			add_country_modifier = {
 				name = "lan_florentine_bank_mission"
-				duration = 7300
-			}
-		}
-	}
-	vn_lan_italian_athens = {
-		icon = mission_eastern_european_city
-		required_missions = { vn_lan_florentine_bank vn_lan_laurentian_library }
-		trigger = {
-			has_institution = renaissance
-			all_state_province = {
-				renaissance = 100
-			}
-			prestige = 50
-			advisor = artist
-		}
-		effect = {
-			add_country_modifier = {
-				name = "lan_italian_athens_mission"
 				duration = 9125
 			}
 		}
 	}
 	vn_lan_santa_maria_del_fiore = {
-		icon = mission_portico
-		required_missions = { vn_lan_italian_athens }
+		icon = public_works
+		required_missions = { vn_lan_florentine_bank vn_lan_laurentian_library }
 		provinces_to_highlight = {
 			province_id = 640
 		}
 		trigger = {
 			640 = {
 				owned_by = ROOT
-				has_building = cathedral
+				development = 20
+				has_tax_building_trigger = yes
 			}
 		}
 		effect = {
-			add_religious_influence_effect_small = yes
-			add_prestige = 10
+			add_religious_influence_effect_large = yes
 			640 = {
 				add_province_modifier = {
 					name = "lan_santa_maria_del_fiore"
 					duration = -1
 				}
+			}
+		}
+	}
+	vn_lan_italian_athens = {
+		icon = florentine_renaissance
+		required_missions = { vn_lan_santa_maria_del_fiore }
+		trigger = {
+			has_institution = renaissance
+			prestige = 50
+			capital_scope = {
+				development = 30
+				num_of_buildings_in_province = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "lan_italian_athens_mission"
+				duration = 18250
 			}
 		}
 	}
@@ -424,23 +495,15 @@ vn_lan_missions_slot_5 = {
 	
 	vn_lan_promote_textil_trade = {
 		position = 1
-		icon = mission_market_place_with_asian_traders
-		required_missions = {}
+		icon = purely_for_commerce
+		required_missions = { }
 		trigger = {
-			share_of_starting_income = 1.5
+			share_of_starting_income = 3
 			trade_income_percentage = 0.35
-			num_of_owned_provinces_with = {
-				value = 5
-				OR = {
-					trade_goods = cloth
-					trade_goods = silk
-					trade_goods = leather
-				}
-			}
 		}
 		effect = {
+			add_mercantilism = 2
 			capital_scope = {
-				add_base_production = 3
 				add_province_modifier = {
 					name = "lan_promote_textil_trade_mission"
 					duration = 9125
@@ -450,10 +513,18 @@ vn_lan_missions_slot_5 = {
 	}
 	vn_lan_become_trade_empire = {
 		position = 3
-		icon = mission_rb_hanseatic_east
+		icon = reform_the_monte
 		required_missions = { vn_lan_promote_textil_trade }
 		trigger = {
-			stock_exchange = 5
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					trade_goods = silk
+					trade_goods = cloth
+					trade_goods = leather
+				}
+				has_trade_building_trigger = yes
+			}
 			OR = {
 				AND = {
 					production_leader = {
@@ -473,10 +544,18 @@ vn_lan_missions_slot_5 = {
 						value = yes
 					}
 				}
+				AND = {
+					production_leader = {
+						trade_goods = leather
+					}
+					trading_bonus = {
+						trade_goods = leather
+						value = yes
+					}
+				}
 			}
 		}
 		effect = {
-			add_dip_power = 100
 			add_country_modifier = {
 				name = "lan_become_trade_empire_mission"
 				duration = 9125

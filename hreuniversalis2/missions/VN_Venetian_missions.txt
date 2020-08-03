@@ -133,7 +133,7 @@ vn_ven_missions_slot_1 = {
         }
     }
     vn_ven_conquer_brescia = {
-        icon = mission_unite_home_region
+        icon = expand_the_arsenal
         position = 3
         required_missions = { vn_ven_conquer_verona }
         provinces_to_highlight = {
@@ -166,7 +166,7 @@ vn_ven_missions_slot_1 = {
         }
     }
     vn_ven_conquer_milan = {
-        icon = mission_italian_conquest
+        icon = milan_victorious
         position = 4
         required_missions = { vn_ven_conquer_brescia }
         provinces_to_highlight = {
@@ -190,7 +190,7 @@ vn_ven_missions_slot_1 = {
         }
     }
     vn_ven_conquer_crete = {
-        icon = mission_tear_down_spanish_strongholds
+        icon = overshadow_venice
         position = 6
         required_missions = { vn_ven_paticipate_in_crusades }
         provinces_to_highlight = {
@@ -225,7 +225,7 @@ vn_ven_missions_slot_1 = {
         }
     }
     vn_ven_conquer_rhodes = {
-        icon = mission_conquer_arakan
+        icon = mission_claim_the_canaries
         position = 7
         required_missions = { vn_ven_conquer_crete }
         provinces_to_highlight = {
@@ -272,7 +272,7 @@ vn_ven_missions_slot_1 = {
         }
     }
     vn_ven_conquer_cyprus = {
-        icon = mission_humiliate_provence
+        icon = kingdom_of_cyprus
         position = 9
         required_missions = { vn_ven_conquer_rhodes }
         provinces_to_highlight = {
@@ -306,7 +306,7 @@ vn_ven_missions_slot_2 = {
 	has_country_shield = yes
 	
     vn_ven_conquer_aquileia = {
-        icon = mission_have_two_subjects
+        icon = develop_our_capital
         position = 2
         required_missions = { vn_ven_conquer_venetia }
         provinces_to_highlight = {
@@ -324,7 +324,7 @@ vn_ven_missions_slot_2 = {
         }
     }
     vn_ven_conquer_ravenna = {
-        icon = mission_sea_battles
+        icon = expand_to_the_south
         position = 3
         required_missions = { vn_ven_conquer_verona }
         provinces_to_highlight = {
@@ -355,7 +355,7 @@ vn_ven_missions_slot_2 = {
         }
     }
     vn_ven_develop_terraferma = {
-        icon = mission_colonial
+        icon = negotiate_for_avignon
         position = 4
         required_missions = { vn_ven_conquer_brescia }
         trigger = {
@@ -471,7 +471,7 @@ vn_ven_missions_slot_2 = {
         }
     }
     vn_ven_conquer_morea = {
-        icon = mission_have_two_subjects
+        icon = develop_naples
         position = 7
         required_missions = { vn_ven_conquer_korfu }
         provinces_to_highlight = {
@@ -495,7 +495,7 @@ vn_ven_missions_slot_2 = {
         }
     }
     vn_ven_conquer_negroponte = {
-        icon = mission_golden_century
+        icon = dreams_of_grandeur
         position = 8
         required_missions = { vn_ven_conquer_morea vn_ven_conquer_rhodes }
         provinces_to_highlight = {
@@ -623,7 +623,7 @@ vn_ven_missions_slot_3 = {
         }
     }
     vn_ven_conquer_dalmatia = {
-        icon = mission_dominate_home_trade_node
+        icon = adriatic_access
         position = 3
         required_missions = { vn_ven_conquer_pagania }
         provinces_to_highlight = {
@@ -692,7 +692,7 @@ vn_ven_missions_slot_3 = {
         }
     }
     vn_ven_pactum_warmundi = {
-        icon = mission_envoy_to_ethiopia
+        icon = expand_the_confederacy
         position = 6
         required_missions = { vn_ven_paticipate_in_crusades }
         trigger = {
@@ -716,7 +716,7 @@ vn_ven_missions_slot_3 = {
         }
     }
     vn_ven_thalassocracy = {
-        icon = mission_rb_conquer_bengal
+        icon = overseas_empire
         position = 7
         required_missions = {  }
         trigger = {
@@ -773,7 +773,7 @@ vn_ven_missions_slot_4 = {
     has_country_shield = yes
 
     vn_ven_festa_della_sensa = {
-        icon = mission_launch_a_flagship
+        icon = feast_of_pheasants
         position = 1
         required_missions = {  }
         trigger = {
@@ -863,7 +863,7 @@ vn_ven_missions_slot_4 = {
         }
     }
     vn_ven_conquer_albania = {
-        icon = mission_unite_home_region
+        icon = pacify_the_albanian_lands
         position = 4
         required_missions = { vn_ven_conquer_istria }
         provinces_to_highlight = {
@@ -972,7 +972,7 @@ vn_ven_missions_slot_5 = {
         }
     }
     vn_ven_scuole_grandi = {
-        icon = mission_pacify_the_berbers
+        icon = patronize_the_scuole_grandi
         position = 2
         required_missions = { vn_ven_expand_la_serenissima }
         trigger = {
@@ -991,7 +991,7 @@ vn_ven_missions_slot_5 = {
         }
     }
     vn_ven_institutionalize_sapientes = {
-        icon = mission_rb_monopolize_the_channel
+        icon = personal_diplomacy
         position = 3
         required_missions = {  }
         trigger = {
@@ -1015,7 +1015,7 @@ vn_ven_missions_slot_5 = {
         }
     }
     vn_ven_empower_the_doge = {
-        icon = mission_noble_council
+        icon = friends_in_high_places
         position = 4
         required_missions = { vn_ven_institutionalize_sapientes }
         trigger = {
@@ -1053,7 +1053,7 @@ vn_ven_missions_slot_5 = {
         }
     }
     vn_ven_appoint_colonial_ministers = {
-        icon = mission_establish_jesuit_missions
+        icon = hand-picked_bureaucrats
         position = 6
         required_missions = { vn_ven_expand_strato_da_mar }
         trigger = {
@@ -1075,7 +1075,7 @@ vn_ven_missions_slot_5 = {
         }
     }
     vn_ven_venetian_arsenal = {
-        icon = mission_naval_expansion
+        icon = expand_the_arsenal
         position = 7
         required_missions = {  }
         trigger = {
@@ -1101,7 +1101,7 @@ vn_ven_missions_slot_5 = {
         }
     }
     vn_ven_venetian_trade = {
-        icon = mission_rb_control_the_hansa
+        icon = mission_aragonese_navy
         position = 8
         required_missions = { vn_ven_venetian_arsenal }
         provinces_to_highlight = {

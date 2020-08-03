@@ -14,39 +14,14 @@ NKA_missions_slot_1 = {
 	
 	vn_nka_economic_reforms = {
 		position = 1
-		icon = mission_rice_field
-		required_missions = {}
+		icon = prosperity_for_all
+		required_missions = { }
 		trigger = {
-			if = {
-				limit = {
-                    has_estate = estate_burghers
-				}
-				custom_trigger_tooltip = {
-					tooltip = vn_nka_trade_of_constantinople.tt
-					calc_true_if = {
-						all_owned_province = {
-							province_has_center_of_trade_of_level = 2
-                            has_estate = estate_burghers
-						}
-						amount = 3
-					}
-				}
-			}
-			else_if = {
-                limit = {
-                    has_dlc = "Dharma"
-                }
-				num_of_owned_provinces_with = {
-					value = 3
-                    province_has_center_of_trade_of_level = 2
-				}
-			}
-            else = {
-                num_of_owned_provinces_with = {
-					value = 3
-                    base_production = 10
-				}
-            }
+            treasury = 1000
+            share_of_starting_income = 5
+            is_bankrupt = no
+            is_in_deficit = no
+            NOT = { num_of_loans = 1 }
 		}
 		effect = {
             add_country_modifier = {
@@ -56,10 +31,12 @@ NKA_missions_slot_1 = {
 		}
     }
     vn_nka_trade_of_constantinople = {
-		icon = mission_conquer_assam
+		icon = end_the_schism
 		required_missions = { vn_nka_economic_reforms }
+        provinces_to_highlight = {
+            province_id = 2233
+        }
 		trigger = {
-            post_office = 5
             2233 = {
                 trade_share = {
                     country = ROOT
@@ -68,10 +45,10 @@ NKA_missions_slot_1 = {
             }
 		}
 		effect = {
-			2233 = {
-                add_base_tax = 2
-                add_base_production = 2
-                add_base_manpower = 2
+			capital_scope = {
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
             }
             add_country_modifier = {
                 name = "nka_trade_of_constantinople_mission"
@@ -80,7 +57,7 @@ NKA_missions_slot_1 = {
 		}
     }
     vn_nka_conquer_aegean_islands = {
-		icon = mission_seize_the_bengal_coast
+		icon = reclaim_the_aegean
         required_missions = { vn_nka_naval_efforts }
         provinces_to_highlight = {
             OR = {
@@ -129,7 +106,7 @@ NKA_missions_slot_1 = {
     }
     vn_nka_conquer_the_peloponnese = {
         position = 5
-		icon = mission_rb_take_gibraltar
+		icon = fight_bosnian_heresies
         required_missions = { vn_nka_conquer_athens vn_nka_conquer_aegean_islands }
         provinces_to_highlight = {
             OR = {
@@ -176,7 +153,10 @@ NKA_missions_slot_2 = {
 		icon = mission_colonize_the_west
 		required_missions = { vn_nka_consolidate_the_realm }
 		trigger = {
-			navy_size = 20
+            num_of_admirals = 2
+            navy_size = 25
+            navy_size_percentage = 0.75
+            naval_maintenance = 1
 		}
 		effect = {
             euboia_area = {
@@ -186,7 +166,6 @@ NKA_missions_slot_2 = {
                 }
                 add_permanent_claim = ROOT
             }
-
             chios_area = {
 				limit = {
                     NOT = { is_core = ROOT }
@@ -208,7 +187,7 @@ NKA_missions_slot_2 = {
 		}
 	}
     vn_nka_conquer_negroponte = {
-		icon = mission_conquer_andhra_bah
+		icon = fortify_malta
 		required_missions = { vn_nka_naval_efforts }
 		provinces_to_highlight = {
             area = euboia_area
@@ -231,7 +210,7 @@ NKA_missions_slot_2 = {
 		}
     }
     vn_nka_conquer_athens = {
-		icon = mission_portico
+		icon = foothold_in_greece
         required_missions = { vn_nka_conquer_negroponte }
         provinces_to_highlight = {
             area = athens_area
@@ -267,12 +246,12 @@ NKA_missions_slot_2 = {
             }
             add_country_modifier = {
                 name = nka_conquer_athens_missions
-                duration = 7300
+                duration = 9125
             }
 		}
     }
     vn_nka_conquer_epirus = {
-		icon = mission_soldiers_in_line
+		icon = despot_of_epirus
         required_missions = { vn_nka_conquer_athens }
         provinces_to_highlight = {
             OR = {
@@ -283,23 +262,22 @@ NKA_missions_slot_2 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
 		trigger = {
+            OR = {
+                EPI = { is_subject_of = ROOT }
+                num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                    value = 16
+                    OR = {
+                        area = epirus_area
+                        area = aetolia_area
+                        area = vlore_area
+                    }
+                }
+            }
             EPI = {
                 OR = {
                     exists = no
                     is_subject_of = ROOT
                 }
-            }
-			epirus_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            aetolia_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            vlore_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
             }
 		}
 		effect = {
@@ -325,35 +303,24 @@ NKA_missions_slot_3 = {
 	
 	vn_nka_consolidate_the_realm = {
 		position = 1
-		icon = mission_rb_rein_in_the_highland_clans
+		icon = balance_the_estates
 		required_missions = {}
 		trigger = {
-			stability = 2
-			legitimacy_equivalent = 95
+            has_any_disaster = no
+            legitimacy_equivalent = 95
+            stability = 2
 		}
 		effect = {
-            define_advisor = {
-                type = statesman
-                name = "Georgios Akropolites"
-                culture = greek
-                religion = orthodox
-                skill = 3
-                discount = yes
-            }
+            add_reform_progress_medium_effect = yes
 		}
     }
     vn_nka_initiate_reforms = {
 		position = 3
-		icon = mission_rb_monopolize_the_channel
+		icon = legacy_of_the_sclavinias
 		required_missions = { vn_nka_consolidate_the_realm }
 		trigger = {
-            if = {
-                limit = { has_dlc = "Dharma" }
-                has_reform_level = 3
-            }
-            else = {
-                total_development = 300
-            }
+            has_reform_level = 4
+            NOT = { corruption = 1 }
 		}
 		effect = {
 			add_country_modifier = {
@@ -364,7 +331,7 @@ NKA_missions_slot_3 = {
     }
     vn_nka_expell_latins = {
 		position = 5
-		icon = mission_noble_council
+		icon = la_latinocrazia
         required_missions = { vn_nka_initiate_reforms }
         provinces_to_highlight = {
             OR = {
@@ -413,14 +380,13 @@ NKA_missions_slot_3 = {
                         religion = ROOT
                     }
                 }
-
             }
 		}
 		effect = {
             add_religious_influence_effect_large = yes
             add_country_modifier = {
                 name = nka_expell_latins_mission
-                duration = 7300
+                duration = 9125
             }
 		}
     }
@@ -462,8 +428,9 @@ NKA_missions_slot_4 = {
 		required_missions = { vn_nka_consolidate_the_realm }
 		trigger = {
             num_of_generals = 2
+            army_size = 25
             army_size_percentage = 0.75
-            is_at_war = no
+            land_maintenance = 1
 		}
 		effect = {
             thessalia_area = {
@@ -475,12 +442,12 @@ NKA_missions_slot_4 = {
 			}
 			add_country_modifier = {
                 name = "nka_prepare_for_war_mission"
-                duration = 7300
+                duration = 9125
             }
 		}
     }
     vn_nka_conquer_thessaly = {
-		icon = mission_conquer_romania
+		icon = retake_thessaly
         required_missions = { vn_nka_prepare_for_war }
         provinces_to_highlight = {
             area = thessalia_area
@@ -528,7 +495,7 @@ NKA_missions_slot_4 = {
 		}
     }
     vn_nka_conquer_macedonia = {
-		icon = mission_advance_to_the_dnieper
+		icon = the_latin_empire
         required_missions = { vn_nka_conquer_thessaly }
         provinces_to_highlight = {
             OR = {
@@ -598,17 +565,24 @@ NKA_missions_slot_5 = {
 	vn_nka_asian_diplomacy = {
 		position = 1
 		icon = mission_trade_in_gold_coast
-		required_missions = {}
+		required_missions = { }
 		trigger = {
-            custom_trigger_tooltip = {
-                tooltip = vn_nka_asian_diplomacy.tt
-                any_ally = {
-                    OR = {
-                        continent = asia
-                        superregion = anatolia_superregion
+            calc_true_if = {
+                desc = vn_nka_asian_diplomacy.tt
+                all_ally = {
+                    capital_scope = {
+                        OR = {
+                            continent = asia
+                            superregion = anatolia_superregion
+                        }
                     }
-                    total_development = 100
+                    total_development = 150
+                    has_opinion = {
+                        who = ROOT
+                        value = 125
+                    }
                 }
+                amount = 2
             }
 		}
 		effect = {
@@ -619,16 +593,14 @@ NKA_missions_slot_5 = {
 		}
     }
     vn_nka_fortify_eastern_borders = {
-		icon = mission_portuguese_oman
+		icon = protect_against_turks
         required_missions = { vn_nka_asian_diplomacy }
-		trigger = {
-			custom_trigger_tooltip = {
-                tooltip = vn_nka_fortify_eastern_borders.tt
-                num_of_owned_provinces_with = {
-                    value = 5
-                    superregion = anatolia_superregion
-                    fort_level = 1
-                }
+ 		trigger = {
+            num_of_owned_provinces_with = {
+                value = 5
+                superregion = anatolia_superregion
+                fort_level = 1
+                is_capital = no
             }
 		}
 		effect = {
@@ -646,7 +618,7 @@ NKA_missions_slot_5 = {
 		}
     }
     vn_nka_conquer_anatolia = {
-		icon = mission_conquer_nagaur
+		icon = anatolian_frontier
         required_missions = { vn_nka_fortify_eastern_borders vn_nka_prepare_for_war }
         provinces_to_highlight = {
             superregion = anatolia_superregion
@@ -659,7 +631,7 @@ NKA_missions_slot_5 = {
             }
 		}
 		effect = {
-            add_adm_power = 100
+            add_adm_power = 50
             add_country_modifier = {
                 name = "nka_conquer_anatolia_mission"
                 duration = 9125
@@ -667,7 +639,7 @@ NKA_missions_slot_5 = {
 		}
     }
     vn_nka_conquer_sofia = {
-		icon = mission_bengal_campaign
+		icon = revenge_for_nicopolis
         required_missions = { vn_nka_conquer_thessaly }
         provinces_to_highlight = {
             region = bulgariasouth_region
@@ -691,26 +663,28 @@ NKA_missions_slot_5 = {
 		}
     }
     vn_nka_conquer_bulgaria = {
-		icon = mission_break_the_tatar_yoke
+		icon = push_to_bulgaria
         required_missions = { vn_nka_conquer_sofia }
         provinces_to_highlight = {
             region = bulgaria_region
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
 		trigger = {
-            BUL = {
-                OR = {
-                    exists = no
+            OR = {
+                BUL = {
                     is_subject_of = ROOT
                 }
-            }
-			bulgaria_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+                num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                    value = 16
+                    region = bulgaria_region
+                }
             }
 		}
         effect = {
-            add_prestige = 20
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 25
+            }
             add_country_modifier = {
                 name = nka_conquer_bulgaria_mission
                 duration = 9125

@@ -1847,7 +1847,6 @@ vn_bgh_missions_slot_4 = {
 			}
         }
     }
-    }
     vn_bgh_the_islamic_heartland = {
         icon = mission_mosque
         position = 19
@@ -1885,7 +1884,7 @@ vn_bgh_missions_slot_4 = {
             OR = {
                 region = inner_algeria_region
                 region = inner_libya_region
-		region = inner_egypt_region
+		        region = inner_egypt_region
             }            
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
         }

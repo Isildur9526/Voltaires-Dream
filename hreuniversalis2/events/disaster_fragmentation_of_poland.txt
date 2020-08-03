@@ -627,6 +627,7 @@ country_event = {
 			4805 = { culture_group = germanic } 
 		}
 		treasury = 100
+		NOT = { num_of_loans = 1 }
 	}
 
 	mean_time_to_happen = {

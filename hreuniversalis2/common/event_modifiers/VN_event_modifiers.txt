@@ -534,6 +534,27 @@ qarmati_scholar_modifier = {
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
 	core_creation = -0.1
 }
+ashkenazi_scholar_modifier = {
+	religion_sub_modifier = yes
+	religion = yes
+	is_scholar_modifier = yes
+	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	idea_cost = -0.1
+}
+sephardi_scholar_modifier = {
+	religion_sub_modifier = yes
+	religion = yes
+	is_scholar_modifier = yes
+	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	reform_progress_growth = 0.15
+}
+mizrahi_scholar_modifier = {
+	religion_sub_modifier = yes
+	religion = yes
+	is_scholar_modifier = yes
+	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	placed_merchant_power = 5
+}
 vn_inquisition = {
 	global_heretic_missionary_strength = 0.02
 	tolerance_heretic = -2
@@ -660,28 +681,6 @@ dev_lifesupport = {
 	local_development_cost = 0.1
 	local_monthly_devastation = -0.05
 }
-### TEMP DEBUG-REMOVE BEFORE RELEASE ###
-debug_concentrated = {	#temp debug
-
-}
-debug_dispersed = {		#temp debug
-
-}
-debug_crisis = {		#temp debug
-
-}
-debug_lifesupport = {	#temp debug
-
-}
-debug_major_rise = {	#temp debug
-
-}
-debug_major_fall = {	#temp debug
-
-}
-debug_major_destruction = {	#temp debug
-
-}
 ghazali_falasifa = {
 	global_missionary_strength = 0.02
 }
@@ -706,6 +705,10 @@ lombard_league_winner = {
 	prestige = 0.5
 	legitimacy = 1
 	republican_tradition = 0.3
+}
+incident_mongol_raids_knowledge = {
+	technology_cost = -0.05
+	idea_cost = -0.1
 }
 
 #Institution Birthplaces

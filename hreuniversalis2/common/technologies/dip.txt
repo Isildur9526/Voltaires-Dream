@@ -123,7 +123,7 @@ technology = {
 	# Tech 13
 	year = 1195
 	
-	#ADD - 1.30 coastal defence 1st tier
+	coastal_defence = yes
 	enable = arabic_merchantman
 }
 
@@ -327,7 +327,6 @@ technology = {
 	naval_maintenance		=	0.1	
 	trade_efficiency 		= 	0.02
 	trade_range				=	25
-	coastal_defence = yes
 }
 
 technology = {

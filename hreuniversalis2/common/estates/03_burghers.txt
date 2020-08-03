@@ -168,6 +168,8 @@ estate_burghers =
 	color = { 35 35 150 }
 
 	privileges = {
+		estate_burghers_jewish_scapegoats
+		estate_burghers_jewish_sanctuary
 		estate_burghers_land_rights
 		estate_burghers_land_of_commerce
 		estate_burghers_admirals
@@ -209,7 +211,6 @@ estate_burghers =
 		estate_burghers_colonise_X
 		estate_burghers_colonise_more_X
 		estate_burghers_colonial_nation
-		estate_burghers_expand_trade_company
 		estate_burghers_silk_trade
 		estate_burghers_spice_trade
 		estate_burghers_tea_trade

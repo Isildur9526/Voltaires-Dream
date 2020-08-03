@@ -43,7 +43,7 @@ vn_geo_missions_slot_1 = {
         }
     }
     vn_geo_conquer_kars = {
-        icon = mission_have_two_subjects
+        icon = tame_the_magnates
         position = 3
 		required_missions = { vn_geo_conquer_samtskhe }
 		provinces_to_highlight = {
@@ -203,7 +203,7 @@ vn_geo_missions_slot_1 = {
         }
     }
     vn_geo_eastern_renaissance = {
-        icon = mission_cathedral_cities
+        icon = standardize_relazioni
         position = 7
         required_missions = { vn_geo_hymns_of_repentance }
 		provinces_to_highlight = {
@@ -517,7 +517,7 @@ vn_geo_missions_slot_3 = {
         }
     }
     vn_geo_expand_tbilisi = {
-        icon = mission_eastern_european_city
+        icon = protectors_of_christendom
         position = 2
         required_missions = { vn_geo_court_at_tbilisi }
         provinces_to_highlight = {
@@ -886,7 +886,7 @@ vn_geo_missions_slot_5 = {
         }
     }
     vn_geo_peasants_like_nobles = {
-        icon = mission_high_income
+        icon = dominant_economy
         position = 2
         required_missions = { vn_geo_establish_the_darbazi }
         trigger = {

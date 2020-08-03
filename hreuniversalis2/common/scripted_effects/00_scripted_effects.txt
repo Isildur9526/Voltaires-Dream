@@ -179,6 +179,9 @@ clear_religious_scholar_modifiers_effect = {
 	remove_country_modifier = alawi_scholar_modifier	
 	remove_country_modifier = nizari_scholar_modifier	
 	remove_country_modifier = qarmati_scholar_modifier
+	remove_country_modifier = ashkenazi_scholar_modifier	
+	remove_country_modifier = sephardi_scholar_modifier	
+	remove_country_modifier = mizrahi_scholar_modifier
 }
 
 #Move capital along with all that also needs to be done. Used in capital decisions.

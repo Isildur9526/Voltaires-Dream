@@ -21,7 +21,7 @@ vn_sar_missions_slot_1 = {
 
     vn_sar_ally_italy = {
 		position = 1
-		icon = mission_humiliate_provence
+		icon = friends_in_high_places
 		required_missions = { }
 		trigger = {
             any_ally = {
@@ -48,7 +48,7 @@ vn_sar_missions_slot_1 = {
 		}
     }
     vn_sar_conquer_sassari = {
-		icon = mission_retake_ceuta
+		icon = italian_riches
 		required_missions = { vn_sar_ally_italy }
 		provinces_to_highlight = {
 			area = sassari_area
@@ -86,7 +86,7 @@ vn_sar_missions_slot_1 = {
 		}
     }
     vn_sar_conquer_sardinia = {
-		icon = mission_invade_island
+		icon = unite_with_sardinia
 		required_missions = { vn_sar_conquer_sassari }
 		provinces_to_highlight = {
 			OR = {
@@ -129,7 +129,7 @@ vn_sar_missions_slot_1 = {
             }
 			add_country_modifier = {
 				name = sar_conquer_sardinia_mission
-				duration = 7300
+				duration = 9125
 			}
 		}
     }
@@ -164,7 +164,7 @@ vn_sar_missions_slot_1 = {
 		}
     }
     vn_sar_conquer_genoa = {
-		icon = mission_sea_battles
+		icon = overshadow_venice
 		required_missions = { vn_sar_conquer_elba }
 		provinces_to_highlight = {
 			region = liguria_region
@@ -199,14 +199,18 @@ vn_sar_missions_slot_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			add_country_modifier = {
-				name = sar_conquer_genoa_mission
-				duration = 9125
+			2560 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 9125
+					power = 10
+					key = sar_conquer_genoa_mission
+				}
 			}
 		}
     }
     vn_sar_conquer_saluzzo = {
-		icon = mission_humiliate_provence
+		icon = unify_piedmont
 		required_missions = { vn_sar_conquer_genoa }
 		provinces_to_highlight = {
 			OR = {
@@ -217,20 +221,17 @@ vn_sar_missions_slot_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			torino_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			monferrato_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			aosta_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				OR = {
+					area = torino_area
+					area = monferrato_area
+					area = aosta_area
+				}
 			}
 		}
 		effect = {
+			add_prestige = 20
 			add_country_modifier = {
 				name = sar_conquer_saluzzo_mission
 				duration = 9125
@@ -258,7 +259,7 @@ vn_sar_missions_slot_2 = {
 
     vn_sar_conquer_pisa = {
 		position = 5
-		icon = mission_raid_on_genoa
+		icon = pulverize_pisa
 		required_missions = { vn_sar_conquer_elba vn_sar_gain_papal_support }
 		provinces_to_highlight = {
 			area = pisa_area
@@ -274,13 +275,13 @@ vn_sar_missions_slot_2 = {
 			640 = {
 				add_province_modifier = {
 					name = sar_conquer_pisa_mission
-					duration = 7300
+					duration = 9125
 				}
 			}
 		}
     }
     vn_sar_dominate_italian_trade = {
-		icon = mission_establish_mint_towns
+		icon = the_shape_of_trades_to_come
 		required_missions = { vn_sar_conquer_pisa }
 		provinces_to_highlight = {
 			province_id = 640
@@ -325,42 +326,78 @@ vn_sar_missions_slot_3 = {
 
     vn_sar_develop_the_isles = {
 		position = 1
-		icon = mission_expand_inland
+		icon = develop_provence
 		required_missions = { }
 		provinces_to_highlight = {
-            region = insular_region
+			region = insular_region
+			owned_by = ROOT
             OR = {
-                NOT = { country_or_non_sovereign_subject_holds = ROOT }
                 NOT = { base_tax = 2 }
                 NOT = { base_production = 2 }
                 NOT = { base_manpower = 2 }
             }
         }
         trigger = {
-            insular_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-                base_tax = 2
+			num_of_owned_provinces_with = {
+				value = 10
+				region = insular_region
+				base_tax = 2
                 base_production = 2
                 base_manpower = 2
-            }
+			}
         }
 		effect = {
-			add_country_modifier = {
-				name = sar_develop_the_isles_mission
-				duration = 7300
+			add_legitimacy = 5
+			capital_scope = {
+				if = {
+					limit = { has_port = yes }
+					if = {
+						limit = {
+							NOT = { has_building = coastal_defence }
+							NOT = { has_building = naval_battery }
+						}
+						add_building = coastal_defence
+					}
+					else_if = {
+						limit = {
+							has_building = coastal_defence
+							NOT = { has_building = naval_battery }
+						}
+						remove_building = coastal_defence
+						add_building = naval_battery
+					}
+					else = { add_base_manpower = 2 }
+				}
+				else = {
+					if = {
+						limit = {
+							NOT = { has_building = customs_house }
+							NOT = { has_building = arsenal }
+						}
+						add_building = customs_house
+					}
+					else_if = {
+						limit = {
+							has_building = customs_house
+							NOT = { has_building = arsenal }
+						}
+						remove_building = customs_house
+						add_building = arsenal
+					}
+					else = { add_base_manpower = 2 }
+				}
 			}
 		}
     } 
     vn_sar_influential_estates = {
-		icon = mission_alliances
+		icon = appease_the_estates
 		required_missions = { vn_sar_develop_the_isles }
 		trigger = {
             if = {
 				limit = { has_estate = estate_nobles }
 				estate_influence = {
 					estate = estate_nobles
-					influence = 75
+					influence = 60
 				}
                 estate_loyalty = {
                     estate = estate_nobles
@@ -371,7 +408,7 @@ vn_sar_missions_slot_3 = {
 				limit = { has_estate = estate_burghers }
 				estate_influence = {
 					estate = estate_burghers
-					influence = 75
+					influence = ^60
 				}
                 estate_loyalty = {
                     estate = estate_burghers
@@ -397,7 +434,7 @@ vn_sar_missions_slot_3 = {
     }
     vn_sar_gain_papal_support = {
         position = 4
-		icon = mission_coronation
+		icon = sway_the_pope
 		required_missions = { vn_sar_influential_estates }
 		trigger = {
 			if = {
@@ -411,15 +448,10 @@ vn_sar_missions_slot_3 = {
 						papal_influence = 50
 					}
 					AND = {
-						is_in_war = {
-							attacker_leader = ROOT
-							defender_leader = PAP
-							war_score = 75
-						}
-						PAP = {
-							capital_scope = {
-								controlled_by = ROOT
-							}
+						power_projection = 50
+						has_won_war_against = {
+							who = PAP
+							max_years_since = 25
 						}
 					}
 				}
@@ -435,15 +467,10 @@ vn_sar_missions_slot_3 = {
 						papal_influence = 50
 					}
 					AND = {
-						is_in_war = {
-							attacker_leader = ROOT
-							defender_leader = AVI
-							war_score = 75
-						}
-						AVI = {
-							capital_scope = {
-								controlled_by = ROOT
-							}
+						power_projection = 50
+						has_won_war_against = {
+							who = AVI
+							max_years_since = 25
 						}
 					}
 				}
@@ -495,28 +522,40 @@ vn_sar_missions_slot_4 = {
 
     vn_sar_defend_the_isles = {
 		position = 2
-		icon = mission_portuguese_oman
+		icon = invest_in_the_rich_trades
 		required_missions = { vn_sar_develop_the_isles }
         trigger = {
             num_of_owned_provinces_with = {
 				value = 2
-				area  = arborea_area
-				has_fort_trigger = yes
+				area = arborea_area
+				OR = {
+					has_fort_trigger = yes
+					has_coastal_defense_building_trigger = yes
+				}
 			}
 			num_of_owned_provinces_with = {
 				value = 2
-				area  = sassari_area
-				has_fort_trigger = yes
+				area = sassari_area
+				OR = {
+					has_fort_trigger = yes
+					has_coastal_defense_building_trigger = yes
+				}
 			}
 			num_of_owned_provinces_with = {
 				value = 2
-				area  = gallura_area
-				has_fort_trigger = yes
+				area = gallura_area
+				OR = {
+					has_fort_trigger = yes
+					has_coastal_defense_building_trigger = yes
+				}
 			}
 			num_of_owned_provinces_with = {
 				value = 2
-				area  = corsica_area
-				has_fort_trigger = yes
+				area = corsica_area
+				OR = {
+					has_fort_trigger = yes
+					has_coastal_defense_building_trigger = yes
+				}
 			}
         }
 		effect = {
@@ -528,7 +567,7 @@ vn_sar_missions_slot_4 = {
 		}
     }
     vn_sar_prepare_for_war = {
-		icon = mission_aragonese_navy
+		icon = military_self_reliance
 		required_missions = { vn_sar_defend_the_isles }
 		trigger = {
             land_forcelimit = 10
@@ -551,7 +590,7 @@ vn_sar_missions_slot_4 = {
 		}
     }
     vn_sar_conquer_sicily = {
-		icon = mission_seize_the_isles
+		icon = king_of_sicily
         required_missions = { vn_sar_prepare_for_war }
         provinces_to_highlight = {
             region = sicilia_region
@@ -567,6 +606,10 @@ vn_sar_missions_slot_4 = {
 		effect = {
 			add_religious_influence_effect_small = yes
 			add_prestige = 10
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 10
+			}
 		}
     }
 }

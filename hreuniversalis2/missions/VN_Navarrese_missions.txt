@@ -192,9 +192,11 @@ vn_nav_missions_slot_2_b = {
 				province_id = 2787
 			}
 			NOT = {
-				owned_by = ROOT
-				is_core = ROOT
-				culture = ROOT
+				AND = {
+					owned_by = ROOT
+					is_core = ROOT
+					culture = ROOT
+				}
 			}
 		}
         trigger = {
@@ -244,7 +246,7 @@ vn_nav_missions_slot_2_b = {
 			}
 			else = {
 				any_known_country = {
-					culture = french
+					culture_group = french
 					total_development = 100
 					NOT = {
 						army_strength = {

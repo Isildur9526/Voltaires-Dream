@@ -3135,12 +3135,7 @@ estate_nomadic_tribes_primacy_to_the_bannermen = {
 	icon = privilege_royal_authority
 	max_absolutism = -5
 	influence = 0.1
-	is_valid = {
-		OR = {
-			primary_culture = pecheneg
-			primary_culture = cuman
-		}
-	}
+	is_valid = { culture_group = altaic }
 	penalties = {
 		amount_of_banners = -0.25
 	}
@@ -7222,6 +7217,198 @@ estate_holy_orders_court_representation = {
 		modifier = {
 			factor = 0
 			NOT = { legitimacy = 50 }
+		}
+	}
+}
+
+estate_burghers_jewish_scapegoats = {
+	icon = privilege_tolerance_heathen
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.10
+	can_select = {
+		current_age = age_of_dynasticism
+		is_part_of_hre = yes
+		religion_group = christian
+		NOT = { has_estate_privilege = estate_burghers_jewish_scapegoats }
+	}
+	is_valid = {
+		current_age = age_of_dynasticism
+		religion_group = christian
+	}
+	conditional_modifier = {
+		trigger = {
+			has_global_flag = emperor_protected_jews_flag
+		}
+		modifier = {
+			all_power_cost = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			NOT = { has_global_flag = emperor_protected_jews_flag }
+		}
+		modifier = {
+			all_power_cost = 0.05
+		}
+	}
+	benefits = {
+		global_unrest = -3
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0.5
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 2
+			government = republic
+		}
+		modifier = {
+			factor = 2
+			is_in_deficit = yes
+		}
+		modifier = {
+			factor = 2
+			has_any_disaster = yes
+		}
+		modifier = {
+			factor = 2
+			average_unrest = 2
+		}
+		modifier = {
+			factor = 0.5
+			estate_influence = {
+				estate = estate_burghers
+				influence = 75
+			}
+		}
+	}
+}
+
+estate_burghers_jewish_sanctuary = {
+	icon = privilege_promoto_dhimmi_nobles
+	max_absolutism = -5
+	loyalty = -0.05
+	influence = -0.1
+	can_select = {
+		current_age = age_of_dynasticism
+		is_part_of_hre = yes
+		religion_group = christian
+		NOT = { has_estate_privilege = estate_burghers_jewish_scapegoats }
+	}
+	is_valid = {
+		current_age = age_of_dynasticism
+		religion_group = christian
+	}
+	conditional_modifier = {
+		trigger = {
+			has_global_flag = emperor_protected_jews_flag
+		}
+		modifier = {
+			global_institution_spread = 0.5
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			NOT = { has_global_flag = emperor_protected_jews_flag }
+		}
+		modifier = {
+			global_institution_spread = 0.25
+		}
+	}
+	penalties = {
+		stability_cost_modifier = 0.25
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0.5
+			has_idea_group = religious_ideas
+		}
+	}
+}
+
+estate_nobles_frontier_resettlement = {
+	icon = privilege_grant_new_world_charter
+	land_share = 5
+	influence = 0.05
+	max_absolutism = -5
+	can_select = {
+		any_province = {
+			superregion = iberia_superregion
+			is_city = no
+			any_neighbor_province = {
+				owned_by = ROOT
+			}
+		}
+		NOT = { has_global_flag = iberian_frontier_repopulated }
+	}
+	is_valid = {
+		capital_scope = { superregion = iberia_superregion }
+		religion_group = christian
+		NOT = { has_global_flag = iberian_frontier_repopulated }
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		colonists = 1
+		global_colonial_growth = 10
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 15
+			tag = CAS
+		}
+		modifier = {
+			factor = 15
+			tag = LON
+			NOT = { exists = CAS }
+			has_global_flag = lon_split_flag
+		}
+		modifier = {
+			factor = 0
+			any_country = {
+				has_estate_privilege = estate_nobles_frontier_resettlement
+			}
+		}
+	}
+}
+
+estate_church_priory = {
+	icon = privilege_female
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+		has_reform = monastic_order_reform
+	}
+	on_granted = {
+		add_papal_influence = 5
+		if = {
+			limit = { has_female_heir = no }
+			remove_heir = yes
+		}
+	}
+	penalties = {
+		prestige_decay = 0.01
+	}
+	benefits = {
+		female_advisor_chance = 1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				tag = ROT
+				tag = THO
+				tag = QDL	
+			}
 		}
 	}
 }

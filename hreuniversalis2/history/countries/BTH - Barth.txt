@@ -7,6 +7,7 @@ capital = 2208
 
 1000.1.1 = { set_country_flag = natives_flag }
 1054.1.1 = {
+	override_country_name = BIOLOGARDI
 	monarch = {
 		name = "Biologardi"
 		regent = yes
@@ -25,7 +26,10 @@ capital = 2208
 	technology_group = western
 	capital = 851
 }
-1178.12.30 = { primary_culture = pommeranian }
+1178.12.30 = {
+	primary_culture = pommeranian
+	restore_country_name = yes
+}
 1376.12.6 = {
 	monarch = {
 		name = "Wartislaw VI"

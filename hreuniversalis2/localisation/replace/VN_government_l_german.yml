@@ -11,6 +11,8 @@
  CANNOT_UPGRADE_RANK_HRE: "§REinfache Mitglieder des Heiligen Römischen Reiches können ihren Regierungsrang nicht über Fürstentum hinaus erhöhen.§!\n"
  CANNOT_UPGRADE_RANK_HRE_ELECTOR: "§R- Die Kurfürsten des Heiligen Römischen Reiches können ihren Regierungsrang nicht über Königreich hinaus erhöhen.§!\n"
  GOVERNMENT_EFFECTS_DUE_TO_DUCHY_RANK: "Der Regierungsrang §YGrafschaft§! gibt keine Boni."
+ MENCEY: "Mencey"
+ MENCEYATO: "Menceyato"
  KHEVI: "Khevi"
  SAERISTAVO: "Sa'Eristavo"
  SAMTAVRO: "Sa'Mtavro"

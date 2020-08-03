@@ -18,14 +18,14 @@ vn_cmo_missions_slot_2_a = {
 		trigger = {
 			army_size_percentage = 0.75
 			if = {
-				limit = {
-					MLO = { owns = 1818 }
-				}
+				limit = { MLO = { owns = 1818 } }
 				OR = {
 					is_rival = MLO
-					reverse_has_opinion = {
-						who = MLO
-						value = -50
+					NOT = {
+						reverse_has_opinion = {
+							who = MLO
+							value = -50
+						}
 					}
 				}
 			}

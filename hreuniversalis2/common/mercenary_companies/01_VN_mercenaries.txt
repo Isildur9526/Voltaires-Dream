@@ -213,3 +213,80 @@ merc_catalan_company = {
         movement_speed = 0.15
 	}
 }
+
+merc_alemannic_guard = {
+    regiments_per_development = 0.02
+    artillery_weight = 0 # No artillery
+	cavalry_weight = 0.3
+	cavalry_cap = 4
+	home_province = 539	# Belgrade
+	sprites = { dlc102_ser_sprite_pack easterngfx_sprite_pack }
+	trigger = {
+		OR = {
+			tag = KSV
+			tag = SER
+		}
+		mission_completed = vn_ser_alemannic_guard
+	}
+	modifier = {
+        land_attrition = -0.25
+	}
+}
+
+merc_hakkapelitta = {
+    regiments_per_development = 0.04
+    artillery_weight = 0.1
+	cavalry_weight = 0.4
+	cavalry_cap = 6
+	home_province = 3276 # Viipuri
+	sprites = { dlc054_swe_sprite_pack dlc028_swe_sprite_pack swe_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		current_age = age_of_absolutism
+		capital_scope = {
+			superregion = scandinavia_superregion
+		}
+	}
+	modifier = {
+        cavalry_shock = 1
+	}
+}
+
+merc_black_guard = {
+    regiments_per_development = 0.03
+    artillery_weight = 0 # No artillery
+	cavalry_weight = 0.3
+	cavalry_cap = 6
+	home_province = 4762 # Marrakesh
+	cost_modifier = 0.75
+	sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		tag = MOR
+		mission_completed = vn_mor_the_black_guard
+	}
+	modifier = {
+		land_morale = -0.05
+		land_maintenance_modifier = -0.2
+	}
+}
+
+merc_varangian_guard = {
+    regiments_per_development = 0.03
+    artillery_weight = 0 # No artillery
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	home_province = 2233 # Constantinople
+	cost_modifier = 1.25
+	sprites = { dlc028_dan_sprite_pack nor_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		current_age = age_of_empire
+		tag = BYZ
+		custom_trigger_tooltip = {
+			tooltip = manzikert_not_happened
+			NOT = { has_country_flag = manzikert_happened }
+		}
+	}
+	modifier = {
+		recover_army_morale_speed = -0.05
+		shock_damage = 0.1
+	}
+}

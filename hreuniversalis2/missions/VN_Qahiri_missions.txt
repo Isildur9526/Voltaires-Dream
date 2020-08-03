@@ -1456,7 +1456,7 @@ vn_mam_missions_slot_5 = {
         }
     }
     vn_mam_construct_suez_canal = {
-        icon = mission_naval_dominance
+        icon = construct_the_kiel_canal
         position = 5
 		required_missions = { vn_mam_trade_with_india vn_mam_trade_fleet }
 		provinces_to_highlight = {
@@ -1464,13 +1464,17 @@ vn_mam_missions_slot_5 = {
 				province_id = 5075
 				province_id = 5082
 				province_id = 5052
-			}
+            }
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
 		}
         trigger = {
             owns_core_province = 5075
             owns_core_province = 5082
             owns_core_province = 5052
-            has_great_project = suez_canal
+            5075 = { has_great_project = suez_canal }
         }
         effect = {
 			add_mercantilism = 5

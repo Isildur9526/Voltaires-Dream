@@ -5,6 +5,7 @@ primary_culture = hunnic
 religion = jewish
 technology_group = nomad_group
 capital = 6235
+religious_school = mizrahi_school
 historical_friend = KHZ
 historical_rival = GLH
 

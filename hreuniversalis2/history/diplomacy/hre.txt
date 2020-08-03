@@ -16,7 +16,7 @@
 1347.10.11 = { emperor = BOH }
 1400.8.21 = { emperor = PAL }
 1410.5.18 = { emperor = HUN }
-1437.12.9 = { emperor = STY }
+1439.10.27 = { emperor = STY }
 1457.11.24 = { emperor = HAB }
 1519.1.12 = { emperor = SPA }
 1556.1.16 = { emperor = HAB }

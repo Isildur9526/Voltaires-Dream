@@ -21,6 +21,26 @@ add_core = SEO
 	remove_core = SEO
 	capital = "Selburg"
 }
+1218.1.1 = {
+	owner = KUR
+	controller = KUR
+	add_core = KUR
+	remove_core = LIV
+	remove_core = LVA
+}
+1226.1.1 = {
+	owner = RIG
+	controller = RIG
+	add_core = RIG
+	remove_core = KUR
+}
+1254.1.1 = {
+	owner = LIV
+	controller = LIV
+	add_core = LIV
+	add_core = LVA
+	remove_core = RIG
+}
 1561.1.1 = {
 	owner = KUR
 	controller = KUR

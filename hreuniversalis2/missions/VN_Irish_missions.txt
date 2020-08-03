@@ -567,13 +567,12 @@ vn_ire_missions_slot_4_b = {
         position = 5
         required_missions = { vn_ire_cu_chulainn }
         trigger = {
-            num_of_infantry = 50
+            num_of_infantry = 40
             army_tradition = 60
             army_professionalism = 0.5
             army_reformer = 3
         }
         effect = {
-            #add for 1.30 - unlock Fianna as mercenary company?
             add_manpower = 5
             add_country_modifier = {
                 name = "ire_revive_fianna_mission"

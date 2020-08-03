@@ -11,6 +11,8 @@
  CANNOT_UPGRADE_RANK_HRE: "§R- Regular members of the Holy Roman Empire cannot upgrade their Government Rank past Prince.§!\n"
  CANNOT_UPGRADE_RANK_HRE_ELECTOR: "§R- Electors of the Holy Roman Empire cannot upgrade their Government Rank past King.§!\n"
  GOVERNMENT_EFFECTS_DUE_TO_DUCHY_RANK: "The Government Rank §YCounty§! gives no benefits."
+ MENCEY: "Mencey"
+ MENCEYATO: "Menceyato"
  KHEVI: "Khevi"
  SAERISTAVO: "Sa'Eristavo"
  SAMTAVRO: "Sa'Mtavro"

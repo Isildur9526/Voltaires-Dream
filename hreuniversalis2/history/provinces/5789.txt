@@ -11,12 +11,18 @@ owner = ZGL
 controller = ZGL
 add_core = ZGL
 
-1230.1.1 = {
+1219.1.1 = {
+	owner = KUR
+	controller = KUR
+	add_core = KUR
+	religion = catholic
+}
+1220.1.1 = { remove_core = ZGL }
+1251.2.3 = {
 	owner = LIV
 	controller = LIV
 	add_core = LIV
-	remove_core = ZGL
-	religion = catholic
+	remove_core = KUR
 }
 1290.1.1 = { culture = latvian }
 1561.1.1 = { 

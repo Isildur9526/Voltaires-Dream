@@ -1,0 +1,145 @@
+namespace = incident_hussite_wars
+# Let emperor decide to intervene in the hussite wars
+country_event = {
+	id = incident_hussite_wars.1
+	title = "incident_hussite_wars.1.t"
+	desc = "incident_hussite_wars.1.d"
+	picture = HUSSITE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_disaster = hussite_wars
+				}
+				save_event_target_as = target_of_hussite_wars
+			}
+		}
+	}
+	
+	option = { # emperor backs bohemia
+		name = incident_hussite_wars.1.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1000
+				has_opinion = {
+					who = event_target:target_of_hussite_wars
+					value = 100
+				}
+			}
+		}
+		if = {
+			limit = {
+				uses_papacy = yes
+			}
+			add_papal_influence = 10
+		}
+		else = {
+			add_legitimacy = -10
+		}
+		if = {
+			limit = {
+				NOT = {
+					alliance_with = event_target:target_of_hussite_wars
+				}
+			}
+			create_alliance = event_target:target_of_hussite_wars
+		}
+		if = {
+			limit = {
+				HGA = {
+					war_with = event_target:target_of_hussite_wars
+				}
+			}
+			join_all_offensive_wars_of = event_target:target_of_hussite_wars
+		}
+		event_target:target_of_hussite_wars = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_support_in_hussite_wars
+			}
+			hidden_effect = {
+				country_event = {
+					id = incident_hussite_wars.2
+				}
+			}
+		}
+	}
+	option = { # do not intervene
+		name = incident_hussite_wars.1.b
+		ai_chance = { factor = 75 }
+		add_prestige = -10		
+	}
+	option = { # emperor backs HGA
+		name = incident_hussite_wars.1.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1000
+				event_target:target_of_hussite_wars = {
+					is_rival = ROOT
+				}
+			}
+			modifier = {
+				factor = 1000
+				alliance_with = HGA
+			}
+		}
+		if = {
+			limit = {
+				uses_papacy = yes
+			}
+			add_papal_influence = -10
+		}
+		else = {
+			add_legitimacy = -10
+		}
+		if = {
+			limit = {
+				NOT = { alliance_with = HGA }
+			}
+			create_alliance = HGA
+		}
+		if = {
+			limit = {
+				HGA = {
+					war_with = event_target:target_of_hussite_wars
+				}
+			}
+			join_all_defensive_wars_of = HGA
+		}
+		HGA = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_support_in_hussite_wars
+			}
+			hidden_effect = {
+				country_event = {
+					id = incident_hussite_wars.2
+				}
+			}
+		}
+	}
+}
+
+# inform nation about imperial support
+country_event = {
+	id = incident_hussite_wars.2
+	title = "incident_hussite_wars.2.t"
+	desc = "incident_hussite_wars.2.d"
+	picture = HUSSITE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = incident_hussite_wars.2.a
+		add_prestige = 10
+		add_years_of_income = 1
+		add_yearly_manpower = 1
+	}
+}
