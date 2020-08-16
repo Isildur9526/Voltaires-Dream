@@ -1,0 +1,139 @@
+great_fitna = {
+	potential = {
+		tag = FTM
+		num_of_cities = 50
+		any_owned_province = {
+			is_capital = no
+			is_core = ROOT
+		}
+		has_reform = feudal_theocracy
+		religion_group = muslim
+		is_free_or_tributary_trigger = yes
+		normal_or_historical_nations = yes
+		OR = {
+			current_age = age_of_empire
+			current_age = age_of_holy_wars
+		}
+	}
+
+	
+	can_start = {
+		has_any_disaster = no
+		has_regency = no
+		NOT = { stability = 1 }
+		NOT = { legitimacy = 75 }
+	}
+	
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			has_regency = yes
+			stability = 3
+			legitimacy = 100
+		}
+	}
+		
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			corruption = 5
+		}
+		modifier = {
+			factor = 1
+			corruption = 10
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 75 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 50 }
+		}	
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 25 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { religious_unity = 0.75 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { religious_unity = 0.50 }
+		}	
+		modifier = {
+			factor = 0.5
+			NOT = { religious_unity = 0.25 }
+		}
+		modifier = {
+			factor = 1
+			has_estate = estate_mamluks
+			NOT = {
+				estate_loyalty = {
+					estate = estate_mamluks
+					loyalty = 40
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			has_estate = estate_mamluks
+			estate_influence = {
+				estate = estate_mamluks
+				influence = 70
+			}
+		}
+		modifier = {
+			factor = 1
+			has_estate = estate_mamluks
+			num_of_estate_privileges = {
+				estate = estate_mamluks
+				value = 3
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 1
+			overextension_percentage = 0.5
+		}
+		modifier = {
+			factor = 0.5
+			is_neighbor_of = SJK
+		}
+	}
+	
+	
+	
+	can_end = {
+		stability = 1
+		NOT = { num_of_rebel_armies = 1 }
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+	}
+	
+
+	modifier = {
+		religious_unity = -0.5
+		global_unrest = 10
+	}	
+	
+	
+	on_start = great_fitna.1
+	on_end = great_fitna.100
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = great_fitna.2
+			100 = great_fitna.3
+		}
+	}
+}
