@@ -3,3 +3,81 @@ namespace = great_fitna
 ########################################
 # The Great Fitna
 ########################################
+
+# Start
+country_event = {
+	id = great_fitna.1
+	title = "great_fitna.1.t"
+	desc = "great_fitna.1.d"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { NOT = { religion = ROOT } }
+				spawn_rebels = {
+					size = 3
+					type = particularist_rebels
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = { NOT = { religion = ROOT } }
+				spawn_rebels = {
+					size = 3
+					type = particularist_rebels
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = { NOT = { religion = ROOT } }
+				spawn_rebels = {
+					size = 3
+					type = particularist_rebels
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = { NOT = { religion = ROOT } }
+				spawn_rebels = {
+					size = 3
+					type = particularist_rebels
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = { NOT = { religion = ROOT } }
+				spawn_rebels = {
+					size = 3
+					type = particularist_rebels
+					win = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = great_fitna.1.a
+		add_stability = -3
+		add_legitimacy = -25
+	}
+}
+
+# End
+country_event = {
+	id = great_fitna.100
+	title = "great_fitna.100.t"
+	desc = "great_fitna.100.d"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = great_fitna.100.a
+		add_stability_or_adm_power = yes
+	}
+}
