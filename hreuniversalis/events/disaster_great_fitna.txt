@@ -66,6 +66,146 @@ country_event = {
 	}
 }
 
+# Mamluks plunder treasuries
+country_event = {
+	id = great_fitna.2
+	title = "great_fitna.2.t"
+	desc = "great_fitna.2.d"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = great_fitna.2.a
+		add_years_of_income = -0.5
+	}
+}
+
+# Corrpution at court
+country_event = {
+	id = great_fitna.2
+	title = "great_fitna.2.t"
+	desc = "great_fitna.2.d"
+	picture = CORRUPTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = great_fitna.2.a
+		add_corruption = 0.5
+	}
+}
+
+# Famine
+country_event = {
+	id = great_fitna.3
+	title = "great_fitna.3.t"
+	desc = "great_fitna.3.d"
+	picture = FAMINE_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				has_dlc = "Dharma"
+				any_owned_province = {
+					OR = {
+						has_monsoon = severe_monsoon
+						has_monsoon = normal_monsoon
+						has_monsoon = mild_monsoon
+					}
+				}
+			}
+			AND = {
+				NOT = { has_dlc = "Dharma" }
+
+			}
+		}
+	}
+
+	option = {
+		name = great_fitna.3.a
+		
+	}
+}
+
+#Hedjaz breaks off
+country_event = {
+	id = great_fitna.6
+	title = "great_fitna.6.t"
+	desc = "great_fitna.6.d"
+	picture = PRAYING_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		HED = {
+			exists = yes
+			ai = yes
+			religion = shiite
+			NOT = { war_with = ROOT }
+			#owns
+		}
+	}
+
+	option = {
+		name = great_fitna.6.a #spread shia islam with force
+		ai_chance = { factor = 0 }
+		trigger = {
+			HED = { is_free_or_tributary_trigger = yes }
+		}
+		custom_tooltip = caliphal_strength_big_gain.tt
+		add_legitimacy = 5
+		declare_war_with_cb = {
+			casus_belli = cb_heretic
+			who = HED
+		}
+	}
+	option = {
+		name = great_fitna.6.b #pacify
+		ai_chance = { factor = 40 }
+		change_variable = {
+			which = caliphal_strength
+			value = 1
+		}
+		add_yearly_manpower = -2.5
+	}
+	option = {
+		name = great_fitna.6.c #let them be
+		ai_chance = { factor = 60 }
+		change_variable = {
+			which = caliphal_strength
+			value = -1
+		}
+		add_legitimacy = -5
+		HED = {
+			set_country_flag = avoid_choosing_madhhab_flag
+			change_religion = sunni
+			set_religious_school = {
+				group = sunni
+				school = hanafi_school
+			}
+			if = {
+				limit = { is_subject_of = ROOT }
+				add_liberty_desire = 50
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_heretical_philosopher
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = opinion_heretical_philosopher
+			}
+			clr_country_flag = avoid_choosing_madhhab_flag
+		}
+	}
+}
+
+# 
+
 # End
 country_event = {
 	id = great_fitna.100
