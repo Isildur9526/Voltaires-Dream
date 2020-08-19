@@ -63,6 +63,7 @@ country_event = {
 		name = great_fitna.1.a
 		add_stability = -3
 		add_legitimacy = -25
+		add_piety = -0.5
 	}
 }
 
@@ -77,56 +78,146 @@ country_event = {
 
 	option = {
 		name = great_fitna.2.a
+		add_piety = -0.05
 		add_years_of_income = -0.5
+	}
+	option = {
+		name = great_fitna.2.b
+		add_piety = 0.05
+		add_mil_power = -25
 	}
 }
 
 # Corrpution at court
 country_event = {
-	id = great_fitna.2
-	title = "great_fitna.2.t"
-	desc = "great_fitna.2.d"
+	id = great_fitna.3
+	title = "great_fitna.3.t"
+	desc = "great_fitna.3.d"
 	picture = CORRUPTION_eventPicture
 
 	is_triggered_only = yes
 
 	option = {
-		name = great_fitna.2.a
+		name = great_fitna.3.a
+		add_piety = -0.05
 		add_corruption = 0.5
+	}
+	option = {
+		name = great_fitna.3.b
+		add_piety = 0.05
+		add_dip_power = -25
 	}
 }
 
 # Famine
 country_event = {
-	id = great_fitna.3
-	title = "great_fitna.3.t"
-	desc = "great_fitna.3.d"
+	id = great_fitna.4
+	title = "great_fitna.4.t"
+	desc = "great_fitna.4.d"
 	picture = FAMINE_eventPicture
 
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			AND = {
-				has_dlc = "Dharma"
-				any_owned_province = {
-					OR = {
-						has_monsoon = severe_monsoon
-						has_monsoon = normal_monsoon
-						has_monsoon = mild_monsoon
-					}
-				}
-			}
-			AND = {
-				NOT = { has_dlc = "Dharma" }
+		any_owned_province = {
+			NOT = { has_province_modifier = influenza }
+		}
+	}
 
-			}
+	immediate = {
+		random_owned_province = {
+			limit = { NOT = { has_province_modifier = influenza } }
+			save_event_target_as = famine_prov
 		}
 	}
 
 	option = {
 		name = great_fitna.3.a
-		
+		goto = famine_prov
+		add_piety = -0.05
+		random_owned_area = {
+			limit = { owned_by = ROOT }
+			add_devastation = 10
+			add_province_modifier = {
+				name = influenza
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = great_fitna.3.b
+		add_piety = 0.05
+		add_adm_power = -25
+	}
+}
+
+#rebels
+country_event = {
+	id = great_fitna.5
+	title = "great_fitna.5.t"
+	desc = "great_fitna.5.d"
+	picture = SIEGE_eventPicture
+	goto = anarchy_prov
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_province = {
+			controlled_by = ROOT
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				33 = { set_country_flag = reb_1_flag }
+				33 = { set_country_flag = reb_2_flag }
+				33 = { set_country_flag = reb_3_flag }
+			}
+			random_owned_province = {
+				save_event_target_as = anarchy_prov
+			}
+		}
+	}
+
+	option = {
+		name = great_fitna.5.a
+		if = {
+			limit = { has_country_flag = reb_1_flag }
+			event_target:anarchy_prov = {
+				spawn_rebels = {
+					size = 1
+					type = particularist_rebels
+					win = yes
+					unrest = 5
+				}
+			}
+			clr_country_flag = reb_1_flag
+		}
+		else_if = {
+			limit = { has_country_flag = reb_2_flag }
+			event_target:anarchy_prov = {
+				spawn_rebels = {
+					size = 2
+					type = particularist_rebels
+					win = yes
+					unrest = 5
+				}
+			}
+			clr_country_flag = reb_2_flag
+		}
+		else_if = {
+			limit = { has_country_flag = reb_3_flag }
+			event_target:anarchy_prov = {
+				spawn_rebels = {
+					size = 3
+					type = particularist_rebels
+					win = yes
+					unrest = 5
+				}
+			}
+			clr_country_flag = reb_3_flag
+		}
 	}
 }
 
@@ -136,11 +227,13 @@ country_event = {
 	title = "great_fitna.6.t"
 	desc = "great_fitna.6.d"
 	picture = PRAYING_eventPicture
+	goto = hed_cap
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	trigger = {
+		religion = shiite
 		HED = {
 			exists = yes
 			ai = yes
@@ -150,13 +243,23 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			HED = {
+				capital_scope = {
+					save_event_target_as = hed_cap
+				}
+			}
+		}
+	}
+
 	option = {
 		name = great_fitna.6.a #spread shia islam with force
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 10 }
+		add_piety = 0.2
 		trigger = {
 			HED = { is_free_or_tributary_trigger = yes }
 		}
-		custom_tooltip = caliphal_strength_big_gain.tt
 		add_legitimacy = 5
 		declare_war_with_cb = {
 			casus_belli = cb_heretic
@@ -164,21 +267,15 @@ country_event = {
 		}
 	}
 	option = {
-		name = great_fitna.6.b #pacify
-		ai_chance = { factor = 40 }
-		change_variable = {
-			which = caliphal_strength
-			value = 1
-		}
-		add_yearly_manpower = -2.5
+		name = great_fitna.6.b #corrupt
+		ai_chance = { factor = 50 }
+		add_piety = 0.1
+		add_corruption = 3
 	}
 	option = {
 		name = great_fitna.6.c #let them be
-		ai_chance = { factor = 60 }
-		change_variable = {
-			which = caliphal_strength
-			value = -1
-		}
+		ai_chance = { factor = 40 }
+		add_piety = -0.2
 		add_legitimacy = -5
 		HED = {
 			set_country_flag = avoid_choosing_madhhab_flag
@@ -204,7 +301,62 @@ country_event = {
 	}
 }
 
-# 
+# Ivite Badr Badr al-Jamali?
+country_event = {
+	id = great_fitna.7
+	title = "great_fitna.7.t"
+	desc = "great_fitna.7.d"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_province = {
+			controlled_by = ROOT
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { controlled_by = ROOT }
+				save_event_target_as = jamali_reb_prov
+			}
+		}
+	}
+
+	option = {
+		name = great_fitna.7.a
+		ai_chance = { factor = 75 }
+		add_piety = -0.1
+		define_general = {
+			name = "Badr al-Jamali"
+			shock = 4
+			fire = 3
+			manuever = 4
+			siege = 1
+		}
+		set_country_flag = badr_jamali_accepted
+	}
+	option = {
+		name = great_fitna.7.b
+		ai_chance = { factor = 25 }
+		goto = jamali_reb_prov
+		add_piety = 0.1
+		event_target:jamali_reb_prov = {
+			spawn_rebels = {
+				size = 3
+				type = particularist_rebels
+				leader = "Badr al-Jamali"
+				unrest = 5
+				win = yes
+			}
+		}
+	}
+}
+
+#
 
 # End
 country_event = {
@@ -219,5 +371,6 @@ country_event = {
 	option = {
 		name = great_fitna.100.a
 		add_stability_or_adm_power = yes
+		clr_country_flag = badr_jamali_accepted
 	}
 }
