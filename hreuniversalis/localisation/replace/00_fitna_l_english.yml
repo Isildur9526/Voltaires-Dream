@@ -1,7 +1,7 @@
 ﻿l_english:
  great_fitna: "Great Fitna"
- desc_great_fitna: ""
- great_fitna.1.t: ""
+ desc_great_fitna: "Various religious, cultural and political factors led to an immense debilitation of the Caliphal authority."
+ great_fitna.1.t: "The [Root.GetAdjective] Calamity"
  great_fitna.1.d: ""
  great_fitna.1.a: ""
  great_fitna.2.t: ""
