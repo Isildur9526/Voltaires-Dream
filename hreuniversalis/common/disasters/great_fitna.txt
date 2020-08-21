@@ -134,6 +134,14 @@ great_fitna = {
 			1000 = 0
 			100 = great_fitna.2
 			100 = great_fitna.3
+			100 = great_fitna.4
+			100 = great_fitna.5
+			100 = great_fitna.6
+			100 = great_fitna.7
+			100 = great_fitna.8
+			100 = great_fitna.9
+			100 = great_fitna.10
+			100 = great_fitna.11
 		}
 	}
 }

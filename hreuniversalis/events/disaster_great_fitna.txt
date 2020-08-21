@@ -343,6 +343,7 @@ country_event = {
 		name = great_fitna.7.b
 		ai_chance = { factor = 25 }
 		goto = jamali_reb_prov
+		add_stability = -1
 		add_piety = 0.1
 		event_target:jamali_reb_prov = {
 			spawn_rebels = {
@@ -356,7 +357,224 @@ country_event = {
 	}
 }
 
-#
+# al-jamali seizes power
+country_event = {
+	id = great_fitna.8
+	title = "great_fitna.8.t"
+	desc = "great_fitna.8.d"
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = badr_jamali_accepted
+		has_leader = "Badr al-Jamali"
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { controlled_by = ROOT }
+				save_event_target_as = jamali_reb_prov
+			}
+		}
+	}
+
+	option = {
+		name = great_fitna.8.a
+		add_piety = -0.25
+		add_stability = 1
+		add_disaster_modifier = {
+			name = reign_of_terror_m
+			duration = -1
+			disaster = great_fitna
+		}
+		if = {
+			limit = { has_estate = estate_mamluks }
+			reduce_estate_mamluks_loyalty_effect = yes
+		}
+	}
+	option = {
+		name = great_fitna.8.b
+		goto = jamali_prov
+		add_piety = 0.25
+		add_stability = -1
+		event_target:jamali_reb_prov = {
+			spawn_rebels = {
+				size = 3
+				type = particularist_rebels
+				leader = "Badr al-Jamali"
+				unrest = 5
+				win = yes
+			}
+		}
+		if = {
+			limit = { has_estate = estate_mamluks }
+			add_estate_mamluks_loyalty_effect = yes
+		}
+	}
+}
+
+# conflicts within the army
+country_event = {
+	id = great_fitna.9
+	title = "great_fitna.9.t"
+	desc = "great_fitna.9.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_estate = estate_mamluks
+	}
+
+	option = {
+		name = great_fitna.9.a # support the Turks
+		add_piety = -0.2
+		add_army_tradition = 10
+		add_disaster_modifier = {
+			name = army_quarrels_m
+			duration = 5475
+			disaster = great_fitna
+		}
+		add_estate_mamluks_loyalty_effect = yes
+		add_estate_influence_modifier = {
+			estate = estate_mamluks
+			desc = EST_VAL_TURKISH_NUBIAN_SUPPORT
+			influence = 15
+			duration = 5475
+		}
+	}
+	option = {
+		name = great_fitna.9.b # support the opposition
+		add_piety = 0.2
+		add_legitimacy = 10
+		add_disaster_modifier = {
+			name = army_quarrels_m
+			duration = 5475
+			disaster = great_fitna
+		}
+		reduce_estate_mamluks_loyalty_effect = yes
+		add_estate_influence_modifier = {
+			estate = estate_mamluks
+			desc = EST_VAL_TURKISH_NUBIAN_SUPPORT
+			influence = -15
+			duration = 5475
+		}
+	}
+}
+
+# curtail the viziers?
+country_event = {
+	id = great_fitna.10
+	title = "great_fitna.10.t"
+	desc = "great_fitna.10.d"
+	picture = SPY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { religion = sunni }
+	}
+
+	option = {
+		name = great_fitna.10.a # yes
+		add_piety = 0.2
+		add_legitimacy = 10
+		random_owned_province = {
+			limit = { controlled_by = ROOT }
+			spawn_rebels = {
+				size = 3
+				type = particularist_rebels
+				win = yes
+				unrest = 5
+			}
+		}
+		random_owned_province = {
+			limit = { controlled_by = ROOT }
+			spawn_rebels = {
+				size = 3
+				type = particularist_rebels
+				win = yes
+				unrest = 5
+			}
+		}
+		random_owned_province = {
+			limit = { controlled_by = ROOT }
+			spawn_rebels = {
+				size = 3
+				type = particularist_rebels
+				win = yes
+				unrest = 5
+			}
+		}
+	}
+	option = {
+		name = great_fitna.10.b # no
+		add_piety = 0.1
+		add_prestige = -10
+		add_disaster_modifier = {
+			name = strong_viziers_m
+			duration = 3650
+			disaster = great_fitna
+		}
+	}
+}
+
+# sunni preachers
+country_event = {
+	id = great_fitna.11
+	title = "great_fitna.11.t"
+	desc = "great_fitna.11.d"
+	picture = SPY_eventPicture
+	goto = sunni_prov
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		NOT = { religion = sunni }
+		any_owned_province = {
+			religion_group = muslim
+			NOT = { religion = sunni }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion_group = muslim
+					NOT = { religion = sunni }
+				}
+				save_event_target_as = sunni_prov
+			}
+		}
+	}
+
+	option = {
+		name = great_fitna.11.a
+		add_piety = -0.05
+		event_target:sunni_prov = {
+			change_religion = sunni
+			add_local_autonomy = 50
+		}
+	}
+	option = {
+		name = great_fitna.11.b
+		add_piety = 0.05
+		event_target:sunni_prov = {
+			change_religion = sunni
+			spawn_rebels = {
+				size = 2
+				type = particularist_rebels
+			}
+		}
+	}
+}
 
 # End
 country_event = {
@@ -372,5 +590,7 @@ country_event = {
 		name = great_fitna.100.a
 		add_stability_or_adm_power = yes
 		clr_country_flag = badr_jamali_accepted
+		clr_country_flag = sunni_viziers_tolerated
+		clr_country_flag = sunni_viziers_curtailed
 	}
 }
