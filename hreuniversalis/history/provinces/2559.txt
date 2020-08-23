@@ -35,25 +35,12 @@ add_core = CUE
 	add_core = PRO
 }
 1382.1.1 = {
-	owner = SZO
-	controller = SZO
-	add_core = SZO
-	remove_core = PRO
-}
-1495.1.1 = { hre = no }
-1548.2.23 = {
-	owner = FRA
-	controller = FRA
-	add_core = FRA
-}
-1590.6.1 = { controller = SAV }
-1591.4.5 = { controller = FRA }
-1601.1.17 = {
 	owner = SAV
 	controller = SAV
 	add_core = SAV
-	remove_core = FRA
+	remove_core = PRO
 }
+1495.1.1 = { hre = no }
 1720.1.1 = {
 	owner = SPI
 	controller = SPI

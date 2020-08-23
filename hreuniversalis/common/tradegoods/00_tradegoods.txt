@@ -1,7 +1,7 @@
 #VOLTAIRE GOODS
 pepper = { 
 	color = { 0.7 0.41 0.41 }
-	modifier = { global_spy_defence = 0.25 }
+	modifier = { shock_damage_received = -0.1 }
 	province = { local_monthly_devastation = -0.1 }
 	chance = {
 		factor = 25
@@ -35,7 +35,7 @@ rice = {
 
 barley = { 
 	color = { 0.76 0.72 0.27 }
-	modifier = { land_maintenance_modifier = -0.1 }
+	modifier = { infantry_cost = -0.1 }
 	province = { land_forcelimit = 0.5 }
 	chance = {
 		factor = 35
@@ -53,7 +53,7 @@ barley = {
 
 rye = { 
 	color = { 0.63 0.75 0.24 }
-	modifier = { manpower_recovery_speed = 0.15 }
+	modifier = { global_manpower_modifier = 0.05 }
 	province = { land_forcelimit = 0.5 }
 	chance = {
 		factor = 35
@@ -71,8 +71,8 @@ rye = {
 
 cheese = { 
 	color = { 0.9 0.2 0.0 }
-	modifier = { diplomatic_reputation = 1 }
-	province = { local_state_maintenance_modifier = -0.2 }
+	modifier = { land_attrition = -0.15 }
+	province = { attrition = -1 }
 	chance = {
 		factor = 15
 		modifier = {
@@ -121,14 +121,14 @@ olive = {
 
 carpet = { 
 	color = { 1.0 0.3 0.7 }
-	modifier = { spy_offence = 0.2 }
+	modifier = { caravan_power = 0.1 }
 	province = { local_core_creation = 0.20 }
 	chance = { factor = 20 }
 }
 
 honey = { 
 	color = { 0.6 0.4 0.1 }
-	modifier = { inflation_reduction = 0.05 }
+	modifier = { interest = -1 }
 	province = { province_trade_power_modifier = 0.10 }
 	chance = { factor = 5 }
 }
@@ -585,7 +585,7 @@ fur	= {
 
 salt = { 
 	color = { 0.999 0.999 0.999 }
-	modifier = { land_maintenance_modifier = -0.10 }
+	modifier = { land_maintenance_modifier = -0.05 }
 	province = { local_defensiveness = 0.15 }
 	chance = { factor = 5 }
 }
@@ -752,7 +752,7 @@ coffee = {
 
 cotton = { 
 	color = { 0.52 0.68 0.6 }
-	modifier = { navy_tradition_decay = -0.01 }
+	modifier = { global_colonial_growth = 20 }
 	province = { local_development_cost = -0.1 }
 	chance = {
 		factor = 20

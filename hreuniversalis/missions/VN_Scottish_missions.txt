@@ -151,8 +151,9 @@ vn_sco_missions_slot_1_a = {
         required_missions = { vn_sco_crush_petty_kingdoms }
         provinces_to_highlight = {
             OR = {
-				area = hebrides_area
-				area = morvern_area
+                area = hebrides_area
+                area = morvern_area
+				area = caithness_area
 				province_id = 5201
 				province_id = 5202
 				province_id = 5203
@@ -164,6 +165,10 @@ vn_sco_missions_slot_1_a = {
         }
         trigger = {
             caithness_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            morvern_area = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
             }
@@ -207,6 +212,7 @@ vn_sco_missions_slot_1_a = {
         required_missions = { vn_sco_reincorporate_isles }
         provinces_to_highlight = {
             OR = {
+                area = caithness_area
                 area = morvern_area
                 area = hebrides_area
 				province_id = 5201
@@ -222,6 +228,11 @@ vn_sco_missions_slot_1_a = {
             }
         }
         trigger = {
+            caithness_area = {
+                type = all
+				owned_by = ROOT
+				is_core = ROOT
+            }
             morvern_area = {
                 type = all
 				owned_by = ROOT
@@ -1181,15 +1192,6 @@ vn_sco_missions_slot_5_a = {
         }
         effect = {
 			add_prestige = 15
-			if = {
-				limit = { 
-					has_dlc = "Rule Britannia"
-					owns = 2268
-				}
-				country_event = { 
-					id = flavor_sco.11 
-				}
-			}
             southwest_england_region = {
 				limit = {
 					NOT = { is_core = ROOT }

@@ -1046,6 +1046,7 @@ country_event = {
 					change_government = monarchy
 					add_government_reform = ottoman_government
 					define_ruler = { dynasty = "Aydinoglu" }
+					restore_country_name = yes
 				}
 			}
 			if = {
@@ -1056,6 +1057,7 @@ country_event = {
 					change_government = monarchy
 					add_government_reform = ottoman_government
 					define_ruler = { dynasty = "Saruhanoglu" }
+					restore_country_name = yes
 				}
 			}
 			if = {
@@ -2357,6 +2359,7 @@ country_event = {
 	title = "FBIT44"
 	desc = "FBID44"
 	picture = RELIGIOUS_CONVERSION_eventPicture
+	goto = greek_prov
 	
 	is_triggered_only = yes
 	trigger = {
@@ -2377,18 +2380,26 @@ country_event = {
 	}
 	mean_time_to_happen = { days = 1 }
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture = owner }
+					any_neighbor_province = {
+						culture = owner
+						owned_by = ROOT
+					}
+				}
+				save_event_target_as = greek_prov
+			}
+		}
+	}
+
 	option = {
 		name = "FBIA44"
 		add_papal_influence = 10
 		add_patriarch_authority = 0.15
-		random_owned_province = {
-			limit = {
-				NOT = { culture = owner }
-				any_neighbor_province = {
-					culture = owner
-					owned_by = ROOT
-				}
-			}
+		event_target:greek_prov = {
 			change_culture = owner
 		}
 	}

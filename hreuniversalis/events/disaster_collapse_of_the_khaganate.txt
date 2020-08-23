@@ -496,9 +496,25 @@ country_event = {
 
 	is_triggered_only = yes
 
+	trigger = {
+		any_owned_province = {
+			can_spawn_rebels = nationalist_rebels
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { can_spawn_rebels = nationalist_rebels }
+				save_event_target_as = nat_prov
+			}
+		}
+	}
+
 	option = {
 		name = collapse_of_the_khaganate.6.a
-		random_province = {
+		goto = nat_prov
+		event_target:nat_prov = {
 			limit = { can_spawn_rebels = nationalist_rebels }
 			spawn_rebels = {
 				type = nationalist_rebels

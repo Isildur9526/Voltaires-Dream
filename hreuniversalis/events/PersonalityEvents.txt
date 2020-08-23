@@ -1383,6 +1383,7 @@ country_event = {
 		NOT = { ruler_age = 39 }
 		NOT = { has_heir = yes }
 		has_government_attribute = heir
+		NOT = { has_reform = germanic_monarchy }
 	}
 	
 	is_triggered_only = yes
@@ -1423,6 +1424,7 @@ country_event = {
 		is_lesser_in_union = no
 		has_heir = no
 		has_government_attribute = heir
+		NOT = { has_reform = germanic_monarchy }
 	}
 	
 	is_triggered_only = yes
@@ -2895,6 +2897,7 @@ country_event = {
 		government = monarchy
 		is_lesser_in_union = no
 		has_government_attribute = heir
+		NOT = { has_reform = germanic_monarchy }
 		religion_group = christian
 		has_dlc = "Rights of Man"
 		OR = {

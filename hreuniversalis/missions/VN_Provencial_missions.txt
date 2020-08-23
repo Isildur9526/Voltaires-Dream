@@ -449,7 +449,7 @@ vn_pro_missions_slot_3 = {
         position = 5
         required_missions = { vn_pro_commercial_treaties vn_pro_toulon_shipyard }
         trigger = {
-			num_of_light_ship = 15
+			num_of_light_ship = 25
         }
         effect = {
 			add_navy_tradition = 10 
@@ -942,7 +942,7 @@ vn_pro_missions_slot_5 = {
         required_missions = { vn_pro_revenge_on_the_saracens }
         trigger = {
 			num_of_owned_provinces_with = {
-				value = 20
+				value = 25
 				OR = {
 					culture_group = maghrebi
 					culture_group = turko_semitic

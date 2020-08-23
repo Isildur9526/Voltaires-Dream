@@ -800,6 +800,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BRA
+			swap_non_generic_missions = yes
 			if = {
 				limit = { NOT = { government = monarchy } }
 				change_government = monarchy
@@ -2039,14 +2040,13 @@ country_decisions = {
 				export_to_variable = {
 					variable_name = formerprimaryculture
 					value = primary_culture
+					who = ROOT
 				}
 				capital_scope = {
-					export_to_variable = {
-						variable_name = capitalculture
-						value = culture
+					owner = {
+						change_primary_culture = PREV
 					}
 				}
-				change_primary_culture = variable:capitalculture
 				add_accepted_culture = variable:formerprimaryculture
 			}
 			if = {

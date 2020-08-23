@@ -37,6 +37,7 @@ fragpol_halychian_raid = {
 
 #Vespers
 vespers_victorious = {
+	land_morale = 0.1
 	enemy_core_creation = 0.5
 }
 vespers_defeated = {

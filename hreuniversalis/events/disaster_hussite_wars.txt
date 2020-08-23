@@ -249,6 +249,7 @@ province_event = {
 		trigger = { has_dlc = "Art of War" }
 		picture = SIEGE_PRAGUE_CASTLE_eventPicture
 	}
+	goto = root
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -301,9 +302,18 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = huss_prov
+			}
+		}
+	}
+
 	option = {
 		name = hussite_wars.5.a
-		random_owned_province = {
+		goto = huss_prov
+		event_target:huss_prov = {
 			hussite_rebels = 3
 		}
 	}
@@ -463,14 +473,23 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					controlled_by = ROOT
+					NOT = { has_province_modifier = religious_violence }
+				}
+				save_event_target_as = vio_prov
+			}
+		}
+	}
+
 	option = {
 		name = hussite_wars.9.a
 		ai_chance = { factor = 25 }
-		random_owned_province = {
-			limit = {
-				controlled_by = ROOT
-				NOT = { has_province_modifier = religious_violence }
-			}
+		goto = vio_prov
+		event_target:vio_prov = {
 			add_province_modifier = {
 				name = religious_violence
 				duration = 1825
@@ -539,6 +558,7 @@ country_event = {
 		trigger = { has_dlc = "Art of War" }
 		picture = VILLAGE_RAIDED_eventPicture
 	}
+	goto = raid_prov
 
 	is_triggered_only = yes
 	mean_time_to_happen = { days = 1 }
@@ -551,14 +571,22 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					controlled_by = HGA
+					religion = catholic
+					development = 4
+				}
+				save_event_target_as = raid_prov
+			}
+		}
+	}
+
 	option = {
 		name = hussite_wars.11.a
-		random_owned_province = {
-			limit = {
-				controlled_by = HGA
-				religion = catholic
-				development = 4
-			}
+		event_target:raid_prov = {
 			if = {
 				limit = { development = 24 }
 				random_list = {
@@ -599,6 +627,7 @@ country_event = {
 		trigger = { has_dlc = "Art of War" }
 		picture = VILLAGE_RAIDED_eventPicture
 	}
+	goto = reb_prov
 
 	is_triggered_only = yes
 	mean_time_to_happen = { days = 1 }
@@ -610,14 +639,29 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					controlled_by = HGA
+					religion = hussite
+				}
+				save_event_target_as = reb_prov
+			}
+		}
+	}
+
 	option = {
 		name = hussite_wars.12.a
-		random_owned_area = {
-			limit = {
-				controlled_by = HGA
-				religion = hussite
+		event_target:reb_prov = {
+			area = {
+				limit = {
+					owned_by = ROOT
+					controlled_by = HGA
+					religion = hussite
+				}
+				add_unrest = 5
 			}
-			add_unrest = 5
 		}
 	}
 }

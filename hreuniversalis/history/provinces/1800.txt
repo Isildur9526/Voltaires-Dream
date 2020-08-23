@@ -45,7 +45,7 @@ add_core = CVA
 	add_core = SAV
 	remove_core = ATI
 }
-1536.4.1 = { controller = FRA } 
+1537.4.1 = { controller = FRA } 
 1538.6.17 = { owner = FRA }
 1559.1.1 = { owner = SAV controller = SAV }
 1720.1.1 = {

@@ -33,18 +33,33 @@ country_event = {
 	title = revolt_of_the_earls.2.t
 	desc = revolt_of_the_earls.2.d
 	picture = ANGRY_MOB_eventPicture
+	goto = anglo_prov
 	
 	is_triggered_only = yes
 
 	mean_time_to_happen = {
 		days = 1
 	}
+
+	trigger = {
+		any_owned_province = {
+			culture = anglosaxon
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { culture = anglosaxon }
+				save_event_target_as = anglo_prov
+			}
+		}
+	}
 	
 	option = {
 		name = revolt_of_the_earls.2.a
 		ai_chance = { factor = 80 }
-		random_owned_province = {
-			limit = { culture = anglosaxon }
+		event_target:anglo_prov = {
 			change_culture = english
 			add_unrest = 10
 		}
@@ -53,8 +68,7 @@ country_event = {
 	option = {
 		name = revolt_of_the_earls.2.b
 		ai_chance = { factor = 20 }
-		random_owned_province = {
-			limit = { culture = anglosaxon }
+		event_target:anglo_prov = {
 			add_local_autonomy = 20
 		}
 	}
@@ -65,6 +79,7 @@ country_event = {
 	title = revolt_of_the_earls.3.t
 	desc = revolt_of_the_earls.3.d
 	picture = CONQUEST_eventPicture
+	goto = nob_prov
 	
 	is_triggered_only = yes
 
@@ -80,16 +95,24 @@ country_event = {
 			NOT = { has_province_modifier = foreign_ruler }
 		}
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					culture = anglosaxon
+					is_capital = no
+					NOT = { has_province_modifier = foreign_ruler }
+				}
+				save_event_target_as = nob_prov
+			}
+		}
+	}
 	
 	option = {
 		name = revolt_of_the_earls.3.a
 		ai_chance = { factor = 80 }
-		random_owned_province = {
-			limit = {
-				culture = anglosaxon
-				is_capital = no
-				NOT = { has_province_modifier = foreign_ruler }
-			}
+		event_target:nob_prov = {
 			change_culture = english
 			add_local_autonomy = 25
 			add_province_modifier = {
@@ -111,11 +134,7 @@ country_event = {
 		ai_chance = { factor = 20 }
 		add_legitimacy = 2
 		add_dip_power = 20
-		random_owned_province = {
-			limit = {
-				culture = anglosaxon
-				NOT = { has_province_modifier = foreign_ruler }
-			}
+		event_target:nob_prov = {
 			add_province_modifier = {
 				name = remove_unrest_5_modifier
 				duration = 3650
@@ -198,6 +217,7 @@ country_event = {
 	title = revolt_of_the_earls.5.t
 	desc = revolt_of_the_earls.5.d
 	picture = STREET_SPEECH_eventPicture
+	goto = edc_prov
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -211,15 +231,20 @@ country_event = {
 		}
 	}
 
-	immediate = { set_country_flag = edc_flag }
-	
-	option = {
-		name = revolt_of_the_earls.5.a
+	immediate = {
+		set_country_flag = edc_flag
 		random_owned_province = {
 			limit = {
 				culture = anglosaxon
 				is_capital = no
 			}
+			save_event_target_as = edc_prov
+		}
+	}
+	
+	option = {
+		name = revolt_of_the_earls.5.a
+		event_target:edc_prov = {
 			spawn_rebels = {
    				type = pretender_rebels
    				culture = anglosaxon
@@ -269,9 +294,23 @@ country_event = {
 		any_owned_province = { has_province_modifier = foreign_ruler }
 		has_country_flag = edc_flag
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { culture = anglosaxon }
+				save_event_target_as = engl_prov
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = foreign_ruler }
+				save_event_target_as = for_prov
+			}
+		}
+	}
 	
 	option = {
 		name = revolt_of_the_earls.6.a
+		goto = engl_prov
 		ai_chance = {
 			factor = 90
 			modifier = {
@@ -295,14 +334,8 @@ country_event = {
 				loyalty = -15
 			}
 		}
-		if = {
-			limit = {
-				NOT = { has_dlc = "The Cossacks" }
-			}
-			add_stability = -1
-		}
-		random_owned_province = {
-			limit = { culture = anglosaxon }
+		add_stability = -1
+		event_target:engl_prov = {
 			change_culture = english
 		}
 	}
@@ -310,8 +343,8 @@ country_event = {
 	option = {
 		name = revolt_of_the_earls.6.b
 		ai_chance = { factor = 10 }
-		random_owned_province = {
-			limit = { has_province_modifier = foreign_ruler }
+		goto = for_prov
+		event_target:for_prov = {
 			spawn_rebels = {
 				culture = anglosaxon
    				type = pretender_rebels
@@ -333,6 +366,7 @@ country_event = {
 	title = revolt_of_the_earls.7.t
 	desc = revolt_of_the_earls.7.d
 	picture = CORRUPTION_eventPicture
+	goto = sieg_prov
 	
 	mean_time_to_happen = {
 		months = 6
@@ -358,14 +392,22 @@ country_event = {
 			sieged_by = pretender_rebels
 		}
 	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					culture = anglosaxon
+					sieged_by = pretender_rebels
+				}
+				save_event_target_as = sieg_prov
+			}
+		}
+	}
 	
 	option = {
 		name = revolt_of_the_earls.7.a
-		random_owned_province = {
-			limit = {
-				culture = anglosaxon
-				sieged_by = pretender_rebels
-			}
+		event_target:sieg_prov = {
 			change_controller = REB
 		}
 	}
@@ -382,12 +424,27 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
+
+	trigger = {
+		any_owned_province = {
+			culture = anglosaxon
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { culture = anglosaxon }
+			}
+			save_event_target_as = reta_prov
+		}
+	}
 	
 	option = {
 		name = revolt_of_the_earls.8.a
 		ai_chance = { factor = 80 }
-		random_owned_province = {
-			limit = { culture = anglosaxon }
+		goto = reta_prov
+		event_target:reta_prov = {
 			change_culture = english
 			noble_rebels = 2
 		}

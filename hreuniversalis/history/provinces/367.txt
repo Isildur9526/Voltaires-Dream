@@ -17,21 +17,16 @@ add_core = PIE
 	add_core = XKK
 }
 1098.4.1 = {
-	owner = SAV
-	controller = SAV
-	add_core = SAV
+	owner = SVO
+	controller = SVO
+	add_core = SVO
+	add_core = SZO
 	remove_core = XKK
 }
-1233.3.1 = {
-	owner = PIE
-	controller = PIE
-	remove_core = SAV
-}
-1375.1.1 = {
+1124.1.1 = {
 	owner = SZO
 	controller = SZO
-	add_core = SZO
-	remove_core = PIE
+	remove_core = SVO
 }
 1486.1.1 = {
 	owner = SAV

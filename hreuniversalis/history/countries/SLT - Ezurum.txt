@@ -8,6 +8,7 @@ capital = 6290
 religious_school = hanafi_school
 
 1071.8.26 = {
+	override_country_name = SALTUK_NAME
 	monarch = {
 		name = "Saltuk I"
 		dynasty = "Saltukoglu"
@@ -71,6 +72,7 @@ religious_school = hanafi_school
 		mil = 0
 	}
 }
+1202.1.1 = { restore_country_name = yes }
 #done 1202
 
 #Seljuk Partition

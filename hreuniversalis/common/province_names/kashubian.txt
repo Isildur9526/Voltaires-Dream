@@ -11,7 +11,7 @@
 4808 = "Stôrgard"
 4809 = "Czaplinok"
 4812 = "Czlëchòwò"
-4815 = "Biôlô Góra"
+4815 = "Labòrg"
 4816 = "Pùcko"
 4819 = "Gniéw"
 5925 = "Dërszewò"

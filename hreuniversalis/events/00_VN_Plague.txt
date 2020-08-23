@@ -265,23 +265,26 @@ province_event = {
 			limit = { base_manpower = 10 }
 			add_base_manpower = -3
 		}
-		every_neighbor_province = {
-			limit = { 
-				region = event_target:plague_region
-				NOT = { 
-					OR = {
-						has_province_flag = plague_spread 
-						has_province_modifier = influenza
+		custom_tooltip = vn_plagues.1.a.tt
+		hidden_effect = {
+			every_neighbor_province = {
+				limit = { 
+					region = event_target:plague_region
+					NOT = { 
+						OR = {
+							has_province_flag = plague_spread 
+							has_province_modifier = influenza
+						}
 					}
 				}
-			}
-			random = {
-				chance = 75
-				hidden_effect = { set_province_flag = plague_spread }
-				province_event = {
-					id = vn_plagues.2
-					days = 60
-					random = 15
+				random = {
+					chance = 75
+					hidden_effect = { set_province_flag = plague_spread }
+					province_event = {
+						id = vn_plagues.2
+						days = 60
+						random = 15
+					}
 				}
 			}
 		}
@@ -350,23 +353,26 @@ province_event = {
 			limit = { base_manpower = 10 }
 			add_base_manpower = -3
 		}
-		every_neighbor_province = {
-			limit = { 
-				region = event_target:plague_region
-				NOT = { 
-					OR = {
-						has_province_flag = plague_spread 
-						has_province_modifier = influenza
+		custom_tooltip = vn_plagues.1.b.tt
+		hidden_effect = {
+			every_neighbor_province = {
+				limit = { 
+					region = event_target:plague_region
+					NOT = { 
+						OR = {
+							has_province_flag = plague_spread 
+							has_province_modifier = influenza
+						}
 					}
 				}
-			}
-			random = {
-				chance = 25
-				hidden_effect = { set_province_flag = plague_spread }
-				province_event = {
-					id = vn_plagues.2
-					days = 120
-					random = 30
+				random = {
+					chance = 25
+					hidden_effect = { set_province_flag = plague_spread }
+					province_event = {
+						id = vn_plagues.2
+						days = 120
+						random = 30
+					}
 				}
 			}
 		}
@@ -450,23 +456,26 @@ province_event = {
 			limit = { base_manpower = 10 }
 			add_base_manpower = -3
 		}
-		every_neighbor_province = {
-			limit = { 
-				region = event_target:plague_region
-				NOT = { 
-					OR = {
-						has_province_flag = plague_spread 
-						has_province_modifier = influenza
+		custom_tooltip = vn_plagues.1.a.tt
+		hidden_effect = {
+			every_neighbor_province = {
+				limit = { 
+					region = event_target:plague_region
+					NOT = { 
+						OR = {
+							has_province_flag = plague_spread 
+							has_province_modifier = influenza
+						}
 					}
 				}
-			}
-			random = {
-				chance = 75
-				hidden_effect = { set_province_flag = plague_spread }
-				province_event = {
-					id = vn_plagues.2
-					days = 60
-					random = 15
+				random = {
+					chance = 75
+					hidden_effect = { set_province_flag = plague_spread }
+					province_event = {
+						id = vn_plagues.2
+						days = 60
+						random = 15
+					}
 				}
 			}
 		}
@@ -535,23 +544,26 @@ province_event = {
 			limit = { base_manpower = 10 }
 			add_base_manpower = -3
 		}
-		every_neighbor_province = {
-			limit = { 
-				region = event_target:plague_region
-				NOT = { 
-					OR = {
-						has_province_flag = plague_spread 
-						has_province_modifier = influenza
+		custom_tooltip = vn_plagues.1.b.tt
+		hidden_effect = {
+			every_neighbor_province = {
+				limit = { 
+					region = event_target:plague_region
+					NOT = { 
+						OR = {
+							has_province_flag = plague_spread 
+							has_province_modifier = influenza
+						}
 					}
 				}
-			}
-			random = {
-				chance = 25
-				hidden_effect = { set_province_flag = plague_spread }
-				province_event = {
-					id = vn_plagues.2
-					days = 120
-					random = 30
+				random = {
+					chance = 25
+					hidden_effect = { set_province_flag = plague_spread }
+					province_event = {
+						id = vn_plagues.2
+						days = 120
+						random = 30
+					}
 				}
 			}
 		}
@@ -608,9 +620,8 @@ province_event = {
 		ai_chance = { factor = 100 }
 		custom_tooltip = vn_plagues.100.a.tt
 		every_country = {
-			limit = { 
-				NOT = { tag = ROOT }
-				capital_scope = {
+			limit = {
+				any_owned_province = {
 					region = event_target:plague_region 
 				}
 			}

@@ -535,4 +535,8 @@ national_focus = ADM
 1560.1.1 = { leader = { name = "Sebastian Lubomirski" type = general fire = 2 shock = 3 manuever = 3 siege = 0 death_date = 1613.7.20 } }
 1565.1.1 = { leader = { name = "Andrzej Kurbski" type = general fire = 2 shock = 1 manuever = 3 siege = 0 death_date = 1575.1.1 } }
 1596.1.1 = { capital = 1138 }
-1807.7.9 = { government_rank = 3 }
+1807.7.9 = {
+	override_country_name = WARSAW_NAME
+	government_rank = 3
+}
+1814.4.11 = { restore_country_name = yes }

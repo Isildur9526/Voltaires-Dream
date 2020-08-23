@@ -461,7 +461,10 @@ change_estate_land_share = {
 		mil = 6
 	}
 }
-1337.4.30 = { set_global_flag = eng_had_start_of_hundred_years_war }
+1337.4.30 = { 
+	set_global_flag = eng_had_start_of_hundred_years_war 
+	add_historical_rival = ENG
+}
 1345.6.15 = {
 	heir = {
 		name = "John of Gaunt"

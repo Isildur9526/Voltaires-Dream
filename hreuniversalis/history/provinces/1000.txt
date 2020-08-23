@@ -12,20 +12,13 @@ is_city = yes
 add_core = IVR
 
 1313.1.1 = {
-	owner = PIE
-	controller = PIE
-	add_core = PIE
-}
-1418.12.11 = {
 	owner = SAV
 	controller = SAV
 	add_core = SAV
-	remove_core = PIE
 }
 1495.1.1 = { hre = no }
 1536.4.1 = { controller = FRA } 
-1538.6.17 = { owner = FRA }
-1559.1.1 = { owner = SAV controller = SAV }
+1538.6.17 = { controller = SAV }
 1720.1.1 = {
 	owner = SPI
 	controller = SPI

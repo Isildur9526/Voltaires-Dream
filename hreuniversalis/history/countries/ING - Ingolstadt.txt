@@ -8,6 +8,7 @@ capital = 2518
 
 #Counts of Scheyern
 1054.1.1 = {
+	override_country_name = SCHEYERN_NAME
 	monarch = {
 		name = "Otto I"
 		dynasty = "von Wittelsbach"
@@ -113,10 +114,11 @@ capital = 2518
 }
 #to BAV 1180
 1180.1.1 = {
+	restore_country_name = yes
 	government_rank = 3
 	capital = 2431
 }
-#Dukes of Bavaria-Straubing
+#Dukes of Bavaria-Ingolstadt
 1392.1.1 = {
 	monarch = {
 		name = "Stephan III"

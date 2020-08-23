@@ -142,6 +142,7 @@ vn_ara_missions_slot_1_a = {
 		}
 		effect = {
 			add_mercantilism = 2
+			set_country_flag = ara_consulate_flag
 			if = {
 				limit = { has_dlc = "Golden Century" }
 				country_event = {

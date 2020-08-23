@@ -25,9 +25,6 @@ fort_14th = yes
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1495.1.1 = { hre = no }
-1536.4.1 = { controller = FRA } 
-1538.6.17 = { owner = FRA } # Treaty of Nice
-1559.1.1 = { owner = SAV controller = SAV }
 1720.1.1 = {
 	owner = SPI
 	controller = SPI

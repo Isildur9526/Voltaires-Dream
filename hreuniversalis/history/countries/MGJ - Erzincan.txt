@@ -8,6 +8,7 @@ capital = 4198
 religious_school = hanafi_school
 
 1071.8.26 = {
+	override_country_name = MENGUCEK_NAME
 	monarch = {
 		name = "Mengücek"
 		dynasty = "Mengüçoglu"
@@ -52,6 +53,7 @@ religious_school = hanafi_school
 		mil = 0
 	}
 }
+1228.1.1 = { restore_country_name = yes }
 #done 1228
 
 #Re-Established Beylik

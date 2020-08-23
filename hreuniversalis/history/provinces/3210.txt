@@ -56,17 +56,15 @@ add_core = POM
 	remove_core = BRA
 	hre = no
 }
-1402.1.1 = {
+1409.9.13 = { controller = TEU }
+1411.2.1 = { controller = POL }
+1436.7.22 = {
 	owner = TEU
 	controller = TEU
-	add_core = BRA
+	add_core = TEU
 	remove_core = POL
 	hre = yes
 	add_local_autonomy = 50
-}
-1429.1.1 = {
-	add_core = TEU
-	remove_core = BRA
 }
 1455.9.19 = {
 	owner = BRA

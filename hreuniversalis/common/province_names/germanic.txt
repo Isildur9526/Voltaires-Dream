@@ -571,7 +571,7 @@
 4812 = "Schlochau"
 4813 = "Prechlau"
 4814 = "Pottangow"
-4815 = "Weiﬂberg"
+4815 = "Lauenburg-Pommern"
 4816 = "Putzig"
 4817 = "Heiderode"
 4818 = "Neuenburg-Preuﬂen"

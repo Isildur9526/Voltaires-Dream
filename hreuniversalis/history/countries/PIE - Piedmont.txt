@@ -10,6 +10,7 @@ historical_friend = SAV
 
 #Margraves of Turin
 1034.10.29 = {
+	override_country_name = TURIN_NAME
 	monarch = {
 		name = "Adelaide"
 		dynasty = "Arduining"
@@ -73,6 +74,7 @@ historical_friend = SAV
 		mil = 0
 	}
 }
+1092.1.1 = { restore_country_name = yes }
 #1092 to Italy
 
 #Lords of Piedmont

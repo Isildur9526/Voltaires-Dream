@@ -559,6 +559,13 @@ vn_ase_missions_slot_3_a = {
                 name = "ase_drive_out_normans_mission"
                 duration = 1825
             }
+            normandy_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+            }
         }
     }
 }

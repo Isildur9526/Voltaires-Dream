@@ -9,6 +9,7 @@ religious_school = hanafi_school
 
 #Tengribirmish Beylik
 1090.1.1 = {
+	override_country_name = TENGRIBIRMISH_NAME
 	monarch = {
 		name = "Tengribirmish"
 		dynasty = "Selçukoglu"
@@ -17,6 +18,7 @@ religious_school = hanafi_school
 		mil = 3
 	}
 }
+1096.1.1 = { restore_country_name = yes }
 
 #Aydin Beylik
 1308.1.1 = {

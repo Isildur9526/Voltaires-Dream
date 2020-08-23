@@ -8,7 +8,6 @@ pro_establish_consultates_mission = {
 	improve_relation_modifier = 0.1
 }
 pro_toulon_shipyard_mission = {
-	naval_maintenance_modifier = -0.1
 	global_ship_cost = -0.1
 	global_ship_recruit_speed = -0.1
 }
@@ -21,6 +20,7 @@ pro_trade_of_lyon_mission = {
 	trade_value_modifier = 0.1
 }
 pro_provencal_navy_mission = {
+	naval_maintenance_modifier = -0.1
 	navy_tradition = 1 
 }
 pro_greek_expansion_mission = {
@@ -52,9 +52,8 @@ pro_lenga_doc_mission = {
 	same_culture_advisor_cost = -0.2
 }
 pro_a_merchant_fleet_mission = {
-	global_trade_power = 0.05
+	global_trade_power = 0.1
 	trade_range_modifier = 0.2
-	global_ship_trade_power = 0.2
 }
 pro_heir_to_lotharingia_mission = { 
 	diplomatic_reputation = 0.5

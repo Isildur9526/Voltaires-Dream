@@ -551,7 +551,7 @@ country_event = {
 				}
 			}
 		}
-		add_prestige = 20
+		add_prestige = 25
 		sicilia_region = {
 			limit = { owned_by = ROOT }
 			add_province_modifier = {

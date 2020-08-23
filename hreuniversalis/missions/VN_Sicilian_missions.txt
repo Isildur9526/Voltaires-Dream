@@ -1061,6 +1061,13 @@ vn_sic_missions_slot_4 = {
                 add_base_production = 3
                 add_base_manpower = 3
             }
+            provence_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
 }
@@ -1481,15 +1488,24 @@ vn_sic_missions_slot_5 = {
 				add_casus_belli = {
 					target = WWS
 					type = cb_claim_throne
-					months = 240
+					months = 300
 				}
+				swabia_region = {
+					limit = {
+						NOT = { is_core = WWS }
+						NOT = { is_permanent_claim = WWS }
+					}
+					add_permanent_claim = WWS
+				}				
 			}
-			swabia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+			else = {
+				swabia_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
         }
     }
@@ -1504,9 +1520,12 @@ vn_sic_missions_slot_5 = {
 		trigger = {
 			OR = {
 				senior_union_with = WWS 
-	            swabia_region = {
-					type = all
-					country_or_non_sovereign_subject_holds = ROOT
+				AND = {
+					NOT = { exists = WWS }
+					swabia_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
 				}			
 			}
 		}

@@ -292,4 +292,6 @@
  opinion_incident_elevation_of_bohemia: "Pleased With the Emperor"
  opinion_incident_elevation_of_bohemia_rejection_a: "Reconciled With Bohemia"
  opinion_incident_elevation_of_bohemia_rejection_b: "The [BOH.Monarch.GetTitle] Outraged"
- boh_raised_to_kingdom_tt: "The Government Rank of §Y[BOH.GetName]§! changes to §YKingdom§!."
+ boh_raised_to_kingdom_a_tt: "The Government Rank of §Y[BOH.GetName]§! changes to §YKingdom§!. The least qualified elector shall be replaced." 
+ boh_raised_to_kingdom_b_tt: "The Government Rank of §Y[BOH.GetName]§! changes to §YKingdom§!."
+ boh_raised_to_electorate_a_tt: "The least qualified elector shall be replaced."

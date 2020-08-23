@@ -1399,7 +1399,10 @@ estate_burghers_silk_trade = {
 	can_select = {
 		is_at_war = no
 		capital_scope = {
-			continent = europe
+			OR = {
+				continent = africa
+				continent = asia
+			}
 		}
 		NOT = { silk = 2 }
 	}

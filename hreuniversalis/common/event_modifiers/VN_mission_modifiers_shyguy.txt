@@ -1073,7 +1073,7 @@ ven_conquer_zeta_mission = {
 	development_cost = -0.1
 }
 ven_conquer_milan_mission = {
-	prestige = 0.5
+	allowed_marine_fraction = 0.1
 }
 ven_conquer_ravenna_mission = {
 	global_own_trade_power = 0.1

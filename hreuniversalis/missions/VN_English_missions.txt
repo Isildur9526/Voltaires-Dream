@@ -1773,9 +1773,9 @@ vn_eng_missions_slot_4_c = {
         completed_by = 1694.7.27
         required_missions = { vn_eng_centralise_royal_mint }
         trigger = {
-            master_of_mint = 2
+            master_of_mint = 3
             NOT = { num_of_loans = 1 }
-            NOT = { inflation = 0 }
+            NOT = { inflation = 1 }
         }
         effect = {
             add_years_of_income = 0.5
@@ -2079,50 +2079,7 @@ vn_eng_missions_slot_5_a = {
             }
         }
         effect = {
-			if = {
-				limit = {
-					has_dlc = "Rule Britannia"
-				}
-				change_innovativeness = 10
-				country_event = {
-					id = flavor_eng.9880
-					days = 1
-				}
-				hidden_effect = {
-					random_list = {
-						20 = {
-							set_variable = {
-								which = oxbridge_subject
-								value = 1
-							}
-						}
-						20 = {
-							set_variable = {
-								which = oxbridge_subject
-								value = 2
-							}
-						}
-						20 = {
-							set_variable = {
-								which = oxbridge_subject
-								value = 3
-							}
-						}
-						20 = {
-							set_variable = {
-								which = oxbridge_subject
-								value = 4
-							}
-						}
-						20 = {
-							set_variable = {
-								which = oxbridge_subject
-								value = 5
-							}
-						}
-					}
-				}
-			}
+            change_innovativeness = 5
             1242 = {
                 add_base_tax = 2
                 add_province_modifier = {

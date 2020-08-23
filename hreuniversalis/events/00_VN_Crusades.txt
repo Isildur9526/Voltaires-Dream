@@ -862,6 +862,7 @@ country_event = {
         	modifier = {
         		factor = 10
         		OR = {
+        			is_emperor = yes
         			AND = {
         				tag = VEN
         				has_global_flag = vn_crusade_greece_flag
@@ -913,7 +914,6 @@ country_event = {
         				culture_group = french
         				NOT = { primary_culture = outremer }
         			}
-        			is_emperor = yes
         		}
         	}
         	modifier = {
@@ -959,6 +959,7 @@ country_event = {
         			AND = {
         				capital_distance = { who = FROM distance = 500 }
         				NOT = { tag = ENG }
+        				is_emperor = no
         				NOT = { culture_group = french }
         			}
         			NOT = { has_opinion = { who = FROM value = 0 } }

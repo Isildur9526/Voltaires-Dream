@@ -296,6 +296,7 @@ country_event = {
 				alliance_with = event_target:lombard_league_founder
 			}
 		}
+		set_global_flag = emperor_decided_on_league
 		emperor = {
 			add_prestige = -20
 			custom_tooltip = incident_lombard_league.3.a.tt
@@ -337,6 +338,7 @@ country_event = {
 				}
 			}
 		}
+		set_global_flag = emperor_decided_on_league
 		emperor = {
 			add_prestige = 10
 			declare_war_with_cb = {
@@ -663,13 +665,17 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		has_global_flag = emperor_decided_on_league
         has_country_flag = lombard_league_leader
         any_country = {
             has_country_flag = lombard_league_member
         }
+		is_at_war = no
         OR = {
-			NOT = { current_age = age_of_empire }
-			NOT = { current_age = age_of_holy_wars }
+			AND = {
+				NOT = { current_age = age_of_empire }
+				NOT = { current_age = age_of_holy_wars }
+			}
 			emperor = {
 				capital_scope = {
 					superregion = italy_superregion

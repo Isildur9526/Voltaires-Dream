@@ -39,7 +39,16 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 6
+		months = 300
+		modifier = {
+			factor = 0.25
+			NOT = { 
+				OR = {
+					num_of_electors = 7
+					num_of_electors = 8
+				}
+			}
+		}
 	}
 	
 	option = {
@@ -86,10 +95,10 @@ country_event = {
 			elector = yes
 			add_prestige = 20
 			add_legitimacy = 20
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}		
+			custom_tooltip = boh_raised_to_kingdom_a_tt
         }
 		else_if = {
 			limit = {
@@ -102,7 +111,7 @@ country_event = {
 					was_player = no 				
                     NOT = {
 						OR = {
-							good_choice_for_electorship_trigger = no
+							good_choice_for_electorship_trigger = yes
 							has_opinion = {
 								who = emperor
 								value = 50
@@ -117,7 +126,7 @@ country_event = {
 					was_player = no 				
                     NOT = {
 						OR = {
-							good_choice_for_electorship_trigger = no
+							good_choice_for_electorship_trigger = yes
 							has_opinion = {
 								who = emperor
 								value = 50
@@ -130,10 +139,10 @@ country_event = {
 			elector = yes
 			add_prestige = 20
 			add_legitimacy = 20
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
+			custom_tooltip = boh_raised_to_kingdom_a_tt
 		}
         else_if = {
 			limit = {
@@ -148,19 +157,19 @@ country_event = {
 			elector = yes
 			add_prestige = 20
 			add_legitimacy = 20
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
+			custom_tooltip = boh_raised_to_kingdom_a_tt
         }		
 		else = {
 			elector = yes
 			add_prestige = 20
 			add_legitimacy = 20	
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
+			custom_tooltip = boh_raised_to_kingdom_b_tt
 		}	
 	}
 }
@@ -214,7 +223,26 @@ country_event = {
 				}
 			}
 		}
-		custom_tooltip = boh_raised_to_kingdom_tt
+		if = {
+			limit = {
+				OR = {
+					num_of_electors = 7
+					num_of_electors = 8
+				}
+			}
+			custom_tooltip = boh_raised_to_kingdom_a_tt
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					OR = {
+						num_of_electors = 7
+						num_of_electors = 8
+					}
+				}
+			}
+			custom_tooltip = boh_raised_to_kingdom_b_tt
+		}
 		hidden_effect = {
 			BOH = { set_government_rank = 5 }
 		}
@@ -391,7 +419,6 @@ country_event = {
 			elector = yes
 			add_prestige = 25
 			add_legitimacy = 25
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
@@ -399,6 +426,7 @@ country_event = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}
+			custom_tooltip = boh_raised_to_kingdom_a_tt
         }
 		else_if = {
 			limit = {
@@ -411,7 +439,7 @@ country_event = {
 					was_player = no 				
                     NOT = {
 						OR = {
-							good_choice_for_electorship_trigger = no
+							good_choice_for_electorship_trigger = yes
 							has_opinion = {
 								who = emperor
 								value = 50
@@ -426,7 +454,7 @@ country_event = {
 					was_player = no 				
                     NOT = {
 						OR = {
-							good_choice_for_electorship_trigger = no
+							good_choice_for_electorship_trigger = yes
 							has_opinion = {
 								who = emperor
 								value = 50
@@ -439,7 +467,6 @@ country_event = {
 			elector = yes
 			add_prestige = 25
 			add_legitimacy = 25
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
@@ -447,6 +474,7 @@ country_event = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}
+			custom_tooltip = boh_raised_to_kingdom_a_tt
 		}
         else_if = {
 			limit = {
@@ -461,7 +489,6 @@ country_event = {
 			elector = yes
 			add_prestige = 25
 			add_legitimacy = 25
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
@@ -469,12 +496,12 @@ country_event = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}
+			custom_tooltip = boh_raised_to_kingdom_a_tt
         }		
 		else = {
 			elector = yes
 			add_prestige = 25
 			add_legitimacy = 25
-			custom_tooltip = boh_raised_to_kingdom_tt
 			hidden_effect = {
 				set_government_rank = 5
 			}
@@ -482,6 +509,7 @@ country_event = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}
+			custom_tooltip = boh_raised_to_kingdom_b_tt
 		}	
 	}
 	option = {
@@ -525,12 +553,13 @@ country_event = {
 				elector = no
             }
 			elector = yes
-			add_prestige = 25
-			add_legitimacy = 25
+			add_prestige = 10
+			add_legitimacy = 10
 			reverse_add_opinion = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}	
+			custom_tooltip = boh_raised_to_electorate_a_tt
         }
 		else_if = {
 			limit = {
@@ -543,7 +572,7 @@ country_event = {
 					was_player = no 				
                     NOT = {
 						OR = {
-							good_choice_for_electorship_trigger = no
+							good_choice_for_electorship_trigger = yes
 							has_opinion = {
 								who = emperor
 								value = 50
@@ -558,7 +587,7 @@ country_event = {
 					was_player = no 				
                     NOT = {
 						OR = {
-							good_choice_for_electorship_trigger = no
+							good_choice_for_electorship_trigger = yes
 							has_opinion = {
 								who = emperor
 								value = 50
@@ -569,12 +598,13 @@ country_event = {
 				elector = no
             }	
 			elector = yes
-			add_prestige = 25
-			add_legitimacy = 25
+			add_prestige = 10
+			add_legitimacy = 10
 			reverse_add_opinion = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}
+			custom_tooltip = boh_raised_to_electorate_a_tt
 		}
         else_if = {
 			limit = {
@@ -587,17 +617,18 @@ country_event = {
 				elector = no
 			}
 			elector = yes
-			add_prestige = 25
-			add_legitimacy = 25
+			add_prestige = 10
+			add_legitimacy = 10
 			reverse_add_opinion = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
 			}
+			custom_tooltip = boh_raised_to_electorate_a_tt
         }		
 		else = {
 			elector = yes
-			add_prestige = 25
-			add_legitimacy = 25
+			add_prestige = 10
+			add_legitimacy = 10
 			reverse_add_opinion = {
 				who = emperor
 				modifier = opinion_incident_elevation_of_bohemia
@@ -610,7 +641,7 @@ country_event = {
 			has_country_flag = incident_elevation_of_bohemia_rejection
 		}
 		ai_chance = { 
-			factor = 1
+			factor = 25
 		}
 		reverse_add_opinion = {
 			who = emperor
@@ -623,7 +654,7 @@ country_event = {
 			has_country_flag = incident_elevation_of_bohemia_rejection
 		}
 		ai_chance = { 
-			factor = 100 
+			factor = 75 
 			modifier = {
 				factor = 0
 				emperor = {

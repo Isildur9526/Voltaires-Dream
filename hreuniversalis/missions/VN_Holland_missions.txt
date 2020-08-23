@@ -169,6 +169,7 @@ vn_hol_missions_slot_1_a = {
             }
         }
         effect = {
+			add_prestige = 10
 			add_adm_power = 50
 		}       
     }
@@ -665,7 +666,7 @@ vn_hol_missions_slot_2_b = {
         }
         effect = {
  			add_republican_tradition = 10
-			add_dip_power = 100
+			add_dip_power = 50
         }
 	}
 	vn_hol_army_expansion = {
@@ -676,7 +677,7 @@ vn_hol_missions_slot_2_b = {
 			army_size_percentage = 0.8
         }
         effect = {
-			add_army_tradition = 15
+			add_army_tradition = 10
 			add_prestige = 10
 			add_country_modifier = {
 				name = "hol_army_expansion_mission"
@@ -733,7 +734,6 @@ vn_hol_missions_slot_2_b = {
         effect = {
             nassau_area = {
 				limit = { country_or_non_sovereign_subject_holds = ROOT }
-				add_core = ROOT #in case they lose the core
 				add_devastation = -10
 				add_local_autonomy = -25
 				add_base_tax = 1
@@ -745,7 +745,6 @@ vn_hol_missions_slot_2_b = {
 				}
 			}
             200 = {
-				add_core = ROOT #in case they lose the core
 				add_devastation = -10
 				add_local_autonomy = -25
 				add_base_tax = 1
@@ -1173,9 +1172,8 @@ vn_hol_missions_slot_4_a = {
 			NOT = { inflation = 1 }
         }
         effect = {
-			add_adm_power = 50
 			add_inflation = -1
-			add_years_of_income = 1			
+			add_years_of_income = 0.5		
         }
     }
     vn_hol_stock_exchange = {
@@ -1265,6 +1263,7 @@ vn_hol_missions_slot_4_b = {
             }
         }
         effect = {
+		    add_mercantilism = 2
             2729 = {
 				add_prosperity = 25
 				add_base_production = 1
@@ -1305,7 +1304,6 @@ vn_hol_missions_slot_4_b = {
 			trade_income_percentage = 0.33
         }
         effect = {
-            add_dip_power = 25
 			308 = {
 				add_base_production = 1
 				add_province_modifier = {
@@ -1326,6 +1324,7 @@ vn_hol_missions_slot_4_b = {
 			} 
         }
         effect = {
+		    add_mercantilism = 2
 			add_country_modifier = {
                	name = "hol_oostsee_handel_mission" 
               	duration = 9125 
@@ -1338,7 +1337,7 @@ vn_hol_missions_slot_4_b = {
         trigger = {
 			num_of_owned_provinces_with = {
 				has_province_modifier = hanseatic_city
-				value = 5
+				value = 10
 			}
         }
         effect = {
@@ -1595,18 +1594,18 @@ vn_hol_missions_slot_5_a = {
             province_id = 327
         }
         trigger = {
-            327 = {
+            3197 = {
 				has_building = university
                 owned_by = ROOT
 			}
         }
         effect = {
-            change_innovativeness = 10
+            change_innovativeness = 5
             add_country_modifier = {
                 name = "hol_university_of_leiden_mission_country" 
                 duration = 9125
             }
-            327 = {
+            3197 = {
                 add_province_modifier = {
                     name = "hol_university_of_leiden_mission_province" 
                     duration = 9125
@@ -1640,7 +1639,7 @@ vn_hol_missions_slot_5_a = {
 					culture = dutch
 					is_part_of_hre = yes 
 				}
-				amount = 25
+				amount = 50
 			}
 		}
         effect = {
@@ -1669,7 +1668,6 @@ vn_hol_missions_slot_5_a = {
 			}
         }
         effect = {
-            add_dip_power = 25
 			328 = {
 				add_base_production = 1
 				add_province_modifier = {
@@ -1699,8 +1697,9 @@ vn_hol_missions_slot_5_a = {
 			}
         }
         effect = {
-            add_dip_power = 50
+            add_mercantilism = 2
 			328 = {
+				add_prosperity = 25
 				add_base_production = 1
 				add_province_modifier = {
 					name = "hol_worldport_amsterdam_mission" 
@@ -1825,7 +1824,6 @@ vn_hol_missions_slot_5_b = {
             }
         }
         effect = {
-			add_dip_power = 50
 			northumbria_region = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -1929,6 +1927,8 @@ vn_hol_missions_slot_5_b = {
         }
         effect = {
 			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
             add_power_projection = {
                 type = mission_rewards_power_projection
                 amount = 25

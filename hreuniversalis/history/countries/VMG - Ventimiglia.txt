@@ -4,8 +4,9 @@ government_rank = 1
 technology_group = western
 religion = catholic
 primary_culture = ligurian
-capital = 2086
+capital = 1806
 
+#Counts of Ventimiglia
 1041.1.1 = {
 	monarch = {
 		name = "Otto I"
@@ -118,6 +119,12 @@ capital = 2086
 		dip = 3
 		mil = 3
 	}
+}
+
+#Counts of Tenda
+1297.1.1 = {
+	capital = 2086
+	override_country_name = TENDA_NAME
 }
 1323.1.1 = {
 	monarch = {

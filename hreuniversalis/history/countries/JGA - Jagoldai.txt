@@ -9,6 +9,7 @@ historical_friend = ZAZ
 
 #Khanate of Mansur
 1381.1.1 = {
+	override_country_name = MANSUR_NAME
 	monarch = {
 		name = "Mansur"
 		dynasty = "Kiyat"
@@ -32,6 +33,7 @@ historical_friend = ZAZ
 #Khanate of Jagoldai
 1428.1.1 = {
 	capital = 3920
+	override_country_name = JAGOLDAI_NAME
 	monarch = {
 		name = "Cagolday"
 		dynasty = "Saraiva"
@@ -56,6 +58,7 @@ historical_friend = ZAZ
 	government = republic
 	add_government_reform = cossacks_reform
 	primary_culture = ruthenian
+	restore_country_name = yes
 }
 
 #Cossack Hetmanate

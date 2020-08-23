@@ -10,6 +10,7 @@ religious_school = hanafi_school
 #Tzachas Beylik
 1088.1.1 = {
 	capital = 355
+	override_country_name = CHAKA_NAME
 	monarch = {
 		name = "Çaka"
 		dynasty = "Çavulduroglu"
@@ -28,7 +29,10 @@ religious_school = hanafi_school
 	clear_scripted_personalities = yes
 	add_ruler_personality = intricate_web_weaver_personality
 }
-1093.1.1 = { capital = 2747 }
+1093.1.1 = {
+	restore_country_name = yes
+	capital = 2747
+}
 
 #Saruhan Beylik
 1306.1.1 = {

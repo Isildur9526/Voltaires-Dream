@@ -995,7 +995,7 @@ por_portuguese_cortes_mission = {
 }
 por_land_in_madeira_mission = {
 	colonists = 1
-	global_colonial_growth = 0.05
+	global_colonial_growth = 5
 }
 por_establish_feitorias_mission = {
 	trade_goods_size_modifier = 0.2

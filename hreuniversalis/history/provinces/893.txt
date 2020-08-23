@@ -42,21 +42,19 @@ add_core = SMM
 	hre = no
 }
 1815.3.16 = {
-	owner = NED
-	controller = NED
-	add_core = NED
+	owner = PRU
+	controller = PRU
+	add_core = PRU
 	remove_core = FRA
 	remove_core = SMM
+	hre = yes
 }
-1830.8.25 = {
-	add_core = BGU
-	unrest = 10
-}
-1831.7.21 = {
-	owner = BGU
-	controller = BGU
-	remove_core = NED
-	unrest = 0
+1871.1.18 = {
+	owner = GER
+	controller = GER
+	add_core = GER
+	remove_core = PRU
+	hre = no
 }
 
 discovered_by = muslim

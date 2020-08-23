@@ -15,6 +15,7 @@ country_event = {
 		government = monarchy
 		dip = 2
 		NOT = { has_reform = ottoman_government }
+		NOT = { has_reform = germanic_monarchy }
 		has_government_attribute = heir
 	}
 	
@@ -213,6 +214,7 @@ country_event = {
 	trigger = {
 		government = monarchy
 		NOT = { has_reform = ottoman_government }
+		NOT = { has_reform = germanic_monarchy }
 		is_month = 3
 		NOT = { is_month = 6 }
 		has_heir = no
@@ -302,6 +304,7 @@ country_event = {
 		government = monarchy
 		has_regency = no
 		NOT = { has_reform = ottoman_government }
+		NOT = { has_reform = germanic_monarchy }
 		has_government_attribute = heir
 	}
 	
@@ -445,6 +448,7 @@ country_event = {
 		has_regency = no
 		NOT = { has_reform = ottoman_government }
 		NOT = { has_reform = elective_monarchy }
+		NOT = { has_reform = germanic_monarchy }
 		has_government_attribute = heir
 	}
 	
@@ -490,6 +494,7 @@ country_event = {
 		has_heir = yes
 		heir_age = 15
 		is_lesser_in_union = no
+		government = monarchy
 		NOT = { has_reform = elective_monarchy }
 		NOT = { has_reform = ottoman_government }
 		NOT = {
@@ -703,6 +708,7 @@ country_event = {
 		government = monarchy
 		NOT = { has_reform = ottoman_government }
 		NOT = { has_reform = elective_monarchy }
+		NOT = { has_reform = germanic_monarchy }
 		is_lesser_in_union = no
 		has_heir = no
 		has_regency = no
@@ -1536,6 +1542,7 @@ country_event = {
 		government = monarchy
 		NOT = { has_reform = ottoman_government }
 		NOT = { has_reform = elective_monarchy }
+		NOT = { has_reform = germanic_monarchy }
 		has_heir = no
 		is_female = no
 		has_regency = no
@@ -1591,6 +1598,7 @@ country_event = {
 		religion_group = christian
 		NOT = { has_reform = ottoman_government }
 		NOT = { has_reform = elective_monarchy }
+		NOT = { has_reform = germanic_monarchy }
 		is_lesser_in_union = no
 		has_government_attribute = heir
 	}

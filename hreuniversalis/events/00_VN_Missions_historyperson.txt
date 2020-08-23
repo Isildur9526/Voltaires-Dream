@@ -146,9 +146,12 @@ country_event = {
 					is_subject = no
 					was_player = no 				
                     NOT = {
-                        has_opinion = {
-                            who = ROOT
-                            value = 50
+						OR = {
+							good_choice_for_electorship_trigger = yes
+							has_opinion = {
+								who = emperor
+								value = 50
+							}
                         }
                     }
                 }
@@ -158,9 +161,12 @@ country_event = {
 					is_subject = no
 					was_player = no 				
                     NOT = {
-                        has_opinion = {
-                            who = ROOT
-                            value = 50
+						OR = {
+							good_choice_for_electorship_trigger = yes
+							has_opinion = {
+								who = emperor
+								value = 50
+							}
                         }
                     }
 				}

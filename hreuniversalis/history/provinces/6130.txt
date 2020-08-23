@@ -1,4 +1,4 @@
-capital = "Silte"
+capital = "Slite"
 culture = gutnish
 religion = catholic
 trade_goods = crabs

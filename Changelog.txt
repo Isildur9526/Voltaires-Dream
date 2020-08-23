@@ -1,17 +1,49 @@
 ### Voltaire's Nightmare Changelog ###
 
+# v 2.0.4 #
+
+-Small fixes for the following mission trees: Castile/Leon, Aragon, England, Scotland/Alba, Sicilian, Holland/Netherlands
+-Fixed several issues with the Plague event chain and made it easier to understand
+-Added some more goto effects in events
+-Fixed the Lombard League disbanding prematurely
+
+# v 2.0.3 #
+
+-Small fixes for the following mission trees: Provence, England, Holland/Netherlands
+-Allowed Venice to recruit Marines through their mission tree
+-Fixed a major bug changing primary culture to no_culture upon Germanization
+-Forming Brandenburg now properly gives you their missions
+-Made potential for Sicilian Vespers easier
+-Fixed Luxembourg's Golden Bull event
+-Made the Emperor lose the opinion malus with the Pope if the Investiture Controversy is ended
+-European nations no longer get the estate agenda to obtain silk provinces
+-Altered the flags and added dynamic names for several Turkish Beyliks
+-Fixed Germanic Monarchies being able to get heirs outside their election event
+-Added dynamic names for Rumelia, Cossackia, Ventimiglia, Ingolstadt, and Piedmont
+-Fixed Eupen and Malmedy history, now under Prussian control after 1815
+-Various fixes to Piedmontese history under the Savoyards
+-Emperor is now heavily weighted to join every Crusade
+-Fixed a bugged river
+-Other small localization and event fixes
+
 # v 2.0.2 #
 
--Small fixes for the following mission trees: Luxembourg, Baghdad, Ifriqiya, Seljuk, Franche-Comte, Switzerland, Karling, Holland, Novgorod, Foix, Kiev, Latin Empire, Cologne
--Added a decision to unite the Kievan Rus unlocked when the last reform is passed
+-Small fixes for the following mission trees: Luxembourg, Baghdad, Ifriqiya, Seljuk, Franche-Comte, Switzerland, Karling, Holland, Novgorod, Foix, Kiev, Latin Empire, Cologne, AEngland, Portugal
 -Fixed several mission modifiers
+-Fixed a few mission tooltips
 -Fixed the Bavarian NI set being duplicated
 -Samogitian Ideas now apply to all Samogitian primary culture tags
 -Added dynamic names for Tusculum, the Roman Commune and the Roman Republic used by Latium
--Fixed a few mission tooltips
--European nations no longer get the estate agenda to obtain spice provinces
+-Added dynamic name for the Duchy of Warsaw
 -Fixed Gotland naming issue
+-European nations no longer get the estate agenda to obtain spice provinces
 -Buffed Fragmentation of Poland rebels
+-Changed modifiers of several trade goods bonuses
+-Added a decision to unite the Kievan Rus unlocked when the last reform is passed
+-Added event for English-French rivalry and made them historical rivals after the HYW begins
+-Small history changes mainly in Pomerania
+-Corrected a few Wallachian tag names and flags
+-Other small localization fixes
 
 # v 2.0.1 #
 

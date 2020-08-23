@@ -257,6 +257,14 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			clr_global_flag = investiture_controversy_active
+			remove_opinion = {
+				who = PAP
+				modifier = opinion_investiture_controversy
+			}
+			reverse_remove_opinion = {
+				who = PAP
+				modifier = opinion_investiture_controversy
+			}
 		}
 	}
 
@@ -302,6 +310,14 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			clr_global_flag = investiture_controversy_active
+			remove_opinion = {
+				who = PAP
+				modifier = opinion_investiture_controversy
+			}
+			reverse_remove_opinion = {
+				who = PAP
+				modifier = opinion_investiture_controversy
+			}
 		}
 	}
 

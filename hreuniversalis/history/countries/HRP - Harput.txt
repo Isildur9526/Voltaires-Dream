@@ -10,6 +10,7 @@ religious_school = shafii_school
 #Beylik
 #Rules Harput Palu Cemisgezek Egin
 1071.8.26 = { #or 1085
+	override_country_name = CHUBUK_NAME
 	monarch = {
 		name = "Çubuk"
 		dynasty = "Çubukoglu"
@@ -27,6 +28,7 @@ religious_school = shafii_school
 		mil = 1
 	}
 }
+1112.1.1 = { restore_country_name = yes }
 #1112.1.1 to Artuqids
 
 #Artuqids

@@ -23,17 +23,7 @@ add_core = PIE
 	remove_core = XKK
 }
 1175.1.1 = { religion = waldensian }
-1233.3.1 = {
-	owner = PIE
-	controller = PIE
-	remove_core = SAV
-}
-1418.12.11 = {
-	owner = SAV
-	controller = SAV
-	add_core = SAV
-	remove_core = PIE
-}
+1418.12.11 = { remove_core = PIE }
 1495.1.1 = { hre = no }
 1536.4.1 = { controller = FRA } 
 1538.6.17 = { owner = FRA }

@@ -8,7 +8,7 @@ incident_elevation_of_bohemia = {
 				exists = BOH
 			}
 			BOH = {
-				is_emperor = yes
+				is_elector = yes
 			}
 			BOH = {
 				is_subject = yes
@@ -46,13 +46,10 @@ incident_elevation_of_bohemia = {
 	1 = { #Electorate but not Kingdom
 		factor = 1
 		modifier = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ai_attitude = {
-					who = BOH
-					attitude = attitude_neutral
-				}
+			factor = 100
+			ai_attitude = {
+				who = BOH
+				attitude = attitude_neutral
 			}
 		}
 	}

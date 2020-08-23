@@ -2373,6 +2373,7 @@ country_event = {
 		has_dlc = "Rights of Man"
 		NOT = { has_reform = elective_monarchy }
 		NOT = { has_reform = ottoman_government }
+		NOT = { has_reform = germanic_monarchy }
 		has_heir = yes
 		has_consort = yes
 		is_lesser_in_union = no
@@ -2527,6 +2528,7 @@ country_event = {
 		is_lesser_in_union = no
 		has_dlc = "Rights of Man"
 		NOT = { has_reform = elective_monarchy }
+		NOT = { has_reform = germanic_monarchy }
 		NOT = { has_consort_flag = favorite_played }
 		has_heir = yes
 		has_consort = yes
@@ -2873,6 +2875,7 @@ country_event = {
 		is_lesser_in_union = no
 		NOT = { has_reform = elective_monarchy }
 		NOT = { has_reform = ottoman_government }
+		NOT = { has_reform = germanic_monarchy }
 		has_consort = yes
 		has_consort_regency = no
 		has_government_attribute = heir

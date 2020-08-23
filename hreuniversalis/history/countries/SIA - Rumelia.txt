@@ -27,7 +27,10 @@ capital = 558
 }
 
 #Lord of Sofia
-1230.3.9 = { capital = 588 }
+1230.3.9 = {
+	override_country_name = SOFIA_NAME
+	capital = 588
+}
 1246.1.1 = {
 	monarch = {
 		name = "Kalojan"
@@ -39,6 +42,7 @@ capital = 558
 }
 #Despot of Kopsis
 1277.1.1 = {
+	override_country_name = KOPSIS_NAME
 	capital = 678
 	monarch = {
 		name = "Vojsil"
@@ -58,4 +62,7 @@ capital = 558
 	}
 }
 #done 1336 or so
-1336.1.1 = { capital = 588 }
+1336.1.1 = {
+	restore_country_name = yes
+	capital = 588
+}

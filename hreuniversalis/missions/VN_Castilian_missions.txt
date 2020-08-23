@@ -1121,12 +1121,6 @@ vn_cas_missions_slot_3_b = {
 				add_core = CGR
 			}
 			add_prestige = 10
-			if = {
-				limit = { has_dlc = "Golden Century" }
-				country_event = {
-					id = flavor_spa.8
-				}
-			}
             malaga_area = {
                 limit = { country_or_non_sovereign_subject_holds = ROOT }
                 add_province_modifier = {
@@ -1177,28 +1171,6 @@ vn_cas_missions_slot_3_b = {
 				amount = 20
 			}
 			add_religious_influence_effect_small = yes
-			custom_tooltip = vn_cas_triumph_over_islam.tt2
-			hidden_effect = {
-				while = {
-					limit = {
-						iberia_superregion = {
-							any_core_country = {
-								religion_group = muslim
-								primary_culture = andalucian
-							}
-						}
-					}
-					iberia_superregion = {
-						random_core_country = {
-							limit = { 
-								religion_group = muslim
-								primary_culture = andalucian
-							}
-							remove_core = PREV
-						}
-					}
-				}
-			}
 			4626 = {
 				if = {
 					limit = {
