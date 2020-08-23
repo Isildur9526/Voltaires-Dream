@@ -5,10 +5,11 @@ reign_of_terror_m = {
 }
 army_quarrels_m = {
 	land_morale = -0.1
-	movement_speed = -0.1
-	recover_army_morale_speed = -0.05
+	movement_speed = -0.15
+	recover_army_morale_speed = -0.1
 }
 strong_viziers_m = {
 	advisor_pool = 1
 	advisor_cost = 0.15
+	diplomatic_reputation = -2
 }

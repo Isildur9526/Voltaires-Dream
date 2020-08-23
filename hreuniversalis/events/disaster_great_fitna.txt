@@ -79,12 +79,12 @@ country_event = {
 	option = {
 		name = great_fitna.2.a
 		add_piety = -0.05
-		add_years_of_income = -0.5
+		add_years_of_income = -0.25
 	}
 	option = {
 		name = great_fitna.2.b
 		add_piety = 0.05
-		add_mil_power = -25
+		add_mil_power = -50
 	}
 }
 
@@ -93,7 +93,7 @@ country_event = {
 	id = great_fitna.3
 	title = "great_fitna.3.t"
 	desc = "great_fitna.3.d"
-	picture = CORRUPTION_eventPicture
+	picture = COURT_INTRIGUE_eventPicture
 
 	is_triggered_only = yes
 
@@ -105,7 +105,7 @@ country_event = {
 	option = {
 		name = great_fitna.3.b
 		add_piety = 0.05
-		add_dip_power = -25
+		add_dip_power = -50
 	}
 }
 
@@ -135,19 +135,21 @@ country_event = {
 		name = great_fitna.3.a
 		goto = famine_prov
 		add_piety = -0.05
-		random_owned_area = {
-			limit = { owned_by = ROOT }
-			add_devastation = 10
-			add_province_modifier = {
-				name = influenza
-				duration = 365
+		event_target:famine_prov = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_devastation = 10
+				add_province_modifier = {
+					name = influenza
+					duration = 365
+				}
 			}
 		}
 	}
 	option = {
 		name = great_fitna.3.b
 		add_piety = 0.05
-		add_adm_power = -25
+		add_adm_power = -50
 	}
 }
 
@@ -221,7 +223,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = great_fitna.5.a
+		name = great_fitna.5.b
 		add_piety = -0.1
 		event_target:anarchy_prov = {
 			add_local_autonomy = 50
@@ -247,7 +249,7 @@ country_event = {
 			ai = yes
 			religion = shiite
 			NOT = { war_with = ROOT }
-			#owns
+			owns_core_province = 5012
 		}
 	}
 
@@ -278,7 +280,7 @@ country_event = {
 		name = great_fitna.6.b #corrupt
 		ai_chance = { factor = 50 }
 		add_piety = 0.1
-		add_corruption = 3
+		add_years_of_income = -1
 	}
 	option = {
 		name = great_fitna.6.c #let them be
@@ -289,7 +291,7 @@ country_event = {
 			set_country_flag = avoid_choosing_madhhab_flag
 			change_religion = sunni
 			set_religious_school = {
-				group = sunni
+				group = muslim
 				school = hanafi_school
 			}
 			if = {
@@ -537,7 +539,7 @@ country_event = {
 	id = great_fitna.11
 	title = "great_fitna.11.t"
 	desc = "great_fitna.11.d"
-	picture = SPY_eventPicture
+	picture = RELIGIOUS_CONVERSION_eventPicture
 	goto = sunni_prov
 
 	is_triggered_only = yes

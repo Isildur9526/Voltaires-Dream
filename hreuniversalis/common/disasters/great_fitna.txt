@@ -121,6 +121,7 @@ great_fitna = {
 	modifier = {
 		religious_unity = -0.5
 		global_unrest = 10
+		missionary_maintenance_cost = 1
 	}	
 	
 	
