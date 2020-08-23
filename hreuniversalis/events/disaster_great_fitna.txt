@@ -298,11 +298,11 @@ country_event = {
 			}
 			add_opinion = {
 				who = ROOT
-				modifier = opinion_heretical_philosopher
+				modifier = defended_heretic_rebels
 			}
 			reverse_add_opinion = {
 				who = ROOT
-				modifier = opinion_heretical_philosopher
+				modifier = defended_heretic_rebels
 			}
 			clr_country_flag = avoid_choosing_madhhab_flag
 		}
