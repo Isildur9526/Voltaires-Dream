@@ -274,6 +274,7 @@
  incident_elevation_of_bohemia.1.t: "Die Frage über Böhmen"
  incident_elevation_of_bohemia.1.d: "[Emperor.Monarch.GetTitle] [Emperor.Monarch.GetName] hat sich beständig auf [BOH.Monarch.GetTitle] [BOH.Monarch.GetName] für militärische, politische und wirtschaftliche Hilfe verlassen und es als Belohnung für [BOH.Monarch.GetName]s entscheidende Hilfe angesehen, Tradition und Rangordnung zu missachten und Böhmen in einen höheren Status wie ein Königreich oder ein Kurfürstentum zu erheben."
  incident_elevation_of_bohemia.1.a: "Eine faszinierende Idee"
+ incident_elevation_of_bohemia.1.tt: "Der Kaiser wird entscheiden, ob Böhmen erhoben werden soll."
  incident_elevation_of_bohemia.2.t: "Die Erhebung von Böhmen"
  incident_elevation_of_bohemia.2.d: "Mit dem zunehmenden Einfluss und der wachsenden Bedeutung von [BOH.Monarch.GetTitle] [BOH.Monarch.GetName] auf die Politik des Heiligen Römischen Reiches liegt es an [Kaiser.Monarch.GetTitle], ob Böhmen in einen höheren Status erhoben werden sollte."
  incident_elevation_of_bohemia.2.a: "Erhebt Böhmen zu einem Königreich und einem Kurfürstentum"

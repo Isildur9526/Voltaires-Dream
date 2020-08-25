@@ -3431,7 +3431,7 @@ country_event = {
 				controlled_by = owner
 			}
 			spawn_rebels = {
-				type = noble_rebels
+				type = nap_republican_rebels
 				size = 4
 				win = yes
 			}

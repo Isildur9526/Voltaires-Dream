@@ -1,4 +1,4 @@
-capital = "Wroclawek" 
+capital = "Wloclawek" 
 culture = mazovian
 religion = catholic
 trade_goods = lumber

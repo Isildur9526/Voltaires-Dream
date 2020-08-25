@@ -274,6 +274,7 @@
  incident_elevation_of_bohemia.1.t: "The Question Over Bohemia"
  incident_elevation_of_bohemia.1.d: "[Emperor.Monarch.GetTitle] [Emperor.Monarch.GetName] has been consistentily relying on [BOH.Monarch.GetTitle] [BOH.Monarch.GetName] for military, political, and economic aid and has considered as a reward for [BOH.Monarch.GetName]'s crucial help to disregard tradition and precedence and raise Bohemia to a higher status such as a kingdom or electorate."
  incident_elevation_of_bohemia.1.a: "An Intriguing Idea"
+ incident_elevation_of_bohemia.1.tt: "The Emperor will decide whether to elevate Bohemia."
  incident_elevation_of_bohemia.2.t: "The Elevation of Bohemia"
  incident_elevation_of_bohemia.2.d: "With [BOH.Monarch.GetTitle] [BOH.Monarch.GetName]'s increasing influence and importance on the politics of the Holy Roman Empire, it is up to the [Emperor.Monarch.GetTitle] whether Bohemia should be raised to a higher status."
  incident_elevation_of_bohemia.2.a: "Raise Bohemia to Kingdom and Electorate"

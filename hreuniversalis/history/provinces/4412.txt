@@ -1,7 +1,7 @@
 owner = GRA
 controller = GRA
 add_core = GRA
-capital = "Villacarrillo"
+capital = "Iznatoraf"
 is_city = yes
 culture = andalucian
 religion = sunni

@@ -465,19 +465,7 @@ vn_hol_missions_slot_2_a = {
 			}
         }
     }
-}
-
-vn_hol_missions_slot_2_b = {
-    slot = 7
-    generic = no
-    ai = yes
-    potential = {
-        tag = NED
-		NOT = { map_setup = map_setup_random }
-	}
-    has_country_shield = yes
-
-    vn_hol_lowlands_united = {
+	vn_hol_lowlands_united = {
         icon = je_maintiendrai
         required_missions = { 
 			vn_hol_incorporate_walloon_elite 
@@ -543,13 +531,25 @@ vn_hol_missions_slot_2_b = {
 			}
         }
         effect = {
-			add_prestige = 25 #on top of the decision
+			add_prestige = 10 #on top of the decision
 			add_country_modifier = {
                	name = "hol_the_united_provinces_mission"
               	duration = 9125
             }
         }
     }
+}
+
+vn_hol_missions_slot_2_b = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = NED
+		NOT = { map_setup = map_setup_random }
+	}
+    has_country_shield = yes
+	
     vn_hol_may_they_speak_dutch = {
         icon = the_true_freedom
         required_missions = { vn_hol_the_united_provinces }
@@ -931,6 +931,7 @@ vn_hol_missions_slot_3_a = {
     }
     vn_hol_incorporate_walloon_elite = {
         icon = mission_noble_council
+		position = 6
         required_missions = { 
 			vn_hol_flemish_throne 
 			vn_hol_brabantian_throne 
@@ -1035,7 +1036,7 @@ vn_hol_missions_slot_3_b = {
 			num_of_light_ship = 25
         }
         effect = {
-			add_navy_tradition = 15
+			add_navy_tradition = 10
 			add_prestige = 10
 			add_country_modifier = {
                	name = "hol_dutch_trading_fleet_mission"
@@ -1097,9 +1098,9 @@ vn_hol_missions_slot_3_b = {
 					name = "hol_develop_the_staten_mission"
 					duration = 9125
 				}
-				add_base_tax = 2
-				add_base_production = 2
-				add_base_manpower = 2
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
 			}
         }
     }

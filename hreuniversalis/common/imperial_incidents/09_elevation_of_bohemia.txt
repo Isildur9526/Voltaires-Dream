@@ -85,5 +85,9 @@ incident_elevation_of_bohemia = {
 				}
 			}
 		}
+		modifier = {
+			factor = 1000
+			is_elector = yes
+		}
 	}
 }

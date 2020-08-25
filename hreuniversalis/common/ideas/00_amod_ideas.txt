@@ -3877,28 +3877,28 @@ STX_ideas = {
     }
     free = yes
 
-    hre_univ_glx_swiss_protectorate = {
-        improve_relation_modifier = 0.25
-        global_unrest = -1
+    STX_idea_1 = {
+        global_institution_spread = 0.1
     }
-    swiss_mercenaries = {
-        merc_maintenance_modifier = -0.15
+    STX_idea_2 = {
+        global_tax_modifier = 0.1
+        papal_influence = 1
     }
-    alpine_defensiveness = {
-        fort_maintenance_modifier = -0.15
+    STX_idea_3 = {
+        diplomatic_reputation = 1
     }
-    oasis_of_peace_and_prosperity = {
+    STX_idea_4 = {
+        missionaries = 1
+    }
+    STX_idea_5 = {
         development_cost = -0.1
     }
-    hre_univ_glx_admitted_tagsatzung = {
-        advisor_cost = -0.1
-    }
-    haven_for_refugees = {
-        prestige = 0.5
-    }
-    hre_univ_glx_library = {
+    STX_idea_6 = {
         prestige_decay = -0.01
         devotion = 0.5
+    }
+    STX_idea_7 = {
+        global_own_trade_power = 0.15
     }
 }
 

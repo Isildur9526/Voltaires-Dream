@@ -647,11 +647,12 @@ country_event = {
 	}
 	option = {
 		name = "FBIB5"
+		goto = capital
 		ai_chance = { factor = 5 }
 		add_devotion = 15
 		capital_scope = {
 			spawn_rebels = {
-				type = revolutionary_rebels
+				type = nap_republican_rebels
 				size = 1
 			}
 		}

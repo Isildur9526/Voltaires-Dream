@@ -5,7 +5,15 @@
 -Small fixes for the following mission trees: Castile/Leon, Aragon, England, Scotland/Alba, Sicilian, Holland/Netherlands
 -Fixed several issues with the Plague event chain and made it easier to understand
 -Added some more goto effects in events
+-Added an event option to contribute money and troops for a crusade
 -Fixed the Lombard League disbanding prematurely
+-Slightly buffed the Baltic orders and invasion countries
+-Changed a province name in Iberia, added a couple more DPNs there
+-Fixed Wloclawek misspelling
+-Some events will now spawn republican rebels instead of noble or revolutionary rebels
+-Reworked Saint Gallen's NI set (contribution by primi)
+-Fixed Sicilian Vespers
+-Fixed Bohemia's imperial incident
 
 # v 2.0.3 #
 

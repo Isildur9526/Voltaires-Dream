@@ -1006,7 +1006,36 @@ country_event = {
         add_papal_influence = 5
         add_yearly_manpower = -0.1
         FROM = { country_event = { id = vn_crusade_events.6 } }
-    }
+	}
+	option = {
+        name = "vn_crusade_events.4.dd"
+        ai_chance = {
+			factor = 5
+			modifier = {
+        		factor = 0
+        		OR = {
+        			is_bankrupt = yes
+					is_in_deficit = yes
+					NOT = { years_of_income = 0.1 }
+					NOT = { has_opinion = { who = FROM value = 0 } }
+        		}
+        	}
+        	modifier = {
+        		factor = 0
+        		OR = {
+        			NOT = { manpower_percentage = 0.1 }
+        			NOT = { has_opinion = { who = FROM value = 0 } }
+        		}
+        	}
+        }
+		add_papal_influence = 10
+		add_years_of_income = -0.1
+        add_yearly_manpower = -0.1
+        FROM = {
+			country_event = { id = vn_crusade_events.5 }
+			country_event = { id = vn_crusade_events.6 }
+		}
+	}
     option = {
         name = "vn_crusade_events.2.b"
         ai_chance = { factor = 50 }
@@ -1132,8 +1161,37 @@ country_event = {
         add_yearly_manpower = -0.5
         FROM = { country_event = { id = vn_crusade_events.6 } }
     }
-    option = {
+	option = {
         name = "vn_crusade_events.4.dd"
+        ai_chance = {
+        	factor = 5
+        	modifier = {
+        		factor = 0
+        		OR = {
+        			is_at_war = yes
+        			NOT = { manpower_percentage = 0.5 }
+        			NOT = { has_opinion = { who = FROM value = 0 } }
+        		}
+        	}
+			modifier = {
+        		factor = 0
+        		OR = {
+        			is_bankrupt = yes
+					is_in_deficit = yes
+					NOT = { years_of_income = 0.5 }
+					NOT = { has_opinion = { who = FROM value = 0 } }
+        		}
+        	}
+        }
+		add_years_of_income = -0.5
+        add_yearly_manpower = -0.5
+        FROM = {
+			country_event = { id = vn_crusade_events.5 }
+			country_event = { id = vn_crusade_events.6 }
+		}
+    }
+    option = {
+        name = "vn_crusade_events.4.e"
         ai_chance = { factor = 5 }
         add_prestige = -5
     }

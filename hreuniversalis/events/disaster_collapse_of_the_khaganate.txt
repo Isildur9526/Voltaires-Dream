@@ -515,7 +515,6 @@ country_event = {
 		name = collapse_of_the_khaganate.6.a
 		goto = nat_prov
 		event_target:nat_prov = {
-			limit = { can_spawn_rebels = nationalist_rebels }
 			spawn_rebels = {
 				type = nationalist_rebels
 				size = 1

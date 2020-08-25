@@ -151,6 +151,7 @@ country_event = {
 	option = {
 		name = sicilian_vespers.5.a	
 		ai_chance = { factor = 25 }
+		add_prestige = -10
 		add_dip_power = -25
 		custom_tooltip = sicilian_vespers.5.a.tt
 		hidden_effect = {
@@ -251,6 +252,7 @@ country_event = {
 			limit = {
 				region = sicilia_region
 				owned_by = ROOT
+				development = 10
 				NOT = { controlled_by = REB }
 				is_island = no
 			}
@@ -264,6 +266,7 @@ country_event = {
 			limit = {
 				region = sicilia_region
 				owned_by = ROOT
+				development = 10
 				NOT = { controlled_by = REB }
 				is_island = no
 			}
@@ -518,6 +521,40 @@ country_event = {
 			}
 		}
 		TNC = {
+			if = {
+				limit = {
+					2041 = {
+						religion = catholique
+					}
+				}
+				change_religion = catholique
+			}	
+			if = {
+				limit = {
+					2041 = {
+						religion = catholic
+					}
+				}
+				change_religion = catholic
+			}
+			if = {
+				limit = {
+					2041 = {
+						OR = {
+							AND = {
+								religion_group = christian
+								NOT = { religion = catholic }
+								NOT = { religion = catholique }
+							}
+							religion_group = muslim 
+						}
+					}
+				}
+				change_religion = PREV
+				2041 = {
+					change_religion = PREV
+				}
+			}
 			add_country_modifier = {
 				name = "vespers_victorious"
 				duration = -1
