@@ -2213,6 +2213,10 @@
 #Papal States
  vn_pap_supremacy_and_infallibility_title: "Supremacy and Infallibility"
  vn_pap_supremacy_and_infallibility_desc: ""
+ vn_pap_northern_crusades_title: "Crusades into the North"
+ vn_pap_northern_crusades_desc: ""
+ vn_pap_northern_crusades.tt: "§YDanzig§! was delivered during a Grand Crusade."
+ vn_pap_northern_crusades.ss: "§YRiga§! was delivered during a Grand Crusade."
  vn_pap_apulian_diplomacy_title: "Apulian Diplomacy"
  vn_pap_apulian_diplomacy_desc: ""
  vn_pap_milites_christianus_title: "Milites Christianus"
@@ -2233,6 +2237,7 @@
  vn_pap_guelphs_and_ghibellines_title: "Prolonged Conflicts"
  vn_pap_guelphs_and_ghibellines_desc: ""
  vn_pap_guelphs_and_ghibellines.tt: "The §YGuelph-Ghibelline Conflict§! is active."
+ vn_pap_guelphs_and_ghibellines.ss: " allies have a §YGuelphian§! ruler."
  vn_pap_guelphian_victory_title: "Guelphic Victory"
  vn_pap_guelphian_victory_desc: ""
  vn_pap_heal_the_schism_title: "Restoration of Communion"

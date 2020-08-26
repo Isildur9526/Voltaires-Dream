@@ -126,10 +126,7 @@ vn_pap_missions_slot_1 = {
             if = {
 				limit = { has_dlc = "Emperor" SWE = { religion = catholic } }
 				SWE = {
-					country_event = { id = flavor_pap.12 }
-				}
-				custom_tooltip = {
-					tooltip = vn_pap_missionaries_to_sweden.tt
+					country_event = { id = flavor_pap.12 tooltip = vn_pap_missionaries_to_sweden.tt }
 				}
 			}
 			add_prestige = 10
@@ -152,7 +149,19 @@ vn_pap_missions_slot_1 = {
             }
         }
         effect = {
-            #bonus for TEU and LIV
+            if = {
+				limit = { has_dlc = "Emperor" TEU = { religion = catholic } }
+				TEU = {
+					country_event = { id = flavor_pap.12 tooltip = vn_pap_missionaries_to_sweden.tt }
+				}
+            }
+            if = {
+				limit = { has_dlc = "Emperor" LIV = { religion = catholic } }
+				LIV = {
+					country_event = { id = flavor_pap.12 tooltip = vn_pap_missionaries_to_sweden.tt }
+				}
+			}
+
         }
     }
     vn_pap_european_christianization = {
@@ -174,10 +183,10 @@ vn_pap_missions_slot_1 = {
             }
         }
         effect = {
-            #add_country_modifier = {
-            #    name = pap_european_christianization_mission
-            #    duration = -1
-            #}
+            add_country_modifier = {
+                name = pap_european_christianization_mission
+                duration = -1
+            }
         }
     }
     vn_pap_milites_christianus = {
@@ -326,20 +335,40 @@ vn_pap_missions_slot_2 = {
         icon = influence_the_princes
         position = 5
         required_missions = { vn_pap_guelphs_and_ghibellines }
-        trigger = {
-			calc_true_if = {
-				amount = 5
-				all_elector = {
-					has_opinion = {
+        provinces_to_highlight = {
+            owner = {
+                NOT = { tag = ROOT }
+                is_elector = yes
+                NOT = {
+                    has_opinion = {
 						who = ROOT
 						value = 100
 					}
-				}
-			}
+                }
+            }
+        }
+        trigger = {
+            if = {
+                limit = {
+                    hre_size = 1
+                }
+                calc_true_if = {
+                    amount = 5
+                    all_elector = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+            }
+			else = {
+                total_development = 750
+            }
         }
         effect = {
             #emperor = {
-				#event decreasing it's chance for next emperor
+				#event decreasing his chance for next emperor
 			#}
         }
     }
@@ -375,7 +404,7 @@ vn_pap_missions_slot_2 = {
         position = 7
         required_missions = {  }
         trigger = {
-            NOT = { current_age = age_of_discovery }
+            NOT = { current_age = age_of_empire }
             custom_trigger_tooltip = {
                 tooltip = vn_pap_council_of_clermont.tt
                 OR = {
@@ -526,11 +555,26 @@ vn_pap_missions_slot_3 = {
         icon = the_italian_league
         position = 4
         required_missions = {  }
+        provinces_to_highlight = {
+            owner = {
+                NOT = { tag = ROOT }
+                NOT = { alliance_with = ROOT }
+                has_ruler_modifier = guelph_ruler
+            }
+        }
         trigger = {
 			custom_trigger_tooltip = {
 				tooltip = vn_pap_guelphs_and_ghibellines.tt
 				has_global_flag = guelph_ghib_enabled
-			}
+            }
+            calc_true_if = {
+                amount = 3
+                all_country = {
+                    has_ruler_modifier = guelph_ruler
+                    alliance_with = ROOT
+                }
+                desc = vn_pap_guelphs_and_ghibellines.ss
+            }
         }
         effect = {
             
@@ -541,7 +585,13 @@ vn_pap_missions_slot_3 = {
         position = 5
         required_missions = { vn_pap_guelphs_and_ghibellines }
         trigger = {
-            
+            custom_trigger_tooltip = {
+				tooltip = vn_pap_guelphian_victory.tt
+                had_global_flag = {
+                    flag = guelph_ghib_enabled
+                    days = 9125
+                }
+            }
         }
         effect = {
             
@@ -649,10 +699,15 @@ vn_pap_missions_slot_4 = {
         position = 8
         required_missions = { }
         provinces_to_highlight = {
-            
+            province_id = 2233
         }
         trigger = {
-
+            2233 = {
+                owner = {
+                    religion = catholic
+                    is_subject = no
+                }
+            }
         }
         effect = {
             
@@ -905,9 +960,12 @@ vn_pap_missions_slot_4 = {
             any_country = {
                 primary_culture = swiss
                 army_tradition = 50
-                has_opinion = {
-                    who = ROOT
-                    value = 125
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = 125
+                    }
                 }
             }
         }

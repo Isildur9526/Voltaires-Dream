@@ -13,3 +13,9 @@ strong_viziers_m = {
 	advisor_cost = 0.15
 	diplomatic_reputation = -2
 }
+
+
+pap_european_christianization_mission = {
+	enforce_religion_cost = -0.25
+	prestige_from_land = 0.25
+}
