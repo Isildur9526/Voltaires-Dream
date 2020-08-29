@@ -657,10 +657,15 @@ vn_pap_missions_slot_4 = {
         position = 1
         required_missions = {  }
         provinces_to_highlight = {
-            
+            owned_by = LZO
         }
         trigger = {
-            
+            LZO = {
+                OR = {
+                    exists = no
+                    is_subject_of = ROOT
+                }
+            }
         }
         effect = {
             
@@ -1021,11 +1026,10 @@ vn_pap_missions_slot_5 = {
 					has_had_golden_age = yes
 				}
             }
-            else = {
-                stability = 3
-            }
+            stability = 3
             prestige = 80
             is_in_deficit = no
+            NOT = { num_of_loans = 1 }
         }
         effect = {
             #add_country_modifier = {
