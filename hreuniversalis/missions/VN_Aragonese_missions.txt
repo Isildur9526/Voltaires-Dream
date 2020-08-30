@@ -291,6 +291,7 @@ vn_ara_missions_slot_2_a = {
 	vn_ara_support_from_allies = {
 		position = 1
 		icon = mission_alliances
+		completed_by = 1055.1.1
 		required_missions = { }
 		trigger = {
 			all_ally = {

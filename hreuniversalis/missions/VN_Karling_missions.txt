@@ -1380,7 +1380,7 @@ vn_karling_missions_slot_4 = {
             add_adm_power = 50
             add_country_modifier = {
                 name = karling_liberal_arts_mission
-                duration = 9125
+                duration = -1
             }
         }
     }

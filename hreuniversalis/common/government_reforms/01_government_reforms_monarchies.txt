@@ -144,11 +144,11 @@ celestial_empire = {
 
 	modifiers = {
 		prestige = 0.5
-		diplomatic_upkeep = 2
+		diplomats = 1
+		envoy_travel_time = -0.25
 		diplomatic_annexation_cost = 0.5
-		church_influence_modifier = -0.1
-		nobles_influence_modifier = -0.1
-		burghers_influence_modifier = -0.1
+		liberty_desire_from_subject_development = 0.25
+		max_absolutism = 5
 	}
 }
 

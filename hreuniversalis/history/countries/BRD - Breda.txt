@@ -9,6 +9,7 @@ capital = 2729
 #Dukes of Lower Lotharingia
 #As Margraves of Antwerp
 1046.1.1 = {
+	override_country_name = ANTWERP_NAME
 	monarch = {
 		name = "Frederik"
 		dynasty = "von Luxemburg"
@@ -37,6 +38,7 @@ capital = 2729
 }
 #1065.5.18 under Bouillon
 1095.11.27 = {
+	restore_country_name = yes
 	monarch = {
 		name = "Godefroid"
 		dynasty = "van Vlaanderen"

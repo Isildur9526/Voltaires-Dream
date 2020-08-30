@@ -171,10 +171,7 @@ estate_holy_orders_convert_province_x = {
 	}
 	fail_if = {
 		event_target:agenda_province = {
-			OR = {
-				NOT = { owned_by = root }
-				NOT = { religion = root }
-			}
+			NOT = { owned_by = root }
 		}
 	}
 	immediate_effect = {

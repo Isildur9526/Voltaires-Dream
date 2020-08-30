@@ -46,8 +46,9 @@ vn_pal_missions_slot_1_a = {
             province_id = 2732
         }
         trigger = {
+		    has_3_advisors_trigger = yes
             2732 = {
-                development = 15
+                development = 20
                 has_education_building_trigger = yes
             }
         }
@@ -602,7 +603,7 @@ vn_pal_missions_slot_5 = {
 						religion = ROOT
 						has_opinion = {
 							who = ROOT
-							value = 125
+							value = 150
 						}
 					}
 				}

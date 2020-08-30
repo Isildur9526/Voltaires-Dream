@@ -28,12 +28,14 @@ add_core = XTO
 }
 1648.10.24 = { unrest = 0 remove_core = NED }
 1665.9.17 = { add_claim = FRA }
-1672.5.1 = { controller = FRA }
-1678.9.19 = { controller = SPA }
-1692.1.1 = { controller = FRA }
-1695.9.1 = { controller = SPA }
-1713.4.11 = { owner = HAB controller = HAB add_core = HAB remove_core = SPA }
-1715.9.1 = { remove_claim = FRA }
+1668.5.2 = {
+	remove_claim = FRA
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	remove_core = SPA
+}
+1713.4.11 = { owner = HAB controller = HAB add_core = HAB remove_core = FRA }
 1744.4.1 = { controller = FRA }
 1744.7.1 = { controller = HAB }
 1745.5.10 = { controller = FRA }

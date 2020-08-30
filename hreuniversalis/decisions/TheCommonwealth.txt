@@ -21,7 +21,7 @@ country_decisions = {
 				ai = no
 				AND = {
 					senior_union_with = LIT
-					LIT = { NOT = { num_of_cities = 101 } }
+					LIT = { NOT = { num_of_cities = 201 } }
 				}
 			}
 		}
@@ -40,7 +40,7 @@ country_decisions = {
 		allow = {
 			LIT = { was_player = no }
 			is_nomad = no
-			LIT = { NOT = { num_of_cities = 101 } }
+			LIT = { NOT = { num_of_cities = 201 } }
 			adm_tech = 40
 			is_subject = no
 			stability = 1
@@ -136,7 +136,7 @@ country_decisions = {
 				ai = no
 				AND = {
 					senior_union_with = POL
-					POL = { NOT = { num_of_cities = 101 } }
+					POL = { NOT = { num_of_cities = 201 } }
 				}
 			}	
 		}
@@ -153,7 +153,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			POL = { NOT = { num_of_cities = 101 } }
+			POL = { NOT = { num_of_cities = 201 } }
 			adm_tech = 40
 			is_nomad = no
 			is_subject = no

@@ -327,6 +327,13 @@ emperor_hofgericht = {
 	emperor = {
 		core_creation = -0.10
 	}
+	on_effect = {
+		custom_tooltip = demand_unlawful_allowed_tooltip
+		set_global_flag = demand_unlawful_allowed
+	}
+	off_effect = {
+		clr_global_flag = demand_unlawful_allowed
+	}
 	required_reform = emperor_roncagliergesetze
 	gui_container = right_branch
 }

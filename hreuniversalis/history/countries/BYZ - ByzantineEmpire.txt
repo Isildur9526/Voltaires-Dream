@@ -9,6 +9,10 @@ add_accepted_culture = armenian
 capital = 2233
 fixed_capital = 2233
 historical_rival = SJK
+change_estate_land_share = {
+	estate = estate_nomadic_tribes
+	share = -20
+}
 
 1000.1.1 = {
 	set_country_flag = unformable

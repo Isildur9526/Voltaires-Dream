@@ -206,6 +206,18 @@ country_event = {
 					}
 				}
 			}
+			modifier = {
+				factor = 1000
+				is_elector = yes
+			}
+			modifier = {
+				factor = 50
+				OR = {
+					alliance_with = emperor
+					total_development = BOH
+					government_rank = 4
+				}
+			}
 		}
 		emperor = {
 			reverse_add_opinion = {
@@ -277,9 +289,11 @@ country_event = {
                 any_elector = { 
 					OR = {
 						is_rival = emperor 
-						has_opinion = {
-							who = emperor
-							value = 0
+						NOT = {
+							has_opinion = {
+								who = emperor
+								value = 0
+							}
 						}
 					}
 					is_subject = no
@@ -290,9 +304,11 @@ country_event = {
                 limit = { 
 					OR = {
 						is_rival = emperor 
-						has_opinion = {
-							who = emperor
-							value = 0
+						NOT = {
+							has_opinion = {
+								who = emperor
+								value = 0
+							}
 						}
 					}
 					is_subject = no
@@ -413,9 +429,11 @@ country_event = {
                 any_elector = { 
 					OR = {
 						is_rival = emperor 
-						has_opinion = {
-							who = emperor
-							value = 0
+						NOT = {
+							has_opinion = {
+								who = emperor
+								value = 0
+							}
 						}
 					}
 					is_subject = no
@@ -426,9 +444,11 @@ country_event = {
                 limit = { 
 					OR = {
 						is_rival = emperor 
-						has_opinion = {
-							who = emperor
-							value = 0
+						NOT = {
+							has_opinion = {
+								who = emperor
+								value = 0
+							}
 						}
 					}
 					is_subject = no

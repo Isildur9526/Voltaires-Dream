@@ -305,12 +305,10 @@ vn_nov_missions_slot_2 = {
 				limit = { has_estate = estate_nobles } 
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 60
+					loyalty = 70
 				}
 			}
-			else = {
-				NOT = { corruption = 0.01 }
-			}            
+			NOT = { corruption = 0.01 }  
         }
         effect = {
 			add_mil_power = 50
@@ -333,12 +331,10 @@ vn_nov_missions_slot_2 = {
 				limit = { has_estate = estate_burghers } 
 				estate_loyalty = {
 					estate = estate_burghers
-					loyalty = 60
+					loyalty = 70
 				}
 			}
-			else = {
-				stability = 3
-			}             
+			stability = 3
         }
         effect = {
             add_adm_power = 50
@@ -631,12 +627,10 @@ vn_nov_missions_slot_3 = {
 				limit = { has_estate = estate_church } 
 				estate_loyalty = {
 					estate = estate_church
-					loyalty = 60
+					loyalty = 70
 				}
 			}    
-			else = {
-				religious_unity = 1
-			}
+			religious_unity = 1
         }
         effect = {
 			add_adm_power = 50

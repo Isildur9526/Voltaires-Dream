@@ -8,6 +8,7 @@ capital = 953
 
 #Counts of Rott
 1054.1.1 = {
+	override_country_name = ROTT_NAME
 	monarch = {
 		name = "Kuno I"
 		dynasty = "Pilgriming"
@@ -20,6 +21,7 @@ capital = 953
 #1086.3.27 to ADE
 #Andechs Counts
 1098.1.1 = {
+	restore_country_name = yes
 	monarch = {
 		name = "Gebhard I"
 		dynasty = "von Andechs"

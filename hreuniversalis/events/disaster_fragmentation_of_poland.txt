@@ -94,6 +94,7 @@ country_event = {
 					add_government_reform = feudal_monarchy
 				}
 			}
+			add_truce_with = WKP
 		}
 		custom_tooltip = fragmentation_of_poland.1.tt2
 		hidden_effect = {
@@ -118,6 +119,7 @@ country_event = {
 					add_government_reform = feudal_monarchy
 				}
 			}
+			add_truce_with = MAZ
 		}
 		custom_tooltip = fragmentation_of_poland.1.tt3
 		hidden_effect = {
@@ -147,6 +149,7 @@ country_event = {
 					add_government_reform = feudal_monarchy
 				}
 			}
+			add_truce_with = SIL
 		}
 		custom_tooltip = fragmentation_of_poland.1.tt7
 		hidden_effect = {
@@ -171,6 +174,7 @@ country_event = {
 					add_government_reform = feudal_monarchy
 				}
 			}
+			add_truce_with = SDZ
 		}
 		custom_tooltip = fragmentation_of_poland.1.tt5
 		custom_tooltip = fragmentation_of_poland.1.tt6
@@ -186,6 +190,7 @@ country_event = {
 				add_core = POM
 				remove_core = KRA
 			}
+			add_truce_with = POM
 			westpreussennorth_area = {
 				limit = { 
 					country_or_non_sovereign_subject_holds = ROOT
@@ -206,6 +211,7 @@ country_event = {
 				add_core = PML
 				remove_core = KRA
 			}
+			add_truce_with = PML
 		}
 		#Krakow (Seniorate) to ingame heir
 		custom_tooltip = fragmentation_of_poland.1.tt
@@ -1296,7 +1302,6 @@ country_event = {
 			}
 			set_government_rank = 5
 		}
-		add_prestige = 25
 		add_legitimacy = 20
     }
 }
@@ -1324,12 +1329,10 @@ country_event = {
 		}
 		stability = 1
 		calc_true_if = {
-			OR = {
-				MAZ = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			MAZ = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -1337,12 +1340,10 @@ country_event = {
 					}
 				}
 			}
-			OR = {
-				SIL = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			SIL = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -1350,12 +1351,10 @@ country_event = {
 					}
 				}
 			}
-			OR = {
-				WKP = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			WKP = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -1363,12 +1362,10 @@ country_event = {
 					}
 				}
 			}
-			OR = {
-				SDZ = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			SDZ = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -1376,12 +1373,10 @@ country_event = {
 					}
 				}
 			}
-			OR = {
-				KRA = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			KRA = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -1389,7 +1384,7 @@ country_event = {
 					}
 				}
 			}
-			amount = 4
+			amount = 2
 		}
 	}
 
@@ -1402,7 +1397,6 @@ country_event = {
 		ai_chance = { factor = 100 }
 		add_stability_or_adm_power = yes
 		set_global_flag = fragmentation_of_poland_ended
-		add_prestige = 25
 		add_legitimacy = 20
 		if = {
 			limit = {

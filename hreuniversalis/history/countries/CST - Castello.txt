@@ -16,3 +16,44 @@ add_army_professionalism = 0.05
 		adm = 2
 	}
 }
+1381.1.1 = {
+	monarch = {
+		name = "Gerozzo"
+		dynasty = "Vitelli"
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+1398.1.1 = {
+	monarch = {
+		name = "Vitellozzo"
+		dynasty = "Vitelli"
+		adm = 2
+		dip = 4
+		mil = 1
+	}
+}
+1462.1.1 = {
+	monarch = {
+		name = "Niccolò"
+		dynasty = "Vitelli"
+		birth_date = 1414.1.1
+		adm = 2
+		dip = 5
+		mil = 5
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = embezzler_personality
+	add_ruler_personality = greedy_personality
+}
+1486.1.1 = {
+	monarch = {
+		name = "Vitellozzo"
+		dynasty = "Vitelli"
+		birth_date = 1458.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

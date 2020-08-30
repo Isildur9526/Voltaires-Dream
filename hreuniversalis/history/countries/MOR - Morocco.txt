@@ -18,6 +18,10 @@ change_estate_land_share = {
 	estate = estate_church
 	share = -10
 }
+change_estate_land_share = {
+	estate = estate_dhimmi
+	share = -10
+}
 
 1061.1.1 = {
 	override_country_name = ALMORAVIDS_NAME

@@ -33,7 +33,13 @@ sicilian_vespers = {
 			sicilia_region = {
 				has_province_modifier = recent_uprising
 			}
-			average_autonomy = 25
+			AND = {
+				average_autonomy = 25
+				sicilia_region = {
+					type = all
+					local_autonomy = 90
+				}
+			}
 			has_any_disaster = yes
 		}
 	}
@@ -93,7 +99,10 @@ sicilian_vespers = {
 				NOT = {
 					any_owned_province = {
 						region = sicilia_region
-						has_rebel_faction = nationalist_rebels
+						OR = {
+							owned_by = TNC
+							has_rebel_faction = nationalist_rebels
+						}
 						is_island = no
 					}
 				}
@@ -103,6 +112,7 @@ sicilian_vespers = {
 				OR = {
 					is_island = yes
 					controlled_by = REB
+					controlled_by = TNC
 				}
 			}
 		}

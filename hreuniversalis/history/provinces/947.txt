@@ -10,8 +10,9 @@ base_manpower = 2
 capital = "Görz" 
 is_city = yes
 add_core = GRZ
-fort_15th = yes
+fort_14th = yes
 
+1337.1.1 = { fort_14th = no fort_15th = yes }
 1500.4.12 = {
 	owner = HAB
 	controller = HAB

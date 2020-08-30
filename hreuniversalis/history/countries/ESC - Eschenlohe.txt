@@ -8,6 +8,7 @@ capital = 905
 
 #Counts of Eppan
 1054.1.1 = {
+	override_country_name = EPPAN_NAME
 	monarch = {
 		name = "Friedrich I"
 		dynasty = "von Bozen"
@@ -64,6 +65,7 @@ capital = 905
 
 #Counts of Eschenlohe
 1248.1.1 = {
+	restore_country_name = yes
 	monarch = {
 		name = "Berthold II"
 		dynasty = "von Eschenlohe"

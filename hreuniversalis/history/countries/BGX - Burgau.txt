@@ -8,6 +8,7 @@ capital = 357
 
 #Lords of Ronsberg
 1054.1.1 = {
+	override_country_name = RONSBERG_NAME
 	monarch = {
 		name = "Reginhard"
 		dynasty = "von Ursin"

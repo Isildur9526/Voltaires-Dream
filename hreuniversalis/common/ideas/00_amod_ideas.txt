@@ -3891,7 +3891,7 @@ STX_ideas = {
         missionaries = 1
     }
     STX_idea_5 = {
-        development_cost = -0.1
+        interest = -0.5
     }
     STX_idea_6 = {
         prestige_decay = -0.01
@@ -8078,6 +8078,7 @@ LAN_ideas = {
         diplomatic_upkeep = 1
     }
     bonus = {
+        legitimacy = 1
 		republican_tradition = 0.3
     }
 
@@ -12024,6 +12025,7 @@ VYT_ideas = {
     free = yes
 
     VYT_idea_1 = {
+        legitimacy = 1
         republican_tradition = 0.3
     }
     VYT_idea_2 = {
@@ -12300,6 +12302,7 @@ FRL_ideas = {
 	free = yes
 	
     FRL_idea_1 = {
+        legitimacy = 1
         republican_tradition = 0.3
     }
     FRL_idea_2 = {

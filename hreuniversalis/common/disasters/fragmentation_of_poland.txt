@@ -19,6 +19,7 @@ fragmentation_of_poland = {
 		}
 		is_emperor_of_china = no
 		is_emperor = no
+		is_free_or_tributary_trigger = yes
 		normal_or_historical_nations = yes
 		government = monarchy
 	}
@@ -80,6 +81,7 @@ fragmentation_of_poland = {
 			has_any_disaster = yes
 			NOT = { government = monarchy }
 			NOT = { tag = POL }
+			is_subject_other_than_tributary_trigger = yes
 			current_age = age_of_dynasticism
 		}
 	}
@@ -154,12 +156,10 @@ fragmentation_of_poland = {
 		}
 		stability = 1
 		calc_true_if = {
-			OR = {
-				MAZ = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			MAZ = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -167,12 +167,10 @@ fragmentation_of_poland = {
 					}
 				}
 			}
-			OR = {
-				SIL = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			SIL = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -180,12 +178,10 @@ fragmentation_of_poland = {
 					}
 				}
 			}
-			OR = {
-				WKP = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			WKP = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -193,12 +189,10 @@ fragmentation_of_poland = {
 					}
 				}
 			}
-			OR = {
-				SDZ = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			SDZ = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -206,12 +200,10 @@ fragmentation_of_poland = {
 					}
 				}
 			}
-			OR = {
-				KRA = {
-					OR = {
-						exists = no
-						is_subject = yes
-					}
+			KRA = {
+				OR = {
+					exists = no
+					is_subject = yes
 					NOT = {
 						any_owned_province = {
 							superregion = poland_superregion
@@ -219,7 +211,7 @@ fragmentation_of_poland = {
 					}
 				}
 			}
-			amount = 4
+			amount = 2
 		}
 	}
 	
@@ -240,7 +232,6 @@ fragmentation_of_poland = {
 			#100 = fragmentation_of_poland.7 #Support from the Church
 			#100 = fragmentation_of_poland.8 #Depopulation Crisis
 			#100 = fragmentation_of_poland.9 #Halychian Raid
-			#100 = fragmentation_of_poland.10 #Devastation from Mongol Raids (tba)
 		}
 	}
 }

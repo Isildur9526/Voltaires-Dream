@@ -13,6 +13,10 @@ change_estate_land_share = {
 	estate = estate_church
 	share = -5
 }
+change_estate_land_share = {
+	estate = estate_nomadic_tribes
+	share = -20
+}
 
 1046.9.1 = {
 	monarch = {

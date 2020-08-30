@@ -12,8 +12,9 @@ controller = NOV
 add_core = NOV
 extra_cost = 16
 center_of_trade = 2
-fort_15th = yes
+fort_14th = yes
 
+1337.1.1 = { fort_14th = no fort_15th = yes }
 1478.1.15 = {
 	owner = MOS
 	controller = MOS

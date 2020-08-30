@@ -378,6 +378,13 @@ country_event = {
 							superregion = africa_superregion
 						}
 					}
+					NOT = {
+						OR = {
+							ruler_has_personality = malevolent_personality
+							ruler_has_personality = greedy_personality
+							ruler_has_personality = cruel_personality
+						}
+					}
 				}
 				if = {
 					limit = {
@@ -385,6 +392,7 @@ country_event = {
 							ARA = { has_country_flag = claim_sic_ara }
 						}
 					}
+					set_country_flag = claim_sic_ara
 					country_event = {
 						id = sicilian_vespers.8
 						days = 30
@@ -444,6 +452,49 @@ country_event = {
 	}
 }
 
+#Auto-Win Succession War
+country_event = {
+	id = sicilian_vespers.9
+	title = sicilian_vespers.9.t
+	desc = sicilian_vespers.9.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		has_country_flag = claim_sic_ara
+		is_in_war = {
+			attacker_leader = ROOT
+			defenders = TNC
+			casus_belli = cb_claim_throne
+			war_score = 75
+		}
+		TNC = {
+			is_subject = yes
+			overlord = {
+				has_country_flag = def_by_vespers
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = sicilian_vespers.9.a	
+		ai_chance = { factor = 100 }
+		TNC = {
+			overlord = {
+				white_peace = ROOT
+			}
+			grant_independence = yes
+		}
+		create_union = TNC
+	}
+}
+
 #End of Vespers
 country_event = {
 	id = sicilian_vespers.100
@@ -455,6 +506,7 @@ country_event = {
 				OR = {
 					is_island = yes
 					controlled_by = REB
+					controlled_by = TNC
 				}
 			}
 		}
@@ -495,13 +547,17 @@ country_event = {
 				OR = {
 					is_island = yes
 					controlled_by = REB
+					controlled_by = TNC
 				}
 			}
 		}
 		custom_tooltip = sicilian_vespers.100.a.tt
 		hidden_effect = {
 			sicilia_region = {
-				limit = { controlled_by = REB }
+				limit = { 
+					controlled_by = REB
+					NOT = { controlled_by = TNC }
+				}
 				owner = {
 					remove_core = PREV
 				}
@@ -563,7 +619,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = def_by_vespers
 		}
-		add_prestige = -50
+		add_prestige = -25
 		add_stability = -1
 		if = {
 			limit = {
@@ -583,8 +639,20 @@ country_event = {
 			NOT = {
 				any_owned_province = {
 					region = sicilia_region
-					has_rebel_faction = nationalist_rebels
+					OR = {
+						owned_by = TNC
+						has_rebel_faction = nationalist_rebels
+					}
 					is_island = no
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { exists = TNC }
+				sicilia_region = {
+					limit = { owned_by = TNC }
+					cede_province = ROOT
 				}
 			}
 		}

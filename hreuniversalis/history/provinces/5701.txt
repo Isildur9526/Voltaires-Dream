@@ -36,9 +36,11 @@ discovered_by = north_american
 	remove_core = BUR
 }
 1648.10.24 = { remove_core = NED }
-1659.11.7 = {
+1665.9.17 = { add_claim = FRA }
+1672.5.1 = { controller = FRA }
+1678.9.19 = {
+	remove_claim = FRA
 	owner = FRA
-	controller = FRA
 	add_core = FRA
 	remove_core = SPA
 	remove_core = HAI

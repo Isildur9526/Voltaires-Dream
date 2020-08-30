@@ -1895,7 +1895,8 @@ country_event = {
 					name = baltic_crusades
 					duration = 7300
 				}
-        	}
+				set_tech_on_pap_level = yes
+			}
 			ostpreussen_region = {
 				limit = {
 					owner = {
@@ -2008,6 +2009,7 @@ country_event = {
 					name = baltic_crusades
 					duration = 7300
 				}
+				set_tech_on_pap_level = yes
         	}
 			latvian_region = {
 				limit = {
@@ -2058,7 +2060,7 @@ country_event = {
     }
 }
 
-#Kingdom of Jerusalem
+#Principality of Edessa
 country_event = {
 	id = vn_crusade_events.14
 	title = vn_crusade_events.14.t

@@ -1487,7 +1487,7 @@ vn_sic_missions_slot_5 = {
 				}
 				add_casus_belli = {
 					target = WWS
-					type = cb_claim_throne
+					type = cb_fabricated_claims
 					months = 300
 				}
 				swabia_region = {

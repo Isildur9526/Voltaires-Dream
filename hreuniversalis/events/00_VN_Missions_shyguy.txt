@@ -740,7 +740,6 @@ country_event = {
 			limit = { owned_by = ROOT }
 			add_core = CRT
 		}
-		release = CRT
 		create_vassal = CRT
 		CRT = {
 			override_country_name = CANDIA
@@ -753,12 +752,17 @@ country_event = {
 		}
 		5449 = {
 			if = {
-				limit = {	
-					NOT = {
-						province_has_center_of_trade_of_level = 3
-					}
+				limit = {
+					province_has_center_of_trade_of_level = 1
+					NOT = { province_has_center_of_trade_of_level = 3 }
 				}
 				add_center_of_trade_level = 1
+			}
+			else_if = {
+				limit = {
+					NOT = { province_has_center_of_trade_of_level = 1 }
+				}
+				center_of_trade = 1
 			}
 			else = {
 				add_base_production = 3
@@ -770,12 +774,17 @@ country_event = {
 		ai_chance = { factor = 10 }
 		5449 = {
 			if = {
-				limit = {	
-					NOT = {
-						province_has_center_of_trade_of_level = 3
-					}
+				limit = {
+					province_has_center_of_trade_of_level = 1
+					NOT = { province_has_center_of_trade_of_level = 3 }
 				}
 				add_center_of_trade_level = 1
+			}
+			else_if = {
+				limit = {
+					NOT = { province_has_center_of_trade_of_level = 1 }
+				}
+				center_of_trade = 1
 			}
 			else = {
 				add_base_production = 3

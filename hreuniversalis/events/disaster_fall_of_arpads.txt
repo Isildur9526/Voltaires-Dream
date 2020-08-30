@@ -304,14 +304,14 @@ country_event = {
 						mil = 4
 						fixed = yes
 					}
-				}
-				capital_scope = {
-					build_to_forcelimit = {
-						infantry = 0.7
-						cavalry = 0.3
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.7
+							cavalry = 0.3
+						}
 					}
+					clr_country_flag = tra_didnt_exist
 				}
-				clr_country_flag = tra_didnt_exist
 			}
 			if = {
 				limit = { NOT = { exists = SLO } }

@@ -38,6 +38,7 @@ add_core = XTT
 1379.8.1 = {
 	owner = ABR
 	controller = ABR
+	add_core = ABR
 	remove_core = ENG
 	remove_core = FRA
 	remove_core = XTT
@@ -46,6 +47,7 @@ add_core = XTT
 	owner = FOI
 	controller = FOI
 	add_core = FOI
+	remove_core = ABR
 }
 1560.1.1 = { religion = reformed }
 1565.1.1 = { unrest = 8 }

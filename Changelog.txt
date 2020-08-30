@@ -1,19 +1,46 @@
 ### Voltaire's Nightmare Changelog ###
 
+# v 2.0.5 #
+
+-Small fixes for the following mission trees: Venice, Palatinate
+-Fixed a major bug preventing the Emperor from demanding unlawful territory with Emperor DLC
+-Allowed Free Cities to form and join trade leagues again
+-Fixed unit spawns in the Fall of Arpads disaster
+-Fixed oversight that made ending Fragmentation of Poland unfairly difficult
+-Made the decision to reform Poland slightly easier
+-Extended Salzburg's mission tree (contribution by FrenchKnight)
+-Other small localization fixes
+
 # v 2.0.4 #
 
--Small fixes for the following mission trees: Castile/Leon, Aragon, England, Scotland/Alba, Sicilian, Holland/Netherlands
+-Added the following alternative country names: Sarir (Avaria), Ronsberg (Burgau), Antwerp (Breda), Eppan (Eschenlohe), Rott (Wasserburg), Novosil (Odoyev)
+-Small fixes for the following mission trees: Castile/Leon, Aragon, England, Scotland/Alba, Sicily, Holland/Netherlands, Karling, Novgorod, Venice
 -Fixed several issues with the Plague event chain and made it easier to understand
 -Added some more goto effects in events
 -Added an event option to contribute money and troops for a crusade
--Fixed the Lombard League disbanding prematurely
+-Fixed rare bug where getting a Rota ruler while at war with the Grand Prince caused you to haemorrhage land
+-Fixed rare bug causing the Lombard League to disband prematurely
 -Slightly buffed the Baltic orders and invasion countries
+-Teutonic and Livonian Order no longer start with no techs
+-European nations no longer get the estate agenda to obtain tea provinces
 -Changed a province name in Iberia, added a couple more DPNs there
 -Fixed Wloclawek misspelling
+-Fixed misplaced holy orders interface
 -Some events will now spawn republican rebels instead of noble or revolutionary rebels
 -Reworked Saint Gallen's NI set (contribution by primi)
--Fixed Sicilian Vespers
--Fixed Bohemia's imperial incident
+-Fixed the swap to England decision causing Normandy to get English missions
+-Fixed several issues with Sicilian Vespers and added an event to automatically win the succession war if you have enough warscore
+-Fixed several issues with the Elevation of Bohemia incident
+-Several events that split off countries now give truces to stop instant DOWing; also made these tags spawn with units
+-Fixed some NIs giving no bonuses when you are not a republic
+-Changed France's government modifiers
+-Modified starting estate land share in some nations  
+-Fixed a few provinces starting with Castles rather than Keeps
+-Changed Cospaia's province name to Santo Sepolcro
+-History fixes regarding the French Lowlands and Papal States
+-Fixed a bugged agenda
+-Positions.txt fixes
+-Other small modifier/localization fixes
 
 # v 2.0.3 #
 

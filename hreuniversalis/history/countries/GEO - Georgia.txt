@@ -7,6 +7,10 @@ technology_group = eastern
 capital = 3600
 historical_rival = ILK
 historical_rival = GLH
+change_estate_land_share = {
+	estate = estate_nomadic_tribes
+	share = -20
+}
 
 1037.11.1 = {
 	monarch = {

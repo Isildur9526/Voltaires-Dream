@@ -222,6 +222,7 @@
 644 = "Lucus"
 645 = "Ocellodurum"
 646 = "Aretium"
+647 = "Sanctum Sepulchrum"
 650 = "Lovenis"
 651 = "Caralis"
 653 = "Insula Major"

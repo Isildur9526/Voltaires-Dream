@@ -2039,6 +2039,10 @@
  vn_slz_enlarge_our_possessions_desc: ""
  vn_slz_connect_our_exclaves_title: "Connect our Exclaves"
  vn_slz_connect_our_exclaves_desc: ""
+ vn_slz_rival_aquileia_title: "Rival Aquileia"
+ vn_slz_rival_aquileia_desc: ""
+ vn_slz_der_kurprinz_title: "Der Kurprinz"
+ vn_slz_der_kurprinz_desc: ""
 #Events
 #BURGUNDY
  vn_missions.52.t: "A New Capital?"
@@ -3440,6 +3444,10 @@
  desc_slz_connect_our_exclaves_mission: ""
  slz_edict_of_expulsion_mission: "Edict of Expulsion"
  desc_slz_edict_of_expulsion_mission: ""
+ slz_rival_aquileia_mission: "Rival Aquileia"
+ desc_slz_rival_aquileia_mission: ""
+ slz_der_kurprinz_mission: "Der Kurprinz"
+ desc_slz_der_kurprinz_mission: ""
 #Misc
  hol_raided_medway: "Medway Raid"
  desc_hol_raided_medway: ""

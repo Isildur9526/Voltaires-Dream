@@ -252,7 +252,7 @@ VN_bur_missions_slot_1_a = {
 		effect = {
 			add_country_modifier = {
 				name = "bur_subjugate_swiss_mission"
-				duration = 9125
+				duration = -1
 			}
 			switzerland_superregion = {
 				limit = { country_or_non_sovereign_subject_holds = ROOT }

@@ -16,3 +16,81 @@ add_army_professionalism = 0.05
 		adm = 2
 	}
 }
+1334.1.1 = {
+	monarch = {
+		name = "Ermanno"
+		dynasty = "Monaldeschi"
+		dip = 3
+		mil = 3
+		adm = 3
+	}
+}
+1337.1.1 = {
+	monarch = {
+		name = "Benedetto"
+		dynasty = "Monaldeschi"
+		dip = 2
+		mil = 3
+		adm = 2
+	}
+}
+1352.1.1 = {
+	monarch = {
+		name = "Giovanni"
+		dynasty = "di Vico"
+		dip = 2
+		mil = 1
+		adm = 1
+	}
+}
+#1354 to PAP
+1378.1.1 = {
+	monarch = {
+		name = "Rinaldo"
+		dynasty = "Orsini"
+		dip = 2
+		mil = 3
+		adm = 3
+	}
+}
+1390.1.1 = {
+	monarch = {
+		name = "Luca"
+		dynasty = "Monaldeschi"
+		dip = 0
+		mil = 3
+		adm = 0
+	}
+}
+#1392 to Perugia
+1398.3.10 = {
+	monarch = {
+		name = "Giovanni"
+		dynasty = "Tomacelli"
+		dip = 2
+		mil = 2
+		adm = 2
+	}
+}
+#1416 to Perugia
+#1419 to PAP
+1434.4.1 = {
+	government = monarchy
+	add_government_reform = autocracy_reform
+	monarch = {
+		name = "Nicolò"
+		dynasty = "Piccinino"
+		dip = 1
+		mil = 4
+		adm = 1
+	}
+}
+1435.4.1 = {
+	monarch = {
+		name = "Gentile"
+		dynasty = "Monaldeschi"
+		dip = 2
+		mil = 1
+		adm = 1
+	}
+}

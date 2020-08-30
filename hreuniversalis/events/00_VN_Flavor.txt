@@ -3730,7 +3730,10 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		tag = APL
+		OR = {
+			tag = APL
+			tag = SIC
+		}
 		is_free_or_tributary_trigger = yes
 		religion = catholic
 		culture_group = latin
@@ -4489,9 +4492,18 @@ country_event = {
 			define_ruler = {
 				dynasty = ROOT
 			}
+			every_neighbor_country = {
+				add_truce_with = PREV
+			}
 			every_owned_province = {
 				limit = { is_core = ROOT }
 				remove_core = ROOT
+			}
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.8
+					cavalry = 0.2
+				}
 			}
 		}
 	}
@@ -4581,11 +4593,20 @@ country_event = {
 				move_capital_effect = yes
 			}
 			add_truce_with = ROOT
+			every_neighbor_country = {
+				add_truce_with = OPO
+			}
 			change_government = monarchy
 			add_government_reform = feudalism_reform
 			define_ruler = {
 				name = "Mieszko I"
 				dynasty = ROOT
+			}
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.8
+					cavalry = 0.2
+				}
 			}
 		}
 		opole_area = {
@@ -4622,11 +4643,20 @@ country_event = {
 				move_capital_effect = yes
 			}
 			add_truce_with = ROOT
+			every_neighbor_country = {
+				add_truce_with = OPO
+			}
 			change_government = monarchy
 			add_government_reform = feudalism_reform
 			define_ruler = {
 				name = "Mieszko I"
 				dynasty = ROOT
+			}
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.8
+					cavalry = 0.2
+				}
 			}
 		}
 		opole_area = {
@@ -5415,15 +5445,11 @@ country_event = {
 	trigger = {
 		culture_group = east_slavic
 		has_reform = principality
-		OR = {
-			NOT = {
-				overlord = { has_country_flag = recent_rota }
-			}
-			overlord = {
-				had_country_flag = {
-					flag = recent_rota
-					days = 30
-				}
+		NOT = { has_global_flag = ongoing_rota }
+		NOT = {
+			any_country = {
+				has_country_flag = recent_rota
+				war_with = ROOT
 			}
 		}
 		OR = {
@@ -5481,6 +5507,18 @@ country_event = {
 				define_ruler = {
 					dynasty = ROOT
 				}
+				every_neighbor_country = {
+					limit = { 
+						has_reform = principality 
+					}
+					add_truce_with = PREV
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
 			}
 			if = {
 				limit = { is_subject_of_type = tributary_state }
@@ -5498,6 +5536,7 @@ country_event = {
 		name = "HREMA100"
 		ai_chance = { factor = 75 }
 		custom_tooltip = "HREMTT100"
+		add_legitimacy = -20
 		hidden_effect = {
 			event_target:rus_partition_country = {
 				every_owned_province = {
@@ -5536,8 +5575,6 @@ country_event = {
 				grant_independence = yes
 			}
 		}
-		add_legitimacy = -25
-		add_stability = -1
 		tooltip = {
 			declare_war_with_cb = {
 				who = event_target:rus_partition_country
@@ -5633,6 +5670,10 @@ country_event = {
 			dynasty = ROOT
 		}
 		hidden_effect = {
+			every_neighbor_country = {
+				limit = { has_reform = principality }
+				add_truce_with = ROOT
+			}
 			overlord = {
 				country_event = {
 					id = hremodevents.102
@@ -6927,6 +6968,14 @@ country_event = {
 					change_government = republic
 					add_government_reform = italian_monarchy
 					add_truce_with = ROOT
+					every_neighbor_country = {
+						limit = { 
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+						}
+						add_truce_with = PREV
+					}
 					every_core_province = {
 						limit = {
 							NOT = { owned_by = PREV }

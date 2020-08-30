@@ -1840,6 +1840,7 @@ NOV_ideas = {
 		global_missionary_strength = 0.01
 	}
 	ivans_hundred = {
+		legitimacy = 1
 		republican_tradition = 0.3
 	}
 	control_of_the_hanseatic_kontor = {
@@ -5362,6 +5363,7 @@ DTT_ideas = {
 		shock_damage_received = -0.1
 	}
 	bonus = {
+		legitimacy = 1
 		republican_tradition = 0.3
 	}
 	trigger = {
@@ -5824,6 +5826,7 @@ ROT_ideas = {
 		global_institution_spread = 0.1
 	}
 	ROT_end_of_the_line = {
+		legitimacy = 1
 		republican_tradition = 0.3
 	}
 	ROT_hinterland_knights = {
@@ -5989,6 +5992,7 @@ FRN_ideas = {
 		production_efficiency = 0.1
 	}
 	frn_freie_stadt = {
+		legitimacy = 1
 		republican_tradition = 0.3
 	}
 }
@@ -7246,6 +7250,7 @@ AAC_ideas = {
 		prestige_decay = -0.01
 	}
 	aac_free_city = {
+		legitimacy = 1
 		republican_tradition = 0.3
 	}
 	aac_spa = {
@@ -7708,6 +7713,7 @@ PIS_ideas = {
 		development_cost = -0.1
 	}
 	pis_anziani_del_popolo = {
+		legitimacy = 1
 		republican_tradition = 0.3
 	}
 	pis_maritimes_legacy = {

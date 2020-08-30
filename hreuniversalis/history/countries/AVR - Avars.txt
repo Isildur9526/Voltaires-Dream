@@ -8,6 +8,7 @@ capital = 3775
 
 #Kingdom of Sarir
 1026.1.1 = {
+	override_country_name = SARIR_NAME
 	monarch = {
 		name = "Piruja"
 		dynasty = "Sariri"
@@ -51,6 +52,7 @@ capital = 3775
 	technology_group = muslim
 	government = monarchy
 	add_government_reform = iqta
+	restore_country_name = yes
 	monarch = {
 		name = "Surakat"
 		dynasty = "Avari"

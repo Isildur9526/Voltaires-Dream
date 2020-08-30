@@ -193,7 +193,7 @@ vn_ser_missions_slot_1_b = {
         effect = {
             add_country_modifier = {
                 name = "ser_unite_south_slavs_mission"
-                duration = 36500
+                duration = -1
             }
             add_accepted_culture = slovenian
             bulgaria_region = {

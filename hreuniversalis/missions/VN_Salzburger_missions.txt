@@ -61,16 +61,35 @@ vn_slz_missions_slot_1_a = {
         position = 3
         required_missions = { vn_slz_papal_backing }
         trigger = {
-			is_elector = yes
-			government_rank = 5
 			grown_by_development = 100
 			government = theocracy
 			devotion = 100
         }
         effect = {
-			add_prestige = 20
+			add_prestige = 10
 			add_country_modifier = {
 				name = "slz_prince_archbishopric_mission"
+				duration = 9125
+			}
+        }
+	}
+    vn_slz_der_kurprinz = { 
+        icon = influence_the_princes
+        position = 3
+        required_missions = { 
+			vn_slz_papal_backing 
+			vn_slz_gain_imperial_favors 
+		}
+        trigger = {
+			is_elector = yes
+			government_rank = 5
+			government = theocracy
+			devotion = 100
+        }
+        effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = "slz_der_kurprinz_mission"
 				duration = 9125
 			}
         }
@@ -252,7 +271,7 @@ vn_slz_missions_slot_3_a = {
 			num_of_owned_provinces_with = {
 				value = 5
 				trade_goods = salt
-				base_production = 3
+				base_production = 5
 			}
         }
         effect = {
@@ -490,6 +509,13 @@ vn_slz_missions_slot_5_a = {
         }
         effect = {
 			add_mil_power = 50
+		    carinthia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}			
 			salzburg_area = {
 				limit = { owned_by = ROOT }
 				add_nationalism = -5
@@ -530,8 +556,59 @@ vn_slz_missions_slot_5_a = {
 			}
         }
         effect = {
+		    inneraustria_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			add_country_modifier = {
 				name = "slz_connect_our_exclaves_mission"
+				duration = 9125
+			}
+        }
+	}
+    vn_slz_rival_aquileia = {
+        icon = holy_state 
+        position = 4
+		required_missions = { 
+			vn_slz_connect_our_exclaves 
+			vn_slz_gain_imperial_favors 
+		}
+		provinces_to_highlight = {
+			region = inneraustria_region
+			OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+		}
+        trigger = {
+            if = {
+				limit = { exists = AQU }
+				military_strength = {
+					who = AQU
+					value = 1
+				}
+				total_development = AQU
+				OR = {
+					papal_influence = AQU
+					is_papal_controller = yes
+				}
+			}
+            inneraustria_region = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}			
+		}
+        effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_religious_influence_effect_small = yes
+			add_country_modifier = {
+				name = "slz_rival_aquileia_mission"
 				duration = 9125
 			}
         }

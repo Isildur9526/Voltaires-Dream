@@ -51,13 +51,15 @@ country_decisions = {
 			NOT = { exists = POL }
 			is_at_war = no
 			is_nomad = no
-			is_free_or_tributary_trigger = yes	
+			is_free_or_tributary_trigger = yes
 			owns_core_province = 2419	# Krakow
-			owns_core_province = 1138	# Warszawa
+			OR = {
+				owns_core_province = 1138	# Warszawa
+				owns_core_province = 2016	# Sandomierz
+			}
 			owns_core_province = 4052	# Poznan
 			owns_core_province = 593	# Kalish
 			owns_core_province = 1993	# Sieradz
-			owns_core_province = 2016	# Sandomierz
 			owns_core_province = 2266	# Leczyca
 		}
 		effect = {

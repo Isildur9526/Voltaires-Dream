@@ -398,8 +398,7 @@ sjk_alp_arslan_mission = {
 sjk_turkicization_of_anatolia_mission_p = { #Province
 	local_unrest = -1
 }
-sjk_turkicization_of_anatolia_mission_c = { #50 years
-	num_accepted_cultures = 1
+sjk_turkicization_of_anatolia_mission_c = { 
 	culture_conversion_cost = -0.25	
 }
 sjk_atabegs_mission = {

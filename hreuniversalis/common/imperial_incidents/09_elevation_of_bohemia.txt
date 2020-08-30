@@ -89,5 +89,13 @@ incident_elevation_of_bohemia = {
 			factor = 1000
 			is_elector = yes
 		}
+		modifier = {
+			factor = 50
+			OR = {
+				alliance_with = emperor
+				total_development = BOH
+				government_rank = 4
+			}
+		}
 	}
 }

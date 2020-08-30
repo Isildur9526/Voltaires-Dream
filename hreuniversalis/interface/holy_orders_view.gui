@@ -9,12 +9,12 @@ guiTypes = {
 			name = "background"
 			spriteType = "GFX_province_history_entry_banner"
 			Orientation = "UPPER_LEFT"
-			position = { x = 0 y = -900 }
+			position = { x = 0 y = 0 }
 		}
 
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 0 y = -900 }
+			position = { x = 48 y = 18 }
 			font = "vic_22"
 			text = "HOLY_ORDERS"	
 			maxWidth = 200
@@ -33,7 +33,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "founder"
-			position = { x = 350 y = 50 }
+			position = { x = 350 y = 100 }
 			font = "vic_22"
 			maxWidth = 120
 			maxHeight = 50	
@@ -58,7 +58,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_idea_unknown"
 			allwaystransparent = yes
 		}
-
+		
 		instantTextBoxType = {
 			name = "description"
 			position = { x = 64 y = 10 }

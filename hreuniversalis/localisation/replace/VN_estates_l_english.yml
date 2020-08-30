@@ -67,6 +67,7 @@
  desc_fight_for_the_cross_m: "The Holy Orders of our nation are zealous fighters protecting Christianity." 
  estate_holy_orders_monopoly_of_beer_mod: "Monopoly on Beer"
  desc_estate_holy_orders_monopoly_of_beer_mod: "The state has granted the [Root.Owner.GetClergyName] monopoly rights over wine production."
+ MONOPOLY_INCOME_BEER_DESC: "from beer production."
 #Holy Orders Estate Modifiers
  EST_VAL_ORDER_OF_SAINT_GEORGE: "Order of Saint George: §Y$VAL$§!"
  EST_VAL_TEUTON_INF: "Allied with Catholic Holy Order: §Y$VAL$%§!"
@@ -125,10 +126,10 @@
  estate_holy_orders_court_representation_desc: "As a Crusader state, we must work closely with the Holy Orders in the eternal fight against the heathens occupying the Holy Land. One concession they have continuously requested is the right to be represented on the royal council."
 #Holy Orders Events
  estate_privileges_and_agendas_events.3.m: "The Proposal of the Holy Orders"
- estate_disasters.7.t: "The $ESTATE_HOLY_ORDERS$ Break Free"
- estate_disasters.7.d: "$MONARCH$ has allowed the $ESTATE_HOLY_ORDERS$ of $COUNTRY$ to grow too powerful and now they have made their move. Their great influence over local baronies as well as over many matters in [Root.Owner.Capital.GetCapitalName] has allowed them to prepare to break off into an entirely new state."
- estate_disasters.7.a: "We should have seen this coming..."
- estate_disasters.7.b: "Christ is calling me..."
+ estate_disasters.20.t: "The $ESTATE_HOLY_ORDERS$ Break Free"
+ estate_disasters.20.d: "$MONARCH$ has allowed the $ESTATE_HOLY_ORDERS$ of $COUNTRY$ to grow too powerful and now they have made their move. Their great influence over local baronies as well as over many matters in [Root.Owner.Capital.GetCapitalName] has allowed them to prepare to break off into an entirely new state."
+ estate_disasters.20.a: "We should have seen this coming..."
+ estate_disasters.20.b: "Christ is calling me..."
  holy_orders_estate_events.1.t: "Revolt of the [Root.GetName] Knights"
  holy_orders_estate_events.1.d: "The disgruntled $ESTATE_HOLY_ORDERS$ of [Root.GetName] have risen up against us to reclaim their rights once granted by the Pope."
  holy_orders_estate_events.1.a: "Okay."

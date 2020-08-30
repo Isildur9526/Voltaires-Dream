@@ -9,6 +9,7 @@ fixed_capital = 3866
 
 #Princes of Novosil
 1246.9.20 = {
+	override_country_name = NOVOSIL_NAME
 	monarch = {
 		name = "Semyon I"
 		dynasty = "Rurikovich"
@@ -83,6 +84,7 @@ fixed_capital = 3866
 
 #Princes of Odoyev
 1427.6.1 = {
+	restore_country_name = yes
 	capital = 3863
 	monarch = {
 		name = "Ivan II"

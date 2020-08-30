@@ -11,6 +11,14 @@ add_army_professionalism = 0.1
 religious_school = ismaili_school
 historical_friend = ALW
 historical_friend = HED
+change_estate_land_share = {
+	estate = estate_mamluks
+	share = 10
+}
+change_estate_land_share = {
+	estate = estate_dhimmi
+	share = -12
+}
 
 #Banû Fâtimah Caliphs
 1036.6.13 = {

@@ -30,7 +30,9 @@ discovered_by = muslim
 	remove_core = BUR
 }
 1648.10.24 = { remove_core = NED }
-1659.11.7 = {
+1665.9.17 = { add_claim = FRA }
+1668.5.2 = {
+	remove_claim = FRA
 	owner = FRA
 	controller = FRA
 	add_core = FRA

@@ -90,13 +90,21 @@ VN_breton_minors_missions = {
 			2294 = {
 				if = {
 					limit = {
-						has_dlc = "Dharma"
+						province_has_center_of_trade_of_level = 1
 						NOT = { province_has_center_of_trade_of_level = 3 }
 					}
 					add_center_of_trade_level = 1
 				}
+				else_if = {
+					limit = {
+						NOT = { province_has_center_of_trade_of_level = 1 }
+					}
+					center_of_trade = 1
+				}
 				else = {
-					add_base_production = 2
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
 				}
 			}
 			add_country_modifier = {

@@ -551,7 +551,8 @@ vn_hol_missions_slot_2_b = {
     has_country_shield = yes
 	
     vn_hol_may_they_speak_dutch = {
-        icon = the_true_freedom
+		icon = the_true_freedom
+		position = 9
         required_missions = { vn_hol_the_united_provinces }
         provinces_to_highlight = {
 			region = wallonian_region
@@ -1775,8 +1776,8 @@ vn_hol_missions_slot_5_b = {
 				owner = {
 					reverse_add_casus_belli = {
 						target = ROOT
-						type = cb_claim_throne
-						months = 240
+						type = cb_fabricated_claims
+						months = 300
 					}
 				}
 			}

@@ -17,6 +17,8 @@ add_army_professionalism = 0.05
 	}
 }
 1429.9.14 = {
+	government = monarchy
+	add_government_reform = autocracy_reform
 	monarch = {
 		name = "Domenico I"
 		dynasty = "Malatesta"

@@ -431,7 +431,7 @@ vn_FOI_missions_slot_4 = {
 					}
                 }
                 add_casus_belli = {
-                    type = cb_claim_throne
+                    type = cb_fabricated_claims
                     months = 300
                     target = NEM
                 }

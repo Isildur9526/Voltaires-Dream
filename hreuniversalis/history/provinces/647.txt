@@ -1,14 +1,14 @@
-owner = TUS
-controller = TUS
+capital = "Borgo Santo Sepolcro"
 culture = tuscan
 religion = catholic
-hre = yes
+trade_goods = leather
 base_tax = 1
 base_production = 1
-trade_goods = leather
 base_manpower = 1
-capital = "Cospaia"
 is_city = yes
+hre = yes
+owner = TUS
+controller = TUS
 add_core = TUS
 add_core = CST
 

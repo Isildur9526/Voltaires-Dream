@@ -3054,6 +3054,7 @@ vassal_theocracy = {
 		is_march = no
 		government = monarchy
 		NOT = { tag = LZO }
+		NOT = { tag = RMG }
 		overlord = {
 			government = theocracy
 		}

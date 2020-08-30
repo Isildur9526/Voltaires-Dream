@@ -222,7 +222,7 @@ vn_eng_missions_slot_1_b = {
 			add_dip_power = 50
 			add_country_modifier = {
 				name = "eng_integrate_normandy_mission"
-				duration = 7300
+				duration = 9125
 			}
 			maine_area = {
 				limit = {

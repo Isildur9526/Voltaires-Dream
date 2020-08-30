@@ -196,7 +196,6 @@ ara_corts_of_aragon_mission = {
 	advisor_pool = 1
 }
 ara_catalan_patronage_mission = {
-	num_accepted_cultures = 1
 	promote_culture_cost = -0.25
 }
 ara_consulate_of_the_sea_mission = {
@@ -766,7 +765,6 @@ eng_marcher_earldoms_mission = {
 	local_defensiveness = 0.2
 }
 eng_integrate_normandy_mission = {
-	num_accepted_cultures = 1
 	promote_culture_cost = -0.25
 }
 eng_massif_central_mission = {
@@ -1213,7 +1211,7 @@ nav_emperor_of_spains_mission = {
 	prestige = 0.5
 }
 nav_strengthen_culture_mission = {
-	num_accepted_cultures = 1
+	promote_culture_cost = -0.25
 	culture_conversion_cost = -0.15
 }
 nav_french_trouble_mission = {
@@ -1357,7 +1355,7 @@ fra_loire_valley_chateaux_mission = {
 	diplomatic_reputation = 1
 }
 fra_beyond_jura_mission = {
-	num_accepted_cultures = 1
+	promote_culture_cost = -0.25
 }
 fra_divine_right_of_kings_mission = {
 	legitimacy = 1
@@ -2265,7 +2263,7 @@ ire_revive_fianna_mission = {
 	mercenary_discipline = 0.05
 }
 ire_celtic_friendship_mission = {
-	num_accepted_cultures = 1
+	promote_culture_cost = -0.25
 	years_of_nationalism = -5
 }
 ire_brendan_the_navigator_mission = {
@@ -2427,7 +2425,7 @@ ser_dusans_code_mission = {
 	yearly_corruption = -0.05
 }
 ser_unite_south_slavs_mission = {
-	num_accepted_cultures = 2
+	num_accepted_cultures = 1
 }
 ser_defeat_bulgaria_mission = {
 	local_tax_modifier = 0.1
@@ -2486,6 +2484,15 @@ slz_connect_our_exclaves_mission = {
 slz_edict_of_expulsion_mission = {
 	global_heretic_missionary_strength = 0.02
 	global_unrest = -1
+}
+slz_rival_aquileia_mission = {
+    papal_influence = 1
+    tolerance_own = 1
+}
+slz_der_kurprinz_mission = {
+    diplomats = 1
+    church_loyalty_modifier = 0.05
+    global_tax_modifier = 0.1
 }
 
 

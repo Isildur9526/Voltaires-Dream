@@ -3009,6 +3009,7 @@ country_decisions = {
 					set_government_rank = 5
 				}
 				swap_free_idea_group = yes
+				swap_non_generic_missions = yes
 				every_owned_province = {
 					limit = {
 						OR = {
@@ -3024,10 +3025,10 @@ country_decisions = {
 					change_primary_culture = normand
 					set_capital = 1172
 					swap_free_idea_group = yes
+					swap_non_generic_missions = yes
 				}
 				create_union = NRM
 			}
-			swap_non_generic_missions = yes
 			change_primary_culture = english
 			2268 = { change_culture = english }
 			add_legitimacy = -20

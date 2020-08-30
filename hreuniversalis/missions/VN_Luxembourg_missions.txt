@@ -276,8 +276,8 @@ vn_lux_missions_slot_3 = {
 				owner = {
 					reverse_add_casus_belli = {
 						target = ROOT
-						type = cb_claim_throne
-						months = 240
+						type = cb_fabricated_claims
+						months = 300
 					}
 				}
 			}

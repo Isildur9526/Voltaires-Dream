@@ -19,6 +19,14 @@ fort_14th = yes
 }
 1198.1.1 = { hre = no }
 1337.1.1 = { fort_14th = no fort_15th = yes }
+1354.6.1 = {
+	owner = PAP
+	controller = PAP
+}
+1378.1.1 = {
+	owner = OVI
+	controller = OVI
+}
 1392.1.1 = {
 	owner = XPR
 	controller = XPR
@@ -34,18 +42,19 @@ fort_14th = yes
 	controller = XPR
 	add_core = XPR
 }
-1424.6.5 = {
+1419.1.1 = {
+	owner = PAP
+	controller = PAP
+	remove_core = XPR
+}
+1434.1.1 = {
 	owner = OVI
 	controller = OVI
-	remove_core = XPR
 }
 1450.1.1 = {
 	owner = PAP
 	controller = PAP
 	remove_core = OVI
-	#base_tax = 1
-	#base_production = 1
-	#base_manpower = 1
 }
 1798.2.15 = {
 	owner = LZO
