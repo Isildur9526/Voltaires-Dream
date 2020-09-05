@@ -179,7 +179,7 @@ vn_pap_missions_slot_1 = {
                     continent = europe
                     religion = catholic
                 }
-                amount = 2500
+                amount = 3500
             }
         }
         effect = {
@@ -207,10 +207,13 @@ vn_pap_missions_slot_1 = {
         position = 10
         required_missions = { vn_pap_milites_christianus }
         trigger = {
-            
+            is_religion_enabled = waldensian
+            is_religion_enabled = cathar
         }
         effect = {
-            # event
+            country_event = {
+                id = fbievents.74
+            }
         }
     }
     vn_pap_weather_the_reformation = {
@@ -241,7 +244,7 @@ vn_pap_missions_slot_1 = {
         position = 13
         required_missions = { vn_pap_council_of_trent }
         trigger = {
-            
+           
         }
         effect = {
             
@@ -259,17 +262,13 @@ vn_pap_missions_slot_1 = {
             NOT = { religion = catholic }
         }
         trigger = {
-            NOT = {
-                any_province = {
-                    superregion = italy_superregion
-                    NOT = { religion = catholic }
-                }
+            italy_superregion = {
+                type = all
+                religion = catholic
             }
-            NOT = {
-                any_province = {
-                    superregion = sicily_superregion
-                    NOT = { religion = catholic }
-                }
+            sicily_superregion = {
+                type = all
+                religion = catholic
             }
         }
         effect = {
@@ -465,6 +464,10 @@ vn_pap_missions_slot_2 = {
         icon = eastern_catholicization
         position = 9
         required_missions = { vn_pap_conquer_jerusalem }
+        provinces_to_highlight = {
+            superregion = levant_superregion
+            NOT = { religion = catholic }
+        }
         trigger = {
             calc_true_if = {
                 amount = 75
@@ -484,19 +487,10 @@ vn_pap_missions_slot_2 = {
         position = 10
         required_missions = { vn_pap_revive_christian_communities }
         provinces_to_highlight = {
-            religion = nestorian
-            owner = { NOT = { religion = nestorian } }
+            
         }
         trigger = {
-            custom_trigger_tooltip = {
-                tooltip = vn_pap_cradle_of_christianity.tt
-                NOT = {
-                    any_province = {
-                        religion = nestorian
-                        owner = { NOT = { religion = nestorian } }
-                    }
-                }
-            }
+            
         }
         effect = {
             #add_country_modifier = {
@@ -509,8 +503,23 @@ vn_pap_missions_slot_2 = {
         icon = crush_heretic_strongholds
         position = 11
         required_missions = { vn_pap_form_the_inquistion }
+        provinces_to_highlight = {
+            religion = nestorian
+            owner = { NOT = { religion = nestorian } }
+        }
         trigger = {
-            
+            custom_trigger_tooltip = {
+                tooltip = vn_pap_cradle_of_christianity.tt
+                all_country = {
+                    religion = heretic
+                    ROOT = {
+                        has_won_war_against = {
+                            who = PREV
+                            max_years_since = 50
+                        }
+                    }
+                }
+            }
         }
         effect = {
             
@@ -520,8 +529,34 @@ vn_pap_missions_slot_2 = {
         icon = peace_in_europe
         position = 12
         required_missions = { vn_pap_combat_heresy }
+        provinces_to_highlight = {
+            religion = catholic
+            owner = { NOT = { religion = catholic } }
+        }
         trigger = {
-            
+            if = {
+                limit = { has_dlc = "Rights of Man" }
+                is_great_power = yes
+            }
+            else = {
+                num_of_cities = 250
+            }
+            if = {
+                limit = { has_dlc = "Emperor" }
+                is_defender_of_faith_of_tier = 5
+            }
+            else = {
+                is_defender_of_faith = yes
+            }
+            custom_trigger_tooltip = {
+                tooltip = vn_pap_pax_et_treuga_dei.tt
+                NOT = {
+                    any_province = {
+                        religion = catholic
+                        owner = { NOT = { religion = catholic } }
+                    }
+                }
+            }
         }
         effect = {
             
@@ -556,10 +591,16 @@ vn_pap_missions_slot_3 = {
         position = 4
         required_missions = {  }
         provinces_to_highlight = {
-            owner = {
-                NOT = { tag = ROOT }
-                NOT = { alliance_with = ROOT }
-                has_ruler_modifier = guelph_ruler
+            if = {
+                limit = { has_global_flag = guelph_ghib_enabled }
+                owner = {
+                    NOT = { tag = ROOT }
+                    NOT = { alliance_with = ROOT }
+                    has_ruler_modifier = guelph_ruler
+                }
+            }
+            else = {
+                always = no
             }
         }
         trigger = {
@@ -668,7 +709,13 @@ vn_pap_missions_slot_4 = {
             }
         }
         effect = {
-            
+            spoleto_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_pap_conquer_spoleto = {
@@ -676,23 +723,148 @@ vn_pap_missions_slot_4 = {
         position = 2
         required_missions = { vn_pap_conquer_latium }
         provinces_to_highlight = {
-            
+            area = spoleto_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            
+            spoleto_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            urbino_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            ancona_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_pap_conquer_marche = {
+        # icon = 
+        position = 3
+        required_missions = { vn_pap_conquer_spoleto }
+        provinces_to_highlight = {
+            OR = {
+                area = urbino_area
+                area = ancona_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            urbino_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            ancona_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            tuscany_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_pap_conquer_tuscany = {
+        # icon = 
+        position = 4
+        required_missions = { vn_pap_conquer_marche }
+        provinces_to_highlight = {
+            region = tuscany_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 16
+                region = tuscany_region
+            }
+        }
+        effect = {
+            liguria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            piedmont_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_pap_conquer_piedmont = {
+        # icon = 
+        position = 5
+        required_missions = { vn_pap_conquer_tuscany }
+        provinces_to_highlight = {
+            OR = {
+                region = piedmont_region
+                region = liguria_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 24
+                OR = {
+                    region = piedmont_region
+                    region = liguria_region
+                }
+            }
+        }
+        effect = {
+            lombardy_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_pap_conquer_lombardy = {
+        # icon = 
+        position = 6
+        required_missions = { vn_pap_conquer_piedmont vn_pap_conquer_venetia }
+        provinces_to_highlight = {
+            region = lombardy_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = lombardy_region
+            }
+        }
+        effect = {
+             
         }
     }
     vn_pap_empire_of_the_allmighty = {
         icon = kingdom_of_heaven
         position = 7
-        required_missions = {  }
-        provinces_to_highlight = {
-            
-        }
+        required_missions = { vn_pap_conquer_lombardy }
         trigger = {
+            num_of_cities = 250
             has_reform = kingdom_of_god_reform
         }
         effect = {
@@ -1036,6 +1208,54 @@ vn_pap_missions_slot_5 = {
             #    name = pap_catholic_splendour_mission
             #    duration = 9125
             #}
+        }
+    }
+    vn_pap_conquer_ferrara = {
+        # icon = 
+        position = 4
+        required_missions = { vn_pap_conquer_marche }
+        provinces_to_highlight = {
+            OR = {
+                area = bologna_area
+                area = cesena_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 12
+                OR = {
+                    area = bologna_area
+                    area = cesena_area
+                }
+            }
+        }
+        effect = {
+            treviso_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_pap_conquer_venetia = {
+        # icon = 
+        position = 5
+        required_missions = { vn_pap_conquer_ferrara }
+        provinces_to_highlight = {
+            region = treviso_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 16
+                region = treviso_region
+            }
+        }
+        effect = {
+            add_navy_tradition = 20
         }
     }
     vn_pap_a_courteous_gift = {
