@@ -1,2 +1,289 @@
 #Duklja/Zeta missions
 #Contributed by Chi-Rho
+
+vn_mon_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = MON
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_mon_develop_skadar = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_restore_ulcinj = {
+        #icon = 
+        position = 2
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_bastion_of_kotor = {
+        #icon = 
+        position = 3
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_rebirth_of_cetinje = {
+        #icon = 
+        position = 4
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_rise_of_podgorica = {
+        #icon = 
+        position = 5
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_mon_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = MON
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_mon_bogomil_heretics = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_archbishops_grasp = {
+        #icon = 
+        position = 3
+        required_missions = { vn_mon_bogomil_heretics }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_bastion_of_church = {
+        #icon = 
+        position = 5
+        required_missions = { vn_mon_archbishops_grasp }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_mon_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = MON
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_mon_against_mainlanders = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_contest_rashka = {
+        #icon = 
+        position = 2
+        required_missions = { 
+			vn_mon_against_mainlanders 
+			vn_mon_heritage_of_zupans 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_seize_heartland = {
+        #icon = 
+        position = 3
+        required_missions = { vn_mon_contest_rashka }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_old_serbia = {
+        #icon = 
+        position = 4
+        required_missions = { vn_mon_seize_heartland }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_adriatic_fleet = {
+        #icon = 
+        position = 5
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_mon_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = MON
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_mon_heritage_of_zupans = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_eyes_on_dubrovnik = {
+        #icon = 
+        position = 2
+        required_missions = { vn_mon_the_travunian_issue }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_dalmatian_coastline = {
+        #icon = 
+        position = 4
+        required_missions = { vn_mon_eyes_on_dubrovnik }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_expedition_to_bari = {
+        #icon = 
+        position = 6
+        required_missions = { 
+			vn_mon_adriatic_fleet 
+			vn_mon_dalmatian_coastline 
+			vn_mon_pacify_epirus 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_mon_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = MON
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_mon_the_travunian_issue = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_control_albanians = {
+        #icon = 
+        position = 3
+        required_missions = { vn_mon_the_travunian_issue }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_mon_pacify_epirus = {
+        #icon = 
+        position = 5
+        required_missions = { vn_mon_control_albanians }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
