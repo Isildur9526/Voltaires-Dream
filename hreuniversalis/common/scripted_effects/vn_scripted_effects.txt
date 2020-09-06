@@ -984,24 +984,3 @@ anglicize_irish_tag_effect = {
 		#CNN
 	}
 }
-
-set_tech_on_pap_level = {
-	while = {
-		limit = {
-			NOT = { adm_tech = PAP }
-		}
-		add_adm_tech = 1
-	}
-	while = {
-		limit = {
-			NOT = { dip_tech = PAP }
-		}
-		add_dip_tech = 1
-	}
-	while = {
-		limit = {
-			NOT = { mil_tech = PAP }
-		}
-		add_mil_tech = 1
-	}
-}

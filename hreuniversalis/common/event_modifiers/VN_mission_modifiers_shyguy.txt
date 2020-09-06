@@ -1760,7 +1760,7 @@ kie_tempering_the_druzhina_mission = {
 	shock_damage_received = -0.1
 	general_cost = -0.25
 }
-kie_conquer_volga_bulgaria = {
+kie_conquer_volga_bulgaria_mission = {
 	land_attrition = -0.1
 	land_forcelimit_modifier = 0.1
 	army_tradition_from_battle = 0.25

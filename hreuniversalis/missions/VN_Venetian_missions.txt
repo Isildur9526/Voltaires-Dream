@@ -750,7 +750,7 @@ vn_ven_missions_slot_3 = {
         required_missions = { vn_ven_paticipate_in_crusades }
         trigger = {
             any_ally = {
-                culture = outremer
+                primary_culture = outremer
                 has_opinion = {
                     who = ROOT
                     value = 150
@@ -759,7 +759,7 @@ vn_ven_missions_slot_3 = {
         }
         effect = {
             add_dip_power = 100
-            tartu_area = {
+            tartus_area = {
                 limit = {
                     NOT = { is_core = ROOT }
                     NOT = { is_permanent_claim = ROOT }

@@ -4735,6 +4735,7 @@ country_event = {
 	picture = HRE_eventPicture
 
 	fire_only_once = yes
+	major = yes
 
 	trigger = {
 		current_age = age_of_dynasticism
@@ -6845,6 +6846,7 @@ country_event = {
 				limit = {
 					ai = yes
 					exists = yes
+					is_subject = no
 					is_emperor = no
 					government = monarchy
 					num_of_cities = 10
@@ -6975,6 +6977,12 @@ country_event = {
 							is_part_of_hre = yes
 						}
 						add_truce_with = PREV
+					}
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.8
+							cavalry = 0.2
+						}
 					}
 					every_core_province = {
 						limit = {

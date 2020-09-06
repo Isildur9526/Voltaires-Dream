@@ -77,7 +77,7 @@ vn_slz_missions_slot_1_a = {
         icon = influence_the_princes
         position = 3
         required_missions = { 
-			vn_slz_papal_backing 
+			vn_slz_prince_archbishopric
 			vn_slz_gain_imperial_favors 
 		}
         trigger = {

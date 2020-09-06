@@ -4050,11 +4050,8 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			OR = {
-				ai = no
-				NOT = { exists = PIE }
-			}
 			NOT = { has_country_flag = unformable }
+			NOT = { exists = PIE }
 			NOT = { exists = SPI }
 			NOT = { tag = SPI }
 			NOT = { tag = SAV }

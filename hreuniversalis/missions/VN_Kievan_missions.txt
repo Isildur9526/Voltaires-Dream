@@ -2611,7 +2611,7 @@ vn_kie_missions_slot_5 = {
         }
         effect = {
             add_country_modifier = {
-				name = kie_conquer_volga_bulgaria
+				name = kie_conquer_volga_bulgaria_mission
 				duration = 9125
 			}
         }

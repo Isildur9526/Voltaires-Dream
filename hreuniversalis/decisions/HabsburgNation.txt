@@ -8,16 +8,23 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			tag = STY
 			primary_culture = austrian
-			dynasty = "von Habsburg"
+			NOT = { tag = HAB }
+			NOT = { tag = EAH }
 			OR = {
+				NOT = { exists = EAH }
 				NOT = { exists = HAB }
 				ai = no
 			}
 		}
 		provinces_to_highlight = {
-			province_id = 2172
+			OR = {
+				province_id = 2172
+				province_id = 703
+				province_id = 723
+				province_id = 2174
+				province_id = 683
+			}
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { is_core = ROOT }
@@ -25,11 +32,16 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { exists = HAB }
+			NOT = { exists = EAH }
 			has_regency = no
 			is_nomad = no
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			owns = 2172
+			owns = 703
+			owns = 723
+			owns = 2174
+			owns = 683
 		}
 		effect = {
 			change_tag = HAB

@@ -1895,7 +1895,24 @@ country_event = {
 					name = baltic_crusades
 					duration = 7300
 				}
-				set_tech_on_pap_level = yes
+				random_country = {
+					limit = { culture_group = germanic exists = yes }
+					export_to_variable = {
+						value = adm_tech
+						variable_name = ger_adm_tech
+					}
+					export_to_variable = {
+						value = dip_tech
+						variable_name = ger_dip_tech
+					}
+					export_to_variable = {
+						value = mil_tech
+						variable_name = ger_mil_tech
+					}
+				}
+				add_adm_tech = variable:ger_adm_tech
+				add_dip_tech = variable:ger_dip_tech
+				add_mil_tech = variable:ger_mil_tech
 			}
 			ostpreussen_region = {
 				limit = {
@@ -2009,7 +2026,24 @@ country_event = {
 					name = baltic_crusades
 					duration = 7300
 				}
-				set_tech_on_pap_level = yes
+				random_country = {
+					limit = { culture_group = germanic exists = yes }
+					export_to_variable = {
+						value = adm_tech
+						variable_name = ger_adm_tech
+					}
+					export_to_variable = {
+						value = dip_tech
+						variable_name = ger_dip_tech
+					}
+					export_to_variable = {
+						value = mil_tech
+						variable_name = ger_mil_tech
+					}
+				}
+				add_adm_tech = variable:ger_adm_tech
+				add_dip_tech = variable:ger_dip_tech
+				add_mil_tech = variable:ger_mil_tech
         	}
 			latvian_region = {
 				limit = {

@@ -2828,6 +2828,8 @@
  desc_slo_our_sorbian_neighbors_mission: ""
  slo_czechian_cities_mission: "The Czechian Cities"
  desc_slo_czechian_cities_mission: ""
+ slo_join_empire_mission: "Increased Control"
+ desc_slo_join_empire_mission: ""
 #FRANCE
  fra_integrate_free_companies_mission: "Routiers"
  desc_fra_integrate_free_companies_mission: ""
@@ -3009,7 +3011,7 @@
  desc_nor_swedish_copper_mission: ""
  nor_bahus_fortress_mission: "Bahus Fortress"
  desc_nor_bahus_fortress_mission: ""
- nor_scandinavia_united_mission: "Norway Supreme"
+ nor_scandinavia_united_mission: "Scandinavia United"
  desc_nor_scandinavia_united_mission: ""
  nor_growth_of_bergen_mission: "Green Meadow Among Mountains"
  desc_nor_growth_of_bergen_mission: ""

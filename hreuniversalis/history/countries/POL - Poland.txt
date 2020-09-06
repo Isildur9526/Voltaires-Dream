@@ -154,6 +154,7 @@ national_focus = ADM
 1300.1.1 = { government_rank = 5 }
 1305.6.21 = {
 	set_estate_privilege = estate_nobles_golden_liberty
+	set_global_flag = fragmentation_of_poland_ended
 	monarch = {
 		name = "Wladyslaw I"
 		dynasty = "Piast"

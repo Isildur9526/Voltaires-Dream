@@ -605,10 +605,7 @@ vn_nov_missions_slot_3 = {
         required_missions = {  }
         trigger = {
             religious_unity = 1
-			has_global_modifier_value = {
-				which = tolerance_own
-				value = 4 
-			}
+			tolerance_to_this = 4
         }
         effect = {
 			add_religious_influence_effect_small = yes
@@ -1358,6 +1355,9 @@ vn_nov_missions_slot_5 = {
         icon = mission_dethrone_the_rurikovichs
         position = 8
         required_missions = { vn_nov_the_ushkuyniks }
+		provinces_to_highlight = {
+			province_id = 6594
+		}
         trigger = {
             if = {
 				limit = {
@@ -1365,14 +1365,20 @@ vn_nov_missions_slot_5 = {
 				}
 				army_strength = {
 					who = MOS
-					value = 0.75
+					value = 1
 				}
 			}
 			else = {
-				6594 ={
-					owner = {
-						NOT = {
-							army_size = ROOT
+				OR = {
+					6594 = {
+						owned_by = ROOT
+						is_core = ROOT			
+					}					
+					6594 ={
+						owner = {
+							NOT = {
+								army_size = ROOT
+							}
 						}
 					}
 				}

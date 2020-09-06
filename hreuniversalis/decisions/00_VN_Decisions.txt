@@ -484,6 +484,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -504,6 +505,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -524,6 +526,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -544,6 +547,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -564,6 +568,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -584,6 +589,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -604,6 +610,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}
@@ -624,6 +631,7 @@ country_decisions = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						set_government_rank = 3
 						add_government_reform = feudalism_reform
 					}
 				}

@@ -749,7 +749,20 @@ country_event = {
 						set_country_flag = commune_released
 						change_government = republic
 						add_government_reform = italian_monarchy
-						add_truce_with = ROOT
+						every_neighbor_country = {
+							limit = { 
+								capital_scope = { superregion = italy_superregion }
+								is_emperor = no
+								is_part_of_hre = yes
+							}
+							add_truce_with = PREV
+						}
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.8
+								cavalry = 0.2
+							}
+						}
 						every_owned_province = {
 							remove_core = ROOT
 						}
