@@ -1,2 +1,332 @@
 #Bosnian missions
 #Contributed by Chi-Rho
+
+vn_bos_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = BOS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_bos_kljuc_mining_district = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_bosnian_renaissance = {
+        #icon = 
+        position = 2
+        required_missions = { 
+			vn_bos_kljuc_mining_district 
+			vn_bos_dinaric_trade_routes 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+	vn_bos_consolidate_bosnia = {
+        #icon = 
+        position = 3
+        required_missions = { }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+	vn_bos_seize_herzegovina = {
+        #icon = 
+        position = 5
+        required_missions = { vn_bos_consolidate_bosnia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_bos_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = BOS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_bos_side_with_rome = {
+        #icon = 
+        position = 2
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_reaffirm_papal_ties = {
+        #icon = 
+        position = 3
+        required_missions = { vn_bos_side_with_rome }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_invade_the_south = {
+        #icon = 
+        position = 4
+        required_missions = { vn_bos_reaffirm_papal_ties }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_expand_holy_see = {
+        #icon = 
+        position = 5
+        required_missions = { vn_bos_invade_the_south }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_storm_balkans = {
+        #icon = 
+        position = 6
+        required_missions = { vn_bos_expand_holy_see }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_bos_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = BOS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_bos_dinaric_trade_routes = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_enforce_bogomilism = {
+        #icon = 
+        position = 2
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_move_against_dubrovnik = {
+        #icon = 
+        position = 3
+        required_missions = { vn_bos_enforce_bogomilism }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_bastion_of_bogomilism = {
+        #icon = 
+        position = 4
+        required_missions = { vn_bos_move_against_dubrovnik }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_serbian_throne = {
+        #icon = 
+        position = 5
+        required_missions = { vn_bos_bastion_of_bogomilism }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_tvrtkos_claim = {
+        #icon = 
+        position = 6
+        required_missions = { vn_bos_serbian_throne }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_bos_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = BOS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_bos_side_with_constantinople = {
+        #icon = 
+        position = 2
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_blessing_of_patriarch = {
+        #icon = 
+        position = 3
+        required_missions = { vn_bos_side_with_constantinople }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_reaffirm_eastern_ties = {
+        #icon = 
+        position = 4
+        required_missions = { vn_bos_blessing_of_patriarch }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_ravage_croatia = {
+        #icon = 
+        position = 5
+        required_missions = { vn_bos_reaffirm_eastern_ties }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_toppling_of_hungary = {
+        #icon = 
+        position = 6
+        required_missions = { vn_bos_ravage_croatia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_bos_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = BOS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_bos_establish_bosnian_navy = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_venetian_rivalry = {
+        #icon = 
+        position = 2
+        required_missions = { 
+			vn_bos_dinaric_trade_routes 
+			vn_bos_establish_bosnian_navy 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_fortify_sava_river = {
+        #icon = 
+        position = 3
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_bos_bosnian_fortress = {
+        #icon = 
+        position = 5
+        required_missions = { vn_bos_fortify_sava_river }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}
