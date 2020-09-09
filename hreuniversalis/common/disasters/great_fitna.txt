@@ -14,14 +14,20 @@ great_fitna = {
 			current_age = age_of_empire
 			current_age = age_of_holy_wars
 		}
+		NOT = { has_country_flag = had_great_fitna }
 	}
 
 	
 	can_start = {
 		has_any_disaster = no
 		has_regency = no
-		NOT = { stability = 1 }
-		NOT = { legitimacy = 75 }
+		OR = {
+			NOT = { stability = 0 }
+			NOT = { legitimacy = 50 }
+			corruption = 10
+			is_bankrupt = yes
+			4974 = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+		}
 	}
 	
 	
@@ -107,6 +113,10 @@ great_fitna = {
 			factor = 0.5
 			is_neighbor_of = SJK
 		}
+		modifier = {
+			factor = 1
+			4974 = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+		}
 	}
 	
 	
@@ -121,7 +131,7 @@ great_fitna = {
 	modifier = {
 		religious_unity = -0.5
 		global_unrest = 10
-		missionary_maintenance_cost = 1
+		possible_mercenaries = -1
 	}	
 	
 	

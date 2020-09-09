@@ -16,6 +16,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
+			set_country_flag = had_great_fitna
 			random_owned_province = {
 				limit = { NOT = { religion = ROOT } }
 				spawn_rebels = {
@@ -132,7 +133,7 @@ country_event = {
 	}
 
 	option = {
-		name = great_fitna.3.a
+		name = great_fitna.4.a
 		goto = famine_prov
 		add_piety = -0.05
 		event_target:famine_prov = {
@@ -147,7 +148,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = great_fitna.3.b
+		name = great_fitna.4.b
 		add_piety = 0.05
 		add_adm_power = -50
 	}
@@ -307,6 +308,13 @@ country_event = {
 				modifier = defended_heretic_rebels
 			}
 			clr_country_flag = avoid_choosing_madhhab_flag
+			hidden_effect = {
+				capital_scope = { change_religion = sunni }
+				add_country_modifier = {
+					name = religious_zeal_at_conv
+					duration = 3650
+				}
+			}
 		}
 	}
 }
@@ -327,19 +335,11 @@ country_event = {
 		}
 	}
 
-	immediate = {
-		hidden_effect = {
-			random_owned_province = {
-				limit = { controlled_by = ROOT }
-				save_event_target_as = jamali_reb_prov
-			}
-		}
-	}
-
 	option = {
 		name = great_fitna.7.a
 		ai_chance = { factor = 75 }
 		add_piety = -0.1
+		add_yearly_manpower = 0.25
 		define_general = {
 			name = "Badr al-Jamali"
 			shock = 4
@@ -352,18 +352,9 @@ country_event = {
 	option = {
 		name = great_fitna.7.b
 		ai_chance = { factor = 25 }
-		goto = jamali_reb_prov
 		add_stability = -1
+		add_prestige = -10
 		add_piety = 0.1
-		event_target:jamali_reb_prov = {
-			spawn_rebels = {
-				size = 3
-				type = particularist_rebels
-				leader = "Badr al-Jamali"
-				unrest = 5
-				win = yes
-			}
-		}
 	}
 }
 
@@ -402,7 +393,12 @@ country_event = {
 		}
 		if = {
 			limit = { has_estate = estate_mamluks }
-			reduce_estate_mamluks_loyalty_effect = yes
+			reduce_estate_mamluks_loyalty_effect = yes			add_estate_influence_modifier = {
+				estate = estate_mamluks
+				desc = EST_VAL_REIGN_OF_TERROR
+				influence = -20
+				duration = 5475
+			}
 		}
 	}
 	option = {
@@ -413,7 +409,7 @@ country_event = {
 		event_target:jamali_reb_prov = {
 			spawn_rebels = {
 				size = 3
-				type = particularist_rebels
+				type = pretender_rebels
 				leader = "Badr al-Jamali"
 				unrest = 5
 				win = yes
@@ -590,8 +586,26 @@ country_event = {
 country_event = {
 	id = great_fitna.100
 	title = "great_fitna.100.t"
-	desc = "great_fitna.100.d"
-	picture = CIVIL_WAR_eventPicture
+	desc = {
+		trigger = {
+			OR = {
+				uses_piety = no
+				AND = {
+					uses_piety = yes
+					NOT = { piety = 0.25 }
+				}
+			}
+		}
+		desc = great_fitna.100.d1
+	}
+	desc = {
+		trigger = {
+			uses_piety = yes
+			piety = 0.25
+		}
+		desc = great_fitna.100.d2
+	}
+	picture = PRAYING_eventPicture
 
 	is_triggered_only = yes
 	major = yes
@@ -599,6 +613,22 @@ country_event = {
 	option = {
 		name = great_fitna.100.a
 		add_stability_or_adm_power = yes
+		if = {
+			limit = {
+				uses_piety = yes
+				NOT = { piety = 0.25 }
+			}
+			add_piety = -0.25
+		}
+		if = {
+			limit = {
+				uses_piety = yes
+				piety = 0.25
+			}
+			add_legitimacy = 25
+			add_prestige = 25
+			add_piety = 0.25
+		}
 		clr_country_flag = badr_jamali_accepted
 		clr_country_flag = sunni_viziers_tolerated
 		clr_country_flag = sunni_viziers_curtailed
