@@ -2,7 +2,7 @@
 
 # v 2.0.5 #
 
--Small fixes for the following mission trees: Venice, Palatinate, Novgorod
+-Small fixes for the following mission trees: Venice, Palatinate, Novgorod, Luxembourg
 -Fixed a major bug preventing the Emperor from demanding unlawful territory with Emperor DLC
 -Allowed Free Cities to form and join trade leagues again
 -Improved the Plague event chain more to give more options and allow a player to lower the spread chances with Hospices
@@ -16,6 +16,7 @@
 -Properly fixed the Baltic orders having no techs as it was still bugged
 -Fixed Piedmont's formation decision
 -Austria is now formable for all Austrian culture countries by owning Wien, Graz, Klagenfurt, Linz and Innsbruck. Take that, von Habsburg!
+-Fixed a bunch of flavor events giving absurd amounts of Piety
 -Breagha and Leacain's English names now properly show
 -Translated some mission titles to German
 -Other small localization fixes

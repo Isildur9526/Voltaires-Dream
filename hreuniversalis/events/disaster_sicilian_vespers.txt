@@ -514,11 +514,14 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			stability = 0
+			stability = 1
 			NOT = {
 				any_owned_province = {
 					region = sicilia_region
-					has_rebel_faction = nationalist_rebels
+					OR = {
+						owned_by = TNC
+						has_rebel_faction = nationalist_rebels
+					}
 					is_island = no
 				}
 			}
@@ -554,12 +557,20 @@ country_event = {
 		custom_tooltip = sicilian_vespers.100.a.tt
 		hidden_effect = {
 			sicilia_region = {
+				limit = {
+					OR = {
+						is_core = ROOT
+						is_claim = ROOT
+					}
+					is_island = no
+				}
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			sicilia_region = {
 				limit = { 
 					controlled_by = REB
 					NOT = { controlled_by = TNC }
-				}
-				owner = {
-					remove_core = PREV
 				}
 				cede_province = TNC
 				add_core = TNC
@@ -635,7 +646,7 @@ country_event = {
 		name = sicilian_vespers.100.b	
 		ai_chance = { factor = 100 }
 		trigger = {
-			stability = 0
+			stability = 1
 			NOT = {
 				any_owned_province = {
 					region = sicilia_region

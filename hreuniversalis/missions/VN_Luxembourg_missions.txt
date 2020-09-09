@@ -571,34 +571,34 @@ vn_lux_missions_slot_5_a = {
 			add_mil_power = 50	
             2530 = {
                 add_base_manpower = 2
-            	if = {
-					limit = { 
-						has_building = fort_14th  
-					}
-					remove_building = fort_14th
-					add_building = fort_15th
-				}
-            	if = {
-					limit = { 
-						has_building = fort_15th  
-					}
-					remove_building = fort_15th
-					add_building = fort_16th
-				}
-            	if = {
-					limit = { 
-						has_building = fort_16th  
-					}
-					remove_building = fort_16th
-					add_building = fort_17th
-				}
-            	if = {
-					limit = { 
-						has_building = fort_17th  
-					}
-					remove_building = fort_17th
-					add_building = fort_18th
-				}
+                if = {
+                    limit = { 
+                        has_building = fort_17th  
+                    }
+                    remove_building = fort_17th
+                    add_building = fort_18th
+                }
+                if = {
+                    limit = { 
+                        has_building = fort_16th  
+                    }
+                    remove_building = fort_16th
+                    add_building = fort_17th
+                }
+                if = {
+                    limit = { 
+                        has_building = fort_15th  
+                    }
+                    remove_building = fort_15th
+                    add_building = fort_16th
+                }
+                if = {
+                    limit = { 
+                        has_building = fort_14th  
+                    }
+                    remove_building = fort_14th
+                    add_building = fort_15th
+                }
                 add_province_modifier = {
                     name = lux_draei_eechelen_mission
                     duration = 18250

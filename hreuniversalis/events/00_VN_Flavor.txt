@@ -5335,7 +5335,7 @@ country_event = {
 		name = "HREMB97"
 		ai_chance = { factor = 10 }
 		add_adm_power = 50
-		add_piety = 20
+		add_piety = 0.2
 		add_prestige = 10
 		set_country_flag = made_ghazali_professor
 	}
@@ -5380,7 +5380,7 @@ country_event = {
 		}
 		add_prestige = -5
 		add_treasury = -50
-		add_piety = 25
+		add_piety = 0.25
 		add_country_modifier = {
 			name = "ghazali_falasifa"
 			duration = 1825
@@ -5416,7 +5416,7 @@ country_event = {
 	option = {
 		name = "HREMA99"
 		ai_chance = { factor = 50 }
-		add_piety = 20
+		add_piety = 0.2
 		add_prestige = 10
 		add_country_modifier = {
 			name = "ghazali_fiqh"
@@ -5426,7 +5426,7 @@ country_event = {
 	option = {
 		name = "HREMB99"
 		ai_chance = { factor = 50 }
-		add_piety = -20
+		add_piety = -0.2
 		add_prestige = 10
 		add_country_modifier = {
 			name = "ghazali_tasawwuf"
@@ -7204,13 +7204,13 @@ country_event = {
 	option = {
 		name = "HREMA126"
 		ai_chance = { factor = 90 }
-		add_piety = -10
+		add_piety = -0.1
 		set_country_flag = rumi_arrived
 	}
 	option = {
 		name = "HREMB126"
 		ai_chance = { factor = 10 }
-		add_piety = 10
+		add_piety = 0.1
 	}
 }
 
@@ -7240,7 +7240,7 @@ country_event = {
 				NOT = { treasury = 50 }
 			}
 		}
-		add_piety = -20
+		add_piety = -0.2
 		add_treasury = -50
 		add_adm_power = 25
 		add_dip_power = 25
@@ -7250,7 +7250,7 @@ country_event = {
 	option = {
 		name = "HREMB127"
 		ai_chance = { factor = 10 }
-		add_piety = 20
+		add_piety = 0.2
 	}
 }
 
@@ -7281,7 +7281,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		add_prestige = 10
 		add_adm_power = 50
-		add_piety = -25
+		add_piety = -0.25
 	}
 }
 
@@ -7307,7 +7307,7 @@ country_event = {
 	option = {
 		name = "HREMA129"
 		ai_chance = { factor = 50 }
-		add_piety = 10
+		add_piety = 0.1
 		add_adm_power = 50
 		add_prestige = -10
 		add_country_modifier = {
@@ -7318,7 +7318,7 @@ country_event = {
 	option = {
 		name = "HREMB129"
 		ai_chance = { factor = 50 }
-		add_piety = -10
+		add_piety = -0.1
 		add_dip_power = 50
 		add_prestige = 10
 		add_country_modifier = {
