@@ -131,7 +131,9 @@ great_fitna = {
 	modifier = {
 		religious_unity = -0.5
 		global_unrest = 10
-		possible_mercenaries = -1
+		land_morale = -0.1
+		mercenary_manpower = -0.25
+		mamluks_loyalty_modifier = -0.25
 	}	
 	
 	
@@ -153,6 +155,7 @@ great_fitna = {
 			100 = great_fitna.9
 			100 = great_fitna.10
 			100 = great_fitna.11
+			100 = great_fitna.12
 		}
 	}
 }

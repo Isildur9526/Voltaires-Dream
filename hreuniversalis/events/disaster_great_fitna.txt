@@ -4,6 +4,10 @@ namespace = great_fitna
 # The Great Fitna
 ########################################
 
+# todo on master
+# edit mamluk rebel demand to end the disaster (+ custom event text)
+# edit rebel spawn chance
+
 # Start
 country_event = {
 	id = great_fitna.1
@@ -21,7 +25,7 @@ country_event = {
 				limit = { NOT = { religion = ROOT } }
 				spawn_rebels = {
 					size = 3
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 				}
 			}
@@ -29,7 +33,7 @@ country_event = {
 				limit = { NOT = { religion = ROOT } }
 				spawn_rebels = {
 					size = 3
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 				}
 			}
@@ -37,7 +41,7 @@ country_event = {
 				limit = { NOT = { religion = ROOT } }
 				spawn_rebels = {
 					size = 3
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 				}
 			}
@@ -45,7 +49,7 @@ country_event = {
 				limit = { NOT = { religion = ROOT } }
 				spawn_rebels = {
 					size = 3
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 				}
 			}
@@ -53,7 +57,7 @@ country_event = {
 				limit = { NOT = { religion = ROOT } }
 				spawn_rebels = {
 					size = 3
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 				}
 			}
@@ -65,6 +69,10 @@ country_event = {
 		add_stability = -3
 		add_legitimacy = -25
 		add_piety = -0.5
+		add_estate_loyalty = {
+			estate = estate_mamluks
+			loyalty = -20
+		}
 	}
 }
 
@@ -191,7 +199,7 @@ country_event = {
 			event_target:anarchy_prov = {
 				spawn_rebels = {
 					size = 1
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 					unrest = 5
 				}
@@ -203,7 +211,7 @@ country_event = {
 			event_target:anarchy_prov = {
 				spawn_rebels = {
 					size = 2
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 					unrest = 5
 				}
@@ -215,7 +223,7 @@ country_event = {
 			event_target:anarchy_prov = {
 				spawn_rebels = {
 					size = 3
-					type = particularist_rebels
+					type = mamluk_rebels
 					win = yes
 					unrest = 5
 				}
@@ -337,7 +345,7 @@ country_event = {
 
 	option = {
 		name = great_fitna.7.a
-		ai_chance = { factor = 75 }
+		ai_chance = { factor = 70 }
 		add_piety = -0.1
 		add_yearly_manpower = 0.25
 		define_general = {
@@ -351,10 +359,16 @@ country_event = {
 	}
 	option = {
 		name = great_fitna.7.b
-		ai_chance = { factor = 25 }
-		add_stability = -1
-		add_prestige = -10
+		ai_chance = { factor = 10 }
 		add_piety = 0.1
+		add_prestige = -10
+		levant_superregion = {
+			limit = {
+				owned_by = ROOT
+				is_core = DSC
+			}
+			add_local_autonomy = 15
+		}
 	}
 }
 
@@ -363,14 +377,13 @@ country_event = {
 	id = great_fitna.8
 	title = "great_fitna.8.t"
 	desc = "great_fitna.8.d"
-	picture = BATTLE_eventPicture
+	picture = KING_SICK_IN_BED_eventPicture
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	trigger = {
 		has_country_flag = badr_jamali_accepted
-		has_leader = "Badr al-Jamali"
 	}
 
 	immediate = {
@@ -393,7 +406,8 @@ country_event = {
 		}
 		if = {
 			limit = { has_estate = estate_mamluks }
-			reduce_estate_mamluks_loyalty_effect = yes			add_estate_influence_modifier = {
+			reduce_estate_mamluks_loyalty_effect = yes	
+			add_estate_influence_modifier = {
 				estate = estate_mamluks
 				desc = EST_VAL_REIGN_OF_TERROR
 				influence = -20
@@ -406,11 +420,13 @@ country_event = {
 		goto = jamali_prov
 		add_piety = 0.25
 		add_stability = -1
+		hidden_effect = { kill_leader = "Badr al-Jamali" }
 		event_target:jamali_reb_prov = {
 			spawn_rebels = {
 				size = 3
-				type = pretender_rebels
-				leader = "Badr al-Jamali"
+				type = mamluk_rebels
+				leader = "Badr"
+				leader_dynasty = "Armaniyya"
 				unrest = 5
 				win = yes
 			}
@@ -494,7 +510,7 @@ country_event = {
 			limit = { controlled_by = ROOT }
 			spawn_rebels = {
 				size = 3
-				type = particularist_rebels
+				type = mamluk_rebels
 				win = yes
 				unrest = 5
 			}
@@ -503,7 +519,7 @@ country_event = {
 			limit = { controlled_by = ROOT }
 			spawn_rebels = {
 				size = 3
-				type = particularist_rebels
+				type = mamluk_rebels
 				win = yes
 				unrest = 5
 			}
@@ -512,7 +528,7 @@ country_event = {
 			limit = { controlled_by = ROOT }
 			spawn_rebels = {
 				size = 3
-				type = particularist_rebels
+				type = mamluk_rebels
 				win = yes
 				unrest = 5
 			}
@@ -576,8 +592,82 @@ country_event = {
 			change_religion = sunni
 			spawn_rebels = {
 				size = 2
-				type = particularist_rebels
+				type = sunni_rebels
 			}
+		}
+	}
+}
+
+# loss of lebanon
+country_event = {
+	id = great_fitna.12
+	title = "great_fitna.12.t"
+	desc = "great_fitna.12.d"
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_province = {
+			is_core = LEB
+		}
+	}
+
+	option = {
+		name = great_fitna.12.a
+		add_piety = -0.1
+		if = {
+			limit = { LEB = { exists = yes } }
+			every_owned_province = {
+				limit = { is_core = LEB }
+				cede_province = LEB
+				remove_core = ROOT
+			}
+		}
+		else = {
+			release = LEB
+			hidden_effect = {
+				LEB = {
+					change_government = monarchy
+					add_government_reform = iqta
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.7
+							cavalry = 0.3
+						}
+					}
+				}
+			}
+		}
+		add_truce_with = LEB
+		reverse_add_opinion = {
+			who = LEB
+			modifier = opinion_pleased
+		}
+	}
+	option = {
+		name = great_fitna.12.b
+		add_piety = 0.1
+		random_owned_province = {
+			limit = { is_core = LEB }
+			spawn_rebels = {
+				size = 2
+				type = nationalist_rebels
+				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = { is_core = LEB }
+			spawn_rebels = {
+				size = 1
+				type = nationalist_rebels
+				win = yes
+			}
+		}
+		reverse_add_opinion = {
+			who = LEB
+			modifier = opinion_angry
 		}
 	}
 }
@@ -588,6 +678,7 @@ country_event = {
 	title = "great_fitna.100.t"
 	desc = {
 		trigger = {
+			NOT = { has_country_flag = mamluks_won_great_calamity }
 			OR = {
 				uses_piety = no
 				AND = {
@@ -600,10 +691,17 @@ country_event = {
 	}
 	desc = {
 		trigger = {
+			NOT = { has_country_flag = mamluks_won_great_calamity }
 			uses_piety = yes
 			piety = 0.25
 		}
 		desc = great_fitna.100.d2
+	}
+	desc = {
+		trigger = {
+			has_country_flag = mamluks_won_great_calamity
+		}
+		desc = great_fitna.100.d3
 	}
 	picture = PRAYING_eventPicture
 
@@ -629,8 +727,13 @@ country_event = {
 			add_prestige = 25
 			add_piety = 0.25
 		}
+		if = {
+			limit = { has_country_flag = mamluks_won_great_calamity }
+			kill_ruler = yes
+		}
 		clr_country_flag = badr_jamali_accepted
 		clr_country_flag = sunni_viziers_tolerated
 		clr_country_flag = sunni_viziers_curtailed
+		clr_country_flag = mamluks_won_great_calamity
 	}
 }
