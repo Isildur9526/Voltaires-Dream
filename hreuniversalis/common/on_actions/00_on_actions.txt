@@ -784,6 +784,7 @@ on_new_monarch = {
 		flavor_hun.17			#Maintaining the Black Army
 		flavor_fra.9000			# François Villon
 		nrm_invasions.4			#Normans win invasion
+		fbievents.141			#Orsini Colonna Popes
 	}
 	random_events = {
 		1000 = 0
@@ -2842,6 +2843,16 @@ on_four_year_pulse = {
 		100 = hremodevents.118
 		100 = hremodevents.119
 		100 = hremodevents.120
+
+		#Papal
+		100 = fbievents.142
+		100 = fbievents.143
+		100 = fbievents.144
+		100 = fbievents.145
+		100 = fbievents.146
+		100 = fbievents.147
+		100 = fbievents.148
+		100 = fbievents.149
 
 		# Revolutionary Empires
 		100 = napoleon.1

@@ -517,6 +517,12 @@
  uralinusko_rebels_name: "$RELIGION$ Zealots"
  uralinusko_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  uralinusko_rebels_army: "$RELIGION$ Army"
+ mamluk_rebels_demand: "Increased Autonomy"
+ mamluk_rebels_demand_desc: "The Mamluks demand the right of recognition and to be able to rule themselves according to their own traditions."
+ mamluk_rebels_title: "Mamluk Rebels"
+ mamluk_rebels_name: "$COUNTRY$ Mamluks"
+ mamluk_rebels_desc: "Mamluk Rebels seek to establish their own rule over the country."
+ mamluk_rebels_army: "Host"
  #Descriptions
  shiite_religion_desc: "Shia Muslims hold that the legitimate successor of the prophet Muhammad as Caliph and Imam was his cousin and son-in-law Ali. The Shias believe that a number of Imams have followed Ali and still await the coming of his final successor.\nIn the game Shia Islam is a dominant state religion only during the eleventh century."
  sunni_religion_desc: "Sunni Islam holds that the legitimate successor of the Prophet Muhammad was father-in-law Abu Bakr.\nAs the religion of the majority of the world's Muslims Sunni Islam is present from Morocco to the Levant and is one of the largest religions in the southern part of the game."

@@ -79,15 +79,13 @@ country_decisions = {
 			}
 		}
 		effect = {
-			change_government = republic
-			add_government_reform = canton_government
-			add_adm_power = -200
 			if = {
-				limit = {
-					government = theocracy
-				}
+				limit = { NOT = { government = republic } }
+				change_government_to_republic = yes
 				add_stability = -1
 			}
+			add_government_reform = canton_government
+			add_adm_power = -200
 			hidden_effect = {
 				every_country = {
 					limit = {
@@ -357,6 +355,9 @@ country_decisions = {
                 }
             }
         }
+        ai_will_do = {
+			factor = 1
+		}
         ai_importance = 350
     }
 

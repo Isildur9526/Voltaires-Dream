@@ -253,10 +253,24 @@ add_army_professionalism = 0.05
 		mil = 1
 	}
 }
+1395.3.23 = {
+	heir = {
+		name = "Gian Giacomo"
+		monarch_name = "Gian Giacomo"
+		dynasty = "Palaiologos"
+		birth_date = 1395.3.23
+		death_date = 1445.3.12
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
 1418.4.26 = {
 	monarch = {
 		name = "Gian Giacomo"
 		dynasty = "Palaiologos"
+		birth_date = 1395.3.23
 		adm = 2
 		dip = 3
 		mil = 3

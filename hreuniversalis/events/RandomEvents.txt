@@ -7118,7 +7118,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		dip = 3
+		OR = {
+			dip = 3
+			government = native
+		}
 		is_free_or_tributary_trigger = yes
 		any_rival_country = {
 			any_owned_province = {
@@ -7178,6 +7181,10 @@ country_event = {
 		modifier = {
 			factor = 1.15
 			ruler_has_personality = conqueror_personality
+		}
+		modifier = {
+			factor = 10
+			government = native
 		}
 	}
 

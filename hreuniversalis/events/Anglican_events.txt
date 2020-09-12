@@ -544,11 +544,7 @@ country_event = {
 			is_colony = yes
 			is_overseas = yes
 			religion_group = christian
-			OR = {
-				continent = north_america
-				continent = south_america
-				continent = new_world
-			}
+			continent = new_world
 		}
 	}
 	mean_time_to_happen = {
@@ -563,15 +559,11 @@ country_event = {
 				is_empty = yes
 				range = ROOT
 				any_neighbor_province = {
-						owner = {
-							is_subject_of = ROOT
-						}
+					owner = {
+						is_subject_of = ROOT
+					}
 				}					
-				OR = {
-					continent = north_america
-					continent = south_america
-					continent = new_world
-				}
+				continent = new_world
 			}
 			create_colony = 400
 			change_religion = reformed
@@ -588,11 +580,7 @@ country_event = {
 			limit = {
 				is_colonial_nation = yes
 				capital_scope = {
-					OR = {
-						continent = north_america
-						continent = south_america
-						continent = new_world
-					}
+					continent = new_world
 				}
 			}
 			random_owned_province = {

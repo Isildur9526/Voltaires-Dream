@@ -1239,6 +1239,12 @@ papal_government = {
 	different_religion_acceptance = -20
 	different_religion_group_acceptance = -50
 
+	factions = {
+		pap_orsini
+		pap_colonna
+		pap_roman_mob
+	}
+
     fixed_rank = 5
 	religion = yes
 	monastic = yes
@@ -1701,6 +1707,11 @@ imperial_city = {
 		trade_efficiency = 0.1
 		development_cost = -0.1
 		max_absolutism = -20
+	}
+
+	conditional = {	
+		allow = { has_dlc = "Mare Nostrum" }	
+		can_form_trade_league = yes	
 	}
 	ai = {
 		factor = 5

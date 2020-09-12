@@ -419,6 +419,19 @@ piracy_ideas = {
 
 	ai_will_do = {
 		factor = 0.49
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 1 }
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				has_reform = pirate_republic_reform
+				has_reform = pirate_kingdom
+				has_reform = war_against_the_world_government
+				has_reform = black_market_consortium_government
+			}
+		}
 	}
 }
 

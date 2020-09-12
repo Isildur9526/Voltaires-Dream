@@ -529,7 +529,7 @@ country_event = {
 			if = {
 				limit = { culture_group = turko_semitic }
 				spawn_rebels = {
-					type = revolutionary_rebels
+					type = mamluk_rebels
 					size = 1
 				}
 			}

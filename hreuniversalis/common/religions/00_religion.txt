@@ -1861,6 +1861,8 @@ muslim = {
 	flags_with_emblem_percentage = 33
 	flag_emblem_index_range = { 97 106 } #Including Star of David / Seal of Suleyman
 
+	ai_will_propagate_through_trade = yes
+
 	religious_schools = {
 		hanafi_school = {
 			potential_invite_scholar = {

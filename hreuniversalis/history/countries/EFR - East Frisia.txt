@@ -69,7 +69,7 @@ capital = 2217	# Emden
 	}
 }
 1528.2.14 = {
-	religion = anabaptist
+	religion = protestant
 	monarch = {
 		name = "Enno II"
 		dynasty = "Cirksena"

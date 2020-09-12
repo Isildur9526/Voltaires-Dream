@@ -570,6 +570,7 @@ war_taxes = {
 stability = {
 	global_trade_power = 0.01			#1% chance each step.
 	global_spy_defence = 0.05				#-15 to +15% modifier
+	pap_roman_mob_influence = -0.03
 }
 
 positive_stability = {
@@ -658,6 +659,7 @@ bankruptcy = {
 	naval_morale = -0.5
 	reinforce_speed = -0.25					#Slower reinforce
 	mr_guilds_influence = 0.25
+	pap_orsini_influence = 0.25
 	tur_pacifists_influence = 0.25
 	cla_flatha_influence = 0.25
 	abb_cistercians_influence = 0.25
@@ -851,6 +853,7 @@ free_city_in_hre = {
 
 member_in_hre = {
 	diplomatic_upkeep = 1
+	pap_colonna_influence = 0.1
 }
 
 #for each non-core if in the empire, and also a prince.
@@ -910,6 +913,7 @@ devotion = {
 	prestige = 2
 	global_tax_modifier = 0.50
 	abb_cistercians_influence = 0.1
+	pap_roman_mob_influence = 0.05
 	church_loyalty_modifier = 0.05
 	brahmins_hindu_loyalty_modifier = 0.05
 }

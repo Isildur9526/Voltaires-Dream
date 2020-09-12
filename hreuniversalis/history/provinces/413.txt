@@ -26,7 +26,7 @@ add_core = HLX
 	owner = HLX
 	controller = HLX
 }
-1536.1.1 = { religion = anabaptist }
+1536.1.1 = { religion = protestant }
 1540.10.16 = {
 	owner = RTG
 	controller = RTG

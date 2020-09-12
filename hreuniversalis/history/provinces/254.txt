@@ -18,7 +18,7 @@ add_core = AUC
 	remove_core = AUC
 	hre = yes
 }
-1536.1.1 = { religion = anabaptist }
+1536.1.1 = { religion = protestant }
 1744.5.26 = {
 	owner = PRU
 	controller = PRU

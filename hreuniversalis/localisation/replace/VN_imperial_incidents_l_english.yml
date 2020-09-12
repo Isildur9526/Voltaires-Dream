@@ -1,8 +1,8 @@
 ﻿l_english:
 #Investiture Controversy
  incident_investiture_controversy: "Investiture Controversy"
- incident_investiture_controversy_member_alert: "The Pope find the gall to claim the sacral authority in the Holy Roman Empire by passing a series of anti-imperial reforms. If he is not stopped, the power of the Emperors could be significantly eroded for all future."
- incident_investiture_controversy_emperor_alert: "The Pope find the gall to claim the sacral authority in the Holy Roman Empire by passing a series of anti-imperial reforms. If he is not stopped, the power of the Emperors could be significantly eroded for all future."
+ incident_investiture_controversy_member_alert: "The Pope has the gall to claim the sacral authority in the Holy Roman Empire by passing a series of anti-imperial reforms. If he is not stopped, the power of the Emperors could be significantly eroded for all future time."
+ incident_investiture_controversy_emperor_alert: "The Pope has the gall to claim the sacral authority in the Holy Roman Empire by passing a series of anti-imperial reforms. If he is not stopped, the power of the Emperors could be significantly eroded for all future time."
  incident_investiture_controversy.1.t: "Pressure of the Pataria"
  incident_investiture_controversy.1.d: "With the beginning of ecclesiastical reform efforts by the papacy, the Pataria, a radical clerical movement motivated by these ideas, has acquired growing influence in Lombard dioceses and monasteries. In recent weeks, they have eliminated disagreeable priests and replaced them with clerics loyal to the Pope instead.\nPressed into distress by this political opposition, Archbishop Guido of Milan has urgently decided to send the episcopal vestments back to the Emperor and retire as a monk to a secluded monastery. Before a new bishop was able to be elected, the Pataria seized the power of the bishopric and appointed a new archbishop themselves!"
  incident_investiture_controversy.1.a: "This shall not be our fight."

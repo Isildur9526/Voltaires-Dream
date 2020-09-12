@@ -23,7 +23,9 @@ add_core = MRV
 	owner = HAB
 	controller = HAB
 	add_core = HAB
+	religion = anabaptist
 }
+1560.1.1 = { religion = catholic }
 1618.5.23 = {
 	owner = BOH
 	controller = BOH

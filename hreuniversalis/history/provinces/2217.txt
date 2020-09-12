@@ -28,7 +28,7 @@ discovered_by = muslim
 	remove_core = FDG
 	hre = yes
 }
-1536.1.1 = { religion = anabaptist }
+1536.1.1 = { religion = protestant }
 1744.5.26 = {
 	owner = PRU
 	controller = PRU

@@ -800,7 +800,7 @@ country_event = {
 			factor = 75
 			modifier = {
 				factor = 0
-				ZLX = { reverse_has_opinion = { who = ROOT value = 0 } }
+				ZLX = { is_rival = ROOT }
 			}
 		}
 		add_stability = 1

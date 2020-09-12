@@ -1,25 +1,39 @@
 ### Voltaire's Nightmare Changelog ###
 
+# v 2.0.6 #
+
+-Added the following new mercenary companies: Kutama, Jutlandic Freischar, Geharnischte
+-Added Mamluk rebel type
+-More German localization additions
+-Other minor localization/bug fixes
+
 # v 2.0.5 #
 
--Small fixes for the following mission trees: Venice, Palatinate, Novgorod, Luxembourg
+-Small fixes for the following mission trees: Venice, Palatinate, Novgorod, Luxembourg, Baghdad, Seljuks
 -Fixed a major bug preventing the Emperor from demanding unlawful territory with Emperor DLC
 -Allowed Free Cities to form and join trade leagues again
+-Halved the regiments per development for all mercenary companies to make them less massive
 -Improved the Plague event chain more to give more options and allow a player to lower the spread chances with Hospices
+-Balanced development values in Egypt
 -Fixed unit spawns in the Fall of Arpads disaster
 -Fixed oversight that made ending Fragmentation of Poland unfairly difficult
 -Made the decision to reform Poland slightly easier
 -Extended Salzburg's mission tree (contribution by FrenchKnight)
 -Tuscany can no longer collapse if they are a subject
 -Italian Communes now get units on spawning
--Nations splitting off when Byzantium reforms its government are no longer Empires
+-Tribes reforming off of Byzantium are no longer Empires
 -Properly fixed the Baltic orders having no techs as it was still bugged
 -Fixed Piedmont's formation decision
 -Austria is now formable for all Austrian culture countries by owning Wien, Graz, Klagenfurt, Linz and Innsbruck. Take that, von Habsburg!
 -Fixed a bunch of flavor events giving absurd amounts of Piety
 -Breagha and Leacain's English names now properly show
+-Fixed some history around Anabaptism in the timeline
+-Added Papal Factions and associated events
+-Greatly increased chance of Tribes to get random claim events
+-Added event to de-appanage states that should not be appanages
 -Translated some mission titles to German
 -Other small localization fixes
+-Other minor bugfixes
 
 # v 2.0.4 #
 

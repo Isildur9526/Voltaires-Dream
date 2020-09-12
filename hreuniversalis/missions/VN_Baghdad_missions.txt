@@ -1342,17 +1342,16 @@ vn_bgh_missions_slot_3 = {
                 limit = { has_dlc = "Dharma" }
             	2233 = { 
                     province_has_center_of_trade_of_level = 3
-                    development = 40 
+                    development = 40
                 }
 			}
 			else = {
 				2233 = {
-					development = 45	
+					development = 50	
 				}
 			}	               
         }
         effect = {
-			add_prestige = 10
 			2233 = {
 				add_province_modifier = {
 					name = "bgh_restoration_of_the_city_mission"
@@ -1374,17 +1373,17 @@ vn_bgh_missions_slot_3 = {
                 limit = { has_dlc = "Dharma" }
             	2233 = { 
                     province_has_center_of_trade_of_level = 3 
-                    development = 45
+                    development = 50
                 }
 			}
 			else = {
 				2233 = {
-					development = 50	
+					development = 60	
 				}
 			}	               
         }
         effect = {
-			add_legitimacy = 15
+			add_prestige = 10
 			2233 = {
 				add_province_modifier = {
 					name = "bgh_jewel_of_our_realm_mission"
@@ -1423,8 +1422,8 @@ vn_bgh_missions_slot_3 = {
 			}       
         }
         effect = {
-			add_legitimacy = 25
-			add_prestige = 25
+			add_legitimacy = 10
+			add_prestige = 10
         }
     }
     vn_bgh_unite_islam = {

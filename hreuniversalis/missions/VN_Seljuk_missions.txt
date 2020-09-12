@@ -1334,11 +1334,11 @@ vn_sjk_missions_slot_4 = {
 			if = {
                 limit = { has_dlc = "Dharma" }
             	2233 = { province_has_center_of_trade_of_level = 3 }
-				2233 = { development = 40 }
+				2233 = { development = 50 }
 			}
 			else = {
 				2233 = {
-					development = 50	
+					development = 60	
 				}
 			}	               
         }

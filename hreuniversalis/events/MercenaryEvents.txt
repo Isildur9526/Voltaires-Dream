@@ -452,6 +452,9 @@ country_event = {
 			478 = {
 				owned_by = ROOT
 			}
+			365 = {
+				owned_by = ROOT
+			}
 		}
 	}
 	

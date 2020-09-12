@@ -8117,3 +8117,390 @@ country_event = {
 		}
 	}
 }
+
+# Papal Factions
+country_event = {
+	id = fbievents.141
+	title = "FBIT141"
+	desc = "FBID141"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			faction_in_power = pap_orsini
+			faction_in_power = pap_colonna
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA141"
+		trigger = { faction_in_power = pap_orsini }
+		add_ruler_modifier = { name = "orsini_pope" }
+	}
+
+	option = {
+		name = "FBIB141"
+		trigger = { faction_in_power = pap_colonna }
+		add_ruler_modifier = { name = "colonna_pope" }
+	}
+}
+
+country_event = {
+	id = fbievents.142
+	title = "FBIT142"
+	desc = "FBID142"
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		faction_in_power = pap_roman_mob
+		OR = {
+			has_ruler_modifier = orsini_pope
+			has_ruler_modifier = colonna_pope
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA142"
+		ai_chance = { factor = 1 }
+		kill_ruler = yes
+	}
+
+	option = {
+		name = "FBIB142"
+		ai_chance = { factor = 99 }
+		random_owned_province = {
+			limit = { is_in_capital_area = yes }
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = fbievents.143
+	title = "FBIT143"
+	desc = "FBID143"
+	picture = STREET_SPEECH_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = papacy_reform
+		has_factions = yes
+		capital_scope = {
+			NOT = { controlled_by = REB }
+			NOT = { controlled_by = owner }
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA143"
+		ai_chance = { factor = 100 }
+		add_faction_influence = { faction = pap_roman_mob influence = 50 }
+		capital_scope = { change_controller = ROOT }
+	}
+
+	option = {
+		name = "FBIB143"
+		ai_chance = { factor = 0 }
+		add_faction_influence = { faction = pap_roman_mob influence = -25 }
+		add_manpower = 5
+		add_war_exhaustion = -5
+	}
+}
+
+country_event = {
+	id = fbievents.144
+	title = "FBIT144"
+	desc = "FBID144"
+	picture = CORRUPTION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_papal_controller = no
+		OR = {
+			faction_in_power = pap_orsini
+			faction_in_power = pap_colonna
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = { is_papal_controller = yes }
+				save_event_target_as = papal_antagonist
+			}
+		}
+	}
+	
+	option = {
+		name = "FBIA144"
+		if = {
+			limit = { faction_in_power = pap_orsini }
+			add_faction_influence = { faction = pap_orsini influence = -25 }
+		}
+		else = {
+			add_faction_influence = { faction = pap_colonna influence = -25 }
+		}
+		random_country = {
+			limit = { is_papal_controller = yes }
+			add_papal_influence = 10
+		}
+	}
+
+	option = {
+		name = "FBIB144"
+		random_country = {
+			limit = { is_papal_controller = yes }
+			add_opinion = { who = ROOT modifier = opinion_upset_pope }
+		}
+	}
+}
+
+country_event = {
+	id = fbievents.145
+	title = "FBIT145"
+	desc = "FBID145"
+	picture = ST_PETERS_CHURCH_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			faction_in_power = pap_orsini
+			faction_in_power = pap_colonna
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA145"
+		ai_chance = { factor = 25 }
+		add_faction_influence = { faction = pap_roman_mob influence = 25 }
+		add_prestige = -10
+	}
+
+	option = {
+		name = "FBIB145"
+		ai_chance = { factor = 75 }
+		add_corruption = 1
+		add_devotion = -5
+	}
+}
+
+country_event = {
+	id = fbievents.146
+	title = "FBIT146"
+	desc = "FBID146"
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = BAD_POPE_eventPicture
+	}
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = POPE_PREACHING_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ruler_modifier = colonna_pope
+		faction_in_power = pap_orsini
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA146"
+		add_years_of_income = -0.25
+		add_faction_influence = { faction = pap_orsini influence = 10 }
+	}
+}
+
+country_event = {
+	id = fbievents.147
+	title = "FBIT147"
+	desc = "FBID147"
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = BAD_POPE_eventPicture
+	}
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = POPE_PREACHING_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ruler_modifier = orsini_pope
+		faction_in_power = pap_colonna
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA147"
+		add_corruption = 2
+		add_faction_influence = { faction = pap_colonna influence = 10 }
+	}
+}
+
+country_event = {
+	id = fbievents.148
+	title = "FBIT148"
+	desc = "FBID148"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = papacy_reform
+		has_factions = yes
+		any_neighbor_country = {
+			NOT = { tag = LZO }
+			is_rival = no
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					NOT = { tag = LZO }
+					is_rival = no
+				}
+				save_event_target_as = colonna_friend
+			}
+		}
+	}
+	
+	option = {
+		name = "FBIA148"
+		add_faction_influence = { faction = pap_colonna influence = 25 }
+		event_target:colonna_friend = {
+			add_opinion = { who = ROOT modifier = christian_brotherhood }
+		}
+	}
+
+	option = {
+		name = "FBIB148"
+		add_faction_influence = { faction = pap_orsini influence = 25 }
+		add_adm_power = 50
+	}
+}
+
+country_event = {
+	id = fbievents.149
+	title = "FBIT149"
+	desc = "FBID149"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT  = { has_country_modifier = orsini_admin }
+		has_reform = papacy_reform
+		has_factions = yes
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "FBIA149"
+		add_faction_influence = { faction = pap_orsini influence = 25 }
+		add_country_modifier = {
+			name = "orsini_admin"
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = "FBIB149"
+		add_faction_influence = { faction = pap_colonna influence = 25 }
+		add_dip_power = 50
+	}
+}
+
+country_event = {
+	id = fbievents.150
+	title = "FBIT150"
+	desc = "FBID150"
+	picture = POPE_PREACHING_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_reform = papacy_reform
+		tag = PAP
+		has_factions = yes
+		current_age = age_of_reformation
+		NOT = { started_in = 1511.1.1 }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = pious_personality
+		}
+		modifier = {
+			factor = 0.5
+			faction_in_power = pap_roman_mob
+		}
+	}
+	
+	option = {
+		name = "FBIA150"
+		add_devotion = 20
+		remove_faction = pap_orsini
+		remove_faction = pap_colonna
+		remove_faction = pap_roman_mob
+		set_global_flag = pax_romana
+	}
+}
+
+country_event = {
+	id = fbievents.151
+	title = "FBIT151"
+	desc = "FBID151"
+	picture = REFORM_eventPicture
+
+	major = yes
+	major_trigger = { is_emperor_of_china = yes }
+	
+	trigger = {
+		is_subject_of_type = tributary_state
+		NOT = {
+			OR = {
+				has_reform = principality
+				has_reform = veche_republic
+			}
+		}
+	}
+	
+	mean_time_to_happen = { months = 9 }
+	
+	option = {
+		name = "FBIA151"
+		overlord = { free_vassal = ROOT }
+	}
+}

@@ -41,6 +41,7 @@ change_estate_land_share = {
 1318.1.1 = { set_global_flag = fraticelli_heresy_g }
 1381.1.1 = { set_global_flag = lollard_heresy_g }
 1415.1.1 = { set_global_flag = hussite_heresy_g }
+1511.1.1 = { set_global_flag = pax_romana }
 1545.12.13 = { set_global_flag = counter_reformation }
 
 #Popes
@@ -286,6 +287,7 @@ change_estate_land_share = {
 		dip = 2
 		mil = 0
 	}
+	add_ruler_modifier = { name = "orsini_pope" }
 }
 1193.1.1 = { capital = 2235 }
 1198.1.8 = {
@@ -421,6 +423,7 @@ change_estate_land_share = {
 		mil = 2
 		adm = 2
 	}
+	add_ruler_modifier = { name = "orsini_pope" }
 }
 1280.8.22 = {
 	monarch = {
@@ -608,6 +611,7 @@ change_estate_land_share = {
 		dip = 2
 		mil = 2
 	}
+	add_ruler_modifier = { name = "colonna_pope" }
 }
 1431.2.20 = {
 	monarch = {
@@ -622,7 +626,7 @@ change_estate_land_share = {
 1447.2.23 = {
 	monarch = {
 		name = "Nicholaus V"
-		culture = ligurian
+		culture = emilian
 		birth_date = 1397.11.15
 		adm = 4
 		dip = 3

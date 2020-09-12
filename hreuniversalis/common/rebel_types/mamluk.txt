@@ -1,0 +1,157 @@
+######################################################################
+# Mamluk Rebels
+######################################################################
+mamluk_rebels = {
+	
+	color = { 190 55 55 }
+	
+	area = nation 					# Stays within the nation
+	government = monarchy			# Don't care about gov type				
+	defection = none				# Will not defect
+	independence = none				# Does not strive for independence
+	gfx_type = culture_province
+	will_relocate = yes	
+
+	resilient = yes					# Can retreat
+	reinforcing = yes				# Can reinforce
+	general = yes					# Does use generals
+	smart = yes						# Do assault forts, tactically withdraw from battle, etc.
+	unit_transfer = no				# Units do not remain after enforcing demands.
+	
+	artillery = 0.0
+	infantry = 0.6
+	cavalry = 0.4
+	
+	morale = 0.95
+	
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { owner = { has_estate = estate_mamluks } }		
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { religion_group = muslim }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { culture_group = ROOT }
+		}
+		modifier = {
+			factor = 0.2
+			is_core = owner
+		}
+		modifier = {
+			factor = 0.2
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 5
+			trade_goods = slaves
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				estate_territory = {
+					estate = estate_mamluks
+					territory = 20
+				}
+			}
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 5.0
+			trade_goods = slaves
+		}		
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+	
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = { has_owner_accepted_culture = yes }
+		NOT = { has_owner_culture = yes }
+		trade_goods = slaves
+ 	}
+	siege_won_effect = {
+		add_local_autonomy = 10	
+		owner = {
+			change_estate_land_share = {
+				estate = estate_mamluks
+				share = 10.0
+				province = ROOT
+			}
+		}
+	}	
+	
+	# Country scope
+	can_negotiate_trigger = {
+		always = yes
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+
+	# Localisation for their demands
+	demands_description = "mamluk_rebels_demand"
+	
+	# Country scope
+	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
+		create_independent_estate = {
+			estate = estate_mamluks
+			play_as = no
+			government = monarchy
+			government_reform = mamluk_government
+			custom_national_ideas = MAM_ideas
+		}
+		change_estate_land_share = {
+			estate = estate_mamluks
+			share = -30.0
+		}
+		change_estate_land_share = {
+			estate = all
+			share = 20.0
+		}
+	}
+}

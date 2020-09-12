@@ -96,6 +96,12 @@ papacy_reform = {
 	lock_level_when_selected = yes
 	fixed_rank = 5
 
+	factions = {
+		pap_orsini
+		pap_colonna
+		pap_roman_mob
+	}
+
 	custom_attributes = {
 		locked_government_type = yes
 	}

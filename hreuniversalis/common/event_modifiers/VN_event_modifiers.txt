@@ -228,6 +228,16 @@ kalands_brethren_m = {
 }
 
 #Others
+orsini_pope = {
+	pap_orsini_influence = 0.05
+}
+colonna_pope = {
+	pap_colonna_influence = 0.05
+}
+orsini_admin = {
+	interest = -1
+	global_tax_modifier = 0.1
+}
 estate_holy_orders_monopoly_of_beer_mod = {
 	local_production_efficiency = -10
 }

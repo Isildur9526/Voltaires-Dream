@@ -37,7 +37,7 @@ add_core = RHD
 	remove_core = RHD
 	hre = yes
 }
-1536.1.1 = { religion = anabaptist }
+1536.1.1 = { religion = protestant }
 1744.5.26 = {
 	owner = PRU
 	controller = PRU

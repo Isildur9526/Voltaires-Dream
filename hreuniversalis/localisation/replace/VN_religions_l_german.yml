@@ -517,6 +517,12 @@
  uralinusko_rebels_name: "$RELIGION$e Fanatiker"
  uralinusko_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  uralinusko_rebels_army: "$RELIGION$e Armee"
+ mamluk_rebels_demand: "Mehr Autonomie"
+ mamluk_rebels_demand_desc: "Die Mamluken verlangen das Recht auf Anerkennung, außerdem wollen sie sich selbst gemäß ihrer Traditionen regieren."
+ mamluk_rebels_title: "Mamluken-Rebellen"
+ mamluk_rebels_name: "$COUNTRY$e Mamluken"
+ mamluk_rebels_desc: "Mamlukenrebellen versuchen, das Land unter ihre eigene Herrschaft zu bringen."
+ mamluk_rebels_army: "Heer"
  #Descriptions
  shiite_religion_desc: "Schiitische Muslime glauben, der legitime Nachfolger des Propheten Mohammed als Kalif und Imam sei sein Cousin und Schwiegersohn Ali. Die Schiiten glauben, dass eine Reihe Imame nach Ali folgten, und sie warten noch immer auf den Aufstieg seines letzten Nachfolgers.\nIm Spiel ist der schiitische Islam nur in einigen andalusischen Staaten präsent."
  sunni_religion_desc: "Der sunnitische Islam besagt, dass der legitime Nachfolger des Propheten Mohammed sein Schwiegervater Abu Bakr gewesen sei.\nAls Religion der Mehrheit der Muslime auf der Welt ist der sunnitische Islam von Marokko bis zur Levante präsent und eine der größten Religionen im Spiel."
