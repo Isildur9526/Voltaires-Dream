@@ -653,7 +653,7 @@ vn_lux_missions_slot_5_a = {
 							alliance_with = ROOT
 							has_opinion = {
 								who = ROOT
-								value = 100
+								value = 150
 							}
 						}
 					}

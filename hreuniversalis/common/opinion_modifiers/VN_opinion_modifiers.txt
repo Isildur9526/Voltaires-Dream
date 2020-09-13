@@ -35,6 +35,14 @@ opinion_incident_elevation_of_bohemia_rejection_b = {
 	opinion = -200
 	yearly_decay = 2
 }
+pis_carmen_in_victoriam_opinion = {
+	opinion = 50
+	yearly_decay = 2
+}
+pis_liber_maiorichinus_opinion = {
+	opinion = 50
+	yearly_decay = 2
+}
 
 #Isildur
 nrm_high_king_opinion = {

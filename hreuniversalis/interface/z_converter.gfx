@@ -547,6 +547,13 @@ spriteTypes = {
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
+
+	spriteType = {
+		name = "GFX_disaster_great_fitna"
+		texturefile = "gfx//interface//disasters//great_fitna.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 	
 	#NewMissions
 	spriteType = {

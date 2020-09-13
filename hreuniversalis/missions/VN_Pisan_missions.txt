@@ -1,0 +1,1238 @@
+#Pisan missions
+#Contributed by FrenchKnight
+#Coded by FrenchKnight and Historyperson
+
+vn_pis_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = PIS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pis_reconquer_corsica = {
+        icon = rule_corsica
+        position = 3
+        required_missions = { vn_pis_expand_triturrita }
+        provinces_to_highlight = {
+			area = corsica_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+		trigger = {
+			corsica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			insular_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}             
+        }
+    }
+    vn_pis_conquer_sardinia = {
+        icon = seize_sardinia
+        position = 4
+        required_missions = { vn_pis_reconquer_corsica }
+		provinces_to_highlight = {
+            region = insular_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			insular_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			balears_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}     
+            add_country_modifier = {
+                name = pis_conquer_sardinia_mission
+                duration = 9125
+            }
+        }
+    }
+    vn_pis_balearic_expedition = {
+        icon = reclaim_the_aegean
+        position = 5
+        required_missions = { vn_pis_conquer_sardinia }
+		provinces_to_highlight = {
+            area = balears_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			balears_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			add_papal_influence = 10
+			valencian_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}              
+        }
+    }
+    vn_pis_liber_maiorichinus = {
+        icon = reform_the_nomocanon
+        position = 6
+        required_missions = { vn_pis_balearic_expedition }
+		provinces_to_highlight = {
+			OR = {
+				culture_group = maghrebi
+				culture_group = turko_semitic				
+			}
+			has_port = yes
+			development = 10
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_liber_maiorichinus.tt
+				num_of_owned_provinces_with = {
+					value = 10
+					OR = {
+						culture_group = maghrebi
+						culture_group = turko_semitic				
+					}
+					development = 10
+					has_port = yes
+				}
+			}
+		}
+        effect = {
+			add_prestige = 10
+			reverse_add_opinion = {
+				who = PAP
+				modifier = pis_liber_maiorichinus_opinion
+			}
+            add_country_modifier = {
+                name = "pis_liber_maiorichinus_mission"
+                duration = 9125
+            }              
+			valencian_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+        }
+    }
+    vn_pis_interests_in_france = {
+        icon = king_of_the_franks
+        position = 7
+        required_missions = { vn_pis_possessions_near_and_far }
+		provinces_to_highlight = {
+			OR = {
+				region = provence_region
+				region = toulouse_region
+			}
+			has_port = yes
+			development = 10
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_interests_in_france.tt
+				num_of_owned_provinces_with = {
+					value = 5
+					OR = {
+						region = toulouse_region
+						region = provence_region
+					}
+					development = 10
+					has_port = yes
+				}
+			}           
+        }
+        effect = {
+			add_prestige = 10
+            toulouse_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            } 
+            provence_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            } 
+			toulouse_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}  
+			provence_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}			
+        }
+    }
+}
+
+vn_pis_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = PIS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pis_expand_triturrita = {
+        icon = overshadow_venice
+        position = 2
+        required_missions = { vn_pis_defense_of_pisa }
+		provinces_to_highlight = {
+			province_id = 115
+		}
+        trigger = {
+			115 = {
+				owned_by = ROOT
+				NOT = { devastation = 1 }
+			}
+            num_of_owned_provinces_with = {
+                value = 4
+                area = pisa_area
+                OR = {
+                    has_building = shipyard
+                    has_building = grand_shipyard
+                }
+			}    
+        }
+        effect = {
+            115 = {
+				add_base_tax = 1
+                add_base_production = 1
+				add_base_manpower = 1
+			}
+            add_country_modifier = {
+                name = pis_expand_triturrita_mission 
+                duration = -1
+            } 
+			corsica_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			} 
+        }
+    }
+    vn_pis_trading_rivalries = {
+        icon = nuova_promissione_ducale
+        position = 3
+        required_missions = { vn_pis_expand_triturrita }
+        trigger = {
+			advisor = trader
+            if = {
+                limit = { exists = GEN }
+                navy_size = GEN
+				navy_size = 25
+            }
+            else = {
+                navy_size = 40
+            }              
+        }
+        effect = {
+			add_republican_tradition = 10
+            add_navy_tradition = 10
+			add_yearly_sailors = 1
+			liguria_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}            
+        }
+    }
+    vn_pis_revenge_for_meloria = {
+        icon = imperial_navy
+        position = 4
+        required_missions = { vn_pis_trading_rivalries }
+		provinces_to_highlight = {
+            region = liguria_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			liguria_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 20
+            }  
+            add_country_modifier = {
+                name = pis_revenge_for_meloria_mission 
+                duration = 9125
+            }   			
+			provence_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+        }
+    }
+    vn_pis_tyhrrenian_dominance = {
+        icon = the_shape_of_trades_to_come
+        position = 5
+        required_missions = { vn_pis_revenge_for_meloria }
+        trigger = {
+			treasury = 2000
+            NOT = { num_of_loans = 1 }
+			OR = {
+				640 = { is_strongest_trade_power = ROOT }
+				1619 = { is_strongest_trade_power = ROOT }
+			}
+        }
+        effect = {
+			add_years_of_income = 0.5
+            2560 = {
+				if = {
+                    limit = {
+	            		has_dlc = "Dharma"
+                        NOT = { province_has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+				}
+				else = {
+					add_base_production = 2
+				}
+            } 
+            add_country_modifier = {
+                name = pis_tyhrrenian_dominance_mission
+                duration = 9125
+            }            
+        }
+    }
+    vn_pis_possessions_near_and_far = {
+        icon = sources_of_trade
+        position = 6
+        required_missions = { vn_pis_tyhrrenian_dominance }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                province_has_center_of_trade_of_level = 1
+            }        
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+                NOT = { 
+					OR = {
+						superregion = italy_superregion 
+						region = insular_region
+					}
+				}
+            }  			
+        }
+        effect = {
+            115 = {
+				if = {
+                    limit = {
+	                	has_dlc = "Dharma"
+                        NOT = { province_has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+				}
+				else = {
+					add_base_production = 2
+				}
+            }       
+			toulouse_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			catalunya_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}	
+			valencian_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}	
+			andalusia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}			
+        }
+    }
+    vn_pis_colonies_in_iberia = {
+        icon = mission_guilds_of_barcelona
+        position = 7
+        required_missions = { vn_pis_possessions_near_and_far }
+		provinces_to_highlight = {
+			superregion = iberia_superregion
+			has_port = yes
+			development = 10
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_colonies_in_iberia.tt
+				num_of_owned_provinces_with = {
+					value = 10
+					superregion = iberia_superregion
+					development = 10
+					has_port = yes
+				}
+			}
+		}
+        effect = {
+			add_prestige = 10
+            iberia_superregion = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            }
+			catalunya_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}  
+			valencian_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}	
+			andalusia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}			
+        }
+    }
+}
+
+vn_pis_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = PIS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pis_defense_of_pisa = {
+        icon = the_italian_league
+        position = 1
+        required_missions = {  }
+		provinces_to_highlight = {
+			area = pisa_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+			115 = {
+				has_non_outdated_fort = yes
+			}
+			army_size_percentage = 0.75
+			army_professionalism = 0.25
+			pisa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+        }
+        effect = {
+            add_country_modifier = {
+                name = pis_defense_of_pisa_mission
+                duration = 9125
+            } 
+			551 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			florence_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lucca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			siena_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}            
+        }
+    }
+    vn_pis_overthrow_florence = {
+        icon = conquer_tuscany
+        position = 2
+        required_missions = { vn_pis_defense_of_pisa }
+		provinces_to_highlight = {
+			area = florence_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+			florence_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			tuscany_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}          
+        }
+    }
+    vn_pis_dominate_tuscany = {
+        icon = tuscan_birthright
+        position = 3
+        required_missions = { vn_pis_overthrow_florence vn_pis_conquest_of_lucca }
+		provinces_to_highlight = {
+			region = tuscany_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+			tuscany_region = {
+				type = all
+				consolidated_region_trigger = yes
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50	
+            add_country_modifier = {
+                name = pis_dominate_tuscany_mission
+                duration = 9125
+            }	
+#			umbria_region = {
+#				limit = {
+#					NOT = { is_core = ROOT }
+#					NOT = { is_permanent_claim = ROOT }
+#				}
+#				add_permanent_claim = ROOT
+#			} 
+#			romagna_region = {
+#				limit = {
+#					NOT = { is_core = ROOT }
+#					NOT = { is_permanent_claim = ROOT }
+#				}
+#				add_permanent_claim = ROOT
+#			} 			
+        }
+    }
+    vn_pis_adriatic_ambition = {
+        icon = overshadow_venice
+        position = 4
+        required_missions = { vn_pis_trading_rivalries }
+        trigger = {
+			advisor = trader
+            if = {
+                limit = { exists = VEN }
+                navy_size = VEN
+				navy_size = 25
+            }
+            else = {
+                navy_size = 40
+            }            
+        }
+        effect = {
+            112 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+            }
+            add_country_modifier = {
+                name = pis_adriatic_ambition_mission
+                duration = 9125
+            }            
+        }
+    }
+    vn_pis_raid_of_venice = {
+        icon = mission_control_venice
+        position = 5
+        required_missions = { vn_pis_adriatic_ambition }
+        provinces_to_highlight = {
+            province_id = 112
+        }
+        trigger = {
+            OR = {
+				112 = { country_or_non_sovereign_subject_holds = ROOT }
+                112 = {
+                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                    controlled_by = ROOT
+                    devastation = 50
+                }
+			}
+        }
+        effect = {
+			add_prestige = 20
+            add_mil_power = 100
+            add_country_modifier = {
+                name = pis_raid_of_venice_mission
+                duration = 9125
+            }			
+			venice_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			} 
+        }
+    }
+    vn_pis_privileges_in_constantinople = {
+        icon = take_constantinople
+        position = 6
+        required_missions = {  }
+        provinces_to_highlight = {
+            province_id = 2233
+        }
+        trigger = {
+			OR = {
+				2233 = {
+					owner = {
+						OR = {
+							alliance_with = ROOT
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+					}
+				}
+				AND = {
+					owns = 2233
+					2233 = { is_strongest_trade_power = ROOT }
+				}
+			}
+        }
+        effect = {
+            add_dip_power = 50
+            2233 = {
+                add_trade_modifier = {
+                    who = ROOT
+                    duration = 9125
+                    power = 10
+                    key = pis_privileges_in_constantinople_mission
+                }
+            }
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}			
+        }
+    }
+    vn_pis_la_talassocrazia = {
+        icon = unite_the_league
+        position = 7
+        required_missions = { vn_pis_privileges_in_constantinople vn_pis_possessions_near_and_far }
+        trigger = {
+			if = {
+				limit = {
+					has_dlc = "Emperor"
+				}
+				is_hegemon = yes
+			}
+			else = {
+				total_development = 1000
+			}
+			all_known_country = {
+				NOT = {
+					num_of_light_ship = ROOT
+				}
+			}
+			NOT = { num_of_loans = 1 }
+        }
+        effect = {
+			add_prestige = 10
+			add_republican_tradition = 10
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+            add_country_modifier = {
+				name = pis_la_talassocrazia_mission
+				duration = -1
+			}
+        }
+    }
+}
+
+vn_pis_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = PIS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pis_conquest_of_lucca = {
+        icon = neapolitan_govenance
+        position = 2
+        required_missions = { vn_pis_defense_of_pisa }
+		provinces_to_highlight = {
+			area = lucca_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+			lucca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			tuscany_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}                      
+        }
+    }
+    vn_pis_invasion_of_tunis = {
+        icon = mission_combat_barbary_piracy
+        position = 3
+        required_missions = { vn_pis_foothold_in_sicily }
+		provinces_to_highlight = {
+			region = coastal_tunisia_region
+			has_port = yes
+			development = 10
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_invasion_of_tunis.tt
+				num_of_owned_provinces_with = {
+					value = 5
+					region = coastal_tunisia_region
+					has_port = yes
+					development = 10
+				}
+			}            
+        }
+        effect = {
+			add_years_of_income = 0.5
+			add_papal_influence = 10
+            coastal_tunisia_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            }
+			tlemcen_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}       
+			kabylia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}			
+        }
+    }
+    vn_pis_saracens_in_algeria = {
+        icon = mission_conquer_algiers
+        position = 4
+        required_missions = { vn_pis_invasion_of_tunis }
+		provinces_to_highlight = {
+			OR = {
+				region = tlemcen_region
+				region = kabylia_region
+			}
+			has_port = yes
+			development = 10
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_saracens_in_algeria.tt
+				num_of_owned_provinces_with = {
+					value = 5
+					OR = {
+						region = tlemcen_region
+						region = kabylia_region
+					}
+					development = 10
+					has_port = yes
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			add_papal_influence = 10
+            tlemcen_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            }
+            kabylia_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            }
+			tlemcen_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}       
+			kabylia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+    }
+    vn_pis_carmen_in_victoriam = {
+        icon = africa_proconsulare
+        position = 5
+        required_missions = { vn_pis_saracens_in_algeria }
+		provinces_to_highlight = {
+			OR = {
+				region = coastal_tunisia_region
+				region = tlemcen_region
+				region = kabylia_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+			coastal_tunisia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tlemcen_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}            
+        }
+        effect = {
+			add_republican_tradition = 10 #Excludes Legitimacy
+			reverse_add_opinion = {
+				who = PAP
+				modifier = pis_carmen_in_victoriam_opinion
+			}
+			add_country_modifier = {
+				name = pis_carmen_in_victoriam_mission
+				duration = 9125
+			}            
+        }
+    }
+    vn_pis_renew_via_francigena = {
+        icon = revenge_for_nicopolis
+        position = 6
+        required_missions = {  }
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_renew_via_francigena.tt
+				has_country_flag = vn_crusade_committed
+				at_war_with_religious_enemy = yes
+				any_known_country = {
+					OR = {
+						has_global_flag = vn_crusade_holy_land_flag
+						has_global_flag = vn_crusade_egypt_flag
+					}
+				}
+			}            
+        } 
+        effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = pis_renew_via_francigena_mission
+				duration = 9125
+			}
+			lower_egypt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			} 
+			palestine_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			} 
+			outremer_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}             
+        }
+    }
+    vn_pis_alexandrine_colonies = {
+        icon = mission_conquer_alexandria 
+        position = 7
+        required_missions = { vn_pis_renew_via_francigena }
+        provinces_to_highlight = {
+			OR = {
+				region = lower_egypt_region
+				province_id = 5022
+			}
+			development = 10
+			has_port = yes
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            5022 = { country_or_non_sovereign_subject_holds = ROOT }
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_alexandrine_colonies.tt
+				num_of_owned_provinces_with = {
+					value = 5
+					region = lower_egypt_region
+					development = 10
+					has_port = yes
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			add_papal_influence = 10
+            lower_egypt_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            } 
+			lower_egypt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			} 			
+        }
+    }
+}
+
+vn_pis_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = PIS
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pis_sack_reggio_calabria = {
+        icon = mission_break_sicily
+        position = 1
+        required_missions = {  }
+		provinces_to_highlight = {
+			province_id = 551
+		}
+        trigger = {
+            551 = {
+				OR = {
+					AND = {
+						owner = {
+							war_with = ROOT
+						}	
+						controlled_by = ROOT
+					}
+					owned_by = ROOT
+				}
+			}
+        }
+        effect = {
+		    add_prestige = 10
+			add_republican_tradition = 10
+            add_mil_power = 50 
+			add_country_modifier = {
+				name = pis_sack_reggio_calabria_mission
+				duration = 9125
+			}			
+        }
+    }
+    vn_pis_foothold_in_sicily = {
+        icon = king_of_sicily
+        position = 2
+        required_missions = { vn_pis_sack_reggio_calabria vn_pis_defense_of_pisa }
+		provinces_to_highlight = {
+            region = sicilia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 5
+                region = sicilia_region
+            }           
+        }
+        effect = {
+			coastal_tunisia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			campania_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+#					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+#					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			} 			
+        }
+    }
+    vn_pis_domain_in_naples = {
+        icon = king_of_naples
+        position = 3
+        required_missions = { vn_pis_foothold_in_sicily }
+		provinces_to_highlight = {
+			OR = {
+				region = campania_region
+				region = apulia_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 5
+				OR = {
+    				region = campania_region
+					region = apulia_region
+				}
+            }           
+        }
+        effect = {
+			add_prestige = 10
+			add_republican_tradition = 10
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+            add_country_modifier = {
+				name = pis_domain_in_naples_mission
+				duration = 9125
+			}		
+        }
+    }
+    vn_pis_mathematical_genius = {
+        icon = mission_noble_council
+        position = 4
+        required_missions = {  }
+        trigger = {
+            has_3_lv2_advisors_trigger = yes
+        }
+        effect = {
+            change_innovativeness = 5
+            add_country_modifier = {
+				name = pis_mathematical_genius_mission
+				duration = 9125
+			}           
+        }
+    }
+    vn_pis_universita_di_pisa = {
+        icon = pontifical_universities
+        position = 5
+        required_missions = { vn_pis_mathematical_genius }
+        trigger = {
+            has_3_lv3_advisors_trigger = yes           
+			115 = {
+				has_education_building_trigger = yes
+			}
+        }
+        effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+            115 = {
+                add_province_modifier = {
+                    name = pis_universita_di_pisa_mission
+                    duration = -1
+                }
+			}
+        }
+    }
+    vn_pis_piazza_dei_miracoli = {
+        icon = pulverize_pisa
+        position = 6
+        required_missions = { vn_pis_universita_di_pisa }
+        trigger = {
+			115 = {
+				owned_by = ROOT
+				development = 40
+				NOT = { devastation = 1 }
+                OR = {
+					has_building = temple
+					has_building = cathedral			
+				}
+			}
+			religion_group = christian
+        }
+        effect = {
+			add_papal_influence = 10
+            115 = {
+                add_province_modifier = {
+                    name = pis_piazza_dei_miracoli_mission
+                    duration = -1
+                }
+			}         
+        }
+    }
+    vn_pis_flowing_milk_and_honey = {
+        icon = levantine_missions
+        position = 7
+        required_missions = { vn_pis_renew_via_francigena }
+		provinces_to_highlight = {
+			OR = {
+                region = outremer_region
+                region = palestine_region
+				province_id = 4974
+            }
+            OR = {
+                NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                NOT = { religion = ROOT }
+            }
+		}
+        trigger = {
+		    4974 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 25
+                OR = {
+                    region = outremer_region
+                    region = palestine_region
+                }
+                religion = ROOT
+            }
+        }
+		effect = {
+			add_years_of_income = 0.5
+			add_papal_influence = 10
+            palestine_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            } 
+            outremer_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pis_flourishing_outposts_mission
+                    duration = 9125
+                }
+            } 
+			add_country_modifier = {
+				name = pis_flowing_milk_and_honey_mission
+				duration = 9125
+			}			
+        }
+    }
+}

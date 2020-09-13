@@ -64,6 +64,13 @@ mamluk_rebels = {
 				}
 			}
 		}
+		#great fitna
+		modifier = {
+			factor = 10
+			owner = {
+				has_disaster = great_fitna
+			}
+		}
 	}
  
  	# This is checked for EACH province in the Area of Operations
@@ -138,20 +145,28 @@ mamluk_rebels = {
 				hidden = yes
 			}
 		}
-		create_independent_estate = {
-			estate = estate_mamluks
-			play_as = no
-			government = monarchy
-			government_reform = mamluk_government
-			custom_national_ideas = MAM_ideas
+		if = {
+			limit = { has_disaster = great_fitna }
+			set_country_flag = mamluks_won_great_calamity
+			country_event = { id = great_fitna.100 }
+			end_disaster = great_fitna
 		}
-		change_estate_land_share = {
-			estate = estate_mamluks
-			share = -30.0
-		}
-		change_estate_land_share = {
-			estate = all
-			share = 20.0
+		else = {
+			create_independent_estate = {
+				estate = estate_mamluks
+				play_as = no
+				government = monarchy
+				government_reform = mamluk_government
+				custom_national_ideas = MAM_ideas
+			}
+			change_estate_land_share = {
+				estate = estate_mamluks
+				share = -30.0
+			}
+			change_estate_land_share = {
+				estate = all
+				share = 20.0
+			}
 		}
 	}
 }

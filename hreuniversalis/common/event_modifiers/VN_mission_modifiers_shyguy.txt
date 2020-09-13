@@ -328,7 +328,7 @@ gen_conquer_antioch_mission = {
 	trade_efficiency = 0.1
 }
 gen_found_kaffa_mission = {
-	local_defensiveness = 0.26
+	local_defensiveness = 0.25
 	garrison_size = 0.1
 }
 gen_establish_the_gazaria_mission = {

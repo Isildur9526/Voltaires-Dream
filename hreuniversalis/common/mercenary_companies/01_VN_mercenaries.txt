@@ -242,7 +242,7 @@ merc_hakkapelitta = {
 		OR = {
 			current_age = age_of_absolutism
 			current_age = age_of_revolutions
-			current_Age = age_of_ideology
+			current_age = age_of_ideology
 		}
 		capital_scope = {
 			superregion = scandinavia_superregion
@@ -260,7 +260,7 @@ merc_black_guard = {
 	cavalry_cap = 6
 	home_province = 4762 # Marrakesh
 	cost_modifier = 0.75
-	sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+	sprites = { dlc062_mal_sprite_pack muslimgfx_sprite_pack }
 	trigger = {
 		tag = MOR
 		mission_completed = vn_mor_the_black_guard
@@ -361,5 +361,88 @@ merc_geharnischte = {
 	modifier = {
 		reinforce_speed = -0.1
 		shock_damage_received = -0.1
+	}
+}
+
+merc_landsknechts = {
+	regiments_per_development = 0.01
+	home_province = 842 # Stendal
+    artillery_weight = 0.3
+	cost_modifier = 1.25
+	sprites = { dlc028_bra_sprite_pack pru_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = { 
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+					superregion = austria_superregion
+					superregion = bohemia_superregion
+					superregion = switzerland_superregion
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+		}
+	}
+	modifier = {
+		infantry_power = 0.05
+		land_morale = 0.1
+	}
+}
+
+merc_saharan_company = {
+	regiments_per_development = 0.015
+	home_province = 5096 # Touggourt
+    artillery_weight = 0 # No artillery
+	cavalry_weight = 0.4
+	cavalry_cap = 6
+	cost_modifier = 1.2
+	sprites = { dlc058_tun_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		culture_group = maghrebi
+	}
+	modifier = {
+		cavalry_fire = 1
+	}
+}
+
+merc_bolghar_mercenaries = {
+    regiments_per_development = 0.025
+    cavalry_weight = 0.4
+    artillery_weight = 0.1
+	cavalry_cap = 6
+	home_province = 6462 # Bolghar
+	cost_modifier = 1.5
+	sprites = { dlc069_chg_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		OR = {
+			any_neighbor_country = {
+				culture_group = oghuz
+			}
+			culture_group = oghuz
+			any_owned_province = {
+				OR = {
+					culture_group = oghuz
+					superregion = ural_superregion
+					superregion = central_asia_superregion
+				}
+			}
+		}
+	}
+    modifier = {
+        cavalry_power = 0.2
+    }
+}
+
+merc_polabian_warriors = {
+    regiments_per_development = 0.015
+	home_province = 410 # Waren
+	cost_modifier = 1.1
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		culture_group = west_slavic
+	}
+    modifier = {
+		shock_damage = 0.1
 	}
 }

@@ -207,6 +207,13 @@ nationalist_rebels = {
 			has_owner_accepted_culture = no
 			has_owner_culture = no
 		}
+		#great fitna
+		modifier = {
+			factor = 10
+			owner = {
+				has_disaster = great_fitna
+			}
+		}
 	}
  
  	# This is checked for EACH province in the Area of Operations

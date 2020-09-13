@@ -1054,8 +1054,8 @@ merc_miquelet_company = {
 		capital_scope = { 
 			OR = {
 				superregion = iberia_superregion
-				superregion = french_region
-				superregion = burgundian_region
+				superregion = french_superregion
+				superregion = burgundian_superregion
 			}
 		}
 	}
@@ -1230,5 +1230,20 @@ merc_swiss_canton_mercenaries = {
 	cost_modifier = 0.75
 	modifier = {
 		discipline = 0.05
+	}
+}
+
+merc_mongol_banner = {
+    regiments_per_development = 0.025
+	cavalry_weight = 0.4
+    artillery_weight = 0.2
+	cavalry_cap = 6
+	sprites = { dlc069_kha_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		primary_culture = mongol
+	}
+	cost_modifier = 1.1
+	modifier = {
+        cavalry_shock = 1.0
 	}
 }

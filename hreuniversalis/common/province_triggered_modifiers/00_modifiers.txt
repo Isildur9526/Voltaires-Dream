@@ -187,7 +187,7 @@ theravada_kotte = {
 	
 }
 
-# Hindu control of Varanasi
+# Kemetic control of Gizah
 
 hindu_varanasi = {
 	potential = {
@@ -200,6 +200,37 @@ hindu_varanasi = {
 	trigger = {
 		owner = {
 			religion = egyptian_religion
+		}
+	}
+	
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+
+# Inti control of Pachamac
+
+inti_lima = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	
+	#viewer = {
+	#}
+	
+	trigger = {
+		owner = {
+			religion = slavic_pagan
 		}
 	}
 	

@@ -4,10 +4,6 @@ namespace = great_fitna
 # The Great Fitna
 ########################################
 
-# todo on master
-# edit mamluk rebel demand to end the disaster (+ custom event text)
-# edit rebel spawn chance
-
 # Start
 country_event = {
 	id = great_fitna.1

@@ -87,6 +87,22 @@ increased_autonomy = {
 	local_autonomy = 0.1
 	local_unrest = -5
 }
+#Great Fitna
+reign_of_terror_m = {
+	global_unrest = -2
+	tolerance_own = -1
+	stability_cost_modifier = 0.15
+}
+army_quarrels_m = {
+	land_morale = -0.1
+	movement_speed = -0.15
+	recover_army_morale_speed = -0.1
+}
+strong_viziers_m = {
+	advisor_pool = 1
+	advisor_cost = 0.15
+	diplomatic_reputation = -2
+}
 
 #New Religions
 translated_bible_m = {
