@@ -93,7 +93,7 @@ country_event = {
 	option = {
 		name = great_fitna.2.b
 		add_piety = 0.05
-		add_mil_power = -50
+		add_yearly_manpower = -0.25
 	}
 }
 
@@ -234,9 +234,7 @@ country_event = {
 	option = {
 		name = great_fitna.5.b
 		add_piety = -0.1
-		event_target:anarchy_prov = {
-			add_local_autonomy = 50
-		}
+		add_mil_power = -50
 	}
 }
 
@@ -277,12 +275,36 @@ country_event = {
 		ai_chance = { factor = 10 }
 		add_piety = 0.2
 		trigger = {
-			HED = { is_free_or_tributary_trigger = yes }
+			HED = { NOT = { is_subject_of = ROOT } }
 		}
 		add_legitimacy = 5
 		declare_war_with_cb = {
 			casus_belli = cb_heretic
 			who = HED
+		}
+		hidden_effect = {
+			HED = {
+				set_country_flag = avoid_choosing_madhhab_flag
+				change_religion = sunni
+				set_religious_school = {
+					group = muslim
+					school = hanafi_school
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = defended_heretic_rebels
+				}
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = defended_heretic_rebels
+				}
+				clr_country_flag = avoid_choosing_madhhab_flag
+				capital_scope = { change_religion = sunni }
+				add_country_modifier = {
+					name = religious_zeal_at_conv
+					duration = 3650
+				}
+			}
 		}
 	}
 	option = {
@@ -347,7 +369,7 @@ country_event = {
 		name = great_fitna.7.a
 		ai_chance = { factor = 70 }
 		add_piety = -0.1
-		add_yearly_manpower = 0.25
+		add_yearly_manpower = 0.5
 		define_general = {
 			name = "Badr al-Jamali"
 			shock = 4
@@ -367,7 +389,7 @@ country_event = {
 				owned_by = ROOT
 				is_core = DSC
 			}
-			add_local_autonomy = 15
+			add_local_autonomy = 20
 		}
 	}
 }
@@ -377,7 +399,7 @@ country_event = {
 	id = great_fitna.8
 	title = "great_fitna.8.t"
 	desc = "great_fitna.8.d"
-	picture = KING_SICK_IN_BED_eventPicture
+	picture = COURT_eventPicture
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -420,7 +442,11 @@ country_event = {
 		goto = jamali_prov
 		add_piety = 0.25
 		add_stability = -1
-		hidden_effect = { kill_leader = "Badr al-Jamali" }
+		hidden_effect = {
+			kill_leader = {
+				type = "Badr al-Jamali"
+			}
+		}
 		event_target:jamali_reb_prov = {
 			spawn_rebels = {
 				size = 3
@@ -582,7 +608,10 @@ country_event = {
 		add_piety = -0.1
 		event_target:sunni_prov = {
 			change_religion = sunni
-			add_local_autonomy = 50
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 3650
+			}
 		}
 	}
 	option = {
@@ -703,7 +732,18 @@ country_event = {
 		}
 		desc = great_fitna.100.d3
 	}
-	picture = PRAYING_eventPicture
+	picture = {
+		trigger = {
+			NOT = { has_country_flag = mamluks_won_great_calamity }
+		}
+		picture = PRAYING_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_country_flag = mamluks_won_great_calamity
+		}
+		picture = COUNTRY_COLLAPSE_eventPicture
+	}
 
 	is_triggered_only = yes
 	major = yes
@@ -713,6 +753,7 @@ country_event = {
 		add_stability_or_adm_power = yes
 		if = {
 			limit = {
+				NOT = { has_country_flag = mamluks_won_great_calamity }
 				uses_piety = yes
 				NOT = { piety = 0.25 }
 			}
@@ -720,6 +761,7 @@ country_event = {
 		}
 		if = {
 			limit = {
+				NOT = { has_country_flag = mamluks_won_great_calamity }
 				uses_piety = yes
 				piety = 0.25
 			}
@@ -729,7 +771,21 @@ country_event = {
 		}
 		if = {
 			limit = { has_country_flag = mamluks_won_great_calamity }
-			kill_ruler = yes
+			tooltip = { kill_ruler = yes }
+			add_prestige = -50
+			define_ruler = {
+				claim = 50
+				age = 14
+				male = yes
+				adm = -3
+				dip = -3
+				mil = -3
+				hide_skills = yes
+			}
+			if = {
+				limit = { has_heir = yes }
+				remove_heir = yes
+			}
 		}
 		clr_country_flag = badr_jamali_accepted
 		clr_country_flag = sunni_viziers_tolerated
