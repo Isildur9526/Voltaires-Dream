@@ -38,7 +38,7 @@ vn_nav_missions_slot_1_a = {
         trigger = {
 			stability = 1
 			has_reform_level = 3
-			NOT = { corruption = 0 }
+			NOT = { corruption = 0.01 }
         }
         effect = {
 			add_adm_power = 50

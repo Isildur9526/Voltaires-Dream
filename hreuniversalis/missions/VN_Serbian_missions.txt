@@ -422,7 +422,7 @@ vn_ser_missions_slot_2_d = {
         position = 7
         required_missions = { vn_ser_unite_south_slavs }
         trigger = {
-            NOT = { average_unrest = 0 }
+            NOT = { average_unrest = 1 }
             NOT = { average_autonomy = 10 }
             if = {
                 limit = { has_estate = estate_nobles }
@@ -446,8 +446,7 @@ vn_ser_missions_slot_2_d = {
                 }
             }
             stability = 3
-            NOT = { corruption = 0.1 }
-
+            NOT = { corruption = 0.01 }
         }
         effect = {
             add_adm_power = 50

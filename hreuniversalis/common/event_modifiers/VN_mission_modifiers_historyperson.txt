@@ -1189,7 +1189,7 @@ pis_conquer_sardinia_mission = {
 	warscore_cost_vs_other_religion = -0.2
 }
 pis_liber_maiorichinus_mission = {
-	church_loyalty_modifier = 0.05
+	church_loyalty_modifier = 0.05 #May not have estates
 	diplomatic_reputation = 1
 }
 pis_flourishing_outposts_mission = {
@@ -1204,7 +1204,7 @@ pis_revenge_for_meloria_mission = {
 	land_morale = 0.1
 	naval_morale = 0.1
 }
-pis_tyhrrenian_dominance_mission = {
+pis_tyrrhenian_dominance_mission = {
 	global_trade_power = 0.1
 	trade_steering = 0.1
 }
@@ -1230,7 +1230,7 @@ pis_la_talassocrazia_mission = {
 	core_creation = -0.1
 }
 pis_carmen_in_victoriam_mission = {
-	church_loyalty_modifier = 0.05
+	church_loyalty_modifier = 0.05 #May not have estates
 	diplomatic_reputation = 1
 }
 pis_renew_via_francigena_mission = {

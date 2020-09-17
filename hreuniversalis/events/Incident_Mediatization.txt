@@ -19,10 +19,8 @@ country_event = {
 		NOT = { started_in = 1789.7.14 }
 		NOT = { active_imperial_incident = any }
 		is_part_of_hre = no
-		is_at_war = no
-		NOT = {
-			has_country_flag = med_demander_country
-		}
+		is_subject = no
+		NOT = { has_country_flag = med_demander_country }
 		any_country = {
 			is_part_of_hre = yes
 			government = theocracy
@@ -31,14 +29,29 @@ country_event = {
 			is_part_of_hre = yes
 			has_reform = free_city
 		}
-		any_owned_province = {
-			is_part_of_hre = yes
+		OR = {
+			any_owned_province = {
+				is_part_of_hre = yes
+			}
+			any_subject_country = {
+				any_owned_province = {
+					is_part_of_hre = yes
+				}
+			}
 		}
 		NOT = {
 			any_known_country = {
 				is_part_of_hre = no
-				any_owned_province = {
-					is_part_of_hre = yes
+				is_subject = no
+				OR = {
+					any_owned_province = {
+						is_part_of_hre = yes
+					}
+					any_subject_country = {
+						any_owned_province = {
+							is_part_of_hre = yes
+						}
+					}
 				}
 				num_of_cities = ROOT
 			}

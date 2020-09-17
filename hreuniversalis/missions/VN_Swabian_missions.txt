@@ -526,7 +526,7 @@ vn_wws_missions_slot_3 = {
                         amount = 3
                         all_country = {
                             marriage_with = ROOT
-                            prestige = 40
+                            prestige = 25
                         }
                     }
                 }

@@ -229,7 +229,7 @@ vn_pap_missions_slot_1 = {
         }
     }
     vn_pap_council_of_trent = {
-       # icon = 
+        icon = counter_reformation
         position = 12
         required_missions = { vn_pap_weather_the_reformation }
         trigger = {
@@ -288,7 +288,7 @@ vn_pap_missions_slot_2 = {
     has_country_shield = yes
 
     vn_pap_supremacy_and_infallibility = {
-       # icon = 
+        icon = answer_the_roman_question
         position = 2
         required_missions = { vn_pap_in_nomine_domini }
         trigger = {
@@ -317,7 +317,7 @@ vn_pap_missions_slot_2 = {
         }
     }
     vn_pap_apulian_diplomacy = {
-       # icon = 
+        icon = holy_state
         position = 3
         required_missions = {  }
 		provinces_to_highlight = {
@@ -399,7 +399,7 @@ vn_pap_missions_slot_2 = {
         }
     }
     vn_pap_council_of_clermont = {
-        icon = counter_reformation
+        icon = shield_of_christianity
         position = 7
         required_missions = {  }
         trigger = {
@@ -694,7 +694,7 @@ vn_pap_missions_slot_4 = {
     has_country_shield = yes
 
     vn_pap_conquer_latium = {
-       # icon = 
+        icon = republican_yearnings
         position = 1
         required_missions = {  }
         provinces_to_highlight = {
@@ -719,7 +719,7 @@ vn_pap_missions_slot_4 = {
         }
     }
     vn_pap_conquer_spoleto = {
-       # icon = 
+        icon = fund_the_monasteries
         position = 2
         required_missions = { vn_pap_conquer_latium }
         provinces_to_highlight = {
@@ -750,7 +750,7 @@ vn_pap_missions_slot_4 = {
         }
     }
     vn_pap_conquer_marche = {
-        # icon = 
+        icon = dalmatian_conquest
         position = 3
         required_missions = { vn_pap_conquer_spoleto }
         provinces_to_highlight = {
@@ -781,7 +781,7 @@ vn_pap_missions_slot_4 = {
         }
     }
     vn_pap_conquer_tuscany = {
-        # icon = 
+        icon = mission_arts_and_letters
         position = 4
         required_missions = { vn_pap_conquer_marche }
         provinces_to_highlight = {
@@ -812,7 +812,7 @@ vn_pap_missions_slot_4 = {
         }
     }
     vn_pap_conquer_piedmont = {
-        # icon = 
+        icon = unify_piedmont
         position = 5
         required_missions = { vn_pap_conquer_tuscany }
         provinces_to_highlight = {
@@ -842,7 +842,7 @@ vn_pap_missions_slot_4 = {
         }
     }
     vn_pap_conquer_lombardy = {
-        # icon = 
+        icon = seize_lombardy
         position = 6
         required_missions = { vn_pap_conquer_piedmont vn_pap_conquer_venetia }
         provinces_to_highlight = {
@@ -1170,7 +1170,7 @@ vn_pap_missions_slot_5 = {
     has_country_shield = yes
 
     vn_pap_papal_treasuries = {
-      # icon = 
+        icon = mission_african_gold
         position = 1
         required_missions = {  }
         trigger = {
@@ -1211,7 +1211,7 @@ vn_pap_missions_slot_5 = {
         }
     }
     vn_pap_conquer_ferrara = {
-        # icon = 
+        icon = secure_the_republic
         position = 4
         required_missions = { vn_pap_conquer_marche }
         provinces_to_highlight = {
@@ -1241,7 +1241,7 @@ vn_pap_missions_slot_5 = {
         }
     }
     vn_pap_conquer_venetia = {
-        # icon = 
+        icon = mission_control_venice
         position = 5
         required_missions = { vn_pap_conquer_ferrara }
         provinces_to_highlight = {
@@ -1266,8 +1266,7 @@ vn_pap_missions_slot_5 = {
             province_id = 202
         }
         trigger = {
-			# event triggered
-            owns = 202
+            owns_core_province = 202
         }
         effect = {
             #202 = {
@@ -1279,11 +1278,11 @@ vn_pap_missions_slot_5 = {
         }
     }
     vn_pap_babylonian_captivity = {
-       # icon = 
+        icon = sway_the_pope
         position = 7
         required_missions = { vn_pap_a_courteous_gift }
         trigger = {
-            is_religion_enabled = catholique
+            
         }
         effect = {
             #add_country_modifier = {
@@ -1293,7 +1292,7 @@ vn_pap_missions_slot_5 = {
         }
     }
     vn_pap_end_anti_papacy = {
-       # icon = 
+        icon = spread_piety
         position = 8
         required_missions = { vn_pap_babylonian_captivity }
         trigger = {
@@ -1304,11 +1303,13 @@ vn_pap_missions_slot_5 = {
         }
     }
     vn_pap_the_city_of_god = {
-       # icon = 
+        icon = develop_our_capital
         position = 9
         required_missions = {  }
         trigger = {
-            
+            2708 = {
+                num_of_times_improved_by_owner = 10
+            }
         }
         effect = {
             
@@ -1317,7 +1318,7 @@ vn_pap_missions_slot_5 = {
     vn_pap_catholic_scholasticism = {
         icon = mission_rb_the_education_acts
         position = 10
-        required_missions = {  }
+        required_missions = { vn_pap_the_city_of_god }
         trigger = {
             has_institution = universities
 			num_of_owned_provinces_with = {
@@ -1336,7 +1337,7 @@ vn_pap_missions_slot_5 = {
     vn_pap_the_vatican_library = {
         icon = found_the_vatican_library
         position = 12
-        required_missions = {  }
+        required_missions = { vn_pap_catholic_scholasticism }
         provinces_to_highlight = {
             province_id = 2708
         }

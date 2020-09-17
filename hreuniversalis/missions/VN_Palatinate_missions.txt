@@ -399,7 +399,13 @@ vn_pal_missions_slot_4_a = {
         position = 1
         required_missions = {  }
         trigger = {
-            num_of_royal_marriages = 3
+            if = {
+                limit = { government = monarchy }
+                num_of_royal_marriages = 3
+            }
+            else = {
+                num_of_allies = 3
+            }
             grown_by_development = 50
             prestige = 40
         }

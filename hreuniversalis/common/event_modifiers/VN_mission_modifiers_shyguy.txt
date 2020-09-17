@@ -2189,6 +2189,11 @@ sax_schmalkaldic_league_mission = {
 }
 
 #Austria
+hab_overcome_bruderzwist_mission = {
+	nobles_loyalty_modifier = 0.05
+	yearly_corruption = -0.05
+	improve_relation_modifier = 0.25
+}
 hab_conquer_tirol_mission = {
 	global_regiment_cost = -0.1
 	land_forcelimit_modifier = 0.1
@@ -2226,9 +2231,8 @@ hab_multi_ethnic_state_mission = {
 	culture_conversion_cost = -0.25
 }
 hab_conquer_bern_mission = {
-	discipline = 0.05
-	diplomatic_reputation = 2
-	ae_impact = -0.05
+	stability_cost_modifier = -0.2
+	infantry_power = 0.1
 }
 hab_conquer_france_mission = {
 	harsh_treatment_cost = -0.33
@@ -2295,10 +2299,6 @@ hab_josephinism_mission = {
 }
 hab_aeiou_mission = {
 	governing_capacity = 250
-}
-hab_conquer_aargau_mission = {
-	local_unrest = -3
-	local_core_creation = -0.25
 }
 hab_conquer_warsaw_mission = {
 	local_unrest = -2

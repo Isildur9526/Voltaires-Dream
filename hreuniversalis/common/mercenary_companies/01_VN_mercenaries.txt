@@ -441,6 +441,9 @@ merc_polabian_warriors = {
 	sprites = { westerngfx_sprite_pack }
 	trigger = {
 		culture_group = west_slavic
+		410 = {
+			owner = { culture_group = west_slavic }
+		}
 	}
     modifier = {
 		shock_damage = 0.1

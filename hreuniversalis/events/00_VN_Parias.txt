@@ -617,6 +617,7 @@ country_event = {
     option = {
         name = "parias_events.10.a"
         ai_chance = { factor = 100 }
+        custom_tooltip = parias_events.10.tt
         hidden_effect = {
             set_country_flag = received_paria
             export_to_variable = {
@@ -624,7 +625,7 @@ country_event = {
                 value = years_of_income
                 who = FROM
             }
-            divide_variable = { which = paria_amount value = 6 }
+            divide_variable = { which = paria_amount value = 4 }
             while = {
                 limit = {
                     check_variable = { which = paria_amount value = 1 }

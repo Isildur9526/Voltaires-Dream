@@ -364,7 +364,7 @@ vn_mam_missions_slot_2 = {
 				limit = { has_estate = estate_dhimmi }
 				estate_loyalty = {
 					estate = estate_dhimmi
-					loyalty = 70
+					loyalty = 60
 				}
 				estate_territory = {
 					estate = estate_dhimmi

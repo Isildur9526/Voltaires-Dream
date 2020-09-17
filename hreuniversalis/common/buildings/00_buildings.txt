@@ -249,7 +249,7 @@ marketplace = {
 }
 
 workshop = {
-	cost = 100
+	cost = 150
 	time = 12
 	modifier = {
 		local_production_efficiency = 0.5
@@ -264,7 +264,7 @@ workshop = {
 }
 
 temple = {
-	cost = 100
+	cost = 150
 	time = 12
 	modifier = {
 		local_tax_modifier = 0.4
@@ -349,7 +349,7 @@ coastal_defence = {
 # Tier 2, 16th Century Buildings
 ################################################
 courthouse = {
-	cost = 100
+	cost = 150
 	time = 12
 	modifier = {
 		local_state_maintenance_modifier = -0.25

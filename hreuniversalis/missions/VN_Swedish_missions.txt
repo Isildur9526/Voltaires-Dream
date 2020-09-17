@@ -665,7 +665,7 @@ vn_swe_missions_slot_2_d = {
 			}
 			if = {
 				limit = { has_dlc = "Cradle of Civilization" }
-				army_professionalism = 20
+				army_professionalism = 0.2
 			}
 			else = {
 				army_tradition = 50

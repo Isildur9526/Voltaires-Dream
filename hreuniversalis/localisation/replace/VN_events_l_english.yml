@@ -42,6 +42,7 @@
  parias_events.10.t: "Paria Received"
  parias_events.10.d: "By the rightful majesty of our glorious nation, [From.GetName] has given us the tribute that the heathen scum can only but wish to pay. It is their disgusting salvation."
  parias_events.10.a: "Collect the Paria"
+ parias_events.10.tt: "[From.GetName] will transfer §Y25.0%§! of their yearly income to us."
  almoravids_events.1.t: "The Warriors of the Frontier"
  almoravids_events.1.d: "The dissolution of the Sanhaja Confederation at the beginning of the 11th century had led to a period of unrest and war between the Sanhaja Berbers in Mauritania. Guided by the Orthodox theologian, Abdallah ibn Yasin, some Sanhaja retreated to a secluded place because they had been expelled by the Godala because of their religious zeal. In 1042, they called for a military jihad against the infidels and heretics among the Sanhaja.\n\nToday on this fateful day, after [Root.Monarch.GetTitle] [Root.Monarch.GetName] led an army of the Sanhaja through a valley of the High Atlas, our desert warriors conquered Tadla, capital of southern Morocco. With the fall of this city, we now rule over much of Morocco, making us the dominant power in Mauritania."
  almoravids_events.1.a: "Inshallah!"

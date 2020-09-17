@@ -46,7 +46,7 @@
  cb_imperial_supremacy_desc: "We must force the Pope to recognize our imperial rights!"
  conquest_imperial_supremacy: "Take the Capital"
  conquest_imperial_supremacy_desc: "War goal is to take the capital province of $COUNTRY$."
- IMPERIAL_SUPCREMACY_WAR_NAME: "$ORDER$$FIRST$ war for Imperial Supremacy"
+ IMPERIAL_SUPCREMACY_WAR_NAME: "$ORDER$$FIRST$ War for Imperial Supremacy"
  EST_VAL_PATARIA_COUP: "Pataria Coup"
  investiture_controversy_m: "Investiture Controversy"
  desc_investiture_controversy_m: "During the 11th and 12th centuries, the imperial authority was weakened by Papal reforms for several times. The Emperor's anti-papal policy led to his excommunication and various rebellions of imperial princes."

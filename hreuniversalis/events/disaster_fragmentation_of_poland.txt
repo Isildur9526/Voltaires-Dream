@@ -1332,6 +1332,7 @@ country_event = {
 	
 	trigger = {
 		tag = POL
+		NOT = { has_country_flag = poland_fragmentation_active }
 		NOT = { was_tag = KRA }
 		NOT = { started_in = 1305.6.21 }
 		custom_trigger_tooltip = {
@@ -1342,6 +1343,7 @@ country_event = {
 			}
 		}
 		stability = 1
+		is_at_war = no
 		calc_true_if = {
 			MAZ = {
 				OR = {
@@ -1406,11 +1408,24 @@ country_event = {
 		months = 1
 	}
 
+	immediate = {
+		hidden_effect = {
+			set_global_flag = fragmentation_of_poland_ended
+			random_country = {
+				limit = { has_disaster = fragmentation_of_poland }
+				end_disaster = fragmentation_of_poland
+			}
+			random_country = {
+				limit = { has_country_flag = poland_fragmentation_active }
+				clr_country_flag = poland_fragmentation_active
+			}
+		}
+	}
+
 	option = {
 		name = fragmentation_of_poland.101.a
 		ai_chance = { factor = 100 }
 		add_stability_or_adm_power = yes
-		set_global_flag = fragmentation_of_poland_ended
 		add_legitimacy = 20
 		if = {
 			limit = {
@@ -1419,11 +1434,5 @@ country_event = {
 			set_government_rank = 5
 		}
 		custom_tooltip = fragmentation_of_poland.101.a.tt
-		hidden_effect = {
-			KRA = {
-				end_disaster = fragmentation_of_poland
-				clr_country_flag = poland_fragmentation_active
-			}
-		}
     }
 }

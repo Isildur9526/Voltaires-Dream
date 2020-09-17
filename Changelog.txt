@@ -2,12 +2,19 @@
 
 # v 2.1.0 #
 
+#Additions
 -Added the following new mercenary companies: Kutama, Jutlandic Freischar, Geharnischte, Landsknechts, Saharan Company, Bolghar Mercenaries, Polabian Warriors
 -Added Fatimid Calamity disaster with 13 associated events
 -Added new mission tree for Pisa with 31 missions
 -Added triggered province modifier for the Slavic sanctuary of Rethra
 -Added Mamluk rebel type
 -More German localization additions
+
+#Fixes
+-Small fixes for the following mission trees: Sweden, Navarra, Serbia, Swabia
+-Upped cost of Temples/Courthouses/Workshops so they are no longer free upgrades
+-Mediatization start event now fires for the overlord of a subject country rather than the subject themselves
+-Fragmentation of Poland should no longer restart after firing once
 -Other minor localization/bug fixes
 
 # v 2.0.5 #

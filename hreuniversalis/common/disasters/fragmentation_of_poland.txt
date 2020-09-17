@@ -25,6 +25,7 @@ fragmentation_of_poland = {
 	}
 
 	can_start = {
+		NOT = { has_global_flag = had_fragmentation_of_poland }
 		has_any_disaster = no
 		current_age = age_of_holy_wars
 		is_year = 1100
@@ -155,6 +156,7 @@ fragmentation_of_poland = {
 			}
 		}
 		stability = 1
+		is_at_war = no
 		calc_true_if = {
 			MAZ = {
 				OR = {

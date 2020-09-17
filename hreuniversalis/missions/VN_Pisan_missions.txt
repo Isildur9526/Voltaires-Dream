@@ -1,5 +1,5 @@
 #Pisan missions
-#Contributed by FrenchKnight
+#By Shyguy13 and FrenchKnight
 #Coded by FrenchKnight and Historyperson
 
 vn_pis_missions_slot_1 = {
@@ -104,16 +104,14 @@ vn_pis_missions_slot_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_pis_liber_maiorichinus.tt
-				num_of_owned_provinces_with = {
-					value = 10
-					OR = {
-						culture_group = maghrebi
-						culture_group = turko_semitic				
-					}
-					development = 10
-					has_port = yes
+			religion_group = christian
+			has_3_advisors_trigger = yes
+			treasury = 100
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					culture_group = maghrebi
+					culture_group = turko_semitic				
 				}
 			}
 		}
@@ -152,7 +150,7 @@ vn_pis_missions_slot_1 = {
         trigger = {
 			custom_trigger_tooltip = {
 				tooltip = vn_pis_interests_in_france.tt
-				num_of_owned_provinces_with = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 5
 					OR = {
 						region = toulouse_region
@@ -260,7 +258,8 @@ vn_pis_missions_slot_2 = {
             }
             else = {
                 navy_size = 40
-            }              
+            }          
+			navy_size_percentage = 0.75	
         }
         effect = {
 			add_republican_tradition = 10
@@ -308,16 +307,17 @@ vn_pis_missions_slot_2 = {
 			}
         }
     }
-    vn_pis_tyhrrenian_dominance = {
+    vn_pis_tyrrhenian_dominance = {
         icon = the_shape_of_trades_to_come
         position = 5
         required_missions = { vn_pis_revenge_for_meloria }
         trigger = {
 			treasury = 2000
             NOT = { num_of_loans = 1 }
+			640 = { is_strongest_trade_power = ROOT } #Firenze
 			OR = {
-				640 = { is_strongest_trade_power = ROOT }
-				1619 = { is_strongest_trade_power = ROOT }
+				1619 = { is_strongest_trade_power = ROOT } #Genoa
+				1642 = { is_strongest_trade_power = ROOT } #Napoli
 			}
         }
         effect = {
@@ -335,7 +335,7 @@ vn_pis_missions_slot_2 = {
 				}
             } 
             add_country_modifier = {
-                name = pis_tyhrrenian_dominance_mission
+                name = pis_tyrrhenian_dominance_mission
                 duration = 9125
             }            
         }
@@ -343,21 +343,15 @@ vn_pis_missions_slot_2 = {
     vn_pis_possessions_near_and_far = {
         icon = sources_of_trade
         position = 6
-        required_missions = { vn_pis_tyhrrenian_dominance }
+        required_missions = { vn_pis_tyrrhenian_dominance }
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-                value = 5
-                province_has_center_of_trade_of_level = 1
-            }        
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 10
+				province_has_center_of_trade_of_level = 1
                 NOT = { 
-					OR = {
-						superregion = italy_superregion 
-						region = insular_region
-					}
+					region = tuscany_region
 				}
-            }  			
+            }         			
         }
         effect = {
             115 = {
@@ -396,14 +390,14 @@ vn_pis_missions_slot_2 = {
 				}
 				add_permanent_claim = ROOT
 			}	
-			andalusia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-					has_port = yes
-				}
-				add_permanent_claim = ROOT
-			}			
+#			andalusia_region = {
+#				limit = {
+#					NOT = { is_core = ROOT }
+#					NOT = { is_permanent_claim = ROOT }
+#					has_port = yes
+#				}
+#				add_permanent_claim = ROOT
+#			}			
         }
     }
     vn_pis_colonies_in_iberia = {
@@ -419,7 +413,7 @@ vn_pis_missions_slot_2 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = vn_pis_colonies_in_iberia.tt
-				num_of_owned_provinces_with = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 10
 					superregion = iberia_superregion
 					development = 10
@@ -450,13 +444,13 @@ vn_pis_missions_slot_2 = {
 				}
 				add_permanent_claim = ROOT
 			}	
-			andalusia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}			
+#			andalusia_region = {
+#				limit = {
+#					NOT = { is_core = ROOT }
+#					NOT = { is_permanent_claim = ROOT }
+#				}
+#				add_permanent_claim = ROOT
+#			}			
         }
     }
 }
@@ -495,15 +489,15 @@ vn_pis_missions_slot_3 = {
                 name = pis_defense_of_pisa_mission
                 duration = 9125
             } 
-			551 = {
+            551 = {
 				if = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
 					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
-			}
+            }
 			florence_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -603,7 +597,8 @@ vn_pis_missions_slot_3 = {
             }
             else = {
                 navy_size = 40
-            }            
+            }      
+			navy_size_percentage = 0.75			
         }
         effect = {
             112 = {
@@ -719,6 +714,11 @@ vn_pis_missions_slot_3 = {
 				}
 			}
 			NOT = { num_of_loans = 1 }
+			OR = {
+				has_idea_group = maritime_ideas
+				has_idea_group = naval_ideas
+				has_idea_group = trade_ideas
+			}
         }
         effect = {
 			add_prestige = 10
@@ -781,7 +781,7 @@ vn_pis_missions_slot_4 = {
         trigger = {
 			custom_trigger_tooltip = {
 				tooltip = vn_pis_invasion_of_tunis.tt
-				num_of_owned_provinces_with = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 5
 					region = coastal_tunisia_region
 					has_port = yes
@@ -790,7 +790,7 @@ vn_pis_missions_slot_4 = {
 			}            
         }
         effect = {
-			add_years_of_income = 0.5
+			add_years_of_income = 0.25
 			add_papal_influence = 10
             coastal_tunisia_region = {
                 limit = { owned_by = ROOT }
@@ -833,7 +833,7 @@ vn_pis_missions_slot_4 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = vn_pis_saracens_in_algeria.tt
-				num_of_owned_provinces_with = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 5
 					OR = {
 						region = tlemcen_region
@@ -845,7 +845,7 @@ vn_pis_missions_slot_4 = {
 			}
 		}
 		effect = {
-			add_years_of_income = 0.5
+			add_years_of_income = 0.25
 			add_papal_influence = 10
             tlemcen_region = {
                 limit = { owned_by = ROOT }
@@ -890,18 +890,14 @@ vn_pis_missions_slot_4 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-			coastal_tunisia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			religion_group = christian
+			has_3_advisors_trigger = yes
+			treasury = 100
+			OR = {
+				has_idea_group = religious_ideas
+				has_idea_group = maritime_ideas
+				has_idea_group = naval_ideas
 			}
-			tlemcen_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			kabylia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}            
         }
         effect = {
 			add_republican_tradition = 10 #Excludes Legitimacy
@@ -979,7 +975,7 @@ vn_pis_missions_slot_4 = {
             5022 = { country_or_non_sovereign_subject_holds = ROOT }
 			custom_trigger_tooltip = {
 				tooltip = vn_pis_alexandrine_colonies.tt
-				num_of_owned_provinces_with = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 5
 					region = lower_egypt_region
 					development = 10
@@ -988,7 +984,7 @@ vn_pis_missions_slot_4 = {
 			}
 		}
 		effect = {
-			add_years_of_income = 0.5
+			add_years_of_income = 0.25
 			add_papal_influence = 10
             lower_egypt_region = {
                 limit = { owned_by = ROOT }
@@ -1046,6 +1042,14 @@ vn_pis_missions_slot_5 = {
 				name = pis_sack_reggio_calabria_mission
 				duration = 9125
 			}			
+			sicilia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
         }
     }
     vn_pis_foothold_in_sicily = {
@@ -1057,7 +1061,7 @@ vn_pis_missions_slot_5 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            num_of_owned_provinces_with = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
                 region = sicilia_region
             }           
@@ -1075,7 +1079,7 @@ vn_pis_missions_slot_5 = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
-#					has_port = yes
+					has_port = yes
 				}
 				add_permanent_claim = ROOT
 			}
@@ -1083,7 +1087,7 @@ vn_pis_missions_slot_5 = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
-#					has_port = yes
+					has_port = yes
 				}
 				add_permanent_claim = ROOT
 			} 			
@@ -1101,24 +1105,42 @@ vn_pis_missions_slot_5 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            num_of_owned_provinces_with = {
-                value = 5
-				OR = {
-    				region = campania_region
-					region = apulia_region
+			custom_trigger_tooltip = {
+				tooltip = vn_pis_domain_in_naples.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					OR = {
+						region = campania_region
+						region = apulia_region
+					}
+					development = 10
+					has_port = yes
 				}
-            }           
+			}         
         }
         effect = {
 			add_prestige = 10
 			add_republican_tradition = 10
-			add_adm_power = 50
-			add_dip_power = 50
-			add_mil_power = 50
             add_country_modifier = {
 				name = pis_domain_in_naples_mission
 				duration = 9125
-			}		
+			}	
+			campania_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			} 			
         }
     }
     vn_pis_mathematical_genius = {
@@ -1213,22 +1235,22 @@ vn_pis_missions_slot_5 = {
             }
         }
 		effect = {
-			add_years_of_income = 0.5
+			add_years_of_income = 0.25
 			add_papal_influence = 10
-            palestine_region = {
-                limit = { owned_by = ROOT }
-                add_province_modifier = {
-                    name = pis_flourishing_outposts_mission
-                    duration = 9125
-                }
-            } 
-            outremer_region = {
-                limit = { owned_by = ROOT }
-                add_province_modifier = {
-                    name = pis_flourishing_outposts_mission
-                    duration = 9125
-                }
-            } 
+#           palestine_region = {
+#               limit = { owned_by = ROOT }
+#               add_province_modifier = {
+#                   name = pis_flourishing_outposts_mission
+#                   duration = 9125
+#               }
+#           } 
+#           outremer_region = {
+#               limit = { owned_by = ROOT }
+#               add_province_modifier = {
+#                   name = pis_flourishing_outposts_mission
+#                   duration = 9125
+#               }
+#           } 
 			add_country_modifier = {
 				name = pis_flowing_milk_and_honey_mission
 				duration = 9125
