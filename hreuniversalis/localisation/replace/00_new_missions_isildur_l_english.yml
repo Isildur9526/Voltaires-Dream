@@ -1,7 +1,42 @@
 ﻿l_english:
 #Isildur's mission loc.
 #Missions
-
+ vn_brg_kle_jch_acquire_julich_title: "Acquire Jülich"
+ vn_brg_kle_jch_acquire_julich_desc: ""
+ vn_brg_kle_jch_take_ravensberg_title: "Take Ravensberg"
+ vn_brg_kle_jch_take_ravensberg_desc: ""
+ vn_brg_kle_jch_limburger_conquest_title: "Limburger Conquest"
+ vn_brg_kle_jch_limburger_conquest_desc: ""
+ vn_brg_kle_jch_union_with_gelre_title: "Union with Gelre"
+ vn_brg_kle_jch_union_with_gelre_desc: ""
+ vn_brg_kle_jch_religious_freedom_title: "Religious Freedom"
+ vn_brg_kle_jch_religious_freedom_desc: ""
+ vn_brg_kle_jch_defeat_hohenzollerns_title: "Defeat the Hohenzollerns"
+ vn_brg_kle_jch_defeat_hohenzollerns_desc: ""
+ vn_brg_kle_jch_a_superior_capital_title: "A Superior Capital"
+ vn_brg_kle_jch_a_superior_capital_desc: ""
+ vn_brg_kle_jch_dynastic_ties_title: "Dynastic Ties"
+ vn_brg_kle_jch_dynastic_ties_desc: ""
+ vn_brg_kle_jch_secure_berg_title: "Secure Berg"
+ vn_brg_kle_jch_secure_berg_desc: ""
+ vn_brg_kle_jch_curb_archbishopric_title: "Curb the Archbishopric"
+ vn_brg_kle_jch_curb_archbishopric_desc: ""
+ vn_brg_kle_jch_overthrow_cologne_title: "Overthrow Cologne"
+ vn_brg_kle_jch_overthrow_cologne_desc: ""
+ vn_brg_kle_jch_the_united_duchies_title: "The United Duchies"
+ vn_brg_kle_jch_the_united_duchies_desc: ""
+ vn_brg_kle_jch_seize_mark_title: "Seize Mark"
+ vn_brg_kle_jch_seize_mark_desc: ""
+ vn_brg_kle_jch_grand_duchy_of_berg_title: "Grand Duchy of Berg"
+ vn_brg_kle_jch_grand_duchy_of_berg_desc: ""
+ vn_brg_kle_jch_ruhr_valley_industry_title: "Ruhr Valley Industry"
+ vn_brg_kle_jch_ruhr_valley_industry_desc: ""
+ vn_brg_kle_jch_repel_wittelsbachs_title: "Repel Wittelsbachs"
+ vn_brg_kle_jch_repel_wittelsbachs_desc: ""
+ vn_brg_kle_jch_march_on_cleves_title: "March on Cleves"
+ vn_brg_kle_jch_march_on_cleves_desc: ""
+ vn_brg_kle_jch_claim_ruhr_title: "Claim the Ruhr"
+ vn_brg_kle_jch_claim_ruhr_desc: ""
 #Events
 
 #Modifiers

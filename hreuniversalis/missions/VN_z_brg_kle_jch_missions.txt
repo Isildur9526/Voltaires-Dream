@@ -1,2 +1,296 @@
 #Missions for Berg/Cleves/Julich
 #Contributed by RetrogMGXII
+
+vn_brg_kle_jch_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+			tag = BRG
+			tag = KLE
+			tag = JCH
+		}
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_brg_kle_jch_acquire_julich = {
+        #icon = 
+        position = 4
+        required_missions = { vn_brg_kle_jch_take_ravensberg }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_brg_kle_jch_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+			tag = BRG
+			tag = KLE
+			tag = JCH
+		}
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_brg_kle_jch_take_ravensberg = {
+        #icon = 
+        position = 3
+        required_missions = { vn_brg_kle_jch_dynastic_ties }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_limburger_conquest = {
+        #icon = 
+        position = 5
+        required_missions = { 
+			vn_brg_kle_jch_acquire_julich 
+			vn_brg_kle_jch_secure_berg 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_union_with_gelre = {
+        #icon = 
+        position = 6
+        required_missions = { vn_brg_kle_jch_limburger_conquest }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_religious_freedom = {
+        #icon = 
+        position = 7
+        required_missions = { vn_brg_kle_jch_overthrow_cologne }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_defeat_hohenzollerns = {
+        #icon = 
+        position = 8
+        required_missions = { vn_brg_kle_jch_the_united_duchies }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_brg_kle_jch_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+			tag = BRG
+			tag = KLE
+			tag = JCH
+		}
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_brg_kle_jch_a_superior_capital = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_dynastic_ties = {
+        #icon = 
+        position = 2
+        required_missions = { vn_brg_kle_jch_a_superior_capital }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_secure_berg = {
+        #icon = 
+        position = 4
+        required_missions = { 
+			vn_brg_kle_jch_take_ravensberg 
+			vn_brg_kle_jch_seize_mark 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_curb_archbishopric = {
+        #icon = 
+        position = 5
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_overthrow_cologne = {
+        #icon = 
+        position = 6
+        required_missions = { 
+			vn_brg_kle_jch_limburger_conquest 
+			vn_brg_kle_jch_curb_archbishopric 
+			vn_brg_kle_jch_grand_duchy_of_berg 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_the_united_duchies = {
+        #icon = 
+        position = 7
+        required_missions = { vn_brg_kle_jch_overthrow_cologne }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_brg_kle_jch_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+			tag = BRG
+			tag = KLE
+			tag = JCH
+		}
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_brg_kle_jch_seize_mark = {
+        #icon = 
+        position = 3
+        required_missions = { vn_brg_kle_jch_dynastic_ties }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_grand_duchy_of_berg = {
+        #icon = 
+        position = 5
+        required_missions = { 
+			vn_brg_kle_jch_secure_berg 
+			vn_brg_kle_jch_march_on_cleves 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_ruhr_valley_industry = {
+        #icon = 
+        position = 6
+        required_missions = { 
+			vn_brg_kle_jch_grand_duchy_of_berg 
+			vn_brg_kle_jch_claim_ruhr 
+		}
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_repel_wittelsbachs = {
+        #icon = 
+        position = 8
+        required_missions = { vn_brg_kle_jch_the_united_duchies }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_brg_kle_jch_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+			tag = BRG
+			tag = KLE
+			tag = JCH
+		}
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_brg_kle_jch_march_on_cleves = {
+        #icon = 
+        position = 4
+        required_missions = { vn_brg_kle_jch_seize_mark }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_brg_kle_jch_claim_ruhr = {
+        #icon = 
+        position = 5
+        required_missions = { vn_brg_kle_jch_march_on_cleves }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
