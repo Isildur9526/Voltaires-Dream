@@ -26,6 +26,17 @@ vn_brg_kle_jch_missions_slot_1 = {
             
         }
 	}
+    vn_brg_kle_jch_union_with_gelre = {
+        #icon = 
+        position = 6
+        required_missions = { vn_brg_kle_jch_limburger_conquest }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
 }
 
 vn_brg_kle_jch_missions_slot_2 = {
@@ -67,17 +78,6 @@ vn_brg_kle_jch_missions_slot_2 = {
             
         }
     }
-    vn_brg_kle_jch_union_with_gelre = {
-        #icon = 
-        position = 6
-        required_missions = { vn_brg_kle_jch_limburger_conquest }
-        trigger = {
-            
-        }
-        effect = {
-            
-        }
-    }
     vn_brg_kle_jch_religious_freedom = {
         #icon = 
         position = 7
@@ -89,17 +89,6 @@ vn_brg_kle_jch_missions_slot_2 = {
             
         }
     }
-    vn_brg_kle_jch_defeat_hohenzollerns = {
-        #icon = 
-        position = 8
-        required_missions = { vn_brg_kle_jch_the_united_duchies }
-        trigger = {
-            
-        }
-        effect = {
-            
-        }
-	}
 }
 
 vn_brg_kle_jch_missions_slot_3 = {
@@ -178,10 +167,10 @@ vn_brg_kle_jch_missions_slot_3 = {
             
         }
     }
-    vn_brg_kle_jch_the_united_duchies = {
+    vn_brg_kle_jch_defeat_hohenzollerns = {
         #icon = 
-        position = 7
-        required_missions = { vn_brg_kle_jch_overthrow_cologne }
+        position = 8
+        required_missions = { vn_brg_kle_jch_the_united_duchies }
         trigger = {
             
         }
@@ -244,10 +233,10 @@ vn_brg_kle_jch_missions_slot_4 = {
             
         }
     }
-    vn_brg_kle_jch_repel_wittelsbachs = {
+    vn_brg_kle_jch_the_united_duchies = {
         #icon = 
-        position = 8
-        required_missions = { vn_brg_kle_jch_the_united_duchies }
+        position = 7
+        required_missions = { vn_brg_kle_jch_overthrow_cologne }
         trigger = {
             
         }
@@ -286,6 +275,17 @@ vn_brg_kle_jch_missions_slot_5 = {
         #icon = 
         position = 5
         required_missions = { vn_brg_kle_jch_march_on_cleves }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+    vn_brg_kle_jch_repel_wittelsbachs = {
+        #icon = 
+        position = 8
+        required_missions = { vn_brg_kle_jch_the_united_duchies }
         trigger = {
             
         }

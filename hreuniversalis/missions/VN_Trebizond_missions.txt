@@ -1,2 +1,337 @@
 #Trebizond missions
 #Contributed by Tmasher
+
+vn_tre_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = TRE
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_tre_expel_latins = {
+        #icon = 
+        position = 2
+        required_missions = { vn_tre_unite_chaldia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_take_constantinople = {
+        #icon = 
+        position = 4
+        required_missions = { vn_tre_expel_latins }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_end_latinokratia = {
+        #icon = 
+        position = 6
+        required_missions = { vn_tre_take_constantinople }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_defeat_byzantine_claimants = {
+        #icon = 
+        position = 7
+        required_missions = { vn_tre_end_latinokratia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_tre_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = TRE
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_tre_unite_chaldia = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_secure_marmara = {
+        #icon = 
+        position = 3
+        required_missions = { vn_tre_expel_latins }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_finish_nicenes = {
+        #icon = 
+        position = 4
+        required_missions = { vn_tre_secure_marmara }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_take_lycia = {
+        #icon = 
+        position = 5
+        required_missions = { vn_tre_finish_nicenes }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_anatolia_is_ours = {
+        #icon = 
+        position = 6
+        required_missions = { vn_tre_take_lycia vn_tre_crush_the_turks }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_komnenos_restoration = {
+        #icon = 
+        position = 8
+        required_missions = { vn_tre_defeat_byzantine_claimants vn_tre_anatolia_is_ours vn_tre_connect_cherson }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_tre_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = TRE
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_tre_retake_theodosiopolis = {
+        #icon = 
+        position = 2
+        required_missions = { vn_tre_unite_chaldia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_grab_galatia = {
+        #icon = 
+        position = 3
+        required_missions = { vn_tre_retake_theodosiopolis }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_conquer_phrygia = {
+        #icon = 
+        position = 4
+        required_missions = { vn_tre_grab_galatia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_crush_the_turks = {
+        #icon = 
+        position = 5
+        required_missions = { vn_tre_conquer_phrygia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_convert_asia_minor = {
+        #icon = 
+        position = 7
+        required_missions = { vn_tre_crush_the_turks }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_tre_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = TRE
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_tre_build_euxine_fleet = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_take_colchis = {
+        #icon = 
+        position = 3
+        required_missions = { vn_tre_build_euxine_fleet }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_annex_iberia = {
+        #icon = 
+        position = 5
+        required_missions = { vn_tre_take_colchis }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_connect_cherson = {
+        #icon = 
+        position = 7
+        required_missions = { vn_tre_annex_iberia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_tre_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = TRE
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_tre_build_up_trebizond = {
+        #icon = 
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_dominate_black_sea_trade = {
+        #icon = 
+        position = 2
+        required_missions = { vn_tre_build_euxine_fleet vn_tre_build_up_trebizond }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_major_ports = {
+        #icon = 
+        position = 3
+        required_missions = { vn_tre_dominate_black_sea_trade }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_silk_road_trade = {
+        #icon = 
+        position = 4
+        required_missions = { vn_tre_major_ports }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_byzantine_architecture = {
+        #icon = 
+        position = 5
+        required_missions = { vn_tre_silk_road_trade }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_tre_jewel_on_black_sea = {
+        #icon = 
+        position = 6
+        required_missions = { vn_tre_byzantine_architecture }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
