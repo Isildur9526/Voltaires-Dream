@@ -1190,6 +1190,7 @@ pis_conquer_sardinia_mission = {
 }
 pis_liber_maiorichinus_mission = {
 	church_loyalty_modifier = 0.05 #May not have estates
+	global_missionary_strength = 0.01
 	diplomatic_reputation = 1
 }
 pis_flourishing_outposts_mission = {
@@ -1231,6 +1232,7 @@ pis_la_talassocrazia_mission = {
 }
 pis_carmen_in_victoriam_mission = {
 	church_loyalty_modifier = 0.05 #May not have estates
+	global_missionary_strength = 0.01
 	diplomatic_reputation = 1
 }
 pis_renew_via_francigena_mission = {

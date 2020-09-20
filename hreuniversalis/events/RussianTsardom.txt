@@ -105,7 +105,7 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-		reduce_meritocracy_effect = yes
+		add_meritocracy = -5
 		event_target:rioting_city_province = {
 			spawn_rebels = {
 				type = anti_tax_rebels
@@ -118,6 +118,7 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
+		add_mandate = -5
 		add_government_power = {
 			government_mechanic = russian_mechanic
 			which = DIP
@@ -168,6 +169,7 @@ country_event = {
 		}
 		reduce_estate_nobles_loyalty_effect = yes
 		add_legitimacy = -10
+		add_meritocracy = -10
 		trigger_switch = {
 			on_trigger = has_country_flag
 			treasurer_flag = {
@@ -215,7 +217,7 @@ country_event = {
 	option = {
 		name = russian_tsardom_events.2.b #
 		add_estate_nobles_loyalty_effect = yes
-		add_meritocracy_effect = yes
+		add_meritocracy = 5
 		add_legitimacy = 5 #Support from the families
 		add_government_power = {
 			government_mechanic = russian_mechanic
@@ -310,7 +312,7 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		add_meritocracy_effect = yes
+		add_meritocracy = -5
 		event_target:steppe_province = {
 			add_base_manpower = 1
 			add_province_modifier = {
@@ -348,7 +350,7 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
-		reduce_meritocracy_effect = yes
+		add_meritocracy = -5
 		event_target:steppe_province = {
 			add_base_tax = 1
 			if = {
@@ -454,6 +456,7 @@ country_event = {
 
 	option = {
 		name = russian_tsardom_events.4.a #We must make the Tatars Pay!
+		add_mandate = -10
 		add_casus_belli = {
 		   target = event_target:tatar_raiders_from_country
 		   type = cb_border_war
@@ -536,6 +539,10 @@ country_event = {
 		has_dlc = "Third Rome"
 		has_reform = tsardom
 		OR = {
+			AND = {
+				is_emperor_of_china = yes
+				NOT = { meritocracy = 70 }
+			}
 			NOT = { legitimacy = 70 }
 			NOT = { stability = 0 }
 			war_exhaustion = 4
@@ -570,13 +577,13 @@ country_event = {
 			limit = { war_exhaustion = 1 }
 			add_war_exhaustion = -2
 		}
-		add_meritocracy_large_effect = yes
 		if = {
 			limit = { has_country_flag = sobor_gives_stab }
 			add_stability = 1
 			clr_country_flag = sobor_gives_stab
 			else = {
 				add_legitimacy = 10
+				add_meritocracy = 10
 			}
 		}
 	}
@@ -585,7 +592,7 @@ country_event = {
 		ai_chance = {
 			factor = 33
 		}
-		reduce_meritocracy_large_effect = yes
+		add_meritocracy = -10
 		add_government_power = {
 			government_mechanic = russian_mechanic
 			which = ADM
@@ -624,7 +631,7 @@ country_event = {
 			which = ADM
 			amount = 25
 		}
-		add_meritocracy_effect = yes
+		add_meritocracy = 5
 		add_adm_power = -50
 		add_years_of_income = -0.05
 	}
@@ -633,7 +640,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		reduce_meritocracy_effect = yes
+		add_meritocracy = -5
 		add_prestige = 5
 	}
 }
@@ -689,7 +696,6 @@ country_event = {
 			which = DIP
 			amount = 35
 		}
-		add_meritocracy_effect = yes
 		reduce_estate_nobles_loyalty_effect = yes
 		if = {
 			limit = { has_country_flag = only_one_province }
@@ -710,7 +716,7 @@ country_event = {
 			factor = 50
 		}
 		add_legitimacy = 5
-		reduce_meritocracy_effect = yes
+		add_meritocracy = 5
 		add_estate_nobles_loyalty_effect = yes
 		add_government_power = {
 			government_mechanic = russian_mechanic
@@ -760,7 +766,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		add_meritocracy_effect = yes
+		add_meritocracy = 5
 		add_government_power = {
 			government_mechanic = russian_mechanic
 			which = ADM
@@ -781,7 +787,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		reduce_meritocracy_effect = yes
+		add_meritocracy = -5
 		add_government_power = {
 			government_mechanic = russian_mechanic
 			which = MIL
@@ -827,7 +833,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		reduce_meritocracy_effect = yes
+		add_mandate = -10
 		add_years_of_income = -0.1
 		add_army_tradition = 10
 		capital_scope = {
@@ -839,7 +845,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		add_meritocracy_large_effect = yes
+		add_mandate = 10
 		add_estate_nobles_loyalty_effect = yes
 		add_government_power = {
 			government_mechanic = russian_mechanic
@@ -900,7 +906,7 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
-		add_meritocracy_effect = yes
+		add_mandate = 5
 		event_target:converts_moved_here = {
 			add_province_modifier = {
 				name = "fugitive_christian_converts"
@@ -914,7 +920,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		reduce_meritocracy_effect = yes
+		add_mandate = -5
 		add_prestige = -5
 		reduce_estate_church_loyalty_effect = yes
 		add_estate_nobles_loyalty_effect = yes
@@ -956,7 +962,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		add_meritocracy_effect = yes
+		add_mandate = 5
 		event_target:corrupt_governor = {
 			area = {
 				limit = { owned_by = ROOT }
@@ -973,7 +979,7 @@ country_event = {
 			factor = 80
 		}
 		add_corruption = 0.25
-		reduce_meritocracy_effect = yes
+		add_mandate = -5
 		event_target:corrupt_governor = {
 			spawn_rebels = {
 				type = anti_tax_rebels

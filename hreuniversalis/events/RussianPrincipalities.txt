@@ -224,6 +224,7 @@ country_event = {
 
 	option = {
 		name = russian_principality_events.3.a #Let us grant more land to the Boyars.
+		add_meritocracy = 10
 		add_government_power = {
 			government_mechanic = russian_mechanic
 			which = ADM
@@ -232,6 +233,7 @@ country_event = {
 	}
 	option = {
 		name = russian_principality_events.3.b #We do not need the Boyar's for this.
+		add_mandate = 5
 		add_government_power = {
 			government_mechanic = russian_mechanic
 			which = MIL
@@ -282,6 +284,7 @@ country_event = {
 
 	option = {
 		name = russian_principality_events.4.a #"Land is true wealth."
+		add_meritocracy = 10
 		trigger_switch = {
 			on_trigger = has_country_flag
 			land_tax = {
@@ -322,6 +325,7 @@ country_event = {
 	}
 	option = {
 		name = russian_principality_events.4.c #"We must use this as leverage in state affairs."
+		add_mandate = 5
 		trigger_switch = {
 			on_trigger = has_country_flag
 			land_tax = {
@@ -417,7 +421,8 @@ country_event = {
 			which = MIL
 			amount = -25
 		}
-		add_legitimacy = -5		
+		add_legitimacy = -5
+		add_mandate = -5
 		event_target:famine_province = {
 			add_province_modifier = {
 				name = "russian_famine"
@@ -436,7 +441,13 @@ country_event = {
 			which = ADM
 			amount = -25
 		}
-		add_prestige = -10
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_meritocracy = -10
+		}
+		else = {
+			add_prestige = -10
+		}
 		event_target:famine_province = {
 			add_province_modifier = {
 				name = "russian_famine"

@@ -21,6 +21,10 @@ historical_friend = VDR
 historical_friend = VHN
 
 1054.2.20 = {
+	add_country_modifier = {
+		name = yaroslavichi_triumvirate
+		duration = -1
+	}
 	monarch = {
 		name = "Izyaslav I"
 		dynasty = "Rurikovich"
@@ -44,6 +48,7 @@ historical_friend = VHN
 	}
 }
 1078.10.3 = {
+	remove_country_modifier = yaroslavichi_triumvirate
 	monarch = {
 		name = "Vsevolod I"
 		dynasty = "Rurikovich"

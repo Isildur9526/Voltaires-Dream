@@ -744,6 +744,15 @@ country_event = {
 	is_triggered_only = yes
 	major = yes
 
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_heir_flag = nizar_heir_flag }
+			}
+			clr_heir_flag = nizar_heir_flag
+		}
+	}
+
 	option = {
 		name = great_fitna.100.a
 		add_stability_or_adm_power = yes
@@ -777,6 +786,7 @@ country_event = {
 				dip = -3
 				mil = -3
 				hide_skills = yes
+				dynasty = ROOT
 			}
 			if = {
 				limit = { has_heir = yes }

@@ -7366,3 +7366,56 @@ country_event = {
 		FRA = { add_historical_rival = ROOT }
 	}
 }
+
+country_event = {
+	id = hremodevents.131
+	title = "HREMT131"
+	desc = "HREMD131"
+	picture = PRINCE_AND_BOYARS_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = KIE
+		has_country_modifier = yaroslavichi_triumvirate
+	}
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.25
+			NOT = { has_ruler = "Izyaslav I" }
+		}
+		modifier = {
+			factor = 0.25
+			has_dlc = "Mandate of Heaven"
+			is_emperor_of_china = no
+		}
+		modifier = {
+			factor = 0.75
+			war_with = PLL
+		}
+		modifier = {
+			factor = 0.75
+			war_with = CHR
+		}
+	}
+
+	option = {
+		name = "HREMA131"
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+		else = {
+			add_legitimacy = -20
+		}
+		remove_country_modifier = yaroslavichi_triumvirate
+		reverse_add_opinion = {
+			who = PLL
+			modifier = hrema131_opinion
+		}
+		reverse_add_opinion = {
+			who = CHR
+			modifier = hrema131_opinion
+		}
+	}
+}

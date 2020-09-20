@@ -5,9 +5,11 @@
 #Additions
 -Added the following new mercenary companies: Kutama, Jutlandic Freischar, Geharnischte, Landsknechts, Saharan Company, Bolghar Mercenaries, Polabian Warriors
 -Added Fatimid Calamity disaster with 13 associated events
+-Added new mission tree for Austria with 58 missions
 -Added new mission tree for Pisa with 31 missions
 -Added triggered province modifier for the Slavic sanctuary of Rethra
 -Added Mamluk rebel type
+-Added event for the Yaroslavichi Triumvirate
 -More German localization additions
 
 #Fixes

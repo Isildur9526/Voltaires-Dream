@@ -1557,7 +1557,7 @@
  vn_swe_strike_into_russia.tt: "Capital is in the §YRussia§! superregion"
  vn_swe_strike_into_russia_desc: ""
  vn_swe_swedish_settlement_title: "Swedish Settlement"
- vn_swe_swedish_settlement.tt: "Every owned province in the §YFinland§! and §YEstonia§! regions with §Y[Root.Culture.GetName]§! culture gets '§YSwedish Settlers§!' until the end of the game, giving the following effects:\nLocal Tax Modifier: §G+10.0%\nLocal Monthly Devastation: §G-0.05§!"
+ vn_swe_swedish_settlement.tt: "Every owned province in the §YFinland§! and §YEstonia§! regions with §Y[Root.Culture.GetName]§! culture gets '§YSwedish Settlers§!' until the end of the game, giving the following effects:\nLocal Tax Modifier: §G+10.0%§!\nLocal Monthly Devastation: §G-0.05§!"
  vn_swe_swedish_settlement_desc: ""
  vn_swe_wars_with_poland_title: "Wars with Poland"
  vn_swe_wars_with_poland.tt: "Capital is in the §YPoland§! superregion"

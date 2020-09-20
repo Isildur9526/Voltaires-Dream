@@ -261,11 +261,6 @@ estate_mamluks_guaranteed_autonomy_mod = {
 	local_culture_conversion_cost = 10
 	local_unrest = -2
 }
-investiture_excommunication_m = {
-	nobles_loyalty_modifier = -0.05
-	church_loyalty_modifier = -0.05
-	imperial_authority = -0.25
-}
 kremnica_gold = {
 	trade_goods_size = 4.0
 }
@@ -745,8 +740,18 @@ ibn_rushd_qadi = {
 ibn_rushd_banished = {
 	global_unrest = -1
 }
+yaroslavichi_triumvirate = {
+	diplomats = 1
+	improve_relation_modifier = 0.25
+	meritocracy = 0.25
+}
 
 #Imperial Incidents
+investiture_excommunication_m = {
+	nobles_loyalty_modifier = -0.05
+	church_loyalty_modifier = -0.05
+	imperial_authority = -0.25
+}
 lombard_league_winner = {
 	prestige = 0.5
 	legitimacy = 1

@@ -25,6 +25,8 @@
  building_cathedral_zoroastrian: "Great Fire Temple"
  building_cathedral_buddhism: "Stupa"
 #Misc
+ yaroslavichi_triumvirate: "Yaroslavichi Triumvirate"
+ desc_yaroslavichi_triumvirate: "After the death of Yaroslav the Wise, his eldest sons - Iziaslav of Kiev, Sviatoslav of Chernigov and Vsevolod of Pereyaslavl - formed a council to rule the Grand Principality together."
  orsini_pope: "Orsini Pope"
  desc_orsini_pope: "This Pope is a puppet of the corrupt Roman family the Orsini."
  colonna_pope: "Colonna Pope"
@@ -583,6 +585,7 @@
  hrema83_opinion: "Invited Henrique"
  hremb83_opinion: "Strengthened Overlord"
  hrema105_opinion: "Dekapolis"
+ hrema131_opinion: "Break of the Triumvirate"
 #Disasters
  black_death: "Black Death"
  black_death_desc: "A devestating disease from the East is killing millions with no end in sight."

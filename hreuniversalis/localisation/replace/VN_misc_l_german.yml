@@ -25,6 +25,8 @@
  building_cathedral_zoroastrian: "Großer Feuertempel"
  building_cathedral_buddhism: "Stupa"
 #Misc
+ yaroslavichi_triumvirate: "Jaroslawisches Triumvirat"
+ desc_yaroslavichi_triumvirate: "Nach dem Tod von Jaroslaw dem Weisen bildeten seine ältesten Söhne - Isjaslaw I. von Kiew, Swjatoslaw von Tschernigow und Wsewolod von Perjaslawl - einen Rat, um gemeinsam über das Großfürstentum zu regieren."
  orsini_pope: "Papst der Orsini"
  desc_orsini_pope: "Dieser Papst ist eine Marionette der korrupten römischen Familie der Orsini."
  colonna_pope: "Papst der Colonna"
@@ -583,6 +585,7 @@
  hrema83_opinion: "Hat Henrique eingeladen"
  hremb83_opinion: "Gestärkter Lehnsherr"
  hrema105_opinion: "Dekapolis"
+ hrema131_opinion: "Bruch des Triumvirats"
 #Disasters
  black_death: "Schwarzer Tod"
  black_death_desc: "Eine schwere Krankheit aus dem Osten tötet Millionen Menschen und kein Ende ist in Sicht."
