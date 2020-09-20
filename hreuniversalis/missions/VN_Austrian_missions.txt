@@ -416,33 +416,32 @@ vn_hab_missions_slot_2 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
 		trigger = {
-            hagenau_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            nordgau_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            strassburg_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 18
+                OR = {
+                    area = hagenau_area
+                    area = nordgau_area
+                    area = strassburg_area
+                }
             }
 		}
         effect = {
             hagenau_area = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
                 add_province_modifier = {
                     name = hab_conquer_alsace_mission
                     duration = 9125
                 }
             }
             nordgau_area = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
                 add_province_modifier = {
                     name = hab_conquer_alsace_mission
                     duration = 9125
                 }
             }
             strassburg_area = {
+                limit = { country_or_non_sovereign_subject_holds = ROOT }
                 add_province_modifier = {
                     name = hab_conquer_alsace_mission
                     duration = 9125

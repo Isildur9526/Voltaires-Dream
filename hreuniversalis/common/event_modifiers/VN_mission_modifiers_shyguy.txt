@@ -2320,10 +2320,6 @@ hab_conquer_warsaw_mission = {
 	diplomatic_annexation_cost = -0.15
 	prestige_decay = -0.01
 }
-hab_conquer_linz_mission = {
-	fort_maintenance_modifier = -0.1
-	garrison_size = 0.15
-}
 hab_castle_of_wien_mission = {
 	local_state_maintenance_modifier = -0.2
 	local_development_cost = -0.2
