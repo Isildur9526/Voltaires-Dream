@@ -1824,9 +1824,9 @@ country_event = {
 ###PAPAL STATES###
 #Pope supports the Reconquista
 country_event = {
-	id = vn_missions.39
-	title = vn_missions.39.t
-	desc = vn_missions.39.d
+	id = vn_missions.40
+	title = vn_missions.40.t
+	desc = vn_missions.40.d
 	picture = POPE_PREACHING_eventPicture
 
 	is_triggered_only = yes
@@ -1844,9 +1844,9 @@ country_event = {
 	}
 
 	option = {
-		name = vn_missions.39.a
+		name = vn_missions.40.a
 		trigger_switch = {
-			on_trigger = set_country_flag
+			on_trigger = has_country_flag
 			poitevin_general = {
 				create_general = {
 					tradition = 60
