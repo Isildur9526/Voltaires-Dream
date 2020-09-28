@@ -16,6 +16,7 @@ vn_boh_missions_slot_1 = {
         trigger = {
             legitimacy_equivalent = 100
             government_rank = 5
+            is_elector = yes
         }
         effect = {
             add_country_modifier = {
@@ -59,19 +60,19 @@ vn_boh_missions_slot_1 = {
         position = 3
         required_missions = { }
         trigger = {
-			OR = {
-				trading_bonus = {
-					trade_goods = glass
-					value = yes
-				}
-				production_leader = {
-					trade_goods = glass
-				}				
-				any_owned_province = {
-					trade_goods = glass
-					base_production = 10
-				}
-			}
+            OR = {
+                trading_bonus = {
+                    trade_goods = glass
+                    value = yes
+                }
+                production_leader = {
+                    trade_goods = glass
+                }				
+            }
+            any_owned_province = {
+                trade_goods = glass
+                base_production = 10
+            }
         }
         effect = {
 			add_years_of_income = 0.5
@@ -100,6 +101,7 @@ vn_boh_missions_slot_1 = {
                     }
                 }
             }
+            army_size_percentage = 0.75
         }
         effect = {
             austria_region = {
@@ -218,6 +220,13 @@ vn_boh_missions_slot_1 = {
         effect = {
             add_legitimacy = 10
             add_prestige = 10
+            friuli_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
 }
@@ -535,7 +544,7 @@ vn_boh_missions_slot_2 = {
                 limit = { has_estate = estate_nobles }
                 estate_loyalty = {
                     estate = estate_nobles
-                    loyalty = 40
+                    loyalty = 50
                 }
                 NOT = {
                     estate_influence = {
@@ -578,6 +587,13 @@ vn_boh_missions_slot_2 = {
         }
         effect = {
             add_mil_power = 100
+            tirolia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
 	}
 }
@@ -754,6 +770,7 @@ vn_boh_missions_slot_3 = {
             781 = {
                 owned_by = ROOT
                 has_building = university
+                development = 25
             }
         }
         effect = {
@@ -838,6 +855,13 @@ vn_boh_missions_slot_4 = {
             lusatianorth_area = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
+            }
+            lusatia_region = {
+                type = all
+                OR = {
+                    has_owner_culture = yes
+                    has_owner_accepted_culture = yes
+                }
             }
         }
         effect = {
@@ -1016,6 +1040,10 @@ vn_boh_missions_slot_5 = {
                 estate_territory = {
                     estate = estate_church
                     territory = 25
+                }
+                estate_loyalty = {
+                    estate = estate_church
+                    loyalty = 60
                 }
             }
             else = {

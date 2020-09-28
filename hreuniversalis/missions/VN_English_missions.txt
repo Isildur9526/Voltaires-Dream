@@ -2036,7 +2036,7 @@ vn_eng_missions_slot_5_a = {
 				owned_by = ROOT
 				is_core = ROOT
 				development = 25
-				num_of_times_improved = 5
+				num_of_times_improved_by_owner = 5
                 NOT = { num_free_building_slots = 1 }
             }
         }

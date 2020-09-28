@@ -674,7 +674,7 @@ vn_ire_missions_slot_5_a = {
         }
         trigger = {
             2737 = {
-                num_of_times_improved = 10
+                num_of_times_improved_by_owner = 10
                 calc_true_if = {
                     amount = 5
                     has_tax_building_trigger = yes

@@ -4,6 +4,7 @@
 
 #Additions
 -Added the following new mercenary companies: Kutama, Jutlandic Freischar, Geharnischte, Landsknechts, Saharan Company, Bolghar Mercenaries, Polabian Warriors
+-Added the following alternative country names: Buchsgau (Solothurn)
 -Added Fatimid Calamity disaster with 13 associated events
 -Added new mission tree for Austria with 58 missions
 -Added new mission tree for Pisa with 31 missions
@@ -13,10 +14,14 @@
 -More German localization additions
 
 #Fixes
--Small fixes for the following mission trees: Sweden, Navarra, Serbia, Swabia
--Upped cost of Temples/Courthouses/Workshops so they are no longer free upgrades
+-Small fixes for the following mission trees: Sweden, Navarra, Serbia, Swabia, Bohemia, Sicily, Venice
+-Fixed major decision bug where heretic AI PU juniors could flip their overlord's ruler and heir religions and nuke their stability
+-Upped cost of Temples/Courthouses/Workshops so they are no longer free upgrades (also fixes minor interface bug due to spending no money)
+-Fixed the Support Independence agenda targeting French Fiefs thereby making it impossible
 -Mediatization start event now fires for the overlord of a subject country rather than the subject themselves
 -Fragmentation of Poland should no longer restart after firing once
+-Forming Sicily as Apulia will no longer switch your mission tree
+-Improved localization for crusade events
 -Other minor localization/bug fixes
 
 # v 2.0.5 #

@@ -738,11 +738,11 @@ country_decisions = {
 				}
 				set_government_rank = 5
 			}
-			change_tag = SIC
 			if = {
 				limit = { NOT = { tag = APL } }
 				swap_non_generic_missions = yes
 			}
+			change_tag = SIC
 			sicily_superregion = {
 				limit = {
 					NOT = { owned_by = ROOT }

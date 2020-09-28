@@ -9,6 +9,7 @@ fixed_capital = 1154
 
 #Counts of Buchsgau
 1050.1.1 = {
+	override_country_name = BUCHSGAU
 	monarch = {
 		name = "Albrecht I"
 		dynasty = "von Frohburg"
@@ -134,6 +135,7 @@ fixed_capital = 1154
 
 #Free city
 1218.2.18 = {
+	restore_country_name = yes
 	government = republic
 	add_government_reform = oligarchy_reform
 	capital = 1154

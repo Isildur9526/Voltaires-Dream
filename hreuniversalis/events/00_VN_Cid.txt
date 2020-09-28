@@ -1,6 +1,6 @@
 namespace = cid_events
 
-# El Cid (CAS) (69)
+# El Cid (CAS)
 country_event = {
     id = cid_events.1
     title = cid_events.1.t
@@ -104,7 +104,7 @@ country_event = {
     }
 }
 
-# El Cid (BRC) (70)
+# El Cid (BRC)
 country_event = {
     id = cid_events.2
     title = cid_events.2.t
@@ -177,7 +177,7 @@ country_event = {
     }
 }
 
-# El Cid (ZGZ) (71)
+# El Cid (ZGZ)
 country_event = {
     id = cid_events.3
     title = cid_events.3.t
@@ -239,7 +239,7 @@ country_event = {
     }
 }
 
-# El Cid (other taifa) (72)
+# El Cid (other taifa)
 country_event = {
     id = cid_events.4
     title = cid_events.4.t
@@ -262,7 +262,7 @@ country_event = {
     }
 }
 
-#El Cid's Ambition (73)
+#El Cid's Ambition
 country_event = {
     id = cid_events.5
     title = cid_events.5.t
@@ -306,21 +306,23 @@ country_event = {
     }
 
     immediate = {
-        if = {
-            limit = { has_country_flag = cid_cas }
-            clr_country_flag = cid_cas
-        }
-        if = {
-            limit = { has_country_flag = cid_brc }
-            clr_country_flag = cid_brc
-        }
-        if = {
-            limit = { has_country_flag = cid_zgz }
-            clr_country_flag = cid_zgz
-        }
-        if = {
-            limit = { has_country_flag = cid_taifa }
-            clr_country_flag = cid_taifa
+        hidden_effect = {
+            if = {
+                limit = { has_country_flag = cid_cas }
+                clr_country_flag = cid_cas
+            }
+            if = {
+                limit = { has_country_flag = cid_brc }
+                clr_country_flag = cid_brc
+            }
+            if = {
+                limit = { has_country_flag = cid_zgz }
+                clr_country_flag = cid_zgz
+            }
+            if = {
+                limit = { has_country_flag = cid_taifa }
+                clr_country_flag = cid_taifa
+            }
         }
     }
 
@@ -400,9 +402,10 @@ country_event = {
                 }
                 capital_scope = {
                     spawn_rebels = {
-                        leader = "El Cid"
+                        leader = "Rodrigo Díaz"
+                        leader_dynasty = "Laínez"
                         type = pretender_rebels
-                        size = 2
+                        size = 3
                     }
                 }
             }
@@ -429,15 +432,16 @@ country_event = {
         ai_chance = { factor = 100 }
         2024 = {
             spawn_rebels = {
-                leader = "El Cid"
+                leader = "Rodrigo Díaz"
+                leader_dynasty = "Laínez"
                 type = pretender_rebels
-                size = 2
+                size = 3
             }
         }
     }
 }
 
-# El Cid's Campaign (74)
+# El Cid's Campaign
 country_event = {
     id = cid_events.6
     title = cid_events.6.t
@@ -532,7 +536,7 @@ country_event = {
     }
 }
 
-# El Cid is Victorious (75)
+# El Cid is Victorious
 country_event = {
     id = cid_events.7
     title = cid_events.7.t
@@ -578,7 +582,7 @@ country_event = {
     }
 }
 
-# El Cid is Defeated (76)
+# El Cid is Defeated
 country_event = {
     id = cid_events.8
     title = cid_events.8.t

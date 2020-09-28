@@ -117,7 +117,7 @@ vn_slz_missions_slot_2_a = {
             2735 = {
 				owned_by = ROOT
 				base_production = 6
-				num_of_times_improved = 5
+				num_of_times_improved_by_owner = 5
 				has_production_building_trigger = yes
 			}
         }

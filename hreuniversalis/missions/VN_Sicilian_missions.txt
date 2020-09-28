@@ -64,6 +64,34 @@ vn_sic_missions_slot_1 = {
                 }
                 add_permanent_claim = ROOT
             }
+            2711 = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            4583 = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            2710 = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            4582 = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
             add_country_modifier = {
                 name = sic_religious_war_mission
                 duration = 9125
@@ -222,10 +250,12 @@ vn_sic_missions_slot_1 = {
             564 = {
 				owned_by = ROOT
 				has_building = university
+				development = 30
 			}
 			2041 = {
 				owned_by = ROOT
 				has_building = university
+				development = 30
 			}
         }
         effect = {
@@ -448,8 +478,15 @@ vn_sic_missions_slot_2 = {
 			}
         }
         effect = {
-            add_legitimacy = 20
+            add_legitimacy = 10
             add_prestige = 10
+            greekislands_region  = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_sic_maritime_power = {
@@ -576,9 +613,9 @@ vn_sic_missions_slot_3 = {
                 type = all
                 OR = {
                     is_city = no
-				    country_or_non_sovereign_subject_holds = ROOT
+                    country_or_non_sovereign_subject_holds = ROOT
                 }
-			}
+            }
         }
         effect = {
             add_prestige = 10
@@ -755,17 +792,26 @@ vn_sic_missions_slot_4 = {
         trigger = {
             is_subject = no
             palermo_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			syracuse_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			messina_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+                type = all
+                OR = {
+                    is_island = yes
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
+            }
+            syracuse_area = {
+                type = all
+                OR = {
+                    is_island = yes
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
+            }
+            messina_area = {
+                type = all
+                OR = {
+                    is_island = yes
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
+            }
         }
         effect = {
             calabria_area = {
@@ -952,6 +998,13 @@ vn_sic_missions_slot_4 = {
                 }
                 add_permanent_claim = ROOT
             }
+            umbria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_sic_conquer_tuscany = {
@@ -1003,13 +1056,6 @@ vn_sic_missions_slot_4 = {
                 add_permanent_claim = ROOT
             }
             treviso_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            umbria_region = {
                 limit = {
                     NOT = { is_core = ROOT }
                     NOT = { is_permanent_claim = ROOT }

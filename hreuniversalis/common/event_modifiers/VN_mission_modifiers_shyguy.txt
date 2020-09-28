@@ -2880,3 +2880,31 @@ vgb_mongol_thorn_mission = {
 	recover_army_morale_speed = 0.05
 	cavalry_power = 0.2
 }
+
+#Papal States
+pap_a_courteous_gift_mission = {
+	local_autonomy = -0.05
+	local_build_cost = -0.2
+	local_institution_spread = 0.25
+	fort_level = 1
+}
+pap_catholic_scholasticism_mission = {
+	idea_cost = -0.05
+	technology_cost = -0.05
+	innovativeness_gain = 0.25
+}
+pap_expedition_to_barbastro_mission = {
+	land_morale = 0.05
+	recover_army_morale_speed = 0.05
+	war_exhaustion = -0.03
+}
+pap_in_nomine_domini_mission = {
+	yearly_corruption = -0.05
+	diplomatic_reputation = 1
+	church_loyalty_modifier = 0.05
+}
+pap_council_of_clermont_mission = {
+	manpower_recovery_speed = 0.25
+	land_morale = 0.1
+	land_attrition = -0.1
+}

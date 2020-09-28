@@ -244,6 +244,7 @@ estate_rajput_support_independence = {
 			NOT = { ROOT = { truce_with = prev } }
 			any_subject_country = {
 				is_subject_other_than_tributary_trigger = yes
+				NOT = { is_subject_of_type = daimyo_vassal }
 				liberty_desire = 50
 				has_opinion = {
 					who = root
@@ -264,6 +265,7 @@ estate_rajput_support_independence = {
 				NOT = { ROOT = { truce_with = prev } }
 				any_subject_country = {
 					is_subject_other_than_tributary_trigger = yes
+					NOT = { is_subject_of_type = daimyo_vassal }
 					liberty_desire = 50
 					has_opinion = {
 						who = root
@@ -278,6 +280,7 @@ estate_rajput_support_independence = {
 			random_subject_country = {
 				limit = {
 					is_subject_other_than_tributary_trigger = yes
+					NOT = { is_subject_of_type = daimyo_vassal }
 					liberty_desire = 50
 					has_opinion = {
 						who = root
@@ -297,6 +300,7 @@ estate_rajput_support_independence = {
 			event_target:agenda_country = {
 				OR = {
 					NOT = { is_subject_of = event_target:agenda_rival_country }
+					is_subject_of_type = daimyo_vassal
 					NOT = { num_of_cities = 1 }
 					war_with = root
 				}

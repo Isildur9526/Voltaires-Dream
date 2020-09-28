@@ -996,6 +996,12 @@ country_decisions = {
 					NOT = { heir_religion = ROOT }
 				}
 			}
+			NOT = {
+				AND = {
+					ai = yes
+					is_subject_of_type = personal_union
+				}
+			}
 			OR = {
 				ai = no
 				has_idea_group = religious_ideas

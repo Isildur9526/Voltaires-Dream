@@ -1618,7 +1618,7 @@ country_event = {
 			limit = { NOT = { government_rank = 4 } }
 			set_government_rank = 4
 		}
-		if = = {
+		if = {
 			limit = { government = monarchy }
 			add_government_reform = austrian_archduchy_reform
 		}
@@ -1797,6 +1797,7 @@ country_event = {
 }
 
 ###FRANCHE COMTE###
+#Pope Callixtus II
 country_event = {
 	id = vn_missions.39
 	title = vn_missions.39.t
@@ -1817,5 +1818,75 @@ country_event = {
 		name = vn_missions.39.b
 		add_dip_power = 100
 		add_prestige = 20
+	}
+}
+
+###PAPAL STATES###
+#Pope supports the Reconquista
+country_event = {
+	id = vn_missions.39
+	title = vn_missions.39.t
+	desc = vn_missions.39.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				20 = { set_country_flag = poitevin_general }
+				20 = { set_country_flag = provencal_general }
+				20 = { set_country_flag = burgundian_general }
+				20 = { set_country_flag = flemish_general }
+				20 = { set_country_flag = lombard_general }
+			}
+		}
+	}
+
+	option = {
+		name = vn_missions.39.a
+		trigger_switch = {
+			on_trigger = set_country_flag
+			poitevin_general = {
+				create_general = {
+					tradition = 60
+					culture = poitevin
+				}
+				clr_country_flag = poitevin_general
+			}
+			provencal_general = {
+				create_general = {
+					tradition = 60
+					culture = provencal
+				}
+				clr_country_flag = provencal_general
+			}
+			burgundian_general = {
+				create_general = {
+					tradition = 60
+					culture = burgundian
+				}
+				clr_country_flag = burgundian_general
+			}
+			flemish_general = {
+				create_general = {
+					tradition = 60
+					culture = flemish
+				}
+				clr_country_flag = flemish_general
+			}
+			lombard_general = {
+				create_general = {
+					tradition = 60
+					culture = lombard
+				}
+				clr_country_flag = lombard_general
+			}
+		}
+		add_yearly_manpower = 1
+		add_country_modifier = {
+			name = pap_expedition_to_barbastro_mission
+			duration = 9125
+		}
 	}
 }

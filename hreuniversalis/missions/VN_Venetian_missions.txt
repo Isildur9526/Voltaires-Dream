@@ -429,6 +429,13 @@ vn_ven_missions_slot_2 = {
         }
         effect = {
             add_religious_influence_effect_small = yes
+            crete_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
             624 = {
 				if = {
 					limit = {

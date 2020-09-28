@@ -235,6 +235,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = vn_crusade_plea.tt
+		custom_tooltip = vn_crusade_plea.tt2
 		hidden_effect = {
 			set_global_flag = vn_crusade_holy_land_flag
 			every_country = {
@@ -294,6 +295,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = vn_crusade_plea.tt
+		custom_tooltip = vn_crusade_plea.tt2
 		hidden_effect = {
 			set_global_flag = vn_crusade_mesopotamia_flag
 			every_country = {
@@ -443,6 +445,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = vn_crusade_plea.tt
+		custom_tooltip = vn_crusade_plea.tt2
 		hidden_effect = {
 			set_global_flag = vn_crusade_greece_flag
 			every_country = {
@@ -697,6 +700,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = vn_crusade_plea.tt
+		custom_tooltip = vn_crusade_plea.tt2
 		hidden_effect = {
 			set_global_flag = vn_crusade_wendland_flag
 			every_country = {
@@ -774,6 +778,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = vn_crusade_plea.tt
+		custom_tooltip = vn_crusade_plea.tt2
 		hidden_effect = {
 			set_global_flag = vn_crusade_baltic_flag
 			every_country = {
@@ -1896,7 +1901,7 @@ country_event = {
 					duration = 7300
 				}
 				random_country = {
-					limit = { culture_group = germanic exists = yes }
+					limit = { culture_group = germanic exists = yes NOT = { tag = ROOT } }
 					export_to_variable = {
 						value = adm_tech
 						variable_name = ger_adm_tech
@@ -2027,7 +2032,7 @@ country_event = {
 					duration = 7300
 				}
 				random_country = {
-					limit = { culture_group = germanic exists = yes }
+					limit = { culture_group = germanic exists = yes NOT = { tag = ROOT } }
 					export_to_variable = {
 						value = adm_tech
 						variable_name = ger_adm_tech
