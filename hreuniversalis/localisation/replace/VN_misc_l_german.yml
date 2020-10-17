@@ -25,6 +25,8 @@
  building_cathedral_zoroastrian: "Großer Feuertempel"
  building_cathedral_buddhism: "Stupa"
 #Misc
+ nahuatl_sacrificial_stones: "Missionierung der Ætsægdin-Heiden"
+ great_inti_festivals: "Missionierung der Khabze-Heiden"
  pap_sistinechapel_botticelli_tt: "§YDie Sixtinische Kapelle, dekoriert von Botticelli,§! wird zu §Y[2708.GetName]§! hinzugefügt, was folgende Auswirkungen hat:\nHingabe (Jährlich): §G+0.10§!\nUnruhe (Global): §G-1§!"
  pap_sistinechapel_ghirlandaio_tt: "§YDie Sixtinische Kapelle, dekoriert von Ghirlandaio,§! wird zu §Y[2708.GetName]§! hinzugefügt, was folgende Auswirkungen hat:\nHingabe (Jährlich): §G+0.10§!\nPrestige (Jährlich): §G0.5§!"
  pap_sistinechapel_perugino_tt: "§YDie Sixtinische Kapelle, dekoriert von Perugino,§! wird zu §Y[2708.GetName]§! hinzugefügt, was folgende Auswirkungen hat:\nHingabe (Jährlich): §G+0.10§!\nBeziehungen verbessern: §G+10%§!"
@@ -61,7 +63,6 @@
  estate_nobles_frontier_resettlement_desc: "During constant wars between Christians and Muslims in Iberia, a large swath of land effectively became a depopulated no man's land. Spearheaded by the efforts of nobles to claim more land for themselves, however, we can reestablish a presence on the Frontier."
  has_fort_trigger.tt: "Have a fort of any level (excluding capital fort)."
  MAPMODE_SUPER_REGION: "Überregion"
- has_non_outdated_fort_trigger: "Hat den fortschrittlichsten Festungstyp, der mit der derzeitigen Militärtechnologie möglich ist."
  nrm_high_king_opinion: "Ersuchte englische Unterstützung"
  ghazali_falasifa: "Unterstützte Al-Ghazali"
  desc_ghazali_falasifa: "Wir haben Al-Ghazali in seinem Kampf gegen die Falasifa und Schiiten unterstützt."

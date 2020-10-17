@@ -58,7 +58,7 @@
 839 = "Lubiaz"
 854 = "Meklemburgia"
 858 = "Uznam"
-859 = "Mieszkowice"
+859 = "Barwice"
 874 = "Ankona"
 880 = "Lobez"
 881 = "Gryfino"

@@ -41,30 +41,47 @@ discovered_by = muslim
 	remove_core = GLG
 }
 1323.1.1 = {
+	owner = LNN
+	controller = LNN
+	add_core = LNN
+	remove_core = OLS
+}
+1335.1.1 = { hre = yes }
+1341.1.1 = {
+	owner = POL
+	controller = POL
+	add_core = POL
+	remove_core = LNN
+	hre = no
+}
+1356.1.1 = {
 	owner = SIL
 	controller = SIL
 	add_core = SIL
+	remove_core = POL
+	hre = yes
 }
-1335.1.1 = { hre = yes }
-1526.8.30 = {
+1434.1.1 = {
+	owner = OPO
+	controller = OPO
+	add_core = OPO
+	remove_core = SIL
+	remove_core = NMY
+}
+1532.3.27 = {
+	religion = protestant
+	owner = LNN
+	controller = LNN
+	add_core = LNN
+	remove_core = OPO
+}
+1675.11.21 = {
 	owner = HAB
 	controller = HAB
 	add_core = HAB
-	remove_core = NMY
+	add_core = SIL
+	remove_core = LNN
 }
-1536.1.1 = { religion = protestant }
-1618.5.23 = {
-	owner = BOH
-	controller = BOH
-	add_core = BOH
-	unrest = 5
-}
-1620.11.8 = {
-	owner = HAB
-	controller = HAB
-	remove_core = BOH
-}
-1648.1.1 = { unrest = 0 }
 1742.6.11 = {
 	owner = PRU
 	controller = PRU

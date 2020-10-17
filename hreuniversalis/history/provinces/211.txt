@@ -1,6 +1,6 @@
 owner = KHR
 controller = KHR
-culture = swiss
+culture = romansch
 religion = catholic
 hre = yes
 base_tax = 2
@@ -35,6 +35,7 @@ add_core = XBE
 	controller = SWI
 	add_core = SWI
 	remove_core = XBE
+	culture = swiss
 	hre = no
 }
 1653.1.1 = { unrest = 5 }

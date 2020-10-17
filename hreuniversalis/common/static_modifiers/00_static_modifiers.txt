@@ -270,8 +270,8 @@ development = {
 	allowed_num_of_buildings = 0.1
 	supply_limit_modifier = 0.02
 	local_missionary_strength = -0.001
-	land_forcelimit	= 0.05			# special case, affected by autonomy
-	naval_forcelimit = 0.05			# special case, affected by autonomy & set to 0 by code if not port
+	land_forcelimit	= 0.05		# special case, affected by autonomy
+	naval_forcelimit = 0.05		# special case, affected by autonomy & set to 0 by code if not port
 	local_sailors = 15			# special case, affected by autonomy & set to 0 by code if not port
 	province_trade_power_value = 0.2
 	local_amount_of_banners = 0.085
@@ -581,6 +581,7 @@ positive_stability = {
 	rr_jacobins_influence = 0.03
 	cla_filid_influence = 0.03
 	abb_cluniacs_influence = 0.03
+	pap_orsini_influence = 0.03
 	stability_cost_modifier = 0.50
 	monthly_fervor_increase = 1
 	devotion = 0.5
@@ -693,6 +694,7 @@ peace = {
 	cla_filid_influence = 0.1
 	abb_benedictines_influence = 0.1
 	tur_militarists_influence = -0.1
+	pap_roman_mob_influence = -0.1
 }
 
 unconditional_surrender = {
@@ -718,6 +720,8 @@ war_exhaustion = {
 	cla_flatha_influence = -0.05
 	abb_cluniacs_influence = 0.05
 	abb_benedictines_influence = -0.05
+	pap_roman_mob_influence = -0.05
+	pap_orsini_influence = 0.05
 	manpower_recovery_speed = -0.01
 	sailors_recovery_speed = -0.01
 	siege_ability = -0.01
@@ -1023,6 +1027,7 @@ over_extension = {
 	cla_druid_influence = 0.5
 	abb_cistercians_influence = 0.5
 	tur_lalas_influence = 0.5
+	pap_colonna_influence = 0.5
 	yearly_corruption = 0.5
 }
 

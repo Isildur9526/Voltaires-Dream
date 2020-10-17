@@ -159,7 +159,7 @@ barbary_pirate_ideas = {
 
 pirate_ideas = {
 	start = {
-		navy_tradition = 1
+		navy_tradition = 0.5
 		free_leader_pool = 1
 	}
 	bonus = {
@@ -261,7 +261,7 @@ berber_ideas = {
 		caravan_power = 0.2
 	}
 	corsairs = {
-		navy_tradition = 1
+		navy_tradition = 0.5
 		privateer_efficiency = 0.10
 	}
 	tuareg_cavalry = {
@@ -311,7 +311,7 @@ anatolian_beyliks_ideas = {
 		build_cost = -0.10
 	}
 	legacy_seljuqs_empire = {
-		prestige = 1
+		prestige = 0.5
 	}
 }	
 
@@ -425,7 +425,7 @@ german_ideas = {
 		diplomatic_upkeep = 1
 	}
 	residenzstadt = {
-		prestige = 1
+		prestige = 0.5
 	}
 }
 
@@ -464,7 +464,7 @@ arabian_ideas = {
 		leader_land_manuever = 1
 	}
 	arabia = {
-		prestige = 1
+		prestige = 0.5
 	}
 }
 
@@ -503,7 +503,7 @@ latin_ideas = {
 		garrison_size = 0.1
 	}
 	high_renaissance_art_and_architecture = {
-		prestige = 1
+		prestige = 0.5
 	}
 	italian_diplomacy = {
 		diplomatic_upkeep = 1
@@ -548,7 +548,7 @@ caucasus_ideas = {
 		leader_land_manuever = 1		
 	}
 	persian_poetry = {
-		prestige = 1
+		prestige = 0.5
 	}
 	highland_khans = {
 		legitimacy = 1
@@ -615,7 +615,7 @@ greek_ideas = {
 		tolerance_own = 2
 	}
 	greek_maritime_heritage = {
-		navy_tradition = 1
+		navy_tradition = 0.5
 	}
 	greek_klephtic_irregulars = {
 		infantry_power = 0.1
@@ -663,7 +663,7 @@ french_culture_ideas = {
 		tolerance_own = 2
 	}
 	french_cuisine = {
-		prestige = 1
+		prestige = 0.5
 	}
 	french_enlightenment = {
 		diplomatic_upkeep = 1

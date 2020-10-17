@@ -22,10 +22,20 @@ fort_14th = yes
 	controller = BUR
 	add_core = BUR
 }
+1393.2.10 = {
+	owner = ORA
+	controller = ORA
+	add_core = ORA
+	remove_core = BUR
+	remove_core = FCM
+}
 1477.1.5 = {
 	owner = FRA
 	controller = FRA
+	add_core = FCM
+	add_core = BUR
 	add_core = FRA
+	remove_core = ORA
 }
 1492.1.1 = {
 	owner = BUR

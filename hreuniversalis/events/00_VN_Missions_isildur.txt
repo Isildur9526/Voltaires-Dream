@@ -102,32 +102,74 @@ country_event = {
 		ai_chance = { factor = 100 }
 		add_manpower = -15
 		add_treasury = 250
-		BYZ = {
-			add_treasury = -250
-			capital_scope = {
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				infantry = BYZ
-				cavalry = BYZ
-				cavalry = BYZ
-				cavalry = BYZ
-				cavalry = BYZ
-				cavalry = BYZ
+		if = {
+			limit = { exists = BYZ }
+			BYZ = {
+				add_treasury = -250
+				capital_scope = {
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+				}
+				create_general = {
+					culture = normand
+					tradition = 50
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = nrm_gave_troops
+				}
 			}
-			create_general = {
-				culture = normand
-				tradition = 50
-			}
-			add_opinion = {
-				who = ROOT
-				modifier = nrm_gave_troops
+		}
+		else = {
+			random_known_country = {
+				limit = {
+					culture = greek
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					treasury = 250
+					ai = yes
+				}
+				add_treasury = -250
+				capital_scope = {
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					infantry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+					cavalry = BYZ
+				}
+				create_general = {
+					culture = normand
+					tradition = 50
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = nrm_gave_troops
+				}
 			}
 		}
 	}

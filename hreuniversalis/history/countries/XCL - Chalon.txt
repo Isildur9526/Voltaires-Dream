@@ -121,6 +121,7 @@ capital = 4045
 #Charolais Comtes
 1248.2.1 = {
 	capital = 759
+	override_country_name = CHAROLAIS_NAME
 	monarch = {
 		name = "Jean I"
 		dynasty = "de Bourgogne"

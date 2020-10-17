@@ -110,7 +110,20 @@ capital = 288
 }
 #done 1462
 
+#Glubczyce Branch
+1462.1.1 = {
+	capital = 5927
+	monarch = {
+		name = "Jan II"
+		dynasty = "Premyslovci"
+		birth_date = 1424.1.1
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
 1485.1.1 = {
+	capital = 288
 	monarch = {
 		name = "János"
 		dynasty = "Corvin"

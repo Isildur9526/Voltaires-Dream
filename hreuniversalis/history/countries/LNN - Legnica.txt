@@ -156,6 +156,28 @@ capital = 826
 	}
 }
 #1409.1.12 done
+1436.5.30 = {
+	monarch = {
+		name = "Jan I"
+		dynasty = "Piast"
+		birth_date = 1425.1.1
+		adm = 4
+		dip = 2
+		mil = 0
+	}
+}
+1443.1.1 = {
+	monarch = {
+		name = "Elzbieta I"
+		dynasty = "von Hohenzollern"
+		birth_date = 1403.9.29
+		female = yes
+		adm = 4
+		dip = 6
+		mil = 6
+	}
+}
+#1449.10.31 done
 1454.1.1 = {
 	monarch = {
 		name = "Fryderyk I"

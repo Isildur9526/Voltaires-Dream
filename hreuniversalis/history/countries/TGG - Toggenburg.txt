@@ -245,3 +245,27 @@ capital = 2246
 		mil = 3
 	}
 }
+
+#Disputed Division
+1436.4.30 = {
+	monarch = {
+		name = "Elisabeth"
+		dynasty = "von Mätsch"
+		birth_date = 1370.1.1
+		female = yes
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1437.4.30 = {
+	monarch = {
+		name = "Petermann"
+		dynasty = "von Raron"
+		birth_date = 1405.1.1
+		adm = 0
+		dip = 5
+		mil = 5
+	}
+}
+#done 1468

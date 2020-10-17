@@ -58,15 +58,28 @@ vn_nrm_missions_slot_1_a = {
 		icon = mission_pf_soldier
 		required_missions = { vn_nrm_support_normans_in_italy }
 		trigger = {
-			BYZ = {
-				exists = yes
-				NOT = { war_with = ROOT }
-				has_opinion = {
-					who = ROOT
-					value = 100
+			if = {
+				limit = { exists = BYZ }
+				BYZ = {
+					NOT = { war_with = ROOT }
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					treasury = 250
+					ai = yes
 				}
-				treasury = 250
-				ai = yes
+			}
+			else = {
+				any_known_country = {
+					culture = greek
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					treasury = 250
+					ai = yes
+				}
 			}
 			manpower = 15
 		}

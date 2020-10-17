@@ -158,7 +158,7 @@
 817 = "Brieg"
 818 = "Münsterberg"
 819 = "Neiße"
-820 = "Neustadt-Schlesien"
+820 = "Hohenplotz"
 822 = "Breslau"
 826 = "Liegnitz"
 827 = "Sagan"

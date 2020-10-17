@@ -23,11 +23,17 @@ add_core = LSX
 	controller = LSX
 	remove_core = SGS
 }
+1420.1.1 = {
+	owner = TIR
+	controller = TIR
+	add_core = TIR
+	remove_core = LSX
+}
 1455.1.1 = {
 	owner = WXL
 	controller = WXL
 	add_core = WXL
-	remove_core = LSX
+	remove_core = TIR
 }
 1474.8.31 = {
 	owner = TIR

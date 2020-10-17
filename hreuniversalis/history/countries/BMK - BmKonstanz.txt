@@ -197,7 +197,7 @@ fixed_capital = 1870
 }
 1344.7.25 = {
 	monarch = {
-		name = "Ulrich I"
+		name = "Ulrich III"
 		dynasty = "Pfefferhard"
 		birth_date = 1278.1.1
 		adm = 2
@@ -216,7 +216,7 @@ fixed_capital = 1870
 }
 1356.1.21 = {
 	monarch = {
-		name = "Ulrich II"
+		name = "Ulrich IV"
 		dynasty = "von Friedingen"
 		adm = 2
 		dip = 2

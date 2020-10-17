@@ -781,6 +781,19 @@ has_nobles_trade_good_trigger = {
 		trade_goods = livestock
 		trade_goods = grain
 		trade_goods = gems
+		trade_goods = barley
+		trade_goods = rye
+		trade_goods = munitions
+		trade_goods = horses
+		trade_goods = vegetables
+		trade_goods = dates
+		trade_goods = pigs
+		trade_goods = pearls
+		trade_goods = peaches
+		trade_goods = zinc
+		trade_goods = mercury
+		trade_goods = tin
+		trade_goods = plumbum
 	}
 }
 
@@ -802,9 +815,27 @@ has_burghers_trade_good_trigger = {
 		trade_goods = chinaware
 		trade_goods = paper
 		trade_goods = ivory
+		trade_goods = pepper
+		trade_goods = rice
+		trade_goods = cheese
+		trade_goods = olive
+		trade_goods = honey
+		trade_goods = spirits
+		trade_goods = camels
+		trade_goods = crabs
+		trade_goods = leather
+		trade_goods = hemp
+		trade_goods = whales
+		trade_goods = tar
+		trade_goods = bananas
+		trade_goods = steel
 		AND = {
 			trade_goods = fish
 			ROOT = { NOT = { religion_group = christian } }
+		}
+		AND = {
+			trade_goods = carpet
+			ROOT = { NOT = { religion_group = muslim } }
 		}
 	}
 }
@@ -817,10 +848,24 @@ has_church_trade_good_trigger = {
 			trade_goods = wine
 			ROOT = { NOT = { religion_group = muslim } }
 		}
+		AND = {
+			trade_goods = beer
+			ROOT = { NOT = { religion_group = muslim } }
+		}
 		trade_goods = incense
+		trade_goods = marble
+		trade_goods = wax
+		trade_goods = oil
+		trade_goods = venison
+		trade_goods = minerals
+		trade_goods = gold
 		AND = {
 			trade_goods = fish
 			ROOT = { religion_group = christian }
+		}
+		AND = {
+			trade_goods = carpet
+			ROOT = { religion_group = muslim }
 		}
 	}
 }

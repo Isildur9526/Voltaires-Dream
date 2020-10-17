@@ -197,7 +197,7 @@ LNE_ideas = {
 KNV_ideas = {
     start = {
         dip_tech_cost_modifier = -0.1
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
     bonus = {
         infantry_power = 0.15
@@ -2318,7 +2318,8 @@ MUF_ideas = {
 		production_efficiency = 0.1		
     }
     MUF_idea_4 = {
-		church_power_modifier = 0.1
+        church_power_modifier = 0.1
+        church_loyalty_modifier = 0.05
     }
     MUF_idea_5 = {
 		administrative_efficiency = 0.05
@@ -3063,7 +3064,8 @@ WEE_ideas = {
 		trade_efficiency = 0.1
 	}
 	WEE_idea_5 = {
-		church_power_modifier = 0.1
+        church_power_modifier = 0.1
+        church_loyalty_modifier = 0.05
 	}
 	WEE_idea_6 = {
 		discipline = 0.05
@@ -4579,7 +4581,7 @@ LBO_ideas = {
     free = yes
 
     LBO_idea_1 = {
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
     LBO_idea_2 = {
         idea_cost = -0.1
@@ -6397,7 +6399,7 @@ SIC_ideas = {
         possible_policy = 1
     }
     sic_noble_admirals = {
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
     sic_greater_sicily = {
         core_creation = -0.1
@@ -8213,7 +8215,7 @@ POB_ideas = {
         fort_maintenance_modifier = -0.15
     }
     POB_idea_5 = {
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
     POB_idea_6 = {
         fabricate_claims_cost = -0.25
@@ -9290,7 +9292,7 @@ SJK_ideas = {
 
 fatimid_ideas = {
     start = {
-        navy_tradition = 1
+        navy_tradition = 0.5
         tolerance_heretic = 3	#exception
     }
     bonus = {
@@ -9648,7 +9650,7 @@ CRT_ideas = {
         capture_ship_chance = 0.2
     }
     bonus = {
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
     
     trigger = {
@@ -10732,7 +10734,7 @@ MRY_ideas = {
         garrison_size = 0.25
     }
     MRY_idea_4 = {
-        cavalry_flanking = 0.25
+        cavalry_flanking = 0.5
         hostile_attrition = 1
     }
     MRY_idea_5 = {
@@ -11544,7 +11546,7 @@ ORK_ideas = {
         state_maintenance_modifier = -0.15
     }
     ORK_idea_4 = {
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
     ORK_idea_5 = {
         culture_conversion_cost = -0.15
@@ -12052,7 +12054,7 @@ VYT_ideas = {
 
 IGR_ideas = {
     start = {
-        navy_tradition = 1
+        navy_tradition = 0.5
         global_missionary_strength = 0.02
     }
     bonus = {
@@ -12574,7 +12576,7 @@ MTZ_ideas = {
         papal_influence = 2
     }
     MTZ_idea_2 = {
-        fabricate_claims_cost= -0.25
+        fabricate_claims_cost = -0.25
     }
     MTZ_idea_3 = {
         prestige = 0.5
@@ -12591,5 +12593,201 @@ MTZ_ideas = {
     }
     MTZ_idea_7 = {
         diplomatic_reputation = 1
+    }
+}
+
+ATI_ideas = {
+    start = {
+        garrison_size = 0.25
+        trade_steering = 0.2
+    }
+    bonus = {
+        placed_merchant_power = 5
+    }
+    
+    trigger = {
+        tag = ATI
+    }
+    free = yes
+
+    ATI_idea_1 = {
+        army_tradition = 0.5
+    }
+    ATI_idea_2 = {
+        tolerance_own = 2
+    }
+    ATI_idea_3 = {
+        global_institution_spread = 0.1
+    }
+    ATI_idea_4 = {
+        diplomatic_upkeep = 1
+    }
+    ATI_idea_5 = {
+        fort_maintenance_modifier = -0.15
+    }
+    ATI_idea_6 = {
+        interest = -0.5
+    }
+    ATI_idea_7 = {
+        cavalry_flanking = 0.5
+        cavalry_power = 0.1
+    }
+}
+
+BOB_ideas = {
+    start = {
+        technology_cost = -0.05
+        global_tax_modifier = 0.1
+    }
+    bonus = {
+        defensiveness = 0.2
+    }
+    
+    trigger = {
+        tag = BOB
+    }
+    free = yes
+
+    BOB_idea_1 = {
+        papal_influence = 2
+    }
+    BOB_idea_2 = {
+        idea_cost = -0.1
+        global_institution_spread = 0.1
+    }
+    BOB_idea_3 = {
+        legitimacy = 1
+        devotion = 1
+        republican_tradition = 0.3
+    }
+    BOB_idea_4 = {
+        mercenary_discipline = 0.05
+    }
+    BOB_idea_5 = {
+        prestige = 0.5
+    }
+    BOB_idea_6 = {
+        production_efficiency = 0.1
+    }
+    BOB_idea_7 = {
+        trade_steering = 0.2
+    }
+}
+
+LXU_ideas = {
+    start = {
+        papal_influence = 2
+        diplomatic_reputation = 1
+    }
+    bonus = {
+        development_cost = -0.1
+    }
+    
+    trigger = {
+        tag = LXU
+    }
+    free = yes
+
+    LXU_idea_1 = {
+        missionaries = 1
+    }
+    LXU_idea_2 = {
+        technology_cost = -0.05
+    }
+    LXU_idea_3 = {
+        build_cost = -0.1
+    }
+    LXU_idea_4 = {
+        tolerance_own = 2
+    }
+    LXU_idea_5 = {
+        war_exhaustion = -0.02
+    }
+    LXU_idea_6 = {
+        devotion = 1
+        yearly_corruption = -0.1
+    }
+    LXU_idea_7 = {
+        global_trade_goods_size_modifier = 0.1
+    }
+}
+
+XCL_ideas = {
+    start = {
+        diplomatic_upkeep = 1
+        improve_relation_modifier = 0.25
+    }
+    bonus = {
+        ae_impact = -0.05
+    }
+    
+    trigger = {
+        tag = XCL
+    }
+    free = yes
+
+    XCL_idea_1 = {
+        diplomats = 1
+        diplomatic_reputation = 1
+    }
+    XCL_idea_2 = {
+        cavalry_power = 0.15
+    }
+    XCL_idea_3 = {
+        global_foreign_trade_power = 0.1
+    }
+    XCL_idea_4 = {
+        fort_maintenance_modifier = -0.15
+    }
+    XCL_idea_5 = {
+        global_trade_goods_size_modifier = 0.1
+    }
+    XCL_idea_6 = {
+        fabricate_claims_cost = -0.25
+    }
+    XCL_idea_7 = {
+        prestige_decay = -0.01
+    }
+}
+
+XMC_ideas = {
+    start = {
+        governing_capacity_modifier = 0.1
+        global_tax_modifier = 0.1
+    }
+    bonus = {
+        global_unrest = -1
+    }
+    
+    trigger = {
+        tag = XMC
+    }
+    free = yes
+
+    XMC_idea_1 = {
+        advisor_pool = 1
+    }
+    XMC_idea_2 = {
+        state_maintenance_modifier = -0.15
+    }
+    XMC_idea_3 = {
+        build_cost = -0.1
+    }
+    XMC_idea_4 = {
+        church_influence_modifier = 0.1
+        church_loyalty_modifier = 0.05
+        devotion = 0.5
+    }
+    XMC_idea_5 = {
+        envoy_travel_time = -0.25
+        diplomats = 1
+    }
+    XMC_idea_6 = {
+       mercenary_cost = -0.15
+       leader_land_shock = 1
+    }
+    XMC_idea_7 = {
+        enforce_religion_cost = -0.25
+        papal_influence = 1
     }
 }

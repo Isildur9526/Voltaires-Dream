@@ -43,27 +43,15 @@ add_core = SIL
 	remove_core = SNC
 }
 1335.1.1 = { hre = yes }
-1428.12.27 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
-}
 1443.4.25 = {
 	owner = TRO
 	controller = TRO
 	add_core = TRO
-	remove_core = SIL
 }
 1456.1.1 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
-	remove_core = TRO
-}
-1462.1.1 = {
 	owner = ZIE
 	controller = ZIE
-	remove_core = SIL
+	remove_core = TRO
 }
 1565.2.28 = {
 	owner = HAB

@@ -49,6 +49,16 @@ discovered_by = muslim
 	remove_core = AAR
 	remove_core = TOX
 }
+1442.1.1 = {
+	owner = TIR
+	controller = TIR
+	add_core = TIR
+}
+1467.1.1 = {
+	owner = ZUR
+	controller = ZUR
+	remove_core = TIR
+}
 1513.7.3 = { unrest = 7 }
 1515.1.1 = { unrest = 0 }
 1523.1.1 = { religion = reformed }

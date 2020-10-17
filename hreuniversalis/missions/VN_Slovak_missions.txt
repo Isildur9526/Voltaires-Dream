@@ -402,10 +402,10 @@ vn_slo_missions_slot_3_b = {
 		}
 		effect = {
 			if = {
-				limit = { 
-					exists = MRV 
-					NOT = {
-						MRV = { is_subject_of = ROOT }
+				limit = {
+					MRV = {
+						exists = yes
+						NOT = { is_subject_of = ROOT }
 					}
 				}
 				custom_tooltip = vn_slo_join_empire.tt
@@ -511,8 +511,8 @@ vn_slo_missions_slot_3_c = {
 			}
 			if = {
 				limit = {
-					exists = MRV
 					MRV = {
+						exists = yes
 						is_subject_of = ROOT
 					}
 				}

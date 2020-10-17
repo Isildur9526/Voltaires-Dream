@@ -1391,27 +1391,25 @@ vn_spa_missions_slot_5_a = {
         position = 10
         required_missions = {  }
         trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_mlo_expansion_of_milan.tt
-				calc_true_if = {
-					italy_superregion = {
-						type = all
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
-						OR = {
-							is_claim = ROOT
-							is_core = ROOT
-						}
+			calc_true_if = {
+				desc = vn_mlo_expansion_of_milan.tt
+				italy_superregion = {
+					type = all
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					OR = {
+						is_claim = ROOT
+						is_core = ROOT
 					}
-					sicily_superregion = {
-						type = all
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
-						OR = {
-							is_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					amount = 10
 				}
+				sicily_superregion = {
+					type = all
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					OR = {
+						is_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				amount = 10
 			}
         }
         effect = {

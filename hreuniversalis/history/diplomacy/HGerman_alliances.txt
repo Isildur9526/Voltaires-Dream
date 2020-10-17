@@ -20,14 +20,6 @@ royal_marriage = {
 	end_date = 1057.9.28
 }
 
-#Old Zurich War
-union = {
-	first = GLA
-	second = TGG
-	start_date = 1436.4.30
-	end_date = 1468.1.1
-}
-
 union = {
 	first = TTN
 	second = RVA

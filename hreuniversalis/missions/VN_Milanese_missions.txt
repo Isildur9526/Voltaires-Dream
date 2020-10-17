@@ -399,20 +399,18 @@ vn_mlo_missions_slot_3_a = {
 			num_of_generals = 1
 			army_size = 5
 			war_exhaustion = 0
-			custom_trigger_tooltip = {
-				tooltip = vn_mlo_expansion_of_milan.tt2
-				calc_true_if = {
-					italy_superregion = {
-						type = all
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
-						OR = {
-							is_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					amount = 5
-				}
-			}
+            calc_true_if = {
+                desc = vn_mlo_expansion_of_milan.tt2
+                italy_superregion = {
+                    type = all
+                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                    OR = {
+                        is_claim = ROOT
+                        is_core = ROOT
+                    }
+                }
+                amount = 5
+            }
         }
         effect = {
 			add_army_tradition = 10

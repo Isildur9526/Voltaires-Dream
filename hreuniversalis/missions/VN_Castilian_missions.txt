@@ -1463,21 +1463,19 @@ vn_cas_missions_slot_4_b = {
                         region = toulouse_region
                     }
                 }
-                custom_trigger_tooltip = {
-					tooltip = vn_brc_influence_in_occitania.tt2
-					calc_true_if = {
-						all_country = {
-							capital_scope = {
-								region = toulouse_region
-							}
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-						}
-						amount = 3
-					}
-				}
+                calc_true_if = {
+                    desc = vn_brc_influence_in_occitania.tt2
+                    all_country = {
+                        capital_scope = {
+                            region = toulouse_region
+                        }
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                    amount = 3
+                }
             }
         }
         effect = {

@@ -17,7 +17,37 @@ add_core = SIL
 	add_core = OPO
 	remove_core = SIL
 }
+1281.8.27 = {
+	owner = BYT
+	controller = BYT
+	add_core = BYT
+	remove_core = OPO
+}
 1335.1.1 = { hre = yes }
+1355.10.10 = {
+	owner = CIE
+	controller = CIE
+	add_core = CIE
+	remove_core = BYT
+}
+1416.1.1 = {
+	owner = OSW
+	controller = OSW
+	add_core = OSW
+	remove_core = CIE
+}
+1484.1.1 = {
+	owner = SIL
+	controller = SIL
+	add_core = SIL
+	remove_core = OSW
+}
+1497.1.1 = {
+	owner = OPO
+	controller = OPO
+	add_core = OPO
+	remove_core = SIL
+}
 1532.3.27 = {
 	owner = HAB
 	controller = HAB

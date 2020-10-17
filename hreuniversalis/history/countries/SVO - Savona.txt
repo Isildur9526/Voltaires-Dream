@@ -74,3 +74,48 @@ add_army_professionalism = 0.05
 		regent = yes
 	}
 }
+
+#Lordship
+1443.1.28 = {
+	government = monarchy
+	add_government_reform = autocracy_reform
+	monarch = {
+		name = "Tommaso"
+		dynasty = "di Campofregoso"
+		birth_date = 1375.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Gian Galeazzo"
+		monarch_name = "Gian Galeazzo"
+		dynasty = "di Campofregoso"
+		birth_date = 1420.1.1
+		death_date = 1489.12.22
+		claim = 70
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1453.2.1 = {
+	monarch = {
+		name = "Gian Galeazzo"
+		dynasty = "di Campofregoso"
+		birth_date = 1420.1.1
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1489.12.22 = {
+	monarch = {
+		name = "Gian Battista"
+		dynasty = "di Campofregoso"
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+#1528 done

@@ -1474,27 +1474,25 @@ vn_fra_missions_slot_2_f = {
         position = 14
         required_missions = { vn_fra_conquer_provence }
         trigger = {
-            custom_trigger_tooltip = {
-				tooltip = vn_mlo_expansion_of_milan.tt
-				calc_true_if = {
-					italy_superregion = {
-						type = all
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
-						OR = {
-							is_claim = ROOT
-							is_core = ROOT
-						}
+			calc_true_if = {
+				desc = vn_mlo_expansion_of_milan.tt
+				italy_superregion = {
+					type = all
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					OR = {
+						is_claim = ROOT
+						is_core = ROOT
 					}
-					sicily_superregion = {
-						type = all
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
-						OR = {
-							is_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					amount = 10
 				}
+				sicily_superregion = {
+					type = all
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					OR = {
+						is_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				amount = 10
 			}
         }
         effect = {
@@ -1891,15 +1889,13 @@ vn_fra_missions_slot_3_a = {
         position = 3
         required_missions = { vn_fra_assert_legitimacy }
         trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_fra_expand_royal_authority.tt
-				NOT = {
-					calc_true_if = {
-						all_subject_country = {
-							is_subject_of_type = daimyo_vassal
-						}
-						amount = 75
+			NOT = {
+				calc_true_if = {
+					desc = vn_fra_expand_royal_authority.tt
+					all_subject_country = {
+						is_subject_of_type = daimyo_vassal
 					}
+					amount = 75
 				}
 			}
 			grown_by_development = 100
@@ -1939,15 +1935,13 @@ vn_fra_missions_slot_3_a = {
         position = 6
         required_missions = { vn_fra_expand_royal_authority }
         trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_fra_bring_fiefs_to_heel.tt
-				NOT = {
-					calc_true_if = {
-						all_subject_country = {
-							is_subject_of_type = daimyo_vassal
-						}
-						amount = 55
+			NOT = {
+				calc_true_if = {
+					desc = vn_fra_expand_royal_authority.tt
+					all_subject_country = {
+						is_subject_of_type = daimyo_vassal
 					}
+					amount = 55
 				}
 			}
 			grown_by_development = 250
@@ -1994,15 +1988,13 @@ vn_fra_missions_slot_3_a = {
         position = 8
         required_missions = { vn_fra_bring_fiefs_to_heel }
         trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_fra_centralize_state.tt
-				NOT = {
-					calc_true_if = {
-						all_subject_country = {
-							is_subject_of_type = daimyo_vassal
-						}
-						amount = 35
+			NOT = {
+				calc_true_if = {
+					desc = vn_fra_expand_royal_authority.tt
+					all_subject_country = {
+						is_subject_of_type = daimyo_vassal
 					}
+					amount = 35
 				}
 			}
 			grown_by_development = 500
@@ -2041,15 +2033,13 @@ vn_fra_missions_slot_3_a = {
         position = 11
         required_missions = { vn_fra_centralize_state }
         trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_fra_edict_of_moulins.tt
-				NOT = {
-					calc_true_if = {
-						all_subject_country = {
-							is_subject_of_type = daimyo_vassal
-						}
-						amount = 15
+			NOT = {
+				calc_true_if = {
+					desc = vn_fra_expand_royal_authority.tt
+					all_subject_country = {
+						is_subject_of_type = daimyo_vassal
 					}
+					amount = 15
 				}
 			}
 			grown_by_development = 750
@@ -3488,13 +3478,32 @@ vn_fra_missions_slot_5_c = {
         position = 6
         required_missions = { }
         trigger = {
-			exists = TUR
-			alliance_with = TUR
+			if = {
+				limit = { exists = TUR }
+				alliance_with = TUR
+			}
+			else = {
+				any_ally = {
+					primary_culture = turkish
+				}
+			}
         }
         effect = {
-            reverse_add_opinion = {
-				who = TUR
-				modifier = fra_franco_turkish_alliance_opinion
+			if = {
+				limit = { exists = TUR }
+				reverse_add_opinion = {
+					who = TUR
+					modifier = fra_franco_turkish_alliance_opinion
+				}
+			}
+            else = {
+				random_ally = {
+					limit = { primary_culture = turkish }
+					reverse_add_opinion = {
+						who = TUR
+						modifier = fra_franco_turkish_alliance_opinion
+					}
+				}
 			}
 			add_country_modifier = {
 				name = "fra_franco_turkish_alliance_mission"
@@ -3928,18 +3937,16 @@ vn_fra_missions_slot_5_g = {
 		completed_by = 1680.1.1
         required_missions = { vn_fra_palace_of_versailles }
         trigger = {
-			custom_trigger_tooltip = {
-				tooltip = vn_fra_chambers_of_reunion.tt
-				calc_true_if = {
-					alsace_region = {
-						type = all
-						OR = {
-							is_claim = ROOT
-							is_core = ROOT
-						}
+			calc_true_if = {
+				desc = vn_fra_chambers_of_reunion.tt
+				alsace_region = {
+					type = all
+					OR = {
+						is_claim = ROOT
+						is_core = ROOT
 					}
-					amount = 10
 				}
+				amount = 10
 			}
         }
         effect = {
@@ -4162,7 +4169,6 @@ vn_fra_missions_slot_5_i = {
 						GBR = { navy_size = ROOT }
 					}
 				}
-					
 			}
 			else = {
 				NOT = {

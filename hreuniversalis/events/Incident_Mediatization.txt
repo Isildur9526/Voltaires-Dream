@@ -549,7 +549,7 @@ country_event = {
 		}
 	}
 	option = {
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 100 }
 		name = incident_mediatization.4.c
 		highlight = yes
 		trigger = {
@@ -566,6 +566,35 @@ country_event = {
 					value = 200
 				}
 			}
+		}
+		every_neighbor_country = {
+			limit = { 
+				OR = {
+					tag = event_target:med_demander
+					AND = {
+						government = monarchy
+						is_part_of_hre = yes
+					}
+				}
+			}
+			add_truce_with = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = mediatize_survive_malus
+			}
+		}
+		reverse_add_opinion = {
+			who = event_target:med_demander
+			modifier = mediatize_survive_malus
+		}
+	}
+	option = {
+		ai_chance = { factor = 100 }
+		name = incident_mediatization.4.e
+		highlight = yes
+		trigger = {
+			is_elector = yes
+			government_rank = 5
 		}
 		every_neighbor_country = {
 			limit = { 

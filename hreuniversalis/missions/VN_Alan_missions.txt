@@ -350,7 +350,7 @@ vn_aan_missions_slot_2 = {
         trigger = {
             3612 = {
 				owned_by = ROOT
-				has_non_outdated_fort = yes
+				province_has_current_tech_fort_trigger = yes
 			}
         }
         effect = {

@@ -213,7 +213,7 @@ vn_wws_missions_slot_1 = {
         trigger = {
             num_of_owned_provinces_with = {
                 value = 10
-                has_non_outdated_fort = yes
+                province_has_current_tech_fort_trigger = yes
             }
         }
         effect = {

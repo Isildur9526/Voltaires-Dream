@@ -726,7 +726,7 @@ vn_kol_missions_slot_4 = {
                 owned_by = ROOT
                 is_core = ROOT
                 num_of_times_improved_by_owner = 6
-                has_non_outdated_fort = yes
+                province_has_current_tech_fort_trigger = yes
             }
         }
         effect = {

@@ -43,6 +43,10 @@ pis_liber_maiorichinus_opinion = {
 	opinion = 50
 	yearly_decay = 2
 }
+ath_crusader_legacy_opinion = {
+	opinion = 50
+	yearly_decay = 2
+}
 
 #Isildur
 nrm_high_king_opinion = {

@@ -30,7 +30,7 @@ country_event = {
 				alliance_with = BOH
 				has_opinion = {
 					who = BOH
-					value = 150
+					value = 100
 				}
 			}
 		}

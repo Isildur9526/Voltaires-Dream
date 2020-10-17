@@ -345,13 +345,13 @@ vn_sav_missions_slot_3 = {
         provinces_to_highlight = {
             region = dauphine_region
             owned_by = ROOT
-            has_non_outdated_fort = no
+            province_has_current_tech_fort_trigger = no
         }
         trigger = {
             num_of_owned_provinces_with = {
                 value = 5
                 region = dauphine_region
-                has_non_outdated_fort = yes
+                province_has_current_tech_fort_trigger = yes
             }
         }
         effect = {

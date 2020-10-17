@@ -30,7 +30,12 @@ vn_sco_missions_slot_1_a = {
         }
         trigger = {
 			3001 = { country_or_non_sovereign_subject_holds = ROOT }
-			NOT = { exists = FFE }
+			FFE = {
+                OR = {
+                    is_subject_of = ROOT
+                    exists = no
+                }
+            }
         }
         effect = {
 			add_army_tradition = 10
@@ -69,9 +74,19 @@ vn_sco_missions_slot_1_a = {
             galloway_area = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
-			}
-			NOT = { exists = MAF }
-			NOT = { exists = SCY }
+            }
+            MAF = {
+                OR = {
+                    is_subject_of = ROOT
+                    exists = no
+                }
+            }
+            SCY = {
+                OR = {
+                    is_subject_of = ROOT
+                    exists = no
+                }
+            }
         }
         effect = {
 			add_legitimacy = 10

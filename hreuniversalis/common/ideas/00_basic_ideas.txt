@@ -64,6 +64,8 @@ cultural_ideas = {
 		republican_tradition = 0.5
 		legitimacy = 0.5
 		devotion = 0.25
+		horde_unity = 0.25
+		meritocracy = 0.1
 	}
 	cul_i7 = {
 		tolerance_own = 1
@@ -278,7 +280,7 @@ religious_ideas = {
 		church_power_modifier = 0.1
 	}
 	religious_tradition = {
-		prestige = 1
+		prestige = 0.5
 	}
 	inquisition = {
 		missionary_maintenance_cost = -0.5

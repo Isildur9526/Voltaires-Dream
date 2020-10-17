@@ -16,6 +16,20 @@ capital = 2458	# Stuttgart
 		mil = 2
 	}
 }
+1441.4.23 = {
+	queen = {
+		country_of_origin = KLE
+		culture = ripuarian
+		name = "Margaret"
+		dynasty = "von der Mark"
+		birth_date = 1416.1.1
+		death_date = 1444.11.12
+		female = yes
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
 1447.2.1 = {
 	heir = {
 		name = "Eberhard"

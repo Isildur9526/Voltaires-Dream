@@ -236,7 +236,7 @@ watchman = {
 # Tier 1, 15th Century Buildings
 ################################################
 marketplace = {
-	cost = 100
+	cost = 150
 	time = 12
 
 	modifier = {
@@ -277,7 +277,7 @@ temple = {
 }
 
 barracks = {
-	cost = 100
+	cost = 150
 	time = 12
 	modifier = {
 		local_manpower_modifier = 0.5
@@ -289,7 +289,7 @@ barracks = {
 }
 
 shipyard = {
-	cost = 100
+	cost = 150
 	time = 12
 	build_trigger = {
 		has_port = yes
@@ -364,7 +364,7 @@ courthouse = {
 }
 
 dock = {
-	cost = 100
+	cost = 150
 	time = 12
 	build_trigger = {
 		has_port = yes
@@ -450,6 +450,17 @@ cathedral = {
 
 	ai_will_do = {
 		factor = 1
+	}
+
+	on_built = {
+		FROM = {
+			if = {
+				limit = {
+					has_country_flag = improved_cathedrals_flag
+				}
+				add_corruption = -0.25
+			}
+		}
 	}
 }
 
@@ -887,9 +898,13 @@ soldier_households = {
 	}
 	bonus_manufactory = { # Will apply an extra modifier if these goods
 		grain
-		fish
 		livestock
 		wine
+		beer
+		rye
+		barley
+		rice
+		pigs
 	}
 	modifier = {
 		local_manpower = 0.75
@@ -913,6 +928,10 @@ impressment_offices = {
 		fish
 		naval_supplies
 		lumber
+		peaches
+		whales
+		crabs
+		pearls
 	}
 	build_trigger = {
 		has_port = yes
@@ -938,6 +957,9 @@ state_house = {
 		paper
 		glass
 		gems
+		chinaware
+		marble
+		carpet
 	}
 	build_trigger = {
 		NOT = {

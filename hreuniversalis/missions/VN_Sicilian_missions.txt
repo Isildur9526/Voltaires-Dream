@@ -19,114 +19,55 @@ vn_sic_missions_slot_1 = {
     }
     has_country_shield = yes
 
-    vn_sic_religious_war = {
-        icon = mission_unite_home_region
-        position = 1
-        required_missions = { }
+    vn_sic_conquer_jerusalem = {
+        icon = jerusalem
+        position = 2
+        required_missions = { vn_sic_religious_war }
+        provinces_to_highlight = {
+            region = palestine_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            NOT = { current_age = age_of_empire }
-            num_of_generals = 1
-            any_country = {
-                war_with = ROOT
-                NOT = {
-					religion_group = christian
-                    war_score_against = {
-                        who = ROOT
-                        value = -50
-                    }
-                }
-			}
-            if = {
-                limit = {
-					OR = {
-						has_estate = estate_holy_orders
-						current_age = age_of_empire
-					}
-				}
-				estate_loyalty = {
-					estate = estate_holy_orders
-					loyalty = 60
-				}
+            4974 = { country_or_non_sovereign_subject_holds = ROOT }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+                region = palestine_region
             }
         }
         effect = {
-            outremer_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            palestine_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            2711 = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            4583 = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            2710 = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            4582 = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
             add_country_modifier = {
-                name = sic_religious_war_mission
-                duration = 9125
+                name = sic_conquer_jerusalem_mission
+                duration = -1
             }
         }
     }
-    vn_sic_conquer_malta = {
-        icon = mission_invade_island
+    vn_sic_suzerainty_in_the_east = {
+        icon = kingdom_of_cyprus
         position = 4
-        required_missions = { vn_sic_religious_war }
+        required_missions = { vn_sic_convert_levant }
         provinces_to_highlight = {
-			province_id = 2711
+			OR = {
+				area = cyprus_area
+				region = cilicia_region
+			}
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
-            2711 = {
-                owned_by = ROOT
-                has_building = canal
-                has_building = armory
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+                region = cilicia_region
             }
+            cyprus_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
         }
         effect = {
-            create_admiral = { tradition = 75 }
-            coastal_tunisia_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
-            coastal_libya_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
+			add_prestige = 10
+			add_legitimacy = 10
+            add_country_modifier = {
+                name = sic_suzerainty_in_the_east_mission
+                duration = 9125
             }
         }
     }
@@ -178,7 +119,15 @@ vn_sic_missions_slot_1 = {
                     name = sic_conquer_tunis_mission
                     duration = 9125
                 }
-			}
+            }
+            inner_tunisia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                    is_city = yes
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_sic_conquer_achaea = {
@@ -366,6 +315,20 @@ vn_sic_missions_slot_2 = {
                 }
                 add_permanent_claim = ROOT
             }
+            cyprus_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            cilicia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_sic_conquer_egypt = {
@@ -495,10 +458,12 @@ vn_sic_missions_slot_2 = {
         required_missions = {  }
         trigger = {
             naval_forcelimit = 50
-            navy_size_percentage = 0.9
+            navy_size_percentage = 0.75
         }
         effect = {
-            add_navy_tradition = 15
+            add_yearly_sailors = 1
+            create_admiral = { tradition = 75 }
+            add_navy_tradition = 20
             add_country_modifier = {
                 name = sic_maritime_power_mission
                 duration = 9125
@@ -511,9 +476,9 @@ vn_sic_missions_slot_2 = {
         required_missions = { vn_sic_maritime_power }
         trigger = {
             OR = {
-				NOT = { exists = GEN }
-				navy_size = GEN
-			}
+                NOT = { exists = GEN }
+                navy_size = GEN
+            }
         }
         effect = {
             liguria_region = {
@@ -532,7 +497,7 @@ vn_sic_missions_slot_2 = {
             }
             add_country_modifier = {
                 name = sic_challenge_genoa_mission
-                duration = 7300
+                duration = 9125
             }
         }
     }
@@ -552,13 +517,37 @@ vn_sic_missions_slot_2 = {
         }
         effect = {
             2560 = {
+                if = {
+                    limit = {
+                        has_dlc = "Dharma"
+                        NOT = { province_has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+                }
+                else = {
+                    add_base_production = 2
+                }
                 add_province_modifier = {
                     name = sic_conquer_genoa_mission
-                    duration = 7300
+                    duration = 9125
                 }
             }
+            pisa_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            venice_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
-	}
+    }
 }
 
 vn_sic_missions_slot_3 = {
@@ -577,25 +566,122 @@ vn_sic_missions_slot_3 = {
     }
     has_country_shield = yes
 
-    vn_sic_conquer_jerusalem = {
-        icon = jerusalem
-        position = 2
-        required_missions = { vn_sic_religious_war }
-        provinces_to_highlight = {
-            region = palestine_region
-            NOT = { country_or_non_sovereign_subject_holds = ROOT }
-        }
+    vn_sic_religious_war = {
+        icon = mission_unite_home_region
+        position = 1
+        required_missions = { }
         trigger = {
-            4974 = { country_or_non_sovereign_subject_holds = ROOT }
-            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-                value = 10
-                region = palestine_region
+            NOT = { current_age = age_of_empire }
+            num_of_generals = 1
+            any_country = {
+                war_with = ROOT
+                NOT = {
+                    religion_group = christian
+                    war_score_against = {
+                        who = ROOT
+                        value = -50
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    OR = {
+                        has_estate = estate_holy_orders
+                        current_age = age_of_empire
+                    }
+                }
+                estate_loyalty = {
+                    estate = estate_holy_orders
+                    loyalty = 60
+                }
             }
         }
         effect = {
+            outremer_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            palestine_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            2711 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+            }
+            4583 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+            }
+            2710 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+            }
+            4582 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+            }
             add_country_modifier = {
-                name = sic_conquer_jerusalem_mission
-                duration = -1
+                name = sic_religious_war_mission
+                duration = 9125
+            }
+        }
+    }
+    vn_sic_conquer_malta = {
+        icon = mission_invade_island
+        position = 4
+        required_missions = { vn_sic_religious_war }
+        provinces_to_highlight = {
+			province_id = 2711
+        }
+        trigger = {
+            2711 = {
+                owned_by = ROOT
+                has_building = canal
+                has_building = armory
+            }
+        }
+        effect = {
+            create_admiral = { tradition = 75 }
+            coastal_tunisia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            coastal_libya_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
             }
         }
     }
@@ -683,9 +769,12 @@ vn_sic_missions_slot_3 = {
             custom_trigger_tooltip = {
                 tooltip = vn_sic_ally_the_balkans.tt
                 any_ally = {
-                    capital_scope = {
-                        superregion = balkans_superregion
-                    }
+                    OR = {
+                        capital_scope = {
+                            superregion = balkans_superregion
+                        }
+                        tag = NKA
+					}
                     has_opinion = {
                         who = ROOT
                         value = 150
@@ -895,13 +984,16 @@ vn_sic_missions_slot_4 = {
 		}
         trigger = {
             salerno_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			capua_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            capua_area = {
+                type = all
+                OR = {
+                    country_or_non_sovereign_subject_holds = ROOT
+                    province_id = 566
+                }
+            }
         }
         effect = {
             add_adm_power = 100
@@ -1009,7 +1101,7 @@ vn_sic_missions_slot_4 = {
     }
     vn_sic_conquer_tuscany = {
         icon = tuscan_birthright
-        position = 8
+        position = 7
         required_missions = { vn_sic_conquer_abruzzo }
         provinces_to_highlight = {
             region = tuscany_region
@@ -1035,7 +1127,7 @@ vn_sic_missions_slot_4 = {
     }
     vn_sic_conquer_milan = {
         icon = milan_victorious
-        position = 9
+        position = 8
         required_missions = { vn_sic_conquer_tuscany vn_sic_imperial_power }
         provinces_to_highlight = {
             region = lombardy_region
@@ -1071,13 +1163,13 @@ vn_sic_missions_slot_4 = {
             }
             add_country_modifier = {
                 name = sic_conquer_milan_mission
-                duration = 9125
+                duration = -1
             }
         }
     }
     vn_sic_conquer_italy = {
         icon = mission_rule_italy
-        position = 10
+        position = 9
         required_missions = { vn_sic_conquer_milan }
         provinces_to_highlight = {
             OR = {
@@ -1113,6 +1205,46 @@ vn_sic_missions_slot_4 = {
                     NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_sic_seize_meissen = {
+		icon = porcelain_from_meissen
+        position = 10
+		required_missions = { vn_sic_dynastic_connections }
+		provinces_to_highlight = {
+			region = saxony_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = MEI
+				if = { 
+					limit = {
+						started_in = 1180.1.1
+					}
+					senior_union_with = SAX
+				}
+				AND = {
+					NOT = { exists = MEI }
+					saxony_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			}
+		}
+		effect = {
+            thuringia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }		
+			add_country_modifier = {
+                name = sic_seize_meissen_mission
+                duration = 9125
             }
         }
     }
@@ -1195,7 +1327,7 @@ vn_sic_missions_slot_5 = {
             add_prestige = 10
             add_country_modifier = {
                 name = sic_defeat_the_vespers_mission
-                duration = -1
+                duration = 9125 #Avoids stacking
             }
         }
     }
@@ -1221,6 +1353,9 @@ vn_sic_missions_slot_5 = {
 			}
         }
         effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
             add_country_modifier = {
                 name = sic_conquer_apulia_mission
                 duration = 9125
@@ -1229,7 +1364,7 @@ vn_sic_missions_slot_5 = {
     }
     vn_sic_conquer_provence = {
         icon = mission_humiliate_provence
-        position = 6
+        position = 5
 		required_missions = {  }
 		provinces_to_highlight = {
 			if = {
@@ -1257,6 +1392,33 @@ vn_sic_missions_slot_5 = {
         effect = {
             add_dip_power = 100
 			aquitaine_region = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+			besancon_area = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+			dole_area = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+			dauphine_region = {
 				if = {
 					limit = {
 						NOT = { is_core = ROOT }
@@ -1417,11 +1579,14 @@ vn_sic_missions_slot_5 = {
     }
     vn_sic_conquer_poitiers = {
         icon = king_of_france
-        position = 7
+        position = 6
         required_missions = { vn_sic_conquer_provence }
         provinces_to_highlight = {
             OR = {
 				region = aquitaine_region
+				area = besancon_area
+				area = dole_area
+				region = dauphine_region
 #                province_id = 710
 #                province_id = 1258
 #                province_id = 1266
@@ -1441,6 +1606,18 @@ vn_sic_missions_slot_5 = {
         }
         trigger = {
 			aquitaine_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			besancon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dole_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dauphine_region = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -1469,6 +1646,15 @@ vn_sic_missions_slot_5 = {
 					add_permanent_claim = ROOT	
 				}		
             }
+			burgundy_region = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
             add_country_modifier = {
                 name = sic_conquer_poitiers_mission
                 duration = 9125
@@ -1477,7 +1663,7 @@ vn_sic_missions_slot_5 = {
     }
     vn_sic_imperial_power = {
 		icon = interfere_in_germany
-        position = 8
+        position = 7
 		required_missions = {  }
 		trigger = {
 			OR = {
@@ -1511,10 +1697,33 @@ vn_sic_missions_slot_5 = {
             }
         }
     }
+    vn_sic_erbreichsplan = {
+		icon = unite_the_wittelsbachs
+        position = 8
+		required_missions = { vn_sic_imperial_power }
+		trigger = {
+			is_emperor = yes
+			hre_reform_passed = erbkaisertum
+		}
+		effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				add_imperial_influence = 10
+			}
+			add_country_modifier = {
+                name = sic_erbreichsplan_mission
+                duration = 9125
+            }
+        }
+    }
     vn_sic_dynastic_connections = {
 		icon = friends_in_high_places
         position = 9
-		required_missions = { vn_sic_imperial_power }
+		required_missions = {  }
 		trigger = {
 			NOT = { num_of_free_diplomatic_relations = 1 }
 			OR = {
@@ -1526,7 +1735,7 @@ vn_sic_missions_slot_5 = {
 			}
 		}
 		effect = {
-            add_dip_power = 50
+			add_dip_power = 50
 			if = {
 				limit = {
 					exists = WWS
@@ -1546,6 +1755,51 @@ vn_sic_missions_slot_5 = {
 			}
 			else = {
 				swabia_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					exists = MEI
+				}
+				add_casus_belli = {
+					target = MEI
+					type = cb_fabricated_claims
+					months = 300
+				}
+				saxony_region = {
+					limit = {
+						NOT = { is_core = MEI }
+						NOT = { is_permanent_claim = MEI }
+					}
+					add_permanent_claim = MEI
+				}				
+			}
+			else_if = {
+				limit = {
+					NOT = { exists = MEI }
+					exists = SAX
+					started_in = 1180.1.1
+				}
+				add_casus_belli = {
+					target = SAX
+					type = cb_fabricated_claims
+					months = 300
+				}
+				saxony_region = {
+					limit = {
+						NOT = { is_core = SAX }
+						NOT = { is_permanent_claim = SAX }
+					}
+					add_permanent_claim = SAX
+				}				
+			}
+			else = {
+				saxony_region = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }

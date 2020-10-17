@@ -17,10 +17,8 @@ vn_swe_missions_slot_1_a = {
         required_missions = {  }
         trigger = {
 			has_reform_level = 2
-			NOT = { 
-				has_ruler = "Emund I" 
-				exists = GTH
-			}
+			NOT = { has_ruler = "Emund I" }
+			NOT = { exists = GTH }
 			stability = 1
 			NOT = {
 				any_owned_province = {
@@ -1589,12 +1587,23 @@ vn_swe_missions_slot_4_c = {
         position = 10
         required_missions = { vn_swe_wars_with_poland }
         trigger = {
-			TUR = {
-				exists = yes
-				alliance_with = ROOT
-				has_opinion = {
-					who = ROOT
-					value = 150
+			if = {
+				limit = { exists = TUR }
+				TUR = {
+					alliance_with = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}			
+			else = {
+				any_ally = {
+					primary_culture = turkish
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
 				}
 			}
         }

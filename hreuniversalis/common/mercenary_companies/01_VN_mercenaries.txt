@@ -449,3 +449,84 @@ merc_polabian_warriors = {
 		shock_damage = 0.1
 	}
 }
+
+merc_pruthenian_company = {
+    regiments_per_development = 0.015
+    home_province = 4825 # Romuva
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		culture_group = baltic
+		4825 = {
+			owner = { culture_group = baltic }
+		}
+	}
+    modifier = { }
+}
+
+merc_moldavian_raiders = {
+    regiments_per_development = 0.015
+    home_province = 5633 # Roman
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		any_owned_province = {
+			region = moldavia_region
+		}
+	}
+    modifier = { }
+}
+
+merc_muscovite_company = {
+    regiments_per_development = 0.015
+    home_province = 6594 # Muscovy
+	sprites = { dlc042_rus_sprite_pack rus_base_sprite_pack easterngfx_sprite_pack }
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = russia_superregion
+				superregion = ruthenia_superregion
+				superregion = baltic_superregion
+				superregion = poland_superregion
+				superregion = carpathia_superregion
+				superregion = balkans_superregion
+				superregion = pontic_steppe_superregion
+				superregion = ural_superregion
+			}
+		}
+	}
+    modifier = { }
+}
+
+merc_russian_kholops = {
+	regiments_per_development = 0.01
+	home_province = 3959 # Smolensk
+	artillery_weight = 0 # no artillery
+	cost_modifier = 0.9
+	sprites = { dlc073_yar_sprite_pack rus_base_sprite_pack easterngfx_sprite_pack }
+    trigger = { 
+		OR = {
+			capital_scope = {
+				OR = {
+					superregion = russia_superregion
+					superregion = ruthenia_superregion
+					superregion = baltic_superregion
+					superregion = poland_superregion
+					superregion = carpathia_superregion
+					superregion = balkans_superregion
+					superregion = pontic_steppe_superregion
+					superregion = ural_superregion
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_new_mercs_tt
+			NOT = { has_global_flag = new_european_mercs }
+		}
+	}
+	modifier = {
+		discipline = -0.025
+		shock_damage = 0.05
+	}
+}

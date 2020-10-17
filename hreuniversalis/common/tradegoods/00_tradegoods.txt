@@ -36,7 +36,7 @@ rice = {
 barley = { 
 	color = { 0.76 0.72 0.27 }
 	modifier = { infantry_cost = -0.1 }
-	province = { land_forcelimit = 0.5 }
+	province = { local_regiment_cost = -0.1 }
 	chance = {
 		factor = 35
 		modifier = {
@@ -54,7 +54,7 @@ barley = {
 rye = { 
 	color = { 0.63 0.75 0.24 }
 	modifier = { global_manpower_modifier = 0.05 }
-	province = { land_forcelimit = 0.5 }
+	province = { local_build_time = -0.2 }
 	chance = {
 		factor = 35
 		modifier = {
@@ -122,7 +122,7 @@ olive = {
 carpet = { 
 	color = { 1.0 0.3 0.7 }
 	modifier = { caravan_power = 0.1 }
-	province = { local_core_creation = 0.20 }
+	province = { local_core_creation = -0.20 }
 	chance = { factor = 20 }
 }
 
@@ -194,10 +194,10 @@ oil = {
 	chance = { factor = 5 }
 }
 
-vegetables = { 
+vegetables = {
 	color = { 0.56 0.99 0.53 }
-	modifier = { global_colonial_growth = 20 }
-	province = { local_development_cost = -0.1 }
+	modifier = { mercenary_manpower = 0.1 }
+	province = { local_hostile_movement_speed = -0.15 }
 	chance = {
 		factor = 20
 		modifier = {
@@ -296,7 +296,7 @@ leather = {
 hemp = { 
 	color = { 0.7 0.85 0.36 }
 	modifier = { min_autonomy_in_territories = -0.1 }
-	province = { local_unrest = -1 }
+	province = { local_governing_cost = -0.25 }
 	chance = {
 		factor = 20
 		modifier = {
@@ -327,7 +327,7 @@ pearls = {
 
 whales = { 
 	color = { 0.63 0.52 0.96 }
-	modifier = { trade_efficiency = 0.05 }
+	modifier = { allowed_marine_fraction = 0.1 }
 	province = { ship_recruit_speed = -0.1 }
 	chance = {
 		factor = 20

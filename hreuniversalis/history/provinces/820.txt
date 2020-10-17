@@ -1,70 +1,24 @@
-owner = MRV
-controller = MRV
+capital = "Osoblaha"
 culture = schlesian
 religion = catholic
-hre = yes
+trade_goods = rye
 base_tax = 1
 base_production = 1
-trade_goods = rye
 base_manpower = 1
-capital = "Prudnik"
 is_city = yes	
+hre = yes
+owner = MRV
+controller = MRV
 add_core = MRV
 
-1269.1.1 = {
-	owner = TRO
-	add_core = TRO
-	controller = TRO
+1384.1.1 = { culture = saxon }
+1469.1.1 = { controller = HUN }
+1479.1.1 = { controller = MRV }
+1490.4.6 = {
+	owner = BOH
+	controller = BOH
+	add_core = BOH
 	remove_core = MRV
-}
-1384.1.1 = {
-	owner = OPO
-	controller = OPO
-	add_core = OPO
-	remove_core = TRO
-	culture = saxon
-}
-1411.1.1 = {
-	owner = XBZ
-	controller = XBZ
-	add_core = XBZ
-	remove_core = OPO
-}
-1422.1.1 = {
-	owner = TRO
-	controller = TRO
-	add_core = TRO
-	remove_core = XBZ
-}
-1462.1.1 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
-	remove_core = TRO
-}
-1465.1.1 = {
-	owner = ZIE
-	controller = ZIE
-	add_core = ZIE
-	remove_core = SIL
-}
-1479.1.1 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
-	remove_core = ZIE
-}
-1492.1.1 = {
-	owner = OSW
-	controller = OSW
-	add_core = OSW
-	remove_core = SIL
-}
-1523.1.1 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
-	remove_core = OSW
 }
 1526.8.30 = {
 	owner = HAB
@@ -74,12 +28,10 @@ add_core = MRV
 1618.5.23 = {
 	owner = BOH
 	controller = BOH
-	add_core = BOH
 }
 1620.11.8 = {
 	owner = HAB
 	controller = HAB
-	remove_core = BOH
 }
 1804.1.1 = {
 	owner = EAH

@@ -1,14 +1,14 @@
-owner = SIL
-controller = SIL
+capital = "Racibórz"
 culture = schlesian
 religion = catholic
-hre = no
+trade_goods = cotton
 base_tax = 2
 base_production = 2
-trade_goods = cotton
 base_manpower = 1
-capital = "Racibórz"
 is_city = yes
+hre = no
+owner = SIL
+controller = SIL
 add_core = SIL
 fort_14th = yes
 extra_cost = 8
@@ -37,11 +37,15 @@ center_of_trade = 1
 	add_core = TRO
 }
 1337.1.1 = { fort_14th = no fort_15th = yes }
-1521.1.1 = {
+1365.12.8 = {
+	owner = RCB
+	controller = RCB
+	remove_core = TRO
+}
+1521.11.13 = {
 	owner = OPO
 	controller = OPO
 	add_core = OPO
-	remove_core = TRO
 }
 1532.3.27 = {
 	owner = HAB

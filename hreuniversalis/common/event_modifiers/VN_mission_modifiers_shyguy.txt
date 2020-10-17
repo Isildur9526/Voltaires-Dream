@@ -438,7 +438,7 @@ teu_conquer_wielkopolska_mission = {
 }
 teu_conquer_neumark_mission = {
 	local_autonomy = -0.03
-	local_state_maintenance_modifier = -0.25
+	local_governing_cost = -0.1
 }
 teu_agrarverfassung_mission = {
 	production_efficiency = 0.1
@@ -480,8 +480,9 @@ byz_constantins_walls_mission = {
 	hostile_attrition = 1
 }
 byz_renovate_constantinople_mission = {
-	build_cost = -0.1
+	local_build_cost = -0.1
 	local_development_cost = -0.1
+	local_monthly_devastation = -0.1
 }
 byz_renovate_athenaeum_mission = {
 	embracement_cost = -0.1
@@ -1153,7 +1154,7 @@ mam_cultural_matters_mission = {
 mam_conquer_syria_mission = {
 	local_defensiveness = 0.2
 	local_manpower_modifier = 0.1
-	local_autonomy = -0.03
+	local_governing_cost = -0.1
 }
 mam_trade_with_india_mission = {
 	trade_goods_size_modifier = 0.2
@@ -2167,7 +2168,7 @@ sax_innerer_landesausbau_mission = {
 }
 sax_conquer_luneburg_mission = {
     local_state_maintenance_modifier = -0.25
-    local_autonomy = -0.03
+    local_governing_cost = -0.1
     years_of_nationalism = -5
 }
 sax_conquer_lusatia_mission = {
@@ -2297,7 +2298,7 @@ hab_eastern_question_mission = {
 	mercenary_discipline = 0.05
 }
 hab_conquer_serbia_mission = {
-	local_autonomy = -0.03
+	local_governing_cost = -0.1
 	local_defensiveness = 0.2
 }
 hab_humiliate_the_turks_mission = {
@@ -2883,9 +2884,9 @@ vgb_mongol_thorn_mission = {
 
 #Papal States
 pap_a_courteous_gift_mission = {
-	local_autonomy = -0.05
+	local_governing_cost = -0.2
 	local_build_cost = -0.2
-	local_institution_spread = 0.25
+	local_institution_spread = 0.2
 	fort_level = 1
 }
 pap_catholic_scholasticism_mission = {
@@ -2907,4 +2908,12 @@ pap_council_of_clermont_mission = {
 	manpower_recovery_speed = 0.25
 	land_morale = 0.1
 	land_attrition = -0.1
+}
+pap_european_christianization_mission = {
+	prestige_per_development_from_conversion = 0.3
+	missionaries = 1
+}
+pap_apostolic_authority_mission = {
+	diplomatic_upkeep = 1
+	max_absolutism = 5
 }

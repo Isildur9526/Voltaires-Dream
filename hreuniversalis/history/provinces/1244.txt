@@ -23,6 +23,42 @@ add_core = AAB
 	remove_core = PIE
 	remove_core = XKK
 }
+1283.1.26 = {
+	owner = MFA
+	controller = MFA
+	add_core = MFA
+}
+1303.1.1 = {
+	owner = PRO
+	controller = PRO
+	add_core = PRO
+	remove_core = MFA
+}
+1349.6.16 = {
+	owner = MLO
+	controller = MLO
+	add_core = MLO
+	remove_core = PRO
+}
+1356.1.1 = {
+	owner = MFA
+	controller = MFA
+	add_core = MFA
+	remove_core = MLO
+}
+1432.1.1 = {
+	owner = SAV
+	controller = SAV
+	add_core = SAV
+	remove_core = MFA
+}
+1445.1.1 = {
+	owner = MFA
+	controller = MFA
+	add_core = MFA
+	remove_core = SAV
+	remove_core = AAB
+}
 1495.1.1 = { hre = no }
 1559.1.1 = {
 	owner = MAN
@@ -34,7 +70,6 @@ add_core = AAB
 	controller = SAV
 	add_core = SAV
 	remove_core = MAN
-	remove_core = AAB
 }
 1720.1.1 = {
 	owner = SPI

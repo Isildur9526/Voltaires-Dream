@@ -164,6 +164,7 @@ capital = 200
 }
 #house Ivrea-Chalon-Orange
 1393.2.10 = {
+	capital = 2902
 	monarch = {
 		name = "Jean I"
 		dynasty = "de Ivrea"
@@ -248,6 +249,7 @@ capital = 200
 		mil = 2
 	}
 }
+1477.1.5 = { capital = 200 }
 1502.3.18 = {
 	heir = {
 		name = "Philibert"

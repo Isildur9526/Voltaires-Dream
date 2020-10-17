@@ -43,9 +43,20 @@ fort_14th = yes
 	controller = BOH
 	remove_core = ZIE
 }
+1428.12.27 = {
+	owner = ZIE
+	controller = ZIE
+	add_core = ZIE
+	remove_core = BOH
+}
 1457.1.1 = { unrest = 5 }
 1464.1.1 = { unrest = 1 }
 1471.1.1 = { unrest = 0 }
+1501.1.1 = {
+	owner = BOH
+	controller = BOH
+	remove_core = ZIE
+}
 1526.8.30 = {
 	owner = HAB
 	controller = HAB

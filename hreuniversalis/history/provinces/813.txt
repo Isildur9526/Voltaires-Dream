@@ -54,29 +54,31 @@ add_core = SIL
 }
 1335.1.1 = { hre = yes }
 1365.5.19 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
+	owner = OLS
+	controller = OLS
+	add_core = OLS
+}
+1492.9.21 = {
+	owner = CIE
+	controller = CIE
+	add_core = CIE
+	remove_core = OLS
 }
 1523.1.1 = { religion = protestant }
-1526.8.30 = {
+1528.12.13 = {
+	owner = LNN
+	controller = LNN
+	add_core = LNN
+	remove_core = CIE
+}
+1675.11.21 = {
 	owner = HAB
 	controller = HAB
 	add_core = HAB
+	add_core = SIL
+	remove_core = LNN
 	remove_core = SCW
 }
-1618.5.23 = {
-	owner = BOH
-	controller = BOH
-	add_core = BOH
-}
-1620.11.8 = {
-	owner = HAB
-	controller = HAB
-	remove_core = BOH
-	unrest = 5
-}
-1648.1.1 = { unrest = 0 }
 1742.6.11 = {
 	owner = PRU
 	controller = PRU

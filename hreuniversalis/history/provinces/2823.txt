@@ -51,11 +51,15 @@ discovered_by = north_american
 	controller = TRO
 	add_core = TRO
 }
-1521.1.1 = {
+1365.12.8 = {
+	owner = RCB
+	controller = RCB
+	remove_core = TRO
+}
+1521.11.13 = {
 	owner = OPO
 	controller = OPO
 	add_core = OPO
-	remove_core = TRO
 }
 1532.3.27 = {
 	owner = HAB

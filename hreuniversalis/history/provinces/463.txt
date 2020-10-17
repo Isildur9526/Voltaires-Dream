@@ -1,14 +1,14 @@
-owner = LST
-controller = LST
+capital = "Zossen"
 culture = sorbian
 religion = catholic
-hre = yes
+trade_goods = rye
 base_tax = 2
 base_production = 1
-trade_goods = rye
 base_manpower = 1
-capital = "Zossen"
 is_city = yes
+hre = yes
+owner = LST
+controller = LST
 add_core = LST
 
 1180.1.1 = { culture = central_margravian }
@@ -21,20 +21,14 @@ add_core = LST
 1436.7.5 = { unrest = 0 }
 1457.1.1 = { unrest = 5 }
 1466.1.1 = { unrest = 0 }
-1518.1.1 = {
-	owner = TFW
-	controller = TFW
-	add_core = TFW
+1490.1.1 = {
+	owner = BRA
+	controller = BRA
+	add_core = BRA
 	remove_core = BOH
 	remove_core = LST
 }
 1531.1.1 = { religion = protestant }
-1555.1.1 = {
-	owner = BRA
-	controller = BRA
-	add_core = BRA
-	remove_core = TFW
-}
 1701.1.18 = {
 	owner = PRU
 	controller = PRU

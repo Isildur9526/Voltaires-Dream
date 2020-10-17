@@ -1156,8 +1156,25 @@ vn_hol_missions_slot_4_a = {
         icon = indonesian_trade
         required_missions = { }
         trigger = {
-			in_golden_age = yes
-			is_great_power = yes
+            if = {
+                limit = { 
+                    OR = { 
+                        has_dlc = "Rights of Man" 
+                        has_dlc = "Emperor" 
+                    } 
+                }
+                is_great_power = yes
+            }
+            else = {
+                total_development = 1000
+            }
+            if = {
+                limit = { has_dlc = "Mandate of Heaven" }
+                OR = {
+                    in_golden_age = yes
+                    has_had_golden_age = yes
+                }
+            }
         }
         effect = {
 			add_country_modifier = {

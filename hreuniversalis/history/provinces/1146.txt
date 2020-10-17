@@ -18,13 +18,19 @@ add_core = NCH
 	add_core = VDX
 	remove_core = NCH
 }
-1475.1.1 = { controller = BRN }
-1476.2.1 = { controller = SAV }
+1420.1.1 = {
+	owner = ORA
+	controller = ORA
+	add_core = ORA
+	remove_core = SAV
+	remove_core = VDX
+}
 1476.3.2 = { 
 	owner = BRN
 	controller = BRN
 	add_core = BRN
-	remove_core = SAV
+	add_core = VDX
+	remove_core = ORA
 }
 1513.7.3 = { unrest = 7 }
 1515.1.1 = { unrest = 0 }

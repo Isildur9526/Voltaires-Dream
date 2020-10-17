@@ -460,7 +460,7 @@ vn_apl_missions_slot_3 = {
 		trigger = {
 			2041 = {
 				owned_by = ROOT
-				has_non_outdated_fort = yes
+				province_has_current_tech_fort_trigger = yes
 			}
 		}
 		effect = {

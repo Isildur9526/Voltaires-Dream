@@ -24,7 +24,8 @@ vn_dan_missions_slot_1_a = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            OR = {
+           	calc_true_if = {
+				amount = 2
 				kiel_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT

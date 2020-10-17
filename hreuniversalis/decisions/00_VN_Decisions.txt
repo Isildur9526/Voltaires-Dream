@@ -380,6 +380,7 @@ country_decisions = {
 		}
 		effect = {
 			change_primary_culture = piedmontese
+			hidden_effect = { add_accepted_culture = arpitan }
 			set_capital = 1009
 			1009 = {
 				add_base_tax = 2
@@ -997,13 +998,51 @@ country_decisions = {
 	revive_kemetism = {
 		major = yes
 		potential = {
+			NOT = { tag = FTM }
+			NOT = { tag = MAM }
 			NOT = { religion = egyptian_religion }
 			capital_scope = { continent = africa }
 			primary_culture = old_egyptian
 			ai = no
 		}
+		provinces_to_highlight = {
+			if = {
+				limit = { tag = EGY }
+				always = no
+			}
+			else = {
+				OR = {
+					province_id = 5022
+					province_id = 5050
+					province_id = 5033
+					province_id = 5047
+					province_id = 5055
+					province_id = 5054
+					province_id = 5059
+					province_id = 5065
+					province_id = 5069
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
 		allow = {
-			tag = EGY
+			OR = {
+				tag = EGY
+				AND = {
+					owns_core_province = 5022
+					owns_core_province = 5050
+					owns_core_province = 5033
+					owns_core_province = 5047
+					owns_core_province = 5055
+					owns_core_province = 5054
+					owns_core_province = 5059
+					owns_core_province = 5065
+					owns_core_province = 5069
+				}
+			}
 			stability = 0
 			has_regency = no
 			is_free_or_tributary_trigger = yes

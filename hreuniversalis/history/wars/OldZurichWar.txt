@@ -7,8 +7,8 @@ war_goal = {
 
 1440.11.2 = {
 	add_attacker = ZUR
-	add_defender = GLA
 	add_defender = TGG
+	add_defender = GLA
 	add_defender = SCH
 }
 
@@ -87,8 +87,8 @@ war_goal = {
 	rem_attacker = ZUR
 	rem_attacker = TIR
 	rem_attacker = MFO
-	rem_defender = GLA
 	rem_defender = TGG
+	rem_defender = GLA
 	rem_defender = SCH
 	rem_defender = APZ
 	rem_defender = BRN

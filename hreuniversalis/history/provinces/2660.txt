@@ -12,12 +12,42 @@ controller = SIL
 add_core = SIL
 
 1173.1.5 = {
+	owner = RCB
+	controller = RCB
+	add_core = RCB
+	remove_core = SIL
+}
+1201.3.22 = {
+	owner = OPO
+	controller = OPO
+	add_core = OPO
+	remove_core = RCB
+}
+1281.8.27 = {
+	owner = BYT
+	controller = BYT
+	add_core = BYT
+	remove_core = OPO
+}
+1335.1.1 = { hre = yes }
+1355.10.10 = {
+	owner = OLS
+	controller = OLS
+	add_core = OLS
+	remove_core = BYT
+}
+1477.1.1 = {
+	owner = SIL
+	controller = SIL
+	add_core = SIL
+	remove_core = OLS
+}
+1509.1.1 = {
 	owner = OPO
 	controller = OPO
 	add_core = OPO
 	remove_core = SIL
 }
-1335.1.1 = { hre = yes }
 1532.3.27 = {
 	owner = HAB
 	controller = HAB

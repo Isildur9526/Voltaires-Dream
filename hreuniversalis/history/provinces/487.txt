@@ -1,6 +1,6 @@
 owner = AQU
 controller = AQU
-culture = austrian
+culture = ladin
 religion = catholic
 hre = yes
 base_tax = 1

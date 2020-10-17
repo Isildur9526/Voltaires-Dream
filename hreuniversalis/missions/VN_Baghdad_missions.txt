@@ -146,7 +146,13 @@ vn_bgh_missions_slot_1 = {
 				has_building = university
 			} 
 			num_accepted_cultures = 3
-            in_golden_age = yes
+            if = {
+                limit = { has_dlc = "Mandate of Heaven" }
+                OR = {
+                    in_golden_age = yes
+                    has_had_golden_age = yes
+                }
+            }
 			has_3_lv3_advisors_trigger = yes                   
 		}
         effect = {

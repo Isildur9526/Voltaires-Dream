@@ -958,14 +958,12 @@ vn_eng_missions_slot_2_e = {
         required_missions = { vn_eng_dual_monarchy }
         position = 13
         trigger = {
-            custom_trigger_tooltip = {
-				tooltip = vn_eng_influence_in_empire.tt
-				calc_true_if = {
-					all_elector = {
-						preferred_emperor = ROOT
-					}
-					amount = 3
-				}
+            calc_true_if = {
+                desc = vn_eng_influence_in_empire.tt
+                all_elector = {
+                    preferred_emperor = ROOT
+                }
+                amount = 3
             }
             any_elector = {
                 has_opinion = {

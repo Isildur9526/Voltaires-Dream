@@ -574,10 +574,6 @@ vn_hab_missions_slot_2 = {
                     add_permanent_claim = ROOT
                 }
             }
-            add_country_modifier = {
-                name = hab_fortify_austria_mission
-                duration = 9125
-            }
         }
     }
     vn_hab_conquer_hungary = {

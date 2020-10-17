@@ -15,26 +15,24 @@ discovered_by = ottoman
 discovered_by = western
 discovered_by = muslim
 
-1317.1.1 = {
-	owner = SAV
-	controller = SAV
-	add_core = SAV
-	add_core = VDX
+1170.1.1 = {
+	owner = MOM
+	controller = MOM
+	add_core = MOM
 	remove_core = LSN
 }
-1410.1.1 = {
-	owner = BUR
-	controller = BUR
-	add_core = BUR
-	remove_core = SAV
+1412.1.1 = {
+	owner = ORA
+	controller = ORA
+	add_core = ORA
+	remove_core = MOM
 }
-1475.1.1 = { controller = BRN }
-1476.2.1 = { controller = BUR }
 1476.3.2 = { 
 	owner = BRN
 	controller = BRN
 	add_core = BRN
-	remove_core = BUR
+	add_core = VDX
+	remove_core = ORA
 }
 1513.7.3 = { unrest = 7 }
 1515.1.1 = { unrest = 0 }

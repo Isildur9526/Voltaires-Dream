@@ -1205,20 +1205,18 @@ vn_lit_missions_slot_5 = {
                     tooltip = vn_lit_cultural_assimilation.tt
                     calc_true_if = {
                         amount = 3
-                        OR = {
-                            accepted_culture = russian
-                            accepted_culture = novgorodian
-                            accepted_culture = krivich
-                            accepted_culture = ryazanian
-                            accepted_culture = byelorussian
-                            accepted_culture = ruthenian
-                            accepted_culture = drevlian
-                            accepted_culture = radimich
-                            accepted_culture = severian
-                            accepted_culture = vyatich
-                            accepted_culture = volhynian
-                            accepted_culture = dulebian
-                        }
+                        accepted_culture = russian
+                        accepted_culture = novgorodian
+                        accepted_culture = krivich
+                        accepted_culture = ryazanian
+                        accepted_culture = byelorussian
+                        accepted_culture = ruthenian
+                        accepted_culture = drevlian
+                        accepted_culture = radimich
+                        accepted_culture = severian
+                        accepted_culture = vyatich
+                        accepted_culture = volhynian
+                        accepted_culture = dulebian
                     }
                 }
             }

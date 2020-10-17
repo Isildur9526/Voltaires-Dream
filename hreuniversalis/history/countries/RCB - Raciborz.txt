@@ -51,3 +51,105 @@ capital = 815
 	}
 }
 #done 1336
+
+1365.12.8 = {
+	monarch = {
+		name = "Jan I"
+		dynasty = "Premyslovci"
+		birth_date = 1322.1.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+	heir = {
+		name = "Jan"
+		monarch_name = "Jan II"
+		dynasty = "Premyslovci"
+		birth_date = 1365.12.8
+		death_date = 1424.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1378.1.1 = {
+	monarch = {
+		name = "Jan II"
+		dynasty = "Premyslovci"
+		birth_date = 1365.12.8
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1405.1.1 = {
+	heir = {
+		name = "Waclaw"
+		monarch_name = "Waclaw II"
+		dynasty = "Premyslovci"
+		birth_date = 1405.1.1
+		death_date = 1456.10.29
+		claim = 80
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+1424.1.1 = {
+	monarch = {
+		name = "Waclaw II"
+		dynasty = "Premyslovci"
+		birth_date = 1405.1.1
+		adm = 3
+		dip = 3
+		mil = 1
+	}	
+}
+1446.1.1 = {
+	heir = {
+		name = "Jan"
+		monarch_name = "Jan III"
+		dynasty = "Premyslovci"
+		birth_date = 1446.1.1
+		death_date = 1493.5.14
+		claim = 80
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}
+1456.10.29 = {
+	monarch = {
+		name = "Jan III"
+		dynasty = "Premyslovci"
+		birth_date = 1446.1.1
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}
+1485.1.1 = {
+	heir = {
+		name = "Walentyn"
+		monarch_name = "Walentyn I"
+		dynasty = "Premyslovci"
+		birth_date = 1485.1.1
+		death_date = 1521.11.13
+		claim = 80
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1493.5.14 = {
+	monarch = {
+		name = "Walentyn I"
+		dynasty = "Premyslovci"
+		birth_date = 1485.1.1
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+#1521.11.13 done

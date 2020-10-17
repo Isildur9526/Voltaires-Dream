@@ -30,11 +30,15 @@ add_core = SIL
 	controller = XBZ
 	add_core = XBZ
 }
+1436.5.30 = {
+	owner = LNN
+	controller = LNN
+	remove_core = XBZ
+}
 1449.10.31 = {
 	owner = SIL
 	controller = SIL
 	add_core = SIL
-	remove_core = XBZ
 }
 1454.1.1 = {
 	owner = LNN

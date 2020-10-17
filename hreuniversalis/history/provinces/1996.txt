@@ -15,6 +15,19 @@ discovered_by = ottoman
 discovered_by = western
 discovered_by = muslim
 
+1416.1.1 = {
+	owner = VEN
+	controller = VEN
+	add_core = VEN
+	hre = no
+}
+1509.6.1 = { controller = HAB }
+1511.6.23 = {
+	owner = TRN
+	controller = TRN
+	remove_core = VEN
+	hre = yes
+}
 1525.3.1 = { unrest = 8 }
 1525.9.1 = { unrest = 0 }
 1803.2.25 = {

@@ -36,10 +36,16 @@ add_core = SIL
 	remove_core = OPO
 }
 1335.1.1 = { hre = yes }
-1355.10.5 = {
+1355.10.10 = {
+	owner = CIE
+	controller = CIE
+	add_core = CIE
+}
+1459.1.1 = {
 	owner = OLS
 	controller = OLS
 	add_core = OLS
+	remove_core = CIE
 }
 1472.1.1 = {
 	owner = BYT

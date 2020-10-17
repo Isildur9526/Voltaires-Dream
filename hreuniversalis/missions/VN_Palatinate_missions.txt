@@ -426,15 +426,13 @@ vn_pal_missions_slot_4_a = {
         trigger = {
             is_emperor = yes
             imperial_influence = 50
-            custom_trigger_tooltip = {
-				tooltip = vn_pal_ruprechts_ambition.tt
-				calc_true_if = {
-					all_elector = {
-						preferred_emperor = ROOT
-					}
-					amount = 4
-				}
-			}
+            calc_true_if = {
+                desc = vn_pal_ruprechts_ambition.tt
+                all_elector = {
+                    preferred_emperor = ROOT
+                }
+                amount = 4
+            }
         }
         effect = {
             add_imperial_influence = 10

@@ -5,7 +5,7 @@ base_tax = 1
 base_production = 0
 trade_goods = vegetables
 base_manpower = 1
-capital = "Mieszkowice"
+capital = "Barwice"
 is_city = yes
 owner = BTH
 controller = BTH
@@ -28,7 +28,7 @@ add_core = BTH
 1181.1.1 = { hre = yes }
 1240.1.1 = { 
 	culture = pommeranian
-	capital = "Bärwalde in der Neumark"
+	capital = "Bärwalde"
 }
 1264.5.17 = {
 	owner = POM

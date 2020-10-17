@@ -1381,7 +1381,7 @@ fra_curb_estates_mission = {
 	nobles_loyalty_modifier = 0.05
 }
 fra_unquestioned_rule_mission = {
-	yearly_absolutism = 0.5
+	yearly_absolutism = 0.25
 	years_of_nationalism = -5
 	global_autonomy = -0.03
 }
@@ -1520,7 +1520,7 @@ dan_seize_gotland_mission = {
 	privateer_efficiency = 0.33
 }
 dan_era_of_absolutism_mission = {
-	yearly_absolutism = 0.1
+	yearly_absolutism = 0.25
 	global_autonomy = -0.03
 }
 dan_plunder_pomerelia_mission = {

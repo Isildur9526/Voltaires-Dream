@@ -1,0 +1,529 @@
+#Old Saxon and Brunswick missions
+#By historyperson
+
+vn_sax_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_alliance_in_the_north = {
+        icon = mission_alliances
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_the_wendish_crusade = {
+        icon = shield_of_christendom
+        position = 2
+        required_missions = { vn_sax_alliance_in_the_north }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_assimilate_the_sorbians = {
+        icon = spread_piety
+        position = 4
+        required_missions = { vn_sax_the_wendish_crusade }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_found_lubeck = {
+        icon = mission_hanseatic_city
+        position = 5
+        required_missions = { vn_sax_assimilate_the_sorbians }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_riches_from_trade = {
+        icon = dominant_economy
+        position = 6
+        required_missions = { vn_sax_found_lubeck }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_kaiserpflaz_goslar = {
+        icon = versailles_palace
+        position = 7
+        required_missions = { vn_sax_riches_from_trade }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_poland = {
+        icon = jageillonian_union
+        position = 8
+        required_missions = { vn_sax_dynastic_prowess }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}
+
+vn_sax_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_unite_luneburg = {
+        icon = the_hundred_years_war 
+        position = 2
+        required_missions = { vn_sax_a_dominant_force }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_holstein = {
+        icon = imperial_capitals
+        position = 3
+        required_missions = { vn_sax_unite_luneburg }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_claims_to_the_north = {
+        icon = eastern_catholicization
+        position = 4
+        required_missions = { vn_sax_holstein }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_found_pomerania = {
+        icon = promote_urbanization
+        position = 5
+        required_missions = { vn_sax_assimilate_the_sorbians }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_into_thuringen = {
+        icon = connect_further_austria
+        position = 6
+        required_missions = { vn_sax_reunite_the_stem_duchy }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_develop_the_hansestadte = {
+        icon = mission_heart_of_the_hansa
+        position = 7
+        required_missions = { vn_sax_riches_from_trade }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_a_return_to_britannien = {
+        icon = mission_rb_invade_england
+        position = 8
+        required_missions = { vn_sax_dynastic_prowess }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}
+
+vn_sax_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_a_dominant_force = {
+        icon = a_show_of_strength
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_reconquer_bremen = {
+        icon = mission_rb_hanseatic_east
+        position = 2
+        required_missions = { vn_sax_a_dominant_force }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_engern_returned = {
+        icon = unite_the_league
+        position = 3
+        required_missions = { vn_sax_reconquer_bremen }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_return_westfalen = {
+        icon = westphalian_conquest
+        position = 4
+        required_missions = { vn_sax_engern_returned }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_reunite_the_stem_duchy = {
+        icon = holy_state
+        position = 5
+        required_missions = { vn_sax_return_westfalen vn_sax_ostfalen_returned }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_sachsische_ostmark = {
+        icon = electorate_of_saxony
+        position = 6
+        required_missions = { vn_sax_reunite_the_stem_duchy }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_dynastic_prowess = {
+        icon = the_ostend_company
+        position = 7
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_claims_to_bavaria = {
+        icon = duchy_of_bavaria
+        position = 8
+        required_missions = { vn_sax_dynastic_prowess }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}
+
+vn_sax_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_imperial_ambitions = {
+        icon = influence_the_princes
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_unite_calenburg = {
+        icon = imperial_capitals
+        position = 2
+        required_missions = { vn_sax_a_dominant_force }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_capture_brunswick = {
+        icon = conquer_brunswick
+        position = 3
+        required_missions = { vn_sax_unite_calenburg }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_ostfalen_returned = {
+        icon = league_of_the_public_weal
+        position = 4
+        required_missions = { vn_sax_capture_brunswick }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_a_thorn_to_brandenburg = {
+        icon = tame_brandenburg
+        position = 5
+        required_missions = { vn_sax_ostfalen_returned }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_revenge_the_staufers = {
+        icon = milan_victorious
+        position = 6
+        required_missions = { vn_sax_head_the_guelphs }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_confiscate_sicily = {
+        icon = king_of_sicily
+        position = 7
+        required_missions = { vn_sax_revenge_the_staufers }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_the_king_of_burgundy = {
+        icon = conquer_burgundy
+        position = 8
+        required_missions = { vn_sax_dynastic_prowess }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}
+
+vn_sax_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_papal_recognition = {
+        icon = invest_in_the_provinces
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_imperial_aspirations = {
+        icon = join_the_empire
+        position = 2
+        required_missions = { vn_sax_papal_recognition vn_sax_imperial_ambitions }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_italian_support = {
+        icon = confront_the_lombards
+        position = 3
+        required_missions = { vn_sax_imperial_aspirations }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_head_the_guelphs = {
+        icon = lead_the_empire
+        position = 5
+        required_missions = { vn_sax_italian_support }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_imperial_power = {
+        icon = the_imperial_border
+        position = 6
+        required_missions = { vn_sax_head_the_guelphs }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_ideas_of_the_reformation = {
+        icon = mission_luther_theses
+        position = 7
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_sax_universities = {
+        icon = leiden_university
+        position = 8
+        required_missions = { vn_sax_ideas_of_the_reformation }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+}

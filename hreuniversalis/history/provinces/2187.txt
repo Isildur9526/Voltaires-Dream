@@ -22,16 +22,18 @@ discovered_by = muslim
 	hre = no
 }
 1413.1.1 = {
-	owner = TRN
-	controller = TRN
+	owner = TIR
+	controller = TIR
+	add_core = TIR
 	remove_core = VEN
 	hre = yes
 }
-1510.11.3 = {
+1490.1.1 = {
 	owner = HAB
 	controller = HAB
 	add_core = HAB
 	remove_core = TRN
+	remove_core = TIR
 }
 1525.3.1 = { unrest = 8 }
 1525.9.1 = { unrest = 0 }

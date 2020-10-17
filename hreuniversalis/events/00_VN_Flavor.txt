@@ -4871,219 +4871,680 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_global_flag = ongoing_electoral_redistribution
-			random_country = {
+			if = {
 				limit = {
-					is_part_of_hre = yes
-					num_of_cities = 5
-					is_emperor = no
-					is_elector = no
-					is_subject = no
-					is_excommunicated = no
-					has_any_disaster = no
-					is_bankrupt = no
-					NOT = { government = republic }
-				}
-				if = {
-					limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 9
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_1
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
-							amount = 8
+							amount = 9
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 7
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 6
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 5
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 4
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 3
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 2
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else_if = {
-					limit = {
-						calc_true_if = {
-							amount = 1
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_1
-				}
-				else = {
 					save_event_target_as = new_elector_1
 				}
 			}
-			random_country = {
+			else_if = {
 				limit = {
-					is_part_of_hre = yes
-					num_of_cities = 5
-					is_emperor = no
-					is_elector = no
-					is_subject = no
-					is_excommunicated = no
-					has_any_disaster = no
-					is_bankrupt = no
-					government = ROOT
-					NOT = { government = republic }
-					NOT = { tag = event_target:new_elector_1 }
-				}
-				if = {
-					limit = {
-						calc_true_if = {
-							amount = 9
-							good_choice_for_electorship_trigger = yes
-						}
-					}
-					save_event_target_as = new_elector_2
-				}
-				else_if = {
-					limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 8
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						calc_true_if = {
+							amount = 8
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 7
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						calc_true_if = {
+							amount = 7
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 6
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						calc_true_if = {
+							amount = 6
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 5
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						calc_true_if = {
+							amount = 5
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 4
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						calc_true_if = {
+							amount = 4
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 3
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						calc_true_if = {
+							amount = 3
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
 							amount = 2
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
 				}
-				else_if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
 						calc_true_if = {
-							amount = 1
+							amount = 2
 							good_choice_for_electorship_trigger = yes
 						}
 					}
-					save_event_target_as = new_elector_2
+					save_event_target_as = new_elector_1
 				}
-				else = {
+			}
+			else = {
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+					}
+					save_event_target_as = new_elector_1
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 9
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 9
+							good_choice_for_electorship_trigger = yes
+						}
+					}
 					save_event_target_as = new_elector_2
 				}
 			}
-			random_country = {
+			else_if = {
 				limit = {
-					is_part_of_hre = yes
-					num_of_cities = 5
-					is_emperor = no
-					is_elector = no
-					is_subject = no
-					is_excommunicated = no
-					has_any_disaster = no
-					is_bankrupt = no
-					government = ROOT
-					NOT = { government = republic }
-					NOT = { tag = event_target:new_elector_1 }
-					NOT = { tag = event_target:new_elector_2 }
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 8
+							good_choice_for_electorship_trigger = yes
+						}
+					}
 				}
-				if = {
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 8
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 7
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 7
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 6
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 6
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 5
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 5
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 4
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 4
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 3
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 3
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 2
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						calc_true_if = {
+							amount = 2
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			else = {
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+					}
+					save_event_target_as = new_elector_2
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 9
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 9
 							good_choice_for_electorship_trigger = yes
@@ -5091,8 +5552,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 8
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 8
 							good_choice_for_electorship_trigger = yes
@@ -5100,8 +5593,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 7
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 7
 							good_choice_for_electorship_trigger = yes
@@ -5109,8 +5634,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 6
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 6
 							good_choice_for_electorship_trigger = yes
@@ -5118,8 +5675,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 5
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 5
 							good_choice_for_electorship_trigger = yes
@@ -5127,8 +5716,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 4
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 4
 							good_choice_for_electorship_trigger = yes
@@ -5136,8 +5757,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 3
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 3
 							good_choice_for_electorship_trigger = yes
@@ -5145,8 +5798,40 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
+						calc_true_if = {
+							amount = 2
+							good_choice_for_electorship_trigger = yes
+						}
+					}
+				}
+				random_country = {
 					limit = {
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 						calc_true_if = {
 							amount = 2
 							good_choice_for_electorship_trigger = yes
@@ -5154,16 +5839,22 @@ country_event = {
 					}
 					save_event_target_as = new_elector_3
 				}
-				else_if = {
+			}
+			else = {
+				random_country = {
 					limit = {
-						calc_true_if = {
-							amount = 1
-							good_choice_for_electorship_trigger = yes
-						}
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+						NOT = { tag = event_target:new_elector_1 }
+						NOT = { tag = event_target:new_elector_2 }
 					}
-					save_event_target_as = new_elector_3
-				}
-				else = {
 					save_event_target_as = new_elector_3
 				}
 			}
@@ -5189,11 +5880,10 @@ country_event = {
 				who = ROOT
 				modifier = grant_electorate 
 			}
-		}
-		event_target:new_elector_2 = {
-			add_opinion = {
-				who = ROOT
-				modifier = revoke_elector_opinion 
+			hidden_effect = {
+				country_event = {
+					id = hremodevents.96
+				}
 			}
 		}
 		clr_global_flag = ongoing_electoral_redistribution
@@ -5223,17 +5913,6 @@ country_event = {
 				}
 			}
 		}
-		event_target:new_elector_1 = {
-			add_opinion = {
-				who = ROOT
-				modifier = revoke_elector_opinion 
-			}
-			hidden_effect = {
-				country_event = {
-					id = hremodevents.96
-				}
-			}
-		}
 		clr_global_flag = ongoing_electoral_redistribution
 	}
 	option = {
@@ -5254,17 +5933,6 @@ country_event = {
 			add_opinion = {
 				who = ROOT
 				modifier = grant_electorate 
-			}
-			hidden_effect = {
-				country_event = {
-					id = hremodevents.96
-				}
-			}
-		}
-		event_target:new_elector_3 = {
-			add_opinion = {
-				who = ROOT
-				modifier = revoke_elector_opinion 
 			}
 			hidden_effect = {
 				country_event = {

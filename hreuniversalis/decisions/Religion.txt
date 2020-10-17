@@ -397,6 +397,36 @@ country_decisions = {
 		}
 	}
 
+	adopt_wahabism = {
+		potential = {
+			has_dlc = "Cradle of Civilization"
+			religion = sunni
+			has_reform = tribal_federation
+			has_global_flag = wahabism_founded
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = hanbali_school
+				}
+			}
+			ruler_religion = sunni
+		}
+		allow = {
+			piety = 1.0 #100 Legalism
+		}
+		effect = {
+			add_stability = -3
+			add_legitimacy = 30
+			set_religious_school = {
+				group = muslim
+				school = hanbali_school
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 	trade_propagation_convert_to_islam = {
 		potential = {
 			has_dlc = "Cradle of Civilization"
@@ -666,6 +696,59 @@ country_decisions = {
 			}
 		}
 	}
+
+	save_the_burning_world = {
+		potential = {
+			NOT = { has_country_modifier = saving_the_burning_world }
+			OR = {
+				religion = yazidi
+				religion = druze
+				religion = mandaeism
+			}
+		}
+		allow = {
+			ADM = 3
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "saving_the_burning_world"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	enforce_heritage = {
+		potential = {
+			NOT = { has_country_modifier = enforcing_heritage }
+			religion_group = eastern
+		}
+		allow = {
+			any_neighbor_country = {
+				NOT = { religion_group = eastern }
+			}
+			stability = 1
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "enforcing_heritage"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
 	
 	restrict_government_offices = {
 		potential = {
@@ -818,6 +901,69 @@ country_decisions = {
 			}
 		}
 	}
+
+	zoroastrian_rites_of_admission = {
+		potential = {
+			NOT = { has_country_modifier = rites_of_admission_modifier }
+			religion = zoroastrian
+		}
+		allow = {
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "rites_of_admission_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+
+	animism_ritual_education = {
+		potential = {
+			NOT = { has_country_modifier = ritual_education_modifier }
+			OR = {
+				religion = animism
+				religion = slavic_pagan
+				religion = dievturiba
+				religion = maausko
+				religion = finnish_pagan
+				religion = uralinusko
+			}
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			adm_tech = 8
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "ritual_education_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
 	
 	shamanism_wondering_shamans = {
 		potential = {
@@ -837,6 +983,158 @@ country_decisions = {
 			add_adm_power = -50
 			add_country_modifier = {
 				name = "wandering_shamans_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+
+	totemism_purification_movement = {
+		potential = {
+			NOT = { has_country_modifier = purification_movement_modifier }
+			OR = {
+				religion = hellenic_pagan
+				religion = egyptian_religion
+			}
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "purification_movement_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+
+	mesoamerican_codification_of_the_faith = {
+		potential = {
+			NOT = { has_country_modifier = codification_of_mayan_faith }
+			religion = vainakh
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			OR = {
+				AND = {	
+					has_dlc = "El Dorado"
+					is_religion_reformed = yes
+				}
+				AND = {
+					NOT = {
+						has_dlc = "El Dorado"
+					}
+					has_institution = renaissance
+				}
+			}
+			stability = 2
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "codification_of_mayan_faith"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	nahuatl_conversion_ceremonies = {
+		potential = {
+			NOT = { has_country_modifier = nahuatl_sacrificial_stones }
+			religion = uatsdin
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			OR = {
+				AND = {	
+					has_dlc = "El Dorado"
+					is_religion_reformed = yes
+				}
+				AND = {
+					NOT = {
+						has_dlc = "El Dorado"
+					}
+					has_institution = renaissance
+				}
+			}
+			stability = 2
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "nahuatl_sacrificial_stones"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	inti_obligatory_religious_festivals = {
+		potential = {
+			NOT = { has_country_modifier = great_inti_festivals }
+			religion = khabze
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			OR = {
+				AND = {	
+					has_dlc = "El Dorado"
+					is_religion_reformed = yes
+				}
+				AND = {
+					NOT = {
+						has_dlc = "El Dorado"
+					}
+					has_institution = renaissance
+				}
+			}
+			stability = 2
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "great_inti_festivals"
 				duration = -1
 			}
 		}

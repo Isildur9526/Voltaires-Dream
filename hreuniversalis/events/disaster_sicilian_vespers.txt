@@ -78,7 +78,7 @@ country_event = {
 			add_base_tax = -1
 			spawn_rebels = {
 				type = nationalist_rebels
-				size = 3
+				size = 2
 				friend = TNC
 			}
 		}
@@ -150,7 +150,7 @@ country_event = {
 
 	option = {
 		name = sicilian_vespers.5.a	
-		ai_chance = { factor = 25 }
+		ai_chance = { factor = 50 }
 		add_prestige = -10
 		add_dip_power = -25
 		custom_tooltip = sicilian_vespers.5.a.tt
@@ -164,7 +164,7 @@ country_event = {
 	}
 	option = {
 		name = sicilian_vespers.5.b	
-		ai_chance = { factor = 75 }
+		ai_chance = { factor = 50 }
 		random_owned_province = {
 			limit = {
 				region = sicilia_region
@@ -266,7 +266,7 @@ country_event = {
 			limit = {
 				region = sicilia_region
 				owned_by = ROOT
-				development = 10
+				development = 20
 				NOT = { controlled_by = REB }
 				is_island = no
 			}
@@ -304,7 +304,7 @@ country_event = {
 
 	option = {
 		name = sicilian_vespers.7.a	
-		ai_chance = { factor = 5 }
+		ai_chance = { factor = 50 }
 		TNC = {
 			add_country_modifier = {
 				name = "vespers_papal_recognition"
@@ -341,7 +341,7 @@ country_event = {
 	}
 	option = {
 		name = sicilian_vespers.7.b	
-		ai_chance = { factor = 95 }
+		ai_chance = { factor = 50 }
 		ARA = {
 			if = {
 				limit = {
@@ -425,7 +425,7 @@ country_event = {
 
 	option = {
 		name = sicilian_vespers.8.a	
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 95 }
 		declare_war_with_cb = {
 			who = TNC
 			casus_belli = cb_claim_throne
@@ -433,7 +433,7 @@ country_event = {
 	}
 	option = {
 		name = sicilian_vespers.8.b	
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 5 }
 		sicilia_region = {
 			limit = {
 				OR = {

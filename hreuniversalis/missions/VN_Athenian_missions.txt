@@ -1,0 +1,1425 @@
+#Athenian missions
+#By Historyperson
+
+vn_ath_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = ATH
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ath_unite_the_peloponnese = {
+        icon = cross_the_pindus
+        position = 2
+        required_missions = { vn_ath_independence_of_athens }
+        provinces_to_highlight = {
+            region = hellas_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            hellas_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            furthergreece_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }             
+        }
+    }
+    vn_ath_conquer_epirus = {
+        icon = despot_of_epirus
+        position = 3
+        required_missions = { vn_ath_into_thessaly vn_ath_unite_the_peloponnese }
+        provinces_to_highlight = {
+            region = furthergreece_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            furthergreece_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            apulia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            sicilia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            campania_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            ragusa_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }               
+        }
+    }
+    vn_ath_magna_graecia = {
+        icon = king_of_sicily
+        position = 4
+        required_missions = { vn_ath_conquer_epirus }
+        provinces_to_highlight = {
+            OR = {
+                region = apulia_region
+                region = sicilia_region
+                region = campania_region
+            }        
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+            has_port = yes
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+                OR = {
+                    region = apulia_region
+                    region = sicilia_region
+                    region = campania_region
+                }
+            }           
+        }
+        effect = {
+            add_years_of_income = 0.5
+            insular_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }   
+            custom_tooltip = vn_ath_magna_graecia.tt
+            hidden_effect = {
+                valencian_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                catalunya_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                toulouse_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                provence_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            } 
+#            apulia_region = {
+#                limit = { owned_by = ROOT }
+#                add_province_modifier = {
+#                    name = ath_flourishing_outposts_mission
+#                    duration = 9125
+#                }
+#            }   
+#            sicilia_region = {
+#                limit = { owned_by = ROOT }
+#                add_province_modifier = {
+#                    name = ath_flourishing_outposts_mission
+#                    duration = 9125
+#                }
+#            }
+#            campania_region = {
+#                limit = { owned_by = ROOT }
+#                add_province_modifier = {
+#                    name = ath_flourishing_outposts_mission
+#                    duration = 9125
+#                }
+#            }  
+            add_country_modifier = {
+                name = ath_magna_graecia_mission 
+                duration = 9125
+            } 
+        }
+    }
+    vn_ath_rebirth_of_the_acropolis = {
+        icon = negotiate_for_avignon
+        position = 5
+        required_missions = {  }
+        provinces_to_highlight = {
+            province_id = 2828
+        }
+        trigger = {
+            2828 = {
+                development = 30
+                has_fort_trigger = yes
+                province_has_center_of_trade_of_level = 3
+                NOT = { num_free_building_slots = 1 }
+            }
+        }
+        effect = {
+            2828 = {
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+                add_prosperity = 25
+                add_devastation = -10
+                add_province_modifier = {
+                    name = "ath_rebirth_of_the_acropolis_mission"
+                    duration = -1
+                }  
+            }
+        }
+    }
+    vn_ath_the_poleis = {
+        icon = public_works
+        position = 6
+        required_missions = { vn_ath_rebirth_of_the_acropolis }
+        trigger = {
+            num_of_owned_provinces_with = {
+	        value = 25
+	        development = 20
+	        NOT = { num_free_building_slots = 1 }
+	        OR = {
+                    has_owner_accepted_culture = yes
+                    has_owner_culture = yes
+                }
+            }            
+        }
+        effect = {
+            add_prestige = 10
+            add_legitimacy = 10
+            add_republican_tradition = 10
+			add_years_of_income = 0.5
+            add_country_modifier = {
+                name = "ath_the_poleis_mission"
+                duration = 9125
+            } 
+        }
+    }
+}
+
+vn_ath_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = ATH
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ath_independence_of_athens = {
+        icon = foothold_in_greece
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            area = athens_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            is_subject = no
+            athens_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_prestige = 10
+            add_legitimacy = 10
+            add_republican_tradition = 10
+            hellas_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            euboia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            thessalia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_ath_into_thessaly = {
+        icon = mission_consolidate_the_state
+        position = 2
+        required_missions = { vn_ath_independence_of_athens }
+        provinces_to_highlight = {
+            area = thessalia_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            thessalia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            macedonia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            furthergreece_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }             
+        }
+    }
+    vn_ath_conquer_macedonia = {
+        icon = the_latin_empire
+        position = 3
+        required_missions = { vn_ath_into_thessaly }
+        provinces_to_highlight = {
+            region = macedonia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            macedonia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            thrace_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }             
+        }
+    }
+    vn_ath_capture_constantinople = {
+        icon = take_constantinople
+        position = 4
+        required_missions = { vn_ath_conquer_macedonia }
+        provinces_to_highlight = {
+            region = thrace_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            thrace_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 20
+            }  
+            bulgaria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            bulgariasouth_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }             
+        }
+    }
+    vn_ath_control_nicaea = {
+        icon = protect_against_the_turks
+        position = 5
+        required_missions = { vn_ath_capture_constantinople }
+        provinces_to_highlight = {
+            region = opsikion_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            opsikion_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            chaldia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            paphlagonia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            custom_tooltip = vn_ath_control_nicaea.tt
+            hidden_effect = {
+                crimea_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                azov_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                wild_fields_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                circassia_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                georgia_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                tao_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+        }
+    }
+    vn_ath_black_sea_trade = {
+        icon = renaissance_city
+        position = 6
+        required_missions = { vn_ath_control_nicaea }
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = vn_ath_black_sea_trade_trigger.tt
+                OR = {
+                    any_ally = {
+                        capital_scope = {
+                            OR = {
+                                region = chaldia_region
+                                region = paphlagonia_region
+                                region = crimea_region
+                                region = azov_region
+                                region = wild_fields_region
+                                region = circassia_region
+                                region = georgia_region
+                                region = tao_region
+                            }
+                        }
+                    }
+                    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                        value = 5
+                        OR = {
+                            region = chaldia_region
+                            region = paphlagonia_region
+                            region = crimea_region
+                            region = azov_region
+                            region = wild_fields_region
+                            region = circassia_region
+                            region = georgia_region
+                            region = tao_region
+                        }
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                        has_port = yes
+                    }
+                }
+            }            
+        }
+        effect = {
+            add_years_of_income = 0.5
+#            custom_tooltip = vn_ath_black_sea_trade_effect.tt
+#            hidden_effect = {
+#                every_owned_province = {
+#                    limit = {
+#                        OR = {
+#                            region = chaldia_region
+#                            region = paphlagonia_region
+#                            region = crimea_region
+#                            region = azov_region
+#                            region = wild_fields_region
+#                            region = circassia_region
+#                            region = georgia_region
+#                            region = tao_region
+#                        }
+#                        OR = {
+#                            province_trade_power = 10
+#                            province_has_center_of_trade_of_level = 1
+#                        }
+#                        has_port = yes
+#                    }
+#                    add_province_modifier = {
+#                        name = ath_flourishing_outposts_mission
+#                        duration = 9125
+#                    }
+#                }
+#            }
+            add_country_modifier = {
+                name = ath_black_sea_trade_mission
+                duration = 9125
+            }           
+        }
+    }
+}
+
+vn_ath_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = ATH
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ath_rule_euboea = {
+        icon = secure_the_republic
+        position = 2
+        required_missions = { vn_ath_independence_of_athens }
+        provinces_to_highlight = {
+            area = euboia_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            euboia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            greekislands_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }  
+        }
+    }
+    vn_ath_control_the_aegean = {
+        icon = reclaim_the_aegean
+        position = 3
+        required_missions = { vn_ath_rule_euboea }
+        provinces_to_highlight = {
+            region = greekislands_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            greekislands_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            } 
+        }
+        effect = {
+            ionia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            cyrenaica_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ath_regain_ionia = {
+        icon = fortress_of_belgrade
+        position = 4
+        required_missions = { vn_ath_control_the_aegean }
+        provinces_to_highlight = {
+            area = ionia_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            ionia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            } 
+        }
+        effect = {
+            thrakesion_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ath_rule_in_asia_minor = {
+        icon = anatolian_frontier
+        position = 5
+        required_missions = { vn_ath_regain_ionia }
+        provinces_to_highlight = {
+            region = thrakesion_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            thrakesion_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            } 
+        }
+        effect = {
+            kibyrraioton_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            cyprus_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_ath_dominate_the_greeks = {
+        icon = protectors_of_christendom
+        position = 6
+        required_missions = { vn_ath_control_nicaea vn_ath_rule_in_asia_minor }
+        trigger = {
+            if = {
+                limit = {
+                    culture_group = byzantine
+                }
+                has_unified_culture_group = yes
+            }
+            else = {
+                num_accepted_cultures = 1
+                every_province = {
+	            limit = { culture_group = byzantine }
+	            owned_by = ROOT
+	            consolidated_region_trigger = yes    
+                }
+            }
+        }
+        effect = {
+            add_adm_power = 100
+            add_dip_power = 100
+            add_mil_power = 100
+            every_owned_province = {
+                limit = { 
+                    owned_by = ROOT 
+                    culture_group = byzantine
+                }
+                add_province_modifier = {
+                    name = ath_dominate_the_greeks_mission
+                    duration = 9125
+                }
+            }           
+        }
+    }
+}
+
+vn_ath_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = ATH
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ath_the_philosphers = {
+        icon = medici_bank_ledgers
+        position = 1
+        required_missions = {  }
+        trigger = {
+            has_3_lv3_advisors_trigger = yes
+        }
+        effect = {
+            add_prestige = 10
+            add_adm_power = 50
+            add_dip_power = 50
+            add_mil_power = 50
+            add_country_modifier = {
+                name = "ath_the_philosphers_mission" 
+                duration = 9125
+            }
+        }
+    }
+    vn_ath_akademia = {
+        icon = bibliotheca_corviana
+        position = 2
+        required_missions = { vn_ath_the_philosphers }
+        trigger = {
+            num_of_owned_provinces_with = {
+            	value = 25
+            	has_education_building_trigger = yes
+            }            
+        }
+        effect = {
+            add_splendor = 100
+            change_innovativeness = 5
+            add_country_modifier = {
+                name = "ath_akademia_mission"
+                duration = -1
+            }            
+        }
+    }
+    vn_ath_the_golden_age = {
+        icon = dominant_economy
+        position = 3
+        required_missions = { vn_ath_akademia }
+        trigger = {
+            if = {
+                limit = { 
+                    OR = { 
+                        has_dlc = "Rights of Man" 
+                        has_dlc = "Emperor" 
+                    } 
+                }
+                is_great_power = yes
+            }
+            else = {
+                total_development = 1000
+            }
+            if = {
+                limit = { has_dlc = "Mandate of Heaven" }
+                OR = {
+                    in_golden_age = yes
+                    has_had_golden_age = yes
+                }
+            }
+            is_lacking_institutions = no
+    	    has_adm_advisor_5 = yes
+	    has_dip_advisor_5 = yes
+	    has_mil_advisor_5 = yes  
+	    num_of_owned_and_controlled_institutions = 1
+        }
+        effect = {
+            add_prestige = 10
+            add_legitimacy = 10
+            add_republican_tradition = 10
+            add_splendor = 100
+            add_country_modifier = {
+                name = "ath_the_golden_age_mission"
+                duration = 9125
+            }            
+        }
+    }
+    vn_ath_presence_in_cyrenaica = {
+        icon = sources_of_trade
+        position = 4
+        required_missions = { vn_ath_control_the_aegean }
+        provinces_to_highlight = {
+            area = cyrenaica_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            cyrenaica_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            } 
+        }
+        effect = {
+            add_years_of_income = 0.5
+#            cyrenaica_area = {
+#                limit = { owned_by = ROOT }
+#                add_province_modifier = {
+#                    name = ath_flourishing_outposts_mission
+#                    duration = 9125
+#                }
+#            }
+            coastal_libya_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_ath_reestablishment_of_greek = {
+        icon = reclaim_the_ducal_lands
+        position = 5
+        required_missions = { vn_ath_regain_ionia }
+        provinces_to_highlight = {
+            OR = {
+                region = thrakesion_region
+                region = opsikion_region
+            }
+            NOT = { culture_group = byzantine }
+        }
+        trigger = {
+            355 = {
+                development = 20
+                province_has_center_of_trade_of_level = 2
+            }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 25
+                OR = {
+                    region = opsikion_region
+                    region = thrakesion_region
+                }
+                culture_group = byzantine
+            }
+        }
+        effect = {
+            add_years_of_income = 0.5
+            355 = {
+                if = {
+                    limit = {
+                        has_dlc = "Dharma"
+                        NOT = { province_has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+                }
+                else = {
+                    add_base_production = 2
+                }
+            } 
+            add_country_modifier = {
+                name = ath_reestablishment_of_greek_mission
+                duration = 9125
+            }            
+        }
+    }
+    vn_ath_our_homeland = {
+        icon = la_marseillaise
+        position = 6
+        required_missions = { vn_ath_rule_the_seas }
+        trigger = {
+            OR = {
+                if = {
+                    limit = {
+                        exists = BRC
+                    }
+                    marriage_with = BRC
+                }
+                else_if = {
+                    limit = {
+                        exists = CAT
+                    }
+                    marriage_with = CAT
+                }
+                else = {
+                    1955 = {
+                        owner = {
+                            marriage_with = ROOT
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        exists = LAN
+                    }
+                    marriage_with = LAN
+                }
+                else_if = {
+                    limit = {
+                        exists = TUS
+                    }
+                    marriage_with = TUS
+                }
+                else = {
+                    640 = {
+                        owner = {
+                            marriage_with = ROOT
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        exists = BUR
+                    }
+                    marriage_with = BUR
+                }
+                else = {
+                    765 = {
+                        owner = {
+                            marriage_with = ROOT
+                        }
+                    }
+                }
+            }
+        }
+        effect = {
+            if = {
+                limit = {
+                    exists = BRC
+                    marriage_with = BRC
+                }
+                add_casus_belli = {
+                    target = BRC
+                    type = cb_fabricated_claims
+                    months = 300
+                }
+                catalunya_region = {
+                    limit = {
+                        NOT = { is_core = BRC }
+                        NOT = { is_permanent_claim = BRC }
+                    }
+                add_permanent_claim = BRC
+                }				
+            }
+            else_if = {
+                limit = {
+                    exists = CAT
+                    marriage_with = CAT
+                }
+                add_casus_belli = {
+                    target = CAT
+                    type = cb_fabricated_claims
+                    months = 300
+                }
+                catalunya_region = {
+                    limit = {
+                        NOT = { is_core = CAT }
+                        NOT = { is_permanent_claim = CAT }
+                    }
+                add_permanent_claim = CAT
+                }				
+            }
+            else = {
+                catalunya_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                add_permanent_claim = ROOT
+                }
+            } 
+            if = {
+                limit = {
+                    exists = LAN
+                    marriage_with = LAN
+                }
+                add_casus_belli = {
+                    target = LAN
+                    type = cb_fabricated_claims
+                    months = 300
+                }
+                tuscany_region = {
+                    limit = {
+                        NOT = { is_core = LAN }
+                        NOT = { is_permanent_claim = LAN }
+                    }
+                add_permanent_claim = LAN
+                }				
+            }
+            else_if = {
+                limit = {
+                    exists = TUS
+                    marriage_with = TUS
+                }
+                add_casus_belli = {
+                    target = TUS
+                    type = cb_fabricated_claims
+                    months = 300
+                }
+                tuscany_region = {
+                    limit = {
+                        NOT = { is_core = TUS }
+                        NOT = { is_permanent_claim = TUS }
+                    }
+                add_permanent_claim = TUS
+                }				
+            }
+            else = {
+                tuscany_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                add_permanent_claim = ROOT
+                }
+            }
+            if = {
+                limit = {
+                    exists = BUR
+                    marriage_with = BUR
+                }
+                add_casus_belli = {
+                    target = BUR
+                    type = cb_fabricated_claims
+                    months = 300
+                }
+                catalunya_region = {
+                    limit = {
+                        NOT = { is_core = BUR }
+                        NOT = { is_permanent_claim = BUR }
+                    }
+                add_permanent_claim = BUR
+                }				
+            }
+            else = {
+                burgundy_region = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                add_permanent_claim = ROOT
+                }
+            }           
+        }
+    }
+}
+
+vn_ath_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = ATH
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_ath_democratic_foundations = {
+        icon = republican_yearnings
+        position = 1
+        required_missions = {  }
+        trigger = {
+            government = republic
+            stability = 3
+        }
+        effect = {
+            add_adm_power = 50
+            add_dip_power = 50
+            add_mil_power = 50
+            add_republican_tradition = 10
+            add_country_modifier = {
+                name = "ath_democratic_foundations_mission"
+                duration = -1
+            }             
+        }
+    }
+    vn_ath_ecclesia = {
+        icon = immaculate_government
+        position = 2
+        required_missions = { vn_ath_democratic_foundations }
+        trigger = {
+            NOT = { average_unrest = 1 }
+            republican_tradition = 100
+            if = {
+                limit = { has_estate = estate_church }
+                estate_loyalty = {
+                    estate = estate_church
+                    loyalty = 60
+                }
+                NOT = {
+                    estate_influence = {
+                        estate = estate_church
+                        influence = 50
+                    }
+                }
+            }
+            if = {
+                limit = { has_estate = estate_burghers }
+                estate_loyalty = {
+                    estate = estate_burghers
+                    loyalty = 60
+                }
+                NOT = {
+                    estate_influence = {
+                        estate = estate_burghers
+                        influence = 50
+                    }
+                }
+            }
+            if = {
+                limit = { has_estate = estate_nobles }
+                estate_loyalty = {
+                    estate = estate_nobles
+                    loyalty = 60
+                }
+                NOT = {
+                    estate_influence = {
+                        estate = estate_nobles
+                        influence = 50
+                    }
+                }
+            }            
+        }
+        effect = {
+            if = {
+                limit = { has_estate = estate_church }
+                add_estate_loyalty = {
+                    estate = estate_church
+                    loyalty = 10
+                }
+            }
+            if = {
+                limit = { has_estate = estate_burghers }
+                add_estate_loyalty = {
+                    estate = estate_burghers
+                    loyalty = 10
+                }
+            }
+            if = {
+                limit = { has_estate = estate_nobles }
+                add_estate_loyalty = {
+                    estate = estate_nobles
+                    loyalty = 10
+                }
+            }
+            add_country_modifier = {
+                name = "ath_ecclesia_mission"
+                duration = 9125
+            }            
+        }
+    }
+    vn_ath_crusader_legacy = {
+        icon = knights_of_the_new_world
+        position = 3
+        required_missions = {  }
+        trigger = {
+            religion_group = christian
+            num_of_generals = 1
+            any_country = {
+                war_with = ROOT
+                NOT = {
+                    religion_group = christian
+                    war_score_against = {
+                        who = ROOT
+                        value = -50
+                    }
+                }
+			}
+            if = {
+                limit = {
+                    OR = {
+                        has_estate = estate_holy_orders
+                        current_age = age_of_empire
+                    }
+                }
+                estate_loyalty = {
+                    estate = estate_holy_orders
+                    loyalty = 60
+                }
+            }
+        }
+        effect = {
+            add_papal_influence = 10
+            reverse_add_opinion = {
+                who = PAP
+                modifier = ath_crusader_legacy_opinion
+            }
+            if = {
+                limit = { has_estate = estate_holy_orders }
+                add_estate_loyalty = {
+                    estate = estate_nobles
+                    loyalty = 10
+                }
+            }
+            add_country_modifier = {
+                name = "ath_crusader_legacy_mission"
+                duration = 9125
+            } 
+        }
+    }
+    vn_ath_frankokratia = {
+        icon = convert_the_holy_lands
+        position = 4
+        required_missions = { vn_ath_crusader_legacy }
+        trigger = {
+            num_accepted_cultures = 1
+            OR = {
+                invested_papal_influence = 50
+                is_papal_controller = yes
+                papal_influence = 50
+                NOT = { religion = catholic }
+            }
+            if = {
+                limit = { 
+                    exists = PAP
+                    uses_papacy = yes
+                }
+                reverse_has_opinion = {
+                    who = PAP
+                    value = 100
+                }
+            }
+            furthergreece_region = {
+                type = all
+                OR = {
+                    NOT = { owned_by = ROOT }
+                    has_owner_accepted_culture = yes
+                    has_owner_culture = no
+                } 
+                consolidated_region_trigger = yes    
+            }
+            greekislands_region = {
+                type = all
+                OR = {
+                    NOT = { owned_by = ROOT }
+                    has_owner_accepted_culture = yes
+                    has_owner_culture = no
+                }  
+                consolidated_region_trigger = yes    
+            }
+            hellas_region = {
+                type = all
+                OR = {
+                    NOT = { owned_by = ROOT }
+                    has_owner_accepted_culture = yes
+                    has_owner_culture = no
+                } 
+                consolidated_region_trigger = yes    
+            }
+            thrace_region = {
+                type = all
+                OR = {
+                    NOT = { owned_by = ROOT }
+                    has_owner_accepted_culture = yes
+                    has_owner_culture = no
+                } 
+                consolidated_region_trigger = yes    
+            }
+            macedonia_region = {
+                type = all
+                OR = {
+                    NOT = { owned_by = ROOT }
+                    has_owner_accepted_culture = yes
+                    has_owner_culture = no
+                } 
+                consolidated_region_trigger = yes    
+            }            
+        }
+        effect = {
+            every_owned_province = {
+                limit = { 
+                    owned_by = ROOT 
+                    OR = {
+                        region = furthergreece_region      
+                        region = greekislands_region       
+                        region = hellas_region       
+                        region = thrace_region       
+                        region = macedonia_region        
+                    }
+                }
+                add_province_modifier = {
+                    name = ath_frankokratia_mission
+                    duration = 9125
+                }
+            }            
+        }
+    }
+    vn_ath_rule_the_seas = {
+        icon = crusader_fleet
+        position = 5
+        required_missions = {  }
+        trigger = {
+            naval_forcelimit = 50
+            navy_size_percentage = 0.75            
+        }
+        effect = {
+            add_yearly_sailors = 1
+            create_admiral = { tradition = 75 }
+            add_navy_tradition = 20
+            custom_tooltip = vn_ath_italian_trade.tt 
+            hidden_effect = {
+                italy_superregion = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+                sicily_superregion = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                        has_port = yes
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+            add_country_modifier = {
+                name = ath_rule_the_seas_mission
+                duration = 9125
+            }            
+        }
+    }
+    vn_ath_italian_trade = {
+        icon = the_shape_of_trades_to_come
+        position = 6
+        required_missions = { vn_ath_rule_the_seas }
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = vn_ath_italian_trade_trigger.tt
+                OR = {
+                    any_ally = {
+                        capital_scope = {
+                            OR = {
+                                superregion = italy_superregion
+                                superregion = sicily_superregion
+                            }
+                        }
+                    }
+                    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                        value = 5
+                        OR = {
+                            superregion = italy_superregion
+                            superregion = sicily_superregion
+                        }
+                        OR = {
+                            province_trade_power = 10
+                            province_has_center_of_trade_of_level = 1
+                        }
+                        has_port = yes
+                    }
+                }
+            }             
+        }
+        effect = {
+            add_years_of_income = 0.5
+#            custom_tooltip = vn_ath_italian_trade_effect.tt
+#            hidden_effect = {
+#                every_owned_province = {
+#                    limit = {
+#                        OR = {
+#                            superregion = italy_superregion
+#                            superregion = sicily_superregion
+#                        }
+#                        OR = {
+#                            province_trade_power = 10
+#                            province_has_center_of_trade_of_level = 1
+#                        }
+#                        has_port = yes
+#                    }
+#                    add_province_modifier = {
+#                        name = ath_flourishing_outposts_mission
+#                        duration = 9125
+#                    }
+#                }
+#            }
+            add_country_modifier = {
+                name = ath_italian_trade_mission
+                duration = 9125
+            }            
+        }
+    }
+}

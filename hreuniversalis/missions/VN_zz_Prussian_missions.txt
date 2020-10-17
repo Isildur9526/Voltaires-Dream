@@ -424,9 +424,9 @@ vn_pru_missions_slot_2_a = {
 			army_size = 100
 			num_of_generals = 5
 			NOT = { num_of_mercenaries = 1 }
-			militarised_society = 75
 			army_professionalism = 0.8
 			absolutism = 75
+			militarised_society = 75
         }
         effect = {
 			add_army_tradition = 10

@@ -35,23 +35,11 @@ add_core = MRV
 	add_core = TRO
 	remove_core = XBZ
 }
-1462.1.1 = {
+1485.1.1 = {
 	owner = SIL
 	controller = SIL
 	add_core = SIL
 	remove_core = TRO
-}
-1465.1.1 = {
-	owner = ZIE
-	controller = ZIE
-	add_core = ZIE
-	remove_core = SIL
-}
-1479.1.1 = {
-	owner = SIL
-	controller = SIL
-	add_core = SIL
-	remove_core = ZIE
 }
 1492.1.1 = {
 	owner = OSW

@@ -86,13 +86,98 @@ capital = 818
 		mil = 1
 	}
 }
-#done 1428 done
-
-1462.1.1 = {
+1428.12.27 = {
 	monarch = {
-		name = "Jindrich"
+		name = "Puta"
+		dynasty = "z Castolovice"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1434.1.1 = {
+	monarch = {
+		name = "Eufemia"
+		dynasty = "Piast"
+		birth_date = 1385.1.1
+		female = yes
+		adm = 0
+		dip = 3
+		mil = 2
+	}
+}
+1437.1.1 = {
+	monarch = {
+		name = "Anna"
+		dynasty = "z Koldice"
+		birth_date = 1400.1.1
+		female = yes
+		adm = 2
+		dip = 4
+		mil = 0
+	}
+}
+1440.9.6 = {
+	monarch = {
+		name = "Hynek Kruszina"
+		dynasty = "z Lichtenburka"
+		birth_date = 1392.1.1
+		religion = hussite
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+	queen = {
+		country_of_origin = ZIE
+		name = "Anna"
+		dynasty = "z Koldice"
+		birth_date = 1400.1.1
+		death_date = 1454.3.4
+		female = yes
+		adm = 2
+		dip = 4
+		mil = 0
+	}
+	heir = {
+		name = "Wilhelm"
+		monarch_name = "Wilhelm I"
+		dynasty = "z Lichtenburka"
+		birth_date = 1430.1.1
+		death_date = 1487.1.1
+		claim = 70
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1443.4.25 = { capital = 2820 }
+1454.3.4 = {
+	monarch = {
+		name = "Jerzy"
 		dynasty = "z Podebrad"
-		birth_date = 1448.1.1
+		birth_date = 1420.4.23
+		adm = 5
+		dip = 3
+		mil = 2
+	}
+	heir = {
+		name = "Wiktoryn"
+		monarch_name = "Wiktoryn"
+		dynasty = "z Podebrad"
+		birth_date = 1443.5.29
+		death_date = 1500.8.30
+		claim = 70
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1456.1.1 = { capital = 818 }
+1457.11.23 = {
+	monarch = {
+		name = "Wiktoryn"
+		dynasty = "z Podebrad"
+		birth_date = 1443.5.29
 		adm = 2
 		dip = 2
 		mil = 2

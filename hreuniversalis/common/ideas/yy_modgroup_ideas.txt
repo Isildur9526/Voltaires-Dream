@@ -489,7 +489,7 @@ EGN_ideas = {
         global_foreign_trade_power = 0.1
     }
     EGN_idea_7 = {
-        navy_tradition = 1
+        navy_tradition = 0.5
     }
 }
 
@@ -1284,8 +1284,8 @@ livonian_ideas = {
         improve_relation_modifier = 0.2
     }
     livonian_idea_4 = {
-        army_tradition = 0.25
-        navy_tradition = 0.25
+        army_tradition = 0.5
+        navy_tradition = 0.5
     }
     livonian_idea_5 = {
         production_efficiency = 0.1
@@ -1686,5 +1686,81 @@ eastfrisian_ideas = {
     }
     eastfrisian_idea_7 = {
         tolerance_heretic = 2
+    }
+}
+
+malaspina_ideas = {
+    start = {
+        heir_chance = 0.5
+        diplomatic_upkeep = 1
+    }
+    bonus = {
+        build_cost = -0.1
+    }
+    
+    trigger = {
+        dynasty = "Malaspina"
+    }
+    free = yes
+
+    malaspina_idea_1 = {
+        fabricate_claims_cost = -0.25
+    }
+    malaspina_idea_2 = {
+        shock_damage = 0.1
+        leader_land_shock = 1
+    }
+    malaspina_idea_3 = {
+       diplomatic_reputation = 1 
+    }
+    malaspina_idea_4 = {
+        prestige = 0.5
+    }
+    malaspina_idea_5 = {
+        diplomats = 1
+    }
+    malaspina_idea_6 = {
+        hostile_attrition = 1
+    }
+    malaspina_idea_7 = {
+        trade_efficiency = 0.1
+    }
+}
+
+marchigian_ideas = {
+    start = {
+        garrison_size = 0.25
+        global_garrison_growth = 0.25
+    }
+    bonus = {
+        rival_border_fort_maintenance = -0.25
+    }
+    
+    trigger = {
+        capital_scope = { area = ancona_area }
+    }
+    free = yes
+
+    marchigian_idea_1 = {
+        prestige = 0.5
+    }
+    marchigian_idea_2 = {
+        defensiveness = 0.2
+        hostile_attrition = 1
+    }
+    marchigian_idea_3 = {
+        adm_advisor_cost = -0.25
+    }
+    marchigian_idea_4 = {
+        state_maintenance_modifier = -0.15
+    }
+    marchigian_idea_5 = {
+        tolerance_heretic = 2
+    }
+    marchigian_idea_6 = {
+        leader_land_shock = 1
+    }
+    marchigian_idea_7 = {
+        production_efficiency = 0.1
     }
 }

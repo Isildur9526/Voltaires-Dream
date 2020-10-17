@@ -1016,14 +1016,14 @@ vn_lem_missions_slot_5 = {
             region = thrace_region
             OR = {
                 NOT = { owned_by = ROOT }
-                NOT = { has_non_outdated_fort = yes }
+                NOT = { province_has_current_tech_fort_trigger = yes }
             }
         }
         trigger = {
             num_of_owned_provinces_with = {
                 value = 3
                 region = thrace_region
-                has_non_outdated_fort = yes
+                province_has_current_tech_fort_trigger = yes
             }
         }
         effect = {

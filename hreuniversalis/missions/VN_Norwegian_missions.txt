@@ -526,18 +526,16 @@ vn_nor_missions_slot_3_a = {
 						}
 					}
 				}
-				custom_trigger_tooltip = {
-					tooltip = vn_nor_resist_danes.tt2
-					calc_true_if = {
-						skania_region = {
-							type = all
-							OR = {
-								is_claim = ROOT
-								is_core = ROOT
-							}
+				calc_true_if = {
+					desc = vn_nor_resist_danes.tt2
+					skania_region = {
+						type = all
+						OR = {
+							is_claim = ROOT
+							is_core = ROOT
 						}
-						amount = 2
 					}
+					amount = 2
 				}
 			}
         }
@@ -727,31 +725,27 @@ vn_nor_missions_slot_4_a = {
 					}
 				}
 				AND = {
-					custom_trigger_tooltip = {
-						tooltip = vn_nor_against_swedes.tt2
-						calc_true_if = {
-							svealand_region = {
-								type = all
-								OR = {
-									is_claim = ROOT
-									is_core = ROOT
-								}
+					calc_true_if = {
+						desc = vn_nor_against_swedes.tt2
+						svealand_region = {
+							type = all
+							OR = {
+								is_claim = ROOT
+								is_core = ROOT
 							}
-							amount = 2
 						}
+						amount = 2
 					}
-					custom_trigger_tooltip = {
-						tooltip = vn_nor_against_swedes.tt3
-						calc_true_if = {
-							gotaland_region = {
-								type = all
-								OR = {
-									is_claim = ROOT
-									is_core = ROOT
-								}
+					calc_true_if = {
+						desc = vn_nor_against_swedes.tt3
+						gotaland_region = {
+							type = all
+							OR = {
+								is_claim = ROOT
+								is_core = ROOT
 							}
-							amount = 2
 						}
+						amount = 2
 					}
 				}
 			}
