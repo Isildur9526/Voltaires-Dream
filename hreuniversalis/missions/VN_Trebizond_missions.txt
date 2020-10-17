@@ -12,47 +12,90 @@ vn_tre_missions_slot_1 = {
     has_country_shield = yes
 
     vn_tre_expel_latins = {
-        #icon = 
+        icon = mission_the_latin_empire
         position = 2
         required_missions = { vn_tre_unite_chaldia }
+        provinces_to_highlight = {
+            owned_by = LEM
+            superregion = anatolia_superregion
+        }
         trigger = {
-            
+            NOT = {
+                anatolia_superregion = {
+                    owned_by = LEM
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_take_constantinople = {
-        #icon = 
+        icon = mission_take_constantinople
         position = 4
         required_missions = { vn_tre_expel_latins }
+        provinces_to_highlight = {
+            area = thrace_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            thrace_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_end_latinokratia = {
-        #icon = 
+        icon = mission_la_latinocrazia
         position = 6
         required_missions = { vn_tre_take_constantinople }
+        provinces_to_highlight = {
+            owned_by = LEM
+        }
         trigger = {
-            
+            NOT = { exists = LEM }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_defeat_byzantine_claimants = {
-        #icon = 
+        icon = mission_pf_soldier
         position = 7
         required_missions = { vn_tre_end_latinokratia }
+        provinces_to_highlight = {
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+            OR = {
+                owned_by = EPI
+                owned_by = NKA
+                owned_by = BYZ
+            }
+        }
         trigger = {
-            
+            EPI = {
+                OR = {
+                    exists = no
+                    is_subject_of = ROOT
+                }
+            }
+            NKA = {
+                OR = {
+                    exists = no
+                    is_subject_of = ROOT
+                }
+            }
+            BYZ = {
+                OR = {
+                    exists = no
+                    is_subject_of = ROOT
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
 	}
 }
@@ -68,69 +111,107 @@ vn_tre_missions_slot_2 = {
     has_country_shield = yes
 
     vn_tre_unite_chaldia = {
-        #icon = 
+        icon = mission_pf_table_map
         position = 1
         required_missions = {  }
+        provinces_to_highlight = {
+            region = chaldia_region
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
         trigger = {
-            
+            chaldia_region = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            stability = 1
+            army_size_percentage = 0.8
+            NOT = { war_exhaustion = 1 }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_secure_marmara = {
-        #icon = 
+        icon = mission_dalmatian_conquest
         position = 3
         required_missions = { vn_tre_expel_latins }
+        provinces_to_highlight = {
+            region = opsikion_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            opsikion_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_finish_nicenes = {
-        #icon = 
+        icon = mission_city_of_the_world's_desire
         position = 4
         required_missions = { vn_tre_secure_marmara }
         trigger = {
-            
+            NOT = { exists = NKA }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_take_lycia = {
-        #icon = 
+        icon = mission_adriatic_access
         position = 5
         required_missions = { vn_tre_finish_nicenes }
+        provinces_to_highlight = {
+            region = kibyrraioton_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 15
+                region = kibyrraioton_region
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_anatolia_is_ours = {
-        #icon = 
+        icon = mission_anatolian_frontier
         position = 6
         required_missions = { vn_tre_take_lycia vn_tre_crush_the_turks }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 250
+                superregion = anatolia_superregion
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_komnenos_restoration = {
-        #icon = 
+        icon = mission_pf_cross
         position = 8
         required_missions = { vn_tre_defeat_byzantine_claimants vn_tre_anatolia_is_ours vn_tre_connect_cherson }
         trigger = {
-            
+            NOT = { exists = BYZ }
+            total_development = 1500
+            stability = 2
+            num_of_owned_provinces_with = {
+                value = 150
+                culture_group = byzantine
+            }
         }
         effect = {
-            
+            #add effect
+            #event to let player choose if they want to switch to byz?
         }
 	}
 }
@@ -146,58 +227,115 @@ vn_tre_missions_slot_3 = {
     has_country_shield = yes
 
     vn_tre_retake_theodosiopolis = {
-        #icon = 
+        icon = mission_non-western_soldier
         position = 2
         required_missions = { vn_tre_unite_chaldia }
+        provinces_to_highlight = {
+            OR = {
+                area = karin_area
+                area = koloneia_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+                OR = {
+                    area = karin_area
+                    area = koloneia_area
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_grab_galatia = {
-        #icon = 
+        icon = mission_unite_home_region
         position = 3
         required_missions = { vn_tre_retake_theodosiopolis }
+        provinces_to_highlight = {
+            OR = {
+                area = armeniakon_area
+                area = komana_area
+                area = galatia_area
+                area = ancyra_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 25
+                OR = {
+                    area = armeniakon_area
+                    area = komana_area
+                    area = galatia_area
+                    area = ancyra_area
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_conquer_phrygia = {
-        #icon = 
+        icon = mission_crusade_for_varna
         position = 4
         required_missions = { vn_tre_grab_galatia }
+        provinces_to_highlight = {
+            OR = {
+                region = phrygia_region
+                area = amorion_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 25
+                OR = {
+                    region = phrygia_region
+                    area = amorion_area
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_crush_the_turks = {
-        #icon = 
+        icon = mission_impaled_soldies
         position = 5
         required_missions = { vn_tre_conquer_phrygia }
+        provinces_to_highlight = {
+            superregion = anatolia_superregion
+            owner = { culture = turkish }
+        }
         trigger = {
-            
+            NOT = {
+                anatolia_superregion = {
+                    owner = { culture = turkish }
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_convert_asia_minor = {
-        #icon = 
+        icon = mission_hands_praying
         position = 7
         required_missions = { vn_tre_crush_the_turks }
         trigger = {
-            
+            calc_true_if = {
+                amount = 250
+                anatolia_superregion = {
+                    type = all
+                    religion_group = ROOT
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
 	}
 }
@@ -213,47 +351,85 @@ vn_tre_missions_slot_4 = {
     has_country_shield = yes
 
     vn_tre_build_euxine_fleet = {
-        #icon = 
+        icon = mission_sea_battles
         position = 1
         required_missions = {  }
         trigger = {
-            
+            navy_size_percentage = 0.8
+            num_of_admirals = 2
+            num_of_galley = 10
+            num_of_light_ship = 5
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_take_colchis = {
-        #icon = 
+        icon = mission_invade_island 
         position = 3
         required_missions = { vn_tre_build_euxine_fleet }
+        provinces_to_highlight = {
+            OR = {
+                area = abkhazia_area
+                area = imereti_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+                OR = {
+                    area = abkhazia_area
+                    area = imereti_area
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_annex_iberia = {
-        #icon = 
+        icon = mission_noble_council
         position = 5
         required_missions = { vn_tre_take_colchis }
+        provinces_to_highlight = {
+            OR = {
+                region = georgia_region
+                region = tao_region
+                area = kartli_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            OR = {
+                GEO = {
+                    is_subject_of = ROOT
+                }
+                num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                    value = 40
+                    OR = {
+                        region = georgia_region
+                        region = tao_region
+                        area = kartli_area
+                    }
+                }
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_connect_cherson = {
-        #icon = 
+        icon = mission_invade_island
         position = 7
         required_missions = { vn_tre_annex_iberia }
         trigger = {
-            
+            3178 = {
+                is_in_capital_area = yes
+            }
         }
         effect = {
-            
+            #add effect
         }
 	}
 }
@@ -269,69 +445,123 @@ vn_tre_missions_slot_5 = {
     has_country_shield = yes
 
     vn_tre_build_up_trebizond = {
-        #icon = 
+        icon = mission_war_chest
         position = 1
         required_missions = {  }
+        provinces_to_highlight = {
+            OR = {
+                region = paphlagonia_region
+                region = chaldia_region
+            }
+            OR = {
+                NOT = { development = 10 }
+                NOT = { owned_by = ROOT }
+            }
+        }
         trigger = {
-            
+            num_of_owned_provinces_with = {
+                value = 10
+                OR = {
+                    region = paphlagonia_region
+                    region = chaldia_region
+                }
+                development = 10
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_dominate_black_sea_trade = {
-        #icon = 
+        icon = mission_dominate_home_trade_node
         position = 2
         required_missions = { vn_tre_build_euxine_fleet vn_tre_build_up_trebizond }
         trigger = {
-            
+            #Trebizond node - has 90% trade power
         }
         effect = {
             
         }
     }
     vn_tre_major_ports = {
-        #icon = 
+        icon = mission_galleys_in_port
         position = 3
         required_missions = { vn_tre_dominate_black_sea_trade }
+        provinces_to_highlight = {
+            province_id = 4181
+        }
         trigger = {
-            
+            OR = {
+                dock = 5
+                drydock = 5
+            }
+            4181 = {
+                owned_by = ROOT
+                has_shipyard_building_trigger = yes
+            }
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_silk_road_trade = {
-        #icon = 
+        icon = mission_market_place_with_asian_traders
         position = 4
         required_missions = { vn_tre_major_ports }
         trigger = {
-            
+            #Ahlat node - 25% power
+            #Mosul node - 15% power
+            #Persian Gulf node - 10% power
+            #add trigger
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_byzantine_architecture = {
-        #icon = 
+        icon = mission_emperor_and_autocraft
         position = 5
         required_missions = { vn_tre_silk_road_trade }
+        provinces_to_highlight = {
+            province_id = 4181
+        }
         trigger = {
-            
+            4181 = {
+                owned_by = ROOT
+                has_tax_building_trigger = yes
+                religion = ROOT
+                development = 20
+            }
+            if = {
+                limit = { has_estate = estate_church }
+                estate_loyalty = {
+                    estate = estate_church
+                    loyalty = 60
+                }
+            }
+            religious_unity = 1
         }
         effect = {
-            
+            #add effect
         }
     }
     vn_tre_jewel_on_black_sea = {
-        #icon = 
+        icon = mission_protect_against_the_turks
         position = 6
         required_missions = { vn_tre_byzantine_architecture }
+        provinces_to_highlight = {
+            province_id = 4181
+        }
         trigger = {
-            
+            4181 = {
+                owned_by = ROOT
+                is_capital_of = ROOT
+                development = 35
+                NOT = { num_free_building_slots = 1 }
+            }
         }
         effect = {
-            
+            #add effect
         }
 	}
 }
