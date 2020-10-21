@@ -19,19 +19,30 @@
 
 #Changes
 -Pope now has a much higher chance to recognize Trinacria's independence post-Vespers
--Vespers rebel spawns toned down slightly 
--Increased required nations limit for DoF and made AI less likely to select it
+-All Byzantine culture group nations can now restore the Byzantine Empire
 -Romansch culture now uses new male/female and dynasty names instead of Italian ones
 -Changed Saint Gallen's flag
 -Extensive history changes mainly in Silesia and Switzerland
 -Changed Prudnik's province name to Osoblaha
 -Kemetism can now be revived by owning certain Egyptian provinces
--Nerfed many prestige and tradition ideas for consistency
+-Gnostic zealots will forceconvert countries if Gnosticism is dominant
+-Assyria is now formable by Nestorian and Mandaean nations. Doing so will no longer make you Yazidi.
 -Changed some trade goods modifiers
 -Soldiers Household, Impressment Office and State House now combo with many VN trade goods as well
+-Prevented Old Saxony from forming Brandenburg until they complete the "Reunite the Ducal Lands" mission
+-Various mission modifier tweaks
+
+#Balance
+-Sicilian Vespers rebel spawns toned down slightly
+-Byzantium now starts with only 10% crown land (instead of 50%) before the 4th Crusade. The Statutory Rights are disabled for them. 
+-Increased required nations limit for DoF, made it twice as expensive and made AI less likely to select it
+-Nerfed many prestige and tradition ideas for consistency
 -Upped cost of Temples/Courthouses/Workshops to 150 ducats so they are no longer free upgrades (also fixes minor interface bug due to spending no money)
 -Marketplaces, Barracks, Docks and Shipyards now cost 150 ducats up from 100
--Various mission modifier tweaks
+-Scaled development cost modifier upped slightly to make it a bit harder to develop
+-Land forcelimit per development substantially reduced to curb ridiculously large army sizes
+-Halved province trade power gain per development and nerfed trade power from CoTs
+-Full cores and territorial cores now output less in tax, sailors and manpower overall
 
 #Fixes
 -Small fixes for the following mission trees: Sweden, Navarra, Serbia, Swabia, Bohemia, Sicily, Venice, Denmark, Normandy, Portugal, France, Scotland, Baghdad, Holland/Netherlands, Seljuk, Prussia
