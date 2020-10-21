@@ -572,6 +572,8 @@ vn_sic_missions_slot_3 = {
         required_missions = { }
         trigger = {
             NOT = { current_age = age_of_empire }
+			army_size_percentage = 0.75
+			religion_group = christian
             num_of_generals = 1
             any_country = {
                 war_with = ROOT
@@ -1725,6 +1727,8 @@ vn_sic_missions_slot_5 = {
         position = 9
 		required_missions = {  }
 		trigger = {
+			prestige = 25
+			legitimacy_equivalent = 100
 			NOT = { num_of_free_diplomatic_relations = 1 }
 			OR = {
 				advisor = statesman

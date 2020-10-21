@@ -1099,7 +1099,14 @@ vn_fri_missions_slot_5_a = {
         required_missions = { 
 			vn_fri_develop_emden 
 			vn_fri_found_rustringen 
-		}
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 328
+                province_id = 2230
+                province_id = 1084
+            }
+        }
         trigger = {
             navy_size_percentage = 0.75
             custom_trigger_tooltip = {

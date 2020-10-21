@@ -4608,8 +4608,8 @@ druze_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = zoroastrian_group
 				NOT = { religion = druze }
+				dominant_religion = druze
 				NOT = { tag = PAP }
 				NOT = { tag = AVI }
 			}
@@ -5052,8 +5052,8 @@ yazidi_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = zoroastrian_group
 				NOT = { religion = yazidi }
+				dominant_religion = yazidi
 				NOT = { tag = PAP }
 				NOT = { tag = AVI }
 			}
@@ -5496,8 +5496,8 @@ mandaeism_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = zoroastrian_group
 				NOT = { religion = mandaeism }
+				dominant_religion = mandaeism
 				NOT = { tag = PAP }
 				NOT = { tag = AVI }
 			}

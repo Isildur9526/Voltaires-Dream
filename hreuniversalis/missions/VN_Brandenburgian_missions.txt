@@ -218,7 +218,10 @@ vn_bra_missions_slot_1_c = {
     }
     vn_bra_trade_with_hansa = {
         icon = mission_hanseatic_city
-        required_missions = { vn_bra_baltic_entrepots }
+		required_missions = { vn_bra_baltic_entrepots }
+		provinces_to_highlight = {
+			province_id = 13
+		}
         trigger = {
             13 = {
 				trade_share = {

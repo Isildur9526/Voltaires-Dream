@@ -393,6 +393,9 @@ vn_pie_missions_slot_4_a = {
 			vn_pie_mediterranean_power 
 			vn_pie_ligurian_traders
 		}
+		provinces_to_highlight = {
+			province_id = 2560
+		}
         trigger = {
 			2560 = {
 				trade_share = {

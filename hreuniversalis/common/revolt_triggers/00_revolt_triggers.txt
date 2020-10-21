@@ -333,6 +333,9 @@ CAS = {
 
 # Greece
 GRE = {
+	any_country = {
+		adm_tech = 56
+	}
 	NOT = { exists = BYZ }
 }
 

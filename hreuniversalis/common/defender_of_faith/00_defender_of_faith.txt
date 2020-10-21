@@ -70,6 +70,15 @@ defender_of_faith_1 = {
 				NOT = { religion = ROOT }
 			}
 		}
+		modifier = {
+			factor = 0.33
+			government_rank = 5
+			NOT = { government_rank = 6 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { government_rank = 6 }
+		}
 	}
 }
 
@@ -145,6 +154,15 @@ defender_of_faith_2 = {
 				value = 10
 				NOT = { religion = ROOT }
 			}
+		}
+		modifier = {
+			factor = 0.33
+			government_rank = 5
+			NOT = { government_rank = 6 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { government_rank = 6 }
 		}
 	}
 }
@@ -222,6 +240,15 @@ defender_of_faith_3 = {
 				value = 10
 				NOT = { religion = ROOT }
 			}
+		}
+		modifier = {
+			factor = 0.33
+			government_rank = 5
+			NOT = { government_rank = 6 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { government_rank = 6 }
 		}
 	}
 }
@@ -301,6 +328,15 @@ defender_of_faith_4 = {
 				value = 10
 				NOT = { religion = ROOT }
 			}
+		}
+		modifier = {
+			factor = 0.33
+			government_rank = 5
+			NOT = { government_rank = 6 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { government_rank = 6 }
 		}
 	}
 }
@@ -383,6 +419,15 @@ defender_of_faith_5 = {
 				value = 10
 				NOT = { religion = ROOT }
 			}
+		}
+		modifier = {
+			factor = 0.33
+			government_rank = 5
+			NOT = { government_rank = 6 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { government_rank = 6 }
 		}
 	}
 }

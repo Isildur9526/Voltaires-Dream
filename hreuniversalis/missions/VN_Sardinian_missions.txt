@@ -295,7 +295,21 @@ vn_sar_missions_slot_2 = {
 			add_adm_power = 50
 			add_prestige = 10
 			if = {
-				limit = { 2283 = { NOT = { province_has_center_of_trade_of_level = 3 } } }
+				limit = {
+					2283 = {
+						NOT = { province_has_center_of_trade_of_level = 1 }
+					}
+				}
+				2283 = {
+					center_of_trade = 1
+				}
+			}
+			else_if = {
+				limit = {
+					2283 = {
+						NOT = { province_has_center_of_trade_of_level = 3 }
+					}
+				}
 				2283 = {
 					add_center_of_trade_level = 1
 				}

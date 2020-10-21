@@ -59,6 +59,9 @@ vn_lor_missions_slot_1_a = {
     vn_lor_control_waterways = {
         icon = mission_advance_to_the_dnieper
         required_missions = { vn_lor_crossroad_of_civilisations }
+        provinces_to_highlight = {
+            province_id = 1959
+        }
         trigger = {
 			if = {
 				limit = {

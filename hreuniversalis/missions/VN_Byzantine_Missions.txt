@@ -49,9 +49,9 @@ VN_BYZ_missions_slot_1_a = {
 		}
 		effect = {
 			add_legitimacy = 10
-			add_country_modifier = {
+			add_ruler_modifier = {
 				name = "byz_talented_ruler_mission"
-				duration = 7300
+				duration = -1
 			}
 		}
 	}
@@ -176,6 +176,13 @@ VN_BYZ_missions_slot_2_a = {
 			NOT = { war_exhaustion = 1 }
 		}
 		effect = {
+			custom_tooltip = add_5_crown_land_share
+			hidden_effect = {
+				change_estate_land_share = {
+					estate = all
+					share = -5
+				}
+			}
 			add_country_modifier = {
 				name = "byz_born_in_the_purple_mission"
 				duration = 9125
@@ -574,7 +581,7 @@ VN_BYZ_missions_slot_5_a = {
 		required_missions = {  }
 		provinces_to_highlight = {
 			if = {
-				limit = { religion = orthodox }
+				limit = { owner = { religion = orthodox } }
 				owned_by = ROOT
 				OR = {
 					religion = bogomilist

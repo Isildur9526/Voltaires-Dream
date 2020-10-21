@@ -1,7 +1,7 @@
 owner = GRA
 controller = GRA
 add_core = GRA
-capital = "Cazorla"
+capital = "Qasturra"
 is_city = yes
 culture = andalucian
 religion = sunni
@@ -71,6 +71,7 @@ discovered_by = ottoman
 	remove_core = GRA
 	religion = catholic
 	culture = mozarabic
+	capital = "Cazorla"
 }
 1246.1.1 = {
 	add_core = XJA

@@ -432,6 +432,12 @@ country_event = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.8
+								cavalry = 0.2
+							}
+						}
 					}
 				}
 			}
@@ -516,9 +522,7 @@ country_event = {
 					}
 				}
 			}
-			
 		}
-		
 	}
 	option = {
 		ai_chance = { factor = 0 }
@@ -752,6 +756,12 @@ country_event = {
 						}
 						ROOT = { release = PREV }
 						change_government = monarchy
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.8
+								cavalry = 0.2
+							}
+						}
 					}
 				}
 			}

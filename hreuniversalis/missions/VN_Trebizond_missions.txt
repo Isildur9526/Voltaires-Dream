@@ -12,7 +12,7 @@ vn_tre_missions_slot_1 = {
     has_country_shield = yes
 
     vn_tre_expel_latins = {
-        icon = mission_the_latin_empire
+        icon = the_latin_empire
         position = 2
         required_missions = { vn_tre_unite_chaldia }
         provinces_to_highlight = {
@@ -20,19 +20,36 @@ vn_tre_missions_slot_1 = {
             superregion = anatolia_superregion
         }
         trigger = {
-            NOT = {
-                anatolia_superregion = {
-                    owned_by = LEM
+            custom_trigger_tooltip = {
+                tooltip = vn_tre_expel_latins.tt
+                NOT = {
+                    anatolia_superregion = {
+                        owned_by = LEM
+                    }
                 }
             }
         }
         effect = {
-            #add effect
+            add_prestige = 10
+            thrace_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            opsikion_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_take_constantinople = {
-        icon = mission_take_constantinople
-        position = 4
+        icon = take_constantinople
+        position = 3
         required_missions = { vn_tre_expel_latins }
         provinces_to_highlight = {
             area = thrace_area
@@ -45,26 +62,57 @@ vn_tre_missions_slot_1 = {
             }
         }
         effect = {
-            #add effect
+            country_event = {
+                id = vn_missions.7
+            }
+            LEM = {
+                every_owned_province = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_claim = ROOT }
+                    }
+                    add_claim = ROOT
+                }
+            }
+            thrace_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_end_latinokratia = {
-        icon = mission_la_latinocrazia
-        position = 6
+        icon = la_latinocrazia
+        position = 5
         required_missions = { vn_tre_take_constantinople }
         provinces_to_highlight = {
-            owned_by = LEM
+            OR = {
+                owned_by = LEM
+                AND = {
+                    region = thrace_region
+                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                }
+            }
         }
         trigger = {
             NOT = { exists = LEM }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 25
+                region = thrace_region
+            }
         }
         effect = {
-            #add effect
+            add_country_modifier = {
+                name = "tre_end_latinokratia_mission"
+                duration = 9125
+            }
         }
     }
     vn_tre_defeat_byzantine_claimants = {
         icon = mission_pf_soldier
-        position = 7
+        position = 6
         required_missions = { vn_tre_end_latinokratia }
         provinces_to_highlight = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -95,7 +143,10 @@ vn_tre_missions_slot_1 = {
             }
         }
         effect = {
-            #add effect
+            add_legitimacy = 25
+            add_adm_power = 75
+            add_dip_power = 75
+            add_mil_power = 75
         }
 	}
 }
@@ -111,18 +162,26 @@ vn_tre_missions_slot_2 = {
     has_country_shield = yes
 
     vn_tre_unite_chaldia = {
-        icon = mission_pf_table_map
+        icon = mission_pf_map_table
         position = 1
         required_missions = {  }
         provinces_to_highlight = {
-            region = chaldia_region
+            OR = {
+                area = polemonion_area
+                area = trebizond_area
+            }
             OR = {
                 NOT = { owned_by = ROOT }
                 NOT = { is_core = ROOT }
             }
         }
         trigger = {
-            chaldia_region = {
+            polemonion_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            trebizond_area = {
                 type = all
                 owned_by = ROOT
                 is_core = ROOT
@@ -132,11 +191,38 @@ vn_tre_missions_slot_2 = {
             NOT = { war_exhaustion = 1 }
         }
         effect = {
-            #add effect
+            optimaton_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            koloneia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            chaldia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            paphlagonia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_secure_marmara = {
-        icon = mission_dalmatian_conquest
+        icon = dalmatian_conquest
         position = 3
         required_missions = { vn_tre_expel_latins }
         provinces_to_highlight = {
@@ -150,24 +236,62 @@ vn_tre_missions_slot_2 = {
             }
         }
         effect = {
-            #add effect
+            2233 = {
+                add_trade_modifier = {
+                    who = ROOT
+                    duration = 7300
+                    power = 20
+                    key = tre_secure_marmara_mission
+                }
+            }
+            thrakesion_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_finish_nicenes = {
         icon = mission_city_of_the_world's_desire
         position = 4
         required_missions = { vn_tre_secure_marmara }
+        provinces_to_highlight = {
+            OR = {
+                AND = {
+                    region = thrakesion_region
+                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                }
+                owned_by = NKA
+            }
+        }
         trigger = {
             NOT = { exists = NKA }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 15
+                region = thrakesion_region
+            }
         }
         effect = {
-            #add effect
+            add_prestige = 15
+            add_yearly_manpower = 0.5
+            kibyrraioton_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
-    vn_tre_take_lycia = {
-        icon = mission_adriatic_access
+    vn_tre_take_lycia = { 
+        icon = adriatic_access
         position = 5
-        required_missions = { vn_tre_finish_nicenes }
+        required_missions = { 
+            vn_tre_finish_nicenes 
+            vn_tre_conquer_phrygia
+        }
         provinces_to_highlight = {
             region = kibyrraioton_region
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -179,13 +303,27 @@ vn_tre_missions_slot_2 = {
             }
         }
         effect = {
-            #add effect
+            355 = {
+                add_trade_modifier = {
+                    who = ROOT
+                    duration = 7300
+                    power = 15
+                    key = tre_take_lycia_mission
+                }
+            }
+            add_country_modifier = {
+                name = "tre_take_lycia_mission"
+                duration = 9125
+            }
         }
     }
     vn_tre_anatolia_is_ours = {
-        icon = mission_anatolian_frontier
+        icon = anatolian_frontier
         position = 6
-        required_missions = { vn_tre_take_lycia vn_tre_crush_the_turks }
+        required_missions = { 
+            vn_tre_take_lycia
+            vn_tre_crush_the_turks 
+        }
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 250
@@ -193,13 +331,20 @@ vn_tre_missions_slot_2 = {
             }
         }
         effect = {
-            #add effect
+            add_country_modifier = {
+                name = "tre_anatolia_is_ours_mission"
+                duration = 18250
+            }
         }
     }
     vn_tre_komnenos_restoration = {
         icon = mission_pf_cross
-        position = 8
-        required_missions = { vn_tre_defeat_byzantine_claimants vn_tre_anatolia_is_ours vn_tre_connect_cherson }
+        position = 7
+        required_missions = { 
+            vn_tre_defeat_byzantine_claimants 
+            vn_tre_anatolia_is_ours 
+            vn_tre_connect_cherson 
+        }
         trigger = {
             NOT = { exists = BYZ }
             total_development = 1500
@@ -210,8 +355,18 @@ vn_tre_missions_slot_2 = {
             }
         }
         effect = {
-            #add effect
-            #event to let player choose if they want to switch to byz?
+            if = {
+                limit = {
+                    NOT = { government_rank = 6 }
+                }
+                set_government_rank = 6
+            }
+            add_stability_or_adm_power = yes
+            add_legitimacy = 25
+            add_country_modifier = {
+                name = "tre_komnenos_restoration_mission"
+                duration = 36500
+            }
         }
 	}
 }
@@ -227,7 +382,7 @@ vn_tre_missions_slot_3 = {
     has_country_shield = yes
 
     vn_tre_retake_theodosiopolis = {
-        icon = mission_non-western_soldier
+        icon = mission_non-western_soldiers
         position = 2
         required_missions = { vn_tre_unite_chaldia }
         provinces_to_highlight = {
@@ -247,7 +402,38 @@ vn_tre_missions_slot_3 = {
             }
         }
         effect = {
-            #add effect
+            armeniakon_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            komana_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            galatia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            ancyra_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = "tre_retake_theodosiopolis_mission"
+                duration = 7300
+            }
         }
     }
     vn_tre_grab_galatia = {
@@ -275,7 +461,21 @@ vn_tre_missions_slot_3 = {
             }
         }
         effect = {
-            #add effect
+            add_army_tradition = 10
+            amorion_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            phrygia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_conquer_phrygia = {
@@ -299,7 +499,14 @@ vn_tre_missions_slot_3 = {
             }
         }
         effect = {
-            #add effect
+            anatolia_superregion = {
+                limit = {
+                    owner = { primary_culture = turkish }
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_crush_the_turks = {
@@ -313,17 +520,21 @@ vn_tre_missions_slot_3 = {
         trigger = {
             NOT = {
                 anatolia_superregion = {
-                    owner = { culture = turkish }
+                    owner = { primary_culture = turkish }
                 }
             }
         }
         effect = {
-            #add effect
+            add_dip_power = 100
+            add_country_modifier = {
+                name = "tre_crush_the_turks_mission"
+                duration = 18250
+            }
         }
     }
     vn_tre_convert_asia_minor = {
         icon = mission_hands_praying
-        position = 7
+        position = 6
         required_missions = { vn_tre_crush_the_turks }
         trigger = {
             calc_true_if = {
@@ -335,7 +546,87 @@ vn_tre_missions_slot_3 = {
             }
         }
         effect = {
-            #add effect
+            if = {
+                limit = {
+                    any_province = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        OR = {
+                            region = charsianon_region
+                            region = cappadokia_region
+                        }
+                        culture = turkish
+                    }
+                }
+                random_province = {
+                    limit = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        OR = {
+                            region = charsianon_region
+                            region = cappadokia_region
+                        }
+                        culture = turkish
+                    }
+                    change_culture = cappadokian
+                    add_base_tax = 1
+                    add_base_production = 1
+                    add_base_manpower = 1
+                }
+            }
+            else = {
+                add_dip_power = 100
+            }
+            if = {
+                limit = {
+                    any_province = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        OR = {
+                            region = phrygia_region
+                            region = bukellarion_region
+                        }
+                        culture = turkish
+                    }
+                }
+                random_province = {
+                    limit = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        OR = {
+                            region = phrygia_region
+                            region = bukellarion_region
+                        }
+                        culture = turkish
+                    }
+                    change_culture = phrygian
+                    add_base_tax = 1
+                    add_base_production = 1
+                    add_base_manpower = 1
+                }
+            }
+            else = {
+                add_dip_power = 100
+            }
+            if = {
+                limit = {
+                    any_province = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        region = anatolikon_region
+                        culture = turkish
+                    }
+                }
+                random_province = {
+                    limit = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        region = anatolikon_region
+                        culture = turkish
+                    }
+                    change_culture = isaurian
+                    add_base_tax = 1
+                    add_base_production = 1
+                    add_base_manpower = 1
+                }
+            }
+            else = {
+                add_dip_power = 100
+            }
         }
 	}
 }
@@ -361,12 +652,28 @@ vn_tre_missions_slot_4 = {
             num_of_light_ship = 5
         }
         effect = {
-            #add effect
+            create_admiral = {
+                tradition = 75
+            }
+            abkhazia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            imereti_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_take_colchis = {
-        icon = mission_invade_island 
-        position = 3
+        icon = mission_village
+        position = 2
         required_missions = { vn_tre_build_euxine_fleet }
         provinces_to_highlight = {
             OR = {
@@ -385,12 +692,42 @@ vn_tre_missions_slot_4 = {
             }
         }
         effect = {
-            #add effect
+            if = {
+                limit = {
+                    GEO = { valid_for_personal_unions_trigger = yes }
+                }
+                add_casus_belli = {
+                    type = cb_fabricated_claims
+                    target = GEO
+                    months = 300
+                }
+            }
+            georgia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            tao_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            kartli_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_tre_annex_iberia = {
         icon = mission_noble_council
-        position = 5
+        position = 4
         required_missions = { vn_tre_take_colchis }
         provinces_to_highlight = {
             OR = {
@@ -416,20 +753,54 @@ vn_tre_missions_slot_4 = {
             }
         }
         effect = {
-            #add effect
+            add_accepted_culture = georgian
+            shapsug_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            taman_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = "tre_annex_iberia_mission"
+                duration = -1
+            }
         }
     }
     vn_tre_connect_cherson = {
         icon = mission_invade_island
-        position = 7
+        position = 6
         required_missions = { vn_tre_annex_iberia }
+        provinces_to_highlight = {
+            province_id = 3718
+            OR = {
+                is_in_capital_area = no
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }   
+        }
         trigger = {
-            3178 = {
+            3718 = {
+                owned_by = ROOT
+                is_core = ROOT
                 is_in_capital_area = yes
             }
         }
         effect = {
-            #add effect
+            3718 = {
+                add_base_production = 2
+            }
+            add_country_modifier = {
+                name = "tre_connect_cherson_mission"
+                duration = 9125
+            }
         }
 	}
 }
@@ -469,18 +840,46 @@ vn_tre_missions_slot_5 = {
             }
         }
         effect = {
-            #add effect
+            paphlagonia_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = "tre_build_up_trebizond_mission"
+                    duration = 7300
+                }
+            }
+            chaldia_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = "tre_build_up_trebizond_mission"
+                    duration = 7300
+                }
+            }
         }
     }
     vn_tre_dominate_black_sea_trade = {
         icon = mission_dominate_home_trade_node
         position = 2
-        required_missions = { vn_tre_build_euxine_fleet vn_tre_build_up_trebizond }
+        required_missions = { 
+            vn_tre_build_euxine_fleet 
+            vn_tre_build_up_trebizond 
+        }
+        provinces_to_highlight = {
+            province_id = 4181
+        }
         trigger = {
-            #Trebizond node - has 90% trade power
+            4181 = {
+                trade_share = {
+                    country = ROOT
+                    share = 90
+                }
+            }
         }
         effect = {
-            
+            add_mercantilism = 2
+            add_country_modifier = {
+                name = "tre_dominate_black_sea_trade_mission"
+                duration = 9125
+            }
         }
     }
     vn_tre_major_ports = {
@@ -501,25 +900,72 @@ vn_tre_missions_slot_5 = {
             }
         }
         effect = {
-            #add effect
+            add_navy_tradition = 10
+            add_country_modifier = {
+                name = "tre_major_ports_mission"
+                duration = 9125
+            }
         }
     }
     vn_tre_silk_road_trade = {
         icon = mission_market_place_with_asian_traders
         position = 4
         required_missions = { vn_tre_major_ports }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 3461
+                province_id = 3690
+                province_id = 6294
+            }
+        }
         trigger = {
-            #Ahlat node - 25% power
-            #Mosul node - 15% power
-            #Persian Gulf node - 10% power
-            #add trigger
+            3461 = {
+                trade_share = {
+                    country = ROOT
+                    share = 25
+                }
+                has_merchant = ROOT
+            }
+            3690 = {
+                trade_share = {
+                    country = ROOT
+                    share = 15
+                }
+                has_merchant = ROOT
+            }
+            6294 = {
+                trade_share = {
+                    country = ROOT
+                    share = 25
+                }
+                has_merchant = ROOT
+            }
         }
         effect = {
-            #add effect
+            if = {
+				limit = {
+					has_dlc = "Dharma"
+					4181 = {
+						NOT = { province_has_center_of_trade_of_level = 3 }
+					}
+				}
+				4181 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			else = {
+				4181 = { 
+					add_base_production = 2 
+				}
+            }
+            add_country_modifier = {
+                name = "tre_silk_road_trade_mission"
+                duration = 9125
+            }
         }
     }
     vn_tre_byzantine_architecture = {
-        icon = mission_emperor_and_autocraft
+        icon = emperor_and_autocrat
         position = 5
         required_missions = { vn_tre_silk_road_trade }
         provinces_to_highlight = {
@@ -542,11 +988,16 @@ vn_tre_missions_slot_5 = {
             religious_unity = 1
         }
         effect = {
-            #add effect
+            4181 = {
+                add_province_modifier = {
+                    name = "tre_byzantine_architecture_mission"
+                    duration = 9125
+                }
+            }
         }
     }
     vn_tre_jewel_on_black_sea = {
-        icon = mission_protect_against_the_turks
+        icon = protect_against_the_turks
         position = 6
         required_missions = { vn_tre_byzantine_architecture }
         provinces_to_highlight = {
@@ -561,7 +1012,12 @@ vn_tre_missions_slot_5 = {
             }
         }
         effect = {
-            #add effect
+            4181 = {
+                add_province_modifier = {
+                    name = "tre_jewel_on_black_sea_mission"
+                    duration = 9125
+                }
+            }
         }
 	}
 }

@@ -12,4 +12,5 @@ bookmark =
 	country = EPI
 	country = ENG
 	country = CAS
+	country = TRE
 }

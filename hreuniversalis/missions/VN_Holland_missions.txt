@@ -690,6 +690,8 @@ vn_hol_missions_slot_2_b = {
         icon = mission_alliances
         required_missions = { vn_hol_army_expansion }
         trigger = { 
+			prestige = 25
+			legitimacy_equivalent = 100
 			num_of_royal_marriages = 3
         }
         effect = {
@@ -1175,6 +1177,9 @@ vn_hol_missions_slot_4_a = {
                     has_had_golden_age = yes
                 }
             }
+            else = {
+                every_owned_province = { NOT = { devastation = 1 } }
+            }
         }
         effect = {
 			add_country_modifier = {
@@ -1610,7 +1615,7 @@ vn_hol_missions_slot_5_a = {
         icon = leiden_university
         required_missions = { vn_hol_dutch_golden_age }
         provinces_to_highlight = {
-            province_id = 327
+            province_id = 3197
         }
         trigger = {
             3197 = {

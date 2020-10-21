@@ -451,17 +451,6 @@ cathedral = {
 	ai_will_do = {
 		factor = 1
 	}
-
-	on_built = {
-		FROM = {
-			if = {
-				limit = {
-					has_country_flag = improved_cathedrals_flag
-				}
-				add_corruption = -0.25
-			}
-		}
-	}
 }
 
 

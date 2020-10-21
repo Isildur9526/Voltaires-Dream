@@ -656,7 +656,7 @@ vn_swi_missions_slot_4 = {
         }
         effect = {
             add_religious_influence_effect_small = yes
-            add_stability = 1
+            add_stability_or_adm_power = yes
         }
     }
     vn_swi_control_sondrio_valley = {

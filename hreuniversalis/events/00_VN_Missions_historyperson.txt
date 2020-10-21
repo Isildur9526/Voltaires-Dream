@@ -322,6 +322,629 @@ country_event = {
     }
 }
 
+###Old Saxony
+#Claim the Thrones (Palatinate)
+country_event = {
+	id = vn_missions.206
+	title = vn_missions.206.t
+	desc = vn_missions.206.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = SAX
+		NOT = {
+			started_in = 1180.1.1
+		}
+		has_mission = vn_sax_dynastic_prowess
+		NOT = {
+			has_country_flag = sax_claim_palatinate
+		}
+		valid_for_personal_unions_trigger = yes
+		OR = {
+			PAL = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			2732 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes			
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = sax_claim_palatinate
+	} 
+	
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = PAL
+			PAL = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = PAL
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			NOT = { 
+				exists = PAL	
+			}
+			2732 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}		
+		2732 = {
+			owner = {
+				reverse_add_casus_belli = {
+					target = ROOT
+					type = cb_fabricated_claims
+					months = 60
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.206.c
+		ai_chance = { factor = 10 }
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}
+
+#Claim the Thrones (England)
+country_event = {
+	id = vn_missions.207
+	title = vn_missions.207.t
+	desc = vn_missions.207.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = SAX
+		NOT = {
+			started_in = 1180.1.1
+		}
+		has_mission = vn_sax_dynastic_prowess
+		NOT = {
+			has_country_flag = sax_claim_england
+		}
+		valid_for_personal_unions_trigger = yes
+		OR = {
+			ASE = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			ENG = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			GBR = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			2268 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes			
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = sax_claim_england
+	} 
+	
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = ASE
+			ASE = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = ASE
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = ENG
+			ENG = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = ENG
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = GBR
+			GBR = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = GBR
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			NOT = { 
+				exists = ASE
+				exists = ENG
+				exists = GBR
+			}
+			2268 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}		
+		2268 = {
+			owner = {
+				reverse_add_casus_belli = {
+					target = ROOT
+					type = cb_fabricated_claims
+					months = 60
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.206.c
+		ai_chance = { factor = 10 }
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}
+
+#Claim the Thrones (Bavaria)
+country_event = {
+	id = vn_missions.208
+	title = vn_missions.208.t
+	desc = vn_missions.208.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = SAX
+		NOT = {
+			started_in = 1180.1.1
+		}
+		has_mission = vn_sax_dynastic_prowess
+		NOT = {
+			has_country_flag = sax_claim_bavaria
+		}
+		valid_for_personal_unions_trigger = yes
+		OR = {
+			BAV = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			XMU = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			913 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes			
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = sax_claim_bavaria
+	} 
+	
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = BAV
+			BAV = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = BAV
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = XMU
+			XMU = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = XMU
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			NOT = { 
+				exists = BAV
+				exists = XMU
+			}
+			913 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}		
+		913 = {
+			owner = {
+				reverse_add_casus_belli = {
+					target = ROOT
+					type = cb_fabricated_claims
+					months = 60
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.206.c
+		ai_chance = { factor = 10 }
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}
+
+#Claim the Thrones (Burgundy)
+country_event = {
+	id = vn_missions.209
+	title = vn_missions.209.t
+	desc = vn_missions.209.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = SAX
+		NOT = {
+			started_in = 1180.1.1
+		}
+		has_mission = vn_sax_dynastic_prowess
+		NOT = {
+			has_country_flag = sax_claim_burgundy
+		}
+		valid_for_personal_unions_trigger = yes
+		OR = {
+			XAP = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			FCM = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			PRO = {
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			BUR = { 
+				valid_for_personal_unions_trigger = yes			
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+			989 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes			
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}
+	}	
+	
+	mean_time_to_happen = {
+ 		months = 1
+ 	}
+	
+	immediate = {
+		set_country_flag = sax_claim_burgundy
+	} 
+	
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = XAP
+			XAP = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = XAP
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = FCM
+			FCM = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = FCM
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = PRO
+			PRO = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = PRO
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			exists = BUR
+			BUR = {
+				valid_for_personal_unions_trigger = yes
+				OR = {
+					NOT = {
+						heir_claim = 50
+					}
+					has_heir = no
+				}
+			}
+		}		
+		add_casus_belli = {
+			target = BUR
+			type = cb_fabricated_claims
+			months = 60
+		}
+	}
+	option = {
+		name = vn_missions.206.a
+		ai_chance = { factor = 90 }
+		trigger = {
+			NOT = { 
+				exists = XAP
+				exists = FCM
+				exists = PRO
+				exists = BUR
+			}
+			989 = {
+				owner = {
+					valid_for_personal_unions_trigger = yes
+					OR = {
+						NOT = {
+							heir_claim = 50
+						}
+						has_heir = no
+					}
+				}
+			}
+		}		
+		989 = {
+			owner = {
+				reverse_add_casus_belli = {
+					target = ROOT
+					type = cb_fabricated_claims
+					months = 60
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.206.c
+		ai_chance = { factor = 10 }
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}
+
 ###Other Events
 #IDs 300 and over
 #XPavia 0, XSicily 1, XBarcelona 2, XProvence 3, XFlanders 6, XBrabant 7

@@ -59,10 +59,10 @@ vn_lux_missions_slot_1 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }          
         }
         trigger = {
-            luxemburg_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = luxemburg_region
+            }  
         }
         effect = {
             brabant_area = {
@@ -93,14 +93,14 @@ vn_lux_missions_slot_1 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }          
         }
         trigger = {
-            antwerp_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            brabant_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = antwerp_area
+            } 
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = brabant_area
+            } 
         }
         effect = {
             wallonian_region = {
@@ -161,13 +161,13 @@ vn_lux_missions_slot_2 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }          
         }
         trigger = {
-            triernorth_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-            triersouth_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = triernorth_area
+            } 
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = triersouth_area
             }
         }
         effect = {
@@ -266,8 +266,9 @@ vn_lux_missions_slot_3 = {
         position = 3
         required_missions = { vn_lux_masters_of_diplomacy }
         trigger = {
+			prestige = 25
+			legitimacy_equivalent = 100
             NOT = { num_of_free_diplomatic_relations = 1 }
-            num_of_diplomatic_relations = 5
 			num_of_royal_marriages = 3
         }
         effect = {
@@ -303,10 +304,10 @@ vn_lux_missions_slot_3 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }          
         }
         trigger = {
-            bohemia_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = bohemia_region
+            } 
         }
         effect = {
             moravia_region = {

@@ -1,7 +1,7 @@
 owner = GRA
 controller = GRA
 add_core = GRA
-capital = "Iznatoraf"
+capital = "Hisn at-Turab"
 is_city = yes
 culture = andalucian
 religion = sunni
@@ -59,6 +59,7 @@ discovered_by = ottoman
 	remove_core = JAE
 	religion = catholic
 	culture = mozarabic
+	capital = "Iznatoraf"
 }
 1516.1.23 = {
 	controller = SPA

@@ -62,7 +62,13 @@ vn_ire_missions_slot_1_a = {
         required_missions = { 
 			vn_ire_salmon_of_knowledge 
 			vn_ire_celtic_friendship 
-		}
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 258
+                province_id = 1132
+            }
+        }
         trigger = {
             258 = {
                 trade_share = {

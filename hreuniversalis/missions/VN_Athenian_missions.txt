@@ -198,10 +198,15 @@ vn_ath_missions_slot_1 = {
             province_id = 2828
         }
         trigger = {
+			if = {
+				limit = { has_dlc = "Dharma" }
+				2828 = { province_has_center_of_trade_of_level = 2 }
+			}
             2828 = {
-                development = 30
+                owned_by = ROOT
+                is_core = ROOT
+                development = 25
                 has_fort_trigger = yes
-                province_has_center_of_trade_of_level = 3
                 NOT = { num_free_building_slots = 1 }
             }
         }
@@ -707,10 +712,9 @@ vn_ath_missions_slot_3 = {
             }
             else = {
                 num_accepted_cultures = 1
-                every_province = {
-	            limit = { culture_group = byzantine }
-	            owned_by = ROOT
-	            consolidated_region_trigger = yes    
+                every_owned_province = {
+					limit = { culture_group = byzantine }
+					consolidated_region_trigger = yes    
                 }
             }
         }
@@ -747,13 +751,10 @@ vn_ath_missions_slot_4 = {
         position = 1
         required_missions = {  }
         trigger = {
-            has_3_lv3_advisors_trigger = yes
+            has_3_advisors_trigger = yes
         }
         effect = {
             add_prestige = 10
-            add_adm_power = 50
-            add_dip_power = 50
-            add_mil_power = 50
             add_country_modifier = {
                 name = "ath_the_philosphers_mission" 
                 duration = 9125
@@ -804,10 +805,8 @@ vn_ath_missions_slot_4 = {
                 }
             }
             is_lacking_institutions = no
-    	    has_adm_advisor_5 = yes
-	    has_dip_advisor_5 = yes
-	    has_mil_advisor_5 = yes  
-	    num_of_owned_and_controlled_institutions = 1
+    	    has_3_lv3_advisors_trigger = yes 
+			num_of_owned_and_controlled_institutions = 1
         }
         effect = {
             add_prestige = 10
@@ -864,9 +863,12 @@ vn_ath_missions_slot_4 = {
             NOT = { culture_group = byzantine }
         }
         trigger = {
+			if = {
+				limit = { has_dlc = "Dharma" }
+				355 = { province_has_center_of_trade_of_level = 2 }
+			}
             355 = {
                 development = 20
-                province_has_center_of_trade_of_level = 2
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 25

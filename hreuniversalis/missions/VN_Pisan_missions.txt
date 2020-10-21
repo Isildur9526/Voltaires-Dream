@@ -351,13 +351,25 @@ vn_pis_missions_slot_2 = {
         position = 6
         required_missions = { vn_pis_tyrrhenian_dominance }
         trigger = {
-            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-                value = 10
-				province_has_center_of_trade_of_level = 1
-                NOT = { 
-					region = tuscany_region
+			if = {
+				limit = { has_dlc = "Dharma" }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					province_has_center_of_trade_of_level = 1
+					NOT = { 
+						region = tuscany_region
+					}
 				}
-            }         			
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					development = 20
+					NOT = { 
+						region = tuscany_region
+					}
+				}     
+			}
         }
         effect = {
             115 = {

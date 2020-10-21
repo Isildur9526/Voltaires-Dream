@@ -13,10 +13,7 @@ country_decisions = {
 				NOT = { has_country_flag = unformable }
 				tag = NKA
 			}
-			OR = {
-				primary_culture = greek
-				primary_culture = peloponnesian
-			}
+			culture_group = byzantine
 			religion = orthodox
 		}
 		provinces_to_highlight = {

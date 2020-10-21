@@ -1,0 +1,1092 @@
+namespace = china_events
+
+############################################################################
+#
+# Events for Chinese Factions
+# Reworked and given alternative effects for Mandate of Heaven / 1.20 by Henrik Lohmander.
+#
+############################################################################
+
+# china_events.38 removed
+
+# Withdrawing Excess Paper
+country_event = {
+	id = china_events.39
+	title = "china_events.39.t"
+	desc = "china_events.39.d"
+	picture = ECONOMY_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.39.a"
+		add_inflation = 2
+	}
+	
+	option = {
+		name = "china_events.39.b"
+		add_mandate_large_effect = yes
+		add_years_of_income = -0.5
+	}
+}
+
+# Honoring The Ancestors
+country_event = {
+	id = china_events.40
+	title = "china_events.40.t"
+	desc = "china_events.40.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.40.a"
+		add_adm_power = -50
+		add_mil_power = 50
+	}
+	
+	option = {
+		name = "china_events.40.b"
+		add_dip_power = -50
+		add_adm_power = 50
+	}
+	
+	option = {
+		name = "china_events.40.c"
+		add_mil_power = -50
+		add_legitimacy = 5
+		add_meritocracy_effect = yes
+	}
+}
+
+# china_events.41 removed
+
+# Court Bickering
+country_event = {
+	id = china_events.42
+	title = "china_events.42.t"
+	desc = "china_events.42.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.42.a"
+		add_army_tradition = -10
+	}
+	
+	option = {
+		name = "china_events.42.b"
+		add_adm_power = -25
+	}
+	
+	option = {
+		name = "china_events.42.c"
+		reduce_meritocracy_effect = yes
+		add_army_tradition = -10
+		add_mandate_effect = yes
+	}
+}
+
+# china_events.43 - 44 removed
+
+### Events When Having Lost The Mandate of Heaven ###
+
+# Millenarianism / White Lotus Society
+country_event = {
+	id = china_events.45
+	title = "china_events.45.t"
+	desc = "china_events.45.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+		num_of_states = 2
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_area = {
+				limit = {
+					is_state = yes
+					NOT = { has_province_modifier = chinese_millenarianism_area }
+				}
+				set_province_flag = chinese_millenarianism
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.45.a"
+		random_owned_area = {
+			limit = { has_province_flag = chinese_millenarianism }
+			clr_province_flag = chinese_millenarianism
+			add_province_modifier = {
+				name = "chinese_millenarianism_area"
+				duration = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = "china_events.45.b"
+		every_province = { #Just to be Sure
+			limit = { has_province_flag = chinese_millenarianism }
+			clr_province_flag = chinese_millenarianism
+		}
+		add_adm_power = -50
+		add_mil_power = -50
+	}
+}
+
+# Major River Floods
+country_event = {
+	id = china_events.46
+	title = "china_events.46.t"
+	desc = "china_events.46.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.46.a"
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = "china_events.46.b"
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_legitimacy = -10
+		}
+		reduce_mandate_effect = yes
+	}
+}
+
+# Brigands on the Silk Road
+country_event = {
+	id = china_events.47
+	title = "china_events.47.t"
+	desc = "china_events.47.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.47.a"
+		add_country_modifier = {
+			name = "chi_military_protecting_traders"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "china_events.47.b"
+		add_country_modifier = {
+			name = "chi_no_law_and_order"
+			duration = 3650
+		}
+	}
+}
+
+# The Shadow that Stalks the Corridor (Ruler is growing Paranoid)
+country_event = {
+	id = china_events.48
+	title = "china_events.48.t"
+	desc = "china_events.48.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.48.a" #Paranoia!
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = -1
+		reduce_meritocracy_effect = yes
+	}
+	
+	option = {
+		name = "china_events.48.b" #Trust in those that want you dead.
+		ai_chance = {
+			factor = 20
+		}
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_legitimacy = -5
+		}
+	}
+}
+
+# Portentous Solar Eclipse
+country_event = {
+	id = china_events.49
+	title = "china_events.49.t"
+	desc = "china_events.49.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.49.a"
+		reduce_meritocracy_large_effect = yes
+		add_stability = -1
+	}
+	
+	option = {
+		name = "china_events.49.b"
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_legitimacy = -10
+		}
+	}
+}
+
+# Disloyal Officials
+country_event = {
+	id = china_events.50
+	title = "china_events.50.t"
+	desc = "china_events.50.d"
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.50.a"
+		if = {
+			limit = { has_country_modifier = lost_mandate_of_heaven }
+			add_stability = -1
+		}
+		add_country_modifier = {
+			name = "chi_purging_officials"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "china_events.50.b"
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_legitimacy = -10
+		}
+	}
+}
+
+# Disloyal Vassals
+country_event = {
+	id = china_events.51
+	title = "china_events.51.t"
+	desc = "china_events.51.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+		num_of_subjects = 1
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				save_event_target_as = unruly_subject
+			}
+		}
+	}
+	
+	option = {
+		name = "china_events.51.a"
+		event_target:unruly_subject = {
+			country_event = { id = china_events.62 }
+			add_opinion = {
+				who = ROOT
+				modifier = chi_low_mandate_subjects
+			}
+			add_liberty_desire = 20
+		}
+	}
+}
+
+# Plague Strikes the Court
+country_event = {
+	id = china_events.52
+	title = "china_events.52.t"
+	desc = "china_events.52.d"
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+		capital_scope = {
+			NOT = { has_province_modifier = severe_plague_local }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.52.a"
+		reduce_mandate_large_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_adm_power = -35
+			add_dip_power = -35
+			add_mil_power = -35
+		}
+		capital_scope = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_province_modifier = {
+					name = "severe_plague_local"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "china_events.52.b"
+		reduce_mandate_effect = yes
+		reduce_meritocracy_large_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_stability = -1
+		}
+		capital_scope = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_province_modifier = {
+					name = "severe_plague_local"
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+# Daggers in the Dark
+country_event = {
+	id = china_events.53
+	title = "china_events.53.t"
+	desc = "china_events.53.d"
+	picture = ASSASSINATION_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.53.a"
+		add_mil_power = -25
+		add_dip_power = -25
+		add_adm_power = -25
+	}
+	
+	option = {
+		name = "china_events.53.b"
+		add_country_modifier = {
+			name = "chi_unhealthy_political_climate"
+			duration = 3650
+		}
+	}
+}
+
+# The Concubine's Child
+country_event = {
+	id = china_events.54
+	title = "china_events.54.t"
+	desc = "china_events.54.d"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+		government = monarchy
+		has_government_attribute = heir
+		has_heir = no
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.54.a"
+		define_heir = {
+			age = 0
+			dynasty = ROOT
+			claim = 20
+			max_random_dip = 4
+			max_random_adm = 4
+			max_random_mil = 4
+			female = no
+		}
+		add_stability = -1
+	}
+}
+
+# Riches of China
+country_event = {
+	id = china_events.55
+	title = "china_events.55.t"
+	desc = {
+		desc = "china_events.55.d"
+		trigger = {
+			event_target:empire_of_china = {
+				NOT = { has_country_modifier = lost_mandate_of_heaven }
+			}
+		}
+	}
+	desc = {
+		desc = "china_events.55.d.not_emperor"
+		trigger = {
+			event_target:empire_of_china = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			NOT = { is_emperor_of_china = yes }
+		}
+	}
+	desc = {
+		desc = "china_events.55.d.not_emperor_but_I_am"
+		trigger = {
+			event_target:empire_of_china = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			is_emperor_of_china = yes
+		}
+	}
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		is_free_or_tributary_trigger = yes
+		any_neighbor_country = {
+			OR = {
+				has_country_modifier = lost_mandate_of_heaven
+				AND = {
+					has_dlc = "Mandate of Heaven"
+					is_emperor_of_china = yes
+					NOT = { imperial_mandate = 50 }
+				}
+			}
+			num_of_cities = 5
+			NOT = { alliance_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			any_owned_province = {
+				any_neighbor_province = {
+					owned_by = ROOT
+				}
+				NOT = { is_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					OR = {
+						has_country_modifier = lost_mandate_of_heaven
+						AND = {
+							has_dlc = "Mandate of Heaven"
+							is_emperor_of_china = yes
+							NOT = { imperial_mandate = 50 }
+						}
+					}
+					num_of_cities = 5
+					NOT = { alliance_with = ROOT }
+				}
+				save_event_target_as = empire_of_china
+				random_owned_province = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+						any_neighbor_province = {
+							owned_by = ROOT
+						}
+					}
+					set_province_flag = here_be_china
+					save_event_target_as = chinese_border_province
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "china_events.55.a"
+		tooltip = {
+			event_target:empire_of_china = {
+				random_owned_area = {
+					limit = { has_province_flag = here_be_china }
+					add_claim = ROOT
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:empire_of_china = {
+				country_event = { id = china_events.61 }
+			}
+		}
+	}
+	
+	option = {
+		name = "china_events.55.b"
+		trigger = {
+			NOT = { is_emperor_of_china = yes }
+		}
+		event_target:empire_of_china = {
+			add_opinion = {
+				who = ROOT
+				modifier = chi_did_not_seize_opportunity
+			}
+		}
+		hidden_effect = {
+			event_target:empire_of_china = {
+				every_owned_province = {
+					limit = { has_province_flag = here_be_china }
+					clr_province_flag = here_be_china
+				}
+			}
+		}
+	}
+}
+
+# Flawed Insights
+country_event = {
+	id = china_events.56
+	title = "china_events.56.t"
+	desc = "china_events.56.da"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.56.dd"
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_legitimacy = -5
+		}
+	}
+	
+}
+
+# Global Unrest
+country_event = {
+	id = china_events.57
+	title = "china_events.57.t"
+	desc = "china_events.57.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+		#Does not actually check if there are any foreign cores under our control, if so only -1 stab.
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						NOT = { tag = ROOT }
+					}
+				}
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+					}
+					save_event_target_as = low_mandate_separatism_country
+					every_core_province = {
+						limit = { owned_by = ROOT }
+						set_province_flag = low_mandate_separatism
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					any_core_country = {
+						NOT = { tag = ROOT }
+					}
+				}
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+					}
+					save_event_target_as = low_mandate_separatism_country_2
+					every_core_province = {
+						limit = { owned_by = ROOT }
+						set_province_flag = low_mandate_separatism_2
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					any_core_country = {
+						NOT = { tag = ROOT }
+					}
+				}
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+					}
+					save_event_target_as = low_mandate_separatism_country_3
+					every_core_province = {
+						limit = { owned_by = ROOT }
+						set_province_flag = low_mandate_separatism_3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "china_events.57.a"
+		add_stability = -2
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = low_mandate_separatism
+				}
+			}
+			custom_tooltip = low_mandate_separatism_tooltip_1
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_province_flag = low_mandate_separatism }
+				add_province_modifier = {
+					name = "chi_separatist_sentiments"
+					duration = 3650
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					has_province_flag = low_mandate_separatism_2
+				}
+			}
+			custom_tooltip = low_mandate_separatism_tooltip_2
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_province_flag = low_mandate_separatism_2 }
+				add_province_modifier = {
+					name = "chi_separatist_sentiments"
+					duration = 3650
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					NOT = { has_province_flag = low_mandate_separatism_2 }
+					has_province_flag = low_mandate_separatism_3
+				}
+			}
+			custom_tooltip = low_mandate_separatism_tooltip_3
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_province_flag = low_mandate_separatism_3 }
+				add_province_modifier = {
+					name = "chi_separatist_sentiments"
+					duration = 3650
+				}
+				clr_province_flag = low_mandate_separatism_3
+			}
+			every_province = {
+				limit = {
+					OR ={
+						has_province_flag = low_mandate_separatism
+						has_province_flag = low_mandate_separatism_2
+						has_province_flag = low_mandate_separatism_3
+					}
+				}
+				clr_province_flag = low_mandate_separatism
+				clr_province_flag = low_mandate_separatism_2
+				clr_province_flag = low_mandate_separatism_3
+			}
+		}
+	}
+}
+
+# Grand Secretary Howls at the Moon
+country_event = {
+	id = china_events.58
+	title = "china_events.58.t"
+	desc = "china_events.58.d"
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.58.a" # This is not a Ramones' reference
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_legitimacy = -15
+		}
+	}
+	
+	option = {
+		name = "china_events.58.b" # Neither is this
+		reduce_meritocracy_large_effect = yes
+		if = {
+			limit = {
+				has_country_modifier = lost_mandate_of_heaven
+			}
+			add_stability = -1
+		}
+	}
+}
+
+# Tax Barge Sinks
+country_event = {
+	id = china_events.59
+	title = "china_events.59.t"
+	desc = "china_events.59.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.59.a"
+		add_years_of_income = -0.5
+	}
+	
+	option = {
+		name = "china_events.59.b"
+		add_inflation = 2
+	}
+}
+
+# False Edicts
+country_event = {
+	id = china_events.60
+	title = "china_events.60.t"
+	desc = "china_events.60.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		NOT = { has_country_modifier = chi_false_edicts_modifier }
+		OR = {
+			has_country_modifier = the_mandate_of_heaven_lost
+			has_country_modifier = lost_mandate_of_heaven
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+				NOT = { imperial_mandate = 21 }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "china_events.60.a" #Pretend that they are ours
+		add_country_modifier = {
+			name = chi_false_edicts_modifier
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "china_events.60.b" #Rescind them!
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_dlc = "Mandate of Heaven" }
+					has_country_modifier = lost_mandate_of_heaven
+				}
+			}
+			add_legitimacy = -10
+		}
+	}
+}
+
+# Notification from Riches of China
+country_event = {
+	id = china_events.61
+	title = "china_events.61.t"
+	desc = "china_events.61.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "china_events.61.a"
+		random_owned_area = {
+			limit = { has_province_flag = here_be_china }
+			add_claim = FROM
+			clr_province_flag = here_be_china
+		}
+	}
+}
+
+
+# Notification Unruly subject event
+country_event = {
+	id = china_events.62
+	title = "china_events.62.t"
+	desc = "china_events.62.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "china_events.62.a"
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = chi_low_mandate_subjects
+			}
+		}
+	}
+}

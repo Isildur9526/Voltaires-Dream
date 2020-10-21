@@ -3549,6 +3549,8 @@ country_decisions = {
 			NOT = { tag = ASY }
 			NOT = { has_reform = tsardom }
 			OR = {
+				religion = nestorian
+				religion = mandaeism
 				religion = yazidi
 				primary_culture = aramaic
 			}
@@ -3596,11 +3598,8 @@ country_decisions = {
 				limit = { NOT = { primary_culture = aramaic } }
 				change_primary_culture = aramaic
 			}
-			if = {
-				limit = { NOT = { religion = yazidi } }
-				change_religion = yazidi
-			}
 			change_tag = ASY
+			set_country_flag = unformable
 			set_capital = 6330
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {

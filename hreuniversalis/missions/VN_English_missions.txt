@@ -1891,6 +1891,9 @@ vn_eng_missions_slot_4_e = {
 	vn_eng_muscovy_company = {
         icon = mission_rb_colonise_canada
         required_missions = { vn_eng_scandinavian_trade }
+        provinces_to_highlight = {
+            province_id = 3427
+        }
         trigger = {
 			3427 = {
 				trade_share = {

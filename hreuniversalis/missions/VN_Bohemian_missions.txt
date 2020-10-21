@@ -14,6 +14,7 @@ vn_boh_missions_slot_1 = {
         position = 1
         required_missions = { }
         trigger = {
+			prestige = 25
             legitimacy_equivalent = 100
             government_rank = 5
             is_elector = yes
@@ -21,7 +22,7 @@ vn_boh_missions_slot_1 = {
         effect = {
             add_country_modifier = {
                 name = boh_kingdom_of_bohemia_mission
-                duration = 9125
+                duration = -1
             }
         }
     }
@@ -122,9 +123,9 @@ vn_boh_missions_slot_1 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            austria_region = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = austria_region
             }
         }
         effect = {
@@ -156,13 +157,13 @@ vn_boh_missions_slot_1 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            styria_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = styria_area
             }
-            murmark_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = murmark_area
             }
         }
         effect = {
@@ -208,13 +209,13 @@ vn_boh_missions_slot_1 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            sannmark_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = sannmark_area
             }
-            carniola_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = carniola_area
             }
         }
         effect = {
@@ -560,7 +561,7 @@ vn_boh_missions_slot_2 = {
         effect = {
             add_country_modifier = {
                 name = boh_law_of_emphyteusis_mission
-                duration = -1
+                duration = 9125
             }
         }
 	}
@@ -576,13 +577,13 @@ vn_boh_missions_slot_2 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            carinthia_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = carinthia_area
             }
-            lienz_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = lienz_area
             }
         }
         effect = {
@@ -778,7 +779,7 @@ vn_boh_missions_slot_3 = {
             781 = {
                 add_province_modifier = {
                     name = boh_university_of_prague_mission
-                    duration = 10950
+                    duration = -1
                 }
             }
         }
@@ -941,13 +942,13 @@ vn_boh_missions_slot_4 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            oberpfalz_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = oberpfalz_area
             }
-            leuchtenburg_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = leuchtenburg_area
             }
         }
         effect = {
@@ -1121,17 +1122,17 @@ vn_boh_missions_slot_5 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            meissen_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = meissen_area
             }
-            merseburg_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = merseburg_area
             }
-            osterland_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                region = osterland_area
             }
         }
         effect = {

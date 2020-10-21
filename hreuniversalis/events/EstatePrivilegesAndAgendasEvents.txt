@@ -110,6 +110,7 @@ country_event = {
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
 	trigger = {
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { crown_land_share = 11 }
 		OR = {
 			AND = {

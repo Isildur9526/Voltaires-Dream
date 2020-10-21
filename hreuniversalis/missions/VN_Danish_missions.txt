@@ -547,6 +547,12 @@ vn_dan_missions_slot_3_a = {
         icon = mission_heart_of_the_hansa
         position = 3
 		required_missions = { vn_dan_control_oresund }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 13
+				province_id = 1084
+			}
+		}
         trigger = {
             13 = {
 				trade_share = {

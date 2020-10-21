@@ -1013,8 +1013,8 @@ vn_bgh_missions_slot_3 = {
 				has_trade_building_trigger = yes
 			}
 			if = {
-                limit = { has_dlc = "Dharma" }
-            	6301 = { province_has_center_of_trade_of_level = 2 }
+				limit = { has_dlc = "Dharma" }
+				6301 = { province_has_center_of_trade_of_level = 2 }
 			}
 			else = {
 				6301 = {

@@ -1620,7 +1620,10 @@ vn_cas_missions_slot_4_d = {
 	vn_cas_curb_barbary_piracy = {
 		icon = mission_combat_barbary_piracy
 		position = 9
-		required_missions = { vn_cas_moroccan_outposts }
+        required_missions = { vn_cas_moroccan_outposts }
+        provinces_to_highlight = {
+            province_id = 1946
+        }
 		trigger = {
 			1946 = {
 				trade_share = {

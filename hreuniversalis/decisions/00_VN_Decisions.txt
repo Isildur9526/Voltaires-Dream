@@ -778,6 +778,16 @@ country_decisions = {
 			NOT = { exists = BRA }
 			NOT = { exists = PRU }
 			NOT = { tag = PTH }
+			if = {
+				limit = {
+					OR = {
+						tag = SAX
+						was_tag = SAX
+					}
+					NOT = { started_in = 1180.1.1 }
+				}
+				has_mission = vn_sax_reunite_the_stem_duchy
+			}
 			primitives = no
 			NOT = { has_country_flag = unformable }
 			primary_culture = central_margravian
@@ -2117,6 +2127,7 @@ country_decisions = {
 		}
 		allow = {
 			is_at_war = no
+			stability = 1
 			meritocracy = 100
 			imperial_mandate = 100
 			any_subject_country = {

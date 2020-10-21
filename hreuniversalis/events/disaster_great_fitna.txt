@@ -748,8 +748,8 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_heir_flag = nizar_heir_flag }
+				clr_heir_flag = nizar_heir_flag
 			}
-			clr_heir_flag = nizar_heir_flag
 		}
 	}
 

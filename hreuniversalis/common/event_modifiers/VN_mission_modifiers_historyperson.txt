@@ -524,14 +524,14 @@ karling_conquer_brittany_mission = {
 #Sicily
 sic_defeat_byzantium_mission = {
 	core_creation = -0.25
-	army_tradition = 0.5
+	discipline = 0.05
 }
 sic_conquer_achaea_mission = {
 	galley_cost = -0.2
 	sailors_recovery_speed = 0.2
 }
 sic_conquer_apulia_mission = {
-	land_morale = 0.1
+	global_manpower_modifier = 0.2
 	army_tradition_decay = -0.01
 }
 sic_conquer_poitiers_mission = {
@@ -544,7 +544,7 @@ sic_challenge_byzantium_mission = {
 }
 sic_latin_sicily_mission = {
 	stability_cost_modifier = -0.1
-	global_unrest = -2
+	global_unrest = -1
 }
 sic_defeat_the_vespers_mission = {
 	years_of_nationalism = -5
@@ -564,7 +564,7 @@ sic_conquer_epirus_mission = {
 }
 sic_religious_war_mission = {
 	warscore_cost_vs_other_religion = -0.1
-	discipline = 0.05
+	manpower_recovery_speed = 0.2
 }
 sic_conquer_jerusalem_mission = {
 	tolerance_own = 1
@@ -592,7 +592,8 @@ sic_challenge_genoa_mission = {
 	naval_maintenance_modifier = -0.1
 }
 sic_conquer_milan_mission = {
-	stability_cost_modifier = -0.1
+	max_absolutism = 20
+	yearly_absolutism = 0.5
 	army_tradition = 0.5
 }
 sic_conquer_provence_mission = {
@@ -712,7 +713,7 @@ boh_archbishoric_of_prague_mission = {
 	monthly_fervor_increase = 1
 }
 boh_bohemian_uprising_mission = {
-	warscore_cost_vs_other_religion = -0.2
+	warscore_cost_vs_other_religion = -0.25
 	land_morale = 0.1
 }
 boh_conquer_moravia_mission = {
@@ -738,16 +739,16 @@ boh_defense_from_the_mongols_mission = {
 	fort_maintenance_modifier = -0.15
 }
 boh_law_of_emphyteusis_mission = {
-	global_autonomy = -0.03
 	yearly_absolutism = 0.5
+	global_autonomy = -0.03
 }
 boh_golden_age_mission = {
 	diplomatic_upkeep = 1
 	ae_impact = -0.1
 }
 boh_kingdom_of_bohemia_mission = {
-	advisor_cost = -0.2
-	yearly_corruption = -0.1
+	core_creation = -0.1
+	global_manpower_modifier = 0.2
 }
 boh_manufactories_and_furnaces_mission = {
 	local_production_efficiency = 0.15
@@ -762,7 +763,7 @@ boh_aspire_for_local_control_event = {
 	diplomatic_upkeep = 1
 }
 boh_muster_our_strength_event = {
-	global_regiment_cost = -0.05
+	global_regiment_cost = -0.1
 	army_tradition = 0.5
 }
 
