@@ -1,0 +1,96 @@
+namespace = russian_factionalism
+
+########################################
+# Factionalism of the Rus
+########################################
+
+#Start
+country_event = {
+    id = russian_factionalism.1
+    title = russian_factionalism.1.t
+    desc = russian_factionalism.1.d
+    picture = COURT_INTRIGUE_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+    mean_time_to_happen = {
+        days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						is_state = yes
+					}
+					spawn_rebels = {
+						type = particularist_rebels 
+						size = 3
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_state = yes
+					}
+					spawn_rebels = {
+						type = particularist_rebels 
+						size = 3
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_state = yes
+					}
+					spawn_rebels = {
+						type = particularist_rebels 
+						size = 3
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_state = yes
+					}
+					spawn_rebels = {
+						type = particularist_rebels 
+						size = 3
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_state = yes
+					}
+					spawn_rebels = {
+						type = particularist_rebels 
+						size = 3
+					}
+				}
+			}
+		}
+	}
+
+    option = {
+		name = russian_factionalism.1.a
+		add_stability = -3
+		add_mandate = -35
+		add_meritocracy = -35
+        set_country_flag = had_russian_factionalism
+    }
+}
+
+#End
+country_event = {
+    id = russian_factionalism.100
+    title = russian_factionalism.100.t
+	desc = russian_factionalism.100.d
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = russian_factionalism.100.a
+		add_mandate = 20
+		add_meritocracy = 20
+	}
+}

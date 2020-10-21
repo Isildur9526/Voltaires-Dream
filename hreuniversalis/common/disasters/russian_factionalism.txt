@@ -1,0 +1,91 @@
+russian_factionalism = {
+	potential = {
+		normal_or_historical_nations = yes
+		NOT = { has_country_flag = had_russian_factionalism }
+		has_dlc = "Mandate of Heaven"
+		tag = KIE
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		NOT = { imperial_mandate = 50 }
+		is_emperor_of_china = yes
+	}
+	
+	can_stop = {
+		OR = {
+			imperial_mandate = 50
+			is_emperor_of_china = no
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { imperial_mandate = 10 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { imperial_mandate = 30 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { imperial_mandate = 50 }
+		}
+		modifier = {
+			factor = 1
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 5
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = -0.5
+			ADM = 5
+		}
+		modifier = {
+			factor = -0.5
+			DIP = 5
+		}
+		modifier = {
+			factor = -0.5
+			MIL = 5
+		}
+	}
+	
+	can_end = {
+		stability = 1
+		OR = {
+			imperial_mandate = 75
+			is_emperor_of_china = no
+		}
+	}
+
+	modifier = {
+		global_unrest = 8
+		land_morale = -0.15
+		yearly_patriarch_authority = -1
+	}
+	
+	on_start = russian_factionalism.1
+	on_end = russian_factionalism.100
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			
+		}
+	}
+}
