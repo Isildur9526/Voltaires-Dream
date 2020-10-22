@@ -20,51 +20,50 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			hidden_effect = {
-				random_owned_province = {
-					limit = {
-						is_state = yes
-					}
-					spawn_rebels = {
-						type = particularist_rebels 
-						size = 3
-					}
+			set_country_flag = had_russian_factionalism
+			random_owned_province = {
+				limit = {
+					is_state = yes
 				}
-				random_owned_province = {
-					limit = {
-						is_state = yes
-					}
-					spawn_rebels = {
-						type = particularist_rebels 
-						size = 3
-					}
+				spawn_rebels = {
+					type = particularist_rebels 
+					size = 2
 				}
-				random_owned_province = {
-					limit = {
-						is_state = yes
-					}
-					spawn_rebels = {
-						type = particularist_rebels 
-						size = 3
-					}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
 				}
-				random_owned_province = {
-					limit = {
-						is_state = yes
-					}
-					spawn_rebels = {
-						type = particularist_rebels 
-						size = 3
-					}
+				spawn_rebels = {
+					type = particularist_rebels 
+					size = 2
 				}
-				random_owned_province = {
-					limit = {
-						is_state = yes
-					}
-					spawn_rebels = {
-						type = particularist_rebels 
-						size = 3
-					}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+				}
+				spawn_rebels = {
+					type = particularist_rebels 
+					size = 2
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+				}
+				spawn_rebels = {
+					type = particularist_rebels 
+					size = 2
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+				}
+				spawn_rebels = {
+					type = particularist_rebels 
+					size = 2
 				}
 			}
 		}
@@ -75,8 +74,82 @@ country_event = {
 		add_stability = -3
 		add_mandate = -35
 		add_meritocracy = -35
-        set_country_flag = had_russian_factionalism
+		if = {
+			limit = {
+				has_government_mechanic = russian_mechanic
+			}
+			add_government_power = {
+				government_mechanic = russian_mechanic
+				which = ADM
+				amount = -100
+			}
+			add_government_power = {
+				government_mechanic = russian_mechanic
+				which = DIP
+				amount = -100
+			}
+			add_government_power = {
+				government_mechanic = russian_mechanic
+				which = MIL
+				amount = -100
+			}
+		}
     }
+}
+
+#Rebels
+country_event = {
+	id = russian_factionalism.2
+	title = "russian_factionalism.2.t"
+	desc = "russian_factionalism.2.d"
+	picture = ANGRY_MOB_eventPicture
+	goto = kiev_reb_prov
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			is_state = yes
+			NOT = { local_autonomy = 75 }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					NOT = { local_autonomy = 75 }
+				}
+				save_event_target_as = kiev_reb_prov
+			}
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.2.a
+		ai_chance = { factor = 1 }
+		add_mandate = 5
+		event_target:kiev_reb_prov = {
+			spawn_rebels = {
+				type = particularist_rebels 
+				size = 2
+			}
+		}
+	}
+	option = {
+		name = russian_factionalism.2.b
+		ai_chance = { factor = 0 }
+		add_mandate = -5
+		event_target:kiev_reb_prov = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = 50
+			}
+		}
+	}
 }
 
 #End

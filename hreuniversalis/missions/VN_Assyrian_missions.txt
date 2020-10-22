@@ -1,0 +1,250 @@
+#Angevin missions
+#Contributed by Retrog
+#Coded by RetrogMXII
+
+vn_asy_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = ASY
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_asy_assyrian_militarism = {
+        icon = mission_bijapur_karnatak
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_resettlement_culture = {
+        icon = mission_bedouins
+        position = 3
+        required_missions = { vn_asy_assyrian_militarism }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_pacify_palestine = {
+        icon = mission_high_income
+        position = 5
+        required_missions = { vn_asy_resettlement_culture vn_asy_conquer_palestine }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_asy_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = ASY
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_asy_library_of_assurbanipal = {
+        icon = mission_imperial_cities
+        position = 2
+        required_missions = { vn_asy_assyrian_militarism }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_syria = {
+        icon = mission_persian_soldier
+        position = 3
+        required_missions = { vn_asy_conquer_assyria }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_palestine = {
+        icon = mission_unite_home_region
+        position = 4
+        required_missions = { vn_asy_conquer_syria }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_social_reforms = {
+        icon = mission_indian_stateman
+        position = 5
+        required_missions = { vn_asy_conquer_palestine }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_asy_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = ASY
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_asy_conquer_assur = {
+        icon = mission_into_persia_1
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_assyria = {
+        icon = mission_reclaim_lost_territory
+        position = 2
+        required_missions = { vn_asy_conquer_assur }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_armenia = {
+        icon = mission_have_two_subjects
+        position = 3
+        required_missions = { vn_asy_conquer_assyria }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_cilicia = {
+        icon = mission_large_army
+        position = 4
+        required_missions = { vn_asy_conquer_armenia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_egypt = {
+        icon = mission_rb_seize_alexandria
+        position = 5
+        required_missions = { vn_asy_conquer_cilicia vn_asy_conquer_palestine }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_asy_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = ASY
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_asy_assyrian_faith = {
+        icon = mission_hands_praying
+        position = 1
+        required_missions = {  }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_mesopotamia = {
+        icon = mission_restore_rule_over_mysore
+        position = 3
+        required_missions = { vn_asy_conquer_assyria vn_asy_assyrian_faith }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_conquer_bahrain = {
+        icon = mission_the_battle_for_raichur
+        position = 4
+        required_missions = { vn_asy_conquer_mesopotamia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}
+
+vn_asy_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = ASY
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_asy_church_of_the_east = {
+        icon = spread_piety
+        position = 2
+        required_missions = { vn_asy_assyrian_faith }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+    }
+    vn_asy_rebuild_babylon = {
+        icon = mission_great_wall
+        position = 4
+        required_missions = { vn_asy_conquer_mesopotamia }
+        trigger = {
+            
+        }
+        effect = {
+            
+        }
+	}
+}

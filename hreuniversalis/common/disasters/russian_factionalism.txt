@@ -74,7 +74,7 @@ russian_factionalism = {
 	modifier = {
 		global_unrest = 8
 		land_morale = -0.15
-		yearly_patriarch_authority = -1
+		reduced_liberty_desire_on_same_continent = -50
 	}
 	
 	on_start = russian_factionalism.1
