@@ -1,0 +1,332 @@
+namespace = vn_missions
+
+###ASSYRIA###
+#Religious Uncertainty
+country_event = {
+	id = vn_missions.9
+	title = vn_missions.9.t
+	desc = vn_missions.9.d
+	picture = muslimgfx_WESTERNISATION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = vn_missions.9.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion = mandaeism }
+			}
+		}
+		change_religion = nestorian
+		capital_scope = {
+			change_religion = nestorian
+		}
+		every_province = {
+			limit = {
+				continent = asia
+				religion = nestorian
+				NOT = { is_core = ROOT }
+			}
+			add_core = ROOT
+		}
+	}
+	option = {
+		name = vn_missions.9.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion = yazidi }
+			}
+		}
+		change_religion = yazidi
+		capital_scope = {
+			change_religion = yazidi
+		}
+	}
+	option = {
+		name = vn_missions.9.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion = mandaeism }
+			}
+		}
+		change_religion = mandaeism
+		capital_scope = {
+			change_religion = mandaeism
+		}
+	}
+	option = {
+		name = vn_missions.9.dd
+		trigger = { religion_group = muslim }
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = avoid_choosing_madhhab_flag
+		change_religion = zikri
+		capital_scope = {
+			change_religion = zikri
+		}
+		set_religious_school = {
+			group = muslim
+			school = nizari_school
+		}
+		clr_country_flag = avoid_choosing_madhhab_flag
+	}
+	option = {
+		name = vn_missions.9.e
+		trigger = {
+			NOT = {
+				religion = nestorian
+				religion = yazidi
+				religion = mandaeism
+				religion_group = muslim
+			}
+		}
+		add_country_modifier = {
+			name = muslim_enforced_religion
+			duration = 7300
+		}
+	}
+}
+
+#The Church of the East
+country_event = {
+	id = vn_missions.10
+	title = vn_missions.10.t
+	desc = vn_missions.10.d
+	picture = muslimgfx_WESTERNISATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = vn_missions.10.a
+		trigger = { religion = nestorian }
+		add_stability_or_adm_power = yes
+		if = {
+			limit = { has_dlc = "Mandate of Heaven" }
+			if = {
+				limit = { isolationism = 4 }
+				reverse_add_opinion = {
+					who = PAP
+					modifier = opinion_displeased
+				}
+			}
+			else_if = {
+				limit = { isolationism = 3 }
+				reverse_add_opinion = {
+					who = PAP
+					modifier = opinion_mildly_displeased
+				}
+			}
+			else_if = {
+				limit = { isolationism = 2 }
+				reverse_add_opinion = {
+					who = PAP
+					modifier = opinion_amused
+				}
+			}
+			else_if = {
+				limit = { isolationism = 1 }
+				reverse_add_opinion = {
+					who = PAP
+					modifier = opinion_pleased
+				}
+			}
+			else = {
+				reverse_add_opinion = {
+					who = PAP
+					modifier = opinion_good_relations
+				}
+			}
+		}
+		else = {
+			add_prestige = 20
+		}
+	}
+	option = {
+		name = vn_missions.10.b
+		trigger = { religion = nestorian }
+		if = {
+			limit = { has_dlc = "Mandate of Heaven" }
+			if = {
+				limit = {
+					OR = {
+						isolationism = 3
+						isolationism = 4
+					}
+				}
+				add_stability = -1
+			}
+			if = {
+				limit = {
+					isolationism = 1
+				}
+				add_isolationism = -1
+			}
+			else = {
+				add_prestige = 25
+			}
+		}
+		else = {
+			add_legitimacy = 10
+			add_prestige = 25
+		}
+		reverse_add_opinion = {
+			who = PAP
+			modifier = opinion_good_relations
+		}
+	}
+	option = {
+		name = vn_missions.10.c
+		trigger = { religion = nestorian }
+		if = {
+			limit = { has_dlc = "Mandate of Heaven" }
+			if = {
+				limit = {
+					OR = {
+						isolationism = 3
+						isolationism = 4
+					}
+				}
+				add_stability = -1
+			}
+			if = {
+				limit = {
+					isolationism = 1
+				}
+				add_isolationism = -1
+			}
+			else = {
+				add_prestige = 25
+			}
+		}
+		else = {
+			add_legitimacy = 10
+			add_prestige = 25
+		}
+		reverse_add_opinion = {
+			who = PAP
+			modifier = opinion_displeased
+		}
+	}
+	option = {
+		name = vn_missions.10.dd
+		trigger = { NOT = { religion = nestorian } }
+		add_prestige = 50
+		add_stability_or_adm_power = yes
+		6301 = {
+			remove_province_triggered_modifier = theravada_kotte
+		}
+		every_province = {
+			limit = { religion = nestorian }
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 3650
+			}
+		}
+	}
+}
+
+#Return of the Israelites
+country_event = {
+	id = vn_missions.11
+	title = vn_missions.11.t
+	desc = vn_missions.11.d
+	picture = muslimgfx_WESTERNISATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = vn_missions.11.a
+		random_province = {
+			limit = { region = palestine_region }
+			change_religion = jewish
+			change_culture = hebrew
+			hidden_effect = {
+				add_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.11.b
+		set_variable = { which = jewdev_index value = 20 }
+		while = {
+			limit = {
+				check_variable = { which = jewdev_index value = 1 }
+			}
+			subtract_variable = { which = almoravid1_index value = 1 }
+			random_owned_province = {
+				random_list = {
+					33 = { add_base_tax = 1 }
+					33 = { add_base_production = 1 }
+					33 = { add_base_manpower = 1 }
+				}
+			}
+		}
+	}
+	option = {
+		name = vn_missions.11.c
+		goto = 4974
+		trigger = { NOT = { religion = jewish } }
+		add_years_of_income = 3
+		4974 = {
+			spawn_rebels = {
+				size = 2
+				type = jewish_rebels
+				win = yes
+			}
+		}
+	}
+	option = {
+		name = vn_missions.11.dd
+		limit = { religion_group = muslim }
+		add_years_of_income = 1
+		add_yearly_manpower = 1
+		add_estate_dhimmi_loyalty_effect = yes
+		change_estate_land_share = {
+			estate = estate_dhimmi
+			share = 3
+		}
+		random_province = {
+			limit = { region = palestine_region }
+			change_religion = jewish
+			change_culture = hebrew
+			hidden_effect = {
+				add_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+		}
+		random_province = {
+			limit = { region = palestine_region }
+			change_religion = jewish
+			change_culture = hebrew
+			hidden_effect = {
+				add_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+		}
+		random_province = {
+			limit = { region = palestine_region }
+			change_religion = jewish
+			change_culture = hebrew
+			hidden_effect = {
+				add_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+		}
+	}
+}

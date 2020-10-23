@@ -1,3 +1,25 @@
 ﻿l_english:
  russian_factionalism: "Factionalism of the Rus"
  russian_factionalism_desc: "The Grand Prince of the Rus has lost the loyalty of his subjects while pretenders are challenging him."
+
+
+#Assyria
+ vn_missions.9.t: "Religious Uncertainty"
+ vn_missions.9.d: "Religious instability made our nation reconsider the path they are on. What faith shall govern our nation from now on?"
+ vn_missions.9.a: "Choose the Church of the East."
+ vn_missions.9.b: "Return to our ancient roots."
+ vn_missions.9.c: "Find a suitable middle ground."
+ vn_missions.9.dd: "Bow down to Allah."
+ vn_missions.9.e: "Enforce the [Root.Religion.GetName] faith!"
+ vn_missions.10.t: "The Church of the East"
+ vn_missions.10.d: "We finally control the Patriarchate of the Church of the East. The time has come for us to decide its fate."
+ vn_missions.10.a: "The current situation is fine."
+ vn_missions.10.b: "Come to an understanding with the Church."
+ vn_missions.10.c: "Demand full autonomy."
+ vn_missions.10.dd: "Abolish the Church."
+ vn_missions.11.t: "Return of the Israelites"
+ vn_missions.11.d: "After the Black Death had lied waste to Europe, a lot of Jews were expelled from their homes. In the hope for a better future, many travelled to the home they desired to return to the most, hoping that the current [Root.GetAdjective] [Root.GovernmentName] is more tolerant than the Assyrian Empires of the past. However, this is up to us to decide."
+ vn_missions.11.a: "Allow them to settle in Judah."
+ vn_missions.11.b: "Disperse them all over the [Root.GovernmentName]."
+ vn_missions.11.c: "Take their money and tell them to leave."
+ vn_missions.11.dd: "Allow them to settle as Dhimmi."
