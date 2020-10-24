@@ -1135,7 +1135,10 @@ cb_force_tributary = {
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
 		is_emperor_of_china = yes
-		is_neighbor_of = FROM
+		OR = {
+			is_neighbor_of = FROM
+			FROM = { has_country_flag = allow_quick_tributary_cb }
+		}
 		FROM = {
 			is_subject = no
 			is_part_of_hre = no

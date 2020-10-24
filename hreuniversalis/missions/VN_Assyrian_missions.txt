@@ -17,45 +17,48 @@ vn_asy_missions_slot_1 = {
         position = 1
         required_missions = {  }
         trigger = {
-            
+            is_at_war = yes
+            army_size_percentage = 0.75
+            if = {
+                limit = { has_dlc = "Cradle of Civilization" }
+                OR = {
+                    army_tradition = 33
+                    army_professionalism = 0.33
+                }
+            }
+            else = {
+                army_tradition = 33
+            }
         }
         effect = {
-            
+            raise_war_taxes = yes
+            add_country_modifier = {
+                name = asy_assyrian_militarism_mission
+                duration = 9125
+            }
         }
     }
     vn_asy_resettlement_culture = {
         icon = mission_bedouins
         position = 3
         required_missions = { vn_asy_assyrian_militarism }
-        provinces_to_highlight = {
-            OR = {
-                province_id = 6330
-                province_id = 3690
-            }
-            OR = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
-                NOT = { development = 20 }
-            }
-        }
         trigger = {
-            6330 = {
-                owned_by = ROOT
-                is_core = ROOT
-                development = 20
-            }
-            3690 = {
-                owned_by = ROOT
-                is_core = ROOT
-                development = 20
-            }
+            num_accepted_cultures = 3
+            development_in_provinces = {
+				value = 200
+				NOT = { culture = ROOT }
+			}
         }
         effect = {
-            
+            add_prestige = 5
+            add_country_modifier = {
+                name = asy_resettlement_culture_mission
+                duration = 9125
+            }
         }
     }
     vn_asy_pacify_palestine = {
-        icon = mission_high_income
+        icon = mission_have_two_subjects
         position = 5
         required_missions = { vn_asy_resettlement_culture vn_asy_conquer_palestine }
         provinces_to_highlight = {
@@ -108,31 +111,67 @@ vn_asy_missions_slot_2 = {
     vn_asy_library_of_assurbanipal = {
         icon = mission_imperial_cities
         position = 2
-        required_missions = { vn_asy_assyrian_militarism }
+        required_missions = { vn_asy_assyrian_militarism vn_asy_conquer_assur }
+        provinces_to_highlight = {
+            province_id = 3690
+        }
         trigger = {
-            
+            3690 = {
+                owned_by = ROOT
+                has_tax_building_trigger = yes
+                has_courthouse_building_trigger = yes
+                has_education_building_trigger = yes
+            }
         }
         effect = {
-            
+            add_innovativeness_big_effect = yes
+            3690 = {
+                change_trade_goods = paper
+                add_province_modifier = {
+                    name = asy_library_of_assurbanipal_mission
+                    duration = -1
+                }
+            }
         }
     }
     vn_asy_conquer_syria = {
-        icon = mission_persian_soldier
+        icon = mission_into_persia_2
         position = 3
         required_missions = { vn_asy_conquer_assyria }
+        provinces_to_highlight = {
+            region = syria_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            syria_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
             
         }
     }
     vn_asy_conquer_palestine = {
-        icon = mission_unite_home_region
+        icon = mission_persian_soldiers
         position = 4
         required_missions = { vn_asy_conquer_syria }
+        provinces_to_highlight = {
+            OR = {
+                region = palestine_region
+                region = transjordan_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            palestine_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            transjordan_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
             
@@ -143,10 +182,26 @@ vn_asy_missions_slot_2 = {
         position = 5
         required_missions = { vn_asy_conquer_palestine }
         trigger = {
-            
+            has_3_lv2_advisors_trigger = yes
+            if = {
+                limit = { has_dlc = "Cradle of Civilization" }
+                army_professionalism = 0.8
+            }
+            else = {
+                army_tradition = 60
+            }
+            num_of_owned_provinces_with = {
+                value = 20
+                has_courthouse_building_trigger = yes
+            }
         }
         effect = {
-            
+            add_reform_progress_medium_effect = yes
+            add_adm_power = 100
+            add_country_modifier = {
+                name = asy_social_reforms_mission
+                duration = -1
+            }
         }
 	}
 }
@@ -165,41 +220,156 @@ vn_asy_missions_slot_3 = {
         icon = mission_into_persia_1
         position = 1
         required_missions = {  }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 6330
+                province_id = 3690
+            }
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+                NOT = { development = 20 }
+            }
+        }
         trigger = {
-            
+            6330 = {
+                owned_by = ROOT
+                is_core = ROOT
+                num_of_times_improved_by_owner = 5
+            }
+            3690 = {
+                owned_by = ROOT
+                is_core = ROOT
+                num_of_times_improved_by_owner = 5
+            }
         }
         effect = {
-            
+            6330 = {
+                move_capital_effect = yes
+                change_culture = aramaic
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+                if = {
+                    limit = { has_fort_trigger = no }
+                    add_building = fort_14th
+                }
+            }
+            3690 = {
+                change_culture = aramaic
+            }
+            assyria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            al_jazira_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_asy_conquer_assyria = {
         icon = mission_reclaim_lost_territory
         position = 2
         required_missions = { vn_asy_conquer_assur }
+        provinces_to_highlight = {
+            OR = {
+                region = assyria_region
+                region = al_jazira_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            assyria_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            al_jazira_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            sophene_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            corduene_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_asy_conquer_armenia = {
-        icon = mission_have_two_subjects
+        icon = mission_fort
         position = 3
         required_missions = { vn_asy_conquer_assyria }
+        provinces_to_highlight = {
+            OR = {
+                region = sophene_region
+                region = corduene_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            sophene_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            corduene_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            cilicia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            cyprus_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_asy_conquer_cilicia = {
         icon = mission_large_army
         position = 4
         required_missions = { vn_asy_conquer_armenia }
+        provinces_to_highlight = {
+            OR = {
+                region = cilicia_region
+                region = cyprus_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            cilicia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            cyprus_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
             
@@ -209,11 +379,30 @@ vn_asy_missions_slot_3 = {
         icon = mission_rb_seize_alexandria
         position = 5
         required_missions = { vn_asy_conquer_cilicia vn_asy_conquer_palestine }
+        provinces_to_highlight = {
+            OR = {
+                region = lower_egypt_region
+                region = middle_egypt_region
+                region = inner_egypt_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 30
+                OR = {
+                    region = lower_egypt_region
+                    region = middle_egypt_region
+                    region = inner_egypt_region
+                }
+            }
         }
         effect = {
-            
+            add_mil_power = 100
+            add_country_modifier = {
+                name = asy_conquer_egypt_mission
+                duration = 9125
+            }
         }
 	}
 }
@@ -233,7 +422,8 @@ vn_asy_missions_slot_4 = {
         position = 1
         required_missions = {  }
         trigger = {
-            
+            stability = 1
+            religious_unity = 1
         }
         effect = {
             country_event = {
@@ -245,22 +435,129 @@ vn_asy_missions_slot_4 = {
         icon = mission_restore_rule_over_mysore
         position = 3
         required_missions = { vn_asy_conquer_assyria vn_asy_assyrian_faith }
+        provinces_to_highlight = {
+            region = lower_mesopotamia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            lower_mesopotamia_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            add_prestige = 20
+            3432 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3433 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3434 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3435 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3436 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3437 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3438 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            3439 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT	
+				}		
+            }
+            add_country_modifier = {
+                name = asy_conquer_mesopotamia_mission
+                duration = 9125
+            }
         }
     }
     vn_asy_conquer_bahrain = {
-        icon = mission_the_battle_for_raichur
+        icon = mission_arabian_ports
         position = 4
         required_missions = { vn_asy_conquer_mesopotamia }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 3432
+                province_id = 3433
+                province_id = 3434
+                province_id = 3435
+                province_id = 3436
+                province_id = 3437
+                province_id = 3438
+                province_id = 3439
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            3432 = { country_or_non_sovereign_subject_holds = ROOT }
+            3433 = { country_or_non_sovereign_subject_holds = ROOT }
+            3434 = { country_or_non_sovereign_subject_holds = ROOT }
+            3435 = { country_or_non_sovereign_subject_holds = ROOT }
+            3436 = { country_or_non_sovereign_subject_holds = ROOT }
+            3437 = { country_or_non_sovereign_subject_holds = ROOT }
+            3438 = { country_or_non_sovereign_subject_holds = ROOT }
+            3439 = { country_or_non_sovereign_subject_holds = ROOT }
         }
         effect = {
-            
+            add_dip_power = 100
+            add_country_modifier = {
+                name = asy_conquer_bahrain_mission
+                duration = 9125
+            }
         }
 	}
 }
