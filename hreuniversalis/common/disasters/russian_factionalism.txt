@@ -85,7 +85,13 @@ russian_factionalism = {
 		}
 		random_events = { 
 			1000 = 0
-			
+			100 = russian_factionalism.2
+			150 = russian_factionalism.3
+			150 = russian_factionalism.4
+			150 = russian_factionalism.5
+			150 = russian_factionalism.6
+			150 = russian_factionalism.7
+			100 = russian_factionalism.8
 		}
 	}
 }

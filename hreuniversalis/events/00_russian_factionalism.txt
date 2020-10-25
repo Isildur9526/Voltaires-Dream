@@ -46,7 +46,7 @@ country_event = {
 				add_government_power = {
 					government_mechanic = russian_mechanic
 					which = MIL
-					amount = -^150
+					amount = -150
 				}
 			}
 			random_owned_province = {
@@ -211,7 +211,7 @@ country_event = {
 	}
 	option = {
 		name = russian_factionalism.3.b
-		add_mandate = -10
+		add_mandate = 10
 		TMT = {
 			add_liberty_desire = 50
 		}
@@ -244,12 +244,12 @@ country_event = {
 			VHN = { grant_independence = yes }
 			every_subject_country = {
 				limit = {
-					NOT = { tag = VNH }
+					NOT = { tag = VHN }
 					is_subject_of_type = tributary_state
 					primary_culture = volhynian
 				}
 				grant_independence = yes
-				VNH = {
+				VHN = {
 					vassalize = PREV
 				}
 				ROOT = { add_truce_with = PREV }
@@ -262,27 +262,27 @@ country_event = {
 		add_mandate = -10
 		if = {
 			limit = { exists = PLC }
-			PLC = { create_guarantee = VNH }
+			PLC = { create_guarantee = VHN }
 		}
 		else_if = {
 			limit = { exists = POL }
-			POL = { create_guarantee = VNH }
+			POL = { create_guarantee = VHN }
 		}
 		else_if = {
 			limit = { exists = KRA }
-			KRA = { create_guarantee = VNH }
+			KRA = { create_guarantee = VHN }
 		}
-		add_truce_with = VNH
+		add_truce_with = VHN
 	}
 	option = {
 		name = russian_factionalism.4.b
 		add_mandate = 10
-		VNH = { set_country_flag = allow_quick_tributary_cb }
+		VHN = { set_country_flag = allow_quick_tributary_cb }
 		declare_war_with_cb = {
 			casus_belli = cb_force_tributary
-			who = VNH
+			who = VHN
 		}
-		VNH = { clr_country_flag = allow_quick_tributary_cb }
+		VHN = { clr_country_flag = allow_quick_tributary_cb }
 	}
 }
 
@@ -317,8 +317,8 @@ country_event = {
 					dip = 4
 					mil = 4
 				}
-				add_yearly_manpower = 15
-				add_years_of_income = 15
+				add_yearly_manpower = 5
+				add_years_of_income = 5
 			}
 			every_subject_country = {
 				limit = {
@@ -395,6 +395,7 @@ country_event = {
 				every_subject_country = {
 					limit = {
 						NOT = { tag = CHR }
+						NOT = { tag = PLL }
 						is_subject_of_type = tributary_state
 						primary_culture = severian
 					}
@@ -416,6 +417,7 @@ country_event = {
 				}
 				every_subject_country = {
 					limit = {
+						NOT = { tag = CHR }
 						NOT = { tag = PLL }
 						is_subject_of_type = tributary_state
 						primary_culture = severian
@@ -463,7 +465,15 @@ country_event = {
 		name = russian_factionalism.6.b
 		add_mandate = 15
 		if = {
-			limit = { exists = CHR }
+			limit = {
+				CHR = {
+					exists = yes
+					ai = yes
+					is_subject_of = ROOT
+					is_subject_of_type = tributary_state
+				}
+			}
+			CHR = { grant_independence = yes }
 			CHR = { set_country_flag = allow_quick_tributary_cb }
 			declare_war_with_cb = {
 				casus_belli = cb_force_tributary
@@ -472,7 +482,15 @@ country_event = {
 			CHR = { clr_country_flag = allow_quick_tributary_cb }
 		}
 		if = {
-			limit = { exists = PLL }
+			limit = {
+				PLL = {
+					exists = yes
+					ai = yes
+					is_subject_of = ROOT
+					is_subject_of_type = tributary_state
+				}
+			}
+			PLL = { grant_independence = yes }
 			PLL = { set_country_flag = allow_quick_tributary_cb }
 			declare_war_with_cb = {
 				casus_belli = cb_force_tributary
@@ -483,18 +501,145 @@ country_event = {
 	}
 }
 
+#Abandon Novgorod?
+country_event = {
+	id = russian_factionalism.7
+	title = "russian_factionalism.7.t"
+	desc = "russian_factionalism.7.d"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		NOV = {
+			exists = yes
+			ai = yes
+			is_subject_of = ROOT
+			is_subject_of_type = tributary_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			NOV = { grant_independence = yes }
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.7.a
+		add_mandate = -10
+		add_truce_with = NOV
+	}
+	option = {
+		name = russian_factionalism.7.b
+		add_mandate = 10
+		declare_war_with_cb = {
+			casus_belli = cb_force_tributary
+			who = NOV
+		}
+	}
+}
+
+#Random Appanage gets liberty desire
+country_event = {
+	id = russian_factionalism.8
+	title = "russian_factionalism.8.t"
+	desc = "russian_factionalism.8.d"
+	picture = DIPLOMACY_eventPicture
+	goto = rand_appa_cap
+	
+	is_triggered_only = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		any_subject_country = {
+			is_subject_of_type = tributary_state
+			ai = yes
+			NOT = {
+				tag = TMT
+				tag = VHN
+				tag = VDR
+				tag = CHR
+				tag = PLL
+				tag = NOV
+			}
+			NOT = { has_country_flag = had_increased_liberty_desire }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = {
+					is_subject_of_type = tributary_state
+					ai = yes
+					NOT = {
+						tag = TMT
+						tag = VHN
+						tag = VDR
+						tag = CHR
+						tag = PLL
+						tag = NOV
+					}
+					NOT = { has_country_flag = had_increased_liberty_desire }
+				}
+				save_event_target_as = rand_appa
+				set_country_flag = had_increased_liberty_desire
+				capital_scope = {
+					save_event_target_as = rand_appa_cap
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.8.a
+		add_mandate = -5
+		event_target:rand_appa = {
+			add_liberty_desire = 25
+		}
+	}
+	option = {
+		name = russian_factionalism.8.b
+		add_mandate = 5
+		add_corruption = 1
+	}
+}
+
+
 #End
 country_event = {
     id = russian_factionalism.100
     title = russian_factionalism.100.t
 	desc = russian_factionalism.100.d
+	picture = CIVIL_WAR_eventPicture
 	
 	is_triggered_only = yes
 	major = yes
 
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = { has_country_flag = had_increased_liberty_desire }
+				clr_country_flag = had_increased_liberty_desire			
+			}
+		}
+	}
+
 	option = {
 		name = russian_factionalism.100.a
-		add_mandate = 20
-		add_meritocracy = 20
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = 20
+			add_meritocracy = 20
+		}
+		else = {
+			add_stability_or_adm_power = yes
+			add_legitimacy = 10
+		}
 	}
 }

@@ -22,12 +22,12 @@ vn_asy_missions_slot_1 = {
             if = {
                 limit = { has_dlc = "Cradle of Civilization" }
                 OR = {
-                    army_tradition = 33
-                    army_professionalism = 0.33
+                    army_tradition = 25
+                    army_professionalism = 0.25
                 }
             }
             else = {
-                army_tradition = 33
+                army_tradition = 25
             }
         }
         effect = {
@@ -606,7 +606,6 @@ vn_asy_missions_slot_5 = {
         }
         effect = {
             6304 = {
-                change_province_name = "Babylon"
                 change_trade_goods = paper
                 add_province_modifier = {
                     name = vn_asy_rebuild_babylon_mission
