@@ -135,7 +135,7 @@ vn_asy_missions_slot_2 = {
         }
     }
     vn_asy_conquer_syria = {
-        icon = mission_into_persia_2
+        icon = mission_restore_rule_over_mysore
         position = 3
         required_missions = { vn_asy_conquer_assyria }
         provinces_to_highlight = {
@@ -149,7 +149,24 @@ vn_asy_missions_slot_2 = {
             }
         }
         effect = {
-            
+            syria_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            palestine_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            transjordan_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_asy_conquer_palestine = {
@@ -174,7 +191,36 @@ vn_asy_missions_slot_2 = {
             }
         }
         effect = {
-            
+            add_legitimacy = 10
+            palestine_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            transjordan_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            lower_egypt_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            middle_egypt_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            inner_egypt_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_asy_social_reforms = {
@@ -296,6 +342,21 @@ vn_asy_missions_slot_3 = {
             }
         }
         effect = {
+            assyria_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            al_jazira_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            syria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
             sophene_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -304,6 +365,13 @@ vn_asy_missions_slot_3 = {
                 add_permanent_claim = ROOT
             }
             corduene_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            lower_mesopotamia_region = {
                 limit = {
                     NOT = { is_core = ROOT }
                     NOT = { is_permanent_claim = ROOT }
@@ -334,6 +402,14 @@ vn_asy_missions_slot_3 = {
             }
         }
         effect = {
+            sophene_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            corduene_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
             cilicia_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -372,7 +448,18 @@ vn_asy_missions_slot_3 = {
             }
         }
         effect = {
-            
+            cilicia_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            cyprus_region = {
+                add_local_autonomy = -10
+                add_devastation = -10
+            }
+            add_country_modifier = {
+                name = asy_conquer_cilicia_mission
+                duration = 9125
+            }
         }
     }
     vn_asy_conquer_egypt = {
@@ -422,7 +509,10 @@ vn_asy_missions_slot_4 = {
         position = 1
         required_missions = {  }
         trigger = {
-            stability = 1
+            OR = {
+                inquisitor = 2
+                theologian = 2
+            }
             religious_unity = 1
         }
         effect = {
@@ -432,7 +522,7 @@ vn_asy_missions_slot_4 = {
         }
     }
     vn_asy_conquer_mesopotamia = {
-        icon = mission_restore_rule_over_mysore
+        icon = mission_into_persia_2
         position = 3
         required_missions = { vn_asy_conquer_assyria vn_asy_assyrian_faith }
         provinces_to_highlight = {

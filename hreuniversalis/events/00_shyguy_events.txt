@@ -16,12 +16,16 @@ country_event = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { religion = mandaeism }
+				NOT = { religion = nestorian }
 			}
 		}
 		change_religion = nestorian
 		capital_scope = {
 			change_religion = nestorian
+		}
+		add_country_modifier = {
+			name = conversion_zeal
+			duration = 3650
 		}
 		every_province = {
 			limit = {
@@ -30,6 +34,13 @@ country_event = {
 				NOT = { is_core = ROOT }
 			}
 			add_core = ROOT
+		}
+		every_neighbor_country = {
+			limit = { religion_group = christian }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_good_relations
+			}
 		}
 	}
 	option = {
@@ -45,6 +56,17 @@ country_event = {
 		capital_scope = {
 			change_religion = yazidi
 		}
+		add_country_modifier = {
+			name = conversion_zeal
+			duration = 3650
+		}
+		every_neighbor_country = {
+			limit = { religion = yazidi }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_good_relations
+			}
+		}
 	}
 	option = {
 		name = vn_missions.9.c
@@ -59,12 +81,26 @@ country_event = {
 		capital_scope = {
 			change_religion = mandaeism
 		}
+		add_country_modifier = {
+			name = conversion_zeal
+			duration = 3650
+		}
+		every_neighbor_country = {
+			limit = { religion = mandaeism }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_good_relations
+			}
+		}
 	}
 	option = {
 		name = vn_missions.9.dd
-		trigger = { religion_group = muslim }
 		ai_chance = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion_group = muslim }
+			}
 		}
 		set_country_flag = avoid_choosing_madhhab_flag
 		change_religion = zikri
@@ -74,6 +110,21 @@ country_event = {
 		set_religious_school = {
 			group = muslim
 			school = nizari_school
+		}
+		if = {
+			limit = { NOT = { technology_group = muslim } }
+			change_technology_group = muslim
+		}
+		every_neighbor_country = {
+			limit = { religion_group = muslim }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_good_relations
+			}
+		}
+		add_country_modifier = {
+			name = asy_assyrian_faith_mission
+			duration = 3650
 		}
 		clr_country_flag = avoid_choosing_madhhab_flag
 	}
@@ -87,9 +138,10 @@ country_event = {
 				religion_group = muslim
 			}
 		}
+		add_prestige = 10
 		add_country_modifier = {
-			name = muslim_enforced_religion
-			duration = 7300
+			name = religious_fanatics
+			duration = 3650
 		}
 	}
 }
@@ -105,6 +157,24 @@ country_event = {
 
 	option = {
 		name = vn_missions.10.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					reverse_has_opinion = {
+						who = PAP
+						value = 50
+					}
+					NOT = {
+						reverse_has_opinion = {
+							who = PAP
+							value = -50
+						}
+					}
+				}
+			}
+		}
 		trigger = { religion = nestorian }
 		add_stability_or_adm_power = yes
 		if = {
@@ -150,15 +220,24 @@ country_event = {
 	}
 	option = {
 		name = vn_missions.10.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					reverse_has_opinion = {
+						who = PAP
+						value = 50
+					}
+				}
+			}
+		}
 		trigger = { religion = nestorian }
 		if = {
 			limit = { has_dlc = "Mandate of Heaven" }
 			if = {
 				limit = {
-					OR = {
-						isolationism = 3
-						isolationism = 4
-					}
+					isolationism = 3
 				}
 				add_stability = -1
 			}
@@ -183,23 +262,30 @@ country_event = {
 	}
 	option = {
 		name = vn_missions.10.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				reverse_has_opinion = {
+					who = PAP
+					value = -50
+				}
+			}
+		}
 		trigger = { religion = nestorian }
 		if = {
 			limit = { has_dlc = "Mandate of Heaven" }
 			if = {
 				limit = {
-					OR = {
-						isolationism = 3
-						isolationism = 4
-					}
+					NOT = { isolationism = 2 }
 				}
 				add_stability = -1
 			}
 			if = {
 				limit = {
-					isolationism = 1
+					isolationism = 4
 				}
-				add_isolationism = -1
+				add_isolationism = 1
 			}
 			else = {
 				add_prestige = 25
@@ -219,8 +305,14 @@ country_event = {
 		trigger = { NOT = { religion = nestorian } }
 		add_prestige = 50
 		add_stability_or_adm_power = yes
-		6301 = {
-			remove_province_triggered_modifier = theravada_kotte
+		hidden_effect = {
+			6301 = {
+				remove_province_triggered_modifier = theravada_kotte
+			}
+		}
+		add_country_modifier = {
+			name = religious_fanatics
+			duration = 7300
 		}
 		every_province = {
 			limit = { religion = nestorian }
@@ -243,38 +335,51 @@ country_event = {
 
 	option = {
 		name = vn_missions.11.a
-		random_province = {
-			limit = { region = palestine_region }
-			change_religion = jewish
-			change_culture = hebrew
-			hidden_effect = {
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			capital_scope = {
+				NOT = { region = palestine_region }
+			}
+		}
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			region = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
 				add_province_modifier = {
-					name = religious_zeal_at_conv
-					duration = 7300
+					name = asy_pacify_palestine_mission
+					duration = 9125
 				}
 			}
 		}
 	}
 	option = {
 		name = vn_missions.11.b
-		set_variable = { which = jewdev_index value = 20 }
-		while = {
-			limit = {
-				check_variable = { which = jewdev_index value = 1 }
-			}
-			subtract_variable = { which = almoravid1_index value = 1 }
-			random_owned_province = {
-				random_list = {
-					33 = { add_base_tax = 1 }
-					33 = { add_base_production = 1 }
-					33 = { add_base_manpower = 1 }
-				}
+		ai_chance = {
+			factor = 1
+		}
+		4974 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		palestine_region = {
+			add_province_modifier = {
+				name = asy_pacify_palestine_mission
+				duration = 9125
 			}
 		}
 	}
 	option = {
 		name = vn_missions.11.c
-		goto = 4974
+		ai_chance = {
+			factor = 0
+		}
 		trigger = { NOT = { religion = jewish } }
 		add_years_of_income = 3
 		4974 = {
@@ -287,7 +392,10 @@ country_event = {
 	}
 	option = {
 		name = vn_missions.11.dd
-		limit = { religion_group = muslim }
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { religion_group = muslim }
 		add_years_of_income = 1
 		add_yearly_manpower = 1
 		add_estate_dhimmi_loyalty_effect = yes
