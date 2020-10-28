@@ -2130,7 +2130,7 @@
  vn_sax_head_the_guelphs_e.tt: "Three allies:\nOpinion of §Y[Root.GetName]§! is at least §Y150§!.\nCapital is in the §Italy§! or §YSicily§! superregion."
  vn_sax_head_the_guelphs_ef.tt: "Add §Y10 trust§! and the §YHead the Guelphs§! opinion modifier with every Guelph country."
  vn_sax_alliance_in_the_north.tt: "Any ally:\nOpinion of §Y[Root.GetName]§! is at least §Y150§!.\nCapital is in the §Scandinavia§! superregion."
- vn_sax_the_wendish_crusade.tt: "Participate in the Wendish Crusade or reach the Age of Dynasticism."
+ vn_sax_the_wendish_crusade.tt: "Participate in the Wendish Crusade or reach the Age of Crisis."
  vn_missions.206.t: "The Count Palatinate"
  vn_missions.206.d: "The Count Palatinate remains without a legitimate heir. Through our connections to Welf dynasty of Brunswick, we have a legitimate claim to contest. Perhaps this is our opportunity."
  vn_missions.206.a: "Claim the Throne!"

@@ -93,7 +93,6 @@ vn_sax_missions_slot_1 = {
 				tooltip = vn_sax_the_wendish_crusade.tt
 				OR = {
 					has_global_flag = wendish_crusade_active
-					NOT = { current_age = age_of_crisis }
 					NOT = { current_age = age_of_holy_wars }
 					NOT = { current_age = age_of_empire }
 				}

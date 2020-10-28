@@ -58,8 +58,7 @@
 -Commonwealth can no longer form Lithuania
 -Improved localization for crusade events
 -Fixed wrong West Slavic DPN for Bärwalde
--Fixed Henneberg misspelling
--Fixed some area names
+-Fixed some area/country names
 -Removed the spy teleporter in the Nile Delta
 -Other minor localization/bug fixes
 
