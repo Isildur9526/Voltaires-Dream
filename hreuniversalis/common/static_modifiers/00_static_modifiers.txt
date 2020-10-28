@@ -238,7 +238,7 @@ provincial_tax_income = {
 }
 
 provincial_production_size = {
-	trade_goods_size = 0.2
+	trade_goods_size = 0.1
 	ship_recruit_speed = -0.01
 }
 
@@ -278,7 +278,7 @@ development = {
 }
 
 development_scaled = {
-	local_development_cost = 0.04
+	local_development_cost = 0.03
 }
 
 capital_city = {
@@ -758,7 +758,7 @@ trade_refusal = {
 }
 
 mercantilism = {
-	global_prov_trade_power_modifier = 2.0
+	global_prov_trade_power_modifier = 1.0
 	embargo_efficiency = 0.5
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
