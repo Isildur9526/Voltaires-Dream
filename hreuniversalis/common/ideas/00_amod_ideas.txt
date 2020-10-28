@@ -5630,8 +5630,7 @@ THO_ideas = {
         merc_maintenance_modifier = -0.15
     }
     THO_idea_7 = {
-        garrison_size = 0.15
-        fort_maintenance_modifier = -0.1
+        build_cost = -0.1
     }
 }
 
@@ -6374,7 +6373,7 @@ SICG_ideas = {
 SIC_ideas = {
     start = {
         land_morale = 0.1
-        global_manpower_modifier = 0.2
+        global_manpower_modifier = 0.2  #exception
     }
     
     bonus = {
@@ -8983,7 +8982,7 @@ GLG_ideas = {
 OSW_ideas = {
     start = {
         global_prov_trade_power_modifier = 0.15
-        land_forcelimit_modifier = 0.15
+        land_forcelimit_modifier = 0.2
     }
     bonus = {
         rebel_support_efficiency = 0.25
@@ -9528,7 +9527,7 @@ NMR_ideas = {
 
 XBG_ideas = {
     start = {
-        global_manpower_modifier = 0.2
+        global_manpower_modifier = 0.15
         global_tax_modifier = 0.1
     }
     bonus = {
@@ -10355,7 +10354,7 @@ ATC_ideas = {
         stability_cost_modifier = -0.1
     }
     ATC_idea_5 = {
-        global_manpower_modifier = 0.15
+        global_manpower_modifier = 0.1
         holy_orders_loyalty_modifier = 0.05
     }
     ATC_idea_6 = {
@@ -12565,7 +12564,7 @@ MTZ_ideas = {
         global_regiment_cost = -0.1
     }
     bonus = {
-        global_manpower_modifier = 0.2
+        global_manpower_modifier = 0.15
     }
 
     trigger = {
@@ -12715,7 +12714,7 @@ LXU_ideas = {
 XCL_ideas = {
     start = {
         diplomatic_upkeep = 1
-        improve_relation_modifier = 0.25
+        improve_relation_modifier = 0.3
     }
     bonus = {
         ae_impact = -0.05
@@ -12789,5 +12788,45 @@ XMC_ideas = {
     XMC_idea_7 = {
         enforce_religion_cost = -0.25
         papal_influence = 1
+    }
+}
+
+altSAX_ideas = {
+    start = {
+        global_trade_goods_size_modifier = 0.1
+        diplomatic_reputation = 1
+    }
+    bonus = {
+        trade_efficiency = 0.1
+    }
+
+    trigger = {
+        tag = SAX
+        NOT = { started_in = 1180.1.1 }
+    }
+    free = yes
+    altSAX_idea_1 = {
+        diplomatic_upkeep = 1
+    }
+    altSAX_idea_2 = {
+        land_forcelimit_modifier = 0.15
+        core_creation = -0.1
+    }
+    altSAX_idea_3 = {
+        global_missionary_strength = 0.01
+        culture_conversion_cost = -0.1
+    }
+    altSAX_idea_4 = {
+        development_cost = -0.1
+    }
+    altSAX_idea_5 = {
+        land_morale = 0.1
+    }
+    altSAX_idea_6 = {
+        imperial_authority = 0.1
+        build_cost = -0.1
+    }
+    altSAX_idea_7 = {
+        global_manpower_modifier = 0.15
     }
 }

@@ -786,7 +786,7 @@ country_decisions = {
 					}
 					NOT = { started_in = 1180.1.1 }
 				}
-				has_mission = vn_sax_reunite_the_stem_duchy
+				was_player = no
 			}
 			primitives = no
 			NOT = { has_country_flag = unformable }

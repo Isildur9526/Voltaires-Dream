@@ -1,4 +1,3 @@
-44 = "Strauwing"
 58 = "Uim"
 64 = "Memminga"
 67 = "Bareid"

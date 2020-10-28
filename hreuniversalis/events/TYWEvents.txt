@@ -1412,6 +1412,7 @@ country_event = {
 			is_free_or_tributary_trigger = yes
 			NOT = { war_with = ROOT }
 		}
+		is_year = 1400
 	}
 
 	mean_time_to_happen = {

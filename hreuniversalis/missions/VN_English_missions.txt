@@ -23,7 +23,7 @@ vn_eng_missions_slot_1_a = {
         required_missions = { }
         position = 1
         trigger = {
-            legitimacy = 100
+            legitimacy_equivalent = 100
             stability = 2
             NOT = { average_unrest = 1 }
             estate_loyalty = {
@@ -661,7 +661,7 @@ vn_eng_missions_slot_2_b = {
 			prestige = 50
 			army_size_percentage = 0.6
 			navy_size_percentage = 0.6
-			legitimacy = 95
+			legitimacy_equivalent = 95
         }
         effect = {
             add_adm_power = 75

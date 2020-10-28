@@ -435,8 +435,8 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = { culture = anglosaxon }
+				save_event_target_as = reta_prov
 			}
-			save_event_target_as = reta_prov
 		}
 	}
 	

@@ -93,16 +93,16 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		is_year = 1460
+		NOT = { is_year = 1530 }
 		OR = {
 			has_country_flag = naples_renaissance_flag
 			AND = {
-				NOT = { has_mission = emp_nap_renaissance_city }
+				NOT = { has_mission = vn_nap_a_bustling_port }
 				OR = {
 					tag = NAP
 					tag = SIC
 				}
-				is_year = 1460
-				NOT = { is_year = 1530 }
 				stability = 3
 				is_at_war = no
 			}

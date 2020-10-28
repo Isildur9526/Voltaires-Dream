@@ -11,6 +11,16 @@ country_decisions = {
 			}
 			tag = BRA
 			NOT = { tag = PRU }
+			if = {
+				limit = {
+					OR = {
+						tag = SAX
+						was_tag = SAX
+					}
+					NOT = { started_in = 1180.1.1 }
+				}
+				was_player = no
+			}
 			OR = {
 				NOT = { exists = PRU }
 				ai = no
@@ -161,6 +171,16 @@ country_decisions = {
 			}
 			NOT = { tag = PTH }
 			NOT = { tag = PRU }
+			if = {
+				limit = {
+					OR = {
+						tag = SAX
+						was_tag = SAX
+					}
+					NOT = { started_in = 1180.1.1 }
+				}
+				was_player = no
+			}
 			OR = {
 				NOT = { exists = PTH }
 				ai = no
@@ -300,6 +320,16 @@ country_decisions = {
 				tag = PTH
 			}
 			NOT = { tag = PRU }
+			if = {
+				limit = {
+					OR = {
+						tag = SAX
+						was_tag = SAX
+					}
+					NOT = { started_in = 1180.1.1 }
+				}
+				was_player = no
+			}
 			OR = {
 				NOT = { exists = PRU }
 				ai = no

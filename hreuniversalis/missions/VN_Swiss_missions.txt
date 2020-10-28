@@ -9,6 +9,7 @@ vn_swi_missions_slot_1 = {
 				superregion = switzerland_superregion
 			}
 		}
+		NOT = { tag = CMO }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -197,6 +198,7 @@ vn_swi_missions_slot_2 = {
 				superregion = switzerland_superregion
 			}
 		}
+		NOT = { tag = CMO }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -357,7 +359,8 @@ vn_swi_missions_slot_3 = {
 			capital_scope = {
 				superregion = switzerland_superregion
 			}
-		}        
+		}
+		NOT = { tag = CMO }		
 		NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -583,6 +586,7 @@ vn_swi_missions_slot_4 = {
 				superregion = switzerland_superregion
 			}
 		}
+		NOT = { tag = CMO }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -725,6 +729,7 @@ vn_swi_missions_slot_5 = {
 				superregion = switzerland_superregion
 			}
 		}
+		NOT = { tag = CMO }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes

@@ -16,25 +16,277 @@ vn_brg_kle_jch_missions_slot_1 = {
     has_country_shield = yes
 
     vn_brg_kle_jch_acquire_julich = {
-        #icon = 
-        position = 4
-        required_missions = { vn_brg_kle_jch_take_ravensberg }
+        icon = mission_big_city
+        position = 3
+        required_missions = { vn_brg_kle_jch_dynastic_ties }
+        provinces_to_highlight = {
+            area = aachen_area
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
         trigger = {
-            
+            if = {
+                limit = { tag = JCH }
+                2502 = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_fort_trigger = yes
+                    num_of_buildings_in_province = 3
+                }
+            }
+            else = {
+                OR = {
+                    JCH = { is_subject_of = ROOT }
+                    owns_core_province = 2502
+                    num_of_owned_provinces_with = {
+                        value = 3
+                        area = aachen_area
+                        is_core = ROOT
+                    }
+                }
+            }
         }
         effect = {
-            
+            if = {
+                limit = { tag = JCH }
+                2502 = {
+                    add_province_modifier = {
+                        name = "brg_kle_jch_acquire_julich_mission"
+                        duration = -1
+                    }
+                }
+            }
+            else = {
+                aachen_area = {
+                    limit = { owned_by = ROOT }
+                    add_province_modifier = {
+                        name = "brg_kle_jch_acquire_julich_mission2"
+                        duration = 9125
+                    }
+                }
+            }
         }
-	}
-    vn_brg_kle_jch_union_with_gelre = {
-        #icon = 
+    }
+    vn_brg_kle_jch_claim_ruhr = {
+        icon = rhineland_conquest 
+        position = 5
+        required_missions = { vn_brg_kle_jch_seize_mark }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 160
+                province_id = 157
+                province_id = 4110
+                province_id = 162
+                province_id = 2504
+                province_id = 1809
+                province_id = 2505
+                province_id = 1936
+                province_id = 261
+                province_id = 2508
+                province_id = 2378
+            }
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
+        trigger = {
+            owns_core_province = 160
+            owns_core_province = 157
+            owns_core_province = 4110
+            owns_core_province = 162
+            owns_core_province = 2504
+            owns_core_province = 1809
+            owns_core_province = 2505
+            owns_core_province = 1936
+            owns_core_province = 261
+            owns_core_province = 2508
+            owns_core_province = 2378
+        }
+        effect = {
+            add_country_modifier = {
+                name = "brg_kle_jch_claim_ruhr_mission"
+                duration = 7300
+            }
+        }
+    }
+    vn_brg_kle_jch_ruhr_valley_industry = {
+        icon = industrialized_rhineland
         position = 6
-        required_missions = { vn_brg_kle_jch_limburger_conquest }
+        required_missions = { vn_brg_kle_jch_claim_ruhr }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 160
+                province_id = 157
+                province_id = 4110
+                province_id = 162
+                province_id = 2504
+                province_id = 1809
+                province_id = 2505
+                province_id = 1936
+                province_id = 261
+                province_id = 2508
+                province_id = 2378
+            }
+        }
         trigger = {
-            
+            custom_trigger_tooltip = {
+                tooltip = vn_brg_kle_jch_ruhr_valley_industry.tt
+                owns_core_province = 160
+                owns_core_province = 157
+                owns_core_province = 4110
+                owns_core_province = 162
+                owns_core_province = 2504
+                owns_core_province = 1809
+                owns_core_province = 2505
+                owns_core_province = 1936
+                owns_core_province = 261
+                owns_core_province = 2508
+                owns_core_province = 2378
+            }
+            development_in_provinces = {
+                value = 150
+                OR = {
+                    province_id = 160
+                    province_id = 157
+                    province_id = 4110
+                    province_id = 162
+                    province_id = 2504
+                    province_id = 1809
+                    province_id = 2505
+                    province_id = 1936
+                    province_id = 261
+                    province_id = 2508
+                    province_id = 2378
+                }
+            }
+            calc_true_if = {
+                amount = 4
+                all_owned_province = {
+                    OR = {
+                        province_id = 160
+                        province_id = 157
+                        province_id = 4110
+                        province_id = 162
+                        province_id = 2504
+                        province_id = 1809
+                        province_id = 2505
+                        province_id = 1936
+                        province_id = 261
+                        province_id = 2508
+                        province_id = 2378
+                    }
+                    has_manufactory_trigger = yes
+                    development = 20
+                    NOT = { num_free_building_slots = 1 }
+                }
+            }
         }
         effect = {
-            
+            custom_tooltip = vn_brg_kle_jch_ruhr_valley_industry.tt2
+            hidden_effect = {
+                160 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                157 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                4110 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                162 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                2504 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                1809 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                2505 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                1936 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                261 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                2508 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+                2378 = {
+                    if = {
+                        limit = { has_manufactory_trigger = yes }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_ruhr_valley_industry_mission"
+                            duration = 9125
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -53,42 +305,102 @@ vn_brg_kle_jch_missions_slot_2 = {
     }
     has_country_shield = yes
 
-    vn_brg_kle_jch_take_ravensberg = {
-        #icon = 
-        position = 3
-        required_missions = { vn_brg_kle_jch_dynastic_ties }
-        trigger = {
-            
-        }
-        effect = {
-            
-        }
-    }
-    vn_brg_kle_jch_limburger_conquest = {
-        #icon = 
-        position = 5
+    vn_brg_kle_jch_seize_mark = {
+        icon = claim_the_borderlands
+        position = 4
         required_missions = { 
-			vn_brg_kle_jch_acquire_julich 
-			vn_brg_kle_jch_secure_berg 
-		}
+            vn_brg_kle_jch_acquire_julich
+            vn_brg_kle_jch_secure_berg
+        }
+        provinces_to_highlight = {
+            area = mark_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = mark_area
+            }
         }
         effect = {
-            
+            add_accepted_culture = hannoverian
+            westfalen_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_brg_kle_jch_religious_freedom = {
-        #icon = 
-        position = 7
-        required_missions = { vn_brg_kle_jch_overthrow_cologne }
+        icon = mission_religious
+        position = 5
+        required_missions = { vn_brg_kle_jch_curb_archbishopric }
         trigger = {
-            
+            OR = {
+                current_age = age_of_reformation
+                current_age = age_of_absolutism
+                current_age = age_of_revolutions
+                current_age = age_of_ideology
+            }
+            has_global_modifier_value = {
+				which = tolerance_heretic
+				value = 1
+            }
+            full_idea_group = humanist_ideas
         }
         effect = {
-            
+            define_advisor = {
+                type = theologian
+                skill = 3
+                cost_multiplier = 0.25
+            }
+            add_country_modifier = {
+                name = "brg_kle_jch_religious_freedom_mission"
+                duration = 9125
+            }
         }
     }
+    vn_brg_kle_jch_defeat_hohenzollerns = {
+        icon = tame_brandenburg
+        position = 7
+        required_missions = { vn_brg_kle_jch_the_united_duchies }
+        provinces_to_highlight = {
+            owner = {
+                dynasty = "von Hohenzollern"
+            }
+        }
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = vn_brg_kle_jch_defeat_hohenzollerns.tt
+                OR = {
+                    NOT = {
+                        any_country = {
+                            dynasty = "von Hohenzollern"
+                        }
+                    }
+                    any_country = {
+                        dynasty = "von Hohenzollern"
+                        capital_scope = {
+                            controlled_by = ROOT
+                        }
+                    }
+                }
+            }
+        }
+        effect = {
+            add_prestige = 25
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 30
+            }
+            add_country_modifier = {
+                name = "brg_kle_jch_defeat_hohenzollerns_mission"
+                duration = 18250
+            }
+        }
+	}
 }
 
 vn_brg_kle_jch_missions_slot_3 = {
@@ -106,76 +418,399 @@ vn_brg_kle_jch_missions_slot_3 = {
     has_country_shield = yes
 
     vn_brg_kle_jch_a_superior_capital = {
-        #icon = 
+        icon = mission_hanseatic_city
         position = 1
         required_missions = {  }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 2502
+                province_id = 2501
+                province_id = 1940
+            }
+        }
         trigger = {
-            
+            if = {
+                limit = { tag = JCH }
+                2502 = {
+                    owned_by = ROOT
+                    development = 10
+                    higher_development_than = 2501
+                    higher_development_than = 1940
+                }
+            }
+            else_if = {
+                limit = { tag = KLE }
+                2501 = {
+                    owned_by = ROOT
+                    development = 10
+                    higher_development_than = 2502
+                    higher_development_than = 1940
+                }
+            }
+            else_if = {
+                limit = { tag = BRG }
+                1940 = {
+                    owned_by = ROOT
+                    development = 10
+                    higher_development_than = 2501
+                    higher_development_than = 2502
+                }
+            }
         }
         effect = {
-            
+            add_years_of_income = 0.5
+            if = {
+                limit = { tag = JCH }
+                2502 = {
+                    add_base_tax = 2
+                }
+            }
+            else_if = {
+                limit = { tag = KLE }
+                2501 = {
+                    add_base_tax = 2
+                }
+            }
+            else_if = {
+                limit = { tag = BRG }
+                1940 = {
+                    add_base_tax = 2
+                }
+            }
         }
     }
     vn_brg_kle_jch_dynastic_ties = {
-        #icon = 
+        icon = mission_alliances
         position = 2
         required_missions = { vn_brg_kle_jch_a_superior_capital }
         trigger = {
-            
+            calc_true_if = {
+                amount = 3
+                all_ally = {
+                    OR = {
+                        marriage_with = ROOT
+                        has_opinion = {
+                            value = 150
+                            who = ROOT
+                        }
+                    }
+                }
+            }
+            diplomatic_reputation = 3
+            has_dip_advisor_2 = yes
         }
         effect = {
-            
+            berg_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            aachen_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            2501 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            160 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            157 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            162 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            4110 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_brg_kle_jch_secure_berg = {
-        #icon = 
-        position = 4
-        required_missions = { 
-			vn_brg_kle_jch_take_ravensberg 
-			vn_brg_kle_jch_seize_mark 
-		}
+        icon = mission_hanseatic_cities
+        position = 3
+        required_missions = { vn_brg_kle_jch_dynastic_ties }
+        provinces_to_highlight = {
+            area = berg_area
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
         trigger = {
-            
+            if = {
+                limit = { tag = BRG }
+                1940 = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_fort_trigger = yes
+                    num_of_buildings_in_province = 3
+                }
+            }
+            else = {
+                OR = {
+                    BRG = { is_subject_of = ROOT }
+                    owns_core_province = 1940
+                    num_of_owned_provinces_with = {
+                        value = 3
+                        area = berg_area
+                        is_core = ROOT
+                    }
+                }
+            }
         }
         effect = {
-            
+            if = {
+                limit = { tag = BRG }
+                1940 = {
+                    add_province_modifier = {
+                        name = "brg_kle_jch_acquire_julich_mission"
+                        duration = -1
+                    }
+                }
+            }
+            else = {
+                berg_area = {
+                    limit = { owned_by = ROOT }
+                    add_province_modifier = {
+                        name = "brg_kle_jch_acquire_julich_mission2"
+                        duration = 9125
+                    }
+                }
+            }
         }
     }
     vn_brg_kle_jch_curb_archbishopric = {
-        #icon = 
-        position = 5
+        icon = take_the_bishoprics
+        position = 4
         required_missions = {  }
+        provinces_to_highlight = {
+            owned_by = KOL
+        }
         trigger = {
-            
+            if = {
+                limit = { exists = KOL }
+                army_size = KOL
+                prestige = KOL
+                KOL = {
+                    OR = {
+                        has_opinion_modifier = {
+                            who = ROOT
+                            modifier = insulted
+                        }
+                        has_opinion_modifier = {
+                            who = ROOT
+                            modifier = scornfully_insulted
+                        }
+                    }  
+                }
+            }
+            if = {
+                limit = { has_estate = estate_church }
+                estate_loyalty = {
+                    estate = estate_church
+                    loyalty = 60
+                }
+            }
         }
         effect = {
-            
+            2620 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            1951 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            1878 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = "brg_kle_jch_curb_archbishopric_mission"
+                duration = 7300
+            }
         }
     }
     vn_brg_kle_jch_overthrow_cologne = {
-        #icon = 
-        position = 6
-        required_missions = { 
-			vn_brg_kle_jch_limburger_conquest 
-			vn_brg_kle_jch_curb_archbishopric 
-			vn_brg_kle_jch_grand_duchy_of_berg 
-		}
+        icon = sway_cologne
+        position = 5
+        required_missions = { vn_brg_kle_jch_curb_archbishopric }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 2620
+                province_id = 1951
+                province_id = 1878
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            2620 = { country_or_non_sovereign_subject_holds = ROOT }
+            1951 = { country_or_non_sovereign_subject_holds = ROOT }
+            1878 = { country_or_non_sovereign_subject_holds = ROOT }
+            OR = {
+                KOL = { is_subject_of = ROOT }
+                NOT = { exists = KOL }
+            }
         }
         effect = {
-            
+            cologne_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_army_tradition = 15
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 20
+            }
         }
     }
-    vn_brg_kle_jch_defeat_hohenzollerns = {
-        #icon = 
-        position = 8
-        required_missions = { vn_brg_kle_jch_the_united_duchies }
+    vn_brg_kle_jch_the_united_duchies = {
+        icon = imperial_capitals
+        position = 6
+        required_missions = { 
+            vn_brg_kle_jch_overthrow_cologne 
+            vn_brg_kle_jch_grand_duchy_of_berg
+        }
+        provinces_to_highlight = {
+            OR = {
+                area = cologne_area
+                area = aachen_area
+                area = berg_area
+                area = dortmund_area
+                area = mark_area
+            }
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
         trigger = {
-            
+            calc_true_if = {
+                amount = 40
+                all_owned_province = {
+                    OR = {
+                        area = cologne_area
+                        area = aachen_area
+                        area = berg_area
+                        area = dortmund_area
+                        area = mark_area
+                    }
+                    is_core = ROOT
+                }
+            }
+            1940 = {
+                owned_by = ROOT
+                is_core = ROOT
+                development = 20
+                NOT = { num_free_building_slots = 1 }
+            }
+            2501 = {
+                owned_by = ROOT
+                is_core = ROOT
+                development = 20
+                NOT = { num_free_building_slots = 1 }
+            }
+            2502 = {
+                owned_by = ROOT
+                is_core = ROOT
+                development = 20
+                NOT = { num_free_building_slots = 1 }
+            }
         }
         effect = {
-            
+            add_adm_power = 75
+            add_dip_power = 75
+            add_mil_power = 75
+            if = {
+                limit = {
+                    KLE = { is_subject_of = ROOT }
+                }
+                inherit = KLE
+            }
+            if = {
+                limit = {
+                    BRG = { is_subject_of = ROOT }
+                }
+                inherit = BRG
+            }
+            if = {
+                limit = {
+                    JCH = { is_subject_of = ROOT }
+                }
+                inherit = JCH
+            }
+            rhenish_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            westphalia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            override_country_name = JCB_NAME
+            country_event = {
+                id = vn_missions.66
+            }
         }
 	}
 }
@@ -194,54 +829,102 @@ vn_brg_kle_jch_missions_slot_4 = {
     }
     has_country_shield = yes
 
-    vn_brg_kle_jch_seize_mark = {
-        #icon = 
-        position = 3
-        required_missions = { vn_brg_kle_jch_dynastic_ties }
+    vn_brg_kle_jch_take_ravensberg = {
+        icon = ansbach_succession
+        position = 4
+        required_missions = { 
+            vn_brg_kle_jch_march_on_cleves
+            vn_brg_kle_jch_secure_berg
+        }
+        provinces_to_highlight = {
+            area = dortmund_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = dortmund_area
+            }
         }
         effect = {
-            
+            add_accepted_culture = hannoverian
+            munster_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
     vn_brg_kle_jch_grand_duchy_of_berg = {
-        #icon = 
+        icon = mission_coronation
         position = 5
-        required_missions = { 
-			vn_brg_kle_jch_secure_berg 
-			vn_brg_kle_jch_march_on_cleves 
-		}
+        required_missions = { vn_brg_kle_jch_take_ravensberg }
         trigger = {
-            
+            government_rank = 4
+            num_of_cities = 30
+            legitimacy_equivalent = 100
+            total_development = 200
+            OR = {
+                is_emperor = yes
+                NOT = { hre_size = 1 }
+                army_strength = {
+                    who = emperor
+                    value = 1.0
+                }
+                reverse_has_opinion = {
+                    who = emperor
+                    value = 100
+                }
+            }
         }
         effect = {
-            
+            add_prestige = 20
+            add_stability_or_adm_power = yes
+            add_country_modifier = {
+                name = "brg_kle_jch_grand_duchy_of_berg_mission"
+                duration = -1
+            } 
         }
     }
-    vn_brg_kle_jch_ruhr_valley_industry = {
-        #icon = 
-        position = 6
-        required_missions = { 
-			vn_brg_kle_jch_grand_duchy_of_berg 
-			vn_brg_kle_jch_claim_ruhr 
-		}
-        trigger = {
-            
-        }
-        effect = {
-            
-        }
-    }
-    vn_brg_kle_jch_the_united_duchies = {
-        #icon = 
+    vn_brg_kle_jch_repel_wittelsbachs = {
+        icon = duchy_of_bavaria
         position = 7
-        required_missions = { vn_brg_kle_jch_overthrow_cologne }
+        required_missions = { vn_brg_kle_jch_the_united_duchies }
+        provinces_to_highlight = {
+            owner = {
+                dynasty = "von Wittelsbach"
+            }
+        }
         trigger = {
-            
+            custom_trigger_tooltip = {
+                tooltip = vn_brg_kle_jch_repel_wittelsbachs.tt
+                OR = {
+                    NOT = {
+                        any_country = {
+                            dynasty = "von Wittelsbach"
+                        }
+                    }
+                    any_country = {
+                        dynasty = "von Wittelsbach"
+                        capital_scope = {
+                            controlled_by = ROOT
+                        }
+                    }
+                }
+            }
         }
         effect = {
-            
+            add_prestige = 25
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 30
+            }
+            add_country_modifier = {
+                name = "brg_kle_jch_defeat_hohenzollerns_mission"
+                duration = 18250
+            }
         }
 	}
 }
@@ -261,36 +944,173 @@ vn_brg_kle_jch_missions_slot_5 = {
     has_country_shield = yes
 
     vn_brg_kle_jch_march_on_cleves = {
-        #icon = 
-        position = 4
-        required_missions = { vn_brg_kle_jch_seize_mark }
+        icon = mission_village
+        position = 3
+        required_missions = { vn_brg_kle_jch_dynastic_ties }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 2501
+                province_id = 160
+                province_id = 157
+                province_id = 162
+                province_id = 4110
+            }
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
         trigger = {
-            
+            if = {
+                limit = { tag = KLE }
+                2502 = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_fort_trigger = yes
+                    num_of_buildings_in_province = 3
+                }
+            }
+            else = {
+                OR = {
+                    KLE = { is_subject_of = ROOT }
+                    owns_core_province = 2501
+                    num_of_owned_provinces_with = {
+                        value = 3
+                        OR = {
+                            province_id = 2501
+                            province_id = 160
+                            province_id = 157
+                            province_id = 162
+                            province_id = 4110
+                        }
+                        is_core = ROOT
+                    }
+                }
+            }
         }
         effect = {
-            
+            if = {
+                limit = { tag = KLE }
+                2501 = {
+                    add_province_modifier = {
+                        name = "brg_kle_jch_acquire_julich_mission"
+                        duration = -1
+                    }
+                }
+            }
+            else = {
+                custom_tooltip = vn_will_receive_rewards_tt
+                2501 = {
+                    if = {
+                        limit = { owned_by = ROOT }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_acquire_julich_mission2"
+                            duration = 9125
+                        }
+                    }
+                }
+                160 = {
+                    if = {
+                        limit = { owned_by = ROOT }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_acquire_julich_mission2"
+                            duration = 9125
+                        }
+                    }
+                }
+                157 = {
+                    if = {
+                        limit = { owned_by = ROOT }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_acquire_julich_mission2"
+                            duration = 9125
+                        }
+                    }
+                }
+                162 = {
+                    if = {
+                        limit = { owned_by = ROOT }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_acquire_julich_mission2"
+                            duration = 9125
+                        }
+                    }
+                }
+                4110 = {
+                    if = {
+                        limit = { owned_by = ROOT }
+                        add_province_modifier = {
+                            name = "brg_kle_jch_acquire_julich_mission2"
+                            duration = 9125
+                        }
+                    }
+                }
+            }
         }
     }
-    vn_brg_kle_jch_claim_ruhr = {
-        #icon = 
+    vn_brg_kle_jch_limburger_conquest = {
+        icon = mission_cannons_firing
         position = 5
-        required_missions = { vn_brg_kle_jch_march_on_cleves }
+        required_missions = { vn_brg_kle_jch_take_ravensberg }
+        provinces_to_highlight = {
+            area = limburg_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
         trigger = {
-            
+            limburg_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
         }
         effect = {
-            
+            add_accepted_culture = brabantian
+            if = {
+                limit = {
+                    GEL = { valid_for_personal_unions_trigger = yes }
+                }
+                add_casus_belli = {
+                    type = cb_fabricated_claims
+                    target = GEL
+                    months = 300
+                }
+            }
+            guelders_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
-	}
-    vn_brg_kle_jch_repel_wittelsbachs = {
-        #icon = 
-        position = 8
-        required_missions = { vn_brg_kle_jch_the_united_duchies }
+    }
+    vn_brg_kle_jch_union_with_gelre = {
+        icon = mission_have_two_subjects
+        position = 6
+        required_missions = { vn_brg_kle_jch_limburger_conquest }
+        provinces_to_highlight = {
+            OR = {
+                owned_by = GEL
+                AND = {
+                    area = guelders_area
+                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                }
+            }
+        }
         trigger = {
-            
+            OR = {
+                GEL = { is_subject_of = ROOT }
+                guelders_area = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
+            }
         }
         effect = {
-            
+            add_dip_power = 100
+            add_country_modifier = {
+                name = "brg_kle_jch_union_with_gelre_mission"
+                duration = 9125
+            }
         }
-	}
+    }
 }

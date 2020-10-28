@@ -205,7 +205,7 @@ vn_ath_missions_slot_1 = {
             2828 = {
                 owned_by = ROOT
                 is_core = ROOT
-                development = 25
+                development = 30
                 has_fort_trigger = yes
                 NOT = { num_free_building_slots = 1 }
             }
@@ -231,7 +231,7 @@ vn_ath_missions_slot_1 = {
         trigger = {
             num_of_owned_provinces_with = {
 	        value = 25
-	        development = 20
+	        development = 25
 	        NOT = { num_free_building_slots = 1 }
 	        OR = {
                     has_owner_accepted_culture = yes
@@ -712,8 +712,8 @@ vn_ath_missions_slot_3 = {
             }
             else = {
                 num_accepted_cultures = 1
-                every_owned_province = {
-					limit = { culture_group = byzantine }
+                all_owned_province = {
+					culture_group = byzantine
 					consolidated_region_trigger = yes    
                 }
             }
@@ -776,7 +776,7 @@ vn_ath_missions_slot_4 = {
             change_innovativeness = 5
             add_country_modifier = {
                 name = "ath_akademia_mission"
-                duration = -1
+                duration = 9125
             }            
         }
     }

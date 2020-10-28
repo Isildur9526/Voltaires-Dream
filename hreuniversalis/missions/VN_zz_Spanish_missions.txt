@@ -326,7 +326,7 @@ vn_spa_missions_slot_2_a = {
 			}
 		}
         trigger = {
-			legitimacy = 95
+			legitimacy_equivalent = 95
             iberia_superregion = {
 				type = all
 				owned_by = ROOT
@@ -640,7 +640,7 @@ vn_spa_missions_slot_2_c = {
 			define_advisor = {
 				type = naval_reformer
 				skill = 3
-				cost_multiplier = 0.75
+				cost_multiplier = 0.25
 			}
         }
 	}

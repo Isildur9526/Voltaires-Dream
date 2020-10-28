@@ -758,7 +758,7 @@ vn_ase_missions_slot_3_e = {
 			prestige = 50
 			army_size_percentage = 0.6
 			navy_size_percentage = 0.6
-			legitimacy = 95
+			legitimacy_equivalent = 95
         }
         effect = {
             add_adm_power = 75

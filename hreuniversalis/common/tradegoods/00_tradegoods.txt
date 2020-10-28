@@ -122,7 +122,7 @@ olive = {
 carpet = { 
 	color = { 1.0 0.3 0.7 }
 	modifier = { caravan_power = 0.1 }
-	province = { local_core_creation = -0.20 }
+	province = { local_core_creation = 0.20 }
 	chance = { factor = 20 }
 }
 

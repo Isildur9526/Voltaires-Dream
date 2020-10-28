@@ -747,7 +747,7 @@ vn_lor_missions_slot_3_a = {
         }
         trigger = {
             tag = LTH
-            legitimacy = 100
+            legitimacy_equivalent = 100
             government_rank = 5
             alsace_region = {
                 type = all

@@ -3155,6 +3155,7 @@ country_decisions = {
 				primary_culture = sudovian
 			}
 			NOT = { has_country_flag = unformable }
+			NOT = { exists = PLC }
 			NOT = { tag = LIT }
 			OR = {
 				ai = no

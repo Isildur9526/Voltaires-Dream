@@ -25,13 +25,10 @@ country_event = {
 		NOT = { active_imperial_incident = any }
 		is_elector = no
 		emperor = {
-			OR = {
-				tag = BOH
-				alliance_with = BOH
-				has_opinion = {
-					who = BOH
-					value = 100
-				}
+			alliance_with = BOH
+			has_opinion = {
+				who = BOH
+				value = 100
 			}
 		}
 		prestige = 0

@@ -305,8 +305,8 @@ sco_economic_expansion_mission = {
 	global_tax_modifier = 0.15
 }
 sco_found_royal_burghs_mission = {
-	local_build_cost = -0.25
-	local_build_time = -0.25
+	local_build_cost = -0.2
+	local_build_time = -0.2
 	local_defensiveness = 0.2
 }
 sco_monastic_reforms_mission = {
@@ -332,9 +332,9 @@ sco_subjugate_ireland_mission = {
 	harsh_treatment_cost = -0.25
 }
 sco_move_court_to_edinburgh_mission = {
-	local_institution_spread = 0.2
+	local_institution_spread = 0.15
 	local_monthly_devastation = -0.1
-	local_state_maintenance_modifier = -0.25
+	local_state_maintenance_modifier = -0.15
 }
 sco_submission_of_wales_mission = {
 	local_defensiveness = 0.25
@@ -483,7 +483,7 @@ ase_flourishing_witan_mission = {
     same_culture_advisor_cost = -0.25
 }
 ase_reform_economy_mission = {
-    inflation_reduction = 0.25
+    inflation_reduction = 0.15
     interest = -1
 }
 ase_dominate_wool_trade_mission = {
@@ -499,8 +499,8 @@ ase_open_doors_to_trade_mission = {
     merchants = 1
 }
 ase_conquer_highlands_mission = {
-    mercenary_cost = -0.25
-    merc_maintenance_modifier = -0.15
+    mercenary_cost = -0.2
+    merc_maintenance_modifier = -0.1
 }
 ase_bretwalda_mission = {
     prestige_decay = -0.01
@@ -538,11 +538,11 @@ mlo_university_of_pavia_mission = {
     allowed_num_of_buildings = 1
 }
 mlo_embrace_renaissance_mission = {
-    global_institution_spread = 0.25
+    global_institution_spread = 0.2
     advisor_cost = -0.2
 }
 mlo_wealth_of_florence_mission = {
-    trade_goods_size_modifier = 0.2
+    trade_goods_size_modifier = 0.15
     local_development_cost = -0.1
 }
 mlo_swiss_mercs = { #evt modifier
@@ -583,11 +583,11 @@ mlo_conquer_friuli_mission = {
 
 #Anjou
 anj_subjugation_of_poitou_mission = {
-    local_state_maintenance_modifier = -0.25
+    local_state_maintenance_modifier = -0.15
     local_years_of_nationalism = -5
 }
 anj_end_blesevins_mission = {
-    local_unrest = -2
+    local_unrest = -1
     local_culture_conversion_cost = -0.15
 }
 anj_loire_river_valley_mission = {
@@ -644,7 +644,7 @@ anj_loyalty_to_rome_mission = {
 
 #England
 eng_livery_companies_mission = {
-    trade_goods_size_modifier = 0.25
+    trade_goods_size_modifier = 0.15
     trade_value = 2
 }
 eng_cinque_ports_mission = {
@@ -680,8 +680,8 @@ eng_claims_in_anjou_mission = {
     local_build_cost = -0.1
 }
 eng_seize_brittany_mission = {
-    local_unrest = -2
-    local_years_of_nationalism = -5
+    local_unrest = -1
+    local_years_of_nationalism = -10
 }
 eng_invade_burgundy_mission = {
     siege_ability = 0.1
@@ -689,7 +689,7 @@ eng_invade_burgundy_mission = {
 }
 eng_dominate_loire_valley_mission = {
     local_production_efficiency = 0.1
-    trade_goods_size_modifier = 0.2
+    trade_goods_size_modifier = 0.15
 }
 eng_root_out_heresy_mission = {
     missionaries = 1
@@ -713,7 +713,7 @@ eng_order_of_the_garter_mission = {
 }
 eng_repopulate_north_mission = {
     local_development_cost = -0.1
-    local_tax_modifier = 0.25
+    local_tax_modifier = 0.2
 }
 eng_establish_naval_bases_mission = {
     ship_recruit_speed = -0.25
@@ -769,7 +769,7 @@ eng_integrate_normandy_mission = {
 }
 eng_massif_central_mission = {
 	harsh_treatment_cost = -0.25
-	loot_amount = 0.25
+	loot_amount = 0.2
 }
 
 #Lorraine
@@ -809,7 +809,7 @@ lor_among_equals_mission = {
     prestige_decay = -0.01
 }
 lor_subdue_luxembourg_mission = {
-    local_state_maintenance_modifier = -0.25
+    local_state_maintenance_modifier = -0.15
     local_autonomy = -0.03
     local_years_of_nationalism = -5
 }
@@ -872,7 +872,7 @@ cas_claim_sevilla_mission = {
 }
 cas_school_of_salamanca_mission = {
     tolerance_heathen = 2
-    global_unrest = -2
+    global_unrest = -1
     global_institution_spread = 0.2
 }
 cas_gates_of_granada_mission = {
@@ -892,7 +892,7 @@ cas_spanish_inquisition_mission = {
     missionary_maintenance_cost = -0.25
 }
 cas_beyond_pyrenees_mission = {
-    trade_goods_size_modifier = 0.25
+    trade_goods_size_modifier = 0.2
 }
 cas_assimilate_moors_mission = {
     culture_conversion_cost = -0.15
@@ -966,7 +966,7 @@ por_found_portuguese_navy_mission = {
     leader_naval_manuever = 1
 }
 por_douro_trade_mission = {
-    trade_goods_size_modifier = 0.25
+    trade_goods_size_modifier = 0.2
 }
 por_exotic_trade_goods_mission = {
     trade_value_modifier = 0.5
@@ -996,7 +996,7 @@ por_land_in_madeira_mission = {
 	global_colonial_growth = 5
 }
 por_establish_feitorias_mission = {
-	trade_goods_size_modifier = 0.2
+	trade_goods_size_modifier = 0.15
 	local_build_cost = -0.1
 	local_production_efficiency = 0.1
 }
@@ -1032,7 +1032,7 @@ bra_curb_robber_baronry_mission2 = {
 	nobles_influence_modifier = -0.05
 }
 bra_assimilate_slavs_mission = {
-	local_unrest = -3
+	local_unrest = -2
 	local_build_cost = -0.15
 }
 bra_electorate_mission = {
@@ -1078,12 +1078,12 @@ bra_eastern_frontier_mission = {
 
 #Brittany
 bri_seize_cotentin_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	global_autonomy = -0.03
 }
 bri_dominant_breton_power_mission = {
 	global_tax_modifier = 0.1
-	diplomatic_reputation = 2
+	diplomatic_reputation = 1
 	diplomatic_annexation_cost = -0.2
 }
 bri_form_a_court_mission = {
@@ -1112,7 +1112,7 @@ bri_foothold_in_ireland_mission = {
 bri_unify_ireland_mission = {
 	cavalry_cost = -0.1
 	global_trade_power = 0.1
-	global_unrest = -2
+	global_unrest = -1
 }
 bri_defend_our_independence_mission = {
 	land_morale = 0.1
@@ -1148,14 +1148,14 @@ bri_nantes_cathedral_mission = {
 }
 bri_kroaz_du_mission = {
 	land_morale = 0.05
-	land_maintenance_modifier = -0.1
+	land_maintenance_modifier = -0.05
 	papal_influence = 1
 }
 bri_control_loire_river_mission = {
 	caravan_power = 0.25
 }
 bri_alencon_invasion_mission = {
-	fort_maintenance_modifier = -0.2
+	fort_maintenance_modifier = -0.15
 }
 bri_coast_of_normandy_mission = {
 	global_ship_recruit_speed = -0.15
@@ -1165,7 +1165,7 @@ bri_conquer_wales_mission = {
 	local_defensiveness = 0.2
 }
 bri_liberate_cornwall_mission = {
-	local_unrest = -2
+	local_unrest = -1
 	local_autonomy = -0.03
 	local_years_of_nationalism = -5
 }
@@ -1182,11 +1182,11 @@ nav_navarran_institutions_mission = {
 	global_institution_spread = 0.15
 }
 nav_merindades_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	global_tax_modifier = 0.15
 }
 nav_fueros_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	global_tax_modifier = 0.1
 	production_efficiency = 0.1
 }
@@ -1202,7 +1202,7 @@ nav_iberian_domains_mission = {
 	army_tradition_decay = -0.01
 }
 nav_european_influences_mission = {
-	idea_cost = -0.1
+	idea_cost = -0.05
 	advisor_cost = -0.2
 }
 nav_emperor_of_spains_mission = {
@@ -1229,7 +1229,7 @@ nav_hegemonic_power_mission = {
 #France
 fra_integrate_free_companies_mission = {
 	mercenary_discipline = 0.05
-	mercenary_cost = -0.25
+	mercenary_cost = -0.2
 }
 fra_toulon_shipyard_mission = {
 	local_ship_cost = -0.25
@@ -1247,7 +1247,7 @@ fra_fate_of_monarchy_mission2 = {
 	global_trade_goods_size_modifier = 0.15
 }
 fra_fate_of_monarchy_mission3 = {
-	global_unrest = -2
+	global_unrest = -1
 	land_morale = 0.1
 }
 fra_alliance_with_church_mission = {
@@ -1271,7 +1271,7 @@ fra_dominate_mediterranean_mission2 = {
 	merchants = 1
 }
 fra_standing_army_mission = {
-	land_maintenance_modifier = -0.15
+	land_maintenance_modifier = -0.05
 	artillery_power = 0.1
 	drill_gain_modifier = 0.2
 }
@@ -1284,7 +1284,7 @@ fra_empty_champagne_mission = {
 }
 fra_integrate_toulouse_mission = {
 	local_missionary_strength = 0.02
-	local_missionary_maintenance_cost = -0.5
+	local_missionary_maintenance_cost = -0.25
 }
 fra_march_on_rome = { #evt modifier
 	land_morale = -0.1
@@ -1307,7 +1307,7 @@ fra_encourage_urbanization_mission = {
 }
 fra_expand_royal_authority_mission = {
 	reduced_liberty_desire = 10
-	diplomatic_annexation_cost = -0.25
+	diplomatic_annexation_cost = -0.2
 }
 fra_found_sorbonne_mission = {
 	local_institution_spread = 0.1
@@ -1438,7 +1438,7 @@ fra_beyond_alps_mission = {
 }
 fra_invade_sardinia_mission = {
 	local_missionary_strength = 0.02
-	local_missionary_maintenance_cost = -0.5
+	local_missionary_maintenance_cost = -0.25
 }
 fra_sanction_crusades_mission = {
 	movement_speed = 0.1
@@ -1469,22 +1469,22 @@ slo_end_of_magyars_mission = {
 }
 slo_czech_invasion_mission = {
 	province_warscore_cost = -0.1
-	land_maintenance_modifier = -0.1
+	land_maintenance_modifier = -0.05
 }
 slo_endless_glory = { #evt modifier
 	prestige = 0.5
 	prestige_decay = -0.01
 }
 slo_silesian_integration_mission = {
-	global_unrest = -2
-	years_of_nationalism = -10
+	global_unrest = -1
+	years_of_nationalism = -5
 }
 slo_our_namesake_mission = {
 	local_development_cost = -0.1
 	local_build_cost = -0.1
 }
 slo_great_moravia_supreme_mission = {
-	yearly_absolutism = 1
+	yearly_absolutism = 0.5
 	prestige = 0.5
 	legitimacy = 1
 }
@@ -1573,11 +1573,11 @@ nor_settle_succession_mission = {
 	legitimacy = 1
 }
 nor_strong_ruler_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	harsh_treatment_cost = -0.25
 }
 nor_institute_landslov_mission = {
-	improve_relation_modifier = 0.3
+	improve_relation_modifier = 0.25
 	nobles_influence_modifier = -0.05
 	stability_cost_modifier = -0.1
 }
@@ -1602,7 +1602,7 @@ nor_curb_lendmenn_mission = {
 }
 nor_archdiocese_of_nidaros_mission = {
 	papal_influence = 1
-	improve_relation_modifier = 0.3
+	improve_relation_modifier = 0.25
 }
 nor_swedish_copper_mission = {
 	global_trade_goods_size_modifier = 0.15
@@ -1615,7 +1615,7 @@ nor_scandinavia_united_mission = {
 	all_power_cost = -0.01
 }
 nor_growth_of_bergen_mission = {
-	local_institution_spread = 0.25
+	local_institution_spread = 0.2
 	local_sailors_modifier = 0.25
 	local_build_cost = -0.1
 }
@@ -1632,8 +1632,8 @@ nor_against_swedes_mission = {
 	global_regiment_recruit_speed = -0.1
 }
 nor_a_worthy_epithet_mission = {
-	global_missionary_strength = 0.03
-	missionary_maintenance_cost = -0.5
+	global_missionary_strength = 0.02
+	missionary_maintenance_cost = -0.25
 }
 
 #Denmark/Norway
@@ -1739,7 +1739,7 @@ gbr_blast_furnaces_mission = {
 	production_efficiency = 0.1
 }
 gbr_london_mission = {
-	local_unrest = -2
+	local_unrest = -1
 	local_friendly_movement_speed = 0.25
 	local_monthly_devastation = -0.05
 	province_trade_power_modifier = 0.15
@@ -1877,8 +1877,8 @@ swe_deluge_mission = {
 }
 swe_cities_of_mecklenburg_mission = {
 	local_build_cost = -0.2
-	local_institution_spread = 0.25
-	local_autonomy = -0.05
+	local_institution_spread = 0.2
+	local_autonomy = -0.03
 }
 
 #Spain
@@ -1939,7 +1939,7 @@ spa_mediterranean_dominion_mission = {
 	global_ship_repair = 0.25
 }
 spa_mediterranean_dominion_mission2 = {
-	global_trade_power = 0.15
+	global_trade_power = 0.1
 	center_of_trade_upgrade_cost = -0.25
 	placed_merchant_power = 10
 }
@@ -2009,7 +2009,7 @@ pru_establish_zollverein_mission = {
 }
 pru_generaldirektorium_mission = {
 	advisor_pool = 1
-	advisor_cost = -0.25
+	advisor_cost = -0.2
 	reform_progress_growth = 0.15
 }
 pru_compulsory_education_mission = {
@@ -2055,7 +2055,7 @@ pru_southern_dominion_mission = {
 pru_north_german_confederation_mission = {
 	army_tradition = 1
 	ae_impact = -0.1
-	max_absolutism = 5
+	max_absolutism = 10
 }
 
 #Piedmont
@@ -2087,7 +2087,7 @@ pie_ligurian_traders_mission = {
 #Outremer
 atc_create_latin_patriarchate_mission = {
 	local_missionary_maintenance_cost = -0.25
-	local_missionary_strength = 0.015
+	local_missionary_strength = 0.02
 }
 atc_conquer_aleppo_mission = {
 	local_culture_conversion_cost = -0.15
@@ -2131,11 +2131,11 @@ atc_develop_holy_sites_mission = {
 	global_tax_modifier = 0.1
 }
 atc_crusader_castles_mission = {
-	defensiveness = 0.1
-	global_garrison_growth = 0.1
+	defensiveness = 0.15
+	global_garrison_growth = 0.15
 }
 atc_reconquer_jerusalem_mission = {
-	local_defensiveness = 0.15
+	local_defensiveness = 0.2
 }
 atc_knights_of_rome_mission = {
 	cavalry_power = 0.15
@@ -2211,7 +2211,7 @@ sie_santa_maria_della_scala_mission = {
 }
 sie_monte_dei_paschi_bank_mission = {
 	interest = -0.5
-	inflation_action_cost = -0.1
+	inflation_action_cost = -0.25
 }
 sie_monte_dei_paschi_bank_mission2 = {
 	local_tax_modifier = 0.15
@@ -2286,7 +2286,7 @@ ire_raid_wessex_mission = {
 	free_leader_pool = 1
 }
 ire_march_on_edinburgh_mission = {
-	local_build_cost = -0.1
+	local_build_cost = -0.15
 	local_tax_modifier = 0.1
 }
 ire_liberate_highlands_mission = {
@@ -2305,7 +2305,7 @@ ire_the_fair_city_mission = {
 
 #Frisia
 fri_land_of_monasteries_mission = {
-	global_missionary_strength = 0.015
+	global_missionary_strength = 0.02
 	tolerance_own = 1
 }
 fri_revalue_lex_frisionum_mission = {
@@ -2555,6 +2555,44 @@ tre_komnenos_restoration_mission = {
 	all_power_cost = -0.01
 	prestige_decay = -0.01
 	army_tradition_decay = -0.01
+}
+
+#Berg/Cleves/Julich
+brg_kle_jch_defeat_hohenzollerns_mission = {
+	monarch_military_power = 1
+}
+brg_kle_jch_union_with_gelre_mission = {
+	diplomatic_reputation = 1
+	diplomatic_annexation_cost = -0.25
+}
+brg_kle_jch_religious_freedom_mission = {
+	tolerance_heretic = 2
+	religious_unity = 0.25
+}
+brg_kle_jch_curb_archbishopric_mission = {
+	manpower_recovery_speed = 0.25
+	land_morale = 0.1
+}
+brg_kle_jch_grand_duchy_of_berg_mission = {
+	governing_capacity = 50
+	num_accepted_cultures = 1
+	diplomatic_upkeep = 1
+}
+brg_kle_jch_acquire_julich_mission = {
+	local_defensiveness = 0.2
+	garrison_size = 0.15
+}
+brg_kle_jch_acquire_julich_mission2 = {
+	local_years_of_nationalism = -5
+	local_state_maintenance_modifier = -0.15
+}
+brg_kle_jch_claim_ruhr_mission = {
+	build_cost = -0.1
+	development_cost = -0.1
+}
+brg_kle_jch_ruhr_valley_industry_mission = {
+	trade_goods_size_modifier = 0.15
+	production_efficiency = 0.1
 }
 
 #Misc

@@ -1845,21 +1845,16 @@ country_event = {
 			add_treasury = -100
 		}
 		add_manpower = -5
-		add_yearly_manpower = 1
-		add_country_modifier = {
-			name = pap_expedition_to_barbastro_mission
-			duration = 9125
-		}
 		hidden_effect = {
 			random_list = {
 				75 = {
 					country_event = {
-						id = vn_missions.41
+						id = vn_missions.41 days = 30
 					}
 				}
 				25 = {
 					country_event = {
-						id = vn_missions.42
+						id = vn_missions.42 days = 30
 					}
 				}
 			}
@@ -2079,7 +2074,7 @@ country_event = {
 			modifier = opinion_bad_monarch
 		}
 		add_ruler_modifier = {
-			name = pap_influence_the_electors_mission
+			name = pap_influence_the_electors_mission_a
 			duration = -1
 		}
 		add_casus_belli = {
@@ -2108,76 +2103,78 @@ country_event = {
 				name = religious_zeal_at_conv
 				duration = 7300
 			}
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							is_institution_enabled = feudalism
-							NOT = { has_institution = feudalism }
-						}
-						AND = {
-							is_institution_enabled = investiture
-							NOT = { has_institution = investiture }
-						}
-						AND = {
-							is_institution_enabled = universities
-							NOT = { has_institution = universities }
-						}
-						AND = {
-							is_institution_enabled = guilds
-							NOT = { has_institution = guilds }
-						}
-						AND = {
-							is_institution_enabled = chivalry
-							NOT = { has_institution = chivalry }
-						}
-						AND = {
-							is_institution_enabled = publichealth
-							NOT = { has_institution = publichealth }
-						}
-						AND = {
-							is_institution_enabled = laytheology
-							NOT = { has_institution = laytheology }
-						}
-						AND = {
-							is_institution_enabled = renaissance
-							NOT = { has_institution = renaissance }
-						}
-						AND = {
-							is_institution_enabled = new_world_i
-							NOT = { has_institution = new_world_i }
-						}
-						AND = {
-							is_institution_enabled = printing_press
-							NOT = { has_institution = printing_press }
-						}
-						AND = {
-							is_institution_enabled = printing_press
-							NOT = { has_institution = printing_press }
-						}
-						AND = {
-							is_institution_enabled = global_trade
-							NOT = { has_institution = global_trade }
-						}
-						AND = {
-							is_institution_enabled = manufactories
-							NOT = { has_institution = manufactories }
-						}
-						AND = {
-							is_institution_enabled = enlightenment
-							NOT = { has_institution = enlightenment }
-						}
-						AND = {
-							is_institution_enabled = industrialism
-							NOT = { has_institution = industrialism }
-						}
-						AND = {
-							is_institution_enabled = liberalism
-							NOT = { has_institution = liberalism }
-						}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_institution_enabled = feudalism
+						NOT = { has_institution = feudalism }
+					}
+					AND = {
+						is_institution_enabled = investiture
+						NOT = { has_institution = investiture }
+					}
+					AND = {
+						is_institution_enabled = universities
+						NOT = { has_institution = universities }
+					}
+					AND = {
+						is_institution_enabled = guilds
+						NOT = { has_institution = guilds }
+					}
+					AND = {
+						is_institution_enabled = chivalry
+						NOT = { has_institution = chivalry }
+					}
+					AND = {
+						is_institution_enabled = publichealth
+						NOT = { has_institution = publichealth }
+					}
+					AND = {
+						is_institution_enabled = laytheology
+						NOT = { has_institution = laytheology }
+					}
+					AND = {
+						is_institution_enabled = renaissance
+						NOT = { has_institution = renaissance }
+					}
+					AND = {
+						is_institution_enabled = new_world_i
+						NOT = { has_institution = new_world_i }
+					}
+					AND = {
+						is_institution_enabled = printing_press
+						NOT = { has_institution = printing_press }
+					}
+					AND = {
+						is_institution_enabled = printing_press
+						NOT = { has_institution = printing_press }
+					}
+					AND = {
+						is_institution_enabled = global_trade
+						NOT = { has_institution = global_trade }
+					}
+					AND = {
+						is_institution_enabled = manufactories
+						NOT = { has_institution = manufactories }
+					}
+					AND = {
+						is_institution_enabled = enlightenment
+						NOT = { has_institution = enlightenment }
+					}
+					AND = {
+						is_institution_enabled = industrialism
+						NOT = { has_institution = industrialism }
+					}
+					AND = {
+						is_institution_enabled = liberalism
+						NOT = { has_institution = liberalism }
 					}
 				}
-				add_next_institution_embracement = 50
+			}
+			capital_scope = {
+				add_next_institution_embracement = 100
 			}
 		}
 		add_dip_power = 100

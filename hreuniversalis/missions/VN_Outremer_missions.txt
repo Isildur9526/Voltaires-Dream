@@ -306,7 +306,7 @@ vn_atc_missions_slot_4_a = {
             if = {
                 limit = { government = monarchy }
                 stability = 1
-                legitimacy = 100
+                legitimacy_equivalent = 100
                 has_heir = yes
                 num_of_royal_marriages = 3
             }

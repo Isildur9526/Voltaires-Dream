@@ -2031,6 +2031,7 @@ SAX_ideas = {
 	
 	trigger = {
 		tag = SAX
+		started_in = 1180.1.1
 	}
 	free = yes		#will be added at load.
 	

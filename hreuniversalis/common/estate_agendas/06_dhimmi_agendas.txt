@@ -307,14 +307,20 @@ estate_dhimmi_develop_x = {
 
 estate_dhimmi_build_temple_in_y = {
 	can_select = {
-		adm_tech = 36
+		adm_tech = 12
 		any_owned_province = {
 			NOT = { religion_group = root }
 			NOT = { has_building = cathedral }
 			OR = {
 				AND = {
+					NOT = { has_building = monument }
 					NOT = { has_building = temple }
 					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 36 }
+					has_building = monument
+					NOT = { has_building = temple }
 				}
 				AND = {
 					ROOT = { adm_tech = 54 }
@@ -335,8 +341,14 @@ estate_dhimmi_build_temple_in_y = {
 					NOT = { has_building = cathedral }
 					OR = {
 						AND = {
+							NOT = { has_building = monument }
 							NOT = { has_building = temple }
 							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 36 }
+							has_building = monument
+							NOT = { has_building = temple }
 						}
 						AND = {
 							ROOT = { adm_tech = 54 }
@@ -355,8 +367,14 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -384,8 +402,14 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -403,8 +427,14 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -422,8 +452,14 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -436,12 +472,24 @@ estate_dhimmi_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
+					has_building = temple
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_church_build_temple_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = monument
 					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 1
+						value = 2
 					}
 				}
 			}
@@ -449,7 +497,7 @@ estate_dhimmi_build_temple_in_y = {
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 2
+						value = 1
 					}
 				}
 			}
@@ -471,16 +519,31 @@ estate_dhimmi_build_temple_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_church_build_temple_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = cathedral
 			}
 		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_church_build_temple_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
+					has_building = monument
 					has_building = temple
 					has_building = cathedral
 				}

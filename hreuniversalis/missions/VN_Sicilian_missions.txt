@@ -35,6 +35,7 @@ vn_sic_missions_slot_1 = {
             }
         }
         effect = {
+			add_papal_influence = 25
             add_country_modifier = {
                 name = sic_conquer_jerusalem_mission
                 duration = -1
@@ -671,6 +672,7 @@ vn_sic_missions_slot_3 = {
         }
         effect = {
             create_admiral = { tradition = 75 }
+			create_general = { tradition = 75 }
             coastal_tunisia_region = {
                 limit = {
                     NOT = { is_core = ROOT }

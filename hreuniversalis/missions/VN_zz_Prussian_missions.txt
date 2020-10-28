@@ -373,7 +373,7 @@ vn_pru_missions_slot_2_a = {
 		}
         trigger = {
 			government_rank = 5
-			legitimacy = 95
+			legitimacy_equivalent = 95
 			ostpreussen_region = {
 				type = all
 				owned_by = ROOT

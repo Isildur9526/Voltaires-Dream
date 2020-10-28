@@ -485,7 +485,7 @@ vn_pap_missions_slot_2 = {
                 }
             }
             add_country_modifier = {
-                name = pap_influence_the_electors_mission
+                name = pap_influence_the_electors_mission_b
                 duration = 9125
             }
         }

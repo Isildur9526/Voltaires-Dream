@@ -216,14 +216,20 @@ estate_holy_orders_build_hospital_in_y = {
 
 estate_church_build_temple_in_y = {
 	can_select = {
-		adm_tech = 36
+		adm_tech = 12
 		any_owned_province = {
 			is_state_core = root
 			NOT = { has_building = cathedral }
 			OR = {
 				AND = {
+					NOT = { has_building = monument }
 					NOT = { has_building = temple }
 					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 36 }
+					has_building = monument
+					NOT = { has_building = temple }
 				}
 				AND = {
 					ROOT = { adm_tech = 54 }
@@ -243,8 +249,14 @@ estate_church_build_temple_in_y = {
 					NOT = { has_building = cathedral }
 					OR = {
 						AND = {
+							NOT = { has_building = monument }
 							NOT = { has_building = temple }
 							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 36 }
+							has_building = monument
+							NOT = { has_building = temple }
 						}
 						AND = {
 							ROOT = { adm_tech = 54 }
@@ -262,8 +274,14 @@ estate_church_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -290,8 +308,14 @@ estate_church_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -308,8 +332,14 @@ estate_church_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -326,8 +356,14 @@ estate_church_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -340,12 +376,24 @@ estate_church_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
+					has_building = temple
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_church_build_temple_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = monument
 					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 1
+						value = 2
 					}
 				}
 			}
@@ -353,7 +401,7 @@ estate_church_build_temple_in_y = {
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 2
+						value = 1
 					}
 				}
 			}
@@ -372,16 +420,31 @@ estate_church_build_temple_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_church_build_temple_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = cathedral
 			}
 		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_church_build_temple_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
+					has_building = monument
 					has_building = temple
 					has_building = cathedral
 				}
@@ -430,14 +493,20 @@ estate_church_build_temple_in_y = {
 
 estate_mamluks_build_temple_in_y = {
 	can_select = {
-		adm_tech = 36
+		adm_tech = 12
 		any_owned_province = {
 			is_state_core = root
 			NOT = { has_building = cathedral }
 			OR = {
 				AND = {
+					NOT = { has_building = monument }
 					NOT = { has_building = temple }
 					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 36 }
+					has_building = monument
+					NOT = { has_building = temple }
 				}
 				AND = {
 					ROOT = { adm_tech = 54 }
@@ -457,8 +526,14 @@ estate_mamluks_build_temple_in_y = {
 					NOT = { has_building = cathedral }
 					OR = {
 						AND = {
+							NOT = { has_building = monument }
 							NOT = { has_building = temple }
 							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 36 }
+							has_building = monument
+							NOT = { has_building = temple }
 						}
 						AND = {
 							ROOT = { adm_tech = 54 }
@@ -476,8 +551,14 @@ estate_mamluks_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -504,8 +585,14 @@ estate_mamluks_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -522,8 +609,14 @@ estate_mamluks_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -540,8 +633,14 @@ estate_mamluks_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -554,12 +653,24 @@ estate_mamluks_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
+					has_building = temple
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_mamluks_build_temple_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = monument
 					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_mamluks_build_temple_in_y_var
-						value = 1
+						value = 2
 					}
 				}
 			}
@@ -567,7 +678,7 @@ estate_mamluks_build_temple_in_y = {
 				ROOT = {
 					set_variable = {
 						which = estate_mamluks_build_temple_in_y_var
-						value = 2
+						value = 1
 					}
 				}
 			}
@@ -586,16 +697,31 @@ estate_mamluks_build_temple_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_mamluks_build_temple_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = cathedral
 			}
 		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_mamluks_build_temple_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
+					has_building = monument
 					has_building = temple
 					has_building = cathedral
 				}
@@ -644,14 +770,20 @@ estate_mamluks_build_temple_in_y = {
 
 estate_holy_orders_build_temple_in_y = {
 	can_select = {
-		adm_tech = 36
+		adm_tech = 12
 		any_owned_province = {
 			is_state_core = root
 			NOT = { has_building = cathedral }
 			OR = {
 				AND = {
+					NOT = { has_building = monument }
 					NOT = { has_building = temple }
 					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 36 }
+					has_building = monument
+					NOT = { has_building = temple }
 				}
 				AND = {
 					ROOT = { adm_tech = 54 }
@@ -671,8 +803,14 @@ estate_holy_orders_build_temple_in_y = {
 					NOT = { has_building = cathedral }
 					OR = {
 						AND = {
+							NOT = { has_building = monument }
 							NOT = { has_building = temple }
 							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 36 }
+							has_building = monument
+							NOT = { has_building = temple }
 						}
 						AND = {
 							ROOT = { adm_tech = 54 }
@@ -690,8 +828,14 @@ estate_holy_orders_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -718,8 +862,14 @@ estate_holy_orders_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -736,8 +886,14 @@ estate_holy_orders_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -754,8 +910,14 @@ estate_holy_orders_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -768,20 +930,32 @@ estate_holy_orders_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
+					has_building = temple
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_mamluks_build_temple_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = monument
 					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_holy_orders_build_temple_in_y_var
-						value = 1
+						which = estate_mamluks_build_temple_in_y_var
+						value = 2
 					}
 				}
 			}
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_holy_orders_build_temple_in_y_var
-						value = 2
+						which = estate_mamluks_build_temple_in_y_var
+						value = 1
 					}
 				}
 			}
@@ -799,17 +973,32 @@ estate_holy_orders_build_temple_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_holy_orders_build_temple_in_y_var
-					value = 2
+					which = estate_mamluks_build_temple_in_y_var
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = cathedral
 			}
 		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_mamluks_build_temple_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
+					has_building = monument
 					has_building = temple
 					has_building = cathedral
 				}
@@ -858,7 +1047,7 @@ estate_holy_orders_build_temple_in_y = {
 
 estate_brahmins_build_temple_in_y = {
 	can_select = {
-		adm_tech = 36
+		adm_tech = 12
 		if = {
 			limit = {
 				NOT = { religion = zoroastrian }
@@ -869,8 +1058,14 @@ estate_brahmins_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -885,8 +1080,14 @@ estate_brahmins_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -908,8 +1109,14 @@ estate_brahmins_build_temple_in_y = {
 					NOT = { has_building = cathedral }
 					OR = {
 						AND = {
+							NOT = { has_building = monument }
 							NOT = { has_building = temple }
 							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 36 }
+							has_building = monument
+							NOT = { has_building = temple }
 						}
 						AND = {
 							ROOT = { adm_tech = 54 }
@@ -928,8 +1135,14 @@ estate_brahmins_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -962,8 +1175,14 @@ estate_brahmins_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -986,8 +1205,14 @@ estate_brahmins_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -1010,8 +1235,14 @@ estate_brahmins_build_temple_in_y = {
 				NOT = { has_building = cathedral }
 				OR = {
 					AND = {
+						NOT = { has_building = monument }
 						NOT = { has_building = temple }
 						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 36 }
+						has_building = monument
+						NOT = { has_building = temple }
 					}
 					AND = {
 						ROOT = { adm_tech = 54 }
@@ -1024,20 +1255,32 @@ estate_brahmins_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
+					has_building = temple
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_mamluks_build_temple_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = monument
 					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 1
+						which = estate_mamluks_build_temple_in_y_var
+						value = 2
 					}
 				}
 			}
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 2
+						which = estate_mamluks_build_temple_in_y_var
+						value = 1
 					}
 				}
 			}
@@ -1055,17 +1298,32 @@ estate_brahmins_build_temple_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_church_build_temple_in_y_var
-					value = 2
+					which = estate_mamluks_build_temple_in_y_var
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				has_building = cathedral
 			}
 		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_mamluks_build_temple_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
+					has_building = monument
 					has_building = temple
 					has_building = cathedral
 				}
@@ -8841,7 +9099,7 @@ estate_church_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -8868,7 +9126,7 @@ estate_church_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -8891,7 +9149,7 @@ estate_church_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -8923,7 +9181,7 @@ estate_church_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -8944,7 +9202,7 @@ estate_church_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -8965,7 +9223,7 @@ estate_church_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -8986,7 +9244,7 @@ estate_church_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9089,7 +9347,7 @@ estate_brahmins_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -9116,7 +9374,7 @@ estate_brahmins_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9139,7 +9397,7 @@ estate_brahmins_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9171,7 +9429,7 @@ estate_brahmins_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9192,7 +9450,7 @@ estate_brahmins_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9213,7 +9471,7 @@ estate_brahmins_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9234,7 +9492,7 @@ estate_brahmins_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9337,7 +9595,7 @@ estate_nobles_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -9364,7 +9622,7 @@ estate_nobles_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9387,7 +9645,7 @@ estate_nobles_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9419,7 +9677,7 @@ estate_nobles_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9440,7 +9698,7 @@ estate_nobles_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9461,7 +9719,7 @@ estate_nobles_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9482,7 +9740,7 @@ estate_nobles_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9585,7 +9843,7 @@ estate_maratha_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -9612,7 +9870,7 @@ estate_maratha_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9635,7 +9893,7 @@ estate_maratha_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9667,7 +9925,7 @@ estate_maratha_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9688,7 +9946,7 @@ estate_maratha_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9709,7 +9967,7 @@ estate_maratha_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9730,7 +9988,7 @@ estate_maratha_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9833,7 +10091,7 @@ estate_rajput_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -9860,7 +10118,7 @@ estate_rajput_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9883,7 +10141,7 @@ estate_rajput_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -9915,7 +10173,7 @@ estate_rajput_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9936,7 +10194,7 @@ estate_rajput_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9957,7 +10215,7 @@ estate_rajput_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -9978,7 +10236,7 @@ estate_rajput_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10081,7 +10339,7 @@ estate_burghers_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -10108,7 +10366,7 @@ estate_burghers_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10131,7 +10389,7 @@ estate_burghers_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10163,7 +10421,7 @@ estate_burghers_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10184,7 +10442,7 @@ estate_burghers_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10205,7 +10463,7 @@ estate_burghers_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10226,7 +10484,7 @@ estate_burghers_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10329,7 +10587,7 @@ estate_vaisyas_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -10356,7 +10614,7 @@ estate_vaisyas_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10379,7 +10637,7 @@ estate_vaisyas_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10411,7 +10669,7 @@ estate_vaisyas_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10432,7 +10690,7 @@ estate_vaisyas_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10453,7 +10711,7 @@ estate_vaisyas_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10474,7 +10732,7 @@ estate_vaisyas_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10577,7 +10835,7 @@ estate_jains_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -10604,7 +10862,7 @@ estate_jains_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10627,7 +10885,7 @@ estate_jains_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10659,7 +10917,7 @@ estate_jains_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10680,7 +10938,7 @@ estate_jains_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10701,7 +10959,7 @@ estate_jains_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10722,7 +10980,7 @@ estate_jains_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10825,7 +11083,7 @@ estate_mamluks_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -10852,7 +11110,7 @@ estate_mamluks_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10875,7 +11133,7 @@ estate_mamluks_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -10907,7 +11165,7 @@ estate_mamluks_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10928,7 +11186,7 @@ estate_mamluks_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10949,7 +11207,7 @@ estate_mamluks_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -10970,7 +11228,7 @@ estate_mamluks_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -11073,7 +11331,7 @@ estate_holy_orders_build_university_in_y = {
 					num_free_building_slots = 1
 				}
 				AND = {
-					ROOT = { adm_tech = 60 }
+					ROOT = { adm_tech = 52 }
 					OR = {
 						has_building = college
 						num_free_building_slots = 1
@@ -11100,7 +11358,7 @@ estate_holy_orders_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -11123,7 +11381,7 @@ estate_holy_orders_build_university_in_y = {
 							num_free_building_slots = 1
 						}
 						AND = {
-							ROOT = { adm_tech = 60 }
+							ROOT = { adm_tech = 52 }
 							OR = {
 								has_building = college
 								num_free_building_slots = 1
@@ -11155,7 +11413,7 @@ estate_holy_orders_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -11176,7 +11434,7 @@ estate_holy_orders_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -11197,7 +11455,7 @@ estate_holy_orders_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1
@@ -11218,7 +11476,7 @@ estate_holy_orders_build_university_in_y = {
 						num_free_building_slots = 1
 					}
 					AND = {
-						ROOT = { adm_tech = 60 }
+						ROOT = { adm_tech = 52 }
 						OR = {
 							has_building = college
 							num_free_building_slots = 1

@@ -290,10 +290,7 @@ vn_sie_missions_slot_3_a = {
 			province_id = 117
 		}
         trigger = {
-			OR = {
-				legitimacy = 100
-				republican_tradition = 100
-			}
+			legitimacy_equivalent = 100
 			117 = {
 				development = 30
 				NOT = { num_free_building_slots = 1 }

@@ -671,7 +671,84 @@ country_event = {
 	}
 }
 
-#66, 67 free
+#The Seat of the Grand Duchy (66)
+country_event = {
+	id = vn_missions.66
+	title = vn_missions.66.t
+	desc = vn_missions.66.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			1940 = { save_event_target_as = jcb_capital_1 }
+			2501 = { save_event_target_as = jcb_capital_2 }
+			2502 = { save_event_target_as = jcb_capital_3 }
+		}
+	}
+
+	option = {
+		name = vn_missions.66.a
+		goto = jcb_capital_1
+        ai_chance = { 
+            factor = 33
+            modifier = {
+                factor = 2
+                event_target:jcb_capital_1 = { 
+					higher_development_than = event_target:jcb_capital_2
+					higher_development_than = event_target:jcb_capital_3
+				}	
+            }
+        }
+        trigger = {
+            NOT = { capital = event_target:jcb_capital_1 }
+        }
+        event_target:jcb_capital_1 = { move_capital_effect = yes }
+    }
+    option = {
+		name = vn_missions.66.b
+		goto = jcb_capital_2
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				event_target:jcb_capital_2 = { 
+					higher_development_than = event_target:jcb_capital_1
+					higher_development_than = event_target:jcb_capital_3
+				}	
+			}
+		}
+        trigger = {
+            NOT = { capital = event_target:jcb_capital_2 }
+        }
+        event_target:jcb_capital_2 = { move_capital_effect = yes }
+    }
+    option = {
+		name = vn_missions.66.c
+		goto = jcb_capital_3
+        ai_chance = { 
+            factor = 33
+            modifier = {
+                factor = 2
+                event_target:jcb_capital_3 = { 
+					higher_development_than = event_target:jcb_capital_1
+					higher_development_than = event_target:jcb_capital_2
+				}	
+            }
+        }
+        trigger = {
+            NOT = { capital = event_target:jcb_capital_3 }
+        }
+        event_target:jcb_capital_3 = { move_capital_effect = yes }
+	}
+    option = {
+		name = vn_missions.68.e
+        ai_chance = { factor = 1 }
+	}
+}
+
+#67 free
 
 #The Capital of Lotharingia (68)
 country_event = {
@@ -697,7 +774,10 @@ country_event = {
             factor = 33
             modifier = {
                 factor = 2
-                event_target:lth_capital_1 = { development = 20 }
+                event_target:lth_capital_1 = { 
+					higher_development_than = event_target:lth_capital_2
+					higher_development_than = event_target:lth_capital_3
+				}	
             }
         }
         trigger = {
@@ -708,13 +788,16 @@ country_event = {
     option = {
 		name = vn_missions.68.b
 		goto = lth_capital_2
-        ai_chance = { 
-            factor = 33
-            modifier = {
-                factor = 2
-                event_target:lth_capital_2 = { development = 20 }
-            }
-        }
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				event_target:lth_capital_2 = { 
+					higher_development_than = event_target:lth_capital_1
+					higher_development_than = event_target:lth_capital_3
+				}	
+			}
+		}
         trigger = {
             NOT = { capital = event_target:lth_capital_2 }
         }
@@ -727,7 +810,10 @@ country_event = {
             factor = 33
             modifier = {
                 factor = 2
-                event_target:lth_capital_3 = { development = 20 }
+                event_target:lth_capital_3 = { 
+					higher_development_than = event_target:lth_capital_1
+					higher_development_than = event_target:lth_capital_2
+				}	
             }
         }
         trigger = {
@@ -1463,19 +1549,28 @@ country_event = {
 	desc = vn_missions.81.d
 	picture = CITY_VIEW_eventPicture
 
-    is_triggered_only = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			1846 = { save_event_target_as = fri_capital_1 }
+			98 = { save_event_target_as = fri_capital_2 }
+		}
+	}
 
 	option = {
 		name = vn_missions.81.a
+		goto = fri_capital_1
 		ai_chance = { factor = 0 }
-		trigger = { owns = 1846 }
-		1846 = { move_capital_effect = yes }
+		trigger = { owns = event_target:fri_capital_1 }
+		event_target:fri_capital_1 = { move_capital_effect = yes }
 	}
 	option = {
 		name = vn_missions.81.b
+		goto = fri_capital_2
 		ai_chance = { factor = 0 }
-		trigger = { owns = 98 }
-		98 = { move_capital_effect = yes }
+		trigger = { owns = event_target:fri_capital_2 }
+		event_target:fri_capital_2 = { move_capital_effect = yes }
 	}
 	option = {
 		name = vn_missions.81.c

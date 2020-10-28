@@ -159,11 +159,11 @@ vn_boh_missions_slot_1 = {
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = styria_area
+                area = styria_area
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = murmark_area
+                area = murmark_area
             }
         }
         effect = {
@@ -211,11 +211,11 @@ vn_boh_missions_slot_1 = {
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = sannmark_area
+                area = sannmark_area
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = carniola_area
+                area = carniola_area
             }
         }
         effect = {
@@ -579,11 +579,11 @@ vn_boh_missions_slot_2 = {
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = carinthia_area
+                area = carinthia_area
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = lienz_area
+                area = lienz_area
             }
         }
         effect = {
@@ -944,11 +944,11 @@ vn_boh_missions_slot_4 = {
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = oberpfalz_area
+                area = oberpfalz_area
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = leuchtenburg_area
+                area = leuchtenburg_area
             }
         }
         effect = {
@@ -1124,15 +1124,15 @@ vn_boh_missions_slot_5 = {
         trigger = {
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = meissen_area
+                area = meissen_area
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = merseburg_area
+                area = merseburg_area
             }
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                 value = 5
-                region = osterland_area
+                area = osterland_area
             }
         }
         effect = {

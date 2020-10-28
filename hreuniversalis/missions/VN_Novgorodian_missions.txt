@@ -396,14 +396,7 @@ vn_nov_missions_slot_2 = {
 					NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-			}
-            volhynia_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-			}    			
+			} 			
         }
     }
     vn_nov_expand_westward = {
@@ -411,10 +404,7 @@ vn_nov_missions_slot_2 = {
         position = 6
         required_missions = { vn_nov_down_the_dnieper }
 		provinces_to_highlight = {
-			OR = {
-				region = turovpinsk_region
-				region = volhynia_region
-			}
+			region = turovpinsk_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
@@ -422,14 +412,22 @@ vn_nov_missions_slot_2 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			volhynia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
         }
         effect = {
-			add_army_tradition = 10
-			add_mil_power = 100
+            volhynia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}   
+            halicia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}   
         }
     }
     vn_nov_integrate_the_golden_ring = {
@@ -728,6 +726,13 @@ vn_nov_missions_slot_3 = {
                 }
                 add_permanent_claim = ROOT
 			} 
+            podolia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
             wild_fields_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -812,9 +817,36 @@ vn_nov_missions_slot_3 = {
 			stability = 3
 			prestige = 50
 			months_of_ruling = 120
-			#Completed all the previous conquest missions
         }
         effect = {
+            estonia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
+            livonia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
+            latvian_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
+            curoniasemigallia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
 			add_country_modifier = {
                 name = "nov_the_rus_reunited_mission"
                 duration = -1 

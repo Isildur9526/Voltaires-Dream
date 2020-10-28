@@ -233,7 +233,7 @@ vn_bri_missions_slot_2_a = {
         required_missions = { vn_bri_dominant_breton_power }
         trigger = {
 			has_3_advisors_trigger = yes
-			legitimacy = 100
+			legitimacy_equivalent = 100
         }
         effect = {
 			change_government_reform_progress = 25

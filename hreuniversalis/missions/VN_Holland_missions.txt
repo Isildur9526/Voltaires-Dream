@@ -1178,7 +1178,7 @@ vn_hol_missions_slot_4_a = {
                 }
             }
             else = {
-                every_owned_province = { NOT = { devastation = 1 } }
+                all_owned_province = { NOT = { devastation = 1 } }
             }
         }
         effect = {
