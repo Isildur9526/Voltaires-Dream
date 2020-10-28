@@ -238,7 +238,7 @@ provincial_tax_income = {
 }
 
 provincial_production_size = {
-	trade_goods_size = 0.1
+	trade_goods_size = 0.15
 	ship_recruit_speed = -0.01
 }
 
@@ -273,7 +273,7 @@ development = {
 	land_forcelimit	= 0.033		# special case, affected by autonomy
 	naval_forcelimit = 0.05		# special case, affected by autonomy & set to 0 by code if not port
 	local_sailors = 15			# special case, affected by autonomy & set to 0 by code if not port
-	province_trade_power_value = 0.1
+	province_trade_power_value = 0.2
 	local_amount_of_banners = 0.085
 }
 
@@ -758,7 +758,7 @@ trade_refusal = {
 }
 
 mercantilism = {
-	global_prov_trade_power_modifier = 1.0
+	global_prov_trade_power_modifier = 2.0
 	embargo_efficiency = 0.5
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
