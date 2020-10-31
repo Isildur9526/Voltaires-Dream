@@ -180,6 +180,7 @@ estate_mamluks = {
 		estate_mamluks_mamluk_host
 		estate_mamluks_recruit_mamluk_generals
 		estate_mamluks_monopoly_of_slaves
+		estate_mamluks_special_privilege
 	}
 
 	agendas = {

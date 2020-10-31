@@ -5,32 +5,46 @@ chivalrous_confederations_reform = {
 		has_estate = estate_holy_orders
 	}
 	modifiers = {
-		leader_land_shock = 1
+		army_tradition = 0.25
 		holy_orders_influence_modifier = 0.1
 		holy_orders_loyalty_modifier = 0.05
 		nobles_influence_modifier = -0.1
 		nobles_loyalty_modifier = -0.05
 	}
-	#custom_attributes = {
-	#	add a custom attribute to improve one of the holy order privileges in 1.30
-	#}
+	ai = {
+		factor = 3
+		modifier = {
+			factor = 0.1
+			estate_influence = {
+				estate = estate_holy_orders
+				influence = 90
+			}			
+		}
+	}
 }
 
 mamluk_leadership_reform = {
 	icon = "mamluk_government"
 	potential = {
-		has_estate = indian_crown
+		has_estate = estate_mamluks
 	}
 	modifiers = {
-		infantry_power = 0.1
+		free_leader_pool = 1
 		mamluks_influence_modifier = 0.1
 		mamluks_loyalty_modifier = 0.05
 		nobles_influence_modifier = -0.1
 		nobles_loyalty_modifier = -0.05
 	}
-	#custom_attributes = {
-	#	add a custom attribute to improve one of the mamluk privileges in 1.30
-	#}
+	ai = {
+		factor = 3
+		modifier = {
+			factor = 0.1
+			estate_influence = {
+				estate = estate_mamluks
+				influence = 90
+			}			
+		}
+	}
 }
 
 advising_vizirate_reform = {
@@ -115,6 +129,7 @@ strenghten_abbatial_hierarchy_reform = {
 	allow_normal_conversion = yes
 	modifiers = {
 		abb_benedictines_influence = 0.1
+		legitimacy = 0.25
 		devotion = 0.25
 		diplomatic_reputation = 1
 	}

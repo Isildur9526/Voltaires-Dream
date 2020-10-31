@@ -21,8 +21,8 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				province_id = 2192
-				province_id = 2946
+				province_id = 5809
+				province_id = 5790
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -38,14 +38,14 @@ country_decisions = {
 				religion = protestant
 				religion = anabaptist
 			}
-			owns_core_province = 2192	 # Kurland
-			owns_core_province = 2946	 # Semigallia
+			owns_core_province = 5809	 # Kurland
+			owns_core_province = 5790	 # Semigallia
 		}
 		effect = {
 			change_tag = KUR
 			add_prestige = 10
 			remove_non_electors_emperors_from_empire_effect = yes
-			set_capital = 2946		# Semigallia
+			set_capital = 5790		# Semigallia
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas

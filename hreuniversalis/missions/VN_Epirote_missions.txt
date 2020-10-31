@@ -410,7 +410,7 @@ vn_epi_missions_slot_3 = {
         }
     }
     vn_epi_conquer_serbia = {
-        icon = despot_stafans_legacy
+        icon = despot_stefans_legacy
         position = 5
         required_missions = { vn_epi_conquer_rashka }
         provinces_to_highlight = {

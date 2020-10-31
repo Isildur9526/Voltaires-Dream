@@ -241,6 +241,7 @@ estate_holy_orders = {
 		estate_holy_orders_banking_rights
 		estate_holy_orders_monopoly_on_banking
 		estate_holy_orders_court_representation
+		estate_holy_orders_special_privilege
 	}
 
 	agendas = {

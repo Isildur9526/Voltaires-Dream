@@ -14,7 +14,9 @@
 -Added new mission tree for Athens with 28 missions
 -Added new mission tree for Trebizond with 25 missions (contribution by Tmasher)
 -Added new shared mission tree for Berg/Cleves/Julich with 18 missions (contribution by RetrogMGXII)
+-Added new mission tree for Assyria with 17 missions (contribution by RetrogMGXII)
 -Overhauled and extended Sicily's mission tree
+-Added 2 new estate privileges
 -Added vanilla Chinese Faction events for the Kievan Rus
 -Added event for the Yaroslavichi Triumvirate
 -Added triggered province modifier for the Slavic sanctuary of Rethra
@@ -35,18 +37,23 @@
 -Assyria is now formable by Nestorian and Mandaean nations. Doing so will no longer make you Yazidi.
 -Changed the following trade goods modifiers: Barley, Rye, Hemp, Vegetables, Whales
 -Soldiers Household, Impressment Office and State House now combo with many VN trade goods as well
+-Venezia is no longer barred from spawning institutions
 -Various mission modifier tweaks
 
 #Balance
+-Goods produced per development reduced by 1/4
+-Land forcelimit per development reduced by 1/5
+-Extra tax, manpower and sailor modifiers from cores reduced by 1/3
+-Trade power increase from Centers of Trade reduced by 2/5 for all levels
 -Sicilian Vespers rebel spawns toned down slightly
 -Byzantium now starts with only 10% crown land (instead of 50%) before the 4th Crusade. The Statutory Rights are disabled for them. 
--Increased required nations limit for DoF, made AI less likely to select it
+-Increased required nations per tier for Defender of the Faith, doubled its cost and made AI less likely to select it
 -Nerfed many prestige and tradition ideas for consistency
 -Upped cost of Temples/Courthouses/Workshops to 150 ducats so they are no longer free upgrades (also fixes minor interface bug due to spending no money)
 -Marketplaces, Barracks, Docks and Shipyards now cost 150 ducats up from 100
 
 #Fixes
--Small fixes for the following mission trees: Sweden, Navarra, Serbia, Swabia, Bohemia, Sicily, Venice, Denmark, Normandy, Portugal, France, Scotland, Baghdad, Holland/Netherlands, Seljuk, Prussia, Savoy, Lithuania, Byzantium, Luxembourg, Sardinia, Spain
+-Small fixes for the following mission trees: Sweden, Navarra, Serbia, Swabia, Bohemia, Sicily, Venice, Denmark, Normandy, Portugal, France, Scotland, Baghdad, Holland/Netherlands, Seljuk, Prussia, Savoy, Lithuania, Byzantium, Luxembourg, Sardinia, Spain, Epirus
 -Fixed major decision bug where heretic AI PU juniors could flip their overlord's ruler and heir religions and nuke their stability
 -Fixed the Support Independence agenda targeting French Fiefs thereby making it impossible
 -Build a House of Worship agenda now appears for Monuments too
@@ -55,11 +62,14 @@
 -Various fixes to the Mediatization incident; released princes now spawn with units
 -Fragmentation of Poland should no longer restart after firing once
 -Forming Sicily as Apulia will no longer switch your mission tree
+-Fixed the Kurland formation decision requiring wrong provinces
+-Fixed the tech requirement for forming Arabia
 -Commonwealth can no longer form Lithuania
 -Improved localization for crusade events
 -Fixed wrong West Slavic DPN for Bärwalde
 -Fixed some area/country names
 -Removed the spy teleporter in the Nile Delta
+-Removed the Canal du Midi from the river map
 -Other minor localization/bug fixes
 
 # v 2.0.5 #

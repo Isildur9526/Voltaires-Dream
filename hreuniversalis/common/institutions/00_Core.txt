@@ -215,7 +215,10 @@ investiture = {
 
 	can_start = {
 		is_year = 1100
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 15
@@ -402,7 +405,10 @@ universities = {
 
 	can_start = {
 		is_year = 1200
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 15
@@ -568,7 +574,10 @@ guilds = {
 
 	can_start = {
 		is_year = 1250
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			province_has_center_of_trade_of_level = 3
@@ -749,7 +758,10 @@ chivalry = {
 
 	can_start = {
 		is_year = 1300
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 15
@@ -913,7 +925,10 @@ publichealth = {
 			superregion = poland_superregion
 			superregion = italy_superregion
 		}
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 15
@@ -1244,7 +1259,10 @@ renaissance = {
 			superregion = sicily_superregion
 			superregion = italy_superregion
 		}
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 20
@@ -1464,7 +1482,10 @@ new_world_i = {
 	can_start = {
 		is_year = 1490
 		has_port = yes
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			province_has_center_of_trade_of_level = 1
@@ -1661,7 +1682,10 @@ printing_press = {
 	can_start = {
 		is_year = 1550
 		is_in_capital_area = yes
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 15
@@ -1951,7 +1975,10 @@ global_trade = {
 	
 	can_start = {
 		is_year = 1600
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		highest_value_trade_node = yes
 		OR = {
 			province_has_center_of_trade_of_level = 3
@@ -2207,7 +2234,10 @@ manufactories = {
 	can_start = {
 		is_year = 1650
 		is_in_capital_area = yes
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		development = 20
 		printing_press = 100
@@ -2714,7 +2744,10 @@ enlightenment = {
 	can_start = {
 		is_year = 1700
 		is_in_capital_area = yes
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		printing_press = 100
 		global_trade = 100
@@ -3055,7 +3088,10 @@ industrialism = {
 
 	can_start = {
 		is_year = 1750
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		manufactories = 100
 		enlightenment = 100
@@ -3275,7 +3311,10 @@ liberalism = {
 
 	can_start = {
 		is_year = 1800
-		is_island = no
+		OR = {
+			is_island = no
+			province_id = 112
+		}
 		is_state = yes
 		OR = {
 			development = 15

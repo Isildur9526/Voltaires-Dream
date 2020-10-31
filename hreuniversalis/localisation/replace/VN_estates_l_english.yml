@@ -124,6 +124,8 @@
  estate_holy_orders_monopoly_on_banking_desc: "Having been granted special formal banking rights by the [Root.Monarch.GetTitle], the Holy Orders have brought our nation's finances under ever tighter control. Now they are bold enough to demand a full monopoly over national banking!"
  estate_holy_orders_court_representation: "$ESTATE_NAME$ in Court"
  estate_holy_orders_court_representation_desc: "As a Crusader state, we must work closely with the Holy Orders in the eternal fight against the heathens occupying the Holy Land. One concession they have continuously requested is the right to be represented on the royal council."
+ estate_holy_orders_special_privilege: "Autonomous Bailiwicks"
+ estate_holy_orders_special_privilege_desc: "It is only a matter of time before we will face the problem of how to continue to govern our growing [Root.GovernmentName]. A not quite ordinary method is to put the Bailiwicks controlled by the $ESTATE_NAME$ under greater self-government, so that we can use our resources elsewhere."
 #Holy Orders Events
  estate_privileges_and_agendas_events.3.m: "The Proposal of the Holy Orders"
  estate_disasters.20.t: "The $ESTATE_HOLY_ORDERS$ Break Free"
@@ -252,12 +254,14 @@
  estate_mamluks_guaranteed_autonomy_revoke_effect_tooltip: "The modifier §Y'Guaranteed Mamluk Autonomy'§! is removed from all owned provinces."
  estate_mamluks_mamluk_host: "Larger Mamluk Armies"
  estate_mamluks_monopoly_of_slaves: "Monopoly on Slaves"
+ estate_mamluks_special_privilege: "Integrate Mamluk Ranks"
  estate_mamluks_import_mamluks_desc: "The highest quality slaves are those from Circassia, and the Mamluks, seeking to expand their influence in our state, wish us to increase our importation of Circassian slaves to an even greater level."
  estate_mamluks_guaranteed_autonomy_desc: "Guaranteeing retired Mamluks freedom from government interference will ease the burdens of our administration and be sure to make them more supportive of our rule."
  estate_mamluks_advisors_desc: "When it comes to administering an Islamic state, the [Root.Monarch.GetTitle] often relies on the bureaucratic expertise of the Mamluks. It is only natural that the court should be filled with Mamluk advisors."
  estate_mamluks_mamluk_host_desc: "By offering the Mamluks further influence over the [Root.Monarch.GetTitle], we can persuade them to allow us to levy more of their men for our armies."
  estate_mamluks_recruit_mamluk_generals_desc: "The Mamluks are a powerful warrior caste whose leaders know a thing or two about the art of war. We should make use of them as generals in the [Root.GetAdjective] army."
  estate_mamluks_monopoly_of_slaves_desc: "Though the Mamluks are officially slaves, they usually achieve de-facto freedom and wield considerable power in the Islamic world. A concession they have often desired is the ability to manage the flow and rights of slaves within our state."
+ estate_mamluks_special_privilege_desc: "If necessary, we will integrate Mamluk regiments into our own army, so that we can quickly and easily compensate losses."
 #Mamluks Events
  estate_privileges_and_agendas_events.3.l: "The Proposal of the Mamluks"
  estate_disasters.21.t: "The $ESTATE_MAMLUKS$ Revolt"
