@@ -10,6 +10,8 @@ hre = no
 owner = AAN
 controller = AAN
 add_core = AAN
+extra_cost = 8
+center_of_trade = 1
 
 1828.10.20 = {
 	owner = RUS

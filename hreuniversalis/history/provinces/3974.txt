@@ -10,6 +10,8 @@ hre = no
 owner = PLL
 controller = PLL
 add_core = PLL
+center_of_trade = 1
+extra_cost = 8
 
 1239.3.3 = {
 	owner = GLH

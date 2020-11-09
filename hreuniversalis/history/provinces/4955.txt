@@ -10,6 +10,8 @@ hre = no
 owner = FTM
 controller = FTM
 add_core = FTM
+center_of_trade = 2
+extra_cost = 16
 
 1071.8.26 = {
 	owner = DSC

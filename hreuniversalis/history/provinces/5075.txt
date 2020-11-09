@@ -10,6 +10,8 @@ hre = no
 owner = FTM
 controller = FTM
 add_core = FTM
+center_of_trade = 1
+extra_cost = 8
 
 1171.9.13 = {
 	owner = MAM

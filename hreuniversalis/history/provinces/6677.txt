@@ -11,8 +11,6 @@ owner = VDR
 controller = VDR 
 add_core = VDR
 add_core = YYV
-extra_cost = 8
-center_of_trade = 1
 
 1078.1.1 = { religion = orthodox }
 1213.1.1 = {

@@ -10,6 +10,8 @@ base_manpower = 1
 capital = "Palma" 
 is_city = yes	
 add_core = MYU
+center_of_trade = 1
+extra_cost = 8
 
 1115.4.1 = { controller = PIS }
 1116.1.1 = {

@@ -10,6 +10,8 @@ hre = no
 owner = NOV
 controller = NOV
 add_core = NOV
+center_of_trade = 1
+extra_cost = 8
 
 1478.1.15 = {
 	owner = MOS

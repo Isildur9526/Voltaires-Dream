@@ -11,8 +11,6 @@ owner = VDR
 controller = VDR
 add_core = VDR
 add_core = YAR
-extra_cost = 8
-center_of_trade = 1
 fort_14th = yes
 
 1078.1.1 = { religion = orthodox }

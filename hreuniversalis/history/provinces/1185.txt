@@ -10,6 +10,8 @@ trade_goods = paper
 base_manpower = 2
 capital = "Debrecen"
 is_city = yes
+center_of_trade = 1
+extra_cost = 8
 
 1060.12.6 = {
 	owner = HUN

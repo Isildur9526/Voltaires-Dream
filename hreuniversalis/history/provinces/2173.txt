@@ -10,6 +10,8 @@ hre = no
 owner = NNT
 controller = NNT
 add_core = NNT
+center_of_trade = 2
+extra_cost = 16
 
 1063.2.27 = {
 	owner = KNV

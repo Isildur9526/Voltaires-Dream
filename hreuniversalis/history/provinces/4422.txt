@@ -10,9 +10,13 @@ hre = no
 owner = SEV
 controller = SEV
 add_core = SEV
-extra_cost = 10
+extra_cost = 20
 add_permanent_province_modifier = {
 	name = las_marismas
+	duration = -1
+}
+add_permanent_province_modifier = {
+	name = guadiana_estuary_modifier
 	duration = -1
 }
 

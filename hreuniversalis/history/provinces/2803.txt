@@ -11,6 +11,8 @@ owner = DRD
 controller = DRD
 add_core = DRD
 fort_14th = yes
+center_of_trade = 2
+extra_cost = 16
 
 1200.1.1 = { culture = saxon }
 1270.1.1 = {

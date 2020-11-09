@@ -11,6 +11,8 @@ owner = FLA
 controller = FLA
 add_core = FLA
 add_core = ATO
+center_of_trade = 1
+extra_cost = 8
 
 1180.4.28 = {
 	owner = FRA

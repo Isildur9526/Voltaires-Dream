@@ -12,6 +12,8 @@ controller = BYZ
 add_core = BYZ
 add_core = BUL
 fort_14th = yes
+center_of_trade = 1
+extra_cost = 8
 
 1081.4.4 = { religion = orthodox }
 1185.1.1 = { unrest = 10 }

@@ -10,6 +10,8 @@ hre = no
 owner = TLC
 controller = TLC
 add_core = TLC
+center_of_trade = 1
+extra_cost = 8
 
 1080.1.1 = {
 	owner = MOR

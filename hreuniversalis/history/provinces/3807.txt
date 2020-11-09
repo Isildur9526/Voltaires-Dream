@@ -11,6 +11,8 @@ owner = NOV
 controller = NOV
 add_core = NOV
 add_core = TVE
+center_of_trade = 1
+extra_cost = 8
 
 1246.9.30 = {
 	owner = TVE

@@ -10,6 +10,8 @@ hre = no
 owner = CEA
 controller = CEA
 add_core = CEA
+extra_cost = 8
+center_of_trade = 1
 
 1240.12.6 = {
 	owner = GLH

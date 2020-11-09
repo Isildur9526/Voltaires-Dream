@@ -12,6 +12,8 @@ controller = DAN
 add_core = DAN
 add_core = SKN
 fort_14th = yes
+center_of_trade = 1
+extra_cost = 8
 
 1332.8.2 = {
 	owner = SWE

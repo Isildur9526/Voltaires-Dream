@@ -11,6 +11,8 @@ owner = XBG
 controller = XBG
 add_core = XBG
 fort_14th = yes
+center_of_trade = 1
+extra_cost = 8
 
 1337.1.1 = { fort_14th = no fort_15th = yes }
 1368.3.30 = {

@@ -11,6 +11,8 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 fort_14th = yes
+center_of_trade = 2
+extra_cost = 16
 
 1071.8.26 = {
 	owner = KYS

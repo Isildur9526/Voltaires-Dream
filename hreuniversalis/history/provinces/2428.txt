@@ -10,6 +10,8 @@ hre = no
 owner = SVE
 controller = SVE
 add_core = SVE
+extra_cost = 8
+center_of_trade = 1
 
 1063.9.11 = {
 	owner = HUN

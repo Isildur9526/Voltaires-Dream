@@ -10,6 +10,8 @@ hre = no
 owner = BGH
 controller = APP
 add_core = BGH
+center_of_trade = 1
+extra_cost = 8
 
 1055.3.1 = { controller = BGH }
 1060.10.18 = {

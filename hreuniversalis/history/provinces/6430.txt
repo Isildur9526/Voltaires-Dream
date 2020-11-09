@@ -10,6 +10,8 @@ hre = no
 owner = BSH
 controller = BSH
 add_core = BSH
+extra_cost = 8
+center_of_trade = 1
 
 1236.1.1 = {
 	owner = GLH

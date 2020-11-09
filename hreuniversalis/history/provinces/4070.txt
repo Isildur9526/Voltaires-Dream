@@ -46,9 +46,12 @@ discovered_by = north_american
 	remove_core = ENG
 }
 1369.6.1 = {
-	owner = FRA
-	controller = FRA
+	owner = FOI
+	controller = FOI
+	add_core = FOI
+	remove_core = FRA
 	remove_core = XMS
+	remove_core = GUY
 }
 1520.1.1 = { trade_goods = corn }
 1558.1.1 = { religion = reformed }
@@ -59,6 +62,13 @@ discovered_by = north_american
 1574.5.1 = { unrest = 7 }
 1584.1.1 = { unrest = 12 }
 1588.12.1 = { unrest = 15 }
+1589.8.2 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	add_core = GUY
+	remove_core = FOI
+}
 1594.1.1 = { unrest = 10 }
 1598.4.13 = { unrest = 3 }
 1598.5.2 = { unrest = 0 }

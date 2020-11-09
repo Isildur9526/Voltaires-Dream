@@ -41,6 +41,20 @@ add_core = SIL
 	add_core = SIL
 }
 1335.1.1 = { hre = yes }
+1341.1.1 = {
+	owner = POL
+	controller = POL
+	add_core = POL
+	remove_core = SIL
+	hre = no
+}
+1348.1.1 = {
+	owner = SIL
+	controller = SIL
+	add_core = SIL
+	remove_core = POL
+	hre = yes
+}
 1526.8.30 = {
 	owner = HAB
 	controller = HAB

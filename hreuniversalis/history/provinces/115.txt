@@ -10,7 +10,7 @@ base_manpower = 5
 capital = "Pisa" 
 is_city = yes
 add_core = PIS
-extra_cost = 8
+extra_cost = 16
 center_of_trade = 2
 fort_14th = yes
 

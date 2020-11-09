@@ -11,6 +11,8 @@ owner = CHR
 controller = CHR
 add_core = CHR
 add_core = TBS
+center_of_trade = 1
+extra_cost = 8
 
 1164.2.15 = {
 	owner = TBS

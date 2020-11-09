@@ -10,6 +10,8 @@ base_manpower = 2
 capital = "Sarajevo"
 is_city = yes
 add_core = BOS
+center_of_trade = 1
+extra_cost = 8
 
 1167.7.8 = {
 	owner = BYZ

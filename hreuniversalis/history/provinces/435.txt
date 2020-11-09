@@ -11,6 +11,7 @@ base_manpower = 2
 capital = "San Severo"
 is_city = yes
 center_of_trade = 1
+extra_cost = 8
 
 1067.1.1 = { culture = neapolitan }
 1104.10.1 = {

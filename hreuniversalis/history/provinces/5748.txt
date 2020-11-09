@@ -11,6 +11,8 @@ owner = BLR
 controller = BLR
 add_core = BLR
 fort_14th = yes
+center_of_trade = 1
+extra_cost = 8
 
 1242.1.1 = {
 	owner = YTV

@@ -12,6 +12,8 @@ controller = BYZ
 add_core = BYZ
 add_core = TRE
 fort_14th = yes
+center_of_trade = 1
+extra_cost = 8
 
 1077.1.1 = {
 	owner = RUM

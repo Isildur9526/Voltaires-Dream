@@ -11,6 +11,8 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = PHR
+center_of_trade = 1
+extra_cost = 8
 
 1074.1.1 = {
 	owner = CPP

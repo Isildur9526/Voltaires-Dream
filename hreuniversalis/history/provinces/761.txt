@@ -10,8 +10,6 @@ hre = no
 owner = AGC
 controller = AGC
 add_core = AGC
-extra_cost = 8
-center_of_trade = 1
 
 1058.1.1 = {
 	owner = SEV

@@ -10,6 +10,8 @@ hre = no
 owner = MAZ
 controller = MAZ
 add_core = MAZ
+center_of_trade = 1
+extra_cost = 8
 
 1226.3.1 = { add_core = TEU }
 1231.1.1 = {

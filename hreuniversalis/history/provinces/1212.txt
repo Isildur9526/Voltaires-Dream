@@ -10,6 +10,8 @@ base_manpower = 4
 capital = "Batalyaws"
 is_city = yes
 add_core = BDJ
+center_of_trade = 1
+extra_cost = 8
 
 1094.1.1 = {
 	owner = MOR

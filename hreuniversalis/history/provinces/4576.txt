@@ -10,6 +10,8 @@ hre = no
 owner = IFQ
 controller = IFQ 
 add_core = IFQ
+center_of_trade = 1
+extra_cost = 8
 
 1057.1.1 = {
 	culture = berber

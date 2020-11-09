@@ -11,8 +11,6 @@ owner = PLM
 controller = PLM
 add_core = PLM
 fort_14th = yes
-extra_cost = 8
-center_of_trade = 1
 
 1060.1.1 = {
 	owner = APL

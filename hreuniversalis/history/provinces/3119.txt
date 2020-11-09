@@ -10,6 +10,8 @@ hre = no
 owner = JZR
 controller = JZR
 add_core = JZR
+center_of_trade = 1
+extra_cost = 8
 
 1127.1.1 = {
 	owner = MSL

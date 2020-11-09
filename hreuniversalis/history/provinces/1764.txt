@@ -11,6 +11,16 @@ capital = "Leiningen"
 is_city = yes
 add_core = XLE
 
+1279.1.1 = {
+	owner = DGS
+	controller = DGS
+	add_core = DGS
+}
+1316.1.1 = {
+	owner = XLE
+	controller = XLE
+	remove_core = DGS
+}
 1795.5.16 = { controller = FRA }
 1797.10.17 = {
 	owner = FRA

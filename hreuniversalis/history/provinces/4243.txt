@@ -11,6 +11,8 @@ owner = PLT
 controller = PLT  
 add_core = PLT
 add_core = MSK
+center_of_trade = 1
+extra_cost = 8
 
 1101.1.1 = {
 	owner = MSK

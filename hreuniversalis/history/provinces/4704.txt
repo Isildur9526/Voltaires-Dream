@@ -10,6 +10,8 @@ hre = no
 owner = MRY
 controller = MRY
 add_core = MRY
+center_of_trade = 1
+extra_cost = 8
 
 1130.1.1 = {
 	owner = HSC

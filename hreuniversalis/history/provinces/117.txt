@@ -11,6 +11,8 @@ owner = TUS
 controller = TUS
 add_core = TUS	
 add_core = SIE
+extra_cost = 8
+center_of_trade = 1
 
 1115.7.24 = {
 	owner = SIE
