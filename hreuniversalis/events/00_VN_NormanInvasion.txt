@@ -715,8 +715,8 @@ country_event = {
 #Blank Event For Trigger
 country_event = {
 	id = nrm_invasions.8
-	title = nrm_invasions.8.t
-	desc = nrm_invasions.8.d
+	title = none
+	desc = none
 	picture = DIPLOMACY_eventPicture
 
 	hidden = yes
@@ -729,7 +729,7 @@ country_event = {
 		}
 	}
 
-	option = { name = nrm_invasions.8.a }
+	option = { name = OK }
 }
 
 #High King Declares War

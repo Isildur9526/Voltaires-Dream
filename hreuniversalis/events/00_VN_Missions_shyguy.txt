@@ -1606,7 +1606,7 @@ country_event = {
 			is_capital = no
 			controlled_by = ROOT
 		}
-		mission_completed = vn_plc_establish_yeshivot
+		has_country_flag = establishd_yeshivot_flag
 	}
 	
 	immediate = {

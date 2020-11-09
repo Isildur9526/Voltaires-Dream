@@ -4845,7 +4845,7 @@ country_event = {
 			is_at_war = no
 		}
 		NOT = { started_in = 1055.7.1 }
-		NOT = { is_year = 1070.1.1 }
+		NOT = { is_year = 1070 }
 	}
 
 	option = {
@@ -7201,8 +7201,8 @@ country_event = {
 
 province_event = {
 	id = fbievents.125
-	title = "FBIT125"
-	desc = "FBID125"
+	title = none
+	desc = none
 	picture = BATTLE_eventPicture
 
 	hidden = yes
@@ -7234,7 +7234,7 @@ province_event = {
 	}
 
 	option = {
-		name = "FBIA125"
+		name = "OK"
 	}
 }
 
@@ -7353,10 +7353,23 @@ country_event = {
 				}
 			}
 		}
-		define_heir = {
-			dynasty = ROOT
-			claim = 100
-			age = 0
+		if = {
+			limit = { NOT = { has_reform = representative_thing_reform } }
+			define_heir = {
+				dynasty = ROOT
+				claim = 100
+				age = 0
+			}
+		}
+		else = {
+			define_heir = {
+				dynasty = ROOT
+				claim = 100
+				age = 0
+				adm = 1
+				dip = 1
+				mil = 1
+			}
 		}
 		if = {
 			limit = { has_ruler_flag = edward_the_confessor_flag }
@@ -7419,14 +7432,31 @@ country_event = {
 		if = {
 			limit = { has_ruler_flag = edward_the_confessor_flag }
 			custom_tooltip = hrema1.tt
-			define_heir = {
-				name = "Hereweald"
-				dynasty = "Godwining"
-				culture = event_target:origin_of_heirs_family
-				religion = event_target:origin_of_heirs_family
-				female = no
-				claim = 50
-				age = 30
+			if = {
+				limit = { NOT = { has_reform = authorized_thing_reform } }
+				define_heir = {
+					name = "Hereweald"
+					dynasty = "Godwining"
+					culture = event_target:origin_of_heirs_family
+					religion = event_target:origin_of_heirs_family
+					female = no
+					claim = 50
+					age = 30
+				}
+			}
+			else = {
+				define_heir = {
+					name = "Hereweald"
+					dynasty = "Godwining"
+					culture = event_target:origin_of_heirs_family
+					religion = event_target:origin_of_heirs_family
+					female = no
+					claim = 50
+					adm = 1
+					dip = 1
+					mil = 1
+					age = 30
+				}
 			}
 		}
 		event_target:origin_of_heirs_family = {
@@ -7498,13 +7528,29 @@ country_event = {
 				}
 			}
 			ROOT = {
-				define_heir = {
-					dynasty = PREV
-					culture = PREV
-					religion = PREV
-					female = no
-					claim = 25
-					age = 10
+				if = {
+					limit = { NOT = { has_reform = authorized_thing_reform } }
+					define_heir = {
+						dynasty = PREV
+						culture = PREV
+						religion = PREV
+						female = no
+						claim = 25
+						age = 10
+					}
+				}
+				else = {
+					define_heir = {
+						dynasty = PREV
+						culture = PREV
+						religion = PREV
+						female = no
+						claim = 25
+						adm = 1
+						dip = 1
+						mil = 1
+						age = 10
+					}
 				}
 			}
 			tooltip = {
@@ -7528,14 +7574,28 @@ country_event = {
 				NOT = { war_with = ROOT }
 			}
 		}
-		define_heir = {
-			dynasty = "Hardrådeætta"
-			culture = norwegian
-			adm = 3
-			dip = 3
-			mil = 3
-			female = no
-			age = 15
+		if = {
+			limit = { NOT = { has_reform = authorized_thing_reform } }
+			define_heir = {
+				dynasty = "Hardrådeætta"
+				culture = norwegian
+				adm = 3
+				dip = 3
+				mil = 3
+				female = no
+				age = 15
+			}
+		}
+		else = {
+			define_heir = {
+				dynasty = "Hardrådeætta"
+				culture = norwegian
+				adm = 4
+				dip = 4
+				mil = 4
+				female = no
+				age = 15
+			}
 		}
 		NOR = {
 			add_opinion = {
@@ -7575,15 +7635,30 @@ country_event = {
 				NOT = { has_reform = germanic_monarchy }
 			}
 			ROOT = {
-				define_heir = {
-					dynasty = PREV
-					culture = PREV
-					adm = 3
-					dip = 3
-					mil = 3
-					female = no
-					claim = 10
-					age = 15
+				if = {
+					limit = { NOT = { has_reform = authorized_thing_reform } }
+					define_heir = {
+						dynasty = PREV
+						culture = PREV
+						adm = 3
+						dip = 3
+						mil = 3
+						female = no
+						claim = 10
+						age = 15
+					}
+				}
+				else = {
+					define_heir = {
+						dynasty = PREV
+						culture = PREV
+						adm = 4
+						dip = 4
+						mil = 4
+						female = no
+						claim = 10
+						age = 15
+					}
 				}
 			}
 			tooltip = {
@@ -7601,14 +7676,28 @@ country_event = {
 		name = "FBIDD128"
 		ai_chance = { factor = 2 }
 		trigger = { has_ruler_flag = christian_elected }
-		define_heir = {
-			name = "Christian"
-			dynasty = "von Oldenburg"
-			culture = low_elbish
-			age = 25
-			adm = 4
-			dip = 1
-			mil = 2
+		if = {
+			limit = { NOT = { has_reform = authorized_thing_reform } }
+			define_heir = {
+				name = "Christian"
+				dynasty = "von Oldenburg"
+				culture = low_elbish
+				age = 25
+				adm = 4
+				dip = 1
+				mil = 2
+			}
+		}
+		else = {
+			define_heir = {
+				name = "Christian"
+				dynasty = "von Oldenburg"
+				culture = low_elbish
+				age = 25
+				adm = 5
+				dip = 2
+				mil = 3
+			}
 		}
 		if = {
 			limit = { exists = RSB }
@@ -7633,14 +7722,28 @@ country_event = {
 				NOT = { war_with = ROOT }
 			}
 		}
-		define_heir = {
-			dynasty = "Rolloning"
-			culture = normand
-			adm = 3
-			dip = 3
-			mil = 3
-			female = no
-			age = 15
+		if = {
+			limit = { NOT = { has_reform = authorized_thing_reform } }
+			define_heir = {
+				dynasty = "Rolloning"
+				culture = normand
+				adm = 3
+				dip = 3
+				mil = 3
+				female = no
+				age = 15
+			}
+		}
+		else = {
+			define_heir = {
+				dynasty = "Rolloning"
+				culture = normand
+				adm = 4
+				dip = 4
+				mil = 4
+				female = no
+				age = 15
+			}
 		}
 		NRM = {
 			add_opinion = {
@@ -8005,8 +8108,8 @@ country_event = {
 #To Fix Names
 country_event = {
 	id = fbievents.139
-	title = "FBIT139"
-	desc = "FBID139"
+	title = none
+	desc = none
 	picture = BATTLE_eventPicture
 	mean_time_to_happen = { days = 1 }
 	hidden = yes
@@ -8084,7 +8187,7 @@ country_event = {
 	}
 
 	option = {
-		name = "FBIA139"
+		name = "OK"
 		restore_country_name = yes
 		clr_country_flag = ayyubids_name_flag
 		clr_country_flag = mamluks_name_flag
@@ -8097,8 +8200,8 @@ country_event = {
 #Fix No Religion
 country_event = {
 	id = fbievents.140
-	title = "FBIT140"
-	desc = "FBID140"
+	title = none
+	desc = none
 	picture = CIVIL_WAR_eventPicture
 	mean_time_to_happen = { days = 1 }
 	hidden = yes
@@ -8108,7 +8211,7 @@ country_event = {
 	}
 
 	option = {
-		name = "FBIA140"
+		name = "OK"
 		every_country = {
 			limit = { religion = no_religion }
 			capital_scope = {
