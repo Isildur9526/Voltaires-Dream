@@ -139,7 +139,6 @@ country_decisions = {
 		effect = {
 			5054 = { move_capital_effect = yes }
 			change_tag = MAM
-			swap_non_generic_missions = yes
 			if = {
 				limit = { has_regency = no }
 				kill_ruler = yes

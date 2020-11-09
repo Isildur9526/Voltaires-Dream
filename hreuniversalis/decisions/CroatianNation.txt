@@ -61,7 +61,6 @@ country_decisions = {
 		effect = {
 			add_prestige = 25
 			change_tag = CRO
-			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

@@ -98,7 +98,6 @@ country_decisions = {
 					set_government_rank = 5
 				}
 				set_country_flag = formed_jerusalem
-				swap_non_generic_missions = yes
 			}
 		}
 		ai_will_do = {
