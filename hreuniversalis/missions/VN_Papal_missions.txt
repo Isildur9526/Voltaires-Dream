@@ -8,6 +8,7 @@ vn_pap_missions_slot_1 = {
     potential = {
         tag = PAP
         NOT = { map_setup = map_setup_random }
+        always = no
     }
     has_country_shield = yes
 
@@ -351,6 +352,7 @@ vn_pap_missions_slot_2 = {
     potential = {
         tag = PAP
         NOT = { map_setup = map_setup_random }
+        always = no
     }
     has_country_shield = yes
 
@@ -794,6 +796,7 @@ vn_pap_missions_slot_3 = {
     potential = {
         tag = PAP
         NOT = { map_setup = map_setup_random }
+        always = no
     }
     has_country_shield = yes
 
@@ -952,6 +955,7 @@ vn_pap_missions_slot_4 = {
     potential = {
         tag = PAP
         NOT = { map_setup = map_setup_random }
+        always = no
     }
     has_country_shield = yes
 
@@ -1444,6 +1448,7 @@ vn_pap_missions_slot_5 = {
     potential = {
         tag = PAP
         NOT = { map_setup = map_setup_random }
+        always = no
     }
     has_country_shield = yes
 

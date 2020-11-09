@@ -15,6 +15,7 @@ estate_nomadic_tribes = {
 			AND = { tag = BUL government = monarchy }
 			AND = { tag = GEO government = monarchy }
 		}
+		NOT = { religion = zoroastrian }
 	}
 
 	# These scale with loyalty & power

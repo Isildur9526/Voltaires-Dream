@@ -3797,6 +3797,8 @@
  desc_asy_assyrian_faith_mission: ""
  asy_rebuild_babylon_mission: "Walls of Babylon"
  desc_asy_rebuild_babylon_mission: ""
+ asy_pacify_palestine_mission: "Return of the Israelites"
+ desc_asy_pacify_palestine_mission: ""
 ###OPINION MODIFIERS###
  lem_sent_reparations_opinion: "Sent Reparations"
  lem_refused_reparations_opinion: "Refused Reparations"

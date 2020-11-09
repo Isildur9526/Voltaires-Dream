@@ -57,6 +57,7 @@ estate_cossacks = {
 				has_terrain = steppe
 			}
 		}
+		NOT = { religion = zoroastrian }
 	}
 
 	# These scale with loyalty & power

@@ -2986,3 +2986,7 @@ asy_assyrian_faith_mission = {
 	prestige = -1
 	diplomatic_reputation = -1
 }
+asy_pacify_palestine_mission = {
+	local_tax_modifier = 0.1
+	local_development_cost = -0.1
+}

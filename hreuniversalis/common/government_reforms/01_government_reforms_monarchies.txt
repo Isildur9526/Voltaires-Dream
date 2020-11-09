@@ -834,8 +834,8 @@ clergy_in_administration_reform = {
 		OR = {
 			is_revolutionary = no
 			NOT = { has_dlc = "Emperor" }
-			NOT = { has_reform = ottoman_government }
 		}
+		NOT = { has_reform = ottoman_government }
 	}
 	modifiers = {
 		free_adm_policy = 1
