@@ -1,9 +1,10 @@
 # Monarchy
 chivalrous_confederations_reform = {
-	icon = "holy_state_reform"
 	potential = {
 		has_estate = estate_holy_orders
 	}
+	icon = "holy_state_reform"
+	allow_normal_conversion = yes
 	modifiers = {
 		army_tradition = 0.25
 		holy_orders_influence_modifier = 0.1
@@ -24,10 +25,11 @@ chivalrous_confederations_reform = {
 }
 
 mamluk_leadership_reform = {
-	icon = "mamluk_government"
 	potential = {
 		has_estate = estate_mamluks
 	}
+	icon = "mamluk_government"
+	allow_normal_conversion = yes
 	modifiers = {
 		free_leader_pool = 1
 		mamluks_influence_modifier = 0.1
@@ -48,11 +50,14 @@ mamluk_leadership_reform = {
 }
 
 advising_vizirate_reform = {
+	icon = "noble_muslim"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = ottoman_government
 	}
-	icon = "noble_muslim"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = ottoman_government
+	}
 	modifiers = {
 		tur_lalas_influence = 0.1
 		same_culture_advisor_cost = -0.25
@@ -60,11 +65,14 @@ advising_vizirate_reform = {
 }
 
 strength_of_the_voynuks_reform = {
+	icon = "soldiers_7"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = ottoman_government
 	}
-	icon = "soldiers_7"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = ottoman_government
+	}
 	modifiers = {
 		tur_militarists_influence = 0.1
 		discipline = 0.05
@@ -72,11 +80,14 @@ strength_of_the_voynuks_reform = {
 }
 
 askeri_officials_reform = {
+	icon = "indian_sultanate"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = ottoman_government
 	}
-	icon = "indian_sultanate"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = ottoman_government
+	}
 	modifiers = {
 		tur_pacifists_influence = 0.1
 		development_cost = -0.1
@@ -84,13 +95,104 @@ askeri_officials_reform = {
 	}
 }
 
+authorized_thing_reform = {
+	icon = "regionally_elected_commanders"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = germanic_monarchy
+	}
+	trigger = {
+		has_reform = germanic_monarchy
+	}
+	modifiers = {
+		state_maintenance_modifier = -0.25
+	}
+	effect = {
+		custom_tooltip = authorized_thing_reform.tt
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+representative_thing_reform = {
+	icon = "government_for_people_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = germanic_monarchy
+	}
+	trigger = {
+		has_reform = germanic_monarchy
+	}
+	modifiers = {
+		autonomy_change_time = -0.25
+		legitimacy = 0.5
+	}
+	effect = {
+		custom_tooltip = representative_thing_reform.tt
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+# Republic
+consular_constitution_reform = {
+	icon = "legislative_assembly_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = italian_monarchy
+	}
+	trigger = {
+		has_reform = italian_monarchy
+	}
+	modifiers = {
+		monarch_admin_power = 1
+	}
+	effect = {
+		change_statists_vs_orangists = 0.15
+	}
+	removed_effect = {
+		change_statists_vs_orangists = -0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+captain_of_the_people_reform = {
+	icon = "commander_king_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = italian_monarchy
+	}
+	trigger = {
+		has_reform = italian_monarchy
+	}
+	modifiers = {
+		monarch_diplomatic_power = 1
+	}
+	effect = {
+		change_statists_vs_orangists = -0.15
+	}
+	removed_effect = {
+		change_statists_vs_orangists = 0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
 # Theocracy
 ora_et_labora_reform = {
+	icon = "church"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = monastic_order_reform
 	}
-	icon = "church"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = monastic_order_reform
+	}
 	modifiers = {
 		abb_benedictines_influence = 0.1
 		advisor_cost = -0.1
@@ -98,11 +200,14 @@ ora_et_labora_reform = {
 }
 
 monastic_conservatism_reform = {
+	icon = "religious_leader"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = monastic_order_reform
 	}
-	icon = "religious_leader"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = monastic_order_reform
+	}
 	modifiers = {
 		abb_cluniacs_influence = 0.1
 		prestige_decay = -0.01
@@ -110,11 +215,14 @@ monastic_conservatism_reform = {
 }
 
 acquisition_of_granges_reform = {
+	icon = "paper_money_map"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = monastic_order_reform
 	}
-	icon = "paper_money_map"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = monastic_order_reform
+	}
 	modifiers = {
 		abb_cistercians_influence = 0.1
 		global_autonomy = -0.05
@@ -122,11 +230,14 @@ acquisition_of_granges_reform = {
 }
 
 strenghten_abbatial_hierarchy_reform = {
+	icon = "monastic_elections_reform"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = monastic_order_reform
 	}
-	icon = "monastic_elections_reform"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = monastic_order_reform
+	}
 	modifiers = {
 		abb_benedictines_influence = 0.1
 		legitimacy = 0.25
@@ -136,12 +247,15 @@ strenghten_abbatial_hierarchy_reform = {
 }
 
 noble_chanceries_reform = {
-	potential = {
-		has_reform = monastic_order_reform
-	}
 	icon = "nobleman"
 	allow_normal_conversion = yes
 	royal_marriage = yes
+	potential = {
+		has_reform = monastic_order_reform
+	}
+	trigger = {
+		has_reform = monastic_order_reform
+	}
 	modifiers = {
 		abb_cluniacs_influence = 0.1
 		leader_cost = -0.1
@@ -149,11 +263,14 @@ noble_chanceries_reform = {
 }
 
 episcopal_competences_reform = {
+	icon = "pope"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = monastic_order_reform
 	}
-	icon = "pope"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = monastic_order_reform
+	}
 	modifiers = {
 		abb_cistercians_influence = 0.1
 		governing_capacity = 100
@@ -161,13 +278,78 @@ episcopal_competences_reform = {
 	}
 }
 
+unity_of_the_brethen_reform = {
+	icon = "revolutionary_council"
+	allow_normal_conversion = yes
+	potential = {
+		religion = hussite
+	}
+	trigger = {
+		religion = hussite
+	}
+	modifiers = {
+		global_missionary_strength = 0.02
+		diplomatic_reputation = 2
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+hussite_radicalism_reform = {
+	icon = "rioting_burning"
+	allow_normal_conversion = yes
+	potential = {
+		religion = hussite
+	}
+	trigger = {
+		religion = hussite
+	}
+	modifiers = {
+		devotion = -0.5
+		land_forcelimit_modifier = 0.1
+		manpower_in_true_faith_provinces = 0.1
+		army_tradition_decay = -0.02
+		war_exhaustion = -0.02
+		monthly_militarized_society = 0.05
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+wisdom_of_the_dervishes_reform = {
+	icon = "indian_sultanate"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = sufi_reform
+	}
+	trigger = {
+		has_reform = sufi_reform
+	}
+	modifiers = {
+		global_institution_spread = 0.2
+		technology_cost = -0.05
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
 #Tribes
 sept_privileges_reform = {
+	icon = "imperial_nobility_reform"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = tribal_kingdom
 	}
-	icon = "imperial_nobility_reform"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
 	modifiers = {
 		cla_flatha_influence = 0.1
 		global_regiment_recruit_speed = -0.1
@@ -176,11 +358,14 @@ sept_privileges_reform = {
 }
 
 celtic_revival_reform = {
+	icon = "conciliarism_reform"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = tribal_kingdom
 	}
-	icon = "conciliarism_reform"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
 	modifiers = {
 		cla_druid_influence = 0.1
 		tolerance_own = 1
@@ -189,11 +374,14 @@ celtic_revival_reform = {
 }
 
 memorial_tradition_reform = {
+	icon = "soldiers_4"
+	allow_normal_conversion = yes
 	potential = {
 		has_reform = tribal_kingdom
 	}
-	icon = "soldiers_4"
-	allow_normal_conversion = yes
+	trigger = {
+		has_reform = tribal_kingdom
+	}
 	modifiers = {
 		cla_filid_influence = 0.1
 		global_institution_spread = 0.15

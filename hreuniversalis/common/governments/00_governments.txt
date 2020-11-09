@@ -71,6 +71,8 @@ monarchy = {
 				states_general_reform
 				legislative_sejm
 				integrated_sejmiks
+				authorized_thing_reform
+				representative_thing_reform
 				feuillant_reform
 				two_chamber_reform
 				imperial_decree_reform
@@ -157,6 +159,7 @@ monarchy = {
 		germanic_monarchy
 		eastern_monarchy
 		celestial_empire
+		germanic_monarchy
 	}
 
 	#Flavor
@@ -282,6 +285,8 @@ republic = {
 				black_market_consortium_reform
 				imperial_diplomacy_reform
 				municipal_self_defense_reform
+				consular_constitution_reform
+				captain_of_the_people_reform
 				feuillant_reform
 				two_chamber_reform
 			}
@@ -486,6 +491,8 @@ theocracy = {
 				loyal_nobility_reform
 				pious_merchants_reform
 				monastic_breweries_reform
+				unity_of_the_brethen_reform
+				wisdom_of_the_dervishes_reform
 			}
 		}
 		secularization = {
@@ -529,6 +536,7 @@ theocracy = {
 				priestly_autonomy_reform
 				proclaim_religious_head_reform
 				all_under_tengri_reform
+				hussite_radicalism_reform
 			}
 		}
 	}
