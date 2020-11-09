@@ -73,44 +73,48 @@ capital = 2537
 #1225 to Leiningen
 1237.1.1 = {
 	monarch = {
-		name = "Friedrich I"
+		name = "Friedrich III"
+		dynasty = "von Saarbrücken"
+		birth_date = 1212.1.1
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1287.1.1 = {
+	monarch = {
+		name = "Friedrich IV"
+		dynasty = "von Saarbrücken"
+		birth_date = 1247.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1316.1.1 = {
+	monarch = {
+		name = "Friedrich V"
 		dynasty = "von Saarbrücken"
 		adm = 2
 		dip = 3
 		mil = 2
 	}
 }
-1287.1.1 = {
+1327.1.1 = {
 	monarch = {
-		name = "Friedrich II"
+		name = "Friedrich VI"
 		dynasty = "von Saarbrücken"
+		birth_date = 1294.1.1
 		adm = 2
 		dip = 2
 		mil = 2
 	}
 }
-1310.1.1 = {
+1341.1.1 = {
 	monarch = {
-		name = "Gottfried I"
+		name = "Friedrich VII"
 		dynasty = "von Saarbrücken"
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1343.1.1 = {
-	monarch = {
-		name = "Emicho I"
-		dynasty = "von Saarbrücken"
-		adm = 2
-		dip = 1
-		mil = 2
-	}
-}
-1375.1.1 = {
-	monarch = {
-		name = "Friedrich III"
-		dynasty = "von Saarbrücken"
+		birth_date = 1328.1.1
 		adm = 2
 		dip = 2
 		mil = 2
@@ -118,23 +122,14 @@ capital = 2537
 }
 1397.1.1 = {
 	monarch = {
-		name = "Friedrich IV"
+		name = "Friedrich VIII"
 		dynasty = "von Saarbrücken"
 		adm = 2
 		dip = 2
 		mil = 2
 	}
 }
-1434.1.1 = {
-	monarch = {
-		name = "Emicho II"
-		dynasty = "von Saarbrücken"
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1452.1.1 = {
+1434.4.24 = {
 	monarch = {
 		name = "Hesso I"
 		dynasty = "von Saarbrücken"

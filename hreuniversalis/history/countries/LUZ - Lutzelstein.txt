@@ -116,11 +116,29 @@ capital = 294
 }
 1403.1.1 = {
 	monarch = {
-		name = "(Interregnum)"
-		dip = 2
-		adm = 2
-		mil = 2
-		regent = yes
+		name = "Burkhard I"
+		dynasty = "von Blieskastel"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1418.8.20 = {
+	monarch = {
+		name = "Jakob I"
+		dynasty = "von Blieskastel"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1456.1.1 = {
+	monarch = {
+		name = "Rudolf I"
+		dynasty = "von Saarbrücken"
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }
 #1462
