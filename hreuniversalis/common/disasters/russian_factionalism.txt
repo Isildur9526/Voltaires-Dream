@@ -4,6 +4,7 @@ russian_factionalism = {
 		NOT = { has_country_flag = had_russian_factionalism }
 		has_dlc = "Mandate of Heaven"
 		tag = KIE
+		NOT = { started_in = 1169.3.12 } #Vladimir becomes Grand Prince
 	}
 
 
@@ -85,7 +86,7 @@ russian_factionalism = {
 		}
 		random_events = { 
 			1000 = 0
-			100 = russian_factionalism.2
+			200 = russian_factionalism.2
 			150 = russian_factionalism.3
 			150 = russian_factionalism.4
 			150 = russian_factionalism.5

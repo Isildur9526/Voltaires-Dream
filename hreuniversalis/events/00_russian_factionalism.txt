@@ -208,6 +208,10 @@ country_event = {
 			grant_independence = yes
 		}
 		add_truce_with = TMT
+		reverse_add_opinion = {
+			who = TMT
+			modifier = opinion_bad_monarch
+		}
 	}
 	option = {
 		name = russian_factionalism.3.b
@@ -310,15 +314,21 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			VDR = {
+				set_country_flag = broke_from_kievan_rus
+				add_stability = 3
+				add_war_exhaustion = -10
 				grant_independence = yes
+				every_enemy_country = {
+					white_peace = VDR
+				}
 				define_ruler = {
 					dynasty = "Rurikovich"
 					adm = 4
 					dip = 4
 					mil = 4
 				}
-				add_yearly_manpower = 5
-				add_years_of_income = 5
+				add_yearly_manpower = 10
+				add_years_of_income = 10
 			}
 			every_subject_country = {
 				limit = {
@@ -643,3 +653,73 @@ country_event = {
 		}
 	}
 }
+
+# country_event = {
+# 	id = russian_factionalism.9
+#     title = russian_factionalism.9.t
+# 	desc = russian_factionalism.9.d
+# 	picture = CIVIL_WAR_eventPicture
+
+# 	is_triggered_only = yes
+
+# 	option = {
+# 		name = russian_factionalism.9.a
+# 		BOO
+# 		BTY
+# 		BTV
+# 		CHR
+# 		DGO
+# 		DTV
+# 		KIE
+# 		KMO
+# 		KRH
+# 		KSK
+# 		LKS
+# 		MEY
+# 		MOA
+# 		MOS
+# 		MRM
+# 		MSK
+# 		OBL
+# 		OKA
+# 		ONU
+# 		ORY
+# 		PLL
+# 		PLT
+# 		PNK
+# 		PSL
+# 		PZK
+# 		PZS
+# 		RSO
+# 		RYA
+# 		SDB
+# 		SKS
+# 		SMO
+# 		SPZ
+# 		SVK
+# 		TAA
+# 		TBS
+# 		TMT
+# 		TPT
+# 		TUV
+# 		TVE
+# 		UGL
+# 		VBK
+# 		VDR
+# 		VHN
+# 		VOL
+# 		VOO
+# 		VTY
+# 		XKA
+# 		XMO
+# 		XPY
+# 		XSZ
+# 		YAR
+# 		YYV
+# 		ZNY
+
+# 		NOV
+# 		PSK
+# 		VYT
+# 	}
+# }
