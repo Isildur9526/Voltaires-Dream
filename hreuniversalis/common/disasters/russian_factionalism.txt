@@ -93,6 +93,7 @@ russian_factionalism = {
 			150 = russian_factionalism.6
 			150 = russian_factionalism.7
 			100 = russian_factionalism.8
+			150 = russian_factionalism.9
 		}
 	}
 }
