@@ -721,13 +721,6 @@ country_event = {
 					save_event_target_as = rus_mag_tag
 				}
 			}
-		}
-	}
-	
-	option = {
-		name = russian_factionalism.9.a
-		custom_tooltip = russian_factionalism.9.tt
-		hidden_effect = {
 			event_target:rus_mag_tag = {
 				random_core_province = {
 					random_neighbor_province = {
@@ -735,66 +728,68 @@ country_event = {
 							NOT = { is_core = event_target:rus_mag_tag }
 							culture_group = east_slavic
 						}
-						add_core = event_target:rus_mag_tag
+						set_province_flag = get_russian_core_flag
 					}
 				}
-			}
-			random = {
-				chance = 50
-				event_target:rus_mag_tag = {
-					random_core_province = {
-						random_neighbor_province = {
-							limit = {
-								NOT = { is_core = event_target:rus_mag_tag }
-								culture_group = east_slavic
-							}
-							add_core = event_target:rus_mag_tag
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
 						}
 					}
 				}
 			}
-			random = {
-				chance = 50
-				event_target:rus_mag_tag = {
-					random_core_province = {
-						random_neighbor_province = {
-							limit = {
-								NOT = { is_core = event_target:rus_mag_tag }
-								culture_group = east_slavic
-							}
-							add_core = event_target:rus_mag_tag
-						}
-					}
-				}
-			}
-			random = {
-				chance = 50
-				event_target:rus_mag_tag = {
-					random_core_province = {
-						random_neighbor_province = {
-							limit = {
-								NOT = { is_core = event_target:rus_mag_tag }
-								culture_group = east_slavic
-							}
-							add_core = event_target:rus_mag_tag
-						}
-					}
-				}
-			}
-			random = {
-				chance = 50
-				event_target:rus_mag_tag = {
-					random_core_province = {
-						random_neighbor_province = {
-							limit = {
-								NOT = { is_core = event_target:rus_mag_tag }
-								culture_group = east_slavic
-							}
-							add_core = event_target:rus_mag_tag
-						}
-					}
-				}
-			}
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.9.a
+		every_province = {
+			limit = { has_province_flag = get_russian_core_flag }
+			clr_province_flag = get_russian_core_flag
+			add_core = event_target:rus_mag_tag
+			
 		}
 	}
 }
@@ -829,487 +824,5 @@ country_event = {
 			add_stability_or_adm_power = yes
 			add_legitimacy = 10
 		}
-	}
-}
-
-country_event = {
-	id = russian_factionalism.10
-    title = russian_factionalism.10.t
-	desc = russian_factionalism.10.d
-	picture = CIVIL_WAR_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = russian_factionalism.10.a
-		#BLO # 1054
-		#BLR # 1054
-		#BOO # 1054
-		#BTY # 1054
-		#BYV # ???
-		#CHR # 1054
-		#DGO # 1054
-		#DTV # 1054
-		#KIE # 1054
-		#KMO # 1054
-		#KRH # 1054
-		#KSK # 1054
-		#LSK # ???
-		#MEY # too many / uncolonized land
-		#MOA
-		3879 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3881 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3882 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3896 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3927 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		#MOS # 1054
-		#MRM # 1054
-		#MSK # 1054
-		#MSV ???
-		#MZH ???
-		#NZH # 1054
-		#OBL
-		6672 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6673 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6675 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		#OKA
-		3863 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3865 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3866 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3867 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3868 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3869 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3870 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3872 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3875 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3922 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		#ONU # 1054
-		#ORY
-		3928 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3929 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		#PLL # 1054
-		#PLT # 1054
-		#PNK # 1054
-		#PSK # ???
-		#PZS # too many
-		#RSO # 1054
-		#RYA # 1054
-		#SDB # 1054
-		#SKS # 1054
-		#SMO # 1054
-		#SPZ
-		6201 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6202 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6203 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6204 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6205 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6206 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6570 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6571 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6579 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		#SVK # 1054
-		#TAA
-		3859 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3860 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3861 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3862 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		3864 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6672 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6673 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6674 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		6675 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = TAA
-			}
-		}
-		#TBS # 1054
-		#TMT # 1054
-		#TPT # 1054
-		#TUV # 1054
-		#TVE # 1054
-		#UGL # 1054
-		#VBK # 1054
-		#VDR # 1054
-		#VHN # 1054
-		#VOL # 1054
-		#VOO
-		3861 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = VTY
-			}
-		}
-		3862 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = VTY
-			}
-		}
-		#VTY
-		3872 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = VTY
-			}
-		}
-		3873 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = VTY
-			}
-		}
-		3874 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = VTY
-			}
-		}
-		3875 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = VTY
-			}
-		}
-		#XKA
-		3810 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XKA
-			}
-		}
-		3811 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XKA
-			}
-		}
-		3814 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XKA
-			}
-		}
-		3815 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XKA
-			}
-		}
-		3816 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XKA
-			}
-		}
-		#XMO
-		3808 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XMO
-			}
-		}
-		3810 = {
-			if = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-				}
-				add_core = XMO
-			}
-		}
-		#XPY # 1054
-		#XSZ # 1054
-		#YAR # 1054
-		#YYV # 1054
-		#ZNY # 1054
-
-		#NOV # 1054
-		#PSK # 1054
-		#VYT # uncolonized land
 	}
 }
