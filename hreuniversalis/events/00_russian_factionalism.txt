@@ -54,45 +54,95 @@ country_event = {
 				limit = {
 					can_spawn_rebels = nationalist_rebels
 				}
-				spawn_rebels = {
-					type = nationalist_rebels
-					size = 2
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
 				}
 			}
 			random_owned_province = {
 				limit = {
 					can_spawn_rebels = nationalist_rebels
 				}
-				spawn_rebels = {
-					type = nationalist_rebels 
-					size = 2
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
 				}
 			}
 			random_owned_province = {
 				limit = {
 					can_spawn_rebels = nationalist_rebels
 				}
-				spawn_rebels = {
-					type = nationalist_rebels 
-					size = 2
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
 				}
 			}
 			random_owned_province = {
 				limit = {
 					can_spawn_rebels = nationalist_rebels
 				}
-				spawn_rebels = {
-					type = nationalist_rebels 
-					size = 2
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
 				}
 			}
 			random_owned_province = {
 				limit = {
 					can_spawn_rebels = nationalist_rebels
 				}
-				spawn_rebels = {
-					type = nationalist_rebels 
-					size = 2
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
 				}
 			}
 			every_subject_country = {
@@ -144,6 +194,15 @@ country_event = {
 					culture_group = east_slavic
 					can_spawn_rebels = nationalist_rebels
 				}
+				save_event_target_as = kiev_reb_prov
+				random_list = {
+					66 = {
+						set_province_flag = rus_small_revolt
+					}
+					33 = {
+						set_province_flag = rus_big_revolt
+					}
+				}
 			}
 		}
 	}
@@ -153,9 +212,25 @@ country_event = {
 		ai_chance = { factor = 1 }
 		add_mandate = 5
 		event_target:kiev_reb_prov = {
-			spawn_rebels = {
-				type = nationalist_rebels 
-				size = 2
+			if = {
+				limit = {
+					has_province_flag = rus_small_revolt
+				}
+				spawn_rebels = {
+					size = 2
+					type = nationalist_rebels
+				}
+				clr_province_flag = rus_small_revolt
+			}
+			if = {
+				limit = {
+					has_province_flag = rus_big_revolt
+				}
+				spawn_rebels = {
+					size = 3
+					type = nationalist_rebels
+				}
+				clr_province_flag = rus_big_revolt
 			}
 		}
 	}
@@ -615,7 +690,6 @@ country_event = {
 	title = "russian_factionalism.8.t"
 	desc = "russian_factionalism.8.d"
 	picture = DIPLOMACY_eventPicture
-	goto = rand_appa_cap
 	
 	is_triggered_only = yes
 
@@ -655,9 +729,6 @@ country_event = {
 				}
 				save_event_target_as = rand_appa
 				set_country_flag = had_increased_liberty_desire
-				capital_scope = {
-					save_event_target_as = rand_appa_cap
-				}
 			}
 		}
 	}
@@ -672,7 +743,7 @@ country_event = {
 	option = {
 		name = russian_factionalism.8.b
 		add_mandate = 5
-		add_corruption = 1
+		add_years_of_income = -0.25
 	}
 }
 
@@ -789,7 +860,7 @@ country_event = {
 			limit = { has_province_flag = get_russian_core_flag }
 			clr_province_flag = get_russian_core_flag
 			add_core = event_target:rus_mag_tag
-			
+			add_nationalism = 10
 		}
 	}
 }

@@ -47,8 +47,12 @@ russian_factionalism = {
 			num_of_loans = 10
 		}
 		modifier = {
-			factor = 0.5
+			factor = 1
 			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 1
+			has_regency = yes
 		}
 		modifier = {
 			factor = -0.5
