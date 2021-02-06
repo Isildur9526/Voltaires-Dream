@@ -784,7 +784,6 @@ fragment_russia_effect = {
 	#YAR # 1054
 	#YYV # 1054
 	#ZNY # 1054
-
 	#NOV # 1054
 	#PSK # 1054
 	#VYT # uncolonized land

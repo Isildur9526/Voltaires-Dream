@@ -8,7 +8,14 @@ namespace = russian_factionalism
 country_event = {
     id = russian_factionalism.1
     title = russian_factionalism.1.t
-    desc = russian_factionalism.1.d
+	desc = {
+		trigger = { has_country_flag = disable_rota_flag }
+		desc = russian_factionalism.1.d
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = disable_rota_flag }  }
+		desc = russian_factionalism.1.d2
+	}
 	picture = {
 		trigger = { NOT = { has_dlc = "Third Rome" } }
 		picture = COUNTRY_COLLAPSE_eventPicture
@@ -270,13 +277,11 @@ country_event = {
 		}
 	}
 
-	option = {
-		name = russian_factionalism.3.a
-		add_mandate = -10
-		TMT = {
-			grant_independence = yes
-		}
+	immediate = {
 		hidden_effect = {
+			TMT = {
+				grant_independence = yes
+			}
 			add_truce_with = TMT
 			TMT = {
 				capital_scope = {
@@ -287,17 +292,29 @@ country_event = {
 				}
 			}
 		}
+	}
+
+	option = {
+		name = russian_factionalism.3.a
+		add_mandate = -10
 		reverse_add_opinion = {
 			who = TMT
-			modifier = opinion_bad_monarch
+			modifier = tributary_state_broke_free
+		}
+		add_opinion = {
+			who = TMT
+			modifier = tributary_state_broke_free
 		}
 	}
 	option = {
 		name = russian_factionalism.3.b
 		add_mandate = 10
-		TMT = {
-			add_liberty_desire = 50
+		TMT = { set_country_flag = allow_quick_tributary_cb }
+		declare_war_with_cb = {
+			casus_belli = cb_force_tributary
+			who = TMT
 		}
+		TMT = { clr_country_flag = allow_quick_tributary_cb }
 	}
 }
 
@@ -345,15 +362,59 @@ country_event = {
 		add_mandate = -10
 		if = {
 			limit = { exists = PLC }
-			PLC = { create_guarantee = VHN }
+			PLC = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
 		}
 		else_if = {
 			limit = { exists = POL }
-			POL = { create_guarantee = VHN }
+			POL = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
 		}
 		else_if = {
 			limit = { exists = KRA }
-			KRA = { create_guarantee = VHN }
+			KRA = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = MAZ }
+			MAZ = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
 		}
 		hidden_effect = {
 			add_truce_with = VHN
@@ -364,6 +425,14 @@ country_event = {
 						cavalry = 0.2
 					}
 				}
+			}
+			reverse_add_opinion = {
+				who = VNH
+				modifier = tributary_state_broke_free
+			}
+			add_opinion = {
+				who = VNH
+				modifier = tributary_state_broke_free
 			}
 		}
 	}
@@ -450,6 +519,14 @@ country_event = {
 		name = russian_factionalism.5.a
 		add_mandate = -10
 		add_stability = -1
+		reverse_add_opinion = {
+			who = VDR
+			modifier = tributary_state_broke_free
+		}
+		add_opinion = {
+			who = VDR
+			modifier = tributary_state_broke_free
+		}
 	}
 	option = {
 		name = russian_factionalism.5.b
@@ -507,6 +584,7 @@ country_event = {
 					limit = {
 						NOT = { tag = CHR }
 						NOT = { tag = PLL }
+						NOT = { tag = TMT }
 						is_subject_of_type = tributary_state
 						primary_culture = severian
 					}
@@ -530,6 +608,7 @@ country_event = {
 					limit = {
 						NOT = { tag = CHR }
 						NOT = { tag = PLL }
+						NOT = { tag = TMT }
 						is_subject_of_type = tributary_state
 						primary_culture = severian
 					}
@@ -567,6 +646,14 @@ country_event = {
 						}
 					}
 				}
+				reverse_add_opinion = {
+					who = CHR
+					modifier = tributary_state_broke_free
+				}
+				add_opinion = {
+					who = CHR
+					modifier = tributary_state_broke_free
+				}
 			}
 		}
 		if = {
@@ -588,6 +675,14 @@ country_event = {
 							cavalry = 0.2
 						}
 					}
+				}
+				reverse_add_opinion = {
+					who = PLL
+					modifier = tributary_state_broke_free
+				}
+				add_opinion = {
+					who = PLL
+					modifier = tributary_state_broke_free
 				}
 			}
 		}
@@ -671,6 +766,14 @@ country_event = {
 						cavalry = 0.2
 					}
 				}
+			}
+			reverse_add_opinion = {
+				who = NOV
+				modifier = tributary_state_broke_free
+			}
+			add_opinion = {
+				who = NOV
+				modifier = tributary_state_broke_free
 			}
 		}
 	}
