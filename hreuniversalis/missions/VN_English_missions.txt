@@ -959,7 +959,7 @@ vn_eng_missions_slot_2_e = {
         position = 13
         trigger = {
             calc_true_if = {
-                desc = vn_eng_influence_in_empire.tt
+                desc = gen_hre_electors.tooltip
                 all_elector = {
                     preferred_emperor = ROOT
                 }

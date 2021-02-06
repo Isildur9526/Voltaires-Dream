@@ -20,12 +20,15 @@ vn_lem_missions_slot_1 = {
                 limit = { has_estate = estate_church }
                 estate_loyalty = {
                     estate = estate_church
-                    loyalty = 65
+                    loyalty = 60
                 }
-                estate_territory = {
+                num_of_estate_privileges = {
                     estate = estate_church
-                    territory = 35
+                    value = 3
                 }
+            }
+            else = {
+                stability = 3
             }
         }
         effect = {

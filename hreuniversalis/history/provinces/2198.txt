@@ -41,6 +41,18 @@ add_core = WGS
 	add_core = WGS
 	remove_core = POM
 }
+1425.12.6 = {
+	owner = STP
+	controller = STP
+	add_core = STP
+	remove_core = WGS
+}
+1459.9.21 = {
+	owner = WGS
+	controller = WGS
+	add_core = WGS
+	remove_core = STP
+}
 1478.12.17 = {
 	owner = POM
 	controller = POM

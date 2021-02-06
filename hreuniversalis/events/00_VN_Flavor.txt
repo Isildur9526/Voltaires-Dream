@@ -58,6 +58,18 @@ country_event = {
 				FRA = { free_vassal = NRM }
 			}
 			if = {
+				limit = { has_country_modifier = subject_sword_hunt }
+				remove_country_modifier = subject_sword_hunt
+			}
+			if = {
+				limit = { has_country_modifier = subject_sankin_kotai }
+				remove_country_modifier = subject_sankin_kotai
+			}
+			if = {
+				limit = { has_country_modifier = subject_expel_ronin }
+				remove_country_modifier = subject_expel_ronin
+			}
+			if = {
 				limit = {
 					tag = NRM
 					XEV = {
@@ -409,6 +421,7 @@ country_event = {
 						size = 2
 					}
 				}
+				set_ruler_flag = styria_inherited_austria_flag
 			}
 			25 = {
 				HAB = { add_opinion = { who = STY modifier = attempted_assassination_of_heir } }
@@ -680,6 +693,17 @@ country_event = {
 
 	is_triggered_only = yes
 	major = yes
+
+	major_trigger = {
+		is_part_of_hre = yes
+		capital_scope = {
+			OR = {
+				superregion = germanynorth_superregion
+				superregion = germanysouth_superregion
+				superregion = bohemia_superregion
+			}
+		}
+	}
 
 	trigger = {
 		OR = {
@@ -4057,6 +4081,11 @@ country_event = {
 	
 	fire_only_once = yes
 	major = yes
+	major_trigger = {
+		capital_scope = {
+			superregion = iberia_superregion
+		}
+	}
 	
 	trigger = {
 		NOT = { has_global_flag = enable_reconquista_holy_orders_flag }
@@ -4432,6 +4461,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		normal_or_historical_nations = yes
 		primary_culture = schlesian
 		capital_scope = {
 			region = silesia_region
@@ -4548,6 +4578,7 @@ country_event = {
 
 	trigger = {
 		tag = SIL
+		normal_or_historical_nations = yes
 		primary_culture = schlesian
 		is_free_or_tributary_trigger = yes
 		has_global_flag = had_fragmentation_of_poland
@@ -5972,11 +6003,11 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		owns = 6301
-		religion = sunni
 		is_year = 1085
 		NOT = { is_year = 1095 }
+		religion = sunni
 		NOT = { has_country_flag = ghazali_arrived }
+		owns = 6301
 	}
 
 	mean_time_to_happen = {
@@ -6025,8 +6056,8 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		owns = 6301
 		religion = sunni
+		owns = 6301
 		OR = {
 			advisor_exists = "Al-Ghazali"
 			has_country_flag = made_ghazali_professor
@@ -6070,11 +6101,11 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		owns = 6301
+		is_year = 1110
 		religion = sunni
+		owns = 6301
 		NOT = {	advisor_exists = "Al-Ghazali" }
 		has_country_flag = ghazali_arrived
-		is_year = 1110
 	}
 
 	mean_time_to_happen = {
@@ -6112,6 +6143,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		OR = {
+			current_age = age_of_empire
+			current_age = age_of_holy_wars
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+		}
 		culture_group = east_slavic
 		has_reform = principality
 		NOT = { has_global_flag = ongoing_rota }
@@ -6136,12 +6173,6 @@ country_event = {
 				NOT = { has_country_flag = rus_country_released }
 				exists = no
 			}
-		}
-		OR = {
-			current_age = age_of_empire
-			current_age = age_of_holy_wars
-			current_age = age_of_crisis
-			current_age = age_of_dynasticism
 		}
 	}
 
@@ -6577,6 +6608,9 @@ country_event = {
 
 	fire_only_once = yes
 	major = yes
+	major_trigger = {
+		is_part_of_hre = yes
+	}
 
 	trigger = {
 		normal_or_historical_nations = yes
@@ -6835,7 +6869,7 @@ province_event = {
 		}
 		add_local_autonomy = 25
 		add_province_modifier = {
-			name = add_country_unrest_5_modifier
+			name = add_unrest_5_modifier
 			duration = 3650
 		}
 	}
@@ -6939,6 +6973,8 @@ country_event = {
     desc = "HREMD109"
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
+
 	trigger = {
 		normal_or_historical_nations = yes
 		NOT = { started_in = 1162.5.31 }
@@ -6962,7 +6998,7 @@ country_event = {
 	}
 
 	option = {
-		name = "HREMA110"
+		name = "HREMA109"
 		ai_chance = {
 			factor = 75
 		}
@@ -7053,6 +7089,8 @@ country_event = {
     title = "HREMT110"
     desc = "HREMD110"
 	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
 
 	trigger = {
 		normal_or_historical_nations = yes
@@ -7461,6 +7499,17 @@ country_event = {
 
 	major = yes
 	fire_only_once = yes
+	major_trigger = {
+		OR = {
+			is_part_of_hre = yes
+			capital_scope = {
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
+			}
+		}
+	}
 	
 	mean_time_to_happen = {
 		months = 240
@@ -7856,13 +7905,13 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		owns = 6790
-		religion = sunni
+		is_year = 1225
+		NOT = { is_year = 1250 }
 		capital_scope = {
 			superregion = anatolia_superregion
 		}
-		is_year = 1225
-		NOT = { is_year = 1250 }
+		religion = sunni
+		owns = 6790
 	}
 
 	mean_time_to_happen = {
@@ -7931,12 +7980,12 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		is_year = 1280
+		NOT = { is_year = 1380 }
 		religion = sunni
 		capital_scope = {
 			superregion = anatolia_superregion
 		}
-		is_year = 1280
-		NOT = { is_year = 1380 }
 		has_global_flag = rumi_mathnawi
 	}
 
@@ -7962,10 +8011,10 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		owns = 2670
-		religion = sunni
 		is_year = 1150
 		NOT = { is_year = 1200 }
+		religion = sunni
+		owns = 2670
 	}
 
 	mean_time_to_happen = {

@@ -49,6 +49,24 @@ center_of_trade = 1
 	remove_core = STL
 	hre = yes
 }
+1425.12.6 = {
+	owner = STL
+	controller = STL
+	add_core = STL
+	remove_core = WGS
+}
+1436.1.1 = {
+	owner = BTH
+	controller = BTH
+	add_core = BTH
+	remove_core = STL
+}
+1451.12.19 = {
+	owner = WGS
+	controller = WGS
+	add_core = WGS
+	remove_core = BTH
+}
 1478.12.17 = {
 	owner = POM
 	controller = POM

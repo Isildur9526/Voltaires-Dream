@@ -1,0 +1,1371 @@
+#Old Saxon and Brunswick missions
+#By historyperson
+
+vn_sax_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			tag = BRU
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_alliance_in_the_north = {
+        icon = mission_alliances
+        position = 1
+        required_missions = {  }
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = vn_sax_alliance_in_the_north.tt
+                any_ally = {
+                    capital_scope = {
+                        superregion = scandinavia_superregion
+                    }
+                    has_opinion = {
+                        who = ROOT
+                        value = 150
+                    }
+                }
+            }            
+        }
+        effect = {
+            add_dip_power = 50
+            mecklenburg_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }  
+            brandenburg_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }				
+        }
+    }
+    vn_sax_the_wendish_crusade = {
+        icon = shield_of_christendom
+        position = 2
+        required_missions = { vn_sax_alliance_in_the_north }
+        trigger = {
+			army_size_percentage = 0.75
+			num_of_generals = 1
+            any_country = {
+                war_with = ROOT
+                NOT = {
+                    religion_group = christian
+                    war_score_against = {
+                        who = ROOT
+                        value = -50
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    OR = {
+                        has_estate = estate_holy_orders
+                        current_age = age_of_empire
+                    }
+                }
+                estate_loyalty = {
+                    estate = estate_holy_orders
+                    loyalty = 60
+                }
+            }
+			custom_trigger_tooltip = {
+				tooltip = vn_sax_the_wendish_crusade.tt
+				OR = {
+					has_global_flag = wendish_crusade_active
+					NOT = { current_age = age_of_holy_wars }
+					NOT = { current_age = age_of_empire }
+				}
+			}
+        }
+        effect = {
+			add_army_tradition = 10
+			add_yearly_manpower = 1
+			create_general = { tradition = 75 }
+            add_country_modifier = {
+                name = sax_the_wendish_crusade_mission
+                duration = 9125
+            }			
+        }
+    }
+    vn_sax_assimilate_the_sorbians = {
+        icon = spread_piety
+        position = 3
+        required_missions = { vn_sax_the_wendish_crusade }
+		provinces_to_highlight = {
+            region = mecklenburg_region
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { has_owner_accepted_culture = yes }
+				has_owner_culture = no
+				has_owner_religion = no
+			}
+		}
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_sax_assimilate_the_sorbians.tt
+				mecklenburg_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+					has_owner_religion = yes
+					OR = {
+						has_owner_accepted_culture = yes
+						has_owner_culture = yes
+					}
+				}
+			}
+        }
+        effect = {
+            hinterpommern_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+			mecklenburg_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = sax_flourishing_territories_mission
+                    duration = 9125
+                }
+            }
+        }
+    }
+    vn_sax_found_lubeck = {
+        icon = mission_hanseatic_city
+        position = 5
+        required_missions = { vn_sax_assimilate_the_sorbians }
+		provinces_to_highlight = {
+            province_id = 13
+		}
+        trigger = {
+			if = {
+				limit = { has_dlc = "Dharma" }
+				13 = { province_has_center_of_trade_of_level = 2 }
+			}
+            13 = {
+                owned_by = ROOT
+                is_core = ROOT
+                development = 30
+                has_fort_trigger = yes
+                NOT = { num_free_building_slots = 1 }
+			}
+        }
+        effect = {
+            13 = {
+				add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+				if = {
+                    limit = {
+	            		has_dlc = "Dharma"
+                        NOT = { province_has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+				}
+				else = {
+					add_base_production = 2
+				}
+                add_province_modifier = {
+                    name = sax_found_lubeck_mission
+                    duration = -1
+                }
+			}
+        }
+    }
+#    vn_sax_riches_from_trade = {
+#        icon = dominant_economy
+#        position = 5
+#        required_missions = { vn_sax_found_lubeck }
+#        trigger = {
+#			share_of_starting_income = 5
+#            trade_income_percentage = 0.33
+#        }
+#        effect = {
+#            add_years_of_income = 0.5
+#            add_country_modifier = {
+#                name = sax_riches_from_trade_mission
+#                duration = 9125
+#            }
+#        }
+#    }
+    vn_sax_kaiserpflaz_goslar = {
+        icon = versailles_palace
+        position = 6
+#        required_missions = { vn_sax_riches_from_trade }
+		required_missions = { vn_sax_found_lubeck }
+		provinces_to_highlight = {
+            province_id = 3002
+		}
+        trigger = {
+			years_of_income = 1.0
+            3002 = {
+				owned_by = ROOT
+				development = 25
+                has_fort_trigger = yes
+                NOT = { num_free_building_slots = 1 }
+			}
+        }
+        effect = {
+            add_prestige = 25
+			add_legitimacy = 10
+            3002 = {
+				add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+                add_province_modifier = {
+                    name = sax_kaiserpflaz_goslar_mission
+                    duration = 9125
+                }
+			}
+        }
+    }
+    vn_sax_ideas_of_the_reformation = {
+        icon = mission_luther_theses
+        position = 7
+        required_missions = {  }
+        trigger = {
+            has_institution = laytheology
+            all_state_province = {
+                laytheology = 100
+            }
+            OR = {
+				AND = {
+					religion_group = christian
+					NOT = { religion = catholic }
+					NOT = { religion = catholique }
+				}
+                current_age = age_of_revolutions
+                current_age = age_of_ideology
+			}
+        }
+        effect = {
+			add_absolutism = 10
+            add_church_power = 100
+			add_fervor = 100
+            add_country_modifier = {
+                name = sax_ideas_of_the_reformation_mission
+                duration = 9125
+            }
+        }
+    }
+    vn_sax_centers_for_the_arts = {
+        icon = leiden_university
+        position = 8
+        required_missions = { vn_sax_ideas_of_the_reformation }
+        trigger = {	
+			has_3_lv3_advisors_trigger = yes
+            num_of_owned_provinces_with = {
+            	value = 25
+            	has_education_building_trigger = yes
+            }  
+        }
+        effect = {
+            add_prestige = 10
+			change_innovativeness = 3
+            add_country_modifier = {
+                name = sax_centers_for_the_arts_mission
+                duration = 9125
+            }
+        }
+    }
+}
+
+vn_sax_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			tag = BRU
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_holstein = {
+        icon = eastern_catholicization
+        position = 2
+        required_missions = { vn_sax_unite_luneburg }
+		provinces_to_highlight = {
+            region = holstein_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+            holstein_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50            
+        }
+    }
+    vn_sax_the_northern_march = {
+        icon = tame_brandenburg
+        position = 3
+        required_missions = { vn_sax_ostfalen_returned vn_sax_the_wendish_crusade }
+		provinces_to_highlight = {
+            region = brandenburg_region
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { has_owner_accepted_culture = yes }
+				has_owner_culture = no
+				has_owner_religion = no
+			}
+		}
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_sax_the_northern_march.tt
+				brandenburg_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+					has_owner_religion = yes
+					OR = {
+						has_owner_accepted_culture = yes
+						has_owner_culture = yes
+					}
+				}
+			}
+        }
+        effect = {
+            hinterpommern_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }    
+			brandenburg_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = sax_flourishing_territories_mission
+                    duration = 9125
+                }
+            }			
+        }
+    }
+    vn_sax_found_pomerania = {
+        icon = promote_urbanization
+        position = 4
+        required_missions = { vn_sax_the_northern_march vn_sax_assimilate_the_sorbians }
+		provinces_to_highlight = {
+            region = hinterpommern_region
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { has_owner_accepted_culture = yes }
+				has_owner_culture = no
+				has_owner_religion = no
+			}
+		}
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_sax_found_pomerania.tt
+				hinterpommern_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+					has_owner_religion = yes
+					OR = {
+						has_owner_accepted_culture = yes
+						has_owner_culture = yes
+					}
+				}
+			}
+        }
+        effect = {
+			add_years_of_income = 0.5
+			hinterpommern_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = sax_flourishing_territories_mission
+                    duration = 9125
+                }
+            }	            
+        }
+    }
+    vn_sax_into_thuringen = {
+        icon = connect_further_austria
+        position = 5
+        required_missions = { vn_sax_reunite_the_stem_duchy }
+        provinces_to_highlight = {
+            region = thuringia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = thuringia_region
+            }            
+        }
+        effect = {
+            add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+        }
+    }
+    vn_sax_develop_the_hansestadte = {
+        icon = mission_heart_of_the_hansa
+        position = 6
+#        required_missions = { vn_sax_riches_from_trade }
+		required_missions = { vn_sax_found_lubeck }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                has_province_modifier = hanseatic_city
+				development = 20
+				if = {
+					limit = {
+						has_dlc = "Dharma"
+					}
+					province_has_center_of_trade_of_level = 2
+				}
+            }               
+        }
+        effect = {
+			add_years_of_income = 0.5
+            capital_scope = {
+                if = {
+                    limit = {
+                        has_dlc = "Dharma"
+                        NOT = { province_has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+                }
+                else = {
+                    add_base_production = 2
+                }				
+			}
+			add_country_modifier = {
+                name = sax_develop_the_hansestadte_mission
+                duration = -1
+            }
+        }
+    }
+    vn_sax_a_return_to_britannien = {
+        icon = mission_rb_invade_england
+        position = 7
+        required_missions = { vn_sax_dynastic_prowess }
+		provinces_to_highlight = {
+			province_id = 2268
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = ASE 
+				senior_union_with = ENG 
+				senior_union_with = GBR 
+				AND = {
+					NOT = { exists = ASE }
+					NOT = { exists = ENG }
+					NOT = { exists = GBR }
+					2268 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			} 
+        }
+        effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+            southeast_england_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+}
+
+vn_sax_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			tag = BRU
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_unite_luneburg = {
+        icon = a_show_of_strength 
+        position = 1
+        required_missions = {  }
+		provinces_to_highlight = {
+            area = luneburg_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+            luneburg_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+            brunswick_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }       
+            holstein_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }  
+            stade_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }  			
+        }
+    }
+    vn_sax_ostfalen_returned = {
+        icon = conquer_brunswick
+        position = 2
+        required_missions = { vn_sax_unite_luneburg }
+        provinces_to_highlight = {
+            region = brunswick_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = brunswick_region
+            }            
+        }
+        effect = {
+            westphalia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }   
+            brandenburg_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            hesse_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }  			
+        }
+    }
+    vn_sax_return_westfalen = {
+        icon = westphalian_conquest
+        position = 3
+        required_missions = { vn_sax_ostfalen_returned }
+        provinces_to_highlight = {
+            region = westphalia_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = westphalia_region
+            }            
+        }
+        effect = {
+            rhenish_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_sax_reunite_the_stem_duchy = {
+        icon = holy_state
+        position = 4
+        required_missions = { vn_sax_return_westfalen vn_sax_engern_returned }
+        provinces_to_highlight = {
+            OR = {
+                region = westphalia_region
+                region = hesse_region
+                region = brunswick_region
+                region = lowelb_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_part_of_hre = yes
+        }
+        trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vn_sax_reunite_the_stem_duchy.tt
+				westphalia_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_part_of_hre = no
+					}
+				}
+				hesse_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_part_of_hre = no
+					}
+				}
+				brunswick_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_part_of_hre = no
+					}
+				}
+				lowelb_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_part_of_hre = no
+					}
+				}
+			}
+        }
+        effect = {
+			restore_country_name = yes
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+            saxony_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }  	 
+            thuringia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = sax_reunite_the_stem_duchy_mission
+                duration = 9125
+            } 			
+        }
+    }
+    vn_sax_sachsische_ostmark = {
+        icon = electorate_of_saxony
+        position = 5
+        required_missions = { vn_sax_reunite_the_stem_duchy }
+        provinces_to_highlight = {
+            region = saxony_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 20
+                region = saxony_region
+            }            
+        }
+        effect = {
+            lusatia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_sax_dynastic_prowess = {
+        icon = the_ostend_company
+        position = 6
+        required_missions = {  }
+        trigger = {
+			prestige = 25
+			legitimacy_equivalent = 100
+			NOT = { num_of_free_diplomatic_relations = 1 }
+			OR = {
+				advisor = statesman
+				advisor = diplomat
+			}
+			any_ally = {
+				total_development = 100
+			}            
+        }
+        effect = {
+			custom_tooltip = vn_sax_dynastic_prowess.tt
+        }
+    }
+    vn_sax_count_palatinate = {
+        icon = jageillonian_union
+        position = 8
+        required_missions = { vn_sax_imperial_power }
+		provinces_to_highlight = {
+			province_id = 2732
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = PAL 
+				AND = {
+					NOT = { exists = PAL }
+					2732 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			}   		
+        }
+        effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+            palatinate_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+}
+
+vn_sax_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			tag = BRU
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_reconquer_bremen = {
+        icon = mission_rb_hanseatic_east
+        position = 2
+        required_missions = { vn_sax_unite_luneburg }
+        provinces_to_highlight = {
+            area = stade_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 5
+                area = stade_area
+            }            
+        }
+        effect = {
+            osnabruck_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            tecklenburg_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }   			
+        }
+    }
+    vn_sax_engern_returned = {
+        icon = unite_the_league
+        position = 3
+        required_missions = { vn_sax_reconquer_bremen }
+        provinces_to_highlight = {
+			OR = {
+				area = tecklenburg_area
+				area = osnabruck_area
+			}
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+				OR = {
+					area = tecklenburg_area
+					area = osnabruck_area
+				}
+            }            
+        }
+        effect = {
+            oldenburg_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_sax_head_the_guelphs = {
+        icon = lead_the_empire
+        position = 5
+        required_missions = { vn_sax_italian_support }
+        provinces_to_highlight = {
+            if = {
+                limit = { has_global_flag = guelph_ghib_enabled }
+                owner = {
+                    NOT = { tag = ROOT }
+                    NOT = { alliance_with = ROOT }
+                    has_ruler_modifier = guelph_ruler
+                }
+            }
+            else = {
+                always = no
+            }
+        }
+        trigger = {
+			if = {
+				limit = { has_global_flag = guelph_ghib_enabled }
+				custom_trigger_tooltip = {
+					tooltip = vn_sax_head_the_guelphs.tt
+					all_country = {
+						has_ruler_modifier = guelph_ruler
+						has_opinion = { 
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+            }
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = vn_sax_head_the_guelphs_e.tt
+					calc_true_if = {
+						amount = 3
+						any_ally = {
+							capital_scope = {
+								OR = {
+									superregion = italy_superregion
+									superregion = sicily_superregion
+								}
+							}
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+					}
+				}
+			}
+        }
+        effect = {
+			custom_tooltip = vn_sax_head_the_guelphs_ef.tt
+			hidden_effect = {
+				every_country = { 
+					limit = { has_ruler_modifier = guelph_ruler }
+					add_trust = {
+						who = ROOT
+						value = 10
+						mutual = yes
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = sax_head_the_guelphs_opinion
+					}
+				}
+			}
+        }
+    }
+    vn_sax_imperial_power = {
+        icon = the_imperial_border
+        position = 7
+        required_missions = { vn_sax_head_the_guelphs vn_sax_dynastic_prowess }
+        provinces_to_highlight = {
+            is_capital = yes
+            owner = {
+                is_emperor = yes
+            }
+        }
+        trigger = {
+			OR = {
+				is_emperor = yes
+				war_score_against = {
+					who = emperor
+					value = 100
+				}
+            }
+        }
+        effect = {
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				add_imperial_influence = 10
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+        }
+    }
+    vn_sax_the_king_of_burgundy = {
+        icon = conquer_burgundy
+        position = 8
+        required_missions = { vn_sax_imperial_power }
+		provinces_to_highlight = {
+			province_id = 989
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = XAP 
+				senior_union_with = FCM 
+				senior_union_with = PRO 
+				senior_union_with = BUR 
+				AND = {
+					NOT = { exists = XAP }
+					NOT = { exists = FCM }
+					NOT = { exists = PRO }
+					NOT = { exists = BUR }
+					989 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			} 	
+        }
+        effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+            burgundy_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+}
+
+vn_sax_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        OR = {
+            AND = {
+                tag = SAX
+                NOT = { started_in = 1180.1.1 }
+            }
+			tag = BRU
+			AND = {
+				dynasty = "von Welf"
+				government = monarchy
+				capital_scope = { 
+					region = brunswick_region
+				}
+			}
+        }
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_sax_sachsenkrieg = {
+        icon = protect_against_austria
+        position = 1
+        required_missions = {  }
+        trigger = {
+            OR = {
+				is_emperor = yes
+				war_score_against = {
+					who = emperor
+					value = 25
+				}
+			}            
+        }
+        effect = {
+			add_army_tradition = 10
+			add_country_modifier = {
+                name = sax_sachsenkrieg_mission
+                duration = -1
+            }			             
+        }
+    }
+    vn_sax_imperial_ambitions = {
+        icon = influence_the_princes
+        position = 2
+        required_missions = { vn_sax_sachsenkrieg }
+        trigger = {
+            is_elector = yes
+			diplomatic_reputation = 3
+            if = {
+                limit = { hre_size = 1 }
+                is_emperor = yes
+                custom_trigger_tooltip = {
+                    tooltip = vn_boh_bohemian_electorate.tt
+                    calc_true_if = {
+                        amount = 5
+                        all_elector = {
+                            preferred_emperor = ROOT
+                        }
+                    }
+                }
+            }
+            else = {
+                government_rank = 6
+            } 
+        }
+        effect = {
+			add_splendor = 100
+			add_stability_or_adm_power = yes
+            add_country_modifier = {
+                name = sax_imperial_ambitions_mission
+                duration = 9125
+            }             
+        }
+    }
+    vn_sax_papal_recognition = {
+        icon = invest_in_the_provinces
+        position = 3
+        required_missions = { vn_sax_imperial_ambitions }
+        trigger = {
+            if = {
+                limit = { 
+                    exists = PAP
+                    uses_papacy = yes
+                }
+                reverse_has_opinion = {
+                    who = PAP
+                    value = 150
+                }
+				alliance_with = PAP
+            }
+			else = {
+				religion_group = christian
+				is_defender_of_faith = yes
+				diplomatic_reputation = 5
+				prestige = 50
+			}
+        }
+        effect = {
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				add_imperial_influence = 10
+			}
+            reverse_add_opinion = {
+				who = PAP
+				modifier = sax_papal_recognition_opinion
+			}
+            add_country_modifier = {
+                name = sax_papal_recognition_mission
+                duration = 9125
+            }
+        }
+    }
+    vn_sax_italian_support = {
+        icon = confront_the_lombards
+        position = 4
+        required_missions = { vn_sax_papal_recognition }
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = vn_sax_italian_support.tt
+                any_ally = {
+                    capital_scope = {
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion
+						}
+                    }
+                    has_opinion = {
+                        who = ROOT
+                        value = 150
+                    }
+                }
+            }             
+        }
+        effect = {
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				add_imperial_influence = 10
+			}
+            add_dip_power = 50
+            add_country_modifier = {
+                name = sax_italian_support_mission
+                duration = 9125
+            }
+        }
+    }
+    vn_sax_claims_to_bavaria = {
+        icon = duchy_of_bavaria
+        position = 5
+        required_missions = {  }
+		provinces_to_highlight = {
+			province_id = 913
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = BAV 
+				senior_union_with = XMU 
+				AND = {
+					NOT = { exists = BAV }
+					NOT = { exists = XMU }
+					913 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			} 		
+        }
+        effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+			if = {
+				limit = {
+					exists = WWS
+					valid_for_personal_unions_trigger = yes
+					WWS = { valid_for_personal_unions_trigger = yes }	
+				}
+				add_casus_belli = {
+					target = WWS
+					type = cb_fabricated_claims
+					months = 300
+				}
+				swabia_region = {
+					limit = {
+						NOT = { is_core = WWS }
+						NOT = { is_permanent_claim = WWS }
+					}
+					add_permanent_claim = WWS
+				}				
+			}
+			else = {
+				swabia_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}            
+        }
+    }
+    vn_sax_revenge_the_staufers = {
+        icon = milan_victorious
+        position = 6
+        required_missions = { vn_sax_head_the_guelphs vn_sax_claims_to_bavaria }
+        trigger = {
+			OR = {
+				senior_union_with = WWS 
+				AND = {
+					NOT = { 
+						exists = WWS
+					}
+					swabia_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			}
+        }
+        effect = { 
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 25
+            }				
+			add_country_modifier = {
+                name = sax_revenge_the_staufers_mission
+                duration = 9125
+            }			
+        }
+    }
+    vn_sax_italy = {
+        icon = conquer_tuscany
+        position = 7
+        required_missions = { vn_sax_revenge_the_staufers }
+		provinces_to_highlight = {
+			province_id = 640
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = TUS 
+				senior_union_with = LAN 
+				senior_union_with = SPT
+				AND = {
+					NOT = { exists = TUS }
+					NOT = { exists = LAN }
+					NOT = { exists = SPT }
+					640 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			}    
+        }
+        effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+            tuscany_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            spoleto_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+			if = {
+				limit = {
+					exists = APL
+					valid_for_personal_unions_trigger = yes
+					APL = { valid_for_personal_unions_trigger = yes }
+				}
+				add_casus_belli = {
+					target = APL
+					type = cb_fabricated_claims
+					months = 300
+				}
+				sicilia_region = {
+					limit = {
+						NOT = { is_core = APL }
+						NOT = { is_permanent_claim = APL }
+					}
+					add_permanent_claim = APL
+				}				
+			}
+			else_if = {
+				limit = {
+					NOT = { exists = APL }
+					exists = SIC
+				}
+				add_casus_belli = {
+					target = SIC
+					type = cb_fabricated_claims
+					months = 300
+				}
+				sicilia_region = {
+					limit = {
+						NOT = { is_core = SIC }
+						NOT = { is_permanent_claim = SIC }
+					}
+					add_permanent_claim = SIC
+				}				
+			}
+			else = {
+				sicilia_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			} 
+        }
+    }
+    vn_sax_confiscate_sicily = {
+        icon = king_of_sicily
+        position = 8
+        required_missions = { vn_sax_italy }
+		provinces_to_highlight = {
+			region = sicilia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = APL 
+				senior_union_with = SIC 
+				AND = {
+					NOT = { 
+						exists = APL
+						exists = SIC 
+					}
+					sicilia_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+			add_country_modifier = {
+                name = sax_confiscate_sicily_mission
+                duration = 9125
+            }
+        }
+    }
+}

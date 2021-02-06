@@ -2,7 +2,7 @@ staple_port = {
     level = 1
     type = coastal
     province_modifiers = {
-        province_trade_power_value = 3
+        province_trade_power_value = 4
     }
 }
 
@@ -11,7 +11,7 @@ entrepot = {
     cost = 200
     type = coastal
     province_modifiers = {
-        province_trade_power_value = 6
+        province_trade_power_value = 8
         local_development_cost = -0.05
         local_institution_spread = 0.1
     }
@@ -22,7 +22,7 @@ world_port = {
     cost = 1000
     type = coastal
     province_modifiers = {
-        province_trade_power_value = 15
+        province_trade_power_value = 20
         local_institution_spread = 0.3
     }
     state_modifiers = {
@@ -39,7 +39,7 @@ emporium = {
     level = 1
     type = inland
     province_modifiers = {
-        province_trade_power_value = 3
+        province_trade_power_value = 4
     }
 }
 
@@ -48,7 +48,7 @@ market_town = {
     cost = 200
     type = inland
     province_modifiers = {
-        province_trade_power_value = 6
+        province_trade_power_value = 8
         local_development_cost = -0.05
     }
 }
@@ -58,7 +58,7 @@ world_trade_center = {
     cost = 1000
     type = inland
     province_modifiers = {
-        province_trade_power_value = 15
+        province_trade_power_value = 20
         local_institution_spread = 0.3
     }
     state_modifiers = {

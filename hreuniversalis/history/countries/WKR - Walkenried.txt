@@ -9,13 +9,388 @@ capital = 138
 #1127
 1127.1.1 = {
 	monarch = {
-		name = "Canons"
+		name = "Heinrich I"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1178.1.1 = {
+	monarch = {
+		name = "Dietmar I"
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+1183.1.1 = {
+	monarch = {
+		name = "Ekbert I"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1188.1.1 = {
+	monarch = {
+		name = "Dietmar II"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1198.1.1 = {
+	monarch = {
+		name = "Heinrich II"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1199.1.1 = {
+	monarch = {
+		name = "Berthold I"
 		adm = 2
 		dip = 2
 		mil = 2
-		regent = yes
 	}
 }
-
+1204.1.1 = {
+	monarch = {
+		name = "Heinrich III"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1216.1.1 = {
+	monarch = {
+		name = "Friedrich I"
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1223.1.1 = {
+	monarch = {
+		name = "Heinrich IV"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1225.1.1 = {
+	monarch = {
+		name = "Berthold II"
+		dynasty = "von Klettenberg"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1237.1.1 = {
+	monarch = {
+		name = "Dietrich I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1255.1.1 = {
+	monarch = {
+		name = "Bernhard I"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1267.1.1 = {
+	monarch = {
+		name = "Dietmar III"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1285.1.1 = {
+	monarch = {
+		name = "Hermann I"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1309.1.1 = {
+	monarch = {
+		name = "Lothar I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1317.1.1 = {
+	monarch = {
+		name = "Heinrich V"
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}
+1319.1.1 = {
+	monarch = {
+		name = "Konrad I"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1322.1.1 = {
+	monarch = {
+		name = "Johann I"
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1323.1.1 = {
+	monarch = {
+		name = "Konrad II"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1332.1.1 = {
+	monarch = {
+		name = "Ekhard I"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1345.1.1 = {
+	monarch = {
+		name = "Konrad III"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1353.1.1 = {
+	monarch = {
+		name = "Nikolaus I"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1376.1.1 = {
+	monarch = {
+		name = "Heinrich VI"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1377.1.1 = {
+	monarch = {
+		name = "Johann II"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1378.1.1 = {
+	monarch = {
+		name = "Konrad IV"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1386.1.1 = {
+	monarch = {
+		name = "Dietrich II"
+		dynasty = "von Kranich"
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1387.1.1 = {
+	monarch = {
+		name = "Hermann II"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1389.1.1 = {
+	monarch = {
+		name = "Johann III"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1409.1.1 = {
+	monarch = {
+		name = "Johann IV"
+		dynasty = "von Duderstadt"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1419.1.1 = {
+	monarch = {
+		name = "Johann V"
+		dynasty = "von Oldendorf"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1423.1.1 = {
+	monarch = {
+		name = "Konrad V"
+		dynasty = "von Baler"
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}
+1431.1.1 = {
+	monarch = {
+		name = "Nikolaus II"
+		dynasty = "von Frankenhausen"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1446.1.1 = {
+	monarch = {
+		name = "Johann VI"
+		dynasty = "von Brakel"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1466.1.1 = {
+	monarch = {
+		name = "Matthias I"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1479.1.1 = {
+	monarch = {
+		name = "Johann VII"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1485.1.1 = {
+	monarch = {
+		name = "Heinrich VII"
+		dynasty = "von Grafenstein"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1506.1.1 = {
+	monarch = {
+		name = "Eberhard I"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1509.1.1 = {
+	monarch = {
+		name = "Georg I"
+		dynasty = "von Plesse"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1520.1.1 = {
+	monarch = {
+		name = "Paul I"
+		dynasty = "von Welf"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1536.1.1 = {
+	monarch = {
+		name = "Johann VIII"
+		dynasty = "Holtegel"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
 1546.1.1 = { religion = protestant }
+1559.1.1 = {
+	monarch = {
+		name = "Hermann III"
+		dynasty = "Lubeck"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1564.1.1 = {
+	monarch = {
+		name = "Jakob I"
+		dynasty = "Marsilius"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1567.1.1 = {
+	monarch = {
+		name = "Adam I"
+		dynasty = "Goldhorn"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1569.1.1 = {
+	monarch = {
+		name = "Georg II"
+		dynasty = "Kreite"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1578.1.1 = {
+	monarch = {
+		name = "Ernst I"
+		dynasty = "von Hohenstein"
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1593.1.1 = {
+	monarch = {
+		name = "(Administrators)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
 #1648 done

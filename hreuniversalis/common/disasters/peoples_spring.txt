@@ -162,7 +162,7 @@ peoples_spring = {
 			100 = peoples_spring.4 #Swing Riot
 			100 = peoples_spring.5 #Independence Movement
 			100 = peoples_spring.6 #Censorship of the Press
-			#food riots
+			100 = peoples_spring.7 #Food Riots
 			100 = peoples_spring.8 #Belgian Revolution
 			#9 triggered
 			100 = peoples_spring.10 #Revolutionary Advisor

@@ -573,19 +573,8 @@ vn_sic_missions_slot_3 = {
         required_missions = { }
         trigger = {
             NOT = { current_age = age_of_empire }
-			army_size_percentage = 0.75
-			religion_group = christian
+            religion_group = christian
             num_of_generals = 1
-            any_country = {
-                war_with = ROOT
-                NOT = {
-                    religion_group = christian
-                    war_score_against = {
-                        who = ROOT
-                        value = -50
-                    }
-                }
-            }
             if = {
                 limit = {
                     OR = {
@@ -598,6 +587,19 @@ vn_sic_missions_slot_3 = {
                     loyalty = 60
                 }
             }
+			OR = {
+				any_country = {
+					war_with = ROOT
+					NOT = {
+						has_matching_religion = ROOT
+						war_score_against = {
+							who = ROOT
+							value = -50
+						}
+					}
+				}
+				army_size_percentage = 0.75
+			}
         }
         effect = {
             outremer_region = {
@@ -1223,14 +1225,10 @@ vn_sic_missions_slot_4 = {
 		trigger = {
 			OR = {
 				senior_union_with = MEI
-				if = { 
-					limit = {
-						started_in = 1180.1.1
-					}
-					senior_union_with = SAX
-				}
+				senior_union_with = SAX
 				AND = {
 					NOT = { exists = MEI }
+					NOT = { exists = SAX }
 					saxony_region = {
 						type = all
 						country_or_non_sovereign_subject_holds = ROOT
@@ -1284,6 +1282,7 @@ vn_sic_missions_slot_5 = {
 				NOT = { culture_group = ROOT }
 				NOT = { religion = ROOT }
 			}
+			religion_group = christian
 		}
         trigger = {
             sicilia_region = {
@@ -1328,7 +1327,13 @@ vn_sic_missions_slot_5 = {
 			NOT = { num_of_rebel_controlled_provinces = 1 }
         }
         effect = {
-            add_prestige = 10
+			sicilia_region = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = pro_expand_administration_mission
+                    duration = -1
+                }	
+			}
             add_country_modifier = {
                 name = sic_defeat_the_vespers_mission
                 duration = 9125 #Avoids stacking
@@ -1674,6 +1679,7 @@ vn_sic_missions_slot_5 = {
 				is_part_of_hre = yes
 				is_elector = yes
 				is_emperor = yes
+				NOT = { hre_size = 10 }
 			}
 			if = {
 				limit = {
@@ -1739,12 +1745,15 @@ vn_sic_missions_slot_5 = {
 			any_ally = {
 				total_development = 100
 			}
+			religion_group = christian
 		}
 		effect = {
 			add_dip_power = 50
 			if = {
 				limit = {
 					exists = WWS
+					valid_for_personal_unions_trigger = yes
+					WWS = { valid_for_personal_unions_trigger = yes }
 				}
 				add_casus_belli = {
 					target = WWS
@@ -1771,6 +1780,9 @@ vn_sic_missions_slot_5 = {
 			if = {
 				limit = {
 					exists = MEI
+					NOT = { started_in = 1180.1.1 }
+					valid_for_personal_unions_trigger = yes
+					MEI = { valid_for_personal_unions_trigger = yes }
 				}
 				add_casus_belli = {
 					target = MEI
@@ -1787,9 +1799,10 @@ vn_sic_missions_slot_5 = {
 			}
 			else_if = {
 				limit = {
-					NOT = { exists = MEI }
 					exists = SAX
 					started_in = 1180.1.1
+					valid_for_personal_unions_trigger = yes
+					SAX = { valid_for_personal_unions_trigger = yes }
 				}
 				add_casus_belli = {
 					target = SAX

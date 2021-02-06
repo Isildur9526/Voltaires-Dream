@@ -1401,8 +1401,7 @@ country_event = {
 
 	major = yes
 	trigger = {
-		FROM = {
-			province_id = 4974 # Jerusalem
+		4974 = { # Jerusalem
 			owned_by = ROOT
 			controller = {
 				is_in_war = { casus_belli = cb_grand_crusade }
@@ -1419,7 +1418,6 @@ country_event = {
 		NOT = { has_global_flag = jerusalem_delivered }
 	}
 
-	is_triggered_only = yes
     mean_time_to_happen = { days = 1 }
 
     option = {
@@ -1518,8 +1516,7 @@ country_event = {
 
 	major = yes
 	trigger = {
-		FROM = {
-			province_id = 2233 # Constantinople
+		2233 = { # Constantinople
 			owned_by = BYZ
 			controller = {
 				is_in_war = { casus_belli = cb_grand_heretic }
@@ -1538,7 +1535,6 @@ country_event = {
 		NOT = { has_global_flag = constantinople_delivered }
 	}
 
-	is_triggered_only = yes
     mean_time_to_happen = { days = 1 }
 
     option = {
@@ -1818,8 +1814,7 @@ country_event = {
 
 	major = yes
 	trigger = {
-		FROM = {
-			province_id = 402 # Danzig
+		402 = { # Danzig
 			owned_by = ROOT
 			controller = {
 				is_in_war = { casus_belli = cb_grand_heretic }
@@ -1836,7 +1831,6 @@ country_event = {
 		NOT = { has_global_flag = danzig_delivered }
 	}
 
-	is_triggered_only = yes
     mean_time_to_happen = { days = 1 }
 
     option = {
@@ -1902,22 +1896,18 @@ country_event = {
 				}
 				random_country = {
 					limit = { culture_group = germanic exists = yes NOT = { tag = ROOT } }
-					export_to_variable = {
-						value = adm_tech
-						variable_name = ger_adm_tech
-					}
-					export_to_variable = {
-						value = dip_tech
-						variable_name = ger_dip_tech
-					}
-					export_to_variable = {
-						value = mil_tech
-						variable_name = ger_mil_tech
-					}
+					save_event_target_as = ger_nation
 				}
-				add_adm_tech = variable:ger_adm_tech
-				add_dip_tech = variable:ger_dip_tech
-				add_mil_tech = variable:ger_mil_tech
+				if = {
+					limit = {
+						event_target:ger_nation = {
+							tech_difference = 1
+						}
+					}
+					add_adm_tech = 1
+					add_dip_tech = 1
+					add_mil_tech = 1
+				}
 			}
 			ostpreussen_region = {
 				limit = {
@@ -1959,8 +1949,7 @@ country_event = {
 
 	major = yes
 	trigger = {
-		FROM = {
-			province_id = 5793 # Riga
+		5793 = { # Riga
 			owned_by = ROOT
 			controller = {
 				is_in_war = { casus_belli = cb_grand_heretic }
@@ -1977,7 +1966,6 @@ country_event = {
 		NOT = { has_global_flag = riga_delivered }
 	}
 
-	is_triggered_only = yes
     mean_time_to_happen = { days = 1 }
 
     option = {
@@ -2033,22 +2021,18 @@ country_event = {
 				}
 				random_country = {
 					limit = { culture_group = germanic exists = yes NOT = { tag = ROOT } }
-					export_to_variable = {
-						value = adm_tech
-						variable_name = ger_adm_tech
-					}
-					export_to_variable = {
-						value = dip_tech
-						variable_name = ger_dip_tech
-					}
-					export_to_variable = {
-						value = mil_tech
-						variable_name = ger_mil_tech
-					}
+					save_event_target_as = ger_nation
 				}
-				add_adm_tech = variable:ger_adm_tech
-				add_dip_tech = variable:ger_dip_tech
-				add_mil_tech = variable:ger_mil_tech
+				if = {
+					limit = {
+						event_target:ger_nation = {
+							tech_difference = 1
+						}
+					}
+					add_adm_tech = 1
+					add_dip_tech = 1
+					add_mil_tech = 1
+				}
         	}
 			latvian_region = {
 				limit = {
@@ -2109,8 +2093,7 @@ country_event = {
 
 	major = yes
 	trigger = {
-		FROM = {
-			province_id = 3660 # Edessa
+		3660 = { # Edessa
 			owned_by = ROOT
 			controller = {
 				is_in_war = { casus_belli = cb_grand_crusade }
@@ -2127,7 +2110,6 @@ country_event = {
 		NOT = { has_global_flag = edessa_delivered }
 	}
 
-	is_triggered_only = yes
     mean_time_to_happen = { days = 1 }
 
     option = {

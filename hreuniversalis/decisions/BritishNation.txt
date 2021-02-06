@@ -173,8 +173,8 @@ country_decisions = {
 				}
 				inherit = ENG
 			}
-			swap_non_generic_missions = yes
 			change_tag = GBR
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

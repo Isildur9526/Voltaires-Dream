@@ -88,7 +88,7 @@ vn_pis_missions_slot_1 = {
 						NOT = { is_permanent_claim = ROOT }
 						has_port = yes
 					}
-				add_permanent_claim = ROOT
+					add_permanent_claim = ROOT
 				}
 			}              
         }
@@ -102,9 +102,14 @@ vn_pis_missions_slot_1 = {
 				culture_group = maghrebi
 				culture_group = turko_semitic				
 			}
-			has_port = yes
-			development = 10
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { 
+				OR = {
+					religion_group = christian
+					is_state = yes
+					consolidated_region_trigger = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
 		}
 		trigger = {
 			religion_group = christian
@@ -116,6 +121,8 @@ vn_pis_missions_slot_1 = {
 					culture_group = maghrebi
 					culture_group = turko_semitic				
 				}
+				consolidated_region_trigger = yes
+				religion_group = christian
 			}
 		}
         effect = {
@@ -128,13 +135,6 @@ vn_pis_missions_slot_1 = {
                 name = "pis_liber_maiorichinus_mission"
                 duration = 9125
             }              
-			valencian_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
         }
     }
     vn_pis_interests_in_france = {
@@ -179,21 +179,7 @@ vn_pis_missions_slot_1 = {
                     name = pis_flourishing_outposts_mission
                     duration = 9125
                 }
-            } 
-			toulouse_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}  
-			provence_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}			
+            } 			
         }
     }
 }
@@ -410,6 +396,14 @@ vn_pis_missions_slot_2 = {
 					}
 					add_permanent_claim = ROOT
 				}	
+				provence_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						has_port = yes
+					}
+					add_permanent_claim = ROOT
+				}
 #				andalusia_region = {
 #					limit = {
 #						NOT = { is_core = ROOT }
@@ -450,21 +444,7 @@ vn_pis_missions_slot_2 = {
                     name = pis_flourishing_outposts_mission
                     duration = 9125
                 }
-            }
-			catalunya_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}  
-			valencian_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}	
+            }	
 #			andalusia_region = {
 #				limit = {
 #					NOT = { is_core = ROOT }
@@ -661,13 +641,15 @@ vn_pis_missions_slot_3 = {
                 name = pis_raid_of_venice_mission
                 duration = 9125
             }			
-			venice_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+            2233 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
-			} 
+            }
         }
     }
     vn_pis_privileges_in_constantinople = {
@@ -838,6 +820,14 @@ vn_pis_missions_slot_4 = {
 					}
 					add_permanent_claim = ROOT
 				}
+				coastal_libya_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						has_port = yes
+					}
+					add_permanent_claim = ROOT
+				}
 			}			
         }
     }
@@ -885,35 +875,41 @@ vn_pis_missions_slot_4 = {
                     duration = 9125
                 }
             }
-			tlemcen_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}       
-			kabylia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 		}
     }
     vn_pis_carmen_in_victoriam = {
         icon = africa_proconsulare
         position = 5
         required_missions = { vn_pis_saracens_in_algeria }
+		provinces_to_highlight = {
+			OR = {
+				region = tlemcen_region
+				region = kabylia_region
+				region = coastal_tunisia_region
+			}
+			NOT = { 
+				OR = {
+					religion_group = christian
+					is_state = yes
+					consolidated_region_trigger = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
         trigger = {
 			religion_group = christian
 			has_3_advisors_trigger = yes
 			treasury = 100
-			OR = {
-				has_idea_group = religious_ideas
-				has_idea_group = maritime_ideas
-				has_idea_group = naval_ideas
-			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				OR = {
+					region = tlemcen_region
+					region = kabylia_region
+					region = coastal_tunisia_region			
+				}
+				consolidated_region_trigger = yes
+				religion_group = christian
+			}			
         }
         effect = {
 			add_republican_tradition = 10 #Excludes Legitimacy
@@ -1011,14 +1007,7 @@ vn_pis_missions_slot_4 = {
                     name = pis_flourishing_outposts_mission
                     duration = 9125
                 }
-            } 
-			lower_egypt_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			} 			
+            } 		
         }
     }
 }
@@ -1115,6 +1104,13 @@ vn_pis_missions_slot_5 = {
 					}
 					add_permanent_claim = ROOT
 				}
+			} 	
+			sicilia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			} 			
         }
     }
@@ -1149,21 +1145,7 @@ vn_pis_missions_slot_5 = {
             add_country_modifier = {
 				name = pis_domain_in_naples_mission
 				duration = 9125
-			}	
-			campania_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			apulia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			} 			
+			}				
         }
     }
     vn_pis_mathematical_genius = {

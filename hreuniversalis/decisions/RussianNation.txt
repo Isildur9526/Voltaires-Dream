@@ -102,6 +102,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = RUS
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

@@ -14,10 +14,27 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Emperor"
+		is_year = 1160
+		NOT = { is_year = 1210 }
+		NOT = { active_imperial_incident = any }
+		is_part_of_hre = yes
+		is_emperor = no
+		is_subject = no
+		NOT = { tag = PAP }
+		has_ruler_modifier = guelph_ruler
+		has_global_flag = guelph_ghib_enabled
+		NOT = { has_global_flag = lombard_league_founded }
+		NOT = { has_global_flag = italy_out_of_HRE }
+		NOT = {
+			emperor = {
+				capital_scope = {
+					superregion = italy_superregion
+				}
+			}
+		}
 		capital_scope = {
 			superregion = italy_superregion
 		}
-		NOT = { tag = PAP }
 		if = {
 			limit = {
 				NOT = {
@@ -46,23 +63,6 @@ country_event = {
 				primary_culture = emilian
 			}
 		}
-		has_ruler_modifier = guelph_ruler
-		has_global_flag = guelph_ghib_enabled
-		NOT = { has_global_flag = lombard_league_founded }
-		NOT = { has_global_flag = italy_out_of_HRE }
-		is_part_of_hre = yes
-		is_emperor = no
-		is_subject = no
-		NOT = {
-			emperor = {
-				capital_scope = {
-					superregion = italy_superregion
-				}
-			}
-		}
-		is_year = 1160
-		NOT = { is_year = 1210 }
-		NOT = { active_imperial_incident = any }
 	}
 	
 	mean_time_to_happen = {

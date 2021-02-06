@@ -1340,7 +1340,8 @@ country_event = {
 		enact_revolution_effect = yes
 
 		define_ruler = {
-			name = "Gaspar Melchor de Jovellanos"
+			name = "Gaspar Melchor"
+			dynasty = "de Jovellanos"
 			adm = 5
 			dip = 2
 			mil = 2
@@ -1431,7 +1432,8 @@ country_event = {
 		enact_revolution_effect = yes
 
 		define_ruler = {
-			name = "Lars Johan Hierta"
+			name = "Lars Johan"
+			dynasty = "Hierta"
 			adm = 5
 			dip = 3
 			mil = 0
@@ -1502,7 +1504,8 @@ country_event = {
 		enact_revolution_effect = yes
 
 		define_ruler = {
-			name = "John Wilkes"
+			name = "John"
+			dynasty = "Wilkes"
 			adm = 5
 			dip = 3
 			mil = 1
@@ -1624,7 +1627,8 @@ country_event = {
 		add_stability = -1
 
 		define_ruler = {
-			name = "Napoleone I di Buonaparte"
+			name = "Napoleone I"
+			dynasty = "di Buonaparte"
 			adm = 6
 			dip = 5
 			mil = 6

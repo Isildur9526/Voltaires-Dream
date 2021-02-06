@@ -20,7 +20,7 @@ capital = 1055
 }
 1061.7.13 = {
 	monarch = {
-		name = "Adelaide"
+		name = "Adelheid"
 		dynasty = "Salier"
 		birth_date = 1045.1.1
 		adm = 2
@@ -71,7 +71,7 @@ capital = 1055
 }
 1160.4.2 = {
 	monarch = {
-		name = "Adelaide"
+		name = "Adelheid"
 		dynasty = "von Sommerschenburg"
 		adm = 2
 		dip = 2
@@ -214,7 +214,7 @@ capital = 1055
 }
 1405.8.22 = {
 	monarch = {
-		name = "Adelaide"
+		name = "Adelheid"
 		dynasty = "von Isenburg"
 		birth_date = 1376.1.1
 		adm = 2

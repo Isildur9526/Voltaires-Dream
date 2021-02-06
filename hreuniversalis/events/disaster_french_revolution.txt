@@ -269,7 +269,8 @@ country_event = {
 		}
 
 		define_ruler = {
-			name = "Maximilien de Robespierre"
+			name = "Maximilien"
+			dynasty = "de Robespierre"
 			fixed = yes
 			adm = 3
 			dip = 0
@@ -1039,6 +1040,8 @@ country_event = {
 			dip = 9
 			mil = 9
 			fixed = yes
+			min_age = 25
+			max_age = 35
 		}
 		if = {
 			limit = {

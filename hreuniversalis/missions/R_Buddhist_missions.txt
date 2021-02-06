@@ -27,7 +27,7 @@ vn_buddhism_missions = {
                 }
                 estate_loyalty = {
                     estate = estate_church
-                    loyalty = 70
+                    loyalty = 60
                 }
             }
 		}

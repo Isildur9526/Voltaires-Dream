@@ -400,7 +400,9 @@ vn_plc_missions_slot_3 = {
 			}
         }
         effect = {
-			country_event = { id = flavor_pol.1 }
+			country_event = {
+				id = flavor_pol.1
+			}
 			define_advisor = {
 				name = "Aleksander Seton"
 				type = naval_reformer
@@ -927,7 +929,10 @@ vn_plc_missions_slot_5 = {
 			}
         }
         effect = {
-            country_event = { id = vn_missions.29 }
+			set_country_flag = establishd_yeshivot_flag
+            country_event = {
+				id = vn_missions.29
+			}
         }
     }
     vn_plc_repelling_foreign_influences = {

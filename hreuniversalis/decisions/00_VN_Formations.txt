@@ -340,6 +340,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = LTH
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -738,11 +739,13 @@ country_decisions = {
 				}
 				set_government_rank = 5
 			}
+			change_tag = SIC
 			if = {
-				limit = { NOT = { tag = APL } }
+				limit = { 
+					NOT = { was_tag = APL } 
+				}
 				swap_non_generic_missions = yes
 			}
-			change_tag = SIC
 			sicily_superregion = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -2019,6 +2022,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = AQT
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -3601,6 +3605,7 @@ country_decisions = {
 				change_primary_culture = aramaic
 			}
 			change_tag = ASY
+			swap_non_generic_missions = yes
 			set_country_flag = unformable
 			set_capital = 6330
 			remove_non_electors_emperors_from_empire_effect = yes
@@ -3968,10 +3973,7 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			OR = {
-				ai = no
-				NOT = { exists = MAZ }
-			}
+			NOT = { exists = MAZ }
 			NOT = { has_country_flag = unformable }
 			NOT = { tag = POL }
 			NOT = { tag = PTH }

@@ -6404,7 +6404,7 @@ SIC_ideas = {
         core_creation = -0.1
     }
     sic_trade_fleet = {
-        global_ship_trade_power = 0.2
+        global_ship_trade_power = 0.15
     }
     sic_grand_navy = {
         naval_morale = 0.15
@@ -7100,7 +7100,7 @@ AYL_ideas = {
 FFE_ideas = {
     start = {
         mercenary_manpower = 0.5
-        galley_power = 0.2
+        global_ship_trade_power = 0.15
     }
     bonus = {
         free_leader_pool = 1

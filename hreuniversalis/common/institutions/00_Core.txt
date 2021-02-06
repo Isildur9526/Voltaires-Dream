@@ -3104,7 +3104,6 @@ industrialism = {
 				has_dlc = "Rule Britannia"
 				NOT = { is_year = 1780 }
 			}
-			has_building = furnace
 			owner = {
 				OR = {
 					production_leader = {

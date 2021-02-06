@@ -9,6 +9,7 @@ historical_friend = ASE
 
 #Earl of all Northumbria
 1041.1.1 = {
+	override_country_name = NORTHUMBRIA_NAME
 	monarch = {
 		name = "Siward"
 		dynasty = "Ástríðsunr"
@@ -67,6 +68,7 @@ historical_friend = ASE
 }
 
 1070.1.1 = {
+	restore_country_name = yes
 	government = monarchy
 	add_government_reform = feudalism_reform
 }

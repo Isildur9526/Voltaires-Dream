@@ -4,6 +4,7 @@ country_decisions = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
+			NOT = { has_country_flag = unformable }
 			OR = {
 				ai = no
 				is_playing_custom_nation = no
@@ -18,12 +19,22 @@ country_decisions = {
 			}
 		}
 		provinces_to_highlight = {
-			OR = {
-				province_id = 2172
-				province_id = 703
-				province_id = 723
-				province_id = 2174
-				province_id = 683
+			if = {
+				limit = { has_ruler_flag = styria_inherited_austria_flag }
+				OR = {
+					province_id = 2172
+					province_id = 703
+					province_id = 723
+				}
+			}
+			else = {
+				OR = {
+					province_id = 2172
+					province_id = 703
+					province_id = 723
+					province_id = 2174
+					province_id = 683
+				}
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -37,11 +48,19 @@ country_decisions = {
 			is_nomad = no
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
-			owns = 2172
-			owns = 703
-			owns = 723
-			owns = 2174
-			owns = 683
+			if = {
+				limit = { has_ruler_flag = styria_inherited_austria_flag }
+				owns = 2172
+				owns = 703
+				owns = 723
+			}
+			else = {
+				owns = 2172
+				owns = 703
+				owns = 723
+				owns = 2174
+				owns = 683
+			}
 		}
 		effect = {
 			change_tag = HAB

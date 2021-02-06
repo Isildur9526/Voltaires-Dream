@@ -1767,11 +1767,11 @@ vn_hab_missions_slot_5 = {
         trigger = {
             is_emperor = yes
             calc_true_if = {
-                amount = 4
-                desc = vn_hab_imperial_ambition.tt
+                desc = gen_hre_electors.tooltip
                 all_elector = {
                     preferred_emperor = ROOT
                 }
+                amount = 4
             }
         }
         effect = {

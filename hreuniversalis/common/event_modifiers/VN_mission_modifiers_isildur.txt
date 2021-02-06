@@ -84,8 +84,7 @@ bur_annex_gelre_mission = {
 	local_tax_modifier = 0.1
 }
 bur_conquer_provence_mission = {
-	garrison_size = 0.25
-	fort_maintenance_modifier = -0.1
+	garrison_growth = 0.25
 }
 bur_burgundian_netherlands_mission = {
 	local_years_of_nationalism = -5

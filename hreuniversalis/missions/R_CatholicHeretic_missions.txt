@@ -23,9 +23,9 @@ vn_catholic_heretic_missions = {
 			}
 			if = {
 				limit = { has_estate = estate_church }
-				estate_territory = {
+				num_of_estate_privileges = {
 					estate = estate_church
-					territory = 15
+					value = 3
 				}
 			}
 		}

@@ -21,6 +21,10 @@ change_estate_land_share = {
 		name = "edwardian_isolation"
 		duration = -1
 	}
+	add_ruler_modifier = {
+		name = "old_and_sick"
+		duration = -1
+	}
 	set_ruler_flag = edward_the_confessor_flag
 	set_country_flag = viking_invasion_flag
 	monarch = {

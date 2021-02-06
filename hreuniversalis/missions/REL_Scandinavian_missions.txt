@@ -71,9 +71,10 @@ VN_scandinavian_missions = {
 				limit = {
 					has_estate = estate_nobles
 				}
-				estate_territory = {
+				has_estate_privilege = estate_nobles_land_rights
+				num_of_estate_privileges = {
 					estate = estate_nobles
-					territory = 30 
+					value = 3
 				}
 				estate_loyalty = {
 					estate = estate_nobles

@@ -16,17 +16,25 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		has_dlc = "Common Sense"
-		tag = PAP
-		any_country = {  	
-			primary_culture = swiss	
-			has_opinion = { who = PAP value = 25 }	
-			reverse_has_opinion = { who = PAP value = 25 }	
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			has_country_flag = pap_swiss_guard_mission_flag
 		}
-		NOT = {
-			OR = {
-				has_country_modifier = pap_swiss_guard_timer
-				has_country_modifier = pap_swiss_guard
+		else = {
+			has_dlc = "Common Sense"
+			tag = PAP
+			any_country = {  	
+				primary_culture = swiss	
+				has_opinion = { who = PAP value = 25 }	
+				reverse_has_opinion = { who = PAP value = 25 }	
+			}
+			NOT = {
+				OR = {
+					has_country_modifier = pap_swiss_guard_timer
+					has_country_modifier = pap_swiss_guard
+				}
 			}
 		}
 	}
@@ -364,11 +372,19 @@ country_event = {
 	goto = 2708
 	
 	trigger = {
-		adm_tech = 36
-		has_dlc = "Common Sense"
-		tag = PAP
-		owns = 2708
-		has_institution = renaissance
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			has_country_flag = vatican_library_mission_flag
+		}
+		else = {
+			adm_tech = 36
+			has_dlc = "Common Sense"
+			tag = PAP
+			owns = 2708
+			has_institution = renaissance
+		}
 	}
 	
 	mean_time_to_happen = {

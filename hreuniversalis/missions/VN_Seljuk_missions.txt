@@ -17,13 +17,8 @@ vn_sjk_missions_slot_1 = {
         position = 1
         required_missions = {  }
 		provinces_to_highlight = {
-            region = lower_egypt_region
-            NOT = { 
-				OR = {
-				    has_owner_religion = no
-				    country_or_non_sovereign_subject_holds = ROOT
-				}
-			}          
+            region = lower_mesopotamia_region
+			has_owner_religion = no        
         }
         trigger = {
             lower_mesopotamia_region = {

@@ -87,6 +87,13 @@ country_decisions = {
 			ENG = {
 				set_capital = 2268
 			}
+			if = {
+				limit = { 
+					has_custom_ideas = no 
+					NOT = { has_idea_group = ENG_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
 		}
 		ai_will_do = {
 			factor = 1

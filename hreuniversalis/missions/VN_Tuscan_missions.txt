@@ -294,7 +294,7 @@ vn_tus_missions_slot_4 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT}
 		}
 		trigger = {
-			num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 12
 				OR = {
 					area = arborea_area

@@ -101,12 +101,18 @@ on_startup = {
 	}
 
 	BYZ = {
-		if = { limit = { has_reform = eastern_monarchy } }
-		while = {
-			limit = { crown_land_share = 10 }
-			change_estate_land_share = {
-				estate = all
-				share = 1
+		if = {
+			limit = {
+				NOT = { has_country_flag = byz_lost_crown_land }
+				has_reform = eastern_monarchy
+			}
+			set_country_flag = byz_lost_crown_land
+			while = {
+				limit = { crown_land_share = 10 }
+				change_estate_land_share = {
+					estate = all
+					share = 1
+				}
 			}
 		}
 	}
@@ -696,11 +702,6 @@ on_siege_lost_country = {
 	events = {
 		curia.8
 		papacy_events.5
-		vn_crusade_events.9
-		vn_crusade_events.10
-		vn_crusade_events.12
-		vn_crusade_events.13
-		vn_crusade_events.14
 	}
 }
 

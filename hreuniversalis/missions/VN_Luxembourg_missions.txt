@@ -186,12 +186,12 @@ vn_lux_missions_slot_2 = {
         required_missions = { vn_lux_elevate_to_duchy }
         trigger = {
             grown_by_development = 100
-            custom_trigger_tooltip = {
-                tooltip = vn_eng_influence_in_empire.tt
-                calc_true_if = {
-                    all_elector = { preferred_emperor = ROOT }
-                    amount = 3
+            calc_true_if = {
+                desc = gen_hre_electors.tooltip
+                all_elector = {
+                    preferred_emperor = ROOT
                 }
+                amount = 3
             }
         }
         effect = {
@@ -273,22 +273,30 @@ vn_lux_missions_slot_3 = {
         }
         effect = {
             add_dip_power = 50
-			781 = { #Owner of Prague
-				owner = {
-					reverse_add_casus_belli = {
-						target = ROOT
-						type = cb_fabricated_claims
-						months = 300
+			if = {
+				limit = {
+					valid_for_personal_unions_trigger = yes
+					781 = { owner = { valid_for_personal_unions_trigger = yes } }		
+				}
+				781 = { #Owner of Prague
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_fabricated_claims
+							months = 240
+						}
 					}
 				}
 			}
-            bohemia_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
+			else = {
+				bohemia_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
             add_country_modifier = {
                 name = lux_dynastic_success_mission
                 duration = 9125
@@ -341,22 +349,30 @@ vn_lux_missions_slot_3 = {
             }
         }
         effect = {
-			2652 = { #Owner of Berlin
-				owner = {
-					reverse_add_casus_belli = {
-						target = ROOT
-						type = cb_claim_throne
-						months = 240
+			if = {
+				limit = {
+					valid_for_personal_unions_trigger = yes
+					2652 = { owner = { valid_for_personal_unions_trigger = yes } }		
+				}
+				2652 = { #Owner of Berlin
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_fabricated_claims
+							months = 240
+						}
 					}
 				}
 			}
-            brandenburg_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }             
+			else = {
+				brandenburg_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}   
+			}
         }
     }
     vn_lux_elector_of_brandenburg = {
@@ -447,10 +463,13 @@ vn_lux_missions_slot_4 = {
         position = 3
         required_missions = { vn_lux_masters_of_diplomacy }
         trigger = {
-			2172 = { #owner of Vienna
-				owner = {
-					is_in_war = {
-						participants = ROOT
+			OR = {
+				owns_core_province = 2172
+				2172 = { #owner of Vienna
+					owner = {
+						is_in_war = {
+							participants = ROOT
+						}
 					}
 				}
 			}
@@ -485,22 +504,30 @@ vn_lux_missions_slot_4 = {
             }
         }
         effect = {
-			444 = { #Owner of Pest
-				owner = {
-					reverse_add_casus_belli = {
-						target = ROOT
-						type = cb_claim_throne
-						months = 240
+			if = {
+				limit = {
+					valid_for_personal_unions_trigger = yes
+					444 = { owner = { valid_for_personal_unions_trigger = yes } }		
+				}
+				444 = { #Owner of Pest
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_fabricated_claims
+							months = 240
+						}
 					}
 				}
 			}
-            danubia_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
+			else = {
+				danubia_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
             silesia_region = {
                 limit = {
                     NOT = { is_core = ROOT }

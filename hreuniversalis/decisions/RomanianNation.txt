@@ -38,7 +38,7 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			NOT = { exists = BYZ }
+			adm_tech = 40
 			owns_core_province = 448	# Transylvania
 			owns_core_province = 2061	# Silistria
 			owns_core_province = 5660	# Oltenia

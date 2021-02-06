@@ -1,19 +1,27 @@
 #Provence
-pro_angevin_domain_mission = {
-	prestige = 0.5
-	improve_relation_modifier = 0.1
-}
 pro_establish_consultates_mission = {
-	diplomatic_reputation = 1 
-	improve_relation_modifier = 0.1
+	diplomats = 1
+	improve_relation_modifier = 0.2	
+}
+pro_the_dAnjou_holdings_mission = {
+	prestige = 0.5
+	production_efficiency = 0.1	 
+}
+pro_romanesque_and_gothic_mission = {
+	papal_influence = 2
+	build_cost = -0.1
+}
+pro_regnum_arelatense_mission = {
+	manpower_recovery_speed = 0.2
+	diplomatic_reputation = 1
 }
 pro_toulon_shipyard_mission = {
 	global_ship_cost = -0.1
-	global_ship_recruit_speed = -0.1
+	naval_morale = 0.1
 }
 pro_avignon_papacy_mission = {
 	papal_influence = 2
-	improve_relation_modifier = 0.2
+	global_tax_modifier = 0.1
 }
 pro_trade_of_lyon_mission = {
 	province_trade_power_modifier = 0.2
@@ -31,18 +39,6 @@ pro_contest_poitiers_mission = {
 	global_institution_spread = 0.1
 	advisor_cost = -0.1
 }
-pro_the_dAnjou_holdings_mission = {
-	diplomatic_reputation = 1 
-}
-pro_romanesque_and_gothic_mission = {
-	papal_influence = 2
-	build_cost = -0.1
-}
-pro_regnum_arelatense_mission = {
-	prestige = 0.5
-	core_creation = -0.1
-	legitimacy = 0.5
-}
 pro_italian_expansion_mission = {
 	prestige = 0.5
 	province_warscore_cost = -0.1
@@ -56,12 +52,20 @@ pro_a_merchant_fleet_mission = {
 	trade_range_modifier = 0.2
 }
 pro_heir_to_lotharingia_mission = { 
-	diplomatic_reputation = 0.5
+	governing_capacity_modifier = 0.1
 	core_creation = -0.1
 }
 pro_strike_their_core_mission = {
 	papal_influence = 2
-	diplomatic_reputation = 0.5
+	warscore_cost_vs_other_religion = -0.1	
+}
+pro_conquer_jerusalem_mission = {
+	global_manpower_modifier = 0.2
+	global_missionary_strength = 0.02
+}
+pro_expand_administration_mission = {
+	statewide_governing_cost = -0.75
+	local_tax_modifier = 0.1
 }
 
 #Luxembourg
@@ -1408,6 +1412,10 @@ sax_centers_for_the_arts_mission = {
 	advisor_pool = 1
 	advisor_cost = -0.1
 }
+sax_revenge_the_staufers_mission = {
+	army_tradition = 0.5
+	spy_offence = 0.25
+}
 
 #Naples
 nap_end_the_monopolies_mission = {
@@ -1462,6 +1470,178 @@ nap_rein_in_the_barons_mission = {
 nap_confiscate_estates_mission = {
 	stability_cost_modifier = -0.1
 	discipline = 0.05
+}
+
+#Aquitaine
+aqt_wine_trade_mission = {
+	production_efficiency = 0.1
+	trade_efficiency = 0.1
+}
+aqt_world_port_mission = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+	province_trade_power_modifier = 0.1
+}
+aqt_atlantic_interests_mission = {
+	naval_maintenance_modifier = -0.1
+	navy_tradition = 1
+}
+aqt_paris_mission = {
+	legitimacy = 1
+	prestige = 0.5
+}
+aqt_king_of_france_mission = {
+	global_unrest = -1
+	global_tax_modifier = 0.1
+}
+aqt_southern_war_mission = {
+	global_manpower_modifier = 0.2
+	land_attrition = -0.1
+}
+aqt_lay_primitive_mission = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
+aqt_defend_invasions_mission = {
+	defensiveness = 0.2
+	land_morale = 0.1
+}
+aqt_levy_army_mission = {
+	army_tradition = 0.5
+	land_maintenance_modifier = -0.1
+}
+aqt_court_de_ville_mission = {
+	global_autonomy = -0.05
+	stability_cost_modifier = -0.1
+}
+aqt_capetian_rivalry_mission = {
+	war_exhaustion = -0.03
+	global_regiment_cost = -0.10
+}
+
+#Russia
+mos_byzantine_treaty_mission = {
+	improve_relation_modifier = 0.2
+	diplomatic_upkeep = 1
+}
+mos_roman_trade_mission = {
+	trade_efficiency = 0.1
+}
+mos_develop_st_petersburg_mission = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+	province_trade_power_modifier = 0.1	
+}
+mos_kazan_mission = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+	province_trade_power_modifier = 0.1	
+}
+mos_settle_siberia_mission = {
+	local_colonial_growth = 10
+	local_tax_modifier = 0.1
+}
+mos_reach_the_aral_sea_mission = {
+	global_colonial_growth = 10
+	fabricate_claims_cost = -0.25
+}
+mos_western_influence_mission = {
+	advisor_cost = -0.1
+	advisor_pool = 1
+}
+mos_rostov_mission = {
+	colonists = 1
+}
+mos_warrior_monks_of_kulikovo_mission = {
+	land_attrition = -0.1
+	land_morale = 0.1
+}
+mos_a_western_capital_mission = {
+	prestige = 0.5
+	build_cost = -0.1
+}
+mos_russian_literature_mission = {
+	advisor_cost = -0.1
+	advisor_pool = 1	
+}
+mos_influencial_clergy_mission = {
+	global_tax_modifier = 0.1
+	tolerance_own = 1
+}
+mos_avoid_the_mongol_wrath_mission = {
+	legitimacy = 1
+	army_tradition = 0.5
+}
+mos_war_with_the_horde_mission = {
+	discipline = 0.05
+	fire_damage = 0.10
+}
+mos_ruler_of_all_the_rus_mission = {
+	global_autonomy = -0.05
+	global_unrest = -1
+}
+mos_invade_poland_mission = {
+	army_tradition = 0.5
+	siege_ability = 0.10
+}
+mos_black_sea_interests_mission = {
+	global_sailors_modifier = 0.1
+	naval_maintenance_modifier = -0.1
+}
+mos_land_of_cathedrals_mission = {
+	global_tax_modifier = 0.1
+	global_heretic_missionary_strength = 0.01
+}
+mos_orthodox_supremacy_mission = {
+	ae_impact = -0.1
+	warscore_cost_vs_other_religion = -0.1
+}
+mos_third_rome_mission = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+	province_trade_power_modifier = 0.1		
+}
+mos_reforms_of_saint_sergius_mission = {
+	global_unrest = -1
+}
+mos_capture_kiev_mission = {
+	prestige = 0.5
+	diplomatic_reputation = 1
+}
+mos_embrace_the_baltic_germans_mission = {
+	local_unrest = -1		
+}
+mos_land_as_collateral_mission = {
+	core_creation = -0.1
+	fabricate_claims_cost = -0.25
+}
+mos_liberate_polotsk_mission = {
+	missionary_maintenance_cost = -0.1
+	missionaries = 1
+}
+mos_revive_faith_in_the_west_mission = {
+	global_heretic_missionary_strength = 0.01
+	global_missionary_strength = 0.01
+}
+mos_secure_trade_routes_mission = {
+	global_trade_power = 0.1
+	global_foreign_trade_power = 0.1
+}
+mos_muscovy_company_mission = {
+	merchants = 1
+	trade_range_modifier = 0.25
+}
+mos_the_cossacks_mission = {
+	cavalry_cost = -0.10
+	cavalry_power = 0.10	
+}
+mos_strength_in_numbers_mission = {
+	manpower_recovery_speed = 0.1
+	global_manpower_modifier = 0.2
+}
+mos_strength_in_numbers_mission = {
+	manpower_recovery_speed = 0.1
+	global_manpower_modifier = 0.2
 }
 
 #Pavia

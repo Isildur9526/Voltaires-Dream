@@ -1145,6 +1145,38 @@ country_event = {
 		add_legitimacy = -10
 	}
 }
+###Russia
+#The Old Capital
+country_event = {
+	id = vn_missions.211
+	title = vn_missions.211.t
+	desc = vn_missions.211.d
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "vn_missions.211.a"
+        add_prestige = 25
+		4237 = {
+			move_capital_effect = yes
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+		}		
+	}
+	option = {
+		name = "vn_missions.211.b"
+        add_adm_power = 50
+        add_dip_power = 50
+        add_mil_power = 50		
+		capital_scope = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}	
+	}
+}
 
 ###Other Events
 #IDs 300 and over

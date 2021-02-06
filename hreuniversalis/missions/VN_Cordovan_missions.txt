@@ -255,9 +255,9 @@ vn_crd_missions_slot_2 = {
                     estate = estate_burghers
                     loyalty = 50
                 }
-                estate_territory = {
+                num_of_estate_privileges = {
                     estate = estate_burghers
-                    territory = 30
+                    value = 2
                 }
             }
         }

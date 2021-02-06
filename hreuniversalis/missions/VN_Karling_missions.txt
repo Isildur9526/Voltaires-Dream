@@ -499,11 +499,9 @@ vn_karling_missions_slot_2 = {
 			legitimacy_equivalent = 100
             calc_true_if = {
 				amount = 2
-				OR = {
-					adm = 5
-					dip = 5
-					mil = 5
-				}
+				adm = 5
+				dip = 5
+				mil = 5
 			}
         }
         effect = {

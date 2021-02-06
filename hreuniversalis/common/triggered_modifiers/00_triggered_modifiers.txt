@@ -529,3 +529,34 @@ investiture_controversy_m = {
 	legitimacy = -1
 	diplomatic_reputation = -1
 }
+
+reconquista_fervor = {
+	potential = {
+		normal_or_historical_nations = yes
+		has_global_flag = reconquista_fervor_flag
+		NOT = {
+			had_global_flag = {
+				flag = reconquista_fervor_flag
+				days = 18250
+			}
+		}
+		culture_group = iberian
+		religion = catholic
+		capital_scope = {
+			superregion = iberia_superregion
+		}
+	}
+
+	trigger = {	
+		any_enemy_country = {
+			religion_group = muslim
+			capital_scope = {
+				superregion = iberia_superregion
+			}
+		}
+	}
+
+	papal_influence = 1
+	land_morale = 0.05
+	reinforce_speed = 0.05
+}

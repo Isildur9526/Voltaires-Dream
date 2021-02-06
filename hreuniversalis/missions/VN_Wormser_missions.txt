@@ -41,14 +41,12 @@ vn_die_missions_slot_1 = {
             }
             if = {
                 limit = { government = monarchy }
-                custom_trigger_tooltip = {
-                    tooltip = vn_eng_influence_in_empire.tt
-                    calc_true_if = {
-                        all_elector = {
-                            preferred_emperor = ROOT
-                        }
-                        amount = 3
+                calc_true_if = {
+                    desc = gen_hre_electors.tooltip
+                    all_elector = {
+                        preferred_emperor = ROOT
                     }
+                    amount = 3
                 }
             }
             else = {

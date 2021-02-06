@@ -26,7 +26,7 @@ vn_nov_missions_slot_1 = {
 				limit = { has_estate = estate_church }
 				estate_loyalty = {
 					estate = estate_church
-					loyalty = 60
+					loyalty = 50
 				}
 				NOT = {
 					estate_influence = {
@@ -39,7 +39,7 @@ vn_nov_missions_slot_1 = {
 				limit = { has_estate = estate_burghers }
 				estate_loyalty = {
 					estate = estate_burghers
-					loyalty = 60
+					loyalty = 50
 				}
 				NOT = {
 					estate_influence = {
@@ -52,7 +52,7 @@ vn_nov_missions_slot_1 = {
 				limit = { has_estate = estate_nobles }
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 60
+					loyalty = 50
 				}
 				NOT = {
 					estate_influence = {
@@ -230,14 +230,7 @@ vn_nov_missions_slot_1 = {
 					NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-			}         
-            perm_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-			} 			
+			}         			
         }
     }
     vn_nov_defeat_volga_bulgaria = {
@@ -253,12 +246,29 @@ vn_nov_missions_slot_1 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
+			OR = {
+				full_idea_group = exploration_ideas
+				full_idea_group = expansion_ideas
+			}
         }
         effect = {
 			add_adm_power = 50
 			add_dip_power = 50
 			add_mil_power = 50
-			add_prestige = 15
+            perm_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
+            bashkiria_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			} 
         }
     }
 }
@@ -305,7 +315,7 @@ vn_nov_missions_slot_2 = {
 				limit = { has_estate = estate_nobles } 
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 70
+					loyalty = 60
 				}
 			}
 			NOT = { corruption = 0.01 }  
@@ -331,7 +341,7 @@ vn_nov_missions_slot_2 = {
 				limit = { has_estate = estate_burghers } 
 				estate_loyalty = {
 					estate = estate_burghers
-					loyalty = 70
+					loyalty = 60
 				}
 			}
 			stability = 3
@@ -622,7 +632,7 @@ vn_nov_missions_slot_3 = {
 				limit = { has_estate = estate_church } 
 				estate_loyalty = {
 					estate = estate_church
-					loyalty = 70
+					loyalty = 60
 				}
 			}    
 			religious_unity = 1
@@ -813,40 +823,54 @@ vn_nov_missions_slot_3 = {
         position = 10
         required_missions = { vn_nov_the_dnieper_controlled vn_nov_conquer_the_central_rus }
         trigger = {
-			legitimacy = 100
+			legitimacy_equivalent = 100
 			stability = 3
 			prestige = 50
 			months_of_ruling = 120
         }
         effect = {
+            bessarabia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}
+            moldavia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}
             estonia_region = {
                 limit = {
                     NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-			} 
+			}	
             livonia_region = {
                 limit = {
                     NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-			} 
+			}
             latvian_region = {
                 limit = {
                     NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-			} 
+			}
             curoniasemigallia_region = {
                 limit = {
                     NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
                 }
                 add_permanent_claim = ROOT
-			} 
+			}
 			add_country_modifier = {
                 name = "nov_the_rus_reunited_mission"
                 duration = -1 
@@ -1193,17 +1217,29 @@ vn_nov_missions_slot_4 = {
 			}            
         }
     }
-    #vn_nov_address_the_nomads = {
-    #    icon = mission_break_the_tatar_yoke
-    #    position = 10
-    #    required_missions = { vn_nov_tribute_to_the_mongols vn_nov_the_dnieper_controlled }
-    #    trigger = {
-    #        
-    #    }
-    #    effect = {
-    #        
-    #    }
-    #}
+    vn_nov_address_the_nomads = {
+        icon = mission_break_the_tatar_yoke
+        position = 10
+        required_missions = { vn_nov_tribute_to_the_mongols vn_nov_the_dnieper_controlled }
+        trigger = {
+            any_country = {
+				government = tribal
+				war_with = ROOT
+				NOT = {
+					war_score_against = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+        }
+        effect = {
+            add_country_modifier = {
+                name = "mos_war_with_the_horde_mission"
+                duration = 9125
+            }            
+        }
+    }
 }
 vn_nov_missions_slot_5 = {
     slot = 10
@@ -1349,7 +1385,7 @@ vn_nov_missions_slot_5 = {
         required_missions = {  }
         trigger = {
 			army_size_percentage = 0.75
-			army_professionalism = 0.2
+			army_professionalism = 0.5
 			num_of_generals = 3            
         }
         effect = {
@@ -1433,10 +1469,20 @@ vn_nov_missions_slot_5 = {
         position = 9
         required_missions = {  }
         trigger = {
-			reverse_has_opinion = {
-				who = GLH
-				value = 100
-			}            
+			OR = {
+				reverse_has_opinion = {
+					who = GLH
+					value = 100
+				}  
+				reverse_has_opinion = {
+					who = GOL
+					value = 100
+				} 	
+				AND = {
+					NOT = { exists = GLH }
+					NOT = { exists = GOL }
+				}
+			}
         }
         effect = {
 			add_dip_power = 50

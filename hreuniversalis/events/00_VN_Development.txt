@@ -11,6 +11,7 @@ province_event = {
 	goto = ROOT
 
 	trigger = {
+		NOT = { has_province_flag = vn_province_rose }
 		NOT = { devastation = 0.01 }
 		NOT = { development = 25 }
 		NOT = {
@@ -31,7 +32,6 @@ province_event = {
 		}
 		controlled_by = owner
 		is_core = owner
-		NOT = { has_province_flag = vn_province_rose }
 		owner = {
 			any_owned_province = {
 				NOT = {
@@ -349,6 +349,7 @@ province_event = {
 	goto = ROOT
 
 	trigger = {
+		NOT = { has_province_flag = vn_province_fell }
 		calc_true_if = {
 			base_tax = 2
 			base_production = 2
@@ -370,7 +371,6 @@ province_event = {
 				}
 			}
 		}
-		NOT = { has_province_flag = vn_province_fell }
 	}
 
 	is_mtth_scaled_to_size = 1

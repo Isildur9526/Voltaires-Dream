@@ -384,7 +384,10 @@ vn_pru_missions_slot_2_a = {
 				owned_by = ROOT
 				is_core = ROOT
 			}
-			militarised_society = 25
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				militarised_society = 25
+			}
         }
         effect = {
             add_country_modifier = {
@@ -405,7 +408,10 @@ vn_pru_missions_slot_2_a = {
 			}
 			has_commanding_three_star = yes
 			NOT = { num_of_mercenaries = 1 }
-			militarised_society = 50
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				militarised_society = 50
+			}
 			army_professionalism = 0.4
         }
         effect = {
@@ -426,7 +432,10 @@ vn_pru_missions_slot_2_a = {
 			NOT = { num_of_mercenaries = 1 }
 			army_professionalism = 0.8
 			absolutism = 75
-			militarised_society = 75
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				militarised_society = 75
+			}
         }
         effect = {
 			add_army_tradition = 10

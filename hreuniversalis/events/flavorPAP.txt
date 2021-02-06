@@ -469,17 +469,21 @@ country_event = {
 			factor = 10
 			modifier = {
 				factor = 0
-				ai_attitude = {
-					who = PAP
-					attitude = attitude_rivalry
-				}
-				ai_attitude = {
-					who = PAP
-					attitude = attitude_hostile
-				}
-				ai_attitude = {
-					who = PAP
-					attitude = attitude_outraged
+				OR = {
+					ai_attitude = {
+						who = PAP
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = PAP
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = PAP
+						attitude = attitude_outraged
+					}
+					is_emperor_of_china = yes
+					tag = BYZ
 				}
 			}
 		}

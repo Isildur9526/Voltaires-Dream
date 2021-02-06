@@ -122,7 +122,7 @@ vn_gen_asia_2 = {
 	}
 }
 
-vn_gen_asia_2 = {
+vn_gen_asia_3 = {
 	slot = 2
 	generic = yes
 	ai = yes

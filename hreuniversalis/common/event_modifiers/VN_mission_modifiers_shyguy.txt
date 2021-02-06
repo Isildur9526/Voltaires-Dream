@@ -2943,6 +2943,21 @@ pap_sistine_chapel_mission = {
 	local_unrest = -2
 	local_tax_modifier = 0.15
 }
+pap_conquer_constantinople_mission = {
+	papal_influence = 1
+	global_heretic_missionary_strength = 0.02
+	diplomatic_reputation = 2
+}
+pap_empire_of_the_allmighty_mission = {
+	all_power_cost = -0.01
+}
+pap_conquer_lombardy_mission = {
+	core_creation = -0.1
+}
+pap_combat_heresy_mission = {
+	clergy_loyalty_modifier = 0.1
+	warscore_cost_vs_other_religion = -0.2
+}
 
 #Assyria
 asy_rebuild_babylon_mission = {
@@ -2989,4 +3004,42 @@ asy_assyrian_faith_mission = {
 asy_pacify_palestine_mission = {
 	local_tax_modifier = 0.1
 	local_development_cost = -0.1
+}
+
+#Pfullendorf
+pfu_swabian_league_mission = {
+	land_morale = 0.1
+	movement_speed = 0.1
+}
+pfu_blutgerichtsbarkeit_mission = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.25
+}
+pfu_adopt_a_constitution_mission = {
+	local_development_cost = -0.1
+	allowed_num_of_buildings = 1
+	local_tax_modifier = 0.1
+}
+pfu_herrschaft_der_gilden_mission = {
+	global_trade_power = 0.1
+	trade_efficiency = 0.1
+	trade_steering = 0.15
+}
+pfu_conquer_baden_mission = {
+	global_autonomy = -0.03
+	stability_cost_modifier = -0.15
+}
+pfu_conquer_swabia_mission = {
+	monthly_splendor = 0.5
+	prestige_decay = -0.01
+	ae_impact = -0.1
+}
+pfu_conquer_thurgau_mission = {
+	mercenary_discipline = 0.05
+	mercenary_cost = -0.2
+}
+pfu_pfullendorfer_navy_mission = {
+	navy_tradition_decay = -0.01
+	global_ship_recruit_speed = -0.1
+	heavy_ship_power = 0.1
 }

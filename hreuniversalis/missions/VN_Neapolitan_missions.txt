@@ -364,7 +364,7 @@ vn_nap_missions_slot_2 = {
             any_country = {
                 war_with = ROOT
                 NOT = {
-                    religion_group = christian
+                    has_matching_religion = ROOT
                     war_score_against = {
                         who = ROOT
                         value = -50
@@ -916,13 +916,15 @@ vn_nap_missions_slot_5 = {
 			if = {
 				limit = {
 					exists = PRO
+					valid_for_personal_unions_trigger = yes
+					PRO = { valid_for_personal_unions_trigger = yes }
 				}
 				add_casus_belli = {
 					target = PRO
 					type = cb_fabricated_claims
 					months = 300
 				}
-				swabia_region = {
+				provence_region = {
 					limit = {
 						NOT = { is_core = PRO }
 						NOT = { is_permanent_claim = PRO }
@@ -987,6 +989,8 @@ vn_nap_missions_slot_5 = {
 			if = {
 				limit = {
 					exists = HUN
+					valid_for_personal_unions_trigger = yes
+					HUN = { valid_for_personal_unions_trigger = yes }
 				}
 				add_casus_belli = {
 					target = HUN

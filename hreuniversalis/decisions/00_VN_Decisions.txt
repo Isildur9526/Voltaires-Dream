@@ -109,16 +109,30 @@ country_decisions = {
 		allow = {
 			is_at_war = no
 			stability = 1
-			adm_tech = 46
+			adm_tech = 12
 			is_orangists_in_power = yes
+			NOT = { republican_tradition = 40 }
 		}
 		effect = {
-			change_government = monarchy
-			add_government_reform = feudalism_reform
+			if = {
+				limit = { primary_culture = tuscan }
+				add_government_reform = signoria
+			}
+			else = {
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+			}
 			add_stability = -1
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { ruler_has_personality = silver_tongue_personality }
+					NOT = { ruler_has_personality = charismatic_negotiator_personality }
+				}
+			}
 		}
 	}
 

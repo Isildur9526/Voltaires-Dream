@@ -103,6 +103,22 @@ grant_freecity = {
 			FROM = { NOT = { has_reform = italian_monarchy } }
 		}
 	}
+	condition = {
+		tooltip = CANTREVREPUBLIC
+		potential = {
+		}
+		allow = {
+			FROM = { NOT = { has_reform = revolutionary_republic } }
+		}
+	}
+	condition = {
+		tooltip = CANTREVREPUBLIC
+		potential = {
+		}
+		allow = {
+			FROM = { NOT = { has_reform = junior_revolutionary_republic_reform } }
+		}
+	}
 }
 
 grant_electorate = {

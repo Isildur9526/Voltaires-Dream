@@ -67,9 +67,9 @@ VN_frankish_missions = {
 					estate = estate_holy_orders
 					loyalty = 60
 				}
-				estate_territory = {
+				num_of_estate_privileges = {
 					estate = estate_holy_orders
-					territory = 20
+					value = 3
 				}
 			}
 			else = {

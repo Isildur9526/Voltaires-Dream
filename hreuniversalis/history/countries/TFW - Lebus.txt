@@ -262,7 +262,7 @@ fixed_capital = 2197
 }
 1443.10.16 = {
 	monarch = {
-		name = "Johann VI"
+		name = "Johann VII"
 		dynasty = "von Deher"
 		dip = 1
 		adm = 4

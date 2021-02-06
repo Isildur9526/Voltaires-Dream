@@ -30,7 +30,7 @@ vn_geo_missions_slot_1 = {
 				limit = { has_estate = estate_nobles }
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 70
+					loyalty = 60
 				}
 			}
         }
@@ -601,9 +601,9 @@ vn_geo_missions_slot_3 = {
 					estate = estate_church
 					loyalty = 70
 				}
-				estate_territory = {
+				num_of_estate_privileges = {
 					estate = estate_church
-					territory = 30
+					value = 3
 				}
 			}
 			else = {

@@ -61,7 +61,7 @@ VN_crusader_missions = {
 				limit = {
 					has_dlc = "The Cossacks"
 					OR = {
-						has_estate = estate_cossacks
+						has_estate = estate_holy_orders
 						current_age = age_of_empire
 					}
 				}
@@ -70,12 +70,12 @@ VN_crusader_missions = {
 					has_fort_trigger = yes
 				}
 				estate_influence = {
-					estate = estate_cossacks
+					estate = estate_holy_orders
 					influence = 60
 				}
 				estate_loyalty = {
-					estate = estate_cossacks
-					loyalty = 70
+					estate = estate_holy_orders
+					loyalty = 50
 				}
 			}
 			else = {
@@ -106,11 +106,11 @@ VN_crusader_missions = {
 				}
 				estate_loyalty = {
 					estate = estate_holy_orders
-					loyalty = 60
+					loyalty = 50
 				}
-				estate_territory = {
+				num_of_estate_agendas_completed = {
 					estate = estate_holy_orders
-					territory = 20
+					value = 5
 				}
             }
 			num_of_cavalry = 10

@@ -2214,7 +2214,10 @@ turkish_monarchy = {
 
 	trigger = {
 		government = monarchy
-		primary_culture = turkish
+		OR = {
+			has_reform = ottoman_government
+			primary_culture = turkish
+		}
 	}
 }
 

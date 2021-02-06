@@ -2261,7 +2261,7 @@ country_event = {
 }
 
 ###PAPAL STATES###
-#Pope supports the Reconquista
+#Crusade of Barbastro
 country_event = {
 	id = vn_missions.40
 	title = vn_missions.40.t
@@ -2269,10 +2269,6 @@ country_event = {
 	picture = LAND_MILITARY_eventPicture
 
 	is_triggered_only = yes
-
-	immediate = {
-		
-	}
 
 	option = {
 		name = vn_missions.40.a
@@ -2301,7 +2297,7 @@ country_event = {
 	}
 }
 
-
+#Victory at Barbastro
 country_event = {
 	id = vn_missions.41
 	title = vn_missions.41.t
@@ -2312,32 +2308,10 @@ country_event = {
 	is_triggered_only = yes
 	major = yes
 
-	immediate = {
-		hidden_effect = {
-			catalunya_region = {
-				limit = {
-					owner = {
-						religion_group = muslim
-					}
-				}
-				add_devastation = 50
-			}
-			huesca_area = {
-				limit = {
-					owner = {
-						religion_group = muslim
-					}
-				}
-				add_devastation = 50
-			}
-			zaragoza_area = {
-				limit = {
-					owner = {
-						religion_group = muslim
-					}
-				}
-				add_devastation = 50
-			}
+	major_trigger = {
+		OR = {
+			religion = catholic
+			religion_group = muslim
 		}
 	}
 
@@ -2348,114 +2322,12 @@ country_event = {
 			type = mission_rewards_power_projection
 			amount = 10
 		}
-		if = {
-			limit = {
-				BRC = {
-					exists = yes
-					religion = catholic
-					is_free_or_tributary_trigger = yes
-				}
-			}
-			catalunya_region = {
-				limit = {
-					owner = {
-						religion_group = muslim
-					}
-				}
-				add_core = BRC
-			}
-		}
-		else = {
-			random_country = {
-				limit = {
-					NOT = { tag = ROOT }
-					exists = yes
-					religion = catholic
-					any_owned_province = {
-						OR = {
-							region = catalunya_region
-							any_neighbor_province = {
-								region = catalunya_region
-							}
-						}
-					}
-				}
-				catalunya_region = {
-					limit = {
-						owner = {
-							religion_group = muslim
-						}
-					}
-					add_core = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				ARA = {
-					exists = yes
-					religion = catholic
-					is_free_or_tributary_trigger = yes
-				}
-			}
-			huesca_area = {
-				limit = {
-					owner = {
-						religion_group = muslim
-					}
-				}
-				add_core = ARA
-			}
-			zaragoza_area = {
-				limit = {
-					owner = {
-						religion_group = muslim
-					}
-				}
-				add_core = ARA
-			}
-		}
-		else = {
-			random_country = {
-				limit = {
-					NOT = { tag = ROOT }
-					exists = yes
-					religion = catholic
-					any_owned_province = {
-						OR = {
-							area = huesca_area
-							area = zaragoza_area
-							any_neighbor_province = {
-								OR = {
-									area = huesca_area
-									area = zaragoza_area
-								}
-							}
-						}
-					}
-				}
-				huesca_area = {
-					limit = {
-						owner = {
-							religion_group = muslim
-						}
-					}
-					add_core = PREV
-				}
-				zaragoza_area = {
-					limit = {
-						owner = {
-							religion_group = muslim
-						}
-					}
-					add_core = PREV
-				}
-			}
-		}
+		custom_tooltip = vn_missions.41.tt
+		set_global_flag = reconquista_fervor_flag
 	}
 }
 
-
+#Defeat at Barbastro
 country_event = {
 	id = vn_missions.42
 	title = vn_missions.42.t
@@ -2466,11 +2338,16 @@ country_event = {
 	is_triggered_only = yes
 	major = yes
 
+	major_trigger = {
+		OR = {
+			religion = catholic
+			religion_group = muslim
+		}
+	}
+
 	option = {
 		name = vn_missions.42.a
-		add_devotion = -10
-		add_legitimacy = -10
-		add_prestige = -10
+		add_prestige = -20
 		add_power_projection = {
 			type = mission_rewards_power_projection
 			amount = -10
@@ -2524,6 +2401,7 @@ country_event = {
 	}
 }
 
+#Papal Missionaries at the Mongol Court
 country_event = {
 	id = vn_missions.44
 	title = vn_missions.44.t
@@ -2531,7 +2409,7 @@ country_event = {
 	picture = POPE_PREACHING_eventPicture
 	
 	is_triggered_only = yes
-	
+	major = yes
 	
 	option = {
 		name = "vn_missions.44.a"
@@ -2628,7 +2506,7 @@ country_event = {
 			}
 			add_opinion = {
 				who = ROOT
-				modifier = lit_converted_to_our_faith_opinion
+				modifier = pap_accepted_franciscans_opinion
 			}
 		}
 	}

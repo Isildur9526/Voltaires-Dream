@@ -210,10 +210,7 @@ vn_atc_missions_slot_3_a = {
         }
         trigger = {
             has_estate = estate_holy_orders
-            estate_territory = {
-                estate = estate_holy_orders
-                territory = 25
-            }
+            has_estate_privilege = estate_holy_orders_land_rights
             num_of_estate_privileges = {
                 estate = estate_holy_orders
                 value = 2

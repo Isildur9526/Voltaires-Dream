@@ -65,7 +65,8 @@ monarch_names = {
 }
 
 ship_names = {
-	"le $PROVINCE$" "Enrico Dandolo" "Boniface de Montferrat"
+	"le $PROVINCE$" 
+	"Enrico Dandolo" "Boniface de Montferrat"
 	"Louis de Blois" Champagne Flandre Bourgogne Blois Montferrat
 	Venice "Henri de Hainaut" "Baudouin de Hainaut" "Guy de Lusignan"
 	Hiérosolyme "Outre-Jourdain" Tripoli Ascalon Cyprus Acre Antioch

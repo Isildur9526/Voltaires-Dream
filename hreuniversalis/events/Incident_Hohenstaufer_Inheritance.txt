@@ -11,7 +11,10 @@ country_event = {
 
 	trigger = {
 		normal_or_historical_nations = yes
-		current_age = age_of_empire
+		OR = {
+			current_age = age_of_empire
+			current_age = age_of_holy_wars
+		}
 		NOT = { started_in = 1090.5.18 }
 		is_year = 1065
 		NOT = { active_imperial_incident = any }

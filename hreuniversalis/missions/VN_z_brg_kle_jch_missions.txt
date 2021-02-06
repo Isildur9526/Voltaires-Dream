@@ -520,8 +520,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             160 = {
                 if = {
@@ -529,8 +529,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             157 = {
                 if = {
@@ -538,8 +538,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             162 = {
                 if = {
@@ -547,8 +547,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             4110 = {
                 if = {
@@ -556,8 +556,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
         }
     }
@@ -655,8 +655,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             1951 = {
                 if = {
@@ -664,8 +664,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             1878 = {
                 if = {
@@ -673,8 +673,8 @@ vn_brg_kle_jch_missions_slot_3 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
+                    add_permanent_claim = ROOT
                 }
-                add_permanent_claim = ROOT
             }
             add_country_modifier = {
                 name = "brg_kle_jch_curb_archbishopric_mission"

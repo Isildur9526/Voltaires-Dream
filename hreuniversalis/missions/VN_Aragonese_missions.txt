@@ -644,7 +644,25 @@ vn_ara_missions_slot_3_a = {
 					add_permanent_claim = ROOT
 				}
 			}
-			4308 = {
+			567 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4320 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4309 = {
 				if = {
 					limit = {
 						NOT = { is_core = ROOT }
@@ -666,7 +684,9 @@ vn_ara_missions_slot_3_a = {
 			OR = {
 				area = huesca_area
 				province_id = 711
-				province_id = 4308
+				province_id = 567
+				province_id = 4320
+				province_id = 4309
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -676,7 +696,9 @@ vn_ara_missions_slot_3_a = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			711 = { country_or_non_sovereign_subject_holds = ROOT }
-			4308 = { country_or_non_sovereign_subject_holds = ROOT }
+			567 = { country_or_non_sovereign_subject_holds = ROOT }
+			4320 = { country_or_non_sovereign_subject_holds = ROOT }
+			4309 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
 			add_war_exhaustion = -2

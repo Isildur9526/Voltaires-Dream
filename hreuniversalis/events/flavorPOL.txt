@@ -95,21 +95,7 @@ country_event = {
 	picture = COURT_eventPicture
 	
 	fire_only_once = yes
-	
-	trigger = {
-		started_in = 1138.10.28
-		OR = {
-			AND = {
-				tag = POL
-				NOT = { exists = PLC }
-			}
-			tag = PLC
-		}
-		NOT = { exists = MAZ } 
-		owns_core_province = 1138 # Warszawa
-		owns_core_province = 1213 #Wizna
-		owns_core_province = 1218 #Plock
-	}
+	is_triggered_only = yes
 	
 	mean_time_to_happen = {
 		months = 12
@@ -909,13 +895,10 @@ country_event = {
 	picture = NAVAL_MILITARY_eventPicture
 	
 	fire_only_once = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		num_of_ports = 1
-	}
-
-	mean_time_to_happen = {
-		months = 12
 	}
 	
 	option = {

@@ -405,36 +405,29 @@ vn_fla_missions_slot_3 = {
 		trigger = {
             calc_true_if = {
                 amount = 2
-                calc_true_if = {
-                    amount = 2
-                    all_ally = {
-                        culture_group = french
-                        has_opinion = {
-                            who = ROOT
-                            value = 150
-                        }
+                all_ally = {
+                    culture_group = french
+                    has_opinion = {
+                        who = ROOT
+                        value = 150
                     }
                 }
-                calc_true_if = {
-                    amount = 2
-                    all_ally = {
+                desc = vn_fla_twofold_fiefdom.tt
+            }
+
+            calc_true_if = {
+                amount = 2
+                all_ally = {
+                    OR = {
                         culture_group = germanic
-                        has_opinion = {
-                            who = ROOT
-                            value = 150
-                        }
-                    }
-                }
-                calc_true_if = {
-                    amount = 2
-                    all_ally = {
                         culture_group = dutch_group
-                        has_opinion = {
-                            who = ROOT
-                            value = 150
-                        }
+                    }
+                    has_opinion = {
+                        who = ROOT
+                        value = 150
                     }
                 }
+                desc = vn_fla_twofold_fiefdom.ss
             }
 		}
 		effect = {

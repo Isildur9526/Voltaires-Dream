@@ -19,31 +19,19 @@ discovered_by = muslim
 	owner = WFB
 	controller = WFB
 	add_core = WFB
+	remove_core = EVE
 }
-1432.1.1 = {
+1473.12.7 = {
 	owner = CLB
 	controller = CLB
 	add_core = CLB
-	remove_core = WFB
 }
-1485.1.1 = {
+1483.8.1 = {
 	owner = WFB
 	controller = WFB
-	add_core = WFB
-}
-1495.3.5 = {
-	owner = CLB
-	controller = CLB
-	remove_core = WFB
-	remove_core = EVE
+	remove_core = CLB
 }
 1529.1.1 = { religion = protestant }
-1584.11.17 = {
-	owner = WFB
-	controller = WFB
-	add_core = WFB
-}
-1634.8.11 = { remove_core = CLB }
 1807.7.9 = {
 	owner = WES
 	controller = WES

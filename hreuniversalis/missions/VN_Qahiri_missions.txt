@@ -365,11 +365,15 @@ vn_mam_missions_slot_2 = {
 				estate_loyalty = {
 					estate = estate_dhimmi
 					loyalty = 60
-				}
-				estate_territory = {
-					estate = estate_dhimmi
-					territory = 20
-				}
+                }
+                num_of_estate_privileges = {
+                    estate = estate_dhimmi
+                    value = 2
+                }
+				num_of_estate_agendas_completed = {
+                    estate = estate_dhimmi
+                    value = 2
+                } 
             }
             else = {
                 NOT = { average_unrest = 2 }

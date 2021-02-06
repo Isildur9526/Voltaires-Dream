@@ -1,5 +1,70 @@
 ### Voltaire's Nightmare Changelog ###
 
+# v 2.1.4 #
+
+-Small fixes for the following mission trees: Flanders, Russia, Pisa, Mazovia, Switzerland, Provence, Sicily, Lorraine, Aragon
+-Added new mission tree for the Papal States with 50 missions
+-Added new mission tree for Pfullendorf with 12 missions (contribution by Leonhard von Keutschach)
+-Added the following alternative country names: Northumbria (Northumberland)
+-Added the following new centers of trade: Clermont, Turin
+-Added 1 new estate privilege for the Mamluks
+-The Baltic Orders should finally, and I mean finally, spawn with proper techs
+-Fixed major bug preventing Industrialism from spawning for Rule Britannia owners
+-Missions will no longer require you to increase the loyalty of estates over 60% or their landshare at all
+-Forming the following nations now properly gives you their missions: Russia (by reforms), Great Britain (diplomatically), Lotharingia (as any tag other than Lorraine), Spain, Aquitaine, Tunis
+-There are no longer two separate decisions to form Dalmatia
+-Admin tech 40 is now required to form Romania, but it is no longer required for Byzantium to not exist
+-Austria is no longer formable by endgame nations
+-After the Ascenion of Ladislaus event, Styria no longer needs Linz and Innsbruck to form Austria
+-Hohenstaufer Inheritance incident can now also fire in the Age of Holy Wars
+-Fragmentation of Poland ending event should no longer fire twice if you choose to keep Poland united
+-The Polish Church no longer backstabs their country during the Fragmentation
+-Decreased Edward the Confessor's lifespan even more and blocked him from introducing an heir manually
+-Refusing a province to become Germanic during the ostsiedlung will no longer cause nationwide unrest
+-Turkish beyliks will no longer grant Dhimmi autonomy
+-Italian Communes will no longer be able to turn into a monarchy through passing all government reforms; they will have to use a decision turning them into a signoria or monarchy instead
+-The Szekely and Szaszok culture events can no longer fire more than once
+-Corrected some Magyar DPNs
+-Swapped Phrygian and Cappadokian culture colours
+-Changed Fife's traditions for the glory of Dundee
+-Changed the following flags: Blankenburg, Mansfeld, Merseburg, Querfurt, Stolberg, Wernigerode, Leisnig
+-Tecklenburg no longer falls under a PU with Mecklenburg in the timeline
+-Minor history changes especially around Saxony
+-More German localization additions
+-Other minor localization/bug fixes
+
+# v 2.1.3 #
+
+-Added the following new mercenary companies: Syrian Company, Anatolian Skirmishers, Siculo-Norman Company, Hussite Warbands, Silesian Companions, Austrian Grenzers, Brabanters, Avar Elite, and a secret one
+-Added new mission tree for Aquitaine with 29 missions
+-Added new mission tree for Muscovy and Russia with 77 missions
+-Small fixes for the following mission trees: Pisa, Sicily, Altsachsen, Holland/Netherlands, Luxembourg, Athens, Naples, Karlings, Prussia, Baghdad, Seljuks, Switzerland, Foix
+-Fixed major bug where some crusade ending events wouldn't fire
+-Fixed Byzantium losing crown land when loading a savegame
+-Fixed the Mazovia formation decision showing for Mazovia
+-Fixed some Asian missions being duplicated (also fixes the "Production Leader" mission not showing)
+-Fixed Sicilian formation not properly giving missions
+-Overhauled and extended Provence's mission tree
+-Added CoT for Wurzburg
+-Increased Magdeburg's development
+-Stuttgart is no longer part of two trade nodes
+-Fixed several mission tooltips that became bugged after 2.1.0
+-Forming Assyria now actually gives you their missions
+-Edward the Confessor will now suffer from a reduced lifespan and fertility
+-Changed Lebus' flag
+-Minor history fixes
+-Fixed Scansano's port position
+-Overhauled the Püttlingen tag; it now represents the County of Kriechingen
+-Fixed some wasteland colouring issues, for real this time
+-Fixed some mission modifiers
+-More German localization additions
+-Other minor localization/bug fixes
+
+# v 2.1.2 #
+
+-Fixed a major bug that caused crash to desktop a few months into the game
+-Fixed some centers of trade
+
 # v 2.1.1 #
 
 -All of the changes in v 2.1.0 should now be properly implemented

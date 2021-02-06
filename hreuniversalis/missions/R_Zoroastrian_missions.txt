@@ -70,9 +70,9 @@ vn_zoroastrian_missions = {
 					estate = estate_church
 					loyalty = 60
 				}
-				estate_territory = {
+				num_of_estate_privileges = {
 					estate = estate_church
-					territory = 20
+					value = 3
 				}
 			}
 			else_if = {
@@ -81,9 +81,9 @@ vn_zoroastrian_missions = {
 					estate = estate_brahmins
 					loyalty = 60
 				}
-				estate_territory = {
+				num_of_estate_privileges = {
 					estate = estate_brahmins
-					territory = 20
+					value = 3
 				}
 			}
 			else = {

@@ -343,7 +343,11 @@ merc_routiers = {
 				superregion = british_isles_superregion
 			}
 		}
-		current_age = age_of_discovery
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+			current_age = age_of_discovery
+		}
 	}
 }
 
@@ -593,7 +597,11 @@ merc_white_company = {
 			has_country_modifier = mercenaries_to_the_standard
 			has_country_modifier = glut_of_mercs
 		}
-		current_age = age_of_discovery
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+			current_age = age_of_discovery
+		}
 	}
 	modifier = { }
 }
@@ -747,7 +755,7 @@ merc_zeybeks = {
 
 merc_sekban = {
     regiments_per_development = 0.015
-    home_province = 2966
+    home_province = 1051
 	sprites = { dlc002_tur_sprite_pack dlc042_tur_sprite_pack tur_base_sprite_pack }
 	trigger = {
 		OR = {

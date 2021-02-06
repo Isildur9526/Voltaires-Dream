@@ -91,8 +91,8 @@ leader_names = {
 
 ship_names = {
 	Pricefield Marshfield "Maximum Victory" Elsanna
-	Emmadele Lumina Punzanna Korasami Tallow
-	Billow Barla Scamantha Sceyes Chiaan
+	Emmadele Lumina Punzanna Korrasami Tallow
+	Billow Barla Scamantha Sceyes Chiaan Bellice
 	Aeryna Kayara Janeven Jadzira Deaverly
-	Jazri
+	Jazri Lumity Boschlow Catradora Bubbline
 }

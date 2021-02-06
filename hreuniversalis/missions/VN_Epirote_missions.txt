@@ -647,9 +647,9 @@ vn_epi_missions_slot_5 = {
         trigger = {
             if = {
                 limit = { has_estate = estate_church }
-                estate_territory = {
+                num_of_estate_privileges = {
                     estate = estate_church
-                    territory = 25
+                    value = 3
                 }
             }
             2773 = {

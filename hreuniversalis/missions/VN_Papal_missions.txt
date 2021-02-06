@@ -182,7 +182,6 @@ vn_pap_missions_slot_1 = {
                     has_global_flag = danzig_delivered
                     has_global_flag = riga_delivered
                 }
-                has_global_flag = danzig_delivered
             }
         }
         effect = {
@@ -242,12 +241,12 @@ vn_pap_missions_slot_1 = {
             2233 = { religion_group = christian }
         }
         effect = {
-            add_adm_power = 50
-            add_dip_power = 50
-            add_mil_power = 50
+            add_adm_power = 75
+            add_dip_power = 75
+            add_mil_power = 75
             add_country_modifier = {
                 name = pap_european_christianization_mission
-                duration = 36500
+                duration = 18250
             }
         }
     }
@@ -257,12 +256,16 @@ vn_pap_missions_slot_1 = {
         required_missions = {  }
         trigger = {
             army_size = 25
-            num_of_generals = 2
+            army_size_percentage = 0.75
+            manpower_percentage = 0.75
             land_maintenance = 1
         }
         effect = {
-            add_army_professionalism = 0.03
-            
+            add_army_tradition = 5
+            add_army_professionalism = 0.02
+            create_general = {
+                tradition = 75
+            }
         }
 	}
     vn_pap_form_the_inquistion = {
@@ -287,9 +290,10 @@ vn_pap_missions_slot_1 = {
         trigger = {
             is_religion_enabled = protestant
             is_religion_enabled = reformed
+            num_of_missionaries = 3
         }
         effect = {
-            
+            add_stability_or_adm_power = yes
         }
     }
     vn_pap_council_of_trent = {
@@ -297,10 +301,51 @@ vn_pap_missions_slot_1 = {
         position = 12
         required_missions = { vn_pap_weather_the_reformation }
         trigger = {
-            
+            if = {
+                limit = { has_dlc = "Emperor" }
+                OR = {
+                    custom_trigger_tooltip = {
+                        tooltip = obj_convert_10_provinces_tooltip
+                        check_variable = { which = num_converted_religion value = 10 }
+                    }
+                    AND = {
+                        is_council_enabled = yes
+                        OR = {
+                            council_position = concilatory
+                            council_position = harsh
+                        }
+                    }
+                }
+            }
+            else = {
+                custom_trigger_tooltip = {
+					tooltip = obj_convert_10_provinces_tooltip
+					check_variable = { which = num_converted_religion value = 10 }
+				}
+            }
         }
         effect = {
-            
+            if = {
+                limit = { has_dlc = "Emperor" }
+                custom_tooltip = council_of_trent_members_tt
+                hidden_effect = {
+                    every_country = {
+                        limit = {
+                            OR = {
+                                council_position = concilatory
+                                council_position = harsh
+                            }
+                        }
+                        add_opinion = {
+                            who = ROOT
+                            modifier = council_of_trent_participation
+                        }
+                    }
+                }
+            }
+            else = {
+                add_dip_power = 100
+            }
         }
     }
     vn_pap_league_wars = {
@@ -308,10 +353,104 @@ vn_pap_missions_slot_1 = {
         position = 13
         required_missions = { vn_pap_council_of_trent }
         trigger = {
-           
+            if = {
+				limit = { 
+					has_dlc = "Art of War"
+					hre_leagues_enabled = yes
+					hre_religion_treaty = no
+					hre_religion_locked = no
+					any_country = {
+						is_emperor = yes
+					}
+				}
+				in_league = catholic
+			}
+			else_if = {
+				limit = { any_country = { is_emperor = yes } }
+				calc_true_if = {
+                    amount = 3
+                    all_ally = {
+                        religion = catholic
+					    is_part_of_hre = yes
+                    }
+                }
+			}
+			else = {
+				any_ally = {
+					religion = catholic
+					capital_scope = {
+						OR = {
+                            superregion = germanynorth_superregion
+                            superregion = germanysouth_superregion
+						}
+					}
+				}
+			}
         }
         effect = {
-            
+            if = {
+				limit = { 
+					has_dlc = "Art of War" 
+					any_country = {
+						is_emperor = yes
+					}
+					NOT = {
+						hre_religion_locked = yes
+						hre_religion_treaty = yes
+						NOT = { hre_religion = catholic }
+					}
+				}
+				custom_tooltip = emp_pap_back_the_catholic_powers_league_tt
+				hidden_effect = {
+					every_country = {
+						limit = {
+							NOT = { tag = ROOT }
+							in_league = catholic
+							NOT = { has_country_modifier = pap_papal_military_aid }
+						}
+						add_country_modifier = {
+							name = pap_papal_military_aid
+							duration = 3650
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						is_emperor = yes
+					}
+				}
+				every_ally = {
+					limit = {
+						religion = catholic
+						is_part_of_hre = yes
+					}
+					add_country_modifier = {
+						name = pap_papal_military_aid
+						duration = 3650
+					}
+				}
+			}
+			else = {
+				every_ally = {
+					limit = {
+						religion = catholic
+						capital_scope = {
+							OR = {
+                                superregion = germanynorth_superregion
+                                superregion = germanysouth_superregion
+							}
+						}
+					}
+					add_country_modifier = {
+						name = pap_papal_military_aid
+						duration = 3650
+					}
+				}
+			}
+			add_stability = 1
+			add_war_exhaustion = -2
         }
     }
     vn_pap_catholic_italy = {
@@ -362,7 +501,7 @@ vn_pap_missions_slot_2 = {
         required_missions = { vn_pap_in_nomine_domini }
         trigger = {
             OR = {
-                is_part_of_hre = no
+                NOT = { is_part_of_hre = yes }
                 is_elector = yes
             }
             has_institution = investiture
@@ -399,9 +538,9 @@ vn_pap_missions_slot_2 = {
                     legitimacy_equivalent = 95
                 }
                 AND = {
-                    faction_in_power = pap_roman_mob
+                    faction_in_power = pap_colonna
                     faction_influence = {
-                        faction = pap_roman_mob
+                        faction = pap_colonna
                         influence = 60
                     }
                     stability = 2
@@ -519,7 +658,17 @@ vn_pap_missions_slot_2 = {
             }
         }
         effect = {
-            
+            add_dip_power = 100
+            emperor = {
+                add_prestige = 10
+                random_owned_province = {
+                    limit = {
+                        has_cardinal = no
+                        religion = catholic
+                    }
+                    add_cardinal = yes
+                }
+            }
         }
     }
     vn_pap_council_of_clermont = {
@@ -613,8 +762,7 @@ vn_pap_missions_slot_2 = {
                         }
                         religion = catholic
                     }
-                    add_papal_influence = 25
-                    #event for crusader states
+                    country_event = { id = flavor_pap.12 }
                 }
             }
         }
@@ -638,7 +786,7 @@ vn_pap_missions_slot_2 = {
             }
         }
         effect = {
-            
+            add_prestige = 15
         }
     }
     vn_pap_cradle_of_christianity = {
@@ -747,7 +895,10 @@ vn_pap_missions_slot_2 = {
             }
         }
         effect = {
-            
+            add_country_modifier = {
+                name = pap_combat_heresy_mission
+                duration = 9125
+            }
         }
     }
     vn_pap_pax_et_treuga_dei = {
@@ -784,7 +935,20 @@ vn_pap_missions_slot_2 = {
             }
         }
         effect = {
-            
+            if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+					NOT = { army_professionalism = 0.90 }
+				}
+				add_army_professionalism = 0.1
+			}
+			else = {
+				add_mil_power = 100
+            }
+            add_country_modifier = {
+				name = "pap_universal_church"
+				duration = 9125
+			}
         }
 	}
 }
@@ -803,7 +967,7 @@ vn_pap_missions_slot_3 = {
     vn_pap_in_nomine_domini = {
         icon = sway_the_pope
         position = 1
-        required_missions = { vn_pap_in_nomine_domini }
+        required_missions = { }
         trigger = {
 			legitimacy_equivalent = 90
             num_of_cardinals = 3
@@ -847,7 +1011,7 @@ vn_pap_missions_slot_3 = {
             }
         }
         effect = {
-            
+            add_reform_progress_big_effect = yes
         }
     }
     vn_pap_guelphian_victory = {
@@ -899,7 +1063,7 @@ vn_pap_missions_slot_3 = {
             }
         }
         effect = {
-            
+            add_prestige = 15
         }
     }
     vn_pap_conquer_tunis = {
@@ -927,7 +1091,7 @@ vn_pap_missions_slot_3 = {
             }
         }
         effect = {
-            
+            add_prestige = 15
         }
     }
     vn_pap_mission_to_the_mongols = {
@@ -943,7 +1107,11 @@ vn_pap_missions_slot_3 = {
             }
         }
         effect = {
-            #ilk get event to become nestorian
+            ILK = {
+                country_event = {
+                    id = vn_missions.44
+                }
+            }
         }
     }
 }
@@ -975,6 +1143,7 @@ vn_pap_missions_slot_4 = {
             }
         }
         effect = {
+            add_adm_power = 50
             spoleto_area = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -1112,6 +1281,7 @@ vn_pap_missions_slot_4 = {
             }
         }
         effect = {
+            add_adm_power = 50
             lombardy_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -1136,7 +1306,14 @@ vn_pap_missions_slot_4 = {
             }
         }
         effect = {
-             
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 15
+            }
+            add_country_modifier = {
+                name = pap_conquer_lombardy_mission
+                duration = 9125
+            }
         }
     }
     vn_pap_empire_of_the_allmighty = {
@@ -1148,7 +1325,18 @@ vn_pap_missions_slot_4 = {
             has_reform = kingdom_of_god_reform
         }
         effect = {
-            
+            if = {
+                limit = { is_absolutism_active = yes }
+                add_absolutism = 10
+            }
+            else = {
+                add_prestige = 10
+                add_devotion = 10
+            }
+            add_country_modifier = {
+                name = pap_empire_of_the_allmighty_mission
+                duration = 18250
+            }
         }
     }
     vn_pap_conquer_constantinople = {
@@ -1167,7 +1355,17 @@ vn_pap_missions_slot_4 = {
             }
         }
         effect = {
-            
+            add_years_of_income = 0.5
+            add_prestige = 15
+            2233 = {
+                add_cardinal = yes
+                owner = {
+                    add_country_modifier = {
+                        name = pap_conquer_constantinople_mission
+                        duration = 9125
+                    }
+                }
+            }
         }
     }
     vn_pap_heal_the_schism = {
@@ -1183,7 +1381,6 @@ vn_pap_missions_slot_4 = {
 				province_id = 3053	#Antioch
 			}
             OR = {
-                NOT = { religion = catholic }
                 owner = {
                     NOT = { religion = catholic }
                 }
@@ -1191,31 +1388,26 @@ vn_pap_missions_slot_4 = {
 		}
 		trigger = {
 			2233 = {
-				religion = catholic
 				owner = {
                     religion = catholic
                 }
 			}
 			2708 = {
-				religion = catholic
 				owner = {
                     religion = catholic
                 }
 			}
 			4974 = {
-				religion = catholic
 				owner = {
                     religion = catholic
                 }
 			}
 			5022 = {
-				religion = catholic
 				owner = {
                     religion = catholic
                 }
 			}
 			3053 = {
-				religion = catholic
 				owner = {
                     religion = catholic
                 }
@@ -1237,178 +1429,11 @@ vn_pap_missions_slot_4 = {
                     }
                 }
             }
-            hidden_effect = {
-                2233 = {
-                    if = {
-                        limit = {
-                            NOT = {
-                                has_building = monument
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        add_building = monument
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = monument
-                        add_building = temple
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = temple
-                        add_building = cathedral
-                    }
-                    else = {
-                        add_base_tax = 3
-                    }
-                }
-                2708 = {
-                    if = {
-                        limit = {
-                            NOT = {
-                                has_building = monument
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        add_building = monument
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = monument
-                        add_building = temple
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = temple
-                        add_building = cathedral
-                    }
-                    else = {
-                        add_base_tax = 3
-                    }
-                }
-                4974 = {
-                    if = {
-                        limit = {
-                            NOT = {
-                                has_building = monument
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        add_building = monument
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = monument
-                        add_building = temple
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = temple
-                        add_building = cathedral
-                    }
-                    else = {
-                        add_base_tax = 3
-                    }
-                }
-                5022 = {
-                    if = {
-                        limit = {
-                            NOT = {
-                                has_building = monument
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        add_building = monument
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = monument
-                        add_building = temple
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = temple
-                        add_building = cathedral
-                    }
-                    else = {
-                        add_base_tax = 3
-                    }
-                }
-                3053 = {
-                    if = {
-                        limit = {
-                            NOT = {
-                                has_building = monument
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        add_building = monument
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = temple
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = monument
-                        add_building = temple
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
-                                has_building = cathedral
-                            }
-                        }
-                        remove_building = temple
-                        add_building = cathedral
-                    }
-                    else = {
-                        add_base_tax = 3
-                    }
-                }
-            }
+            2233 = { change_religion = catholic }
+            2708 = { change_religion = catholic }
+            4974 = { change_religion = catholic }
+            5022 = { change_religion = catholic }
+            3053 = { change_religion = catholic }
         }
     }
     vn_pap_establish_swiss_guard = {
@@ -1463,7 +1488,9 @@ vn_pap_missions_slot_5 = {
 				}
 				curia_treasury_size = 2500
 			}
-			treasury = 500
+            treasury = 500
+            is_in_deficit = no
+            NOT = { num_of_loans = 1 }
         }
         effect = {
             add_inflation = -1
@@ -1482,15 +1509,13 @@ vn_pap_missions_slot_5 = {
 				}
             }
             stability = 3
-            prestige = 80
-            is_in_deficit = no
-            NOT = { num_of_loans = 1 }
+            is_at_war = no
         }
         effect = {
-            #add_country_modifier = {
-            #    name = pap_catholic_splendour_mission
-            #    duration = 9125
-            #}
+            add_years_of_income = 1
+            add_estate_nobles_loyalty_effect = yes
+            add_estate_church_loyalty_effect = yes
+            add_estate_burghers_loyalty_effect = yes
         }
     }
     vn_pap_conquer_ferrara = {
@@ -1546,6 +1571,7 @@ vn_pap_missions_slot_5 = {
         icon = negotiate_for_avignon
         position = 6
         required_missions = {  }
+        completed_by = 1309.3.9
         provinces_to_highlight = {
             province_id = 202
             OR = {
@@ -1575,15 +1601,41 @@ vn_pap_missions_slot_5 = {
         icon = sway_the_pope
         position = 7
         required_missions = { vn_pap_a_courteous_gift }
+        completed_by = 1378.9.20
         trigger = {
             is_religion_enabled = catholique
-            
+            custom_trigger_tooltip = {
+                tooltip = vn_pap_babylonian_captivity.tt
+                had_global_flag = {
+                    flag = western_schism_flag
+                    days = 3650
+                }
+            }
+            monthly_dip = 12
         }
         effect = {
-            #add_country_modifier = {
-            #    name = pap_babylonian_captivity_mission
-            #    duration = -1
-            #}
+            add_prestige = 5
+            add_dip_power = 50
+            if = {
+                limit = {
+                    AVI = {
+                        exists = yes
+                        is_subject_other_than_tributary_trigger = yes
+                        religion = catholique
+                        has_reform = papacy_reform
+                    }
+                }
+                add_casus_belli = {
+                    type = cb_vassalize_mission
+                    target = AVI
+                    months = 9125
+                }
+            }
+            else = {
+                202 = {
+                    add_permanent_claim = ROOT
+                }
+            }
         }
     }
     vn_pap_end_anti_papacy = {
@@ -1591,10 +1643,18 @@ vn_pap_missions_slot_5 = {
         position = 8
         required_missions = { vn_pap_babylonian_captivity }
         trigger = {
-            
+            202 = { country_or_non_sovereign_subject_holds = ROOT }
         }
         effect = {
-            # end the schism
+            add_prestige = 25
+            custom_tooltip = vn_pap_end_anti_papacy.tt
+            hidden_effect = {
+                every_country = {
+                    limit = { religion = catholique }
+                    add_prestige = -10
+                    add_papal_influence = -10
+                }
+            }
         }
     }
     vn_pap_the_city_of_god = {
@@ -1743,11 +1803,16 @@ vn_pap_missions_slot_5 = {
             if = {
 				limit = { has_dlc = "Emperor" NOT = { has_country_flag = vatican_library_mission_flag } }
 				set_country_flag = vatican_library_mission_flag
-				country_event = {
-					id = papacy_events.11
-				}
-			}
+                country_event = {
+                    id = papacy_events.11
+                }
+            }
 			else = {
+                random_list = {
+                    33 = { add_adm_power = 50 }
+                    33 = { add_dip_power = 50 }
+                    33 = { add_mil_power = 50 }
+                }
 				add_prestige = 10
 			}
         }

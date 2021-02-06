@@ -137,12 +137,16 @@ divorce_consort_effect = {
 	if = {
 		limit = {
 			OR = {
-				religion = catholic 
-				exists = PAP
+				AND = {
+					religion = catholic 
+					exists = PAP
+				}
 			}
 			OR = {
-				religion = catholique 
-				exists = AVI
+				AND = {
+					religion = catholique 
+					exists = AVI
+				}	
 			}
 		}
 

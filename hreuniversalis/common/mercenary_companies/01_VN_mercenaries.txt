@@ -306,7 +306,7 @@ merc_kutama = {
 		has_reform = feudal_theocracy
 	}
 	modifier = {
-		legitimacy = -0.5
+		discipline = -0.05
 		land_attrition = -0.15
 	}
 }
@@ -528,5 +528,206 @@ merc_russian_kholops = {
 	modifier = {
 		discipline = -0.025
 		shock_damage = 0.05
+	}
+}
+
+merc_syrian_company = {
+	regiments_per_development = 0.015
+	home_province = 3111 # Aleppo
+	artillery_weight = 0.2
+	cost_modifier = 1.1
+	cavalry_weight = 0.3
+	cavalry_cap = 6
+	sprites = { dlc079_afg_sprite_pack per_base_sprite_pack muslimgfx_sprite_pack }
+    trigger = { 
+		OR = {
+			religion_group = muslim
+			culture_group = oghuz
+			accepted_culture = turkish
+		}
+	}
+	modifier = {
+		movement_speed = 0.1
+		cavalry_power = 0.1
+	}
+}
+
+merc_anatolian_skirmishers = {
+	regiments_per_development = 0.02
+	home_province = 5197 # Akrotori
+	artillery_weight = 0.3
+	cost_modifier = 0.75
+	cavalry_weight = 0.3
+	cavalry_cap = 4
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		capital_scope = {
+			superregion = anatolia_superregion
+		}
+	}
+	modifier = {
+		reserves_organisation = -0.1
+	}
+}
+
+merc_lesbian_company = {
+	regiments_per_development = 0.025
+    cavalry_weight = 0.2
+    artillery_weight = 0.3
+	cavalry_cap = 3
+    home_province = 2788 # Mytilene
+	sprites = { dlc020_gen_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		OR = {
+			tag = LBO
+			is_female = yes
+		}
+	}
+    modifier = {
+        may_recruit_female_generals = yes
+        female_advisor_chance = 1
+        fire_damage = 0.05
+		fire_damage_received = -0.05
+    }
+}
+
+merc_siculo_norman_company = {
+	regiments_per_development = 0.015
+    cavalry_weight = 0.2
+	artillery_weight = 0.3
+	cost_modifier = 0.75
+	cavalry_cap = 3
+    home_province = 2049 # Foggia
+	sprites = { dlc088_nrm_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		NOT = { is_year = 1100 }
+		capital_scope = {
+			OR = {
+				superregion = italy_superregion
+				superregion = sicily_superregion
+			}
+		}
+		NOT = { tag = BYZ }
+	}
+    modifier = {
+       army_tradition_from_battle = 0.15
+    }
+}
+
+merc_hussite_warbands = {
+	regiments_per_development = 0.01
+    cavalry_weight = 0.2
+	artillery_weight = 0.4
+	cost_modifier = 0.75
+	cavalry_cap = 4
+    home_province = 2870 # Tabor
+	sprites = { dlc061_boh_sprite_pack dlc028_boh_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = hussite_heresy
+			has_global_flag = hussite_heresy_g
+		}
+		NOT = { is_year = 1700 }
+		OR = {
+			tag = HGA
+			religion = hussite
+			secondary_religion = hussite
+			has_harmonized_with = hussite
+			full_idea_group = humanist_ideas
+		}
+		NOT = { has_disaster = hussite_wars }
+	}
+    modifier = {
+       discipline = 0.05
+    }
+}
+
+merc_silesian_companions = {
+	regiments_per_development = 0.02
+    cavalry_weight = 0.3
+	cavalry_cap = 4
+    home_province = 2815 # Opole
+	sprites = { dlc061_boh_sprite_pack dlc028_boh_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		OR = {
+			capital_scope = {
+				OR = {
+					superregion = poland_superregion
+					superregion = bohemia_superregion
+					region = lusatia_region
+				}
+			}
+			has_country_modifier = swedish_mercenary_core
+			has_country_modifier = mercenaries_to_the_standard
+			has_country_modifier = glut_of_mercs
+		}
+	}
+    modifier = { }
+}
+
+merc_austrian_grenzers = {
+	regiments_per_development = 0.015
+	cavalry_weight = 0.2
+	artillery_weight = 0.3
+	cavalry_cap = 4
+    home_province = 1816 # Fürstenfeld
+	sprites = { dlc053_hab_sprite_pack dlc029_hab_sprite_pack hab_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		capital_scope = { 
+			OR = {
+				superregion = germanynorth_superregion
+				superregion = germanysouth_superregion
+				superregion = austria_superregion
+				superregion = bohemia_superregion
+				superregion = switzerland_superregion
+			}
+		}
+	}
+    modifier = {
+		recover_army_morale_speed = 0.05
+	}
+}
+
+merc_brabanters = {
+	regiments_per_development = 0.01
+	cavalry_weight = 0.2
+	artillery_weight = 0.4
+	cavalry_cap = 4
+    home_province = 2975 # Loon
+	sprites = { dlc042_ned_sprite_pack dlc028_ned_sprite_pack hol_base_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = lowlands_superregion
+				superregion = burgundian_superregion
+				superregion = french_superregion
+				superregion = british_isles_superregion
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_new_mercs_tt
+			NOT = { has_global_flag = new_european_mercs }
+		}
+	}
+    modifier = {
+		prestige_from_land = 0.15
+	}
+}
+
+merc_avar_elite = {
+	regiments_per_development = 0.015
+	cavalry_weight = 0.3
+    artillery_weight = 0 # No artillery
+	cavalry_cap = 4
+	home_province = 3647 # Didoya
+	cost_modifier = 1.1
+	sprites = { muslimgfx_sprite_pack }
+	trigger = {
+		capital_scope = {
+			superregion = caucasia_superregion
+		}
+	}
+    modifier = {
+		supply_limit_modifier = 0.15
 	}
 }

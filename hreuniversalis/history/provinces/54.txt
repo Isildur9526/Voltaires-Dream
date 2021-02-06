@@ -17,7 +17,7 @@ add_core = OLD
 	add_core = BRE
 	remove_core = OLD
 }
-1482.1.1 = {
+1529.1.1 = {
 	owner = MUN
 	controller = MUN
 	add_core = MUN

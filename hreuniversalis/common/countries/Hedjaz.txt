@@ -87,5 +87,5 @@ army_names = {
 }
 
 fleet_names = {
-	"Sarie Al Hijâz" "Sarie Al $PROVINCE#"
+	"Sarie Al Hijâz" "Sarie Al $PROVINCE$"
 }

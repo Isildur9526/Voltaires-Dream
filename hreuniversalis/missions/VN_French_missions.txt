@@ -79,9 +79,9 @@ vn_fra_missions_slot_1_a = {
 						estate = estate_holy_orders
 						loyalty = 60
 					}
-					estate_territory = {
+					num_of_estate_privileges = {
 						estate = estate_holy_orders
-						territory = 15
+						value = 3
 					}
 				}
 				AND = {
@@ -92,9 +92,9 @@ vn_fra_missions_slot_1_a = {
 						}
 					}
 					NOT = {
-						estate_territory = {
+						num_of_estate_privileges = {
 							estate = estate_holy_orders
-							territory = 15
+							value = 3
 						}
 					}
 				}
@@ -1889,13 +1889,15 @@ vn_fra_missions_slot_3_a = {
         position = 3
         required_missions = { vn_fra_assert_legitimacy }
         trigger = {
-			NOT = {
-				calc_true_if = {
-					desc = vn_fra_expand_royal_authority.tt
-					all_subject_country = {
-						is_subject_of_type = daimyo_vassal
+			custom_trigger_tooltip = {
+				tooltip = vn_fra_expand_royal_authority.tt
+				NOT = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = daimyo_vassal
+						}
+						amount = 75
 					}
-					amount = 75
 				}
 			}
 			grown_by_development = 100
@@ -1935,13 +1937,15 @@ vn_fra_missions_slot_3_a = {
         position = 6
         required_missions = { vn_fra_expand_royal_authority }
         trigger = {
-			NOT = {
-				calc_true_if = {
-					desc = vn_fra_expand_royal_authority.tt
-					all_subject_country = {
-						is_subject_of_type = daimyo_vassal
+			custom_trigger_tooltip = {
+				tooltip = vn_fra_bring_fiefs_to_heel.tt
+				NOT = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = daimyo_vassal
+						}
+						amount = 55
 					}
-					amount = 55
 				}
 			}
 			grown_by_development = 250
@@ -1988,13 +1992,15 @@ vn_fra_missions_slot_3_a = {
         position = 8
         required_missions = { vn_fra_bring_fiefs_to_heel }
         trigger = {
-			NOT = {
-				calc_true_if = {
-					desc = vn_fra_expand_royal_authority.tt
-					all_subject_country = {
-						is_subject_of_type = daimyo_vassal
+			custom_trigger_tooltip = {
+				tooltip = vn_fra_centralize_state.tt
+				NOT = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = daimyo_vassal
+						}
+						amount = 35
 					}
-					amount = 35
 				}
 			}
 			grown_by_development = 500
@@ -2033,13 +2039,15 @@ vn_fra_missions_slot_3_a = {
         position = 11
         required_missions = { vn_fra_centralize_state }
         trigger = {
-			NOT = {
-				calc_true_if = {
-					desc = vn_fra_expand_royal_authority.tt
-					all_subject_country = {
-						is_subject_of_type = daimyo_vassal
+			custom_trigger_tooltip = {
+				tooltip = vn_fra_edict_of_moulins.tt
+				NOT = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = daimyo_vassal
+						}
+						amount = 15
 					}
-					amount = 15
 				}
 			}
 			grown_by_development = 750

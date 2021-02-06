@@ -2317,7 +2317,7 @@ TUS_ideas = {
 	free = yes
 	
 	birthplace_of_the_renaissance = {
-		idea_cost = -0.05
+		idea_cost = -0.1
 		technology_cost = -0.05
 	}
 	tuscan_condottieri = {
@@ -5973,7 +5973,7 @@ FRN_ideas = {
 	free = yes
 	
 	frn_buchmesse = {
-		idea_cost = -0.05
+		idea_cost = -0.1
 		global_institution_spread = 0.1
 	}
 	frn_imperial_elections = {

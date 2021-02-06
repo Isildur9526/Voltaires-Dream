@@ -12,17 +12,17 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Emperor"
+		NOT = { active_imperial_incident = any }
 		OR = {
 			tag = GLH
 			tag = JMN
 			tag = ILK
 			tag = KZH
 		}
-		is_subject = no
 		current_age = age_of_crisis
+		is_subject = no
 		years_of_income = 0.5
 		manpower = 5
-		NOT = { active_imperial_incident = any }
 		OR = {
 			saxony_region = {
 				type = all

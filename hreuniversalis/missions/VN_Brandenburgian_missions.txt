@@ -1472,9 +1472,9 @@ vn_bra_missions_slot_5_c = {
 					}
 					AND = {
 						uses_papacy = yes
-						estate_territory = {
+						num_of_estate_privileges = {
 							estate = estate_church
-							territory = 20
+							value = 3
 						}
 					}
 				}
@@ -1510,9 +1510,9 @@ vn_bra_missions_slot_5_c = {
 					has_estate = estate_church
 					AND = {
 						uses_papacy = yes
-						estate_territory = {
+						num_of_estate_privileges = {
 							estate = estate_church
-							territory = 20
+							value = 3
 						}
 					}
 				}

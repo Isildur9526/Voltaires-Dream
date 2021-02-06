@@ -729,19 +729,19 @@ vn_boh_missions_slot_3 = {
                         amount = 2
                         estate_loyalty = {
                             estate = estate_nobles
-                            loyalty = 70
+                            loyalty = 60
                         }
                         estate_loyalty = {
                             estate = estate_church
-                            loyalty = 70
+                            loyalty = 60
                         }
                         estate_loyalty = {
                             estate = estate_burghers
-                            loyalty = 70
+                            loyalty = 60
                         }
                         estate_loyalty = {
                             estate = estate_cossacks
-                            loyalty = 70
+                            loyalty = 60
                         }
                     }
                 }
@@ -1038,10 +1038,7 @@ vn_boh_missions_slot_5 = {
             }
             if = {
                 limit = { has_estate = estate_church }
-                estate_territory = {
-                    estate = estate_church
-                    territory = 25
-                }
+                has_estate_privilege = estate_church_papal_emissary
                 estate_loyalty = {
                     estate = estate_church
                     loyalty = 60

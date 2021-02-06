@@ -645,7 +645,7 @@ VN_mazovian_missions_slot_4 = {
 			}
 			add_country_modifier = {
 				name = "maz_conquer_volhynia_mission"
-				duration = 5475
+				duration = 9125
 			}
 		}
 	}
@@ -695,7 +695,7 @@ VN_mazovian_missions_slot_4 = {
 			add_prestige = 20
 			add_country_modifier = {
 				name = "maz_conquer_moldavia_mission"
-				duration = 5475
+				duration = 9125
 			}
 		}
 	}

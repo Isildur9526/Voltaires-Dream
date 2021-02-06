@@ -211,14 +211,6 @@ union = {
 	end_date = 1367.1.1
 }
 
-# Ancient inheritance
-union = {
-	first = MKL
-	second = TCK
-	start_date = 1328.1.1
-	end_date = 1557.6.15
-}
-
 # Zurich War
 alliance = {
 	first = ZUR
@@ -260,7 +252,7 @@ union = {
 	first = VGT
 	second = BME
 	start_date = 1426.1.1
-	end_date = 1466.1.1
+	end_date = 1439.1.1
 }
 union = {
 	first = JCH

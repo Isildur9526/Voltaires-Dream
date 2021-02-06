@@ -17,13 +17,25 @@ add_core = SBB
 	controller = SBB
 	remove_core = VGT
 }
-1423.1.6 = {
+1466.1.1 = {
 	owner = SAX
 	controller = SAX
 	add_core = SAX
 	add_core = MEI
 }
+1485.11.11 = {
+	owner = THU
+	controller = THU
+	add_core = THU
+	remove_core = MEI
+}
 1531.1.1 = { religion = protestant }
+1547.5.19 = {
+	owner = SAX
+	controller = SAX
+	remove_core = THU
+	add_core = MEI
+}
 1761.1.1 = { remove_core = SBB }
 1790.8.1 = { unrest = 5 }
 1791.1.1 = { unrest = 0 }

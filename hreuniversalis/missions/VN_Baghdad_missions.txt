@@ -15,6 +15,10 @@ vn_bgh_missions_slot_1 = {
         icon = mission_mosque
         position = 1
         required_missions = {  }
+		provinces_to_highlight = {
+            region = lower_mesopotamia_region
+            has_owner_religion = no       
+        }
         trigger = {
             lower_mesopotamia_region = {
                 type = all

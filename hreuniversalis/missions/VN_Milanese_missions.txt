@@ -400,7 +400,7 @@ vn_mlo_missions_slot_3_a = {
 			army_size = 5
 			war_exhaustion = 0
             calc_true_if = {
-                desc = vn_mlo_expansion_of_milan.tt2
+                desc = vn_mlo_expansion_of_milan.tt
                 italy_superregion = {
                     type = all
                     NOT = { country_or_non_sovereign_subject_holds = ROOT }

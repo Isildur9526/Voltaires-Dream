@@ -204,32 +204,20 @@ vn_apl_missions_slot_2 = {
 		trigger = {
 			stability = 2
 			has_reform_level = 3
-			if = {
-				limit = {
-					has_estate = estate_nobles
-				}
-				estate_territory = {
-					estate = estate_nobles
-					territory = 15
-				}
-			}
-			if = {
-				limit = {
-					has_estate = estate_church
-				}
-				estate_territory = {
-					estate = estate_church
-					territory = 15
-				}
-			}
-			if = {
-				limit = {
-					has_estate = estate_burghers
-				}
-				estate_territory = {
-					estate = estate_burghers
-					territory = 15
-				}
+			calc_true_if = {
+				amount = 2
+				has_estate_privilege = estate_nobles_land_rights
+				has_estate_privilege = estate_church_land_rights
+				has_estate_privilege = estate_burghers_land_rights
+				has_estate_privilege = estate_holy_orders_land_rights
+				has_estate_privilege = estate_cossacks_land_rights
+				has_estate_privilege = estate_nomadic_tribes_land_rights
+				has_estate_privilege = estate_dhimmi_land_rights
+				has_estate_privilege = estate_maratha_land_rights
+				has_estate_privilege = estate_brahmins_land_rights
+				has_estate_privilege = estate_vaisyas_land_rights
+				has_estate_privilege = estate_jains_land_rights
+				has_estate_privilege = estate_rajput_land_rights
 			}
 		}
 		effect = {

@@ -12,6 +12,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		normal_or_historical_nations = yes
 		tag = ENG
 		current_age = age_of_holy_wars
 		NOT = { started_in = 1169.5.1 }
@@ -176,8 +177,8 @@ country_event = {
 	major = yes
 
 	trigger = {
-		exists = yes
 		has_country_flag = irish_invasion_flag
+		exists = yes
 	}
 
 	immediate = {
@@ -642,6 +643,7 @@ country_event = {
 
 	trigger = {
 		tag = ENG
+		current_age = age_of_dynasticism
 		has_global_flag = norman_invasion_started
 		OR = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -653,7 +655,6 @@ country_event = {
 				capital_scope = { superregion = irish_superregion }
 			}
 		}
-		current_age = age_of_dynasticism
 	}
 
 	mean_time_to_happen = {

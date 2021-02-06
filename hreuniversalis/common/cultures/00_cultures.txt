@@ -2721,15 +2721,6 @@ byzantine = {
 			Lauzados Dalisandos
 		}
 	}
-	phrygian = {
-		primary = PHR
-		dynasty_names = {
-			Amyntas Brogitaros Tolistobogos
-			Deiotaros Lycaonia Artemidoros
-			Trokmos Tektosagos Phryges
-			Anatolikos Amorios Daskylion
-		}
-	}
 	cappadokian = {
 		primary = CPP
 		dynasty_names = {
@@ -2740,6 +2731,15 @@ byzantine = {
 			Ariamnides Sinasos Eznepides
 			Petrides Athanasiades Kestekides
 			Karolides Maurophrides Adosides
+		}
+	}
+	phrygian = {
+		primary = PHR
+		dynasty_names = {
+			Amyntas Brogitaros Tolistobogos
+			Deiotaros Lycaonia Artemidoros
+			Trokmos Tektosagos Phryges
+			Anatolikos Amorios Daskylion
 		}
 	}
 	cypriot = {

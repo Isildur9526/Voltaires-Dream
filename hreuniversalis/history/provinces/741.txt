@@ -12,7 +12,7 @@ is_city = yes
 add_core = BME
 
 1180.1.1 = { culture = saxon }
-1466.1.1 = {
+1439.1.1 = {
 	owner = SAX
 	controller = SAX
 	add_core = SAX

@@ -2050,6 +2050,13 @@ estate_dhimmi_guaranteed_autonomy = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0
+			NOT = { is_year = 1300 }
+			capital_scope = { superregion = anatolia_superregion }
+			religion = sunni
+			primary_culture = turkish
+		}
 	}
 }
 

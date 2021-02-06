@@ -1,0 +1,949 @@
+#Aquitanian missions
+#By Historyperson
+
+vn_aqt_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = AQT
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_aqt_wine_trade = {
+        icon = support_the_bulk_trades
+        position = 1
+        required_missions = {  }
+        trigger = {
+            has_institution = guilds
+			trade_income_percentage = 0.33 
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 5
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_has_center_of_trade_of_level = 2
+						province_has_center_of_trade_of_level = 3					
+					}
+				}
+				production_leader = {
+					trade_goods = wine
+				}
+				trading_bonus = {
+					trade_goods = wine
+					value = yes
+				}
+			}
+        }
+        effect = {
+			add_years_of_income = 0.5
+			every_owned_province = {
+				limit = { trade_goods = wine }
+				add_base_production = 1
+			}
+            add_country_modifier = {
+				name = aqt_wine_trade_mission
+				duration = 9125
+			} 
+        }
+    }
+    vn_aqt_develop_bordeaux = {
+        icon = new_pilings
+        position = 3
+        required_missions = { vn_aqt_bordeaux vn_aqt_wine_trade }
+        provinces_to_highlight = {
+            province_id = 2324
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            2324 = {
+                country_or_non_sovereign_subject_holds = ROOT
+				development = 20
+                OR = {
+                    has_building = dock
+                    has_building = drydock
+                }
+                OR = {
+                    has_building = shipyard
+                    has_building = grand_shipyard
+                }
+				if = {
+					limit = { has_dlc = "Dharma" }
+					province_has_center_of_trade_of_level = 3
+				}
+            }            
+        }
+        effect = {
+            2324 = {
+				add_base_production = 2
+                add_province_modifier = {
+                    name = "aqt_world_port_mission"
+                    duration = -1 
+                }
+            }
+            add_mercantilism = 5
+            brittany_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_aqt_subjugate_the_bretons = {
+        icon = toulon_dockyards
+        position = 5
+        required_missions = { vn_aqt_develop_bordeaux }
+        provinces_to_highlight = {
+            region = brittany_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            brittany_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            add_yearly_sailors = 1
+            create_admiral = { tradition = 75 }
+        }
+    }
+    vn_aqt_atlantic_interests = {
+        icon = support_the_bulk_trades
+        position = 6
+        required_missions = { vn_aqt_subjugate_the_bretons }
+        trigger = {
+            naval_forcelimit = 50
+            navy_size_percentage = 0.75
+            calc_true_if = {
+                amount = 2
+                num_of_light_ship = 10
+                num_of_galley = 10
+                num_of_transport = 10
+            }
+            num_of_heavy_ship = 5
+        }
+        effect = {
+			create_explorer = { tradition = 75 }
+            add_navy_tradition = 20
+            define_advisor = {
+                type = naval_reformer
+                skill = 3
+                cost_multiplier = 0.5
+            }   
+            add_country_modifier = {
+				name = aqt_atlantic_interests_mission
+				duration = 9125
+			}			
+        }
+    }
+    vn_aqt_amiens = {
+        icon = eastern_catholicization
+        position = 7
+        required_missions = { vn_aqt_king_of_france }
+        provinces_to_highlight = {
+            region = picard_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            picard_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            flanders_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }             
+        }
+    }
+}
+
+vn_aqt_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = AQT
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_aqt_bordeaux = {
+        icon = ansbach_succession
+        position = 2
+        required_missions = { vn_aqt_unite_poitou }
+        provinces_to_highlight = {
+            area = bordeaux_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            bordeaux_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            gascony_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }             
+        }
+    }
+    vn_aqt_gascony = {
+        icon = eastern_catholicization
+        position = 3
+        required_missions = { vn_aqt_bordeaux }
+        provinces_to_highlight = {
+            region = gascony_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            gascony_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            navarra_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+        }
+    }
+    vn_aqt_auvergne = {
+        icon = catholic_volunteers
+        position = 4
+        required_missions = { vn_aqt_guyenne }
+        provinces_to_highlight = {
+            region = auvergne_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            auvergne_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+			add_stability_or_adm_power = yes
+			add_yearly_manpower = 1
+        }
+    }
+    vn_aqt_paris = {
+        icon = les_invalides
+        position = 5
+        required_missions = { vn_aqt_berry }
+        provinces_to_highlight = {
+            region = paris_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            paris_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            add_prestige = 10
+			add_legitimacy = 10
+            add_country_modifier = {
+				name = aqt_paris_mission
+				duration = 9125
+			}
+        }
+    }
+    vn_aqt_king_of_france = {
+        icon = king_of_france
+        position = 6
+        required_missions = { vn_aqt_paris vn_aqt_reims }
+        trigger = {
+            is_subject = no
+			government_rank = 6
+			grown_by_development = 500
+        }
+        effect = {
+            picard_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            burgundy_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }     
+            add_country_modifier = {
+				name = aqt_king_of_france_mission
+				duration = -1
+			}			
+        }
+    }
+    vn_aqt_burgundy = {
+        icon = conquer_burgundy
+        position = 7
+        required_missions = { vn_aqt_king_of_france }
+        provinces_to_highlight = {
+            region = burgundy_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            burgundy_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }            
+        }
+        effect = {
+            add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+        }
+    }
+}
+
+vn_aqt_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = AQT
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_aqt_unite_poitou = {
+        icon = king_of_the_franks
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            area = poitou_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            poitou_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+            aquitaine_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+			angevin_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_aqt_rule_angouleme = {
+        icon = boh_humiliate_austria
+        position = 2
+        required_missions = { vn_aqt_unite_poitou }
+        provinces_to_highlight = {
+            area = angouleme_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            angouleme_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+            guyenne_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+    vn_aqt_guyenne = {
+        icon = connect_further_austria
+        position = 3
+        required_missions = { vn_aqt_rule_angouleme }
+        provinces_to_highlight = {
+            region = guyenne_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            guyenne_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+            auvergne_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }   
+            berrichon_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            toulouse_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 			
+        }
+    }
+    vn_aqt_berry = {
+        icon = austria_prospers
+        position = 4
+        required_missions = { vn_aqt_guyenne }
+        provinces_to_highlight = {
+            region = berrichon_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            berrichon_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+            paris_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 
+            champagne_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            } 			
+        }
+    }
+    vn_aqt_reims = {
+        icon = counter_reformation
+        position = 5
+        required_missions = { vn_aqt_berry }
+        provinces_to_highlight = {
+            region = champagne_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            champagne_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+            add_prestige = 10
+			add_corruption = -2
+			add_war_exhaustion = -2
+			add_papal_influence = 10
+        }
+    }
+    vn_aqt_lay_primitive = {
+        icon = balance_of_power
+        position = 6
+        required_missions = { vn_aqt_diplomatic_traditions }
+        trigger = {
+            total_development = 150
+			grown_by_development = 50
+			diplomatic_reputation = 3
+			legitimacy_equivalent = 100  
+            if = {
+                limit = { 
+                    exists = FRA
+                }
+				OR = {
+					reverse_has_opinion = {
+						who = FRA
+						value = 150
+					}
+					alliance_with = FRA
+				}
+            }			
+        }
+        effect = {
+            add_country_modifier = {
+				name = aqt_lay_primitive_mission
+				duration = 9125
+			}            
+        }
+    }
+    vn_aqt_court_de_ville = {
+        icon = the_viennese_waltz
+        position = 7
+        required_missions = { vn_aqt_king_of_france }
+        trigger = {
+			stability = 3
+            if = {
+				limit = { has_estate = estate_church }
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 60
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_church
+						influence = 50
+					}
+				}
+			}
+            if = {
+				limit = { has_estate = estate_burghers }
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_burghers
+						influence = 50
+					}
+				}
+			}
+            if = {
+				limit = { has_estate = estate_nobles }
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_nobles
+						influence = 50
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { 
+						has_estate = estate_church
+					}
+				}
+				religious_unity = 1
+			}
+			if = {
+				limit = {
+					NOT = { 
+						has_estate = estate_burghers
+					}
+				}
+				NOT = {
+					average_unrest = 0
+				}
+			}
+			if = {
+				limit = {
+					NOT = { 
+						has_estate = estate_nobles
+					}
+				}
+				NOT = { corruption = 0.01 }
+			}
+        }
+        effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+            add_absolutism = 10
+            add_country_modifier = {
+				name = aqt_court_de_ville_mission
+				duration = 9125
+			}
+        }
+    }
+}
+
+vn_aqt_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = AQT
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_aqt_anjou = {
+        icon = develop_our_capital
+        position = 2
+        required_missions = { vn_aqt_unite_poitou }
+        provinces_to_highlight = {
+            region = angevin_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            angevin_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+            normandy_region = { 
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_aqt_normandy = {
+        icon = develop_provence
+        position = 3
+        required_missions = { vn_aqt_anjou }
+        provinces_to_highlight = {
+            region = normandy_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            normandy_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+			add_yearly_manpower = 0.5
+            add_army_tradition = 10
+			add_army_professionalism = 0.05
+        }
+    }
+    vn_aqt_southern_war = {
+        icon = mission_rb_control_state_religion
+        position = 4
+        required_missions = { vn_aqt_guyenne vn_aqt_levy_army }
+        provinces_to_highlight = {
+            region = toulouse_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }		
+        trigger = {
+            toulouse_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }              
+        }
+        effect = {
+			create_general = { tradition = 75 }
+            add_country_modifier = {
+				name = aqt_southern_war_mission
+				duration = 9125
+			}
+        }
+    }
+    vn_aqt_diplomatic_traditions = {
+        icon = sponsor_the_arts
+        position = 5
+        required_missions = {  }
+        trigger = {
+			dip = 4
+			diplomatic_reputation = 5
+			OR = {
+				advisor = statesman
+				advisor = diplomat
+			}
+			calc_true_if = {
+				all_known_country = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+					total_development = 100
+				}
+				amount = 5
+			}            
+        }
+        effect = {
+            if = {
+				limit = { NOT = { dip = 6 } }
+				change_dip = 1
+			}
+			else_if = {
+				limit = { has_heir = yes NOT = { heir_dip = 6 } }
+				change_heir_dip = 1
+			}
+			else = {
+				add_prestige = 20
+			}
+        }
+    }
+    vn_aqt_english_ties = {
+        icon = english_alliance
+        position = 6
+        required_missions = { vn_aqt_diplomatic_traditions }
+        trigger = {
+            OR = {
+				owns_core_province = 2268
+				2268 = {
+					owner = {
+						OR = {
+							marriage_with = ROOT
+							is_subject_of = ROOT
+						}
+						has_opinion = { 
+							who = ROOT
+							value = 150
+						}
+					}
+				}		
+			}
+        }
+        effect = {
+			if = {
+				limit = {
+					valid_for_personal_unions_trigger = yes
+					2268 = { owner = { valid_for_personal_unions_trigger = yes } }		
+				}
+				2268 = { #Owner of London
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_fabricated_claims
+							months = 240
+						}
+					}
+				}
+			}
+			else = {
+				southeast_england_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}            
+        }
+    }
+    vn_aqt_angevin_empire = {
+        icon = mission_rb_angevin_kingdom
+        position = 7
+        required_missions = { vn_aqt_english_ties }
+		provinces_to_highlight = {
+			province_id = 2268
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }          
+		}
+		trigger = {
+			OR = {
+				senior_union_with = ASE 
+				senior_union_with = ENG 
+				senior_union_with = GBR 
+				AND = {
+					NOT = { exists = ASE }
+					NOT = { exists = ENG }
+					NOT = { exists = GBR }
+					2268 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}			
+			} 
+		}
+        effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+			southeast_england_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}         
+        }
+    }
+}
+
+vn_aqt_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = AQT
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_aqt_defend_invasions = {
+        icon = fortress_of_belgrade
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            region = aquitaine_region
+			owned_by = ROOT
+			has_fort_trigger = no
+        }
+        trigger = {
+            num_of_owned_provinces_with = {
+				value = 5
+				region = aquitaine_region
+				has_fort_trigger = yes
+			}
+        }
+        effect = {
+            capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+                if = {
+                    limit = { has_dlc = "Mandate of Heaven" }
+                    add_prosperity = 25
+                }
+			}
+            add_country_modifier = {
+                name = "aqt_defend_invasions_mission" 
+				duration = 9125
+			}
+        }
+    }
+    vn_aqt_levy_army = {
+        icon = protect_against_austria
+        position = 3
+        required_missions = { vn_aqt_defend_invasions }
+        trigger = {
+			army_size = 25
+			manpower_percentage = 0.75            
+        }
+        effect = {
+			if = {
+				limit = {
+					has_estate = estate_holy_orders
+				}
+				add_estate_loyalty = {
+					estate = estate_holy_orders
+					loyalty = 10
+				}
+			}
+            add_country_modifier = {
+                name = "aqt_levy_army_mission" 
+				duration = 9125
+			}			
+        }
+    }
+    vn_aqt_crusader_leaders = {
+        icon = revenge_for_nicopolis
+        position = 5
+        required_missions = { vn_aqt_levy_army }
+        trigger = {
+            NOT = { current_age = age_of_empire }
+			army_size_percentage = 0.75
+			religion_group = christian
+            num_of_generals = 1
+			any_country = {
+				war_with = ROOT
+				NOT = {
+					has_matching_religion = ROOT
+					war_score_against = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+            if = {
+                limit = {
+                    OR = {
+                        has_estate = estate_holy_orders
+                        current_age = age_of_empire
+                    }
+                }
+                estate_loyalty = {
+                    estate = estate_holy_orders
+                    loyalty = 60
+                }
+            }
+        }
+        effect = {
+            palestine_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
+        }
+    }
+    vn_aqt_huguenot_question = {
+        icon = wars_of_religion
+        position = 6
+        required_missions = {  }
+        trigger = {
+			OR = {
+				current_age = age_of_absolutism 
+				current_age = age_of_revolutions
+				current_age = age_of_ideology
+			}
+			religious_unity = 1
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			NOT = {
+				any_owned_province = {
+					superregion = french_superregion
+					has_owner_religion = no
+				}
+			}	
+        }
+        effect = {
+			add_stability_or_adm_power = yes
+			add_religious_influence_effect_small = yes            
+        }
+    }
+    vn_aqt_capetian_rivalry = {
+        icon = the_hundred_years_war
+        position = 7
+        required_missions = { vn_aqt_english_ties }
+        trigger = {
+			if = {
+				limit = {
+					exists = FRA
+				}
+				total_development = FRA
+				army_size = FRA
+				navy_size = FRA
+			}
+			else = {
+				total_development = 1000
+				army_size = 50
+				navy_size = 50
+			}
+        }
+        effect = {
+            add_power_projection = {
+                type = mission_rewards_power_projection
+                amount = 20
+            } 
+            add_country_modifier = {
+                name = "aqt_capetian_rivalry_mission" 
+				duration = 9125
+			}	            
+        }
+    }
+}

@@ -1749,14 +1749,17 @@ vn_hol_missions_slot_5_b = {
         icon = english_alliance
         required_missions = { vn_hol_dutch_trading_culture }
         trigger = {
-			2268 = {
-				owner = {
-					OR = {
-						is_rival = ROOT
-						NOT = { 
-							has_opinion = { 
-								who = ROOT
-								value = -50
+			OR = {
+				owns_core_province = 2268
+				2268 = {
+					owner = {
+						OR = {
+							is_rival = ROOT
+							NOT = { 
+								has_opinion = { 
+									who = ROOT
+									value = -50
+								}
 							}
 						}
 					}
@@ -1769,15 +1772,6 @@ vn_hol_missions_slot_5_b = {
             	name = "hol_against_the_english_mission"  
            	    duration = 9125
             }	
-			2268 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
         }
     }
     vn_hol_rival_english_trade = {
@@ -1794,14 +1788,31 @@ vn_hol_missions_slot_5_b = {
 			}
         }
         effect = {
-			2268 = {
-				owner = {
-					reverse_add_casus_belli = {
-						target = ROOT
-						type = cb_fabricated_claims
-						months = 300
+			if = {
+				limit = {
+					valid_for_personal_unions_trigger = yes
+					2268 = { owner = { valid_for_personal_unions_trigger = yes } }
+				}
+				2268 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_fabricated_claims
+							months = 300
+						}
 					}
 				}
+			}
+			else = {
+				2268 = {
+					if = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}			
 			}
         }
     }
@@ -1810,12 +1821,15 @@ vn_hol_missions_slot_5_b = {
         icon = the_glorious_revolution
         required_missions = { vn_hol_rival_english_trade }
         trigger = {
-			2268 = {
-				owner = {
-					is_in_war = {
-						participants = ROOT
+			OR = {
+				owns_core_province = 2268
+				2268 = {
+					owner = {
+						is_in_war = {
+							participants = ROOT
+						}
+						NOT = { navy_size = ROOT }
 					}
-					NOT = { navy_size = ROOT }
 				}
 			}
 		}

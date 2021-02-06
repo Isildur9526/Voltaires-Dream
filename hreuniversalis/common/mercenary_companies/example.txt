@@ -36,7 +36,10 @@ merc__local_free_city_company = {
     artillery_weight = 0.1
     cavalry_cap = 2
     trigger = {
-        has_reform = free_city
+        OR = {
+            has_reform = free_city
+            has_reform = italian_monarchy
+        }
     }
     cost_modifier = 0.3
     modifier = {

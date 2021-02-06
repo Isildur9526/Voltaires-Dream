@@ -696,6 +696,17 @@ country_event = {
 	picture = HRE_eventPicture
 
 	major = yes
+	major_trigger = {
+		OR = {
+			is_part_of_hre = yes
+			capital_scope = {
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
+			}
+		}
+	}
 
 	trigger = {
 		normal_or_historical_nations = yes
@@ -2879,9 +2890,15 @@ country_event = {
 	option = {
 		name = "FBIA58"
 		ai_chance = { factor = 30 }
-		random_owned_province = {
-			limit = { has_port = yes }
-			build_to_forcelimit = { light_ship = 0.2 }
+		if = {
+			limit = { NOT = { navy_size_percentage = 0.8 } }
+			random_owned_province = {
+				limit = { has_port = yes }
+				build_to_forcelimit = { light_ship = 0.2 }
+			}
+		}
+		else = {
+			add_navy_tradition = 5
 		}
 	}
 
@@ -3273,6 +3290,7 @@ country_event = {
 				country_event = { id = fbievents.66 days = 10 }
 			}
 		}
+		set_global_flag = western_schism_flag
 	}
 	option = {
 		name = "FBIB65"
@@ -7051,6 +7069,7 @@ country_event = {
 		set_global_flag = empire_of_china_dismantled
 		custom_tooltip = inherit_appanages.tt
 		change_tag = RUS
+		swap_non_generic_missions = yes
 		remove_non_electors_emperors_from_empire_effect = yes
 		if = {
 			limit = { NOT = { culture_group = east_slavic } }

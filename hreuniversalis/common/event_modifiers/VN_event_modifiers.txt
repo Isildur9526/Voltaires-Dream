@@ -384,6 +384,11 @@ edwardian_isolation = {
 	stability_cost_modifier = -0.1
 	build_cost = -0.25
 }
+old_and_sick = {
+	monarch_lifespan = -1
+	heir_chance = -0.5
+	block_introduce_heir = yes
+}
 westminster_abbey = {
 	prestige = 0.5
 }

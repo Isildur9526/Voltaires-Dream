@@ -21,16 +21,6 @@ historical_friend = KIE
 }
 1086.11.22 = {
 	monarch = {
-		name = "Svyatopolk II"
-		dynasty = "Rurikovich"
-		birth_date = 1050.11.8
-		adm = 0
-		dip = 0
-		mil = 1
-	}
-}
-1086.11.22 = {
-	monarch = {
 		name = "Vyacheslav I"
 		dynasty = "Rurikovich"
 		adm = 2

@@ -765,9 +765,9 @@ vn_anj_missions_slot_5_b = {
             }
             if = {
                 limit = { has_estate = estate_church }
-                estate_territory = {
+                num_of_estate_agendas_completed = {
                     estate = estate_church
-                    territory = 15
+                    value = 5
                 }
             }
         }

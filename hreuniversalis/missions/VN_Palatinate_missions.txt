@@ -427,7 +427,7 @@ vn_pal_missions_slot_4_a = {
             is_emperor = yes
             imperial_influence = 50
             calc_true_if = {
-                desc = vn_pal_ruprechts_ambition.tt
+                desc = gen_hre_electors.tooltip
                 all_elector = {
                     preferred_emperor = ROOT
                 }

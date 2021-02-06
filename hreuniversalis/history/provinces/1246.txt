@@ -10,6 +10,8 @@ base_manpower = 3
 capital = "Clermont-Ferrand"
 is_city = yes
 add_core = AUV
+center_of_trade = 1
+extra_cost = 8
 
 1547.3.31 = {
 	owner = FRA

@@ -158,8 +158,99 @@ capital = 2493
 		mil = 2
 	}
 }
-#1328-1557 under MKL
-#1557-1606.1.11 under BNT
+1328.1.1 = {
+	monarch = {
+		name = "Nikolaus I"
+		dynasty = "von Hagen"
+		birth_date = 1300.1.1
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1368.1.1 = {
+	monarch = {
+		name = "Otto VI"
+		dynasty = "von Hagen"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1388.1.1 = {
+	monarch = {
+		name = "Nikolaus II"
+		dynasty = "von Hagen"
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}
+1426.1.1 = {
+	monarch = {
+		name = "Otto VII"
+		dynasty = "von Hagen"
+		birth_date = 1395.1.1
+		adm = 2
+		dip = 0
+		mil = 0
+	}
+}
+1428.1.1 = {
+	queen = {
+		country_of_origin = HOY
+		name = "Ermengard"
+		dynasty = "von Hoya"
+		birth_date = 1405.1.1
+		death_date = 1450.1.1
+		female = yes
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1435.1.1 = {
+	heir = {
+		name = "Nikolaus"
+		monarch_name = "Nikolaus III"
+		dynasty = "von Hagen"
+		birth_date = 1435.1.1
+		death_date = 1508.6.8
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1450.1.1 = {
+	monarch = {
+		name = "Nikolaus III"
+		dynasty = "von Hagen"
+		birth_date = 1435.1.1
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1508.1.1 = {
+	monarch = {
+		name = "Otto IX"
+		dynasty = "von Hagen"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1534.1.1 = {
+	monarch = {
+		name = "Konrad I"
+		dynasty = "von Hagen"
+		adm = 2
+		dip = 0
+		mil = 2
+	}
+}
+#1557.6.6-1606.1.11 under BNT
 1606.1.11 = {
 	monarch = {
 		name = "Adolf I"

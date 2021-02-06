@@ -46,3 +46,5 @@ fort_14th = yes
 	controller = GER
 	add_core = GER
 }
+center_of_trade = 1
+extra_cost = 8

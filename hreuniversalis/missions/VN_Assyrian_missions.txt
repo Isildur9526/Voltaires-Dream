@@ -1,6 +1,6 @@
-#Angevin missions
-#Contributed by Retrog
-#Coded by RetrogMXII
+#Assyrian missions
+#Contributed by RetrogMXII
+#Coded by ShyGuy13
 
 vn_asy_missions_slot_1 = {
     slot = 6

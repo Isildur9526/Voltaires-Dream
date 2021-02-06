@@ -329,6 +329,7 @@ country_decisions = {
 		effect = {
 			set_capital = 586
 			change_tag = TUN
+			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

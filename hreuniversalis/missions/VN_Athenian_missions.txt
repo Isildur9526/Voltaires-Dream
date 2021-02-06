@@ -963,6 +963,8 @@ vn_ath_missions_slot_4 = {
                 limit = {
                     exists = BRC
                     marriage_with = BRC
+					valid_for_personal_unions_trigger = yes
+					BRC = { valid_for_personal_unions_trigger = yes }
                 }
                 add_casus_belli = {
                     target = BRC
@@ -974,7 +976,7 @@ vn_ath_missions_slot_4 = {
                         NOT = { is_core = BRC }
                         NOT = { is_permanent_claim = BRC }
                     }
-                add_permanent_claim = BRC
+					add_permanent_claim = BRC
                 }				
             }
             else_if = {
@@ -1008,6 +1010,8 @@ vn_ath_missions_slot_4 = {
                 limit = {
                     exists = LAN
                     marriage_with = LAN
+					valid_for_personal_unions_trigger = yes
+					LAN = { valid_for_personal_unions_trigger = yes }
                 }
                 add_casus_belli = {
                     target = LAN
@@ -1019,13 +1023,15 @@ vn_ath_missions_slot_4 = {
                         NOT = { is_core = LAN }
                         NOT = { is_permanent_claim = LAN }
                     }
-                add_permanent_claim = LAN
+					add_permanent_claim = LAN
                 }				
             }
             else_if = {
                 limit = {
                     exists = TUS
                     marriage_with = TUS
+					valid_for_personal_unions_trigger = yes
+					TUS = { valid_for_personal_unions_trigger = yes }
                 }
                 add_casus_belli = {
                     target = TUS
@@ -1046,13 +1052,15 @@ vn_ath_missions_slot_4 = {
                         NOT = { is_core = ROOT }
                         NOT = { is_permanent_claim = ROOT }
                     }
-                add_permanent_claim = ROOT
+					add_permanent_claim = ROOT
                 }
             }
             if = {
                 limit = {
                     exists = BUR
                     marriage_with = BUR
+					valid_for_personal_unions_trigger = yes
+					BUR = { valid_for_personal_unions_trigger = yes }
                 }
                 add_casus_belli = {
                     target = BUR
@@ -1064,7 +1072,7 @@ vn_ath_missions_slot_4 = {
                         NOT = { is_core = BUR }
                         NOT = { is_permanent_claim = BUR }
                     }
-                add_permanent_claim = BUR
+					add_permanent_claim = BUR
                 }				
             }
             else = {

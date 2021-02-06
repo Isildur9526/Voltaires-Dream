@@ -1,0 +1,502 @@
+#Pfullendorfer missions
+#contributed by Leonhard von Keutschach
+#coded by ShyGuy13
+
+vn_pfu_missions_slot_1 = {
+    slot = 6
+    generic = no
+    ai = yes
+    potential = {
+        tag = PFU
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pfu_swabian_league = {
+        icon = mission_hanseatic_city
+        position = 3
+        required_missions = { vn_pfu_adopt_a_constitution }
+        provinces_to_highlight = {
+            is_capital_of = emperor
+        }
+        trigger = {
+			if = {
+				limit = { hre_size = 1 }
+				OR = {
+					AND = {
+						calc_true_if = {
+							amount = 5
+							all_ally = {
+								capital_scope = {
+									OR = {
+										superregion = germanynorth_superregion
+										superregion = germanysouth_superregion
+									}
+								}
+							}
+						}
+						war_with = emperor
+					}
+					is_emperor = yes
+				}
+			}
+			army_size = 20
+        }
+        effect = {
+			add_army_tradition = 10
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+            add_country_modifier = {
+				name = pfu_swabian_league_mission
+				duration = 9125
+			}
+        }
+	}
+}
+
+vn_pfu_missions_slot_2 = {
+    slot = 7
+    generic = no
+    ai = yes
+    potential = {
+        tag = PFU
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pfu_blutgerichtsbarkeit = {
+        icon = switzerland_and_the_empire
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+            is_capital_of = emperor
+        }
+        trigger = {
+            OR = {
+				reverse_has_opinion = {
+					who = emperor
+					value = 125
+				}
+				is_emperor = yes
+				NOT = { hre_size = 1 }
+			}
+        }
+        effect = {
+			custom_tooltip = vn_pfu_blutgerichtsbarkeit.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						alliance_with = emperor
+					}
+					emperor = {
+						add_trust = {
+							who = ROOT
+							value = 10
+						}
+					}
+				}
+			}
+            add_country_modifier = {
+				name = pfu_blutgerichtsbarkeit_mission
+				duration = 9125
+			}
+        }
+	}
+	vn_pfu_adopt_a_constitution = {
+        icon = republican_yearnings
+        position = 2
+		required_missions = { vn_pfu_blutgerichtsbarkeit }
+		provinces_to_highlight = {
+			province_id = 1875
+			NOT = { owned_by = ROOT }
+		}
+        trigger = {
+			owns = 1875
+            OR = {
+				AND = {
+					government = republic
+					republican_tradition = 100
+				}
+				AND = {
+					NOT = { government = republic }
+					has_estate = estate_burghers
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 60
+					}
+					estate_influence = {
+						estate = estate_burghers
+						influence = 60
+					}
+					num_of_estate_agendas_completed = {
+						estate = estate_burghers
+						value = 5
+					}
+				}
+			}
+        }
+        effect = {
+            if = {
+				limit = {
+					1875 = {
+						NOT = { province_has_center_of_trade_of_level = 1 }
+					}
+				}
+				1875 = {
+					center_of_trade = 1
+				}
+			}
+			else_if = {
+				limit = {
+					1875 = {
+						NOT = { province_has_center_of_trade_of_level = 3 }
+					}
+				}
+				1875 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			else = {
+				1875 = { add_base_production = 2 }
+			}
+			1875 = {
+				add_province_modifier = {
+					name = pfu_adopt_a_constitution_mission
+					duration = -1
+				}
+			}
+        }
+	}
+	vn_pfu_herrschaft_der_gilden = {
+        icon = mission_hanseatic_city
+        position = 4
+        required_missions = { vn_pfu_adopt_a_constitution }
+        provinces_to_highlight = {
+            province_id = 1875
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { development = 30 }
+			}
+        }
+        trigger = {
+			1875 = {
+				owned_by = ROOT
+				development = 30
+				if = {
+					limit = { has_dlc = "Dharma" }
+					province_has_center_of_trade_of_level = 3
+				}
+				else = {
+					NOT = { num_free_building_slots = 1 }
+				}
+			}
+            home_trade_node = {
+				is_strongest_trade_power = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 2
+				province_has_center_of_trade_of_level = 3
+			}
+        }
+        effect = {
+			add_mercantilism = 2
+            add_country_modifier = {
+				name = pfu_herrschaft_der_gilden_mission
+				duration = 9125
+			}
+        }
+	}
+}
+
+vn_pfu_missions_slot_3 = {
+    slot = 8
+    generic = no
+    ai = yes
+    potential = {
+        tag = PFU
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+	vn_pfu_conquer_bregenz = {
+        icon = personal_diplomacy
+        position = 2
+        required_missions = { vn_pfu_conquer_burgau }
+        provinces_to_highlight = {
+			area = vorarlberg_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            vorarlberg_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			add_years_of_income = 1
+			add_legitimacy = 15
+			add_republican_tradition = 15
+			custom_tooltip = add_5_crown_land_share
+			hidden_effect = {
+				change_estate_land_share = {
+					estate = all
+					share = -5
+				}
+			}
+        }
+	}
+	vn_pfu_conquer_stgallen = {
+        icon = swiss_mercenaries
+        position = 3
+        required_missions = { vn_pfu_conquer_constance }
+        provinces_to_highlight = {
+			area = stgallen_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            stgallen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			add_prestige = 10
+            thurgau_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}
+        }
+	}
+	vn_pfu_conquer_thurgau = {
+        icon = the_alpine_wall
+        position = 4
+        required_missions = { vn_pfu_conquer_stgallen }
+        provinces_to_highlight = {
+			area = thurgau_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            thurgau_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			add_country_modifier = {
+				name = pfu_conquer_thurgau_mission
+				duration = 9125
+			}
+            waldstatte_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+			chur_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+			ticino_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+        }
+	}
+}
+
+vn_pfu_missions_slot_4 = {
+    slot = 9
+    generic = no
+    ai = yes
+    potential = {
+        tag = PFU
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+	vn_pfu_conquer_burgau = {
+        icon = ansbach_succession
+        position = 1
+        required_missions = {  }
+        provinces_to_highlight = {
+			area = argengau_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            argengau_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+            vorarlberg_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}
+			hegau_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}
+        }
+	}
+	vn_pfu_conquer_constance = {
+        icon = the_hundred_years_war
+        position = 2
+        required_missions = { vn_pfu_conquer_burgau }
+        provinces_to_highlight = {
+			area = hegau_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            hegau_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			69 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 9125
+					power = 10
+					key = pfu_conquer_constance_mission
+				}
+			}
+            stgallen_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+			}
+        }
+	}
+	vn_pfu_conquer_baden = {
+        icon = defend_the_city
+        position = 3
+        required_missions = { vn_pfu_conquer_constance }
+        provinces_to_highlight = {
+			region = baden_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = baden_region
+			}
+        }
+        effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			wurttemburg_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+			bertoldsbaar_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+			add_country_modifier = {
+				name = pfu_conquer_baden_mission
+				duration = 9125
+			}
+        }
+	}
+	vn_pfu_pfullendorfer_navy = {
+		icon = a_place_among_the_great_powers
+        position = 4
+        required_missions = { vn_pfu_conquer_baden }
+        trigger = {
+			num_of_ports = 1
+			num_of_admirals = 1
+			num_of_heavy_ship = 1
+        }
+        effect = {
+			add_navy_tradition = 25
+			add_country_modifier = {
+				name = pfu_pfullendorfer_navy_mission
+				duration = -1
+			}
+        }
+	}
+}
+
+vn_pfu_missions_slot_5 = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = PFU
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+    vn_pfu_conquer_swabia = {
+        icon = control_swabia
+        position = 3
+        required_missions = { vn_pfu_conquer_constance }
+        provinces_to_highlight = {
+            region = swabia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 25
+				region = swabia_region
+			}
+        }
+        effect = {
+			add_prestige = 20
+			riesgau_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+			drachgau_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+			ulm_area = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_claim = ROOT }
+                }
+                add_claim = ROOT
+			}
+            add_country_modifier = {
+				name = pfu_conquer_swabia_mission
+				duration = 9125
+			}
+        }
+	}
+}

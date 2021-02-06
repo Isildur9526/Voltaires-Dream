@@ -14,10 +14,10 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Emperor"
-		is_institution_enabled = enlightenment
-		num_of_foreign_hre_provinces = 100
 		NOT = { started_in = 1789.7.14 }
 		NOT = { active_imperial_incident = any }
+		is_institution_enabled = enlightenment
+		num_of_foreign_hre_provinces = 100
 		is_part_of_hre = no
 		is_subject = no
 		NOT = { has_country_flag = med_demander_country }

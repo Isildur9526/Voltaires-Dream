@@ -45,6 +45,7 @@ vn_FOI_missions_slot_1 = {
     }
     vn_FOI_narbonne = {
         icon = mission_teutonic_knights
+		position = 3
         required_missions = { vn_FOI_conquer_toulouse }
         provinces_to_highlight = {
             OR = {
@@ -82,6 +83,7 @@ vn_FOI_missions_slot_1 = {
     }
     vn_FOI_languedoc = {
         icon = mission_village
+		position = 4
         required_missions = { vn_FOI_narbonne }
         provinces_to_highlight = {
             OR = {
@@ -110,7 +112,8 @@ vn_FOI_missions_slot_1 = {
     }
     vn_FOI_unite_navarre_with_foix = {
         icon = mission_subjugate_navarra
-        required_missions = { vn_FOI_labourd }
+		position = 5
+        required_missions = { vn_FOI_viscounty_of_bearn }
         provinces_to_highlight = {
             region = basque_region
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -294,6 +297,22 @@ vn_FOI_missions_slot_3 = {
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
+            2324 = {
+                country_or_non_sovereign_subject_holds = ROOT
+				development = 20
+                OR = {
+                    has_building = dock
+                    has_building = drydock
+                }
+                OR = {
+                    has_building = shipyard
+                    has_building = grand_shipyard
+                }
+				if = {
+					limit = { has_dlc = "Dharma" }
+					province_has_center_of_trade_of_level = 3
+				}
+            } 
             bordeaux_area = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
@@ -301,6 +320,7 @@ vn_FOI_missions_slot_3 = {
         }
         effect = {
             add_prestige = 15
+			add_mercantilism = 5
             add_country_modifier = {
                 name = FOI_bordeaux_mission
                 duration = 9125
@@ -480,26 +500,10 @@ vn_FOI_missions_slot_5 = {
 	}
     has_country_shield = yes
 
-    vn_FOI_rousillon = {
-        icon = mission_dominate_home_trade_node
-        required_missions = { }
-        provinces_to_highlight = {
-            area = lerida_area
-            NOT = { country_or_non_sovereign_subject_holds = ROOT }
-        }
-        trigger = {
-            lerida_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = ROOT
-            }
-        }
-        effect = {
-            add_prestige = 15
-        }
-    }
     vn_FOI_prince_of_andorra = {
         icon = mission_roads
-        required_missions = { vn_FOI_rousillon }
+		position = 1
+        required_missions = { }
         provinces_to_highlight = {
             province_id = 668
         }
@@ -529,8 +533,27 @@ vn_FOI_missions_slot_5 = {
             }
         }
     }
+    vn_FOI_rousillon = {
+        icon = mission_dominate_home_trade_node
+		position = 2
+        required_missions = { vn_FOI_prince_of_andorra }
+        provinces_to_highlight = {
+            area = lerida_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+        trigger = {
+            lerida_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+        effect = {
+            add_prestige = 15
+        }
+    }
     vn_FOI_defeat_urgell = {
         icon = mission_dominate_home_trade_node
+		position = 3
         required_missions = { vn_FOI_prince_of_andorra }
         provinces_to_highlight = {
             OR = {
@@ -558,6 +581,7 @@ vn_FOI_missions_slot_5 = {
     }
     vn_FOI_catalonia_contested = {
         icon = mission_dominate_home_trade_node
+		position = 4
         required_missions = { vn_FOI_defeat_urgell }
         provinces_to_highlight = {
             region = catalunya_region
@@ -582,6 +606,48 @@ vn_FOI_missions_slot_5 = {
         effect = {
             add_prestige = 25
 			add_mercantilism = 5
+        }
+    }
+    vn_FOI_crusader_leaders = {
+        icon = revenge_for_nicopolis
+        position = 5
+        required_missions = { vn_FOI_powerful_prince }
+        trigger = {
+            NOT = { current_age = age_of_empire }
+			army_size_percentage = 0.75
+			religion_group = christian
+            num_of_generals = 1
+			any_country = {
+				war_with = ROOT
+				NOT = {
+					has_matching_religion = ROOT
+					war_score_against = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+            if = {
+                limit = {
+                    OR = {
+                        has_estate = estate_holy_orders
+                        current_age = age_of_empire
+                    }
+                }
+                estate_loyalty = {
+                    estate = estate_holy_orders
+                    loyalty = 60
+                }
+            }
+        }
+        effect = {
+            palestine_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }            
         }
     }
 }

@@ -20,7 +20,7 @@ vn_swi_missions_slot_1 = {
         required_missions = {  }
         trigger = {
 			legitimacy_equivalent = 100
-			stability = 1
+			stability = 3
 			NOT = {
 				average_unrest = 0
 			}
@@ -41,21 +41,20 @@ vn_swi_missions_slot_1 = {
             OR = {
 				is_emperor = yes
 				is_elector = yes
-				is_part_of_hre = no
-				AND = {
-					army_size_percentage = 0.8
-					army_size = 20
-				}
-			}
+				is_part_of_hre = yes
+            }
+            army_size_percentage = 0.8
+            army_size = 20
         }
         effect = {
 			add_adm_power = 50
 			add_dip_power = 50
+			add_mil_power = 50
             if = {
 				limit = { government = monarchy }
 				add_legitimacy = 10
 			}
-			else_if = {
+			if = {
 				limit = { government = republic }
 				add_republican_tradition = 10
 			}
@@ -105,6 +104,7 @@ vn_swi_missions_slot_1 = {
         position = 6
         required_missions = { vn_swi_important_city_state vn_swi_tradition_of_free_trade }
         trigger = {
+			has_institution = guilds
 			trade_income_percentage = 0.33
 			num_of_owned_provinces_with = {
                 value = 5
@@ -265,6 +265,11 @@ vn_swi_missions_slot_2 = {
 					any_owned_province = {
 						superregion = switzerland_superregion
 					}
+				}
+			}
+			NOT = {
+				emperor = {
+					core_claim = ROOT
 				}
 			}
         }
@@ -597,6 +602,7 @@ vn_swi_missions_slot_4 = {
         required_missions = {  }
         trigger = {
 			OR = {
+				owns_core_province = 2708
 				AND = {
 					exists = PAP
 					alliance_with = PAP
@@ -850,7 +856,7 @@ vn_swi_missions_slot_5 = {
 					army_size_percentage = 1
 				}
 				AND = {
-					diplomatic_reputation = 3
+					diplomatic_reputation = 5
 					has_truce = no
 					calc_true_if = {
 						all_known_country = {
@@ -858,6 +864,7 @@ vn_swi_missions_slot_5 = {
 								who = ROOT
 								value = 150
 							}
+							total_development = 100
 						}
 						amount = 5
 					}					
