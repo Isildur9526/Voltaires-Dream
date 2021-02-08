@@ -22,7 +22,7 @@ country_event = {
 	}
 	picture = {
 		trigger = { has_dlc = "Third Rome" }
-		picture = PRINCE_AND_BOYARS_eventPicture
+		picture = OPRICHINA_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -179,7 +179,14 @@ country_event = {
 	id = russian_factionalism.2
 	title = "russian_factionalism.2.t"
 	desc = "russian_factionalism.2.d"
-	picture = ANGRY_MOB_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = ANGRY_MOB_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MARCHING_PEASANTS_eventPicture
+	}
 	goto = kiev_reb_prov
 	
 	is_triggered_only = yes
@@ -261,7 +268,14 @@ country_event = {
 	id = russian_factionalism.3
 	title = "russian_factionalism.3.t"
 	desc = "russian_factionalism.3.d"
-	picture = MERCHANTS_TALKING_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = MERCHANTS_TALKING_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MERCHANTS_IN_SIBERIA_eventPicture
+	}
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -323,7 +337,14 @@ country_event = {
 	id = russian_factionalism.4
 	title = "russian_factionalism.4.t"
 	desc = "russian_factionalism.4.d"
-	picture = DIPLOMACY_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = PRINCE_AND_BOYARS_eventPicture
+	}
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -453,7 +474,14 @@ country_event = {
 	id = russian_factionalism.5
 	title = "russian_factionalism.5.t"
 	desc = "russian_factionalism.5.d"
-	picture = DIPLOMACY_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = STRELTSY_MARCHING_eventPicture
+	}
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -545,7 +573,14 @@ country_event = {
 	id = russian_factionalism.6
 	title = "russian_factionalism.6.t"
 	desc = "russian_factionalism.6.d"
-	picture = DIPLOMACY_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = ENTERING_MOSCOW_eventPicture
+	}
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -732,7 +767,14 @@ country_event = {
 	id = russian_factionalism.7
 	title = "russian_factionalism.7.t"
 	desc = "russian_factionalism.7.d"
-	picture = DIPLOMACY_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = HARBOUR_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = KREMLIN_eventPicture
+	}
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -792,7 +834,14 @@ country_event = {
 	id = russian_factionalism.8
 	title = "russian_factionalism.8.t"
 	desc = "russian_factionalism.8.d"
-	picture = DIPLOMACY_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = FAMINE_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = TR_FAMINE_eventPicture
+	}
 	
 	is_triggered_only = yes
 
@@ -855,7 +904,14 @@ country_event = {
 	id = russian_factionalism.9
 	title = "russian_factionalism.9.t"
 	desc = "russian_factionalism.9.d"
-	picture = COURT_INTRIGUE_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = LAND_MILITARY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MARCHING_PEASANTS_eventPicture
+	}
 	goto = rus_mag_prov
 
 	is_triggered_only = yes
@@ -972,8 +1028,22 @@ country_event = {
 country_event = {
     id = russian_factionalism.100
     title = russian_factionalism.100.t
-	desc = russian_factionalism.100.d
-	picture = CIVIL_WAR_eventPicture
+	desc = {
+		trigger = { is_emperor_of_china = yes }
+		desc = russian_factionalism.100.d
+	}
+	desc = {
+		trigger = { is_emperor_of_china = no }
+		desc = russian_factionalism.100.d2
+	}
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = CIVIL_WAR_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = STRELTSY_MARCHING_eventPicture
+	}
 	
 	is_triggered_only = yes
 	major = yes
@@ -983,6 +1053,13 @@ country_event = {
 			every_country = {
 				limit = { has_country_flag = had_increased_liberty_desire }
 				clr_country_flag = had_increased_liberty_desire			
+			}
+			if = {
+				limit = { is_emperor_of_china = no }
+				random_country = {
+					limit = { is_emperor_of_china = yes }
+					save_event_target_as = new_russian_grand_prince
+				}
 			}
 		}
 	}
