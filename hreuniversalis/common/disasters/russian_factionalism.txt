@@ -77,7 +77,7 @@ russian_factionalism = {
 	}
 
 	modifier = {
-		global_unrest = 8
+		global_unrest = 10
 		land_morale = -0.15
 		reduced_liberty_desire_on_same_continent = -50
 	}
@@ -90,14 +90,15 @@ russian_factionalism = {
 		}
 		random_events = { 
 			1000 = 0
-			200 = russian_factionalism.2
-			150 = russian_factionalism.3
-			150 = russian_factionalism.4
-			150 = russian_factionalism.5
-			150 = russian_factionalism.6
-			150 = russian_factionalism.7
-			100 = russian_factionalism.8
-			150 = russian_factionalism.9
+			150 = russian_factionalism.2 # Russian Magnate Revolts
+			100 = russian_factionalism.3 # Tmutarakan Defects
+			100 = russian_factionalism.4 # Volyn Defects
+			100 = russian_factionalism.5 # Vladimir Defects
+			100 = russian_factionalism.6 # Chernigov & Pereyslav Defect
+			100 = russian_factionalism.7 # Novgorod Defects
+			150 = russian_factionalism.8 # Appanage Opposition
+			200 = russian_factionalism.9 # Factionalism Spreads
+			150 = russian_factionalism.10 # Unwilling to Fight
 		}
 	}
 }

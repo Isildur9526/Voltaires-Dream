@@ -1,1 +1,6 @@
 #Isildur's new mission modifiers
+disbanded_streltsy_m = {
+	recover_army_morale_speed = -0.1
+	manpower_recovery_speed = -0.1
+	land_attrition = 0.1
+}

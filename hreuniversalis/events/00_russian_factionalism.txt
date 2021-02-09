@@ -1024,6 +1024,38 @@ country_event = {
 	}
 }
 
+#Unwilling to Fight
+country_event = {
+	id = russian_factionalism.10
+	title = "russian_factionalism.10.t"
+	desc = "russian_factionalism.10.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = MILITARY_CAMP_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = STRELTSY_MARCHING_eventPicture
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = russian_factionalism.10.a
+		add_disaster_modifier = {
+			name = aan_conquer_avaria_mission
+			duration = 1825
+			disaster = russian_factionalism
+		}
+	}
+	option = {
+		name = russian_factionalism.10.b
+		add_army_professionalism = -0.1
+		add_army_tradition = -25
+	}
+}
+
 #End
 country_event = {
     id = russian_factionalism.100
