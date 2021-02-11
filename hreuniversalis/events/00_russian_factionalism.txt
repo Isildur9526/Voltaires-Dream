@@ -253,6 +253,8 @@ country_event = {
 		ai_chance = { factor = 0 }
 		add_mandate = -5
 		event_target:kiev_reb_prov = {
+			clr_province_flag = rus_small_revolt
+			clr_province_flag = rus_big_revolt
 			area = {
 				limit = {
 					owned_by = ROOT
@@ -311,6 +313,11 @@ country_event = {
 	option = {
 		name = russian_factionalism.3.a
 		add_mandate = -10
+		tooltip = {
+			TMT = {
+				grant_independence = yes
+			}
+		}
 		reverse_add_opinion = {
 			who = TMT
 			modifier = tributary_state_broke_free
@@ -381,6 +388,11 @@ country_event = {
 	option = {
 		name = russian_factionalism.4.a
 		add_mandate = -10
+		tooltip = {
+			TMT = {
+				grant_independence = VHN
+			}
+		}
 		if = {
 			limit = { exists = PLC }
 			PLC = {
@@ -546,6 +558,9 @@ country_event = {
 	option = {
 		name = russian_factionalism.5.a
 		add_mandate = -10
+		tooltip = {
+			VDR = { grant_independence = yes }
+		}
 		add_stability = -1
 		reverse_add_opinion = {
 			who = VDR
@@ -799,6 +814,9 @@ country_event = {
 	option = {
 		name = russian_factionalism.7.a
 		add_mandate = -10
+		tooltip = {
+			NOV = { grant_independence = yes }
+		}
 		hidden_effect = {
 			add_truce_with = NOV
 			NOV = {

@@ -21,7 +21,7 @@
  russian_factionalism.3.a: "Leave them at the mercy of the Polovtsy."
  russian_factionalism.3.b: "Remind them of who is their true overlord."
  russian_factionalism.4.t: "Polish Influence in Volhynia"
- russian_factionalism.4.d: "Poland had long been important for trade for Kievan Rus, as land routes to Western Europe ran through it. However, with growing factionalism in recent decades, the princes of Volhynia have increasingly alienated from us and instead moved steadily towards the Polish rulers. Now it has come to the point that the Volhynian princes, with Polish support, have broken away, as they no longer consider [Root.Monarch.GetTitle] [Root.Monarch. GetName] of [Root.GetName] as their legitimate ruler."
+ russian_factionalism.4.d: "Poland had long been played an important role for trade for the Kievan Rus, as land routes to Western Europe run through it. However, with growing factionalism in recent decades, the Princes of Volhynia have increasingly alienated from us and instead moved steadily towards the Polish rulers. Now it has come to the point that the Volhynian Princes, with Polish support, have broken away, as they no longer consider [Root.Monarch.GetTitle] [Root.Monarch.GetName] of [Root.GetName] as their legitimate ruler."
  russian_factionalism.4.a: "They will return to our fold one day."
  russian_factionalism.4.b: "Volhynia must not fall into Polish hands!"
  russian_factionalism.5.t: "The Rise of Vladimir"
