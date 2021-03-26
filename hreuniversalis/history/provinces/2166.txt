@@ -2,7 +2,7 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = BUL
-culture = bulgarian
+culture = greek
 religion = orthodox
 hre = no
 base_tax = 3
@@ -70,6 +70,7 @@ center_of_trade = 1
 	add_core = TUR
 	remove_core = BYZ
 	add_core = BUL
+	culture = bulgarian
 }
 1555.1.1 = { unrest = 5 }
 1556.1.1 = { unrest = 2 }

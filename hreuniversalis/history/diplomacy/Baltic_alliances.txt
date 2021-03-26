@@ -165,6 +165,12 @@ union = {
 	start_date = 1290.6.23
 	end_date = 1291.1.1
 }
+union = {
+	first = SDZ
+	second = WKP
+	start_date = 1296.2.8
+	end_date = 1300.1.1
+}
 
 #Khanate
 march = {
@@ -533,13 +539,7 @@ alliance = {
 alliance = {
 	first = LIT
 	second = VHN
-	start_date = 1440.1.1
-	end_date = 1432.8.31
-}
-alliance = {
-	first = LIT
-	second = VHN
-	start_date = 1435.9.1
+	start_date = 1440.3.20
 	end_date = 1447.6.25
 }
 #Halych Wars

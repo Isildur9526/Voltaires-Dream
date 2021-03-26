@@ -59,7 +59,6 @@ monarch_names = {
 	"Franz #0" = 10
 	"Karl #0 Georg" = 10
 	"Philipp Siegmund #0" = 10
-	"August #0" = 5
 	"August Franz #0" = 5
 	"August Heinrich #0" = 5
 	"August Karl #0" = 5

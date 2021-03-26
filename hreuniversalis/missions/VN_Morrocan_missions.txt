@@ -634,7 +634,7 @@ vn_mor_missions_slot_3 = {
         required_missions = {  }
         trigger = {
             has_reform_level = 2
-            legitimacy_equivalent = 100
+            legitimacy = 100
             army_size_percentage = 0.75
             NOT = { num_of_rebel_armies = 1 }
             NOT = { num_of_rebel_controlled_provinces = 1 }

@@ -1,5 +1,5 @@
 capital = "Tymbrianassos"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = tar
 base_tax = 1

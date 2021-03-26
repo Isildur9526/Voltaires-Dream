@@ -559,7 +559,7 @@ vn_swe_missions_slot_2_b = {
 			add_years_of_income = 0.5
 			add_estate_influence_modifier = {
 				estate = estate_nobles
-				desc = swe_reductions_mission
+				desc = swe_reductions_mission2
 				influence = -10
 				duration = 7300
 			}
@@ -894,7 +894,7 @@ vn_swe_missions_slot_3_a = {
 			}
 		}
         effect = {
-			add_prestige = 20
+			add_prestige = 15
 			add_country_modifier = {
 				name = "nor_scandinavia_united_mission"
 				duration = -1
@@ -1332,6 +1332,40 @@ vn_swe_missions_slot_4_a = {
 				}
 				add_permanent_claim = ROOT
 			}
+			stockholm_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			6131 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2697 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			6130 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
         }
     }
     vn_swe_conquer_finland = {
@@ -1417,7 +1451,7 @@ vn_swe_missions_slot_4_b = {
         position = 4
         required_missions = { 
 			vn_swe_end_kingdom_of_gotland
-			vn_swe_conquer_karelia
+			vn_swe_conquer_karelia 
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -1837,7 +1871,7 @@ vn_swe_missions_slot_5_a = {
 			}
         }
         effect = {
-			add_prestige = 25
+			add_prestige = 20
 			add_country_modifier = {
 				name = "swe_strike_into_russia_mission"
 				duration = 7300

@@ -190,7 +190,7 @@ elector = yes
 	add_heir_personality = lawgiver_personality
 	add_heir_personality = tactical_genius_personality
 }
-1147.4.6 = {
+1152.2.15 = {
 	monarch = {
 		name = "Friedrich III"
 		dynasty = "von Hohenstaufen"

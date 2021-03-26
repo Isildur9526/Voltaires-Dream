@@ -9,6 +9,14 @@ capital = 6144
 fixed_capital = 6144
 historical_friend = KIE
 change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = -5
+}
+change_estate_land_share = {
 	estate = estate_burghers
 	share = 15
 }

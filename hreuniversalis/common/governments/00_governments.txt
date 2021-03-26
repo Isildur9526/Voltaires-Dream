@@ -31,6 +31,8 @@ monarchy = {
 				enforce_privileges_reform
 				quash_noble_power_reform
 				enforce_trader_privileges_reform
+				authorized_thing_reform
+				representative_thing_reform
 				black_army_reform
 				legion_of_honor_reform
 				imperial_nobility_reform
@@ -71,8 +73,6 @@ monarchy = {
 				states_general_reform
 				legislative_sejm
 				integrated_sejmiks
-				authorized_thing_reform
-				representative_thing_reform
 				feuillant_reform
 				two_chamber_reform
 				imperial_decree_reform
@@ -159,7 +159,6 @@ monarchy = {
 		germanic_monarchy
 		eastern_monarchy
 		celestial_empire
-		germanic_monarchy
 	}
 
 	#Flavor
@@ -449,7 +448,7 @@ theocracy = {
 		monastic_order_government
 		crusader_order_government
 		sufi_reform_legacy
-		holy_state_legacy
+		holy_state_theocracy
 	}
 	reform_levels = {
 		theocratic_leadership = {

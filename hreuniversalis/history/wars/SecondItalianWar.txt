@@ -37,7 +37,7 @@ war_goal = {
 
 1503.5.13 = {
 	rem_attacker = NAP
-	add_defender = ARA
+	add_defender = NAP
 }
 
 1503.11.1 = {

@@ -1,5 +1,5 @@
 capital = "Kaklouma"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = lumber
 base_tax = 1
@@ -40,7 +40,7 @@ add_core = BYZ
 	owner = HMD
 	controller = HMD
 	add_core = HMD
-	remove_Core = ESH
+	remove_core = ESH
 }
 1391.1.1 = {
 	owner = KAR

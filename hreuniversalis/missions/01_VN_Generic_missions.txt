@@ -909,7 +909,7 @@ vn_administrative_missions = {
 				}
 			}
 			else = {
-				legitimacy_equivalent = 100
+				legitimacy = 100
 				prestige = 95
 				months_of_ruling = 120
 			}

@@ -22,6 +22,8 @@ discovered_by = muslim
 	remove_core = BAE
 	culture = szaszok
 	religion = catholic
+	#1-1-1
+	base_manpower = 1
 }
 1226.3.1 = {
 	owner = SZK
@@ -46,7 +48,7 @@ discovered_by = muslim
 	add_core = TRA
 	add_core = HUN
 }
-1506.1.1 = { revolt = { type = anti_tax_revels size = 2 } controller = REB }
+1506.1.1 = { revolt = { type = anti_tax_rebels size = 2 } controller = REB }
 1507.1.1 = { revolt = {} controller = TRA } #szekely
 1514.4.1 = { revolt = { type = anti_tax_rebels size = 0 } controller = REB }
 1514.10.1 = { revolt = {} controller = TRA }

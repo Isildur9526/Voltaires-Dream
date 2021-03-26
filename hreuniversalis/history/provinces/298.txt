@@ -18,22 +18,39 @@ add_core = DIE
 	remove_core = DIE
 }
 1268.10.29 = {
-	owner = SPH
-	controller = SPH
-	add_core = SPH
+	owner = XLE
+	controller = XLE
+	add_core = XLE
 	remove_core = ALS
 }
-1437.10.24 = {
-	owner = ZWB
-	controller = ZWB
-	add_core = ZWB
+1279.1.1 = {
+	owner = DGS
+	controller = DGS
+	add_core = DGS
+}
+1316.1.1 = {
+	owner = XLE
+	controller = XLE
+	remove_core = DGS
 }
 1529.1.1 = { religion = protestant }
+1535.1.1 = {
+	owner = SXM
+	controller = SXM
+	add_core = SXM
+	remove_core = XLE
+}
+1540.1.1 = {
+	owner = VLD
+	controller = VLD
+	add_core = VLD
+	remove_core = SXM
+}
 1588.1.1 = { religion = reformed }
 1569.6.11 = {
 	owner = SPH
 	controller = SPH
-	remove_core = ZWB
+	remove_core = VLD
 }
 1731.9.17  = {
 	owner = ZWB

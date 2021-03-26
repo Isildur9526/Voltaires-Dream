@@ -139,7 +139,7 @@ gen_europe_hre_relations_1 = {
 }
 
 #Theocratic relations with Emperor
-gen_europe_hre_theocracy = {
+gen_europe_hre_theocracy_1 = {
 	slot = 1
 	generic = yes
 	ai = yes
@@ -203,7 +203,7 @@ gen_europe_hre_theocracy = {
 			}
 			if = {
 				limit = {
-					NOT = { legitimacy_equivalent = 85 }
+					NOT = { legitimacy = 85 }
 				}
 				add_devotion = 20
 				add_legitimacy = 20
@@ -481,7 +481,7 @@ gen_europe_hre_relations_2 = {
 }
 
 #Further Theocratic missions
-gen_europe_hre_theocracy = {
+gen_europe_hre_theocracy_2 = {
 	slot = 2
 	generic = yes
 	ai = yes

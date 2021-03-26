@@ -12,16 +12,21 @@ religious_school = ismaili_school
 historical_friend = ALW
 historical_friend = HED
 change_estate_land_share = {
-	estate = estate_mamluks
-	share = 10
-}
-change_estate_land_share = {
 	estate = estate_dhimmi
 	share = -12
+}
+change_estate_land_share = {
+	estate = estate_mamluks
+	share = 6
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 6
 }
 
 #Banû Fâtimah Caliphs
 1036.6.13 = {
+	set_estate_privilege = estate_mamluks_mamluk_host
 	monarch = {
 		name = "al-Mustansir"
 		dynasty = "Banû Fâtimah"
@@ -178,4 +183,5 @@ change_estate_land_share = {
 		mil = 0
 	}
 }
+1171.9.13 = { remove_estate_privilege = estate_mamluks_mamluk_host }
 #1171.9.13 done

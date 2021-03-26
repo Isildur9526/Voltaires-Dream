@@ -34,7 +34,7 @@
  desc_manufacturing_plutocracy: "Die Verbindung unserer Produktionsbasis mit unserer aufblühenden Finanzindustrie wird es uns ermöglichen, eine große Kontrolle über die Wirtschaft unserer Länder zu erlangen. Die Banken können im Wesentlichen zu einer Zweigstelle des Staates werden."
 #Diplomatic
  cultural_innovativeness: "Radikalismus" 
- desc_cultural_innovativeness: "Kultur zu erneuern bedeutet, immer wieder das Alte abzuwerfen und das Neue  anzunehmen. Wir mögen keine Trotzkisten sein oder gar wissen, was ein Trotzkist ist, aber unser Staat ist geschickter im Umgang mit dem Lauf der Zeit."
+ desc_cultural_innovativeness: "Kultur zu erneuern bedeutet, immer wieder das Alte abzuwerfen und das Neue anzunehmen. Wir mögen keine Trotzkisten sein oder gar wissen, was ein Trotzkist ist, aber unser Staat ist geschickter im Umgang mit dem Lauf der Zeit."
  cultural_religious: "Gesetz über wahre Meinungen" 
  desc_cultural_religious: "Ein Gesetz über wahre Meinungen und Äußerungen über die Religion unseres Staates. Einige Meinungen liegen schlichtweg falsch - es ist ein Angriff auf Gott und die Menschheit gleichermaßen, solche abscheulichen Lügen innerhalb des Staates propagieren zu lassen."
  cultural_economic: "Ächtungsgesetz" 
@@ -96,7 +96,7 @@
  logistics_economic: "Statut der Gemeinschuldner"
  desc_logistics_economic: "Es ist angemessen, dass wir Schuldner wegen Betrugs an den Gläubigern verurteilen und ächten und die Kontrolle über die Bankfinanzen diesen anarchischen Bedingungen, unter denen sie derzeit agieren, entziehen."
  logistics_expansion: "Entwässerungsmaßnahmen"
- desc_logistics_expansion: ""Durch den Einsatz des Wissens von Ingenieuren, die auf dem Gebiet der Entwässerung und Landgewinnung ausgebildet sind, wird die Expansion unseres Landes fast doppelt so hohe Erträge bringen. Das ganze Sumpfgebiet, das wir normalerweise ignorieren, könnte eine wichtige wirtschaftliche Basis werden."
+ desc_logistics_expansion: "Durch den Einsatz des Wissens von Ingenieuren, die auf dem Gebiet der Entwässerung und Landgewinnung ausgebildet sind, wird die Expansion unseres Landes fast doppelt so hohe Erträge bringen. Das ganze Sumpfgebiet, das wir normalerweise ignorieren, könnte eine wichtige wirtschaftliche Basis werden."
  logistics_administrative: "Straßenbaugesetz"
  desc_logistics_administrative: "Eine Politik, mit dem Bau von Straßen zwischen den verschiedenen Städten unseres Reiches zu beginnen, wird eine größere administrative Effizienz über große Landstriche hinweg gewährleisten. Deshalb wurde beschlossen, dass wir diese Gesetzgebung durchsetzen und Bauherren einstellen werden."
  logistics_humanist: "Nationalakademie"

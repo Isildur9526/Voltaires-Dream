@@ -1,5 +1,5 @@
 capital = "Boubon" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = dates
 base_tax = 1

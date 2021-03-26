@@ -9,6 +9,7 @@ capital = 6547
 1000.1.1 = { set_country_flag = natives_flag }
 #Meshchera
 1054.1.1 = {
+	override_country_name = MESHCHERA_NAME
 	monarch = {
 		name = "Meshchera"
 		regent = yes
@@ -72,6 +73,7 @@ capital = 6547
 		mil = 1
 	}
 }
+1393.1.1 = { restore_country_name = yes }
 #1393 to MOS
 
 #Khans

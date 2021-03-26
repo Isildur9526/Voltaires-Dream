@@ -1,6 +1,6 @@
 owner = BYZ
 controller = BYZ
-culture = greek
+culture = cypriot
 religion = orthodox
 hre = no
 base_tax = 2

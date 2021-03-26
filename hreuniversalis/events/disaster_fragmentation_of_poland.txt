@@ -15,7 +15,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_global_flag = had_fragmentation_of_poland
-			set_country_flag = poland_fragmentation_active
+			set_global_flag = poland_fragmentation_active
 			WKP = {
 				define_exiled_ruler = {
 					exiled_as = WKP_new_ruler
@@ -82,7 +82,10 @@ country_event = {
 					grant_independence = yes
 				}
 			}
-			else = {
+			else_if = {
+				limit = {
+					NOT = { exists = WKP }
+				}
 				release = WKP
 				WKP = {
 					every_owned_province = {
@@ -93,6 +96,9 @@ country_event = {
 					change_government = monarchy
 					add_government_reform = feudal_monarchy
 				}
+			}
+			else = {
+				WKP = { set_country_flag = fragpol_was_independent }
 			}
 			add_truce_with = WKP
 		}
@@ -107,7 +113,10 @@ country_event = {
 					grant_independence = yes
 				}
 			}
-			else = {
+			else_if = {
+				limit = {
+					NOT = { exists = MAZ }
+				}
 				release = MAZ
 				MAZ = {
 					every_owned_province = {
@@ -118,6 +127,9 @@ country_event = {
 					change_government = monarchy
 					add_government_reform = feudal_monarchy
 				}
+			}
+			else = {
+				MAZ = { set_country_flag = fragpol_was_independent }
 			}
 			add_truce_with = MAZ
 		}
@@ -137,7 +149,10 @@ country_event = {
 					grant_independence = yes
 				}
 			}
-			else = {
+			else_if = {
+				limit = {
+					NOT = { exists = SIL }
+				}
 				release = SIL
 				SIL = {
 					every_owned_province = {
@@ -148,6 +163,9 @@ country_event = {
 					change_government = monarchy
 					add_government_reform = feudal_monarchy
 				}
+			}
+			else = {
+				SIL = { set_country_flag = fragpol_was_independent }
 			}
 			add_truce_with = SIL
 		}
@@ -162,7 +180,10 @@ country_event = {
 					grant_independence = yes
 				}
 			}
-			else = {
+			else_if = {
+				limit = {
+					NOT = { exists = SDZ }
+				}
 				release = SDZ
 				SDZ = {
 					every_owned_province = {
@@ -174,6 +195,9 @@ country_event = {
 					add_government_reform = feudal_monarchy
 				}
 			}
+			else = {
+				SDZ = { set_country_flag = fragpol_was_independent }
+			}
 			add_truce_with = SDZ
 		}
 		hidden_effect = {
@@ -183,10 +207,13 @@ country_event = {
 				add_truce_with = SDZ
 			}
 			MAZ = {
+				add_truce_with = WKP
 				add_truce_with = SIL
 				add_truce_with = SDZ
 			}
 			SIL = {
+				add_truce_with = WKP
+				add_truce_with = MAZ
 				add_truce_with = SDZ
 			}
 		}
@@ -285,7 +312,6 @@ country_event = {
 		if = {
 			limit = {
 				MAZ = {
-					exists = yes
 					is_subject_of = ROOT
 				}
 			}
@@ -318,7 +344,6 @@ country_event = {
 		if = {
 			limit = {
 				SIL = {
-					exists = yes
 					is_subject_of = ROOT
 				}
 			}
@@ -351,7 +376,6 @@ country_event = {
 		if = {
 			limit = {
 				SDZ = {
-					exists = yes
 					is_subject_of = ROOT
 				}
 			}
@@ -384,7 +408,6 @@ country_event = {
 		if = {
 			limit = {
 				WKP = {
-					exists = yes
 					is_subject_of = ROOT
 				}
 			}
@@ -421,6 +444,9 @@ country_event = {
 			if = {
 				limit = {
 					exists = MAZ
+					MAZ = {
+						NOT = { has_country_flag = fragpol_was_independent }
+					}
 				}
 				MAZ = {
 					set_ruler = MAZ_new_ruler
@@ -437,6 +463,9 @@ country_event = {
 			if = {
 				limit = {
 					exists = WKP
+					WKP = {
+						NOT = { has_country_flag = fragpol_was_independent }
+					}
 				}
 				WKP = {
 					set_ruler = WKP_new_ruler
@@ -453,6 +482,9 @@ country_event = {
 			if = {
 				limit = {
 					exists = SIL
+					SIL = {
+						NOT = { has_country_flag = fragpol_was_independent }
+					}
 				}
 				SIL = {
 					set_ruler = SIL_new_ruler
@@ -469,6 +501,9 @@ country_event = {
 			if = {
 				limit = {
 					exists = SDZ
+					SDZ = {
+						NOT = { has_country_flag = fragpol_was_independent }
+					}
 				}
 				SDZ = {
 					set_ruler = SDZ_new_ruler
@@ -648,9 +683,7 @@ country_event = {
 	trigger = {
 		is_part_of_hre = yes
 		culture_group = germanic
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		any_owned_province = {
 			any_neighbor_province = {
 				OR = {
@@ -790,9 +823,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		any_subject_country = {
 			OR = {
 				primary_culture = pommeranian
@@ -846,9 +877,7 @@ country_event = {
 	}
 
 	trigger = {
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		NOT = { has_country_flag = acts_of_cienia_fired }
 		has_estate = estate_nobles
 		NOT = {
@@ -1001,9 +1030,7 @@ country_event = {
 	}
 
 	trigger = {
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		OR = {
 			primary_culture = polish
 			primary_culture = schlesian
@@ -1078,9 +1105,7 @@ country_event = {
 	}
 
 	trigger = {
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		has_estate = estate_church
 		religion_group = christian
 		OR = {
@@ -1125,9 +1150,7 @@ country_event = {
 	}
 
 	trigger = {
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		OR = {
 			primary_culture = polish
 			primary_culture = schlesian
@@ -1228,9 +1251,7 @@ country_event = {
 	}
 
 	trigger = {
-		any_known_country = {
-			has_country_flag = poland_fragmentation_active
-		}
+		has_global_flag = poland_fragmentation_active
 		any_neighbor_country = {
 			primary_culture = volhynian
 		}
@@ -1308,7 +1329,7 @@ country_event = {
 	major = yes
 	
 	immediate = {
-		clr_country_flag = poland_fragmentation_active
+		clr_global_flag = poland_fragmentation_active
 		set_global_flag = fragmentation_of_poland_ended
 	}
 
@@ -1326,7 +1347,7 @@ country_event = {
     }
 }
 
-#End of Fragmentation (for non-KRA)
+#End of Fragmentation (if Poland was split)
 country_event = {
 	id = fragmentation_of_poland.101
 	title = fragmentation_of_poland.101.t
@@ -1338,19 +1359,25 @@ country_event = {
 	
 	trigger = {
 		tag = POL
-		NOT = { has_country_flag = poland_fragmentation_active }
-		NOT = { was_tag = KRA }
 		has_global_flag = pol_was_split
 		NOT = { started_in = 1305.6.21 }
+		has_global_flag = poland_fragmentation_active
+		NOT = { has_global_flag = fragmentation_of_poland_ended }
 		custom_trigger_tooltip = {
 			tooltip = disaster_active_for_10_years_tooltip
 			had_global_flag = {
-				flag = had_fragmentation_of_poland
+				flag = poland_fragmentation_active
 				days = 3650
 			}
 		}
 		stability = 1
 		is_at_war = no
+		NOT = {
+			any_owned_province = {
+				has_rebel_faction = nationalist_rebels
+			}
+		}
+		NOT = { num_of_rebel_controlled_provinces = 1 }
 		calc_true_if = {
 			MAZ = {
 				OR = {
@@ -1418,13 +1445,10 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_global_flag = fragmentation_of_poland_ended
+			clr_global_flag = poland_fragmentation_active
 			random_country = {
 				limit = { has_disaster = fragmentation_of_poland }
 				end_disaster = fragmentation_of_poland
-			}
-			random_country = {
-				limit = { has_country_flag = poland_fragmentation_active }
-				clr_country_flag = poland_fragmentation_active
 			}
 		}
 	}

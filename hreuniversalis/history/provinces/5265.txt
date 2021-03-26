@@ -19,6 +19,8 @@ add_core = CZY
 1167.1.1 = {
 	religion = catholic
 	remove_core = CZY
+	#1-1-1
+	base_manpower = 1
 }
 1178.12.30 = {
 	culture = pommeranian

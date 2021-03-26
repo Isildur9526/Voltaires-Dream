@@ -11,81 +11,146 @@ vn_bri_missions_slot_1_a = {
     }
     has_country_shield = yes
 
-    vn_bri_a_decent_navy = {
-        icon = mission_establish_high_seas_navy
-        position = 2
-        required_missions = { vn_bri_dominant_breton_power }
+	vn_bri_move_capital_to_nantes = {
+        icon = mission_big_city
+        position = 1
+		required_missions = {  }
+		provinces_to_highlight = {
+			province_id = 2173
+		}
         trigger = {
-			naval_forcelimit = 15
-			calc_true_if = {
-				num_of_light_ship = 5
-				num_of_heavy_ship = 3
-				num_of_transport = 5
-				num_of_galley = 5
-				amount = 2
+			owns_core_province = 2173
+			capital = 2173
+			2173 = {
+				development = 15
 			}
         }
         effect = {
-			add_navy_tradition = 15
-			1167 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			4494 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			1170 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
+			add_years_of_income = 0.5
+			2173 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
 			}
         }
     }
-    vn_bri_seize_cotentin = {
-        icon = mission_unite_home_region 	#placeholder 
-		required_missions = { vn_bri_a_decent_navy }
+    vn_bri_nantes_cathedral = {
+        icon = mission_portico
+		required_missions = { vn_bri_move_capital_to_nantes }
 		provinces_to_highlight = {
+			province_id = 2173
 			OR = {
-				province_id = 1167
-				province_id = 4494
-				province_id = 1170
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
 		}
         trigger = {
-			1167 = { country_or_non_sovereign_subject_holds = ROOT }
-			4494 = { country_or_non_sovereign_subject_holds = ROOT }
-			1170 = { country_or_non_sovereign_subject_holds = ROOT }
+			2173 = {
+				owned_by = ROOT
+				is_core = ROOT
+				has_tax_building_trigger = yes
+			}
+			if = {
+				limit = {
+					has_estate = estate_church
+				}
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 60
+				}
+			}
         }
         effect = {
-			maine_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			add_country_modifier = {
-				name = "bri_seize_cotentin_mission"
+            add_country_modifier = {
+				name = "bri_nantes_cathedral_mission"
 				duration = 9125
 			}
-		}
+        }
+    }
+    vn_bri_kroaz_du = {
+        icon = mission_religious
+        required_missions = { vn_bri_nantes_cathedral }
+        trigger = {
+			religion = catholic
+			papal_influence = 100
+			if = {
+				limit = { exists = PAP }
+				alliance_with = PAP
+				reverse_has_opinion = {
+					who = PAP
+					value = 150
+				}
+			}
+        }
+        effect = {
+            add_country_modifier = {
+				name = "bri_kroaz_du_mission"
+				duration = 9125
+			}
+        }
 	}
+	vn_bri_loire_canals = {
+		icon = mission_seize_north_sea_trade
+		position = 4
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				area = nantes_area
+				area = maine_area
+				area = tours_area
+			}
+			OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+		}
+        trigger = {
+			nantes_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			maine_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			tours_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+            2489 = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+				development = 20
+			}
+			if = {
+				limit = {
+					has_dlc = "Dharma"
+				}
+				2063 = {
+					province_has_center_of_trade_of_level = 2
+				}
+			}
+			else = {
+				2063 = {
+					base_production = 6
+				}
+			}
+			2173 = {
+				development = 15
+			}
+        }
+        effect = {
+			add_years_of_income = 0.5
+			2063 = {
+				add_base_production = 2
+			}
+        }
+    }
 }
 
 vn_bri_missions_slot_1_b = {
@@ -189,51 +254,13 @@ vn_bri_missions_slot_2_a = {
     }
     has_country_shield = yes
 
-    vn_bri_dominant_breton_power = {
-        icon = mission_unite_home_region 	#placeholder 
-        position = 1
-		required_missions = {  }
-		provinces_to_highlight = {
-			region = brittany_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-        trigger = {
-            brittany_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-        }
-        effect = {
-			every_subject_country = {
-				limit = {
-					march_of = ROOT
-					capital_scope = {
-						region = brittany_region
-					}
-				}
-				ROOT = {
-					vassalize = PREV
-				}
-			}
-			brittany_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			add_country_modifier = {
-				name = "bri_dominant_breton_power_mission"
-				duration = 9125
-			}
-        }
-    }
     vn_bri_form_a_court = {
         icon = mission_noble_council
         required_missions = { vn_bri_dominant_breton_power }
+		position = 2
         trigger = {
 			has_3_advisors_trigger = yes
-			legitimacy_equivalent = 100
+			legitimacy = 100
         }
         effect = {
 			change_government_reform_progress = 25
@@ -276,26 +303,24 @@ vn_bri_missions_slot_2_a = {
     }
     vn_bri_breizh_kingdom = {
         icon = mission_unite_home_region 	#placeholder 
-        required_missions = { 
-			vn_bri_three_great_cities 
-			vn_bri_claim_anjou 
-			vn_bri_seize_cotentin 
-		}
+        required_missions = { vn_bri_three_great_cities }
 		provinces_to_highlight = {
-			area = maine_area
+			region = brittany_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-			maine_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			development_in_provinces = {
+				region = brittany_region
+				value = 150
 			}
-			total_development = 100
         }
         effect = {
-			add_adm_power = 50
-			add_dip_power = 50
-			add_mil_power = 50
+			if = {
+				limit = {
+					NOT = { government_rank = 5 }
+				}
+				set_government_rank = 5
+			}
 			change_government_reform_progress = 25
 			ireland_region = {
 				limit = {
@@ -330,13 +355,6 @@ vn_bri_missions_slot_2_a = {
 					}
 					add_permanent_claim = ROOT
 				}
-			}
-			tours_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
 			}
 			108 = {
 				if = {
@@ -450,6 +468,12 @@ vn_bri_missions_slot_2_a = {
         }
         effect = {
 			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { government_rank = 6 }
+				}
+				set_government_rank = 6
+			}
 			add_country_modifier = {
 				name = "bri_celtic_sea_empire_mission"
 				duration = -1
@@ -472,6 +496,45 @@ vn_bri_missions_slot_3_a = {
     }
     has_country_shield = yes
 
+	vn_bri_dominant_breton_power = {
+        icon = mission_unite_home_region 	#placeholder 
+        position = 1
+		required_missions = {  }
+		provinces_to_highlight = {
+			region = brittany_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+            brittany_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			every_subject_country = {
+				limit = {
+					march_of = ROOT
+					capital_scope = {
+						region = brittany_region
+					}
+				}
+				ROOT = {
+					vassalize = PREV
+				}
+			}
+			brittany_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "bri_dominant_breton_power_mission"
+				duration = 9125
+			}
+        }
+    }
     vn_bri_breton_march = {
         icon = mission_european_castle
         position = 2
@@ -536,11 +599,19 @@ vn_bri_missions_slot_3_a = {
 					add_permanent_claim = ROOT
 				}
 			}
+			maine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
         }
     }
     vn_bri_claim_anjou = {
         icon = mission_unite_home_region 	#placeholder 
 		required_missions = { vn_bri_breton_march }
+		position = 4
 		provinces_to_highlight = {
 			OR = {
 				province_id = 2163
@@ -548,6 +619,7 @@ vn_bri_missions_slot_3_a = {
 				province_id = 4496
 				province_id = 4098
 				province_id = 2059
+				area = maine_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -557,10 +629,21 @@ vn_bri_missions_slot_3_a = {
 			4496 = { country_or_non_sovereign_subject_holds = ROOT }
 			4098 = { country_or_non_sovereign_subject_holds = ROOT }
 			2059 = { country_or_non_sovereign_subject_holds = ROOT }
+			maine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
         }
         effect = {
 			add_prestige = 10
 			add_army_tradition = 10
+			tours_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
         }
 	}
 }
@@ -645,7 +728,239 @@ vn_bri_missions_slot_4_a = {
     }
     has_country_shield = yes
 
-    vn_bri_defend_our_independence = {
+	vn_bri_a_decent_navy = {
+        icon = mission_establish_high_seas_navy
+        position = 2
+        required_missions = { vn_bri_dominant_breton_power }
+        trigger = {
+			naval_forcelimit = 15
+			calc_true_if = {
+				num_of_light_ship = 5
+				num_of_heavy_ship = 3
+				num_of_transport = 5
+				num_of_galley = 5
+				amount = 2
+			}
+        }
+        effect = {
+			add_navy_tradition = 15
+			1167 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4494 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1170 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			136 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+        }
+    }
+}
+
+vn_bri_missions_slot_4_b = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = BRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+    vn_bri_military_port_of_brest = {
+        icon = mission_sea_battles
+		required_missions = { vn_bri_a_decent_navy }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 2294
+		}
+        trigger = {
+            2294 = {
+				owned_by = ROOT
+				is_core = ROOT
+				development = 15
+				base_production = 5
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
+        }
+        effect = {
+            add_country_modifier = {
+				name = "bri_military_port_of_brest_mission"
+				duration = -1
+			}
+			2294 = {
+				add_province_modifier = {
+					name = "bri_military_port_of_brest_mission2"
+					duration = -1
+				}
+			}
+        }
+    }
+    vn_bri_brittany_rules_the_waves = {
+        icon = mission_rb_grow_the_channel
+        required_missions = { vn_bri_military_port_of_brest }
+        trigger = {
+            NOT = {
+				any_country = {
+					naval_forcelimit = ROOT
+				}
+			}
+			navy_size_percentage = 0.75
+        }
+        effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = "bri_brittany_rules_the_waves_mission"
+				duration = 9125
+			}
+        }
+	}
+}
+
+vn_bri_missions_slot_4_c = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = BRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+    vn_bri_mann_outpost = {
+        icon = mission_invade_island
+        position = 5
+		required_missions = { vn_bri_breizh_kingdom }
+		provinces_to_highlight = {
+			province_id = 108
+			OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+		}
+        trigger = {
+			108 = {
+				owned_by = ROOT
+				is_core = ROOT
+				has_shipyard_building_trigger = yes
+			}
+        }
+        effect = {
+			add_country_modifier = {
+				name = "bri_mann_outpost_mission"
+				duration = 9125
+			}
+            scotland_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+        }
+    }
+    vn_bri_conquer_scotland = {	
+        icon = mission_rb_rein_in_the_highland_clans
+		required_missions = { vn_bri_mann_outpost }
+		provinces_to_highlight = {
+			region = scotland_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+        trigger = {
+            scotland_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+        effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+			highlands_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+            add_country_modifier = {
+				name = "bri_conquer_scotland_mission"
+				duration = 9125
+			}
+        }
+	}
+}
+
+vn_bri_missions_slot_4_d = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = BRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	vn_bri_vendee_invasion = {
+		icon = mission_cannons_firing
+		required_missions = { vn_bri_alencon_invasion }
+		position = 7
+		provinces_to_highlight = {
+			area = poitou_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			poitou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			add_army_tradition = 10
+		}
+	}
+}
+
+vn_bri_missions_slot_5_a = {
+    slot = 10
+    generic = no
+    ai = yes
+    potential = {
+        tag = BRI
+        NOT = { map_setup = map_setup_random }
+    }
+    has_country_shield = yes
+
+	vn_bri_defend_our_independence = {
         icon = mission_large_army
         position = 1
         required_missions = {  }
@@ -698,349 +1013,32 @@ vn_bri_missions_slot_4_a = {
 			}
         }
 	}
-}
-
-vn_bri_missions_slot_4_b = {
-	slot = 9
-	generic = no
-	ai = yes
-	potential = {
-		tag = BRI
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-
-    vn_bri_military_port_of_brest = {
-        icon = mission_sea_battles
-		required_missions = {  }
+	vn_bri_seize_cotentin = {
+        icon = mission_unite_home_region 	#placeholder 
+		required_missions = { vn_bri_a_decent_navy }
 		position = 3
 		provinces_to_highlight = {
-			province_id = 2294
-		}
-        trigger = {
-            2294 = {
-				owned_by = ROOT
-				is_core = ROOT
-				development = 15
-				base_production = 5
-				has_dock_building_trigger = yes
-				has_shipyard_building_trigger = yes
-			}
-        }
-        effect = {
-            add_country_modifier = {
-				name = "bri_military_port_of_brest_mission"
-				duration = -1
-			}
-			2294 = {
-				add_province_modifier = {
-					name = "bri_military_port_of_brest_mission2"
-					duration = -1
-				}
-			}
-        }
-    }
-    vn_bri_brittany_rules_the_waves = {
-        icon = mission_rb_grow_the_channel
-        required_missions = { vn_bri_military_port_of_brest }
-        trigger = {
-            NOT = {
-				any_country = {
-					naval_forcelimit = ROOT
-				}
-			}
-			navy_size_percentage = 0.75
-        }
-        effect = {
-			add_prestige = 25
-			add_country_modifier = {
-				name = "bri_brittany_rules_the_waves_mission"
-				duration = 9125
-			}
-        }
-	}
-}
-
-vn_bri_missions_slot_4_c = {
-	slot = 9
-	generic = no
-	ai = yes
-	potential = {
-		tag = BRI
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-
-    vn_bri_mann_outpost = {
-        icon = mission_invade_island
-        position = 5
-		required_missions = { vn_bri_breizh_kingdom }
-		provinces_to_highlight = {
-			province_id = 108
 			OR = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
-            }
-		}
-        trigger = {
-			108 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_shipyard_building_trigger = yes
-			}
-        }
-        effect = {
-			add_country_modifier = {
-				name = "bri_mann_outpost_mission"
-				duration = 9125
-			}
-            ayrshire_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			galloway_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-        }
-    }
-    vn_bri_conquer_scotland = {	
-        icon = mission_rb_rein_in_the_highland_clans
-		required_missions = { vn_bri_mann_outpost }
-		provinces_to_highlight = {
-			OR = {
-				region = scotland_region
-				region = highlands_region
+				province_id = 1167
+				province_id = 4494
+				province_id = 1170
+				province_id = 136
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            scotland_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			highlands_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			NOT = {
-				OR = {
-					exists = HSC
-					exists = SCO
-				}
-			}
+			1167 = { country_or_non_sovereign_subject_holds = ROOT }
+			4494 = { country_or_non_sovereign_subject_holds = ROOT }
+			1170 = { country_or_non_sovereign_subject_holds = ROOT }
+			136 = { country_or_non_sovereign_subject_holds = ROOT }
         }
         effect = {
-			add_adm_power = 25
-			add_dip_power = 25
-			add_mil_power = 25
-            add_country_modifier = {
-				name = "bri_conquer_scotland_mission"
+			add_country_modifier = {
+				name = "bri_seize_cotentin_mission"
 				duration = 9125
 			}
-        }
-	}
-}
-
-vn_bri_missions_slot_4_d = {
-	slot = 9
-	generic = no
-	ai = yes
-	potential = {
-		tag = BRI
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-
-	vn_bri_vendee_invasion = {
-		icon = mission_cannons_firing
-		required_missions = { vn_bri_alencon_invasion }
-		position = 7
-		provinces_to_highlight = {
-			area = poitou_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			poitou_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			add_years_of_income = 0.5
-			add_army_tradition = 10
 		}
 	}
-}
-
-vn_bri_missions_slot_5_a = {
-    slot = 10
-    generic = no
-    ai = yes
-    potential = {
-        tag = BRI
-        NOT = { map_setup = map_setup_random }
-    }
-    has_country_shield = yes
-
-    vn_bri_move_capital_to_nantes = {
-        icon = mission_big_city
-        position = 1
-		required_missions = {  }
-		provinces_to_highlight = {
-			province_id = 2173
-		}
-        trigger = {
-			owns_core_province = 2173
-			capital = 2173
-			2173 = {
-				development = 15
-			}
-        }
-        effect = {
-			add_years_of_income = 0.5
-			2173 = {
-				add_base_tax = 1
-				add_base_production = 1
-				add_base_manpower = 1
-			}
-        }
-    }
-    vn_bri_nantes_cathedral = {
-        icon = mission_portico
-		required_missions = { vn_bri_move_capital_to_nantes }
-		provinces_to_highlight = {
-			province_id = 2173
-			OR = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
-            }
-		}
-        trigger = {
-			2173 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_tax_building_trigger = yes
-			}
-			if = {
-				limit = {
-					has_estate = estate_church
-				}
-				estate_loyalty = {
-					estate = estate_church
-					loyalty = 60
-				}
-			}
-        }
-        effect = {
-            add_country_modifier = {
-				name = "bri_nantes_cathedral_mission"
-				duration = 9125
-			}
-        }
-    }
-    vn_bri_kroaz_du = {
-        icon = mission_religious
-        required_missions = { vn_bri_nantes_cathedral }
-        trigger = {
-			religion = catholic
-			papal_influence = 100
-			if = {
-				limit = { exists = PAP }
-				alliance_with = PAP
-				reverse_has_opinion = {
-					who = PAP
-					value = 150
-				}
-			}
-        }
-        effect = {
-            add_country_modifier = {
-				name = "bri_kroaz_du_mission"
-				duration = 9125
-			}
-        }
-	}
-}
-
-vn_bri_missions_slot_5_b = {
-	slot = 10
-	generic = no
-	ai = yes
-	potential = {
-		tag = BRI
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-
-	vn_bri_loire_canals = {
-		icon = mission_seize_north_sea_trade
-		position = 4
-		required_missions = {  }
-		provinces_to_highlight = {
-			OR = {
-				area = nantes_area
-				area = maine_area
-				area = tours_area
-			}
-			OR = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
-            }
-		}
-        trigger = {
-			nantes_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			maine_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			tours_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-            2489 = {
-				trade_share = {
-					country = ROOT
-					share = 50
-				}
-				development = 20
-			}
-			if = {
-				limit = {
-					has_dlc = "Dharma"
-				}
-				2063 = {
-					province_has_center_of_trade_of_level = 2
-				}
-			}
-			else = {
-				2063 = {
-					base_production = 6
-				}
-			}
-			2173 = {
-				development = 15
-			}
-        }
-        effect = {
-			add_years_of_income = 0.5
-			2063 = {
-				add_base_production = 2
-			}
-        }
-    }
 }
 
 vn_bri_missions_slot_5_c = {
@@ -1056,7 +1054,10 @@ vn_bri_missions_slot_5_c = {
     vn_bri_control_loire_river = {
         icon = mission_advance_to_the_dnieper
         position = 5
-		required_missions = { vn_bri_breizh_kingdom }
+		required_missions = { 
+			vn_bri_claim_anjou
+			vn_bri_seize_cotentin
+		}
 		provinces_to_highlight = {
 			area = tours_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -1110,6 +1111,13 @@ vn_bri_missions_slot_5_c = {
 				}
 				add_permanent_claim = ROOT
 			}
+			caux_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
             add_country_modifier = {
 				name = "bri_alencon_invasion_mission"
 				duration = 9125
@@ -1120,11 +1128,18 @@ vn_bri_missions_slot_5_c = {
         icon = mission_unite_home_region 	#placeholder 
 		required_missions = { vn_bri_alencon_invasion }
 		provinces_to_highlight = {
-			area = normandy_area
+			OR = {
+				area = normandy_area
+				area = caux_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
             normandy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			caux_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

@@ -42,7 +42,7 @@ fixed_capital = 1199
 	}
 }
 1095.1.1 = {
-	monarch = {
+	heir = {
 		name = "Gautier"
 		monarch_name = "Gautier II"
 		dynasty = "de Brienne"

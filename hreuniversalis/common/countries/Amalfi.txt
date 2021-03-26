@@ -37,24 +37,23 @@ historical_units = {
 }
 
 monarch_names = {
-	"Ioannes #1" = 40
-	"Sergios #2" = 40
+	"Giovanni #1" = 40
+	"Sergio #2" = 40
 	"Manso #2" = 20
-	"Mastalos #2" = 10
+	"Mastalo #2" = 10
 	"Adelpher #1" = 5
-	"Stephanos #1" = 5
-	"Peter #1" = 5
-	"Mauros #1" = 5
+	"Stefano #1" = 5
+	"Pietro #1" = 5
+	"Mauro #1" = 5
 	"Leo #1" = 5
-	"Marinos #1" = 5
-	"Pulcharios #1" = 5
-	"Sergios #0" = 5
-	"Alphenos #0" = 5
+	"Marino #1" = 5
+	"Pulchario #1" = 5
+	"Alfeno #0" = 5
 	"Androsas #0" = 5
 	"Vitale #0" = 5
-	"Orsos #0" = 5
-	"Tauros #0" = 5
-	"Loupos #0" = 5
+	"Orso #0" = 5
+	"Tauro #0" = 5
+	"Lupo #0" = 5
 	
 	"Maria #0" = -1
 	"Gaitelgrima #0" = -1

@@ -3,15 +3,15 @@ add_government_reform = merchants_reform
 government_rank = 3
 technology_group = western
 religion = catholic
-primary_culture = greek
+primary_culture = neapolitan
 mercantilism = 25
 capital = 2880
 fixed_capital = 2880
 
 1029.1.1 = {
 	monarch = {
-		name = "Ioannes II"
-		dynasty = "Musci"
+		name = "Giovanni II"
+		dynasty = "Musco"
 		adm = 3
 		dip = 1
 		mil = 3
@@ -19,8 +19,8 @@ fixed_capital = 2880
 }
 1069.1.1 = {
 	monarch = {
-		name = "Sergios III"
-		dynasty = "Musci"
+		name = "Sergio III"
+		dynasty = "Musco"
 		adm = 2
 		dip = 2
 		mil = 2
@@ -29,7 +29,7 @@ fixed_capital = 2880
 1073.11.1 = {
 	monarch = {
 		name = "Manso III"
-		dynasty = "Musci"
+		dynasty = "Musco"
 		adm = 1
 		dip = 0
 		mil = 0
@@ -37,11 +37,10 @@ fixed_capital = 2880
 }
 1096.1.1 = {
 	monarch = {
-		name = "Marinos II"
+		name = "Marino II"
 		dynasty = "Sergii"
 		adm = 3
 		dip = 4
 		mil = 4
 	}
 }
-1101.1.1 = { primary_culture = neapolitan }

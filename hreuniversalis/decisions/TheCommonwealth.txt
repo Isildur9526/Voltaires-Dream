@@ -54,6 +54,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PLC
+			hidden_effect = { restore_country_name = yes }
 			inherit = LIT
 			swap_non_generic_missions = yes
 			if = {
@@ -168,6 +169,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PLC
+			hidden_effect = { restore_country_name = yes }
 			inherit = POL
 			swap_non_generic_missions = yes
 			if = {
@@ -291,6 +293,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PLC
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {

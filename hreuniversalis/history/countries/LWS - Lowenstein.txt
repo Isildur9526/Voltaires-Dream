@@ -58,7 +58,7 @@ capital = 125
 1281.8.15 = {
 	monarch = {
 		name = "Albrecht I"
-		dynasty = "von Löwenstein"
+		dynasty = "von Habsburg"
 		dip = 3
 		adm = 2
 		mil = 4
@@ -67,34 +67,35 @@ capital = 125
 1304.6.11 = {
 	monarch = {
 		name = "Nikolaus I"
-		dynasty = "von Löwenstein"
+		dynasty = "von Habsburg"
 		dip = 2
 		adm = 2
 		mil = 2
 	}
 }
-1345.1.1 = {
+1340.3.13 = {
 	monarch = {
 		name = "Albrecht II"
-		dynasty = "von Löwenstein"
+		dynasty = "von Habsburg"
 		dip = 3
 		adm = 2
 		mil = 2
 	}
 }
-1382.1.1 = {
+1382.5.20 = {
 	monarch = {
-		name = "Heinrich I"
-		dynasty = "von Löwenstein"
+		name = "Albrecht III"
+		dynasty = "von Habsburg"
 		dip = 2
 		adm = 2
 		mil = 2
 	}
 }
-1410.1.1 = {
+1388.8.30 = {
 	monarch = {
-		name = "Heinrich II"
-		dynasty = "von Löwenstein"
+		name = "Heinrich I"
+		dynasty = "von Habsburg"
+		birth_date = 1375.1.1
 		dip = 1
 		adm = 1
 		mil = 2
@@ -104,7 +105,7 @@ capital = 125
 1488.1.1 = {
 	monarch = {
 		name = "Ludwig I"
-		dynasty = "von Löwenstein"
+		dynasty = "von Wittelsbach"
 		birth_date = 1463.9.29
 		dip = 3
 		adm = 1

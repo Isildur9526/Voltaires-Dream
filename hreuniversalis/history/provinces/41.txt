@@ -17,7 +17,7 @@ add_core = PAL
 	add_core = NNH
 	remove_core = PAL
 }
-1546.1.1 = {
+1545.1.1 = {
 	owner = KOL
 	controller = KOL
 	add_core = KOL

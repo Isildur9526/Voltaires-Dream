@@ -555,7 +555,7 @@ add_army_professionalism = 0.05
 		mil = 2
 	}
 }
-1833.10.125 = {
+1833.10.25 = {
 	heir = {
 		name = "Mohammad"
 		monarch_name = "Mohammad"

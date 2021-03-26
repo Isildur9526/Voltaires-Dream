@@ -16,6 +16,9 @@ add_core = VLH
 	controller = WAL
 	add_core = WAL
 	remove_core = VLH
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1593.1.1 = { unrest = 7 }
 1595.1.1 = { unrest = 0  }

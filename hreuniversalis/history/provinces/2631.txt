@@ -19,6 +19,9 @@ add_core = LZZ
 	religion = catholic
 	culture = central_margravian
 	hre = yes
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1524.1.1 = { religion = protestant }
 1680.6.4 = {

@@ -63,7 +63,10 @@ country_event = {
 		every_province = {
 			limit = {
 				is_part_of_hre = yes
-				superregion = italy_superregion
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
 				owner = {
 					is_part_of_hre = no
 				}
@@ -98,7 +101,12 @@ country_event = {
 						overlord = {
 							NOT = {
 								is_part_of_hre = yes
-								capital_scope = { superregion = italy_superregion }
+								capital_scope = {
+									OR = {
+										superregion = italy_superregion
+										superregion = sicily_superregion
+									}
+								}
 							}
 						}
 					}
@@ -120,7 +128,12 @@ country_event = {
 							overlord = { # overlord chooses for their vassals if eligible to leave themselves
 								NOT = {
 									is_part_of_hre = yes
-									capital_scope = { superregion = italy_superregion }
+									capital_scope = { 
+										OR = {
+											superregion = italy_superregion
+											superregion = sicily_superregion 
+										}
+									}
 								}
 							}
 						}
@@ -167,7 +180,12 @@ country_event = {
 						overlord = { # overlord chooses for their vassals if eligible to leave themselves
 							NOT = {
 								is_part_of_hre = yes
-								capital_scope = { superregion = italy_superregion }
+								capital_scope = { 
+									OR = {
+										superregion = italy_superregion
+										superregion = sicily_superregion 
+									}
+								}
 							}
 						}
 					}
@@ -186,7 +204,12 @@ country_event = {
 							overlord = { # overlord chooses for their vassals if eligible to leave themselves
 								NOT = {
 									is_part_of_hre = yes
-									capital_scope = { superregion = italy_superregion }
+									capital_scope = { 
+										OR = {
+											superregion = italy_superregion
+											superregion = sicily_superregion 
+										}
+									}
 								}
 							}
 						}
@@ -206,7 +229,12 @@ country_event = {
 						overlord = { # overlord chooses for their vassals if eligible to leave themselves
 							NOT = {
 								is_part_of_hre = yes
-								capital_scope = { superregion = italy_superregion }
+								capital_scope = { 
+									OR = {
+										superregion = italy_superregion
+										superregion = sicily_superregion 
+									}
+								}
 							}
 						}
 					}
@@ -225,7 +253,12 @@ country_event = {
 						overlord = { # overlord chooses for their vassals if eligible to leave themselves
 							NOT = {
 								is_part_of_hre = yes
-								capital_scope = { superregion = italy_superregion }
+								capital_scope = { 
+									OR = {
+										superregion = italy_superregion
+										superregion = sicily_superregion 
+									}
+								}
 							}
 						}
 					}
@@ -237,7 +270,10 @@ country_event = {
 		every_province = {
 			limit = {
 				is_part_of_hre = yes
-				superregion = italy_superregion
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion 
+				}
 				owner = { is_part_of_hre = no }
 			}
 			set_in_empire = no
@@ -256,7 +292,12 @@ country_event = {
 							overlord = { # overlord chooses for their vassals if eligible to leave themselves
 								NOT = {
 									is_part_of_hre = yes
-									capital_scope = { superregion = italy_superregion }
+									capital_scope = { 
+										OR = {
+											superregion = italy_superregion
+											superregion = sicily_superregion 
+										}
+									}
 								}
 							}
 						}
@@ -344,7 +385,10 @@ country_event = {
 				any_country = {
 					is_subject_of = ROOT
 					capital_scope = {
-						superregion = italy_superregion
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion 
+						}
 					}
 					is_part_of_hre = yes
 				}
@@ -352,7 +396,10 @@ country_event = {
 			every_subject_country = {
 				limit = {
 					capital_scope = {
-						superregion = italy_superregion
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion 
+						}
 					}
 					is_part_of_hre = yes
 				}
@@ -424,7 +471,12 @@ country_event = {
 							overlord = { # overlord chooses for their vassals if eligible to leave themselves
 								NOT = {
 									is_part_of_hre = yes
-									capital_scope = { superregion = italy_superregion }
+									capital_scope = { 
+										OR = {
+											superregion = italy_superregion
+											superregion = sicily_superregion 
+										} 
+									}
 								}
 							}
 						}
@@ -436,7 +488,10 @@ country_event = {
 		every_province = {
 			limit = {
 				is_part_of_hre = yes
-				superregion = italy_superregion
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion 
+				}
 				owner = {
 					is_part_of_hre = no
 				}

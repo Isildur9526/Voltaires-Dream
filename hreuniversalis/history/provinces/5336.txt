@@ -1,5 +1,5 @@
 capital = "Sthlanitza"
-culture = greek
+culture = bulgarian
 religion = orthodox
 trade_goods = rice
 base_tax = 1

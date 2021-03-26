@@ -146,7 +146,6 @@ change_estate_land_share = {
 		dynasty = "Hardrådeætta"
 		birth_date = 1046.1.1
 		death_date = 1120.1.1
-		culture = danish
 		female = yes
 		adm = 2
 		dip = 2

@@ -1060,7 +1060,16 @@ vn_cmn_missions_slot_5 = {
         position = 1
         required_missions = {  }
         trigger = {
-            legitimacy_equivalent = 90
+			if = {
+				limit = {
+					has_dlc = "The Cossacks"
+					has_reform = steppe_horde
+				}
+				horde_unity = 90
+			}
+			else = {
+				legitimacy = 90
+			}
             is_monarch_leader = yes
             calc_true_if = {
                 amount = 2

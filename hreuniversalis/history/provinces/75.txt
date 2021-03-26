@@ -11,10 +11,16 @@ owner = HWN
 controller = HWN
 add_core = HWN
 
-1639.1.1 = {
+1414.1.1 = {
+	owner = BDF
+	controller = BDF
+	add_core = BDF
+}
+1631.1.1 = {
 	owner = FNB
 	controller = FNB
 	add_core = FNB
+	remove_core = BDF
 }
 1803.2.25 = {
 	owner = WUR

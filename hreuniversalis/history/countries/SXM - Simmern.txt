@@ -71,29 +71,8 @@ capital = 2752
 	}
 }
 1359.1.1 = { government_rank = 1 } #done
-1410.5.18 = {
-	monarch = {
-		name = "Stefan I"
-		dynasty = "von Wittelsbach"
-		birth_date = 1385.6.23
-		dip = 2
-		mil = 2
-		adm = 2
-	}
-}
-1417.11.19 = {
-	heir = {
-		name = "Friedrich"
-		monarch_name = "Friedrich I"
-		dynasty = "von Wittelsbach"
-		birth_date = 1417.11.19
-		death_date = 1480.11.29
-		claim = 95
-		dip = 3
-		mil = 3
-		adm = 3
-	}
-}
+
+#Pfalz-Simmern
 1444.1.1 = {
 	monarch = {
 		name = "Friedrich I"

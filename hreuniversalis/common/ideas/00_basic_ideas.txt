@@ -61,11 +61,11 @@ cultural_ideas = {
 		transport_power = 0.1
 	}
 	cul_i6 = {
-		republican_tradition = 0.5
-		legitimacy = 0.5
-		devotion = 0.25
-		horde_unity = 0.25
-		meritocracy = 0.1
+		republican_tradition = 0.3
+		legitimacy = 1
+		devotion = 0.5
+		horde_unity = 1
+		meritocracy = 0.5
 	}
 	cul_i7 = {
 		tolerance_own = 1

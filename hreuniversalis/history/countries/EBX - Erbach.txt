@@ -109,7 +109,21 @@ capital = 281
 	monarch = {
 		name = "Philipp I"
 		dynasty = "von Erbach"
+		birth_date = 1386.1.1
 		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1435.1.1 = {
+	heir = {
+		name = "Georg"
+		monarch_name = "Georg I"
+		dynasty = "von Erbach"
+		birth_date = 1435.1.1
+		death_date = 1481.3.17
+		claim = 95
+		adm = 2
 		dip = 2
 		mil = 2
 	}
@@ -118,6 +132,7 @@ capital = 281
 	monarch = {
 		name = "Georg I"
 		dynasty = "von Erbach"
+		birth_date = 1435.1.1
 		adm = 2
 		dip = 2
 		mil = 2

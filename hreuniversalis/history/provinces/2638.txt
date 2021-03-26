@@ -21,6 +21,8 @@ discovered_by = muslim
 	add_core = LAU
 	religion = catholic
 	hre = yes
+	#1-1-1
+	base_manpower = 1
 }
 1167.1.1 = {
 	owner = SWX

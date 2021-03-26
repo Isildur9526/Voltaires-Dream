@@ -57,6 +57,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = GBR
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -174,6 +175,7 @@ country_decisions = {
 				inherit = ENG
 			}
 			change_tag = GBR
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {

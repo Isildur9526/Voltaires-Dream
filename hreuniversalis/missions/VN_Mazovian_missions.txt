@@ -787,7 +787,7 @@ VN_mazovian_missions_slot_5 = {
 		icon = mission_noble_council
 		required_missions = { vn_maz_stable_government }
 		trigger = {
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			if = {
 				limit = { has_estate = estate_nobles }
 				NOT = {

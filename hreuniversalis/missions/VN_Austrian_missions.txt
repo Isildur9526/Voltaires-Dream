@@ -42,7 +42,7 @@ vn_hab_missions_slot_1 = {
 		icon = the_spanish_succession
         required_missions = { vn_hab_overcome_bruderzwist }
 		trigger = {
-            legitimacy_equivalent = 95
+            legitimacy = 95
             monthly_dip = 10
 			total_development = 200
             is_at_war = no
@@ -115,6 +115,27 @@ vn_hab_missions_slot_1 = {
                 add_permanent_claim = ROOT
             }
 			sundgau_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            hagenau_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            nordgau_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            strassburg_area = {
                 limit = {
                     NOT = { is_core = ROOT }
                     NOT = { is_permanent_claim = ROOT }
@@ -615,6 +636,34 @@ vn_hab_missions_slot_2 = {
                 }
                 add_permanent_claim = ROOT
             }
+            croatia_region = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            senj_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            dalmatia_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            split_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
             add_country_modifier = {
                 name = hab_conquer_hungary_mission
                 duration = 9125
@@ -660,13 +709,7 @@ vn_hab_missions_slot_2 = {
             }
 		}
         effect = {
-            wallachia_region = {
-                limit = {
-                    NOT = { is_core = ROOT }
-                    NOT = { is_permanent_claim = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
+            add_prestige = 10
             wallachia_region = {
                 limit = { country_or_non_sovereign_subject_holds = ROOT }
                 add_devastation = -10
@@ -1538,19 +1581,19 @@ vn_hab_missions_slot_4 = {
 		trigger = {
 			antwerp_area = {
                 type = all
-                country_or_non_sovereign_subject_holds = yes
+                country_or_non_sovereign_subject_holds = ROOT
                 is_state = yes
                 consolidated_region_trigger = yes
             }
             brabant_area = {
                 type = all
-                country_or_non_sovereign_subject_holds = yes
+                country_or_non_sovereign_subject_holds = ROOT
                 is_state = yes
                 consolidated_region_trigger = yes
             }
             luxemburg_area = {
                 type = all
-                country_or_non_sovereign_subject_holds = yes
+                country_or_non_sovereign_subject_holds = ROOT
                 is_state = yes
                 consolidated_region_trigger = yes
             }

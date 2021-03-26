@@ -26,6 +26,9 @@ add_core = ROI
 	controller = MOL
 	add_core = MOL
 	remove_core = ROI
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1550.1.1 = { trade_goods = corn }
 1653.1.1 = { revolt = { type = noble_rebels size = 0 } controller = REB }

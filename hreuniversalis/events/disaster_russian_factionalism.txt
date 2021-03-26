@@ -1,0 +1,1129 @@
+namespace = russian_factionalism
+
+########################################
+# Factionalism of the Rus
+########################################
+
+#Start
+country_event = {
+    id = russian_factionalism.1
+    title = russian_factionalism.1.t
+	desc = {
+		trigger = { has_country_flag = disable_rota_flag }
+		desc = russian_factionalism.1.d
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = disable_rota_flag }  }
+		desc = russian_factionalism.1.d2
+	}
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = COUNTRY_COLLAPSE_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = OPRICHINA_eventPicture
+	}
+
+	is_triggered_only = yes
+	major = yes
+
+    mean_time_to_happen = {
+        days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_russian_factionalism
+			fragment_russia_effect = yes
+			if = {
+				limit = {
+					has_dlc = "Third Rome"
+					has_government_mechanic = russian_mechanic
+				}
+				add_government_power = {
+					government_mechanic = russian_mechanic
+					which = ADM
+					amount = -150
+				}
+				add_government_power = {
+					government_mechanic = russian_mechanic
+					which = DIP
+					amount = -150
+				}
+				add_government_power = {
+					government_mechanic = russian_mechanic
+					which = MIL
+					amount = -150
+				}
+			}
+			random_owned_province = {
+				limit = {
+					can_spawn_rebels = nationalist_rebels
+				}
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					can_spawn_rebels = nationalist_rebels
+				}
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					can_spawn_rebels = nationalist_rebels
+				}
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					can_spawn_rebels = nationalist_rebels
+				}
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					can_spawn_rebels = nationalist_rebels
+				}
+				random_list = {
+					66 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 2
+						}
+					}
+					33 = {
+						spawn_rebels = {
+							type = nationalist_rebels
+							size = 3
+						}
+					}
+				}
+			}
+			every_subject_country = {
+				limit = { historical_friend_with = ROOT }
+				remove_historical_friend = ROOT
+				ROOT = {
+					remove_historical_friend = PREV
+				}
+			}
+			if = {
+				limit = { has_country_modifier = yaroslavichi_triumvirate }
+				remove_country_modifier = yaroslavichi_triumvirate
+			}
+		}
+	}
+
+    option = {
+		name = russian_factionalism.1.a
+		add_stability = -3
+		add_mandate = -35
+		add_meritocracy = -35
+    }
+}
+
+#Rebels
+country_event = {
+	id = russian_factionalism.2
+	title = "russian_factionalism.2.t"
+	desc = "russian_factionalism.2.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = ANGRY_MOB_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MARCHING_PEASANTS_eventPicture
+	}
+	goto = kiev_reb_prov
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			is_state = yes
+			NOT = { local_autonomy = 75 }
+			culture_group = east_slavic
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					NOT = { local_autonomy = 75 }
+					culture_group = east_slavic
+					can_spawn_rebels = nationalist_rebels
+				}
+				save_event_target_as = kiev_reb_prov
+				random_list = {
+					66 = {
+						set_province_flag = rus_small_revolt
+					}
+					33 = {
+						set_province_flag = rus_big_revolt
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.2.a
+		ai_chance = { factor = 1 }
+		add_mandate = 5
+		event_target:kiev_reb_prov = {
+			if = {
+				limit = {
+					has_province_flag = rus_small_revolt
+				}
+				spawn_rebels = {
+					size = 2
+					type = nationalist_rebels
+				}
+				clr_province_flag = rus_small_revolt
+			}
+			if = {
+				limit = {
+					has_province_flag = rus_big_revolt
+				}
+				spawn_rebels = {
+					size = 3
+					type = nationalist_rebels
+				}
+				clr_province_flag = rus_big_revolt
+			}
+		}
+	}
+	option = {
+		name = russian_factionalism.2.b
+		ai_chance = { factor = 0 }
+		add_mandate = -5
+		event_target:kiev_reb_prov = {
+			clr_province_flag = rus_small_revolt
+			clr_province_flag = rus_big_revolt
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = 50
+			}
+		}
+	}
+}
+
+#Abandon Tmutarakan?
+country_event = {
+	id = russian_factionalism.3
+	title = "russian_factionalism.3.t"
+	desc = "russian_factionalism.3.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = MERCHANTS_TALKING_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MERCHANTS_IN_SIBERIA_eventPicture
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		TMT = {
+			exists = yes
+			ai = yes
+			is_subject_of = ROOT
+			is_subject_of_type = tributary_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			TMT = {
+				grant_independence = yes
+			}
+			add_truce_with = TMT
+			TMT = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = russian_factionalism.3.a
+		add_mandate = -10
+		tooltip = {
+			TMT = {
+				grant_independence = yes
+			}
+		}
+		reverse_add_opinion = {
+			who = TMT
+			modifier = tributary_state_broke_free
+		}
+		add_opinion = {
+			who = TMT
+			modifier = tributary_state_broke_free
+		}
+	}
+	option = {
+		name = russian_factionalism.3.b
+		add_mandate = 10
+		TMT = { set_country_flag = allow_quick_tributary_cb }
+		declare_war_with_cb = {
+			casus_belli = cb_force_tributary
+			who = TMT
+		}
+		TMT = { clr_country_flag = allow_quick_tributary_cb }
+	}
+}
+
+#Abandon Volyn?
+country_event = {
+	id = russian_factionalism.4
+	title = "russian_factionalism.4.t"
+	desc = "russian_factionalism.4.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = PRINCE_AND_BOYARS_eventPicture
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		VHN = {
+			exists = yes
+			ai = yes
+			is_subject_of = ROOT
+			is_subject_of_type = tributary_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			VHN = { grant_independence = yes }
+			every_subject_country = {
+				limit = {
+					NOT = { tag = VHN }
+					is_subject_of_type = tributary_state
+					primary_culture = volhynian
+				}
+				grant_independence = yes
+				VHN = {
+					vassalize = PREV
+				}
+				ROOT = { add_truce_with = PREV }
+			}
+		}
+	}
+
+	option = {
+		name = russian_factionalism.4.a
+		add_mandate = -10
+		tooltip = {
+			TMT = {
+				grant_independence = VHN
+			}
+		}
+		if = {
+			limit = { exists = PLC }
+			PLC = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = POL }
+			POL = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = KRA }
+			KRA = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = MAZ }
+			MAZ = {
+				create_guarantee = VHN
+				add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+				reverse_add_opinion = {
+					who = VHN
+					modifier = opinion_good_relations
+				}
+			}
+		}
+		hidden_effect = {
+			add_truce_with = VHN
+			VHN = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+			reverse_add_opinion = {
+				who = VNH
+				modifier = tributary_state_broke_free
+			}
+			add_opinion = {
+				who = VNH
+				modifier = tributary_state_broke_free
+			}
+		}
+	}
+	option = {
+		name = russian_factionalism.4.b
+		add_mandate = 10
+		VHN = { set_country_flag = allow_quick_tributary_cb }
+		declare_war_with_cb = {
+			casus_belli = cb_force_tributary
+			who = VHN
+		}
+		VHN = { clr_country_flag = allow_quick_tributary_cb }
+	}
+}
+
+#Abandon Vladimir?
+country_event = {
+	id = russian_factionalism.5
+	title = "russian_factionalism.5.t"
+	desc = "russian_factionalism.5.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = DIPLOMACY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = STRELTSY_MARCHING_eventPicture
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		VDR = {
+			exists = yes
+			ai = yes
+			is_subject_of = ROOT
+			is_subject_of_type = tributary_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			VDR = {
+				set_country_flag = broke_from_kievan_rus
+				add_stability = 3
+				add_war_exhaustion = -10
+				grant_independence = yes
+				every_enemy_country = {
+					white_peace = VDR
+				}
+				define_ruler = {
+					dynasty = "Rurikovich"
+					adm = 4
+					dip = 4
+					mil = 4
+				}
+				define_ruler_to_general = {
+					fire = 5
+					shock = 5
+					manuever = 4
+					siege = 3
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				add_yearly_manpower = 10
+				add_years_of_income = 10
+			}
+			every_subject_country = {
+				limit = {
+					NOT = { tag = VDR }
+					is_subject_of_type = tributary_state
+					primary_culture = russian
+				}
+				grant_independence = yes
+				VDR = {
+					vassalize = PREV
+				}
+				ROOT = { add_truce_with = PREV }
+			}
+		}
+	}
+
+	option = {
+		name = russian_factionalism.5.a
+		add_mandate = -10
+		tooltip = {
+			VDR = { grant_independence = yes }
+		}
+		add_stability = -1
+		reverse_add_opinion = {
+			who = VDR
+			modifier = tributary_state_broke_free
+		}
+		add_opinion = {
+			who = VDR
+			modifier = tributary_state_broke_free
+		}
+	}
+	option = {
+		name = russian_factionalism.5.b
+		add_mandate = 10
+		VDR = {
+			declare_war_with_cb = {
+				casus_belli = cb_take_mandate
+				who = ROOT
+			}
+		}
+	}
+}
+
+#Abandon Chernigov & Pereyslav?
+country_event = {
+	id = russian_factionalism.6
+	title = "russian_factionalism.6.t"
+	desc = "russian_factionalism.6.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = ENTERING_MOSCOW_eventPicture
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		OR = {
+			CHR = {
+				exists = yes
+				ai = yes
+				is_subject_of = ROOT
+				is_subject_of_type = tributary_state
+			}
+			PLL = {
+				exists = yes
+				ai = yes
+				is_subject_of = ROOT
+				is_subject_of_type = tributary_state
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					CHR = {
+						exists = yes
+						ai = yes
+						is_subject_of = ROOT
+						is_subject_of_type = tributary_state
+					}
+				}
+				every_subject_country = {
+					limit = {
+						NOT = { tag = CHR }
+						NOT = { tag = PLL }
+						NOT = { tag = TMT }
+						is_subject_of_type = tributary_state
+						primary_culture = severian
+					}
+					grant_independence = yes
+					CHR = {
+						vassalize = PREV
+					}
+					ROOT = { add_truce_with = PREV }
+				}
+			}
+			else_if = {
+				limit = {
+					PLL = {
+						exists = yes
+						ai = yes
+						is_subject_of = ROOT
+						is_subject_of_type = tributary_state
+					}
+				}
+				every_subject_country = {
+					limit = {
+						NOT = { tag = CHR }
+						NOT = { tag = PLL }
+						NOT = { tag = TMT }
+						is_subject_of_type = tributary_state
+						primary_culture = severian
+					}
+					grant_independence = yes
+					PLL = {
+						vassalize = PREV
+					}
+					ROOT = { add_truce_with = PREV }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = russian_factionalism.6.a
+		add_mandate = -5
+		add_meritocracy = -10
+		if = {
+			limit = {
+				CHR = {
+					exists = yes
+					ai = yes
+					is_subject_of = ROOT
+					is_subject_of_type = tributary_state
+				}
+			}
+			CHR = { grant_independence = yes }
+			hidden_effect = {
+				add_truce_with = CHR
+				CHR = {
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.8
+							cavalry = 0.2
+						}
+					}
+				}
+				reverse_add_opinion = {
+					who = CHR
+					modifier = tributary_state_broke_free
+				}
+				add_opinion = {
+					who = CHR
+					modifier = tributary_state_broke_free
+				}
+			}
+		}
+		if = {
+			limit = {
+				PLL = {
+					exists = yes
+					ai = yes
+					is_subject_of = ROOT
+					is_subject_of_type = tributary_state
+				}
+			}
+			PLL = { grant_independence = yes }
+			hidden_effect = {
+				add_truce_with = PLL
+				PLL = {
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.8
+							cavalry = 0.2
+						}
+					}
+				}
+				reverse_add_opinion = {
+					who = PLL
+					modifier = tributary_state_broke_free
+				}
+				add_opinion = {
+					who = PLL
+					modifier = tributary_state_broke_free
+				}
+			}
+		}
+	}
+	option = {
+		name = russian_factionalism.6.b
+		add_mandate = 15
+		if = {
+			limit = {
+				CHR = {
+					exists = yes
+					ai = yes
+					is_subject_of = ROOT
+					is_subject_of_type = tributary_state
+				}
+			}
+			CHR = { grant_independence = yes }
+			CHR = { set_country_flag = allow_quick_tributary_cb }
+			declare_war_with_cb = {
+				casus_belli = cb_force_tributary
+				who = CHR
+			}
+			CHR = { clr_country_flag = allow_quick_tributary_cb }
+		}
+		if = {
+			limit = {
+				PLL = {
+					exists = yes
+					ai = yes
+					is_subject_of = ROOT
+					is_subject_of_type = tributary_state
+				}
+			}
+			PLL = { grant_independence = yes }
+			PLL = { set_country_flag = allow_quick_tributary_cb }
+			declare_war_with_cb = {
+				casus_belli = cb_force_tributary
+				who = PLL
+			}
+			PLL = { clr_country_flag = allow_quick_tributary_cb }
+		}
+	}
+}
+
+#Abandon Novgorod?
+country_event = {
+	id = russian_factionalism.7
+	title = "russian_factionalism.7.t"
+	desc = "russian_factionalism.7.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = HARBOUR_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = KREMLIN_eventPicture
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		NOV = {
+			exists = yes
+			ai = yes
+			is_subject_of = ROOT
+			is_subject_of_type = tributary_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			NOV = { grant_independence = yes }
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.7.a
+		add_mandate = -10
+		tooltip = {
+			NOV = { grant_independence = yes }
+		}
+		hidden_effect = {
+			add_truce_with = NOV
+			NOV = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+			reverse_add_opinion = {
+				who = NOV
+				modifier = tributary_state_broke_free
+			}
+			add_opinion = {
+				who = NOV
+				modifier = tributary_state_broke_free
+			}
+		}
+	}
+	option = {
+		name = russian_factionalism.7.b
+		add_mandate = 10
+		declare_war_with_cb = {
+			casus_belli = cb_force_tributary
+			who = NOV
+		}
+	}
+}
+
+#Random Appanage gets liberty desire
+country_event = {
+	id = russian_factionalism.8
+	title = "russian_factionalism.8.t"
+	desc = "russian_factionalism.8.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = FAMINE_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = TR_FAMINE_eventPicture
+	}
+	
+	is_triggered_only = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		is_emperor_of_china = yes
+		any_subject_country = {
+			is_subject_of_type = tributary_state
+			ai = yes
+			NOT = {
+				tag = TMT
+				tag = VHN
+				tag = VDR
+				tag = CHR
+				tag = PLL
+				tag = NOV
+			}
+			NOT = { has_country_flag = had_increased_liberty_desire }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = {
+					is_subject_of_type = tributary_state
+					ai = yes
+					NOT = {
+						tag = TMT
+						tag = VHN
+						tag = VDR
+						tag = CHR
+						tag = PLL
+						tag = NOV
+					}
+					NOT = { has_country_flag = had_increased_liberty_desire }
+				}
+				save_event_target_as = rand_appa
+				set_country_flag = had_increased_liberty_desire
+			}
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.8.a
+		add_mandate = -5
+		event_target:rand_appa = {
+			add_liberty_desire = 25
+		}
+	}
+	option = {
+		name = russian_factionalism.8.b
+		add_mandate = 5
+		add_years_of_income = -0.25
+	}
+}
+
+#Random tag gets more cores
+country_event = {
+	id = russian_factionalism.9
+	title = "russian_factionalism.9.t"
+	desc = "russian_factionalism.9.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = LAND_MILITARY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MARCHING_PEASANTS_eventPicture
+	}
+	goto = rus_mag_prov
+
+	is_triggered_only = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		OR = {
+			any_owned_province = {
+				any_core_country = {
+					exists = no
+					culture_group = east_slavic
+				}
+			}
+			any_subject_country = {
+				any_owned_province = {
+					any_core_country = {
+						exists = no
+						culture_group = east_slavic
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					country_or_vassal_holds = ROOT
+					any_core_country = {
+						exists = no
+						culture_group = east_slavic
+					}
+				}
+				save_event_target_as = rus_mag_prov
+				random_core_country = {
+					save_event_target_as = rus_mag_tag
+				}
+			}
+			event_target:rus_mag_tag = {
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						set_province_flag = get_russian_core_flag
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+				random_core_province = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { is_core = event_target:rus_mag_tag }
+							culture_group = east_slavic
+						}
+						random = {
+							chance = 50
+							set_province_flag = get_russian_core_flag
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = russian_factionalism.9.a
+		every_province = {
+			limit = { has_province_flag = get_russian_core_flag }
+			clr_province_flag = get_russian_core_flag
+			add_core = event_target:rus_mag_tag
+			add_nationalism = 10
+		}
+	}
+}
+
+#Unwilling to Fight
+country_event = {
+	id = russian_factionalism.10
+	title = "russian_factionalism.10.t"
+	desc = "russian_factionalism.10.d"
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = MILITARY_CAMP_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = STRELTSY_MARCHING_eventPicture
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = russian_factionalism.10.a
+		add_disaster_modifier = {
+			name = aan_conquer_avaria_mission
+			duration = 1825
+			disaster = russian_factionalism
+		}
+	}
+	option = {
+		name = russian_factionalism.10.b
+		add_army_professionalism = -0.1
+		add_army_tradition = -25
+	}
+}
+
+#End
+country_event = {
+    id = russian_factionalism.100
+    title = russian_factionalism.100.t
+	desc = {
+		trigger = { is_emperor_of_china = no }
+		desc = russian_factionalism.100.d
+	}
+	desc = {
+		trigger = { is_emperor_of_china = yes }
+		desc = russian_factionalism.100.d2
+	}
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = CIVIL_WAR_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = STRELTSY_MARCHING_eventPicture
+	}
+	
+	is_triggered_only = yes
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = { has_country_flag = had_increased_liberty_desire }
+				clr_country_flag = had_increased_liberty_desire			
+			}
+			if = {
+				limit = { is_emperor_of_china = no }
+				random_country = {
+					limit = { is_emperor_of_china = yes }
+					save_event_target_as = new_russian_grand_prince
+				}
+			}
+		}
+	}
+
+	option = {
+		name = russian_factionalism.100.a
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = 20
+			add_meritocracy = 20
+		}
+		else = {
+			add_stability_or_adm_power = yes
+			add_legitimacy = 10
+		}
+	}
+}

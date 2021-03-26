@@ -1253,7 +1253,7 @@ vn_por_missions_slot_4_c = {
 			add_years_of_income = 0.5
             define_advisor = {
                 type = artist
-                culture = portuguese
+                culture = portugese
                 skill = 3
                 cost_multiplier = 0.25
             }
@@ -1427,7 +1427,7 @@ vn_por_missions_slot_5_a = {
             beiras_region = {
                 limit = {
                     owned_by = ROOT
-                    NOT = { culture = portuguese }
+                    NOT = { culture = portugese }
                 }
                 add_province_modifier = {
                     name = "por_kingdom_of_portugal_mission2"
@@ -1437,7 +1437,7 @@ vn_por_missions_slot_5_a = {
             alentejo_region = {
                 limit = {
                     owned_by = ROOT
-                    NOT = { culture = portuguese }
+                    NOT = { culture = portugese }
                 }
                 add_province_modifier = {
                     name = "por_kingdom_of_portugal_mission2"

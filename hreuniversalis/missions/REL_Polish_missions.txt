@@ -22,7 +22,7 @@ VN_polish_missions = {
         position = 5
 		trigger = {
 			stability = 2
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			if = {
 				limit = { government = monarchy }
 				num_of_royal_marriages = 3

@@ -52,7 +52,6 @@ monarch_names = {
 	"Karl Friedrich #0" = 10
 	"Philipp #0" = 5
 	"Engelbert #0" = 5
-	"Philipp #0" = 5
 	"Albrecht #0" = 0
 	"Barnabas #0" = 0
 	"Burkhard #0" = 0

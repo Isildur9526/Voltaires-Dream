@@ -308,7 +308,7 @@ vn_dan_nor_missions_slot_2_a = {
         effect = {
 			add_army_tradition = 5
 			create_general = {
-				culture = frisian
+				culture = east_frisian
 				tradition = 75
 			}
         }
@@ -1058,13 +1058,13 @@ vn_dan_nor_missions_slot_3_c = {
 			prestige = 50
 			army_size_percentage = 0.6
 			navy_size_percentage = 0.6
-			legitimacy_equivalent = 95
+			legitimacy = 95
         }
         effect = {
             add_adm_power = 75
             add_dip_power = 75
             add_mil_power = 75
-            add_prestige = 25
+            add_prestige = 20
             add_legitimacy = 20
             if = {
 				limit = {

@@ -2,7 +2,7 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = WTH
-culture = greek
+culture = aromanian
 religion = orthodox
 hre = no
 base_tax = 2
@@ -62,6 +62,7 @@ discovered_by = north_american
 	controller = WTH
 	remove_core = SER
 }
+1373.1.1 = { culture = greek }
 1393.1.1 = {
 	owner = TUR
 	controller = TUR

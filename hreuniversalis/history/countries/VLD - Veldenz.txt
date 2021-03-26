@@ -129,9 +129,20 @@ capital = 114
 	}
 }
 #1444 done
-1544.1.1 = { religion = protestant }
-1563.1.1 = {
-	capital = 294
+
+#Pfalz-Veldenz
+1514.10.21 = {
+	monarch = {
+		name = "Ruprecht I"
+		dynasty = "von Wittelsbach"
+		birth_date = 1506.1.1
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1529.1.1 = { religion = protestant }
+1544.7.28 = {
 	monarch = {
 		name = "Georg Johann"
 		dynasty = "von Wittelsbach"
@@ -141,6 +152,7 @@ capital = 114
 		mil = 2
 	}
 }
+1563.1.1 = { capital = 294 }
 1564.2.6 = {
 	heir = {
 		name = "Georg Gustav"
@@ -187,4 +199,5 @@ capital = 114
 		mil = 1
 	}
 }
-#1679 done
+1679.1.1 = { capital = 114 }
+#1694 done

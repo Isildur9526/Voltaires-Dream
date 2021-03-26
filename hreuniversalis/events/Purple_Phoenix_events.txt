@@ -234,6 +234,7 @@ country_event = {
 	trigger = {
 		tag = BYZ
 		has_dlc = "Purple Phoenix"
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { has_idea = byz_admin_power }
 		OR = {
 			NOT = { has_country_flag = recent_BYZ_factions }
@@ -264,6 +265,7 @@ country_event = {
 	trigger = {
 		tag = BYZ
 		has_dlc = "Purple Phoenix"
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { has_idea = byz_admin_power }
 		OR = {
 			NOT = { has_country_flag = recent_BYZ_factions }
@@ -293,6 +295,7 @@ country_event = {
 	trigger = {
 		tag = BYZ
 		has_dlc = "Purple Phoenix"
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { has_idea = byz_admin_power }
 		OR = {
 			NOT = { has_country_flag = recent_BYZ_factions }
@@ -322,6 +325,7 @@ country_event = {
 	trigger = {
 		tag = BYZ
 		has_dlc = "Purple Phoenix"
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { has_idea = byz_admin_power }
 		OR = {
 			NOT = { has_country_flag = recent_BYZ_factions }
@@ -351,6 +355,7 @@ country_event = {
 	trigger = {
 		tag = BYZ
 		has_dlc = "Purple Phoenix"
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { has_idea = byz_admin_power }
 		OR = {
 			NOT = { has_country_flag = recent_BYZ_factions }
@@ -380,6 +385,7 @@ country_event = {
 	trigger = {
 		tag = BYZ
 		has_dlc = "Purple Phoenix"
+		NOT = { has_reform = eastern_monarchy }
 		NOT = { has_idea = byz_admin_power }
 		OR = {
 			NOT = { has_country_flag = recent_BYZ_factions }

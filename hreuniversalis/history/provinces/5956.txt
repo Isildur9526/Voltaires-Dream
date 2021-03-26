@@ -2,7 +2,7 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = BUL
-culture = bulgarian
+culture = aromanian
 religion = orthodox
 hre = no
 base_tax = 1
@@ -65,6 +65,7 @@ discovered_by = north_american
 	controller = SER
 	add_core = SER
 	remove_core = BYZ
+	culture = bulgarian
 }
 1355.12.20 = {
 	owner = PRP

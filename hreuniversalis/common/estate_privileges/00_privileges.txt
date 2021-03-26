@@ -1374,7 +1374,13 @@ estate_church_inwards_perfection = {
 	loyalty = 0.1
 	influence = 0.05
 	is_valid = {
-		religion_group = eastern
+		OR = {
+			religion = buddhism
+			religion = cathar
+			religion = lollardy
+			religion = fraticelli
+			religion = waldensian
+		}
 	}
 	can_select = {
 		NOT = { has_estate_privilege = estate_church_for_the_faith }
@@ -5686,6 +5692,7 @@ estate_nobles_strong_duchies = {
 	influence = 0.1
 	loyalty = 0.05
 	is_valid = {
+		NOT = { tag = GEO }
 		OR = {
 			any_subject_country = {
 				is_march = yes
@@ -5736,6 +5743,10 @@ estate_nobles_golden_liberty = {
 	influence = 0.1
 	loyalty = 0.05
 	is_valid = {
+		OR = {
+			tag = POL
+			tag = PLC
+		}
 		OR = {
 			has_estate_privilege = estate_nobles_golden_liberty #Poland starts with it
 			has_reform = elective_monarchy

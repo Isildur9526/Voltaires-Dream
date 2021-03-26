@@ -560,3 +560,16 @@ reconquista_fervor = {
 	land_morale = 0.05
 	reinforce_speed = 0.05
 }
+
+appanage_during_factionalism_modifier = {
+	potential = {
+		is_subject_of_type = tributary_state
+		overlord = { has_disaster = russian_factionalism }
+	}
+	trigger = {
+		is_subject_of_type = tributary_state
+		overlord = { has_disaster = russian_factionalism }
+	}
+	global_autonomy = 0.05
+	global_unrest = 5
+}

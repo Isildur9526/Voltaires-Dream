@@ -41,13 +41,13 @@ add_core = BYZ
 	religion = sunni
 	culture = turkish
 }
-1308.1.1 = {
+1304.1.1 = {
 	owner = AYD
 	controller = AYD
 	add_core = AYD
 	remove_core = MEN
-	capital = "Aydin"
 }
+1308.1.1 = { capital = "Aydin" }
 1390.1.1 = {
 	owner = TUR
 	controller = TUR

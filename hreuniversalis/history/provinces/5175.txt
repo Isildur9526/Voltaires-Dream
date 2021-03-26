@@ -1,5 +1,5 @@
 capital = "Vieste"
-culture = greek
+culture = neapolitan
 religion = catholic 
 trade_goods = fish
 base_tax = 2
@@ -11,7 +11,6 @@ owner = GGN
 controller = GGN
 add_core = GGN
 
-1067.1.1 = { culture = neapolitan }
 1104.10.1 = {
 	owner = APL
 	controller = APL

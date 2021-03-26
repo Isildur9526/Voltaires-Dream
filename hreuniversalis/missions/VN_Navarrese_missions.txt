@@ -424,7 +424,7 @@ vn_nav_missions_slot_3_b = {
 				is_great_power = yes
 			}
 			prestige = 50
-			legitimacy_equivalent = 95
+			legitimacy = 95
 			stability = 2
 			army_size = 50
 			government_rank = 5

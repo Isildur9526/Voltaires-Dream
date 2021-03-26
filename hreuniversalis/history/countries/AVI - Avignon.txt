@@ -6,6 +6,14 @@ primary_culture = provencal
 technology_group = western
 capital = 202
 fixed_capital = 202
+change_estate_land_share = {
+	estate = estate_nobles
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = -10
+}
 
 1000.1.1 = { set_country_flag = unformable }
 

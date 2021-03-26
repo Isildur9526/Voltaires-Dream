@@ -26,6 +26,9 @@ add_core = LZZ
 	remove_core = ZII
 	culture = central_margravian
 	hre = yes
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
 }
 1157.1.1 = {
 	owner = BBX

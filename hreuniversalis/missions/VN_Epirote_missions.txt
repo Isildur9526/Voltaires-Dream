@@ -177,7 +177,7 @@ vn_epi_missions_slot_2 = {
         required_missions = {  }
         trigger = {
 			stability = 2
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			if = {
 				limit = { has_government_attribute = heir }
 				has_heir = yes

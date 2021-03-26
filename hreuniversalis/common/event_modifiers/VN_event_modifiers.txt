@@ -1,6 +1,33 @@
 ### VN MODIFIERS ###
 
 #New Disasters
+#Crisis of the 11th Century
+byz_aristocrats_m = {
+	manpower_recovery_speed = -0.25
+	global_manpower_modifier = -0.25
+	general_cost = 0.25
+}
+byz_bureaucrats_m = {
+	advisor_cost = 0.25
+	administrative_efficiency = -0.25
+	state_maintenance_modifier = 0.25
+}
+byz_defenses_m = {
+	defensiveness = -0.25
+	fort_maintenance_modifier = 0.25
+	global_supply_limit_modifier = -0.25
+}
+byz_army_m = {
+	land_morale = -0.1
+	land_maintenance_modifier = 0.25
+	movement_speed = -0.25
+}
+byz_unrest_m = {
+	global_unrest = 3
+	stability_cost_modifier = 0.25
+	global_missionary_strength = -0.03
+}
+
 #Fall of the Arpads
 treaty_of_kassa_m = {
     local_autonomy = -0.25
@@ -103,6 +130,12 @@ strong_viziers_m = {
 	advisor_cost = 0.15
 	diplomatic_reputation = -2
 }
+#Factionalism of the Rus
+disbanded_streltsy_m = {
+	recover_army_morale_speed = -0.1
+	manpower_recovery_speed = -0.1
+	land_attrition = 0.1
+}
 
 #New Religions
 translated_bible_m = {
@@ -113,11 +146,9 @@ reinterpreted_bible_m = {
 	advisor_cost = -0.1
 	advisor_pool = 1
 }
-religious_manuscript_m = {
-	idea_cost = -0.1
-}
-bogomilist_diplomat_m = {
-	diplomats = 1
+incompetent_clergy = {
+	tolerance_own = -1
+	tolerance_heretic = -1
 }
 hussite_songs_m = {
 	infantry_cost = -0.1
@@ -236,11 +267,13 @@ kilkennystatutesmod = {
 }
 
 #Institutions
-thirst_for_knowledge_m = {
-    technology_cost = -0.1
+anticlericalism = {
+	stability_cost_modifier = 0.1
+	global_institution_spread = 0.1
 }
-kalands_brethren_m = {
-    global_unrest = -2
+controlled_preaching = {
+	tolerance_own = 1
+	global_institution_spread = -0.2
 }
 
 #Others
@@ -260,6 +293,13 @@ estate_holy_orders_monopoly_of_beer_mod = {
 estate_mamluks_guaranteed_autonomy_mod = {
 	local_culture_conversion_cost = 10
 	local_unrest = -2
+}
+estate_burghers_dutch_water_lines_mod = {
+	local_hostile_movement_speed = -0.25
+	local_hostile_attrition = 1
+	local_defensiveness = 0.25
+	local_development_cost = 0.5
+	local_state_maintenance_modifier = 0.25
 }
 kremnica_gold = {
 	trade_goods_size = 4.0
@@ -308,9 +348,6 @@ reorganizing_folklands = {
 tannin_modifier = {
 	local_production_efficiency = 0.15
 }
-priory_modifier = {
-	female_advisor_chance = 1
-}
 unruly_mamluks = {
 	mercenary_discipline = -0.05
 	global_unrest = 1
@@ -341,6 +378,7 @@ almoravid_assistance = {
 	land_forcelimit = 10
 }
 armed_jihad_m = {
+	missionaries = 1
 	global_missionary_strength = 0.1
 	global_unrest = -3
 	global_manpower = 25
@@ -385,7 +423,7 @@ edwardian_isolation = {
 	build_cost = -0.25
 }
 old_and_sick = {
-	monarch_lifespan = -1
+	monarch_lifespan = -0.5
 	heir_chance = -0.5
 	block_introduce_heir = yes
 }
@@ -757,10 +795,15 @@ investiture_excommunication_m = {
 	church_loyalty_modifier = -0.05
 	imperial_authority = -0.25
 }
+pontifical_reputation = {
+	improve_relation_modifier = 0.25
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
 lombard_league_winner = {
-	prestige = 0.5
-	legitimacy = 1
-	republican_tradition = 0.3
+	prestige = 0.25
+	legitimacy = 0.5
+	republican_tradition = 0.1
 }
 incident_mongol_raids_knowledge = {
 	technology_cost = -0.05

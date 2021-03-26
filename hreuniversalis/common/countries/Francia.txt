@@ -106,7 +106,7 @@ ship_names = {
 	Marcatrude Austerchilde Faileube Theudechilde Marcovefa
 	Merofleda Ingoberga Fredegund Galswintha Audovera Aregund
 	Valdrada Deuteria Visigard Suavegotha Guntheuca Ultrogotha
-	Ingunda Radegund Guntheuca Clotilda Evolchilde Basina
+	Ingunda Radegund Clotilda Evolchilde Basina
 	Ermengard Luitgard Gerperga Betrada Gisele
 }
 

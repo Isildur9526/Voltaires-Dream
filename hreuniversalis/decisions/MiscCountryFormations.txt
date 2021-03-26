@@ -63,6 +63,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = HAN
+			hidden_effect = { restore_country_name = yes }
 			2230 = {
 				add_base_tax = 1
 			}
@@ -175,6 +176,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = WES
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government_rank = 5 }
@@ -286,6 +288,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = GRE
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

@@ -307,7 +307,7 @@ NKA_missions_slot_3 = {
 		required_missions = {}
 		trigger = {
             has_any_disaster = no
-            legitimacy_equivalent = 95
+            legitimacy = 95
             stability = 2
 		}
 		effect = {

@@ -34,6 +34,7 @@ add_core = MRV
 	owner = HAB
 	controller = HAB
 }
+1700.1.1 = { religion = jewish }
 1804.1.1 = {
 	owner = EAH
 	controller = EAH

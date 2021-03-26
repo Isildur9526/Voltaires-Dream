@@ -5,6 +5,7 @@ vn_sax_missions_slot_1 = {
 	
     potential = {
         OR = {
+			has_country_flag = altsax_split_benefactor
             AND = {
                 tag = SAX
 		        started_in = 1180.1.1
@@ -294,6 +295,7 @@ vn_sax_missions_slot_2 = {
 	
 	potential = {
         OR = {
+			has_country_flag = altsax_split_benefactor
             AND = {
                 tag = SAX
 		        started_in = 1180.1.1
@@ -532,7 +534,7 @@ vn_sax_missions_slot_2 = {
 			OR = {
 				area = hessenorth_area
 				area = marburg_area
-				area = hessenorth_area
+				area = hessesouth_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -542,7 +544,7 @@ vn_sax_missions_slot_2 = {
 				OR = {
 					area = hessenorth_area
 					area = marburg_area
-					area = hessenorth_area
+					area = hessesouth_area
 				}
 			}
 		}
@@ -583,6 +585,7 @@ vn_sax_missions_slot_3 = {
 	
 	potential = {
         OR = {
+			has_country_flag = altsax_split_benefactor
             AND = {
                 tag = SAX
 		        started_in = 1180.1.1
@@ -598,7 +601,7 @@ vn_sax_missions_slot_3 = {
 		required_missions = { }
 		trigger = {
 			stability = 2
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			is_at_war = no
 			NOT = { num_of_rebel_armies = 1 }
 			NOT = { num_of_rebel_controlled_provinces = 1 }
@@ -820,7 +823,7 @@ vn_sax_missions_slot_3 = {
 		required_missions = { vn_sax_conquer_luneburg vn_sax_truthfully_emperor }
 		trigger = {
 			government_rank = 5
-			legitimacy_equivalent = 100
+			legitimacy = 100
 		}
 		effect = {
 			add_adm_power = 100
@@ -841,6 +844,7 @@ vn_sax_missions_slot_4 = {
 	
 	potential = {
         OR = {
+			has_country_flag = altsax_split_benefactor
             AND = {
                 tag = SAX
 		        started_in = 1180.1.1
@@ -1027,6 +1031,7 @@ vn_sax_missions_slot_5 = {
 	
 	potential = {
         OR = {
+			has_country_flag = altsax_split_benefactor
             AND = {
                 tag = SAX
 		        started_in = 1180.1.1

@@ -76,6 +76,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SPA
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			swap_non_generic_missions = yes
 			if = {
@@ -233,6 +234,7 @@ country_decisions = {
 				inherit = CAS
 			}
 			change_tag = SPA
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			if = {
 				limit = {

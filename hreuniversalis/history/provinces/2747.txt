@@ -33,7 +33,7 @@ add_core = BYZ
 	add_core = BYZ
 	remove_core = NKA
 }
-1306.1.1 = {
+1313.1.1 = {
 	owner = SRU
 	controller = SRU
 	add_core = SRU

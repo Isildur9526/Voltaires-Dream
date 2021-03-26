@@ -205,6 +205,7 @@ add_army_professionalism = 0.1
 		mil = 5
 	}
 }
+1306.9.20 = { capital = 5380 }
 1309.8.15 = { capital = 597 }
 1327.9.1 = {
 	monarch = {

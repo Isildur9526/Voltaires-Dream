@@ -115,10 +115,7 @@ VN_BYZ_missions_slot_1_a = {
 		provinces_to_highlight = {
 			is_capital = yes
 			owner = {
-				OR = {
-					government_rank = 6
-					is_emperor = yes
-				}
+				total_own_and_non_tributary_subject_development = ROOT
 				NOT = { tag = ROOT }
 			}
 		}
@@ -133,18 +130,15 @@ VN_BYZ_missions_slot_1_a = {
 					}
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = vn_byz_trueworthy_empire.tt
-				NOT = {
-					any_country = {
-						NOT = { tag = ROOT }
-						government_rank = 6
-					}
+			NOT = {
+				any_known_country = {
+					total_own_and_non_tributary_subject_development = ROOT
 				}
 			}
 		}
 		effect = {
 			add_absolutism = 10
+			add_revolutionary_zeal = 10
 			add_adm_power = 100
 			add_dip_power = 100
 			add_mil_power = 100
@@ -169,7 +163,7 @@ VN_BYZ_missions_slot_2_a = {
 		required_missions = { vn_byz_komnenian_succession }
 		completed_by = 1100.1.1
 		trigger = {
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			NOT = { num_of_rebel_controlled_provinces = 1 }
 			NOT = { num_of_rebel_armies = 1 }
 			is_at_war = no

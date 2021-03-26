@@ -53,7 +53,7 @@ monarch_names = {
 	"Ali #0" = 20
 	"Aladdin #0" = 20
 	
-	"Fatma #0" = -
+	"Fatma #0" = -1
 	"Havva #0" = -1
 	"Gamze #0" = -1
 	"Hanife #0" = -1

@@ -271,7 +271,7 @@ country_event = {
 
     trigger = {
         has_country_modifier = almoravid_assistance
-        at_war_with_religious_enemy = no
+        NOT = { at_war_with_religious_enemy = yes }
     }
 
     mean_time_to_happen = {

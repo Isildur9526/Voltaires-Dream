@@ -22,6 +22,8 @@ add_core = BLH
 	controller = WAL
 	add_core = WAL
 	remove_core = SVE
+	#1-1-1
+	base_tax = 1
 }
 1650.1.1 = {
 	revolt = { type = noble_rebels size = 0 }

@@ -294,7 +294,7 @@ vn_nov_missions_slot_2 = {
         required_missions = {  }
         trigger = {
 			OR = {
-				philosopher = yes
+				philosopher = 3
 				full_idea_group = cultural_ideas
 			}
         }
@@ -823,7 +823,14 @@ vn_nov_missions_slot_3 = {
         position = 10
         required_missions = { vn_nov_the_dnieper_controlled vn_nov_conquer_the_central_rus }
         trigger = {
-			legitimacy_equivalent = 100
+			if = {
+				limit = { government = monarchy }
+				legitimacy = 100
+			}
+			else_if = {
+				limit = { government = republic }
+				republican_tradition = 100
+			}
 			stability = 3
 			prestige = 50
 			months_of_ruling = 120

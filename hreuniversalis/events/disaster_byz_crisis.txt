@@ -31,7 +31,20 @@ country_event = {
 	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_country_modifier = byz_defunding_mil } }
+	trigger = {
+		tag = BYZ
+		OR = {
+			has_disaster = byz_crisis
+			OR = {
+				has_country_modifier = byz_aristocrats_m
+				has_country_modifier = byz_bureaucrats_m
+				has_country_modifier = byz_defenses_m
+				has_country_modifier = byz_army_m
+				has_country_modifier = byz_unrest_m
+			}
+		}
+		NOT = { has_country_modifier = byz_defunding_mil }
+	}
 	mean_time_to_happen = { days = 1 }
 
 	option = {
@@ -56,7 +69,20 @@ country_event = {
 	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_country_modifier = byz_defunding_man } }
+	trigger = {
+		tag = BYZ
+		OR = {
+			has_disaster = byz_crisis
+			OR = {
+				has_country_modifier = byz_aristocrats_m
+				has_country_modifier = byz_bureaucrats_m
+				has_country_modifier = byz_defenses_m
+				has_country_modifier = byz_army_m
+				has_country_modifier = byz_unrest_m
+			}
+		}
+		NOT = { has_country_modifier = byz_defunding_man }
+	}
 	mean_time_to_happen = { days = 1 }
 
 	option = {
@@ -81,7 +107,20 @@ country_event = {
 	picture = NAVAL_MILITARY_eventPicture
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_country_modifier = byz_defunding_naval } }
+	trigger = {
+		tag = BYZ
+		OR = {
+			has_disaster = byz_crisis
+			OR = {
+				has_country_modifier = byz_aristocrats_m
+				has_country_modifier = byz_bureaucrats_m
+				has_country_modifier = byz_defenses_m
+				has_country_modifier = byz_army_m
+				has_country_modifier = byz_unrest_m
+			}
+		}
+		NOT = { has_country_modifier = byz_defunding_naval }
+	}
 	mean_time_to_happen = { days = 1 }
 
 	option = {
@@ -106,7 +145,20 @@ country_event = {
 	picture = NAVAL_MILITARY_eventPicture
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_country_modifier = byz_defunding_sailors } }
+	trigger = {
+		tag = BYZ
+		OR = {
+			has_disaster = byz_crisis
+			OR = {
+				has_country_modifier = byz_aristocrats_m
+				has_country_modifier = byz_bureaucrats_m
+				has_country_modifier = byz_defenses_m
+				has_country_modifier = byz_army_m
+				has_country_modifier = byz_unrest_m
+			}
+		}
+		NOT = { has_country_modifier = byz_defunding_sailors }
+	}
 	mean_time_to_happen = { days = 1 }
 
 	option = {
@@ -131,7 +183,20 @@ country_event = {
 	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_country_modifier = byz_defunding_adm } }
+	trigger = {
+		tag = BYZ
+		OR = {
+			has_disaster = byz_crisis
+			OR = {
+				has_country_modifier = byz_aristocrats_m
+				has_country_modifier = byz_bureaucrats_m
+				has_country_modifier = byz_defenses_m
+				has_country_modifier = byz_army_m
+				has_country_modifier = byz_unrest_m
+			}
+		}
+		NOT = { has_country_modifier = byz_defunding_adm }
+	}
 	mean_time_to_happen = { days = 1 }
 
 	option = {
@@ -156,7 +221,20 @@ country_event = {
 	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_country_modifier = byz_defunding_states } }
+	trigger = {
+		tag = BYZ
+		OR = {
+			has_disaster = byz_crisis
+			OR = {
+				has_country_modifier = byz_aristocrats_m
+				has_country_modifier = byz_bureaucrats_m
+				has_country_modifier = byz_defenses_m
+				has_country_modifier = byz_army_m
+				has_country_modifier = byz_unrest_m
+			}
+		}
+		NOT = { has_country_modifier = byz_defunding_states }
+	}
 	mean_time_to_happen = { days = 1 }
 
 	option = {
@@ -1669,13 +1747,19 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_country_flag = komnenian_restoration_flag
+			#byz can take decision to get back theme system
 			remove_country_modifier = byz_defunding_adm
 			remove_country_modifier = byz_defunding_states
 			remove_country_modifier = byz_defunding_naval
 			remove_country_modifier = byz_defunding_sailors
 			remove_country_modifier = byz_defunding_mil
 			remove_country_modifier = byz_defunding_man
-			remove_country_modifier = the_theme_system
+			remove_country_modifier = byz_aristocrats_m
+			remove_country_modifier = byz_bureaucrats_m
+			remove_country_modifier = byz_defenses_m
+			remove_country_modifier = byz_army_m
+			remove_country_modifier = byz_unrest_m
+			remove_estate_privilege = byz_aristocrats_p
 			clr_country_flag = triumph_asia
 			clr_country_flag = triumph_anatolia
 			clr_global_flag = constantinople_restored

@@ -18,7 +18,7 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			if = {
-				limit = { tag = NKA }
+				limit = { ROOT = { tag = NKA } }
 				OR = {
 					province_id = 2233
 					province_id = 573
@@ -72,6 +72,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BYZ
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			every_province = {
 				limit = {

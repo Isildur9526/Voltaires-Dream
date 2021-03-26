@@ -138,7 +138,7 @@ ship_names = {
 	Fortuna Fredrikhshtadt Fridemaker Fyodor Gamburg Gangut Gektor Gremiashchii Grigorii Grom Iagudiil Iamburg Iaroslav Iassy Iezekiil Ingermanland Ioann Iupiter Kamen
 	Khobot Khotin Khvalnaia Kit Konstantin Kopore Korona Kreiser Krepost Kronshlot Kronshtadt Kruis Krym Landsdou Laskovaia Lastka Leferm Legkii Lesnoye Lev Liliia Lizet
 	London Luks Marlburg Merkurii Miach Milo Minerva Mittau Modon Molniia Monbekend Monplezir Moreia Moris Moskva Munker Nadezhda Naktsiia Narva Natalia Nazaret
-	Nepobedimaia Neptunus Nishtadt Novopavlovsk Oksford Olga Olifant Orfei Oryol Palyulos Parizh Paros Patriklii Perl Pernov Pervyi Peterburg Piotr Piotr II Plato Pobeda
+	Nepobedimaia Neptunus Nishtadt Novopavlovsk Oksford Olga Olifant Orfei Oryol Palyulos Parizh Paros Patriklii Perl Pernov Pervyi Peterburg Piotr "Piotr II" Plato Pobeda
 	Pochtalon Poltava Poluks Pomoshchnyi Portsmut Pospeshnyi Prevoskhoditeinaia Printsessa Priyatelnaya Prokhor Provornyi Rafail Rak Randolf Razumnaia Revel Riga Rossia
 	Rostislav Roza Rys Salamandra Samson Saratov Schastie Schastlivyi Selafail Shkhelpol Shlisselburg Shpaga Shtandart Shval Siiatelnaia Sion Sklonnaia Skorpion Snuk
 	Sobaka Sokol Starn Stein Straford Strakh Strela Strus Sulitsa Sviatoslav Svirepaia Taganrog Taimalar Telemakus Terpelivaia Tino Tver Tvyordyi Ubornaia Uchtivaia

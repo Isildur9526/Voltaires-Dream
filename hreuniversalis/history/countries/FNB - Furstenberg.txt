@@ -81,28 +81,70 @@ capital = 632
 		mil = 2
 	}
 }
+1344.1.1 = {
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich IV"
+		dynasty = "von Fürstenberg"
+		birth_date = 1344.1.1
+		death_date = 1408.8.15
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
 1367.2.23 = {
 	monarch = {
 		name = "Heinrich IV"
 		dynasty = "von Fürstenberg"
+		birth_date = 1344.1.1
 		adm = 2
 		dip = 2
 		mil = 2
 	}
 }
-1408.1.1 = {
+1387.1.1 = {
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich V"
+		dynasty = "von Fürstenberg"
+		birth_date = 1387.1.1
+		death_date = 1441.12.20
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1408.8.15 = {
 	monarch = {
 		name = "Heinrich V"
 		dynasty = "von Fürstenberg"
+		birth_date = 1387.1.1
 		adm = 2
 		dip = 2
 		mil = 2
 	}
 }
-1441.1.1 = {
+1429.1.1 = {
+	heir = {
+		name = "Konrad"
+		monarch_name = "Konrad I"
+		dynasty = "von Fürstenberg"
+		birth_date = 1429.1.1
+		death_date = 1484.4.24
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1441.12.20 = {
 	monarch = {
 		name = "Konrad I"
 		dynasty = "von Fürstenberg"
+		birth_date = 1429.1.1
 		adm = 3
 		dip = 3
 		mil = 3

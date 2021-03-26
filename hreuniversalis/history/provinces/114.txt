@@ -22,8 +22,17 @@ add_core = VLD
 	controller = ZWB
 	add_core = ZWB
 }
+1514.10.21 = {
+	owner = VLD
+	controller = VLD
+	remove_core = ZWB
+}
 1529.1.1 = { religion = protestant }
-1689.8.1 = { controller = FRA }
+1694.9.29 = {
+	owner = ZWB
+	controller = FRA
+	add_core = ZWB
+}
 1697.9.20 = { controller = ZWB }
 1795.5.16 = { controller = FRA }
 1797.10.17 = {

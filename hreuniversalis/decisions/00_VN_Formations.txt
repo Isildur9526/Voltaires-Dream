@@ -42,6 +42,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = MGF
+			hidden_effect = { restore_country_name = yes }
 			set_country_flag = unformable
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
@@ -113,6 +114,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = XAP
+			hidden_effect = { restore_country_name = yes }
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -198,6 +200,7 @@ country_decisions = {
 		effect = {
 			change_tag = LBV
 			remove_non_electors_emperors_from_empire_effect = yes
+			hidden_effect = { restore_country_name = yes }
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -267,6 +270,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = WUR
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -340,6 +344,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = LTH
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -422,6 +427,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = WWS
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			if = {
 				limit = {
@@ -528,6 +534,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FKN
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -617,6 +624,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = XKK
+			hidden_effect = { restore_country_name = yes }
 			custom_tooltip = langobardic_culture_provinces_tooltip
 			hidden_effect = {
 				every_owned_province = {
@@ -740,6 +748,7 @@ country_decisions = {
 				set_government_rank = 5
 			}
 			change_tag = SIC
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = { 
 					NOT = { was_tag = APL } 
@@ -800,6 +809,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = RMG
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -874,6 +884,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BGU
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -952,6 +963,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SLV
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -1017,10 +1029,14 @@ country_decisions = {
 			owns_or_vassal_of = 163 #darmstadt
 			owns_or_vassal_of = 2523 #wurzburg
 			owns_or_vassal_of = 2967 #nurnberg
-			num_of_cities = 50
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 75
+				superregion = germanysouth_superregion
+			}
 		}
 		effect = {
 			change_tag = SGC
+			hidden_effect = { restore_country_name = yes }
 			set_country_flag = unformable
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -1107,10 +1123,14 @@ country_decisions = {
 			owns_or_vassal_of = 2230 #hannover
 			owns_or_vassal_of = 2643 #rostock
 			owns_or_vassal_of = 55 #oldenburg
-			num_of_cities = 50
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 75
+				superregion = germanynorth_superregion
+			}
 		}
 		effect = {
 			change_tag = NGC
+			hidden_effect = { restore_country_name = yes }
 			set_country_flag = unformable
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -1193,6 +1213,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = MKL
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -1275,6 +1296,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SHL
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -1352,6 +1374,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PAL
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			if = {
 				limit = {
@@ -1424,6 +1447,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BRU
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			if = {
 				limit = {
@@ -1498,6 +1522,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = POM
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -1573,6 +1598,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BAV
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			if = {
 				limit = {
@@ -1646,6 +1672,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SIL
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -1716,6 +1743,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = ALS
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -1798,6 +1826,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = EFR
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			change_government = monarchy
 			add_government_reform = feudalism_reform
@@ -1882,6 +1911,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FRI
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			change_government = monarchy
 			add_government_reform = feudalism_reform
@@ -2022,6 +2052,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = AQT
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -2159,6 +2190,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FKE
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			custom_tooltip = frankish_culture_provinces_tooltip
 			set_country_flag = unformable
@@ -2291,6 +2323,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = WLS
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -2365,6 +2398,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SAR
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
@@ -2442,6 +2476,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = MOL
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = { is_tribal = yes }
 				change_government = monarchy
@@ -2515,6 +2550,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = WAL
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = { is_tribal = yes }
 				change_government = monarchy
@@ -2600,6 +2636,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SER
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
@@ -2685,6 +2722,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = ALB
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = { is_tribal = yes }
 				change_government = monarchy
@@ -2754,6 +2792,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = MXD
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -2826,6 +2865,7 @@ country_decisions = {
 				add_government_reform = feudalism_reform
 			}
 			change_tag = HUN
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
@@ -2931,6 +2971,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = DLM
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -2985,7 +3026,29 @@ country_decisions = {
 				free_vassal = ALE
 				free_vassal = XAU
 				free_vassal = EUU
-				inherit = ASE
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+					}
+					change_government = monarchy
+					add_government_reform = feudalism_reform
+				}
+				#inherit = ASE
+				ASE = {
+					grant_independence = yes
+					every_subject_country = {
+						limit = { is_lesser_in_union = yes }
+						set_country_flag = was_ase_junior
+					}
+					every_subject_country = {
+						limit = { is_lesser_in_union = no }
+						set_country_flag = was_ase_vassal
+					}
+					every_owned_province = {
+						cede_province = ENG
+						add_core = ENG
+					}
+				}
 				every_province = {
 					limit = { is_core = ASE }
 					remove_core = ASE
@@ -2998,15 +3061,12 @@ country_decisions = {
 					limit = { is_core = MCI }
 					remove_core = MCI
 				}
-				if = {
-					limit = {
-						NOT = { government = monarchy }
-					}
-					change_government = monarchy
-					add_government_reform = feudalism_reform
-				}
-				change_tag = ENG
+				exile_heir_as = nrm_conquest_heir
+				exile_ruler_as = nrm_conquest_ruler
+				switch_tag = ENG
 				set_capital = 2268
+				set_ruler = nrm_conquest_ruler
+				set_heir = nrm_conquest_heir
 				if = {
 					limit = {
 						NOT = { government_rank = 5 }
@@ -3015,17 +3075,25 @@ country_decisions = {
 				}
 				swap_free_idea_group = yes
 				swap_non_generic_missions = yes
-				every_owned_province = {
-					limit = {
-						OR = {
-							superregion = french_superregion
-							superregion = burgundian_superregion
-						}
-					}
-					remove_core = ENG
-					add_core = NRM
-					cede_province = NRM
+				every_country = {
+					limit = { has_country_flag = was_ase_junior }
+					ROOT = { create_union = PREV }
 				}
+				every_country = {
+					limit = { has_country_flag = was_ase_vassal }
+					ROOT = { vassalize = PREV }
+				}
+				#every_owned_province = {
+				#	limit = {
+				#		OR = {
+				#			superregion = french_superregion
+				#			superregion = burgundian_superregion
+				#		}
+				#	}
+				#	remove_core = ENG
+				#	add_core = NRM
+				#	cede_province = NRM
+				#}
 				NRM = {
 					change_primary_culture = normand
 					set_capital = 1172
@@ -3034,10 +3102,12 @@ country_decisions = {
 				}
 				create_union = NRM
 			}
-			change_primary_culture = english
-			2268 = { change_culture = english }
-			add_legitimacy = -20
-			add_prestige = 25
+			ENG = {
+				change_primary_culture = english
+				2268 = { change_culture = english }
+				add_legitimacy = -20
+				add_prestige = 25
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -3106,6 +3176,7 @@ country_decisions = {
 				inherit = HUN
 			}
 			change_tag = EAH
+			hidden_effect = { restore_country_name = yes }
 			set_country_flag = unformable
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -3208,6 +3279,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = LIT
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -3298,6 +3370,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = IFQ
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -3409,6 +3482,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = IRQ
+			hidden_effect = { restore_country_name = yes }
 			set_capital = 6301
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -3498,6 +3572,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SYR
+			hidden_effect = { restore_country_name = yes }
 			set_capital = 3065
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -3605,6 +3680,7 @@ country_decisions = {
 				change_primary_culture = aramaic
 			}
 			change_tag = ASY
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			set_country_flag = unformable
 			set_capital = 6330
@@ -3682,6 +3758,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = CIR
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -3762,6 +3839,7 @@ country_decisions = {
 				change_primary_culture = finnish
 			}
 			change_tag = FIN
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -3841,6 +3919,7 @@ country_decisions = {
 				change_primary_culture = estonian
 			}
 			change_tag = EST
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -3929,6 +4008,7 @@ country_decisions = {
 				change_primary_culture = latvian
 			}
 			change_tag = LVA
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -4016,6 +4096,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = MAZ
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			set_capital = 1138
 			remove_non_electors_emperors_from_empire_effect = yes
@@ -4084,6 +4165,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PIE
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			set_capital = 1009
 			if = {
@@ -4155,6 +4237,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BRI
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			set_capital = 2173
 			if = {

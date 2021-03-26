@@ -41,6 +41,7 @@ add_core = TUV
 1654.1.1 = { revolt = {} controller = PLC }
 1655.10.5 = { controller = RUS }
 1656.1.1 = { controller = PLC }
+1750.1.1 = { religion = jewish }
 1793.1.23 = {
 	owner = RUS
 	controller = RUS

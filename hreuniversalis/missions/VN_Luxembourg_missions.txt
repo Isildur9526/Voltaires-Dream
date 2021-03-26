@@ -267,7 +267,7 @@ vn_lux_missions_slot_3 = {
         required_missions = { vn_lux_masters_of_diplomacy }
         trigger = {
 			prestige = 25
-			legitimacy_equivalent = 100
+			legitimacy = 100
             NOT = { num_of_free_diplomatic_relations = 1 }
 			num_of_royal_marriages = 3
         }

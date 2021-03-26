@@ -792,7 +792,7 @@ vn_ven_missions_slot_3 = {
             random_owned_province = {
                 limit = { is_capital = no }
                 add_base_tax = 2
-                add_base_manpower = 2
+                add_base_production = 2
                 add_base_manpower = 2
             }
         }
@@ -1094,7 +1094,7 @@ vn_ven_missions_slot_5 = {
                 has_reform_level = 6
             }
             absolutism = 50
-            legitimacy_equivalent = 95
+            republican_tradition = 95
         }
         effect = {
             increase_legitimacy_medium_effect = yes

@@ -11,11 +11,17 @@ owner = PAL
 controller = PAL
 add_core = PAL
 
+1426.1.1 = {
+	owner = NNH
+	controller = NNH
+	add_core = NNH
+	remove_core = PAL
+}
 1545.1.1 = {
 	owner = TRI
 	controller = TRI
 	add_core = TRI
-	remove_core = PAL
+	remove_core = NNH
 }
 1592.1.1 = {
 	owner = WEE

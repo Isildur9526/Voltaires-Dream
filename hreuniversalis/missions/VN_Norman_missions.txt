@@ -72,7 +72,7 @@ vn_nrm_missions_slot_1_a = {
 			}
 			else = {
 				any_known_country = {
-					culture = greek
+					primary_culture = greek
 					has_opinion = {
 						who = ROOT
 						value = 100
@@ -493,7 +493,7 @@ vn_nrm_missions_slot_4_a = {
 		trigger = {
 			stability = 1
 			army_size_percentage = 0.75
-			legitimacy_equivalent = 95
+			legitimacy = 95
 			has_adm_advisor = yes
 			has_dip_advisor = yes
 			has_mil_advisor = yes
@@ -520,6 +520,58 @@ vn_nrm_missions_slot_4_a = {
 				name = "nrm_consolidate_duchy_mission"
 				duration = 9125
 			}
+			normandy_region = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+			4087 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1290 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2177 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2913 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1191 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
 		}
     }
 	vn_nrm_safeguard_borders = {
@@ -542,6 +594,49 @@ vn_nrm_missions_slot_4_a = {
 			add_country_modifier = {
 				name = "nrm_safeguard_borders_mission"
 				duration = 7300
+			}
+			brittany_region = {
+				limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+			4060 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			811 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1099 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1097 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
 			}
 		}
     }
@@ -730,6 +825,33 @@ vn_nrm_missions_slot_5_b = {
 			add_country_modifier = {
 				name = "nrm_conquer_vexin_mission"
 				duration = 7300
+			}
+			2762 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			694 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1901 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
 			}
 		}
     }

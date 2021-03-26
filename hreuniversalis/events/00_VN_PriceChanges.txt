@@ -214,7 +214,7 @@ country_event = {
 		capital_scope = {
 			superregion = iberia_superregion
 		}
-		has_institution = colonialism
+		has_institution = new_world_i
 		dip_tech = 41	#1504
 		NOT = { started_in = 1504.1.1 }
 	}
@@ -475,7 +475,7 @@ country_event = {
 	trigger = {
 		adm_tech = 40	#1493
 		mercury = 1
-		has_institution = colonialism
+		has_institution = new_world_i
 		NOT = { is_year = 1550 }
 	}
 	
@@ -826,6 +826,48 @@ country_event = {
 		}
 		event_target:carpet_province = {
 			change_trade_goods = carpet
+			if = {
+				limit = {
+					has_building = mills
+				}
+				remove_building = mills
+				add_building = textile
+			}
+			else_if = {
+				limit = {
+					has_building = farm_estate
+				}
+				remove_building = farm_estate
+				add_building = textile
+			}
+			else_if = {
+				limit = {
+					has_building = plantations
+				}
+				remove_building = plantations
+				add_building = textile
+			}
+			else_if = {
+				limit = {
+					has_building = tradecompany
+				}
+				remove_building = tradecompany
+				add_building = textile
+			}
+			else_if = {
+				limit = {
+					has_building = weapons
+				}
+				remove_building = weapons
+				add_building = textile
+			}
+			else_if = {
+				limit = {
+					has_building = wharf
+				}
+				remove_building = wharf
+				add_building = textile
+			}
 		}
 		add_years_of_income = 0.5
 	}
@@ -875,6 +917,48 @@ country_event = {
 		event_target:whiskey_province = {
 			change_trade_goods = spirits
 			add_base_production = 2
+			if = {
+				limit = {
+					has_building = textile
+				}
+				remove_building = textile
+				add_building = mills
+			}
+			else_if = {
+				limit = {
+					has_building = farm_estate
+				}
+				remove_building = farm_estate
+				add_building = mills
+			}
+			else_if = {
+				limit = {
+					has_building = plantations
+				}
+				remove_building = plantations
+				add_building = mills
+			}
+			else_if = {
+				limit = {
+					has_building = tradecompany
+				}
+				remove_building = tradecompany
+				add_building = mills
+			}
+			else_if = {
+				limit = {
+					has_building = weapons
+				}
+				remove_building = weapons
+				add_building = mills
+			}
+			else_if = {
+				limit = {
+					has_building = wharf
+				}
+				remove_building = wharf
+				add_building = mills
+			}
 		}
 		change_price = {
 			trade_goods = spirits
@@ -985,7 +1069,7 @@ country_event = {
 	major = yes
 
 	trigger = {
-		has_institution = colonialism
+		has_institution = new_world_i
 		hemp = 1
 		dip_tech = 40	#1493
 		NOT = { started_in = 1493.1.1 }
@@ -1035,6 +1119,7 @@ country_event = {
 			lumber = 2
 			venison = 2
 			fur = 2
+			honey = 2
 		}
 		capital_scope = {
 			continent = europe
@@ -1062,6 +1147,12 @@ country_event = {
 		}
 		change_price = {
 			trade_goods = fur
+			key = DEFORESTATION
+			value = -0.4
+			duration = 36500
+		}
+		change_price = {
+			trade_goods = honey
 			key = DEFORESTATION
 			value = -0.4
 			duration = 36500
@@ -1211,6 +1302,12 @@ country_event = {
 			value = 0.1
 			duration = -1
 		}
+		change_price = {
+			trade_goods = minerals
+			key = SMOKED_MEAT
+			value = 0.1
+			duration = -1
+		}
 	}
 }
 
@@ -1296,6 +1393,48 @@ country_event = {
 		add_dip_power = 100
 		event_target:tobacco_province = {
 			change_trade_goods = tobacco
+			if = {
+				limit = {
+					has_building = mills
+				}
+				remove_building = mills
+				add_building = plantations
+			}
+			else_if = {
+				limit = {
+					has_building = farm_estate
+				}
+				remove_building = farm_estate
+				add_building = plantations
+			}
+			else_if = {
+				limit = {
+					has_building = textile
+				}
+				remove_building = textile
+				add_building = plantations
+			}
+			else_if = {
+				limit = {
+					has_building = tradecompany
+				}
+				remove_building = tradecompany
+				add_building = plantations
+			}
+			else_if = {
+				limit = {
+					has_building = weapons
+				}
+				remove_building = weapons
+				add_building = plantations
+			}
+			else_if = {
+				limit = {
+					has_building = wharf
+				}
+				remove_building = wharf
+				add_building = plantations
+			}
 		}
 		change_price = {
 			trade_goods = tobacco
@@ -1352,3 +1491,4 @@ country_event = {
 		}
 	}
 }
+

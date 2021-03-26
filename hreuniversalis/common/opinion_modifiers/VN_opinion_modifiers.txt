@@ -296,9 +296,17 @@ spi_evicted_from_romagna_opinion = {
 	opinion = -50
 	yearly_decay = 1
 }
-tou_principality_of_toulouse = {
+tou_principality_of_toulouse_opinion = {
 	opinion = -100
-	yearly_decay = 3
+	yearly_decay = 2
+}
+tou_french_subject_opinion = {
+	opinion = 100
+	yearly_decay = 2
+}
+tou_lead_the_fiefs_opinion = {
+	opinion = 50
+	yearly_decay = 2
 }
 lit_converted_to_our_faith_opinion = {
 	opinion = -50

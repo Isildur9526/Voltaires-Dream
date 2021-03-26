@@ -7,7 +7,7 @@ province_event = {
 	title = vn_plagues.1.t
 	desc = vn_plagues.1.d
 	picture = PLAGUE_eventPicture
-	goto = ROOT
+	goto = root
 
 	trigger = {
 		NOT = {
@@ -547,8 +547,7 @@ province_event = {
 	title = vn_plagues.2.t
 	desc = vn_plagues.2.d
 	picture = PLAGUE_eventPicture
-	goto = ROOT
-
+	goto = root
 	is_triggered_only = yes
 
 	immediate = {

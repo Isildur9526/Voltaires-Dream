@@ -1,5 +1,5 @@
 capital = "Paperon"
-culture = greek
+culture = cypriot
 religion = iconoclast
 trade_goods = paper
 base_tax = 1

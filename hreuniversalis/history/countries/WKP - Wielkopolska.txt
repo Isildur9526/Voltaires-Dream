@@ -197,14 +197,5 @@ capital = 4052
 		mil = 2
 	}
 }
-1296.2.8 = {
-	monarch = {
-		name = "Wladyslaw I"
-		dynasty = "Piast"
-		birth_date = 1261.1.1
-		adm = 4
-		dip = 5
-		mil = 4
-	}
-}
-#1300 done
+#1296.2.8 under SDZ
+#1300.1.1 done

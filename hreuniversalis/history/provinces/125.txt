@@ -32,14 +32,18 @@ add_core = LWS
 	remove_core = WBG
 }
 1441.1.1 = {
-	owner = PAL
-	controller = PAL
+	owner = MBK
+	controller = MBK
 }
-1464.8.10 = { add_core = PAL }
+1443.3.14 = {
+	owner = UPA
+	controller = UPA
+}
+1464.8.10 = { add_core = UPA }
 1488.1.1 = {
 	owner = LWS
 	controller = LWS
-	remove_core = PAL
+	remove_core = UPA
 }
 1504.1.1 = { controller = WUR }
 1505.7.30 = {

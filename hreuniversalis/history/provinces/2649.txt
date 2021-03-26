@@ -19,6 +19,9 @@ add_core = LZZ
 	remove_core = LZZ
 	culture = eastphalian
 	hre = yes
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
 }
 1524.1.1 = { religion = protestant }
 1680.6.4 = {

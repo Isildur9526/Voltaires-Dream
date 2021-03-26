@@ -25,7 +25,7 @@ vn_mco_missions_slot_2 = {
 		}
 		trigger = {
             is_at_war = no
-            legitimacy_equivalent = 90
+            legitimacy = 90
 			992 = {
                 owned_by = ROOT
                 development = 15
@@ -92,7 +92,7 @@ vn_mco_missions_slot_3 = {
 			2560 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
-			add_prestige = 50
+			add_prestige = 25
 			add_country_modifier = {
                 name = mco_conquer_genoa_mission
                 duration = 9125

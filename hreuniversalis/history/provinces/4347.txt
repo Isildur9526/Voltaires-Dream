@@ -22,6 +22,8 @@ discovered_by = north_american
 	add_core = LON
 	trade_goods = cloth
 	is_city = yes
+	#1-1-1
+	base_manpower = 1
 }
 1301.1.1 = {
 	owner = CAS

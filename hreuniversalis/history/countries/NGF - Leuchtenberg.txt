@@ -122,18 +122,18 @@ capital = 167
 	monarch = {
 		name = "Johann II"
 		dynasty = "von Leuchtenberg"
-		adm = 2
-		dip = 4
-		mil = 6
+		adm = 1
+		dip = 1
+		mil = 0
 	}
 }
-1458.1.1 = {
+1441.1.1 = {
 	monarch = {
 		name = "Leopold I"
 		dynasty = "von Leuchtenberg"
 		adm = 2
-		dip = 2
-		mil = 2
+		dip = 4
+		mil = 6
 	}
 }
 1463.1.1 = {

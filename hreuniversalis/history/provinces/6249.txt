@@ -1,5 +1,5 @@
 capital = "Mersin"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = spices
 base_tax = 2

@@ -11,7 +11,7 @@ war_goal = {
 }
 
 1849.3.23 = {
-	add_attacker = LBV
+	add_defender = LBV
 }
 
 1849.10.4 = {

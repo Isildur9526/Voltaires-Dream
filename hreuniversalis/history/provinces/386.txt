@@ -7,7 +7,7 @@ base_tax = 1
 base_production = 1
 trade_goods = horses
 base_manpower = 1
-capital = "Beaufortain" 
+capital = "Beaufort" 
 is_city = yes	
 add_core = GNV
 

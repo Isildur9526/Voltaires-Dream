@@ -1358,7 +1358,7 @@ vn_mos_missions_slot_3_b = {
             government_rank = 6
 			total_development = 1000
 			prestige = 100
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			NOT = {
 				any_owned_province = { 
 					unrest = 0
@@ -1393,7 +1393,7 @@ vn_mos_missions_slot_3_c = {
             government_rank = 6
 			total_development = 1000
 			prestige = 100
-			legitimacy_equivalent = 100           
+			legitimacy = 100           
         }
         effect = {
 			add_stability_or_adm_power = yes  
@@ -1908,11 +1908,7 @@ vn_mos_missions_slot_4_a = {
 			}
         }
         effect = {
-			capital_scope = {
-				add_base_tax = 1
-				add_base_production = 1
-				add_base_manpower = 1
-			}  
+			country_event = { id = vn_missions.211 } 
             add_country_modifier = {
 				name = "mos_capture_kiev_mission"
 				duration = 9125
@@ -1927,7 +1923,7 @@ vn_mos_missions_slot_4_a = {
 			province_id = 6144
 		}
         trigger = {
-			6144 = { 
+			4237 = { 
 				development = 30
 				owned_by = ROOT
 				is_core = ROOT
@@ -1954,7 +1950,7 @@ vn_mos_missions_slot_4_a = {
 			}
         }
         effect = {
-			6144 = {
+			4237 = {
 				add_base_tax = 1
 				add_base_production = 1
 				add_base_manpower = 1
@@ -2285,7 +2281,7 @@ vn_mos_missions_slot_4_d = {
         required_missions = { vn_mos_romanian_state }
 		provinces_to_highlight = {
 			OR = {
-				area = bulgaria_region
+				region = bulgaria_region
 				region = bulgariasouth_region
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -2378,7 +2374,7 @@ vn_mos_missions_slot_5_a = {
         position = 4
         required_missions = { vn_mos_land_as_collateral }
         trigger = {
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			government = monarchy
 			months_of_ruling = 120
 			ruler_is_foreigner = no
@@ -2670,7 +2666,7 @@ vn_mos_missions_slot_5_b = {
 					alliance_with = GBR
 				}
             }
-            else = {
+            else_if = {
                 limit = { 
                     NOT = { exists = GBR }
 					NOT = { exists = ASE }

@@ -970,14 +970,7 @@ vn_ath_missions_slot_4 = {
                     target = BRC
                     type = cb_fabricated_claims
                     months = 300
-                }
-                catalunya_region = {
-                    limit = {
-                        NOT = { is_core = BRC }
-                        NOT = { is_permanent_claim = BRC }
-                    }
-					add_permanent_claim = BRC
-                }				
+                }			
             }
             else_if = {
                 limit = {
@@ -988,13 +981,6 @@ vn_ath_missions_slot_4 = {
                     target = CAT
                     type = cb_fabricated_claims
                     months = 300
-                }
-                catalunya_region = {
-                    limit = {
-                        NOT = { is_core = CAT }
-                        NOT = { is_permanent_claim = CAT }
-                    }
-                add_permanent_claim = CAT
                 }				
             }
             else = {
@@ -1017,13 +1003,6 @@ vn_ath_missions_slot_4 = {
                     target = LAN
                     type = cb_fabricated_claims
                     months = 300
-                }
-                tuscany_region = {
-                    limit = {
-                        NOT = { is_core = LAN }
-                        NOT = { is_permanent_claim = LAN }
-                    }
-					add_permanent_claim = LAN
                 }				
             }
             else_if = {
@@ -1037,13 +1016,6 @@ vn_ath_missions_slot_4 = {
                     target = TUS
                     type = cb_fabricated_claims
                     months = 300
-                }
-                tuscany_region = {
-                    limit = {
-                        NOT = { is_core = TUS }
-                        NOT = { is_permanent_claim = TUS }
-                    }
-                add_permanent_claim = TUS
                 }				
             }
             else = {
@@ -1066,13 +1038,6 @@ vn_ath_missions_slot_4 = {
                     target = BUR
                     type = cb_fabricated_claims
                     months = 300
-                }
-                catalunya_region = {
-                    limit = {
-                        NOT = { is_core = BUR }
-                        NOT = { is_permanent_claim = BUR }
-                    }
-					add_permanent_claim = BUR
                 }				
             }
             else = {

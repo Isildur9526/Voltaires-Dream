@@ -1210,7 +1210,14 @@ country_event = {
 	id = peoples_spring.100
 	title = peoples_spring.100.t
 	desc = peoples_spring.100.d
-	picture = REVOLUTION_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = REVOLUTION_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = FAILED_REVOLUTION_eventPicture
+	}
 
 	is_triggered_only = yes
 	major = yes

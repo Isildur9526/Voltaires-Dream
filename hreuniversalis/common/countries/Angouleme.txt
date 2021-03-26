@@ -62,7 +62,26 @@ monarch_names = {
 }
 
 ship_names = {
-	"le $PROVINCE$"
+	"le $PROVINCE$" 
+    Achille Agréable Alcyon Alouette
+    Altier Aquilon Ardente Assuré Avenant
+    Aventurier Baleine Bécasse Bienvenu Bizarre
+    Borée Brillant Bucentaure Caché
+    Caille Capable Centaure César Coche Conquérant
+    Constant Content Croissant Dauphine Diamant
+    Dieppoise Dur Dromadaire Eclatant Eole
+    Espérance Fantasque Ferme Fidèle Fier
+    Florissant Formidable Fort Foudroyant Gaillard
+    Heureux Héros Jason Lion Mignon
+    Minerve Océan Orphée Parfait Phénix
+    Poli Pompeux Portefaix Protecteur
+    Prudent Puissant Réale Redoutable
+    Requin Sage Sagittaire Sardine Sceptre
+    "Saint Esprit" "Saint Joseph" "Saint Philippe" 
+    Séduisant Seine Sérieux Solide Souverain
+    Suffisant Téméraire Terrible Tigre Tonnant
+    Toulon Trident Triomphant Triton
+    Union Vaillant Vigilant Volontaire Zélé
 }
 
 leader_names = {

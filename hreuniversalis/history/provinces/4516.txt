@@ -1,5 +1,5 @@
 capital = "Pozzuoli" 
-culture = greek
+culture = neapolitan
 religion = catholic 
 trade_goods = glass
 base_tax = 2
@@ -12,7 +12,6 @@ controller = NAP
 add_core = NAP
 
 1139.7.25 = {
-	culture = neapolitan 
 	owner = CPU
 	controller = CPU
 	add_core = CPU

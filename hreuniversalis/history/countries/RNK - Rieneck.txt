@@ -71,8 +71,45 @@ capital = 275
 		mil = 2
 	}
 }
-#1408 done
+1408.1.1 = {
+	monarch = {
+		name = "Thomas I"
+		dynasty = "van Loon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1431.2.8 = {
+	monarch = {
+		name = "Phillip II"
+		dynasty = "van Loon"
+		birth_date = 1428.1.1
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1497.6.14 = {
+	monarch = {
+		name = "Reinhard I"
+		dynasty = "van Loon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1518.1.1 = {
+	monarch = {
+		name = "Phillip III"
+		dynasty = "van Loon"
+		adm = 1
+		dip = 3
+		mil = 0
+	}
+}
 1544.1.1 = { religion = protestant }
+#1559 done
 1673.1.1 = {
 	monarch = {
 		name = "Johann Hartwig"

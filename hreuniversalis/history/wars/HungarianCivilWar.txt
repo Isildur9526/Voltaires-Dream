@@ -1,4 +1,4 @@
-name = "Hungarian Civil War
+name = "Hungarian Civil War"
 war_goal = {
 	type = take_capital_throne
 	casus_belli = cb_claim_throne

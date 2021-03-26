@@ -1,5 +1,5 @@
 capital = "Kidrama" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = barley
 base_tax = 1

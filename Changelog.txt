@@ -1,37 +1,152 @@
 ### Voltaire's Nightmare Changelog ###
 
-# v 2.1.4 #
+# v 2.2.2 #
 
--Small fixes for the following mission trees: Flanders, Russia, Pisa, Mazovia, Switzerland, Provence, Sicily, Lorraine, Aragon
+-Reworked Toulouse's mission tree
+-Small fixes for the following mission trees: Brandenburg, Denmark, Altsachsen, Aragon, Frisia, England, Ifriqiya, Sicily, Athens, France
+-Added 1 new estate privilege: 1 burghers privilege for Dutch nations
+-Added 8 more loading tips
+-Baltic Order techs should be definitively fixed now as the previous fix was not properly implemented... please let this be the last time.
+-German culture can spread in the Baltics when controlled by German tags
+-Fixed rare bug where former Polish subjects would get their rulers and heirs replaced when the Fragmentation of Poland happens
+-Fixed longstanding bug where England could not call their subject Normandy into any wars after the Norman conquest
+-Many <3 development provinces in Europe now have their development boosted to 3 in the timeline once they are civilised
+-Norway replaces Sweden as a suggested country in the 1054 bookmark (it fit better due to its potential role in the English conquest event chain)
+-Small rework to part of Aragon's mission tree structure
+-Province warscore cost replaces claim duration in Aragon's age ability
+-Sicily age ability nerfed
+-Changed the province requirements in the decision to create Brandenburg as a non-Markish country
+-Forming another nation should now always switch your country name to theirs (this was a problem with dynamic names such as Altsachsen)
+-Rebalanced/fixed many NI and mission modifiers
+-Fixed many city/unit positions on the map
+-Other minor localization/bug fixes
+
+# v 2.2.1 #
+
+-Added the following new mercenary companies: Armagnacs, Latvian Mercenaries, Estonian Warriors
+-Added 2 new estate privileges: 1 clergy privilege for Pagans, 1 nobility privilege for Georgia
+-Small fixes for the following mission trees: Austria, Sweden, France, Aquitaine, Papal States, Altsachsen, Brandenburg
+-Overhauled the following custom event sets: Bogomilist
+-Added the following alternative country names: Meshchera (Qasim)
+-Changed the following flags: Cambrai, Schaffhausen, Slovenia, Nice, Plesse, Stavelot-Malmedy, Thorn, Worms, Ziegenhain, Cornelimunster
+-Fixed major bug causing the Factionalism of the Rus disaster to trigger multiple times
+-Fixed the Russian reform triggers, also fixing forming Russia/Ruthenia through reforms
+-Fixed forming Switzerland not giving new NIs
+-Aromanian moved from Byzantine culture group to Romanian group and now starts with more provinces
+-Cypriot culture reworked into Pamphylian and now covers the southern coast of Anatolia
+-Other minor changes to culture setup in Byzantium and Southern Italy
+-Improved the decisions for TO/LO to establish dioceses
+-Fixed heir stats of Germanic monarchies
+-Turks now always cease raiding Byzantium's provinces when Crisis of the 11th Century is averted
+-Added more mission events for France to optionally release Revolutionary-era tags in Italy as vassal states
+-Changed New England's country name to reflect its Anglo-Saxon roots
+-Silesia can now only balkanise at least 10 years after the Fragmentation of Poland disaster fires
+-The Old Saxon split benefactor now only receives Electorate if Old Saxony had it previously
+-Some untriggerable Harmonization events will now trigger correctly
+-The Emperor now has a chance to die in battle if the raiders are victorious in the Mongol Raids incident, and the raids now add more devastation to the affected region
+-Junior partners will be kicked out of the HRE during the External Imperial Union incident much more often
+-Major nerfs to Genoese Crossbowmen company: cost increased and size decreased; it also now does +10% fire damage rather than flat +1 to infantry fire (this made it stupidly overpowered in the early game)
+-Polish Husaria company cost increased
+-Orleans is now actually in the Orleans province
+-Added new government names for Franche-Comte
+-Halych now shares Halychian Ideas with Volyn
+-Minor history improvements
+-Changed many modifiers in NIs
+-Other minor localization/bug fixes
+
+# v 2.2.0 #
+ 
+#Additions
+-Added the following new mercenary companies: Black Company, Polish Husaria, Genoese Crossbowmen
 -Added new mission tree for the Papal States with 50 missions
 -Added new mission tree for Pfullendorf with 12 missions (contribution by Leonhard von Keutschach)
--Added the following alternative country names: Northumbria (Northumberland)
--Added the following new centers of trade: Clermont, Turin
+-Added new mission tree for Alsace with with 15 missions (contribution by FrenchKnight)
+-Added Russian Factionalism disaster for Kiev with 11 associated events
+-Added an imperial incident that allows the Emperor to break personal unions when the senior partner is not a member of the HRE
+-Added an event chain for the Emperor to call a Diet with the Thuringian and Saxon Princes
+-Added an event chain for the fall and partition of the Stem Duchy of Saxony
+-Significant changes to the leadup to the Crisis of the 11th Century disaster; added 5 new related decisions
+-Added a NI set for the Nordmark (see Changes section)
 -Added 1 new estate privilege for the Mamluks
--The Baltic Orders should finally, and I mean finally, spawn with proper techs
--Fixed major bug preventing Industrialism from spawning for Rule Britannia owners
+-Added 2 forgotten Industrialization events from vanilla
+-Overhauled institution spread events of all custom institutions
+-Added the following alternative country names: Northumbria (Northumberland), Gmünd (Stauferstadt)
+-Added centers of trade for Clermont and Turin
+-More German localization additions
+-More Occitan/Arpitan/Dalmatian DPNs
+ 
+#Changes
+-Changed the following flags: Blankenburg, Mansfeld, Merseburg, Querfurt, Stolberg, Wernigerode, Leisnig, Falkenstein, Hall, Limpurg, Leuchtenberg, Esslingen, Rottenmunster, Weil, Biberach, Burgau, Buchhorn, Ellwangen, Oettingen, Stendal
+-Overhaul of the Stendal tag: its default name is now Nordmark and it is now a suggested country for the 1054 bookmark; its starting ruler has been buffed and its capital is now Haldensleben
 -Missions will no longer require you to increase the loyalty of estates over 60% or their landshare at all
--Forming the following nations now properly gives you their missions: Russia (by reforms), Great Britain (diplomatically), Lotharingia (as any tag other than Lorraine), Spain, Aquitaine, Tunis
--There are no longer two separate decisions to form Dalmatia
 -Admin tech 40 is now required to form Romania, but it is no longer required for Byzantium to not exist
 -Austria is no longer formable by endgame nations
 -After the Ascenion of Ladislaus event, Styria no longer needs Linz and Innsbruck to form Austria
 -Hohenstaufer Inheritance incident can now also fire in the Age of Holy Wars
--Fragmentation of Poland ending event should no longer fire twice if you choose to keep Poland united
--The Polish Church no longer backstabs their country during the Fragmentation
--Decreased Edward the Confessor's lifespan even more and blocked him from introducing an heir manually
--Refusing a province to become Germanic during the ostsiedlung will no longer cause nationwide unrest
+-Reworked parts of Brittany's mission tree structure and improved several missions
+-Small changes to Brandenburg's mission tree structure
+-To end the Fragmentation of Poland you now need to pacify all nationalist rebels
+-The Polish Church no longer supports foreigners during the Fragmentation of Poland
+-Blocked Edward the Confessor from introducing an heir manually
+-Russian core countries are less likely to secede if the province owner is not an appanage
 -Turkish beyliks will no longer grant Dhimmi autonomy
 -Italian Communes will no longer be able to turn into a monarchy through passing all government reforms; they will have to use a decision turning them into a signoria or monarchy instead
--The Szekely and Szaszok culture events can no longer fire more than once
--Corrected some Magyar DPNs
+-Any Southern Italian provinces and tags now also leave the Empire if the Emperor fails to avert the Shadow Kingdom incident
+-Sardinia-Piedmont's Age of Ideology ability is now -10 global years of separatism
+-Markish countries can no longer release Brandenburg via decision
+-Some crusades when initiated now give a whole Area as cores to the warleader rather than just the target province
 -Swapped Phrygian and Cappadokian culture colours
+-Changed Ingolstadt's trade good to wine
 -Changed Fife's traditions for the glory of Dundee
--Changed the following flags: Blankenburg, Mansfeld, Merseburg, Querfurt, Stolberg, Wernigerode, Leisnig
--Tecklenburg no longer falls under a PU with Mecklenburg in the timeline
--Minor history changes especially around Saxony
--More German localization additions
--Other minor localization/bug fixes
+-Minor history changes especially around Saxony and the Palatinate
+ 
+#Balance
+-Byzantium now starts in 1054 with numerous negative modifiers that must be removed via decisions to avoid the Crisis
+-Byzantium no longer starts with the Theme System modifier; they instead have to regain it using the decision after the Crisis
+-Progress toward the Crisis now accelerates if Byzantium has Overextension
+-The Crisis can no longer be stopped by releasing a buffer state and granting it provinces
+-Byzantium will no longer get or lose monarch points through Purple Phoenix events while they are an Eastern Monarchy
+-The Seljuks will raid Byzantiums provinces already before the Crisis
+-It is no longer possible to take the Russian Crown while having the Eastern Monarchy government
+-Buffed the Papacy for a bit during the Investiture Controversy
+-The Baltic Orders will get permanent instead of temporary claims on tribal land upon spawning
+-Forming Germany, the North German Confederation or the South German Confederation is now slightly more difficult
+-The Center of Revolution will now spread the Revoution to 7 provinces simultaneously
+-Players now get recurring events to deal with the rise of the Italian Communes after the event for them to start spawning has fired
+-Slightly upped the rate at which advisor cost increases, and made advisors start out with the same cost as in vanilla
+-Slightly upped state maintenance cost per development universally
+-Rebalanced several mod-specific policies (thanks to RetrogMGXII for assisting with this)
+-Slightly rebalanced the effects of abbacy factions
+-Nerfed many modifiers given from several missions
+ 
+#Fixes
+-Small fixes for the following mission trees: Flanders, Russia, Pisa, Mazovia, Switzerland, Provence, Sicily, Lorraine, Aragon, Altsachsen, Denmark, Outremer, Worms, Swabia, Poland, Tuscany, Apulia, Austria, Baghdad, Bohemia, England, Frisia, Normandy, Portugal, Saxony, Toulouse, Venice, Volga Bulgaria, Great Britain, Commonwealth, Spain, Castile/Leon, Prussia, Novgorod, Altsachsen, HRE Theocracy, Greek REL, Horde REL, Albanian REL
+-The Baltic Orders should finally, and I mean finally, spawn with proper techs
+-Also made the tags of the 4th crusade spawn with proper techs
+-Fixed major bug preventing Industrialism from spawning for Rule Britannia owners
+-Forming the following nations now properly gives you their missions: Russia (by reforms), Great Britain (diplomatically), Lotharingia (as any tag other than Lorraine), Spain, Aquitaine, Tunis
+-Fixed Anglo-Saxon England and Alba losing their original missions when forming Great Britain
+-There are no longer two separate decisions to form Dalmatia
+-The game should now properly check if a Russian Reform is passed or not
+-Fixed several issues with the Fragmentation of Poland disaster; it should now end as normal and have two clear outcomes in the ending event
+-Refusing a province to become Germanic during the ostsiedlung will no longer cause nationwide unrest
+-Fixed two Silesian provinces becoming Lower Saxon instead of Upper Saxon during the ostsiedlung
+-The Szekely and Szaszok culture events can no longer fire more than once
+-Celje and Slovenia now use proper ship names from vanilla
+-Fixed a ton of French minors not using proper ship names (should fix broken stuff like "Transport I" and "$PROVINCE$")
+-There are no longer two Brunswickian idea sets
+-Removed some unused flags that were still lying around
+-Fixed a bugged Holy Orders agenda
+-Fixed a ton of unit positioning errors across the map
+-Removed several duplicated monarch/ship/leader/advisor names in the files
+-Corrected some Magyar DPNs
+-Fixed some inaccuracies with Hungarian rivers
+-Fixed a few provinces being in two areas at once
+-Fixed some price change events being unable to fire
+-Mandaeists now actually get their religious events
+-Fixed a bunch of issues around historical wars in the timeline
+-Infantry should no longer time travel to fight with weapons they shouldn't have during battles
+-Other minor localization/bug fixes; there was an extensive cleanup of errors that had accumulated over the past year or two
 
 # v 2.1.3 #
 

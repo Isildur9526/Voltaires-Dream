@@ -60,7 +60,6 @@ monarch_names = {
 	"Willi #0" = 0
 	"Albrecht #0" = 0
 	"Engelbert #0" = 0
-	"Gottfried #0" = 0
 	"Hieronymus #0" = 0
 	"Anton #0" = 0
 	"Ignatz #0" = 0

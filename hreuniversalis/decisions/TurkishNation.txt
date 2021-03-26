@@ -57,6 +57,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = RUM
+			hidden_effect = { restore_country_name = yes }
 			RUM = {
 				if = {
 					limit = {

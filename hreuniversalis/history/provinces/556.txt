@@ -1,7 +1,7 @@
 owner = NAP
 controller = NAP
 add_core = NAP
-culture = greek
+culture = neapolitan
 religion = catholic 
 hre = no
 base_tax = 1
@@ -12,7 +12,6 @@ capital = "Ischia"
 is_city = yes
 
 1139.7.25 = {
-	culture = neapolitan 
 	owner = CPU
 	controller = CPU
 	add_core = CPU

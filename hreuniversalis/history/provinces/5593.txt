@@ -39,7 +39,7 @@ add_core = HUN
 	add_core = TRA
 	add_core = HUN
 }
-1506.1.1 = { revolt = { type = anti_tax_revels size = 0 } controller = REB }
+1506.1.1 = { revolt = { type = anti_tax_rebels size = 0 } controller = REB }
 1507.1.1 = { revolt = {} controller = TRA }
 1514.4.1 = { revolt = { type = anti_tax_rebels size = 0 } controller = REB }
 1514.10.1 = { revolt = {} controller = TRA }

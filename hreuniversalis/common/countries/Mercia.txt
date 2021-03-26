@@ -84,7 +84,8 @@ leader_names = {
 }
 
 ship_names = {
-	"$PROVINCE$" "Westseaxe" "Hwicce" "Cerdic" "Mierce" "Norﬁhymbre"
+	"$PROVINCE$" 
+	"Westseaxe" "Hwicce" "Cerdic" "Mierce" "Norﬁhymbre"
 	"Suﬁseaxe" "Eastseaxe" "Lindesege" "Beowulf" "Hrothgar" "Grendel"
 	"Wyrm" "Byrhtnoth" "Brut" "Arthur" "Augustine" "Middleseaxe" "Rood"
 	"Heofonrice" "Mickel" "Christe" "∆ﬁelingas" "Scyld Scefing"

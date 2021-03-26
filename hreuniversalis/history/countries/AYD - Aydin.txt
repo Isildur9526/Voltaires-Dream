@@ -20,6 +20,18 @@ religious_school = hanafi_school
 }
 1096.1.1 = { restore_country_name = yes }
 
+#Sasan Beylik
+1304.1.1 = {
+	monarch = {
+		name = "Sasan"
+		dynasty = "Sasanoglu"
+		adm = 1
+		dip = 2
+		mil = 4
+	}
+	add_piety = 0.3
+}
+
 #Aydin Beylik
 1308.1.1 = {
 	monarch = {
@@ -29,7 +41,6 @@ religious_school = hanafi_school
 		dip = 3
 		mil = 3
 	}
-	add_piety = 0.3
 	heir = {
 		name = "Umar"
 		monarch_name = "Umar I"

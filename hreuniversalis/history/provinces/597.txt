@@ -55,10 +55,10 @@ center_of_trade = 1
 	owner = MEN
 	controller = MEN
 }
+1306.9.20 = { add_core = KNI }
 1309.8.15 = {
 	owner = KNI
 	controller = KNI
-	add_core = KNI
 	remove_core = BYZ
 	fort_14th = yes
 }

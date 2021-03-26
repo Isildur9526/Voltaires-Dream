@@ -20,7 +20,7 @@ vn_geo_missions_slot_1 = {
 				limit = { has_dlc = "Dharma" }
 				has_reform_level = 4
 			}
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			stability = 2
 			all_subject_country = {
 				NOT = { liberty_desire = 1 }

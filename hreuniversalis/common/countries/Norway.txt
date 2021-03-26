@@ -92,7 +92,7 @@ ship_names = {
 	Skagerak Skien Skjeggen Skjerstad Skjold Skjoldmøya Skjærtorsdag Skorpionen Skrim Skudenes Skytteren Sleipner Snar Snø Solbakk Solglimt
 	Solli Solve Stadt Stangarfare Stegg Stigandi Stjerne Storm Strand Strindaknollen Støren Sundal Sunnifusuden Sveinsnautr Svenner
 	Sværdfisken Syftesok Sygnafylke Sættarspillir Sønnavind Sørøy Søviknes Tanafjord Tarmen Tau Taurus Tegnen Terne Thermopylæ Tignesvennen
-	Titran Tjeldsund Tor Torden "Tore Jarl" Torshovde Tranen Tranen Troll Trollfjord Trondheim Trudvang Tyr Uller Ulven Ulvhalden Ulvhedningen
+	Titran Tjeldsund Tor Torden "Tore Jarl" Torshovde Tranen Troll Trollfjord Trondheim Trudvang Tyr Uller Ulven Ulvhalden Ulvhedningen
 	Utvær Vaagen Vale Valkyrien Vallebussen Valslynga Varangberg Vardø Vargen Varøy Vesteraalen Vestevind Vestri Vidar Vidsjå Viken Vindafjord
 	Vinland Visund Vollsøy Volva Væringen Våle Æge Æger Øibuen Ørn Årdalsfjord Årmannen
 }

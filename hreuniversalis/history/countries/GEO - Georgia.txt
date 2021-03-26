@@ -11,8 +11,17 @@ change_estate_land_share = {
 	estate = estate_nomadic_tribes
 	share = -20
 }
+change_estate_land_share = {
+	estate = estate_church
+	share = 10
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
 
 1037.11.1 = {
+	set_estate_privilege = estate_nobles_georgian_strong_duchies
 	monarch = {
 		name = "Bagrat IV"
 		dynasty = "Bagrationi"
@@ -238,5 +247,8 @@ change_estate_land_share = {
 		dip = 1
 		mil = 1
 	}
+}
+1259.1.1 = {
+	remove_estate_privilege = estate_nobles_georgian_strong_duchies
 }
 #1259 split

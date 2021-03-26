@@ -40,7 +40,7 @@ add_core = CST
 	owner = LAN
 	controller = LAN
 	add_core = LAN
-	remove_Core = XPR
+	remove_core = XPR
 	remove_core = CST
 	hre = yes
 }

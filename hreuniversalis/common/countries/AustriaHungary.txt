@@ -106,7 +106,6 @@ monarch_names = {
 	"Theresa Benedicta #0" = -1
 	"Walburga #0" = -1
 	"Maximiliane #0" = -1
-	"Maximiliane #0" = -1
 	"Maria Margaret #0" = -1
 	"Maria Magdalena #0" = -1
 	"Cecilia Renata #0" = -1

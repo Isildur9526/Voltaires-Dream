@@ -99,7 +99,7 @@ country_event = {
 	}
 }
 
-# Vows of Poverty
+# Vows of Poverty and Starvation
 country_event = {
 	id = hussite.3
 	title = hussite.3.t

@@ -19,6 +19,8 @@ add_core = POM
 	remove_core = POM
 	religion = catholic
 	culture = polish
+	#1-1-1
+	base_production = 1
 }
 1138.10.28 = {
 	owner = WKP

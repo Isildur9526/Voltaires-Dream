@@ -12,6 +12,10 @@ vn_eng_missions_slot_1_a = {
 				tag = GBR
 				was_tag = ENG
 			}
+            AND = {
+				tag = GBR
+				was_tag = ASE
+			}
 		}
         NOT = { map_setup = map_setup_random }
     }
@@ -23,20 +27,20 @@ vn_eng_missions_slot_1_a = {
         required_missions = { }
         position = 1
         trigger = {
-            legitimacy_equivalent = 100
-            stability = 2
+            legitimacy = 100
+            stability = 1
             NOT = { average_unrest = 1 }
             estate_loyalty = {
                 estate = estate_nobles
-                loyalty = 60
+                loyalty = 50
             }
             estate_loyalty = {
                 estate = estate_church
-                loyalty = 60
+                loyalty = 50
             }
             estate_loyalty = {
                 estate = estate_burghers
-                loyalty = 60
+                loyalty = 50
             }
             NOT = {
                 any_owned_province = {
@@ -59,12 +63,6 @@ vn_eng_missions_slot_1_a = {
             }
 		}
         effect = {
-			custom_tooltip = vn_eng_consolidate_our_rule.tt2
-			hidden_effect = {
-				every_owned_province = {
-					add_nationalism = -5
-				}
-			}	
             add_country_modifier = {
                 name = "eng_consolidate_our_rule_mission"
                 duration = 9125
@@ -462,7 +460,7 @@ vn_eng_missions_slot_2_a = {
         position = 1
         trigger = {
 			num_of_owned_provinces_with = {
-				value = 10
+				value = 8
 				has_fort_trigger = yes
 			}
         }
@@ -500,12 +498,17 @@ vn_eng_missions_slot_2_b = {
         required_missions = { vn_eng_integrate_danelaw }
         provinces_to_highlight = {
             OR = {
+                area = cumberland_area
                 area = galloway_area
                 area = ayrshire_area
             }
             NOT = { country_or_non_sovereign_subject_holds = ROOT }
         }
         trigger = {
+            cumberland_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
             galloway_area = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
@@ -661,7 +664,7 @@ vn_eng_missions_slot_2_b = {
 			prestige = 50
 			army_size_percentage = 0.6
 			navy_size_percentage = 0.6
-			legitimacy_equivalent = 95
+			legitimacy = 95
         }
         effect = {
             add_adm_power = 75
@@ -945,7 +948,7 @@ vn_eng_missions_slot_2_e = {
         effect = {
             create_general = {
                 tradition = 75
-                culture = french
+                culture = cosmopolitan_french
             }
             add_country_modifier = {
                 name = "eng_invade_burgundy_mission"
@@ -1074,14 +1077,28 @@ vn_eng_missions_slot_3_a = {
         required_missions = { }
 		position = 1
 		provinces_to_highlight = {
-			region = northumbria_region
+			OR = {
+                area = west_riding_area
+                area = east_riding_area
+                area = northumberland_area
+            }
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { is_core = ROOT }
 			}
 		}
         trigger = {
-            northumbria_region = {
+            west_riding_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            east_riding_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            northumberland_area = {
                 type = all
                 owned_by = ROOT
                 is_core = ROOT
@@ -1092,6 +1109,13 @@ vn_eng_missions_slot_3_a = {
             add_country_modifier = {
                 name = "ase_assimilate_danes_mission"
                 duration = 9125
+			}
+            cumberland_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
 			}
 			edinburgh_area = {
                 limit = {

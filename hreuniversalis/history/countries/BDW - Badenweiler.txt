@@ -72,9 +72,9 @@ capital = 1863
 		name = "Johann I"
 		dynasty = "von Freiburg"
 		birth_date = 1396.5.26
-		adm = 1
-		dip = 2
+		adm = 4
+		dip = 4
 		mil = 2
 	}
 }
-#1444 done
+#1424 done

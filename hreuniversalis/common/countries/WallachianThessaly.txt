@@ -125,14 +125,14 @@ ship_names = {
 	Gerontas
 	Hydra Hellas Harmatia
 	Ierax Ionia Ipiros
-	Karteria Klepht Kapetanissa Karteria Kios Kydonia
+	Klepht Kapetanissa Karteria Kios Kydonia
 	Lesbos Limnos Loudovikos Lemnos Lonchi Leon
 	Mikonios "Megas Orkos" Messolongion Makedonia
 	Niki
 	Olympia Orestes Othrys
-	Pezopoulos Panorea Patrokosmas Poros Psara Panopi Pliksavra Peloponnesos Penelope Psara Panthir Pindos Pergamos
+	Pezopoulos Panorea Patrokosmas Poros Panopi Pliksavra Peloponnesos Penelope Psara Panthir Pindos Pergamos
 	Rhetoras
-	Salamis Samos Simitzopoulos Spetsai Sphagia Sfendoni Skevo Sfendoni Skorpios
-	Themistoklis Tourkofagos Thyella Themistoklis Thraki Thetis Typhon Tilemachos
+	Salamis Samos Simitzopoulos Spetsai Sphagia Skevo Sfendoni Skorpios
+	Tourkofagos Thyella Themistoklis Thraki Thetis Typhon Tilemachos
 	Votsis Velos
 }

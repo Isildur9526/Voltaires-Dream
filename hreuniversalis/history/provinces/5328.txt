@@ -2,7 +2,7 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = WTH
-culture = greek
+culture = aromanian
 religion = orthodox
 hre = no
 base_tax = 2
@@ -48,6 +48,7 @@ discovered_by = north_american
 	owner = BYZ
 	controller = BYZ
 	add_core = BYZ
+	culture = greek
 }
 1341.9.1 = {
 	revolt = { type = pretender_rebels size = 0 }

@@ -31,11 +31,11 @@ religious_school = hanafi_school
 }
 1093.1.1 = {
 	restore_country_name = yes
-	capital = 2747
+	capital = 570
 }
 
 #Saruhan Beylik
-1306.1.1 = {
+1304.1.1 = {
 	monarch = {
 		name = "Saruhan"
 		dynasty = "Saruhanoglu"
@@ -45,6 +45,7 @@ religious_school = hanafi_school
 	}
 	add_piety = -0.1
 }
+1313.1.1 = { capital = 2747 }
 1346.1.1 = {
 	monarch = {
 		name = "Fahrüddin"

@@ -233,8 +233,12 @@ vn_tus_missions_slot_4 = {
 		icon = sponsor_the_arts
 		required_missions = { vn_lan_italian_athens }
 		trigger = {
-			has_3_advisors_trigger = yes
-			num_accepted_cultures = 5
+			has_3_lv3_advisors_trigger = yes
+			NOT = {
+				any_neighbor_country = {
+					tech_difference = 1
+				}
+			}
 			NOT = { corruption = 0.01 }
 		}
 		effect = {
@@ -339,7 +343,7 @@ vn_tus_missions_slot_5 = {
 					all_states = {
 						is_prosperous = yes
 					}
-					amount = 10
+					amount = 5
 				}
 			}
 			development_in_provinces = {

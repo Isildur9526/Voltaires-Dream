@@ -1145,6 +1145,7 @@ laytheology = {
 						religion = waldensian
 						religion = bogomilist
 						religion = fraticelli
+						religion = lollardy
 						religion = hussite
 					}
 				}
@@ -1809,7 +1810,7 @@ printing_press = {
 							religion = protestant
 							religion = reformed
 							religion = anglican
-							religion = anapabtist
+							religion = anabaptist
 						}
 					}
 				}
@@ -1822,7 +1823,7 @@ printing_press = {
 							religion = protestant
 							religion = reformed
 							religion = anglican
-							religion = anapabtist
+							religion = anabaptist
 						}
 					}
 				}
@@ -1840,7 +1841,7 @@ printing_press = {
 						religion = reformed
 						religion = protestant
 						religion = anglican
-						religion = anapabtist
+						religion = anabaptist
 					}
 				}
 			}
@@ -1851,7 +1852,7 @@ printing_press = {
 						religion = reformed
 						religion = protestant
 						religion = anglican
-						religion = anapabtist
+						religion = anabaptist
 					}
 				}
 			}

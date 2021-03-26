@@ -17,50 +17,12 @@ add_core = TOF
 	add_core = EBX
 	remove_core = TOF
 }
-1262.1.1 = {
-	owner = PAL
-	controller = PAL
-	add_core = PAL
-	remove_core = EBX
-}
-1410.5.18 = {
-	owner = MBK
-	controller = MBK
-	add_core = MBK
-	remove_core = PAL
-}
-1443.3.14 = {
-	owner = UPA
-	controller = UPA
-	add_core = UPA
-}
-1499.4.8 = {
-	owner = PAL
-	controller = PAL
-	add_core = PAL
-	remove_core = UPA
-	remove_core = MBK
-}
-1546.4.19 = { religion = reformed }
-1689.8.1 = { controller = FRA }
-1697.9.20 = { controller = PAL }
-1777.12.30 = {
-	owner = BAV
-	controller = BAV
-	add_core = BAV
-	remove_core = PAL
-}
-1803.4.27 = {
-	owner = BAD 
-	controller = BAD 
-	add_core = BAD 
-	remove_core = BAV
-}
-1805.12.26 = {
+1544.1.1 = { religion = protestant }
+1806.7.12 = {
 	owner = DSD
-	controller = DSD
+	controller = DSD 
 	add_core = DSD
-	remove_core = BAD
+	remove_core = EBX
 }
 1866.8.23 = { hre = no }
 1871.1.18 = {

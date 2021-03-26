@@ -64,7 +64,6 @@ monarch_names = {
 	"Bogomil #0" = 0
 	"Branimir #0" = 0
 	"Damyan #0" = 0
-	"Dimitar #0" = 0
 	"Emil #0" = 0
 	"Gavril #0" = 0
 	"Hristo #0" = 0

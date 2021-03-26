@@ -1,5 +1,5 @@
 capital = "Kotenna"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = cotton
 base_tax = 1

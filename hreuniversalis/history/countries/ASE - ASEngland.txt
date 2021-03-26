@@ -15,6 +15,14 @@ change_estate_land_share = {
 	estate = estate_nobles
 	share = 10
 }
+change_estate_land_share = {
+	estate = estate_church
+	share = -5
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = -5
+}
 
 1042.6.9 = {
 	add_country_modifier = {

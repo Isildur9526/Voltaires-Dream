@@ -894,6 +894,8 @@ has_completed_all_reforms_trigger = {
 			has_reform = many_fingers_of_god_reform
 			has_reform = religious_permanent_revolution_reform
 			has_reform = religion_in_one_country_reform
+			#mod
+			has_reform = hussite_radicalism_reform
 		}
 	}
 }
@@ -917,6 +919,8 @@ has_final_tier_reforms_trigger = {
 			has_reform = many_fingers_of_god_reform
 			has_reform = religious_permanent_revolution_reform
 			has_reform = religion_in_one_country_reform
+			#mod
+			has_reform = hussite_radicalism_reform
 		}
 	}
 }
@@ -1071,11 +1075,19 @@ is_shadow_kingdom_eligible_trigger = {
 	is_emperor = no
 	is_part_of_hre = yes
 	OR = {
-		capital_scope = { superregion = italy_superregion }
+		capital_scope = { 
+			OR = {
+				superregion = italy_superregion
+				superregion = sicily_superregion
+			}
+		}
 		AND = {
 			culture_group = latin
 			any_owned_province = {
-				superregion = italy_superregion
+				OR = {
+					superregion = italy_superregion
+					superregion = sicily_superregion
+				}
 			}
 		}
 	}
@@ -1323,7 +1335,7 @@ revolution_event_can_happen_trigger = {
 	}
 	OR = {
 		capital_scope = { 
-#			continent = europe 
+			#continent = europe 
 			controlled_by = REB
 		}
 		has_country_modifier = just_lost_to_revolutionary_rebels

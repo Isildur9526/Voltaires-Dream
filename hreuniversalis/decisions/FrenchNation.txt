@@ -64,6 +64,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FRA
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			set_country_flag = unformable
 			remove_non_electors_emperors_from_empire_effect = yes

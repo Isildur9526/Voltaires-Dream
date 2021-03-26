@@ -9,10 +9,10 @@ fixed_capital = 4629
 religious_school = maliki_school
 
 #Emirate of Nekor
-1054.1.1 = {
+1039.1.1 = {
 	override_country_name = NEKOR_NAME
 	monarch = {
-		name = "Ya‘la"
+		name = "Aziz"
 		dynasty = "Banû Azdaj"
 		adm = 3
 		dip = 3

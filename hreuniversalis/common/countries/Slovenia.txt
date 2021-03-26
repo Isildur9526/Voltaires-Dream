@@ -74,7 +74,19 @@ leader_names = {
 }
 
 ship_names = {
-	$PROVINCE$
+	Aesontius
+	Carnia
+	Istra Ilirija
+	Jalovec
+	Kranjska
+	Ljubljana
+	Mangart
+	Prlekija Ptuj Pazin
+	Ribnica
+	Stajerska Sava Sitik
+	Triglav
+	Vrba Vinica
+	Zdravljica
 }
 
 army_names = {

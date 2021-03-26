@@ -88,7 +88,6 @@ monarch_names = {
 	"Humbert #0" = 1
 	"Baldwin #0" = 1
 	"Baldur #0" = 1
-	"Bruno #0" = 1
 	"Isaak #0" = 1
 	"Isidor #0" = 1
 	"Jakob #0" = 1

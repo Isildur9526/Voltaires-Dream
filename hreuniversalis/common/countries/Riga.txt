@@ -50,7 +50,6 @@ monarch_names = {
 	"Thomas #0" = 20
 	"Wilhelm #0" = 20
 	"Fromhold #0" = 15
-	"Henning #0" = 15
 	"Siegfried #0" = 15
 	"Albrecht #0" = 10
 	"Engelbert #0" = 10

@@ -57,15 +57,12 @@ monarch_names = {
 	"Anselm #0" = 0
 	"Wilhelm #0" = 0
 	"Ernst #0" = 0
-	"Konrad #0" = 0
 	"Gustav #0" = 0
 	"Georg #0" = 0
 	"Joachim #0" = 0
 	"Franz #0" = 0
 	"David #0" = 0
-	"Johannes #0" = 0
 	"Rudolf #0" = 0
-	"Ernst #0" = 0
 	"Raphael #0" = 0
 	
 	"Gabriella #0" = -1
@@ -96,5 +93,5 @@ ship_names = {
 	"Graf von Sulzbach" Wittelsbach "Graf von Diepolding"
 	Otto
 	Augsburg Andechs Burgau Diessen Friedberg Kempten Lindau
-	Memmingen Mindel Oettingen Straubing Wolfstein
+	Mindel Oettingen Straubing Wolfstein
 }

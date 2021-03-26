@@ -20,6 +20,8 @@ add_core = LZZ
 	remove_core = LZZ
 	culture = eastphalian
 	hre = yes
+	#1-1-1
+	base_manpower = 1
 }
 1214.1.1 = {
 	owner = XLI

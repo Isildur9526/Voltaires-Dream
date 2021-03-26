@@ -37,7 +37,7 @@ VN_albanian_missions = {
 		icon = mission_coronation
 		required_missions = { vn_albanian_defence }
 		trigger = {
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			is_tribal = no
 		}
 		effect = {
@@ -85,7 +85,7 @@ VN_albanian_missions = {
 	}
 }
 
-VN_albanian_missions = {
+VN_albanian_missions_2 = {
 	slot = 5
 	generic = yes
 	ai = yes

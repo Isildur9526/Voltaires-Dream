@@ -103,7 +103,7 @@ ship_names = {
 	Forsva Fortuna "Fredensborg Slot" "Fredericus Quartus" "Fredericus Quintus" "Fredericus Tertius" Frederik "Frederik III" "Frederik IV" Frederiksort
 	Frederiksvaern Freja "Frøken Elschen" Fylla Fynen Gabriel "Gak Med" Galatea Galiotjagten "Gamle Delmenhorst" Gefion "Geheimraad Moltke" Gejser Georg
 	Gerner Gideon Gjengafjord Glasjagten Glommen Gluckstadt Gotteborg "Graa Falk" "Graa Ulv" "Grev Morner" Griben Griffen Grippen Grønland "Grønne Drage"
-	"Grå Kat" Guldregn Gulland Gyldenløve Hafridderen Haien Hamlet Hannibal "Hans Peter" Haren Havfruen Havhesten Havmanden Heiren Hejmdal Hekla Hekla
+	"Grå Kat" Guldregn Gulland Gyldenløve Hafridderen Haien Hamlet Hannibal "Hans Peter" Haren Havfruen Havhesten Havmanden Heiren Hejmdal Hekla
 	Helena Helleflynderen Helsingør Herringnæs "Hester Marie" Hielperen Hieronimius Hjaelperinden Hjelsminde "Hollandske Fregat" Holsteen Hummeren
 	Hurtigheden Husaren Hvalfisken Hvalrossen Hvedholm "Hvide Bjørn" "Hvide Falk" "Hvide Fortuna" "Hvide Hund" Høyenhald Håbet Iderim Infødsretten
 	Iresine Iris Island Jaegare Jaegerborg Jaegeren Johannes Jomfrusvend Jonas Josaphat "Julius Caesar" Juncker Jupiter Justitia Jylland Karlshavn

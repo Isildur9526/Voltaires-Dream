@@ -1295,7 +1295,6 @@ palatine_monarchy = {
 		OR = {
 			tag = TUB
 			tag = CEP
-			tag = FCM
 			tag = PVA
 			AND = {
 				OR = {
@@ -1584,6 +1583,50 @@ landgrave_monarchy = {
 			tag = BDF
 			tag = ALS
 		}
+	}
+}
+
+freegrave_monarchy = {
+	rank = {
+		1 = COUNTY
+		2 = FREEGRAVIATE
+		3 = DUCHY
+		4 = PRINCIPALITY
+		5 = KINGDOM
+		6 = EMPIRE
+	}	
+	
+	ruler_male = {
+		1 = COUNT
+		2 = FREEGRAVE
+		3 = DUKE
+		4 = PRINCE
+		5 = KING
+		6 = EMPEROR
+	}
+	
+	ruler_female = {
+		1 = COUNTESS
+		2 = FREEGRAVINE
+		3 = DUCHESS
+		4 = PRINCESS
+		5 = QUEEN
+		6 = EMPRESS
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = FREEGRAVINE_CONSORT
+		3 = DUCHESS_CONSORT
+		4 = PRINCESS_CONSORT
+		5 = QUEEN_CONSORT
+		6 = EMPRESS_CONSORT
+	}
+
+	trigger = {
+		is_part_of_hre = yes
+		government = monarchy
+		tag = FCM
 	}
 }
 
@@ -2221,39 +2264,39 @@ turkish_monarchy = {
 	}
 }
 
-oligarch_subject = {
-	rank = {
-		1 = COUNTY
-		2 = MARGRAVIATE
-		3 = DUCHY
-		4 = PRINCIPALITY
-		5 = KINGDOM
-		6 = EMPIRE
-	}
+#oligarch_subject = {
+#	rank = {
+#		1 = COUNTY
+#		2 = MARGRAVIATE
+#		3 = DUCHY
+#		4 = PRINCIPALITY
+#		5 = KINGDOM
+#		6 = EMPIRE
+#	}
 
-	ruler_male = {
-		1 = OLIGARCH_TITLE
-		2 = MARGRAVE
-		3 = DUKE
-		4 = PRINCE
-		5 = KING
-		6 = EMPEROR
-	}
+#	ruler_male = {
+#		1 = OLIGARCH_TITLE
+#		2 = MARGRAVE
+#		3 = DUKE
+#		4 = PRINCE
+#		5 = KING
+#		6 = EMPEROR
+#	}
 
-	ruler_female = {
-		1 = OLIGARCH_TITLE
-		2 = MARGRAVINE
-		3 = DUCHESS
-		4 = PRINCESS
-		5 = QUEEN
-		6 = EMPRESS
-	}
+#	ruler_female = {
+#		1 = OLIGARCH_TITLE
+#		2 = MARGRAVINE
+#		3 = DUCHESS
+#		4 = PRINCESS
+#		5 = QUEEN
+#		6 = EMPRESS
+#	}
 
-	trigger = {
-		primary_culture = hungarian
-		government = monarchy
-	}
-}
+#	trigger = {
+#		primary_culture = hungarian
+#		government = monarchy
+#	}
+#}
 
 italian_commune_monarchy = {
 	rank = {
@@ -3547,8 +3590,8 @@ florentine_republic = {
 		2 = GONFALONIERE
 		3 = GONFALONIERE
 		4 = GONFALONIERE
-		5 = GRAND_CONSUL
-		6 = GREAT_CONSUL
+		5 = GRAND_GONFALONIERE
+		6 = GREAT_GONFALONIERE
 	}
 
 	ruler_female = {
@@ -3556,8 +3599,8 @@ florentine_republic = {
 		2 = GONFALONIERE_fem
 		3 = GONFALONIERE_fem
 		4 = GONFALONIERE_fem
-		5 = GRAND_CONSULESS
-		6 = GREAT_CONSULESS
+		5 = GRAND_GONFALONIERE_fem
+		6 = GREAT_GONFALONIERE_fem
 	}
 
 	trigger = {

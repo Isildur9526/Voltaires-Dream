@@ -78,6 +78,7 @@ country_decisions = {
 	  			set_capital = 328
 			}
 			change_tag = NED
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			lowlands_superregion = {
 				limit = {

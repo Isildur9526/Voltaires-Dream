@@ -490,6 +490,12 @@ estate_holy_orders_grand_crusade = {
 			current_age = age_of_holy_wars
 			current_age = age_of_crisis
 		}
+		NOT = {
+			OR = {
+				is_in_war = { casus_belli = cb_grand_crusade }
+				is_in_war = { casus_belli = cb_grand_heretic }
+			}
+		}
 	}
 	selection_weight = {
 		factor = 1

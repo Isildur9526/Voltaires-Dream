@@ -59,7 +59,6 @@ monarch_names = {
 	"Galeazzo #0" = 0
 	"Costanzo #0" = 0
 	"Guglielmo #0" = 0
-	"Antonio #0" = 0
 	"Braccio #0" = 0
 	"Guidantonio #0" = 0
 	"Lorenzo #0" = 0

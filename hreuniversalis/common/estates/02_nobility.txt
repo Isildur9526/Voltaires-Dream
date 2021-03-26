@@ -236,6 +236,7 @@ estate_nobles =
 		trigger = {
 			OR = {
 				primary_culture = polish
+				primary_culture = mazovian
 				primary_culture = lithuanian
 			}
 		}
@@ -273,6 +274,7 @@ estate_nobles =
 	color = { 200 0 50 }
 	
 	privileges = {
+		byz_aristocrats_p
 		estate_nobles_frontier_resettlement
 		estate_nobles_land_rights
 		estate_nobles_nobility_primacy
@@ -283,6 +285,7 @@ estate_nobles =
 		estate_nobles_supremacy_over_crown
 		estate_nobles_junker_primacy
 		estate_nobles_strong_duchies
+		estate_nobles_georgian_strong_duchies
 		estate_nobles_golden_liberty
 		estate_nobles_veto_heir_apparent
 		estate_nobles_nieszawa_privileges

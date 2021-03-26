@@ -606,76 +606,10 @@ vn_ara_missions_slot_3_a = {
 	}
 	has_country_shield = yes
     
-	vn_ara_prepare_reconquista = {
-		position = 1
-		icon = mission_build_up_to_force_limit
-		required_missions = { }
-		completed_by = 1055.1.1
-		trigger = {
-            army_size_percentage = 0.75
-            num_of_generals = 1
-			NOT = {
-				any_owned_province = {
-					controlled_by = REB
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = vn_ara_prepare_reconquista.tt
-				any_neighbor_country = {
-					religion = sunni
-				}
-			}
-		}
-		effect = {
-			add_army_tradition = 10
-			huesca_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			711 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			567 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			4320 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			4309 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-		}
-    }
 	vn_ara_reach_ebro = {
 		icon = mission_advance_to_the_dnieper
 		completed_by = 1149.10.1
+		position = 2
 		required_missions = {
 			vn_ara_prepare_reconquista
 			vn_ara_support_from_allies
@@ -715,6 +649,18 @@ vn_ara_missions_slot_3_a = {
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					valid_for_personal_unions_trigger = yes
+					exists = NAV
+					NAV = { valid_for_personal_unions_trigger = yes }
+				}
+				add_casus_belli = {
+					type = cb_fabricated_claims
+					target = NAV
+					months = 300
+				}
 			}
 		}
     }
@@ -1010,51 +956,79 @@ vn_ara_missions_slot_4_a = {
 	}
 	has_country_shield = yes
 	
-	vn_ara_subjugate_navarra = {
+	vn_ara_prepare_reconquista = {
 		position = 1
-		icon = mission_subjugate_navarra
-		completed_by = 1127.6.1
+		icon = mission_build_up_to_force_limit
 		required_missions = { }
-		provinces_to_highlight = {
-			OR = {
-				area = navarra_area
-				area = vizcaya_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
+		completed_by = 1055.1.1
 		trigger = {
-			navarra_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+            army_size_percentage = 0.75
+            num_of_generals = 1
+			NOT = {
+				any_owned_province = {
+					controlled_by = REB
+				}
 			}
-			vizcaya_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			custom_trigger_tooltip = {
+				tooltip = vn_ara_prepare_reconquista.tt
+				any_neighbor_country = {
+					religion = sunni
+				}
 			}
 		}
 		effect = {
-			basque_region = {
-				limit = { country_or_non_sovereign_subject_holds = ROOT }
-				add_province_modifier = {
-					name = "cas_subjugate_navarra_mission"
-					duration = 9125
-				}
-			}
-			gascony_region = {
+			add_army_tradition = 10
+			add_years_of_income = 1
+			huesca_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
-		}	
-	}
+			711 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			567 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4320 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4309 = {
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+    }
 	vn_ara_the_catalan_question = {
 		position = 3
 		icon = mission_have_two_subjects
 		required_missions = {
 			vn_ara_reach_ebro
-			vn_ara_subjugate_navarra
 		}
 		completed_by = 1137.11.13
 		trigger = {
@@ -1322,6 +1296,45 @@ vn_ara_missions_slot_5_a = {
 	}
 	has_country_shield = yes
     
+	vn_ara_subjugate_navarra = {
+		position = 3
+		icon = mission_subjugate_navarra
+		completed_by = 1149.10.1
+		required_missions = { vn_ara_reach_ebro }
+		provinces_to_highlight = {
+			OR = {
+				area = navarra_area
+				area = vizcaya_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			navarra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vizcaya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			basque_region = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				add_province_modifier = {
+					name = "cas_subjugate_navarra_mission"
+					duration = 9125
+				}
+			}
+			gascony_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}	
+	}
 	vn_ara_conquer_septimania = {
 		position = 4
 		icon = mission_conquer_50_development

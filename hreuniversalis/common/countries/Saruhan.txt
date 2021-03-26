@@ -71,7 +71,6 @@ monarch_names = {
 	"Davud #0" = 0
 	"Hasan #0" = 0
 	"Hüseyin #0" = 0
-	"Ishak #0" = 0
 	"Kamer #0" = 0
 	"Kasim #0" = 0
 	"Korkud #0" = 0

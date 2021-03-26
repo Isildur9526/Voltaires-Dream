@@ -533,7 +533,7 @@ country_event = {
 						culture_group = french
 						culture = dutch
 						culture = flemish
-						culture = frisian
+						culture = east_frisian
 						is_part_of_hre = yes
 					}
 				}

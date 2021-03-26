@@ -11,7 +11,12 @@ owner = MKL
 controller = MKL
 add_core = MKL
 
-1167.1.1 = { religion = catholic }
+1167.1.1 = { 
+	religion = catholic 
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
+}
 1178.12.30 = {
 	culture = pommeranian
 	capital = "Grevesmühlen"

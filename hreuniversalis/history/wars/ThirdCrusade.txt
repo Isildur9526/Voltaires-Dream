@@ -68,7 +68,7 @@ war_goal = {
 	rem_attacker = FLA
 }
 
-1192.9.7 = {
+1191.9.7 = {
 	battle = { 
 		name = "Arsuf" 
 		location = 4967

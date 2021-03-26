@@ -79,8 +79,8 @@ leader_names = {
 ship_names = {
 	Oldambt Scheemda Winschoten
 	Blauwestad Heiligerlee
-	Midwolda Scheemda Oostwold
-	Westerlee waar
+	Midwolda Oostwold
+	Westerlee
 }
 
 army_names = {

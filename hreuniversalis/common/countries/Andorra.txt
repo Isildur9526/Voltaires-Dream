@@ -41,7 +41,6 @@ monarch_names = {
 	"Bernat #0" = 10
 	"Odó #0" = 10
 	"Pere #0" = 10	
-	"Bernat #0" = 10
 	"Arnau #0" = 10
 	"Ponç #0" = 10
 	"Abril #0 " = 10

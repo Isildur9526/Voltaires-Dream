@@ -75,7 +75,7 @@ leader_names = {
 
 ship_names = {
 	Pentevr Leon Naoned Dinan Gwitreg
-	Kernev Roc'han Gwitreg Kernev
+	Kernev
 	Roc'han Porhoët Kastell-Briant
 	Gwened Reoz Vrezhoned Roazhon
 	Poc'hêr Henbont Sant-Nazar

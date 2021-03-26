@@ -1,5 +1,5 @@
 capital = "Sillyon"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = vegetables
 base_tax = 1

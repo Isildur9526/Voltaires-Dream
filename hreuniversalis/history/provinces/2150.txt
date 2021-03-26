@@ -1,7 +1,7 @@
 owner = BYZ
 controller = BYZ
 add_core = BYZ
-culture = greek
+culture = aromanian
 religion = orthodox
 hre = no
 base_tax = 2
@@ -23,6 +23,7 @@ add_core = EPI
 	owner = BYZ
 	controller = BYZ
 	add_core = BYZ
+	culture = greek
 }
 1341.9.1 = {
 	revolt = { type = pretender_rebels size = 0 }

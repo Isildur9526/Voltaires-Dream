@@ -1,5 +1,5 @@
 capital = "Gynaikokastron"
-culture = greek
+culture = aromanian
 religion = orthodox
 trade_goods = peaches
 base_tax = 1
@@ -63,6 +63,7 @@ add_core = BYZ
 	owner = SER
 	controller = SER
 	add_core = SER
+	culture = bulgarian
 }
 1355.12.20 = {
 	owner = MXD

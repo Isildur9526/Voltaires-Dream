@@ -168,12 +168,13 @@ estate_burghers =
 	color = { 35 35 150 }
 
 	privileges = {
-		estate_burghers_jewish_scapegoats
-		estate_burghers_jewish_sanctuary
 		estate_burghers_land_rights
 		estate_burghers_land_of_commerce
 		estate_burghers_admirals
 		estate_burghers_patronage_of_the_arts
+		estate_burghers_dutch_water_lines
+		estate_burghers_jewish_scapegoats
+		estate_burghers_jewish_sanctuary
 		estate_burghers_commercial_board_of_advice
 		estate_burghers_new_world_charter
 		estate_burghers_indebted_to_burghers

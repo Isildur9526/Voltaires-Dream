@@ -75,6 +75,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = IRE
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			irish_superregion = {
 				limit = {

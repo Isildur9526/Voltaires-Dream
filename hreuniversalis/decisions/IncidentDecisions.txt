@@ -25,7 +25,12 @@ country_decisions = {
 								overlord = { # overlord chooses for their vassals if eligible to leave themselves
 									NOT = {
 										is_part_of_hre = yes
-										capital_scope = { superregion = italy_superregion }
+										capital_scope = { 
+											OR = {
+												superregion = italy_superregion
+												superregion = sicily_superregion
+											}
+										}
 									}
 								}
 							}
@@ -47,7 +52,12 @@ country_decisions = {
 							overlord = { # overlord chooses for their vassals if eligible to leave themselves
 								NOT = {
 									is_part_of_hre = yes
-									capital_scope = { superregion = italy_superregion }
+									capital_scope = { 
+										OR = {
+											superregion = italy_superregion
+											superregion = sicily_superregion
+										}
+									}
 								}
 							}
 						}

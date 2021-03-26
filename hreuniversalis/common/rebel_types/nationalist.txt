@@ -301,7 +301,6 @@ nationalist_rebels = {
 					has_rebel_faction = REB
 					culture = REB
 					NOT = { is_core = REB }
-					culture = REB
 				}
 				add_core = REB
 			}

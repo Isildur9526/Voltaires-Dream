@@ -22,7 +22,7 @@ vn_plc_missions_slot_1 = {
 			NOT = { current_age = age_of_crisis }
             any_neighbor_country = {
 				religion_group = muslim
-				culture = turkish
+				primary_culture = turkish
 			}
         }
         effect = {
@@ -661,7 +661,7 @@ vn_plc_missions_slot_4 = {
         required_missions = { vn_plc_free_royal_cities_act }
         trigger = {
 			stability = 2
-            legitimacy_equivalent = 100
+            legitimacy = 100
 			if = {
 				limit = { has_estate = estate_nobles }
 				NOT = {

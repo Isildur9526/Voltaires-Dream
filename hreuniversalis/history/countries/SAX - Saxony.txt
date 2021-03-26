@@ -61,7 +61,6 @@ capital = 629
 		dynasty = "Hårfagreætta"
 		birth_date = 1020.1.1
 		death_date = 1071.5.24
-		culture = danish
 		female = yes
 		adm = 2
 		dip = 2

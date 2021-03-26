@@ -13,18 +13,16 @@ add_core = SPH
 fort_14th = yes
 
 1337.1.1 = { fort_14th = no fort_15th = yes }
-#1385 ZWB to PAL
-#1410.5.18 ZWB sep from PAL
 1437.10.24 = {
-	owner = ZWB
-	controller = ZWB
-	add_core = ZWB
+	owner = PAL
+	controller = PAL
+	add_core = PAL
 }
 1529.1.1 = { religion = protestant }
 1569.6.11 = {
 	owner = SPH
 	controller = SPH
-	remove_core = ZWB
+	remove_core = PAL
 }
 1731.9.17  = {
 	owner = ZWB

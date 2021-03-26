@@ -1,5 +1,5 @@
 capital = "Adada"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = marble
 base_tax = 1

@@ -85,16 +85,6 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = string_bailif
-		trigger = {
-			OR = {
-				culture_group = british
-				culture_group = french
-				culture_group = germanic
-			}
-		}
-	}
-	text = {
 		localisation_key = string_ispan
 		trigger = {
 			culture_group = carpathian
@@ -103,14 +93,51 @@ defined_text = {
 	text = {
         localisation_key = string_official
         trigger = {
+			NOT = { tag = PAP }
+			NOT = { tag = BYZ }
 			NOT = { religion_group = muslim }
+			NOT = { religion = egyptian_religion }
 			NOT = {
 				culture_group = south_slavic
+				culture_group = east_slavic
+				culture_group = roman
+				culture_group = byzantine
 				culture_group = british
 				culture_group = french
 				culture_group = germanic
 			}
         }
+	}
+	# mod
+	text = {
+        localisation_key = string_nomarch
+        trigger = {
+			religion_group = egyptian_religion
+        }
+	}
+	text = {
+		localisation_key = string_posadnik
+		trigger = {
+			culture_group = east_slavic
+		}
+	}
+	text = {
+		localisation_key = string_prefect
+		trigger = {
+			OR = {
+				tag = PAP
+				culture_group = roman
+			}
+		}
+	}
+	text = {
+		localisation_key = string_strategos
+		trigger = {
+			OR = {
+				tag = BYZ
+				culture_group = byzantine
+			}
+		}
 	}
 }
 
@@ -2202,7 +2229,7 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = uralinisko_string
+		localisation_key = uralinusko_string
 		trigger = {
 			religion = uralinisko
 		}

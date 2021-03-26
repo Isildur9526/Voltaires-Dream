@@ -27,9 +27,15 @@ discovered_by = muslim
 	add_core = PAL
 }
 1410.5.18 = {
+	owner = ZWB
+	controller = ZWB
+	add_core = ZWB
+	remove_core = PAL
+}
+1444.1.1 = {
 	owner = SXM
 	controller = SXM
-	remove_core = PAL
+	remove_core = ZWB
 }
 1539.1.1 = { religion = protestant }
 1557.5.18 = {

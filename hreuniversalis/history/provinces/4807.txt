@@ -17,6 +17,11 @@ add_core = SET
 	add_core = POM
 	remove_core = SET
 }
+1109.8.10 = {
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
+}
 1116.1.1 = {
 	owner = POL
 	controller = POL

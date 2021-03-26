@@ -855,7 +855,7 @@ vn_fra_missions_slot_1_c = {
                     NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
                 }
-                add_permanent_claim = ROOT
+                add_claim = ROOT
 			}
 			inner_tunisia_region = {
                 limit = {
@@ -863,7 +863,7 @@ vn_fra_missions_slot_1_c = {
 					NOT = { is_permanent_claim = ROOT }
 					has_port = yes
                 }
-                add_permanent_claim = ROOT
+                add_claim = ROOT
 			}
         }
     }
@@ -1588,6 +1588,9 @@ vn_fra_missions_slot_2_f = {
                 }
                 add_claim = ROOT
 			}
+			country_event = {
+				id = vn_missions.86
+			}
         }
     }
     vn_fra_challenge_papal_power = {
@@ -1605,7 +1608,8 @@ vn_fra_missions_slot_2_f = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-			OR = {
+			calc_true_if = {
+				amount = 2
 				viterbo_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT
@@ -1621,13 +1625,15 @@ vn_fra_missions_slot_2_f = {
 			}
         }
         effect = {
-			add_religious_influence_effect_large = yes
             latium_area = {
                 limit = {
                     NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
                 }
                 add_claim = ROOT
+			}
+			country_event = {
+				id = vn_missions.85
 			}
         }
     }
@@ -1852,28 +1858,28 @@ vn_fra_missions_slot_3_a = {
         required_missions = {  }
         trigger = {
 			OR = {
-				legitimacy_equivalent = 100
+				legitimacy = 100
 				stability = 1
 			}
 			if = {
 				limit = { has_estate = estate_burghers }
 				estate_loyalty = {
 					estate = estate_burghers
-					loyalty = 60
+					loyalty = 50
 				}
 			}
 			if = {
 				limit = { has_estate = estate_church }
 				estate_loyalty = {
 					estate = estate_church
-					loyalty = 60
+					loyalty = 50
 				}
 			}
 			if = {
 				limit = { has_estate = estate_nobles }
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 60
+					loyalty = 50
 				}
 			}
 			months_of_ruling = 120
@@ -2167,6 +2173,9 @@ vn_fra_missions_slot_3_a = {
                 }
                 add_permanent_claim = ROOT
 			}
+			country_event = {
+				id = vn_missions.84
+			}
         }
     }
     vn_fra_conquer_romagna = {
@@ -2257,22 +2266,22 @@ vn_fra_missions_slot_3_b = {
 			}
 			has_adm_advisor_3 = yes
 			OR = {
-				philosopher = 2
-				natural_scientist = 2
-				artist = 2
+				philosopher = 3
+				natural_scientist = 3
+				artist = 3
 			}
         }
         effect = {
 			add_innovativeness_big_effect = yes
-			custom_tooltip = vn_fra_french_enlightenment.tt
-			hidden_effect = {
-				every_owned_province = {
-					add_institution_embracement = {
-						which = enlightenment
-						value = 10
-					}
-				}
-			}
+			#custom_tooltip = vn_fra_french_enlightenment.tt
+			#hidden_effect = {
+			#	every_owned_province = {
+			#		add_institution_embracement = {
+			#			which = enlightenment
+			#			value = 10
+			#		}
+			#	}
+			#}
         }
 	}
 	vn_fra_fate_of_monarchy = {
@@ -2450,7 +2459,7 @@ vn_fra_missions_slot_4_a = {
     }
     vn_fra_loire_valley_chateaux = {
         icon = mission_european_castle
-		position = 5
+		position = 4
 		completed_by = 1550.1.1
 		required_missions = { vn_fra_found_sorbonne }
 		provinces_to_highlight = {
@@ -2497,6 +2506,30 @@ vn_fra_missions_slot_4_a = {
 			}
         }
 	}
+	vn_fra_palace_of_versailles = {
+        icon = versailles_palace
+		position = 5
+		completed_by = 1661.1.1
+		required_missions = { vn_fra_loire_valley_chateaux }
+		provinces_to_highlight = {
+			province_id = 1216
+		}
+        trigger = {
+            1216 = {
+				owned_by = ROOT
+				has_fort_17th_trigger = yes
+			}
+        }
+        effect = {
+			add_legitimacy = 15
+			1216 = {
+				add_province_modifier = {
+					name = "fra_palace_of_versailles_mission"
+					duration = -1
+				}
+			}
+        }
+    }
 }
 
 vn_fra_missions_slot_4_b = {
@@ -2789,7 +2822,7 @@ vn_fra_missions_slot_4_e = {
         required_missions = { vn_fra_edict_of_moulins }
         trigger = {
 			absolutism = 50
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			OR = {
 				ADM = 6
 				DIP = 6
@@ -2965,7 +2998,7 @@ vn_fra_missions_slot_4_f = {
     }
     vn_fra_seize_alsace = {
         icon = mission_cannons_firing
-        position = 17
+        position = 16
         required_missions = { 
 			vn_fra_annex_lorraine 
 			vn_fra_chambers_of_reunion 
@@ -3099,6 +3132,7 @@ vn_fra_missions_slot_4_f = {
     }
     vn_fra_cities_on_rhine = {
         icon = mission_hanseatic_city
+		position = 18
 		required_missions = { vn_fra_seize_alsace }
 		provinces_to_highlight = {
 			OR = {
@@ -3193,7 +3227,6 @@ vn_fra_missions_slot_4_f = {
 			}
         }
         effect = {
-			add_prestige = 20
 			add_country_modifier = {
 				name = "fra_natural_border_mission"
 				duration = 9125
@@ -3208,6 +3241,13 @@ vn_fra_missions_slot_4_f = {
             OR = {
 				is_emperor = yes
 				NOT = { hre_size = 1 }
+			}
+			num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 100
+				OR = {
+					superregion = germanynorth_superregion
+					superregion = germanysouth_superregion
+				}
 			}
         }
         effect = {
@@ -3916,34 +3956,11 @@ vn_fra_missions_slot_5_g = {
     }
 	has_country_shield = yes
 	
-    vn_fra_palace_of_versailles = {
-        icon = versailles_palace
-		position = 15
-		completed_by = 1661.1.1
-		required_missions = { vn_fra_letat_cest_moi }
-		provinces_to_highlight = {
-			province_id = 1216
-		}
-        trigger = {
-            1216 = {
-				owned_by = ROOT
-				has_fort_17th_trigger = yes
-			}
-        }
-        effect = {
-			add_legitimacy = 15
-			1216 = {
-				add_province_modifier = {
-					name = "fra_palace_of_versailles_mission"
-					duration = -1
-				}
-			}
-        }
-    }
     vn_fra_chambers_of_reunion = {
 		icon = mission_noble_council
 		completed_by = 1680.1.1
-        required_missions = { vn_fra_palace_of_versailles }
+		position = 15
+        required_missions = { vn_fra_letat_cest_moi }
         trigger = {
 			calc_true_if = {
 				desc = vn_fra_chambers_of_reunion.tt
@@ -4006,7 +4023,7 @@ vn_fra_missions_slot_5_h = {
 	
     vn_fra_conquer_luxembourg = {
         icon = mission_village
-        position = 18
+        position = 17
 		required_missions = { vn_fra_seize_alsace }
 		provinces_to_highlight = {
 			area = luxemburg_area
@@ -4059,6 +4076,7 @@ vn_fra_missions_slot_5_h = {
     vn_fra_into_netherlands = {
         icon = mission_the_austrian_succession 
 		required_missions = { vn_fra_conquer_luxembourg }
+		position = 19
 		provinces_to_highlight = {
 			OR = {
 				area = chiny_area

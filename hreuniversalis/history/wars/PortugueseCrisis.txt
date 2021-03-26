@@ -104,7 +104,7 @@ war_goal = {
 	}
 }
 
-1385.4.6 = {
+1385.10.14 = {
 	rem_attacker = CAS
 	rem_defender = POR
 	rem_defender = ENG

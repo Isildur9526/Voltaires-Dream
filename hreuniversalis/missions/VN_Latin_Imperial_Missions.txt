@@ -779,7 +779,7 @@ vn_lem_missions_slot_4 = {
         trigger = {
             stability = 2
             NOT = { average_unrest = 2 }
-            legitimacy_equivalent = 100
+            legitimacy = 100
             has_heir = yes
         }
         effect = {

@@ -1,5 +1,5 @@
 capital = "Seleukeia Trachea"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = bananas
 base_tax = 2

@@ -805,7 +805,7 @@ vn_ser_missions_slot_3_b = {
                 amount = 2
             }
             prestige = 50
-			legitimacy_equivalent = 95
+			legitimacy = 95
 			stability = 2
             army_size = 50
             months_of_ruling = 120
@@ -1118,9 +1118,7 @@ vn_ser_missions_slot_5_a = {
                         NOT = { religion = bogomilist }
                     }
                 }
-                AND = {
-                    religion = bogomilist
-                }
+                religion = bogomilist
             }
             religious_unity = 1
         }

@@ -213,7 +213,7 @@ vn_lit_missions_slot_1 = {
             NOT = { has_reform = grand_duchy_reform }
             is_subject = no
             total_development = 500
-            legitimacy_equivalent = 100
+            legitimacy = 100
         }
         effect = {
             add_stability_or_adm_power = yes

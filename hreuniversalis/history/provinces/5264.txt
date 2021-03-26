@@ -24,6 +24,9 @@ add_core = LTC
 	add_core = SGX
 	remove_core = CZY
 	religion = catholic
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
 }
 1156.4.1 = {
 	owner = WGS

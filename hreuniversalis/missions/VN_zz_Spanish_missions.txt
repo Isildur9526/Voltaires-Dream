@@ -27,7 +27,7 @@ vn_spa_missions_slot_1_a = {
 				calc_true_if = {
 					amount = 5
 					all_known_country = {
-						is_league_friend = yes
+						is_league_friend = ROOT
 					}
 				}
 			}
@@ -326,7 +326,7 @@ vn_spa_missions_slot_2_a = {
 			}
 		}
         trigger = {
-			legitimacy_equivalent = 95
+			legitimacy = 95
             iberia_superregion = {
 				type = all
 				owned_by = ROOT

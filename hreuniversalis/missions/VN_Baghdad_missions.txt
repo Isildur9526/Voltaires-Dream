@@ -1662,12 +1662,8 @@ vn_bgh_missions_slot_4 = {
         required_missions = { vn_bgh_surrender_of_cyprus vn_bgh_sieze_cilicia }
 		trigger = {
             anatolia_superregion = {
-                any_province = {
-					AND = { 
-						has_fort_trigger = yes
-						controlled_by = BGH 
-					}
-				}
+                has_fort_trigger = yes
+                controlled_by = BGH
             }             
         }
         effect = {

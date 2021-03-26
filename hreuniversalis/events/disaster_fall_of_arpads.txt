@@ -1097,7 +1097,7 @@ country_event = {
 		any_country = {
 			ai = yes
 			has_country_flag = hungarian_magnate_split_off
-			NOT = { has_country_flag = asked_magnate_for_loyality }
+			NOT = { has_country_flag = asked_magnate_for_loyalty }
 			is_neighbor_of = ROOT
 			is_subject = no
 			is_at_war = no
@@ -1113,7 +1113,7 @@ country_event = {
 				limit = {
 					ai = yes
 					has_country_flag = hungarian_magnate_split_off
-					NOT = { has_country_flag = asked_magnate_for_loyality }
+					NOT = { has_country_flag = asked_magnate_for_loyalty }
 					is_neighbor_of = ROOT
 					is_subject = no
 					is_at_war = no
@@ -1121,7 +1121,7 @@ country_event = {
 					NOT = { tag = TRA }
 					NOT = { tag = UNG }
 				}
-				set_country_flag = asked_magnate_for_loyality
+				set_country_flag = asked_magnate_for_loyalty
 				save_event_target_as = magnate_target
 			}
 		}
@@ -1218,6 +1218,7 @@ country_event = {
 	}
 }
 
+#Province demands Autonomy
 country_event = {
 	id = fall_of_arpads.4
 	title = fall_of_arpads.4.t

@@ -272,7 +272,7 @@ vn_aqt_missions_slot_2 = {
         required_missions = { vn_aqt_paris vn_aqt_reims }
         trigger = {
             is_subject = no
-			government_rank = 6
+			government_rank = 5
 			grown_by_development = 500
         }
         effect = {
@@ -481,7 +481,7 @@ vn_aqt_missions_slot_3 = {
             total_development = 150
 			grown_by_development = 50
 			diplomatic_reputation = 3
-			legitimacy_equivalent = 100  
+			legitimacy = 100  
             if = {
                 limit = { 
                     exists = FRA
@@ -492,6 +492,7 @@ vn_aqt_missions_slot_3 = {
 						value = 150
 					}
 					alliance_with = FRA
+					is_rival = FRA
 				}
             }			
         }

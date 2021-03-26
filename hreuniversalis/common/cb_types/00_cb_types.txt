@@ -1095,6 +1095,7 @@ cb_take_mandate = {
 		capital_scope = { is_part_of_hre = no }
 		religion = orthodox
 		NOT = { truce_with = FROM }
+		NOT = { has_reform = eastern_monarchy }
 		is_revolutionary = no
 	}
 

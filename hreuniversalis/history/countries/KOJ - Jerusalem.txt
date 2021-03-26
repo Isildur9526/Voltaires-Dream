@@ -28,6 +28,22 @@ historical_friend = TEM
 historical_friend = KNI
 historical_friend = TXO
 historical_friend = TYE
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = -5
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_holy_orders
+	share = 10
+}
 
 1099.7.15 = {
 	government_rank = 4

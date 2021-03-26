@@ -691,7 +691,7 @@ vn_hol_missions_slot_2_b = {
         required_missions = { vn_hol_army_expansion }
         trigger = { 
 			prestige = 25
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			num_of_royal_marriages = 3
         }
         effect = {

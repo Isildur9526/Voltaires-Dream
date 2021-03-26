@@ -1,6 +1,6 @@
 owner = AML
 controller = AML
-culture = greek
+culture = neapolitan
 religion = catholic 
 hre = no
 base_tax = 7
@@ -23,7 +23,6 @@ center_of_trade = 2
 	owner = APL
 	controller = APL
 	add_core = APL
-	culture = neapolitan
 }
 1130.12.25 = {
 	owner = SIC

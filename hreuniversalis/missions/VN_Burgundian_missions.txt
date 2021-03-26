@@ -1312,7 +1312,7 @@ VN_bur_missions_slot_4_b = {
 						capital_scope = { superregion = lowlands_superregion }
 					}
 					has_opinion = {
-						who = BUR
+						who = ROOT
 						value = 100
 					}
 				}
@@ -1659,7 +1659,7 @@ VN_bur_missions_slot_5_b = {
 			}
 		}
 		effect = {
-			add_prestige = 20
+			add_prestige = 15
 			add_country_modifier = {
 				name = "bur_defeat_france_mission"
 				duration = 7300

@@ -25,7 +25,10 @@ fragmentation_of_poland = {
 	}
 
 	can_start = {
-		NOT = { has_global_flag = had_fragmentation_of_poland }
+		custom_trigger_tooltip = {
+			tooltip = fragpol_tt.1
+			NOT = { has_global_flag = had_fragmentation_of_poland }
+		}
 		has_any_disaster = no
 		current_age = age_of_holy_wars
 		is_year = 1100
@@ -149,14 +152,24 @@ fragmentation_of_poland = {
 	can_end = {
 		tag = POL
 		custom_trigger_tooltip = {
+			tooltip = pol_was_not_split		
+			NOT = { has_global_flag = pol_was_split }
+		}
+		custom_trigger_tooltip = {
 			tooltip = disaster_active_for_10_years_tooltip
-			had_country_flag = {
+			had_global_flag = {
 				flag = poland_fragmentation_active
 				days = 3650
 			}
 		}
 		stability = 1
 		is_at_war = no
+		NOT = {
+			any_owned_province = {
+				has_rebel_faction = nationalist_rebels
+			}
+		}
+		NOT = { num_of_rebel_controlled_provinces = 1 }
 		calc_true_if = {
 			MAZ = {
 				OR = {

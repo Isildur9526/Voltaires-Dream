@@ -194,5 +194,5 @@ war_goal = {
 
 1871.5.10 = {
 	rem_attacker = FRA
-	rem_attacker = GER
+	rem_defender = GER
 }

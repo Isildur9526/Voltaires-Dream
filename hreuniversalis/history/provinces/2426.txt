@@ -1,5 +1,5 @@
 capital = "Side"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = venison
 base_tax = 1

@@ -170,7 +170,7 @@ vn_fri_missions_slot_2_a = {
                 }
             }
             NOT = { corruption = 1 }
-            statesman = yes
+            statesman = 2
             NOT = { average_unrest = 1 }
         }
         effect = {
@@ -213,7 +213,10 @@ vn_fri_missions_slot_2_b = {
                 DIP = 4
                 has_dip_advisor_3 = yes
             }
-            legitimacy_equivalent = 100
+            if = {
+                limit = { NOT = { government = native } }
+                legitimacy = 100
+            }
         }
         effect = {
             add_stability_or_adm_power = yes
@@ -329,7 +332,10 @@ vn_fri_missions_slot_2_d = {
                 MIL = 5
             }
             government_rank = 5
-            legitimacy_equivalent = 100
+            if = {
+                limit = { NOT = { government = native } }
+                legitimacy = 100
+            }
         }
         effect = {
             add_adm_power = 75
@@ -367,7 +373,10 @@ vn_fri_missions_slot_3_a = {
                 }
             }
             is_part_of_hre = yes
-            legitimacy_equivalent = 100
+            if = {
+                limit = { NOT = { government = native } }
+                legitimacy = 100
+            }
             OR = {
                 DIP = 3
                 has_dip_advisor_2 = yes
@@ -1071,7 +1080,7 @@ vn_fri_missions_slot_5_a = {
             province_id = 2750
         }
         trigger = {
-            naval_reformer = yes
+            naval_reformer = 2
             2750 = {
                 owned_by = ROOT
                 is_core = ROOT
@@ -1178,7 +1187,7 @@ vn_fri_missions_slot_5_a = {
             }
         }
         trigger = {
-            natural_scientist = yes
+            natural_scientist = 2
             462 = {
                 owned_by = ROOT
                 is_core = ROOT

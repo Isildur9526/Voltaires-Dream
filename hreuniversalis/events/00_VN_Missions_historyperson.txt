@@ -373,7 +373,7 @@ country_event = {
 	}	
 	
 	mean_time_to_happen = {
- 		months = 120
+ 		months = 300
  	}
 	
 	immediate = {
@@ -506,7 +506,7 @@ country_event = {
 	}	
 	
 	mean_time_to_happen = {
- 		months = 120
+ 		months = 300
  	}
 	
 	immediate = {
@@ -674,7 +674,7 @@ country_event = {
 	}	
 	
 	mean_time_to_happen = {
- 		months = 120
+ 		months = 300
  	}
 	
 	immediate = {
@@ -787,25 +787,7 @@ country_event = {
 		}
 		valid_for_personal_unions_trigger = yes
 		OR = {
-			XAP = { 
-				valid_for_personal_unions_trigger = yes			
-				OR = {
-					NOT = {
-						heir_claim = 50
-					}
-					has_heir = no
-				}
-			}
 			FCM = { 
-				valid_for_personal_unions_trigger = yes			
-				OR = {
-					NOT = {
-						heir_claim = 50
-					}
-					has_heir = no
-				}
-			}
-			PRO = {
 				valid_for_personal_unions_trigger = yes			
 				OR = {
 					NOT = {
@@ -823,7 +805,7 @@ country_event = {
 					has_heir = no
 				}
 			}
-			989 = {
+			765 = {
 				owner = {
 					valid_for_personal_unions_trigger = yes			
 					OR = {
@@ -838,34 +820,13 @@ country_event = {
 	}	
 	
 	mean_time_to_happen = {
- 		months = 120
+ 		months = 300
  	}
 	
 	immediate = {
 		set_country_flag = sax_claim_burgundy
 	} 
 	
-	option = {
-		name = vn_missions.206.a
-		ai_chance = { factor = 90 }
-		trigger = {
-			exists = XAP
-			XAP = {
-				valid_for_personal_unions_trigger = yes
-				OR = {
-					NOT = {
-						heir_claim = 50
-					}
-					has_heir = no
-				}
-			}
-		}		
-		add_casus_belli = {
-			target = XAP
-			type = cb_fabricated_claims
-			months = 60
-		}
-	}
 	option = {
 		name = vn_missions.206.a
 		ai_chance = { factor = 90 }
@@ -883,27 +844,6 @@ country_event = {
 		}		
 		add_casus_belli = {
 			target = FCM
-			type = cb_fabricated_claims
-			months = 60
-		}
-	}
-	option = {
-		name = vn_missions.206.a
-		ai_chance = { factor = 90 }
-		trigger = {
-			exists = PRO
-			PRO = {
-				valid_for_personal_unions_trigger = yes
-				OR = {
-					NOT = {
-						heir_claim = 50
-					}
-					has_heir = no
-				}
-			}
-		}		
-		add_casus_belli = {
-			target = PRO
 			type = cb_fabricated_claims
 			months = 60
 		}
@@ -934,12 +874,10 @@ country_event = {
 		ai_chance = { factor = 90 }
 		trigger = {
 			NOT = { 
-				exists = XAP
 				exists = FCM
-				exists = PRO
 				exists = BUR
 			}
-			989 = {
+			765 = {
 				owner = {
 					valid_for_personal_unions_trigger = yes
 					OR = {
@@ -951,7 +889,7 @@ country_event = {
 				}
 			}
 		}		
-		989 = {
+		765 = {
 			owner = {
 				reverse_add_casus_belli = {
 					target = ROOT
@@ -979,6 +917,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = { 
+		always = no
 		tag = SAX
 		NOT = {
 			OR = {
@@ -1175,243 +1114,5 @@ country_event = {
 			add_base_production = 2
 			add_base_manpower = 2
 		}	
-	}
-}
-
-###Other Events
-#IDs 300 and over
-#XPavia 0, XSicily 1, XBarcelona 2, XProvence 3, XFlanders 6, XBrabant 7
-#Bohemia 4, Swabia/von Hohenstaufen 5, Foix 8
-#Unique Political Situation (Bohemia)
-country_event = {
-	id = vn_missions.304
-	title = vn_missions.304.t
-	desc = vn_missions.304.d
-	picture = HRE_eventPicture
-	
-	fire_only_once = yes
-
-	trigger = { 
-		always = no	#disabled
-		tag = BOH
-		army_size_percentage = 1
-		navy_size_percentage = 1
-		num_of_generals = 3
-		stability = 3
-		has_3_lv3_advisors_trigger = yes
-		OR = {
-			has_idea_group = logistics_ideas
-			has_idea_group = offensive_ideas
-			has_idea_group = defensive_ideas
-			has_idea_group = quality_ideas
-			has_idea_group = quantity_ideas
-			has_idea_group = naval_ideas
-			has_idea_group = aristocracy_ideas
-			has_idea_group = plutocracy_ideas
-		}	
-		NOT = {
-			has_country_flag = had_hp_event
-		}
-	}	
-	
-	mean_time_to_happen = {
- 		months = 1
- 	}
-	
-	immediate = {
-		set_country_flag = had_hp_event
-	} 
-	
-	option = {
-		name = vn_missions.300.a
-		ai_chance = { factor = 50 }
-		trigger = {
-			NOT = { 
-				OR = {
-					has_idea_group = aristocracy_ideas
-					has_idea_group = plutocracy_ideas
-				}	
-			}
-		}		
-		add_adm_power = 25
-		add_dip_power = 25
-		add_mil_power = 25
-	}
-	option = {
-		name = vn_missions.300.c
-		ai_chance = { factor = 50 }
-		trigger = {
-			OR = {
-				has_idea_group = aristocracy_ideas
-				has_idea_group = plutocracy_ideas
-			}		
-		}
-		add_army_tradition = 10
-		add_country_modifier = {
-			name = "boh_aspire_for_local_control_event"
-			duration = -1
-		}
-		add_country_modifier = {
-			name = "boh_muster_our_strength_event"
-			duration = -1
-		}
-	}
-}
-
-#Reunite Swabia (Swabia/von Hohenstaufen)
-country_event = {
-	id = vn_missions.305
-	title = vn_missions.305.t
-	desc = vn_missions.305.d
-	picture = BATTLE_eventPicture
-	
-	fire_only_once = yes
-
-	trigger = {
-		always = no	#disabled 
-		OR = {
-			tag = WWS
-			AND = {
-				dynasty = "von Hohenstaufen"
-				mission_completed = "vn_sic_our_ancestral_domain"
-			}
-		}
-		army_size_percentage = 1
-		navy_size_percentage = 1
-		num_of_generals = 3
-		stability = 3
-		has_3_lv3_advisors_trigger = yes
-		OR = {
-			has_idea_group = logistics_ideas
-			has_idea_group = offensive_ideas
-			has_idea_group = defensive_ideas
-			has_idea_group = quality_ideas
-			has_idea_group = quantity_ideas
-			has_idea_group = naval_ideas
-			has_idea_group = aristocracy_ideas
-			has_idea_group = plutocracy_ideas
-		}	
-		NOT = {
-			has_country_flag = had_hp_event
-		}
-	}	
-	
-	mean_time_to_happen = {
- 		months = 1
- 	}
-	
-	immediate = {
-		set_country_flag = had_hp_event
-	} 
-	
-	option = {
-		name = vn_missions.300.a
-		ai_chance = { factor = 50 }
-		trigger = {
-			NOT = { 
-				OR = {
-					has_idea_group = aristocracy_ideas
-					has_idea_group = plutocracy_ideas
-				}	
-			}
-		}		
-		add_adm_power = 25
-		add_dip_power = 25
-		add_mil_power = 25
-	}
-	option = {
-		name = vn_missions.300.c
-		ai_chance = { factor = 50 }
-		trigger = {
-			OR = {
-				has_idea_group = aristocracy_ideas
-				has_idea_group = plutocracy_ideas
-			}	
-		}
-		add_army_tradition = 10
-		add_country_modifier = {
-			name = "wws_show_our_strength_event"
-			duration = -1
-		}
-		add_country_modifier = {
-			name = "wws_reunite_swabia_event"
-			duration = -1
-		}
-	}
-}
-
-#Feudal Politics (Foix)
-country_event = {
-	id = vn_missions.308
-	title = vn_missions.308.t
-	desc = vn_missions.308.d
-	picture = BATTLE_eventPicture
-	
-	fire_only_once = yes
-
-	trigger = { 
-		always = no	#disabled
-		tag = FOI
-		army_size_percentage = 1
-		navy_size_percentage = 1
-		num_of_generals = 3
-		stability = 3
-		has_3_lv3_advisors_trigger = yes
-		OR = {
-			has_idea_group = logistics_ideas
-			has_idea_group = offensive_ideas
-			has_idea_group = defensive_ideas
-			has_idea_group = quality_ideas
-			has_idea_group = quantity_ideas
-			has_idea_group = naval_ideas
-			has_idea_group = aristocracy_ideas
-			has_idea_group = plutocracy_ideas
-		}	
-		NOT = {
-			has_country_flag = had_hp_event
-		}
-	}	
-	
-	mean_time_to_happen = {
- 		months = 1
- 	}
-	
-	immediate = {
-		set_country_flag = had_hp_event
-	} 
-	
-	option = {
-		name = vn_missions.300.a
-		ai_chance = { factor = 50 }
-		trigger = {
-			NOT = { 
-				OR = {
-					has_idea_group = aristocracy_ideas
-					has_idea_group = plutocracy_ideas
-				}	
-			}
-		}		
-		add_adm_power = 25
-		add_dip_power = 25
-		add_mil_power = 25
-	}
-	option = {
-		name = vn_missions.300.c
-		ai_chance = { factor = 50 }
-		trigger = {
-			OR = {
-				has_idea_group = aristocracy_ideas
-				has_idea_group = plutocracy_ideas
-			}		
-		}
-		add_army_tradition = 10
-		add_country_modifier = {
-			name = "foi_path_to_independence_event"
-			duration = -1
-		}
-		add_country_modifier = {
-			name = "foi_dominate_southern_france_event"
-			duration = -1
-		}
 	}
 }

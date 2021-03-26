@@ -79,7 +79,6 @@ monarch_names = {
 	"Berthold #0" = 10
 	"Andreas #0" = 10
 	"Dietrich #1" = 10
-	"Friedrich #0" = 10
 	"Alfred #0" = 0
 	"Christian #0" = 0
 	"Jürgen #0" = 0

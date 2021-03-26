@@ -49,6 +49,24 @@ capital = 909
 }
 1185.1.1 = {
 	monarch = {
+		name = "Otto I"
+		dynasty = "von Neuenahr"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1209.1.1 = {
+	monarch = {
+		name = "Otto II"
+		dynasty = "von Neuenahr"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1231.1.1 = {
+	monarch = {
 		name = "Gerhard I"
 		dynasty = "von Neuenahr"
 		adm = 2
@@ -56,16 +74,7 @@ capital = 909
 		mil = 2
 	}
 }
-1225.1.1 = {
-	monarch = {
-		name = "Otto I"
-		dynasty = "von Neuenahr"
-		adm = 2
-		dip = 4
-		mil = 2
-	}
-}
-1265.1.1 = {
+1266.1.1 = {
 	monarch = {
 		name = "Ulrich I"
 		dynasty = "von Neuenahr"
@@ -74,121 +83,87 @@ capital = 909
 		mil = 1
 	}
 }
-1305.1.1 = {
+1280.1.1 = {
 	monarch = {
-		name = "Dietrich II"
+		name = "Wilhelm I"
 		dynasty = "von Neuenahr"
 		adm = 2
 		dip = 2
 		mil = 3
 	}
 }
-1341.1.1 = {
-	monarch = {
-		name = "Johann I"
-		dynasty = "von Neuenahr"
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1371.1.1 = {
-	monarch = {
-		name = "(Regency Council)"
-		regent = yes
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-	heir = {
-		name = "Gumprecht"
-		monarch_name = "Gumprecht I"
-		dynasty = "von Neuenahr"
-		birth_date = 1371.1.1
-		death_date = 1430.1.1
-		claim = 95
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1388.1.1 = {
-	monarch = {
-		name = "Gumprecht I"
-		dynasty = "von Neuenahr"
-		birth_date = 1371.1.1
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1410.1.1 = {
-	heir = {
-		name = "Gumprecht"
-		monarch_name = "Gumprecht II"
-		dynasty = "von Neuenahr"
-		birth_date = 1410.1.1
-		death_date = 1484.3.9
-		claim = 95
-		adm = 3
-		dip = 4
-		mil = 2
-	}
-}
-1430.1.1 = {
-	monarch = {
-		name = "Gumprecht II"
-		dynasty = "von Neuenahr"
-		birth_date = 1410.1.1
-		adm = 3
-		dip = 4
-		mil = 2
-	}
-}
-1444.1.1 = {
-	heir = {
-		name = "Wilhelm"
-		monarch_name = "Wilhelm I"
-		dynasty = "von Neuenahr"
-		birth_date = 1444.1.1
-		death_date = 1497.5.12
-		claim = 95
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1484.3.9 = {
-	monarch = {
-		name = "Wilhelm I"
-		dynasty = "von Neuenahr"
-		birth_date = 1444.1.1
-		adm = 2
-		dip = 2
-		mil = 2
-	}
-}
-1485.1.1 = {
-	heir = {
-		name = "Wilhelm"
-		monarch_name = "Wilhelm II"
-		dynasty = "von Neuenahr"
-		birth_date = 1485.1.1
-		death_date = 1552.1.1
-		claim = 95
-		adm = 2
-		dip = 2
-		mil = 1
-	}
-}
-1497.5.12 = {
+1322.1.1 = {
 	monarch = {
 		name = "Wilhelm II"
 		dynasty = "von Neuenahr"
-		birth_date = 1485.1.1
 		adm = 2
 		dip = 2
+		mil = 2
+	}
+}
+1342.1.1 = {
+	monarch = {
+		name = "Wilhelm III"
+		dynasty = "von Neuenahr"
+		adm = 1
+		dip = 0
 		mil = 1
 	}
 }
-#1546 done
+1358.1.1 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Saffenberg"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1393.1.1 = {
+	monarch = {
+		name = "Wilhelm IV"
+		dynasty = "von Saffenberg"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+
+#Counts of Virneburg
+1426.1.1 = {
+	monarch = {
+		name = "Philipp I"
+		dynasty = "von Virneburg"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1443.2.10 = {
+	monarch = {
+		name = "Ruprecht II"
+		dynasty = "von Virneburg"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1459.1.1 = {
+	monarch = {
+		name = "Philipp II"
+		dynasty = "von Virneburg"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1517.1.1 = {
+	monarch = {
+		name = "Kuno I"
+		dynasty = "von Virneburg"
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+#done 1545

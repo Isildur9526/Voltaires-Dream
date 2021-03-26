@@ -2852,7 +2852,12 @@ country_event = {
 	option = {
 		name = "HREMA64"
 		change_tag = SWI
+		hidden_effect = { restore_country_name = yes }
 		swap_non_generic_missions = yes
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 }
+		}
 		set_in_empire = no
 		set_government_rank = 5
 		add_country_modifier = {
@@ -2892,7 +2897,7 @@ country_event = {
 		tag = KIE
 		owns = 4237
 		OR = {
-			NOT = { has_dlc = "Madante of Heaven" }
+			NOT = { has_dlc = "Mandate of Heaven" }
 			is_emperor_of_china = yes
 		}
 		religion = orthodox
@@ -4584,7 +4589,7 @@ country_event = {
 		has_global_flag = had_fragmentation_of_poland
 		had_global_flag = {
 			flag = had_fragmentation_of_poland
-			days = 30
+			days = 3650
 		}
 		NOT = { has_global_flag = silesia_partitioned }
 		any_owned_province = {
@@ -5905,6 +5910,7 @@ country_event = {
 				alliance_with = event_target:new_elector_1
 			}
 		}
+		add_imperial_influence = -5
 		event_target:new_elector_1 = {
 			elector = yes
 			add_opinion = {
@@ -5932,6 +5938,7 @@ country_event = {
 				alliance_with = event_target:new_elector_2
 			}
 		}
+		add_imperial_influence = -5
 		event_target:new_elector_2 = {
 			elector = yes
 			add_opinion = {
@@ -5959,6 +5966,7 @@ country_event = {
 				alliance_with = event_target:new_elector_3
 			}
 		}
+		add_imperial_influence = -5
 		event_target:new_elector_3 = {
 			elector = yes
 			add_opinion = {
@@ -6151,6 +6159,7 @@ country_event = {
 		}
 		culture_group = east_slavic
 		has_reform = principality
+		NOT = { has_country_flag = stop_releasing_another_country }
 		NOT = { has_global_flag = ongoing_rota }
 		NOT = {
 			any_country = {
@@ -6197,6 +6206,7 @@ country_event = {
 			release = event_target:rus_partition_country
 			event_target:rus_partition_country = {
 				set_country_flag = rus_country_released
+				set_country_flag = stop_releasing_another_country
 				if = {
 					limit = { NOT = { religion = ROOT } }
 					change_religion = ROOT
@@ -6219,6 +6229,7 @@ country_event = {
 						cavalry = 0.2
 					}
 				}
+				clr_country_flag = stop_releasing_another_country
 			}
 			if = {
 				limit = { is_subject_of_type = tributary_state }
@@ -6807,9 +6818,13 @@ province_event = {
 				}
 			}
 		}
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
 		if = {
 			limit = {
 				OR = {
+					region = silesia_region
 					culture = sorbian
 					culture = schlesian
 				}
@@ -6903,6 +6918,32 @@ province_event = {
 					culture = estonian
 				}
 			}
+			AND = {
+				current_age = age_of_crisis
+				owner = {
+					culture_group = germanic
+#					OR = {
+#						tag = PRU
+#						tag = BRA
+#					}
+				}
+				culture = pruthenian
+			}
+			AND = {
+				current_age = age_of_crisis
+				owner = {
+					culture_group = germanic
+#					OR = {
+#						tag = PRU
+#						tag = BRA
+#					}
+				}
+				OR = {
+					culture = latvian
+					culture = curonian
+					culture = estonian
+				}
+			}
 		}
 		NOT = { has_construction = culture }
 		NOT = { has_province_flag = ostsiedlung_flag }
@@ -6920,6 +6961,17 @@ province_event = {
 				OR = {
 					tag = TEU
 					tag = LIV
+#					tag = PRU
+#					tag = BRA
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			owner = {
+				OR = {
+					tag = PRU
+					tag = BRA
 				}
 			}
 		}
@@ -6994,7 +7046,11 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 240
+		months = 600
+		modifier = {
+			factor = 0.5
+			current_age = age_of_crisis
+		}
 	}
 
 	option = {
@@ -7108,7 +7164,11 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 240
+		months = 600
+		modifier = {
+			factor = 0.5
+			current_age = age_of_crisis
+		}
 	}
 
 	option = {
@@ -7545,7 +7605,6 @@ country_event = {
 				capital_scope = { superregion = italy_superregion }
 				is_emperor = no
 				is_part_of_hre = yes
-				ai = yes
 			}
 		}
 	}
@@ -7594,7 +7653,6 @@ country_event = {
 							capital_scope = { superregion = italy_superregion }
 							is_emperor = no
 							is_part_of_hre = yes
-							ai = yes
 						}
 					}
 				}
@@ -7614,7 +7672,6 @@ country_event = {
 							capital_scope = { superregion = italy_superregion }
 							is_emperor = no
 							is_part_of_hre = yes
-							ai = yes
 						}
 					}
 					save_event_target_as = italian_commune_province
@@ -7643,7 +7700,6 @@ country_event = {
 							capital_scope = { superregion = italy_superregion }
 							is_emperor = no
 							is_part_of_hre = yes
-							ai = yes
 						}
 					}
 					save_event_target_as = italian_commune_province
@@ -7662,14 +7718,13 @@ country_event = {
 
 country_event = {
 	id = hremodevents.122
-	title = none
-	desc = none
+	title = "HREMT122"
+	desc = "HREMD122"
 	picture = CITY_VIEW_eventPicture
 	
 	is_triggered_only = yes
 	
-	option = {
-		name = "OK"
+	immediate = {
 		hidden_effect = {
 			event_target:italian_commune_province = {
 				random_core_country = {
@@ -7678,38 +7733,50 @@ country_event = {
 						culture_group = latin
 						NOT = { has_country_flag = commune_released }
 					}
+					save_event_target_as = italian_commune_country
 					set_country_flag = commune_released
-					ROOT = { release = PREV }
-					every_owned_province = {
-						limit = { is_core = ROOT }
-						remove_core = ROOT
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "HREMA122"
+		ai_chance = { factor = 100 }
+		custom_tooltip = "HREMA122TT"
+		hidden_effect = {
+			event_target:italian_commune_country = {
+				ROOT = { release = PREV }
+				every_owned_province = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+				}
+				change_government = republic
+				add_government_reform = italian_monarchy
+				add_truce_with = ROOT
+				every_neighbor_country = {
+					limit = { 
+						capital_scope = { superregion = italy_superregion }
+						is_emperor = no
+						is_part_of_hre = yes
 					}
-					change_government = republic
-					add_government_reform = italian_monarchy
-					add_truce_with = ROOT
-					every_neighbor_country = {
-						limit = { 
-							capital_scope = { superregion = italy_superregion }
-							is_emperor = no
-							is_part_of_hre = yes
-						}
-						add_truce_with = PREV
+					add_truce_with = PREV
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
 					}
-					capital_scope = {
-						build_to_forcelimit = {
-							infantry = 0.8
-							cavalry = 0.2
-						}
+				}
+				every_core_province = {
+					limit = {
+						superregion = italy_superregion
+						NOT = { owned_by = PREV }
+						owner = { ai = yes }
+						is_capital = no
 					}
-					every_core_province = {
-						limit = {
-							NOT = { owned_by = PREV }
-							owner = { ai = yes }
-							is_capital = no
-						}
-						remove_core = owner
-						cede_province = PREV
-					}
+					remove_core = owner
+					cede_province = PREV
 				}
 			}
 			if = {
@@ -7729,7 +7796,6 @@ country_event = {
 							capital_scope = { superregion = italy_superregion }
 							is_emperor = no
 							is_part_of_hre = yes
-							ai = yes
 						}
 					}
 				}
@@ -7749,7 +7815,6 @@ country_event = {
 							capital_scope = { superregion = italy_superregion }
 							is_emperor = no
 							is_part_of_hre = yes
-							ai = yes
 						}
 					}
 					save_event_target_as = italian_commune_province
@@ -7778,7 +7843,98 @@ country_event = {
 							capital_scope = { superregion = italy_superregion }
 							is_emperor = no
 							is_part_of_hre = yes
-							ai = yes
+						}
+					}
+					save_event_target_as = italian_commune_province
+					owner = {
+						country_event = {
+							id = hremodevents.122
+							days = 10
+							random = 5
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "HREMB122"
+		goto = italian_commune_province
+		ai_chance = { factor = 0 }
+		trigger = { stability = -2 }
+		event_target:italian_commune_province = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				friend = event_target:italian_commune_country
+			}
+		}
+		add_stability = -1
+		hidden_effect = {
+			if = {
+				limit = {
+					any_province = {
+						is_in_capital_area = no
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+						}
+					}
+				}
+				random_province = {
+					limit = {
+						is_in_capital_area = no
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
+						}
+					}
+					save_event_target_as = italian_commune_province
+					owner = {
+						country_event = {
+							id = hremodevents.122
+							days = 10
+							random = 5
+						}
+					}
+				}
+			}
+			else = {
+				random_province = {
+					limit = {
+						any_core_country = { 
+							exists = no 
+							culture_group = latin
+							NOT = { has_country_flag = commune_released }
+						}
+						superregion = italy_superregion
+						is_capital = no
+						is_part_of_hre = yes
+						controlled_by = owner
+						owner = {
+							capital_scope = { superregion = italy_superregion }
+							is_emperor = no
+							is_part_of_hre = yes
 						}
 					}
 					save_event_target_as = italian_commune_province
@@ -8134,5 +8290,515 @@ country_event = {
 			who = CHR
 			modifier = hrema131_opinion
 		}
+	}
+}
+
+country_event = {
+	id = hremodevents.132
+	title = "HREMT132"
+	desc = "HREMD132"
+	picture = LIBERUM_VETO_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		normal_or_historical_nations = yes
+		NOT = { started_in = 1184.1.1 }
+		is_year = 1150
+		NOT = { is_year = 1250 }
+		is_emperor = yes
+		is_at_war = no
+		has_regency = no
+		has_consort_regency = no
+		any_country = {
+			NOT = { tag = ROOT }
+			NOT = { war_with = ROOT }
+			NOT = { is_subject_of_type = personal_union }
+			is_part_of_hre = yes
+			any_owned_province = {
+				OR = {
+					region = thuringia_region
+					region = saxony_region
+				}
+			}
+		}
+		831 = {
+			is_part_of_hre = yes
+			owner = {
+				OR = {
+					tag = ROOT
+					NOT = { war_with = ROOT }
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "HREMA132"
+		add_years_of_income = -0.25
+		custom_tooltip = hrema132.tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { war_with = ROOT }
+					NOT = { is_subject_of_type = personal_union }
+					is_part_of_hre = yes
+					any_owned_province = {
+						OR = {
+							region = thuringia_region
+							region = saxony_region
+						}
+					}
+				}
+				country_event = { id = hremodevents.133 days = 1 random = 50 }
+			}
+			random_list = {
+				50 = {
+					country_event = { id = hremodevents.134 days = 100 }
+				}
+				45 = {
+					country_event = { id = hremodevents.135 days = 100 }
+				}
+				5 = {
+					set_country_flag = erfurt_hoftag_kill_emperor
+					country_event = { id = hremodevents.135 days = 100 }
+				}
+			}
+		}
+	}
+	option = {
+		name = "HREMB132"
+		add_imperial_influence = -5
+		add_prestige = -5
+	}
+}
+
+country_event = {
+	id = hremodevents.133
+	title = "HREMT133"
+	desc = "HREMD133"
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "HREMA133"
+		ai_chance = { factor = 75 }
+		set_country_flag = attending_erfurt_hoftag
+		add_years_of_income = -0.1
+		add_opinion = {
+			who = FROM
+			modifier = opinion_pleased
+		}
+		reverse_add_opinion = {
+			who = FROM
+			modifier = opinion_pleased
+		}
+	}
+	option = {
+		name = "HREMB133"
+		ai_chance = { factor = 25 }
+		add_prestige = -5
+		add_opinion = {
+			who = FROM
+			modifier = opinion_mildly_displeased
+		}
+		reverse_add_opinion = {
+			who = FROM
+			modifier = opinion_mildly_displeased
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.134
+	title = "HREMT134"
+	desc = "HREMD134"
+	picture = FEAST_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = {
+		is_part_of_hre = yes
+	}
+
+	option = {
+		name = "HREMA134"
+		add_prestige = 10
+		add_imperial_influence = 5
+		every_country = {
+			limit = { has_country_flag = attending_erfurt_hoftag }
+			add_prestige = 10
+			clr_country_flag = attending_erfurt_hoftag
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.135
+	title = "HREMT135"
+	desc = {
+		trigger = { NOT = { has_country_flag = erfurt_hoftag_kill_emperor } }
+		desc = HREMD135
+	}
+	desc = {
+		trigger = { has_country_flag = erfurt_hoftag_kill_emperor }
+		desc = HREMDD135
+	}
+	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = {
+		is_part_of_hre = yes
+	}
+
+	option = {
+		name = "HREMA135"
+		add_prestige = -10
+		add_imperial_influence = -5
+		if = {
+			limit = {
+				has_country_flag = erfurt_hoftag_kill_emperor
+			}
+			kill_ruler = yes
+			clr_country_flag = erfurt_hoftag_kill_emperor
+		}
+		every_country = {
+			limit = { has_country_flag = attending_erfurt_hoftag }
+			add_prestige = -10
+			random = {
+				chance = 20
+				kill_ruler = yes
+			}
+			clr_country_flag = attending_erfurt_hoftag
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.136
+	title = "HREMT136"
+	desc = "HREMD136"
+	picture = HRE_eventPicture
+
+	major = yes
+	major_trigger = {
+		is_part_of_hre = yes
+	}
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.5
+			emperor = {
+				is_rival = SAX
+			}
+		}
+	}
+	
+	trigger = {
+		normal_or_historical_nations = yes
+		ai = yes
+		NOT = { has_global_flag = altsax_split }
+		current_age = age_of_holy_wars
+		is_part_of_hre = yes
+		tag = SAX
+		NOT = { war_with = emperor }
+		NOT = { started_in = 1180.1.1 }
+		is_subject = no
+		is_emperor = no
+		NOT = { alliance_with = emperor }
+		OR = {
+			NOT = { army_size = emperor }
+			emperor = {
+				total_development = SAX
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = altsax_split
+			if = {
+				limit = {
+					is_elector = yes
+				}
+				set_global_flag = altsax_was_elector
+			}
+		}
+	}
+	
+	option = {
+		name = "HREMA136"
+		SAX = {
+			country_event = {
+				id = hremodevents.137
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.137
+	title = "HREMT137"
+	desc = "HREMD137"
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "HREMA137"
+		hidden_effect = {
+			while = {
+				limit = {
+					exists = SAX
+				}
+				random_owned_province = {
+					limit = {
+						any_core_country = {
+							NOT = { tag = ROOT }
+						}
+					}
+					random_core_country = {
+						limit = {
+							NOT = { tag = ROOT }
+							exists = no
+						}
+						ROOT = { release = PREV }
+						change_government = monarchy
+						every_neighbor_country = {
+							limit = { 
+								is_emperor = no
+								is_part_of_hre = yes
+							}
+							add_truce_with = PREV
+						}
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.8
+								cavalry = 0.2
+							}
+						}
+						every_owned_province = {
+							remove_core = ROOT
+						}
+					}
+					random_core_country = {
+						limit = {
+							NOT = { tag = ROOT }
+							exists = yes
+						}
+						every_core_province = {
+							limit = {
+								owned_by = ROOT
+							}
+							cede_province = PREV
+							remove_core = ROOT
+						}
+					}
+				}
+			}
+			#every_owned_province = {
+				#set_province_flag = sax_leftover_prov
+				#cede_province = emperor
+				#remove_core = ROOT
+				#add_core = emperor
+			#}
+			every_province = {
+				limit = {
+					OR = {
+						is_core = ROOT
+						is_claim = ROOT
+					}
+				}
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			if = {
+				limit = {
+					MEI = {
+						exists = yes
+						primary_culture = saxon
+						is_part_of_hre = yes
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+					}
+				}	
+				MEI = {
+					country_event = {
+						id = hremodevents.138
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						primary_culture = saxon
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+					}				
+				}
+				random_country = {
+					limit = {
+						primary_culture = saxon
+						is_part_of_hre = yes
+						num_of_cities = 5
+						is_emperor = no
+						is_elector = no
+						is_subject = no
+						is_excommunicated = no
+						has_any_disaster = no
+						is_bankrupt = no
+						NOT = { government = republic }
+					}
+					country_event = {
+						id = hremodevents.138
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.138
+	title = "HREMT138"
+	desc = "HREMD138"
+	picture = HRE_eventPicture
+
+	major = yes
+	major_trigger = {
+		is_part_of_hre = yes
+	}
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = altsax_split_benefactor
+		}
+	}
+	
+	option = {
+		name = "HREMA138"
+		ai_chance = { factor = 95 }
+		hidden_effect = {
+			SAX = { 
+				restore_country_name = yes 
+				every_owned_province = {
+					#limit = { has_province_flag = sax_leftover_prov }
+					cede_province = ROOT
+					add_core = ROOT
+				}
+			}
+		}
+		change_tag = SAX
+		if = {
+			limit = {
+				has_global_flag = altsax_was_elector
+			}
+			elector = yes
+			clr_global_flag = altsax_was_elector
+		}
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+		swap_non_generic_missions = yes
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+	}
+	
+	option = {
+		name = "HREMB138"
+		ai_chance = { factor = 5 }
+		add_prestige = -5	
+		hidden_effect = {
+			SAX = { 
+				restore_country_name = yes 
+				every_owned_province = {
+					#limit = { has_province_flag = sax_leftover_prov }
+					cede_province = emperor
+					add_core = emperor
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = hremodevents.139
+	title = "HREMT139"
+	desc = "HREMD139"
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "HREMA139"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 1 }
+			}
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+			modifier = {
+				factor = 0
+				is_bankrupt = yes
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -5
+		}
+		reapply_estate_privilege = { privilege = estate_burghers_dutch_water_lines }
+	}
+	option = {
+		name = "HREMB139"
+		ai_chance = {
+			factor = 1
+		}
+		remove_estate_privilege = estate_burghers_dutch_water_lines
 	}
 }

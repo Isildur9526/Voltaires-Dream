@@ -60,7 +60,6 @@ monarch_names = {
 	
 	"Havva #0" = -1
 	"Fatma #0" = -1
-	"Havva #0" = -1
 	"Gamze #0" = -1
 	"Hanife #0" = -1
 	"Melis #0" = -1

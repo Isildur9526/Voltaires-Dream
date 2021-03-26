@@ -1,125 +1,333 @@
 highest_monarch_skill_effect = {
+#	if = {
+#		limit = {
+#			OR = {
+#				AND = {
+#					ADM = 6
+#					NOT = { DIP = 6 }
+#					NOT = { MIL = 6 }
+#				}
+#				AND = {
+#					ADM = 5
+#					NOT = { DIP = 5 }
+#					NOT = { MIL = 5 }
+#				}
+#				AND = {
+#					ADM = 4
+#					NOT = { DIP = 4 }
+#					NOT = { MIL = 4 }
+#				}
+#				AND = {
+#					ADM = 3
+#					NOT = { DIP = 3 }
+#					NOT = { MIL = 3 }
+#				}
+#				AND = {
+#					ADM = 2
+#					NOT = { DIP = 2 }
+#					NOT = { MIL = 2 }
+#				}
+#				AND = {
+#					ADM = 1
+#					NOT = { DIP = 1 }
+#					NOT = { MIL = 1 }
+#				}
+#			}
+#		}
+#		set_ruler_flag = adm_highest
+#	}
+#	else_if = {
+#		limit = {
+#			OR = {
+#				AND = {
+#					DIP = 6
+#					NOT = { ADM = 6 }
+#					NOT = { MIL = 6 }
+#				}
+#				AND = {
+#					DIP = 5
+#					NOT = { ADM = 5 }
+#					NOT = { MIL = 5 }
+#				}
+#				AND = {
+#					DIP = 4
+#					NOT = { ADM = 4 }
+#					NOT = { MIL = 4 }
+#				}
+#				AND = {
+#					DIP = 3
+#					NOT = { ADM = 3 }
+#					NOT = { MIL = 3 }
+#				}
+#				AND = {
+#					DIP = 2
+#					NOT = { ADM = 2 }
+#					NOT = { MIL = 2 }
+#				}
+#				AND = {
+#					DIP = 1
+#					NOT = { ADM = 1 }
+#					NOT = { MIL = 1 }
+#				}
+#			}
+#		}
+#		set_ruler_flag = dip_highest
+#	}
+#	else_if = {
+#		limit = {
+#			OR = {
+#				AND = {
+#					MIL = 6
+#					NOT = { ADM = 6 }
+#					NOT = { DIP = 6 }
+#				}
+#				AND = {
+#					MIL = 5
+#					NOT = { ADM = 5 }
+#					NOT = { DIP = 5 }
+#				}
+#				AND = {
+#					MIL = 4
+#					NOT = { ADM = 4 }
+#					NOT = { DIP = 4 }
+#				}
+#				AND = {
+#					MIL = 3
+#					NOT = { ADM = 3 }
+#					NOT = { DIP = 3 }
+#				}
+#				AND = {
+#					MIL = 2
+#					NOT = { ADM = 2 }
+#					NOT = { DIP = 2 }
+#				}
+#				AND = {
+#					MIL = 1
+#					NOT = { ADM = 1 }
+#					NOT = { DIP = 1 }
+#				}
+#			}
+#		}
+#		set_ruler_flag = mil_highest
+#	}
+#	else = {
+#		random_list = {
+#			33 = {
+#				set_ruler_flag = adm_highest
+#			}
+#			33 = {
+#				set_ruler_flag = dip_highest
+#			}
+#			33 = {
+#				set_ruler_flag = mil_highest
+#			}
+#		}
+#	}
 	if = {
 		limit = {
 			OR = {
-				AND = {
-					ADM = 6
-					NOT = { DIP = 6 }
-					NOT = { MIL = 6 }
-				}
-				AND = {
-					ADM = 5
-					NOT = { DIP = 5 }
-					NOT = { MIL = 5 }
-				}
-				AND = {
-					ADM = 4
-					NOT = { DIP = 4 }
-					NOT = { MIL = 4 }
-				}
-				AND = {
-					ADM = 3
-					NOT = { DIP = 3 }
-					NOT = { MIL = 3 }
-				}
-				AND = {
-					ADM = 2
-					NOT = { DIP = 2 }
-					NOT = { MIL = 2 }
-				}
-				AND = {
-					ADM = 1
-					NOT = { DIP = 1 }
-					NOT = { MIL = 1 }
-				}
+				ADM = 3
+				DIP = 3
+				MIL = 3
 			}
 		}
-		set_ruler_flag = adm_highest
-	}
-	else_if = {
-		limit = {
-			OR = {
-				AND = {
-					DIP = 6
-					NOT = { ADM = 6 }
-					NOT = { MIL = 6 }
-				}
-				AND = {
-					DIP = 5
-					NOT = { ADM = 5 }
-					NOT = { MIL = 5 }
-				}
-				AND = {
-					DIP = 4
-					NOT = { ADM = 4 }
-					NOT = { MIL = 4 }
-				}
-				AND = {
-					DIP = 3
-					NOT = { ADM = 3 }
-					NOT = { MIL = 3 }
-				}
-				AND = {
-					DIP = 2
-					NOT = { ADM = 2 }
-					NOT = { MIL = 2 }
-				}
-				AND = {
-					DIP = 1
-					NOT = { ADM = 1 }
-					NOT = { MIL = 1 }
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						ADM = 3
+						NOT = { DIP = 3 }
+						NOT = { MIL = 3 }
+					}
+					AND = {
+						ADM = 4
+						NOT = { DIP = 4 }
+						NOT = { MIL = 4 }
+					}
+					AND = {
+						ADM = 5
+						NOT = { DIP = 5 }
+						NOT = { MIL = 5 }
+					}
+					AND = {
+						ADM = 6
+						NOT = { DIP = 6 }
+						NOT = { MIL = 6 }
+					}
 				}
 			}
+			set_ruler_flag = adm_highest
 		}
-		set_ruler_flag = dip_highest
-	}
-	else_if = {
-		limit = {
-			OR = {
-				AND = {
-					MIL = 6
-					NOT = { ADM = 6 }
-					NOT = { DIP = 6 }
-				}
-				AND = {
-					MIL = 5
-					NOT = { ADM = 5 }
-					NOT = { DIP = 5 }
-				}
-				AND = {
-					MIL = 4
-					NOT = { ADM = 4 }
-					NOT = { DIP = 4 }
-				}
-				AND = {
-					MIL = 3
-					NOT = { ADM = 3 }
-					NOT = { DIP = 3 }
-				}
-				AND = {
-					MIL = 2
-					NOT = { ADM = 2 }
-					NOT = { DIP = 2 }
-				}
-				AND = {
-					MIL = 1
-					NOT = { ADM = 1 }
-					NOT = { DIP = 1 }
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						DIP = 3
+						NOT = { ADM = 3 }
+						NOT = { MIL = 3 }
+					}
+					AND = {
+						DIP = 4
+						NOT = { ADM = 4 }
+						NOT = { MIL = 4 }
+					}
+					AND = {
+						DIP = 5
+						NOT = { ADM = 5 }
+						NOT = { MIL = 5 }
+					}
+					AND = {
+						DIP = 6
+						NOT = { ADM = 6 }
+						NOT = { MIL = 6 }
+					}
 				}
 			}
+			set_ruler_flag = dip_highest
 		}
-		set_ruler_flag = mil_highest
-	}
-	else = {
-		random_list = {
-			33 = {
-				set_ruler_flag = adm_highest
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						MIL = 3
+						NOT = { ADM = 3 }
+						NOT = { DIP = 3 }
+					}
+					AND = {
+						MIL = 4
+						NOT = { ADM = 4 }
+						NOT = { DIP = 4 }
+					}
+					AND = {
+						MIL = 5
+						NOT = { ADM = 5 }
+						NOT = { DIP = 5 }
+					}
+					AND = {
+						MIL = 6
+						NOT = { ADM = 6 }
+						NOT = { DIP = 6 }
+					}
+				}
+				
 			}
-			33 = {
-				set_ruler_flag = dip_highest
+			set_ruler_flag = mil_highest
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ADM = 3
+							DIP = 3
+							NOT = { MIL = 3 }
+						}
+						AND = {
+							ADM = 4
+							DIP = 4
+							NOT = { MIL = 4 }
+						}
+						AND = {
+							ADM = 5
+							DIP = 5
+							NOT = { MIL = 5 }
+						}
+						AND = {
+							ADM = 6
+							DIP = 6
+							NOT = { MIL = 6 }
+						}
+					}
+				}
+				random_list = {
+					50 = {
+						set_ruler_flag = adm_highest
+					}
+					50 = {
+						set_ruler_flag = dip_highest
+					}
+				}
 			}
-			33 = {
-				set_ruler_flag = mil_highest
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							ADM = 3
+							MIL = 3
+							NOT = { DIP = 3 }
+						}
+						AND = {
+							ADM = 4
+							MIL = 4
+							NOT = { DIP = 4 }
+						}
+						AND = {
+							ADM = 5
+							MIL = 5
+							NOT = { DIP = 5 }
+						}
+						AND = {
+							ADM = 6
+							MIL = 6
+							NOT = { DIP = 6 }
+						}
+					}
+				}
+				random_list = {
+					50 = {
+						set_ruler_flag = adm_highest
+					}
+					50 = {
+						set_ruler_flag = mil_highest
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							DIP = 3
+							MIL = 3
+							NOT = { ADM = 3 }
+						}
+						AND = {
+							DIP = 4
+							MIL = 4
+							NOT = { ADM = 4 }
+						}
+						AND = {
+							DIP = 5
+							MIL = 5
+							NOT = { ADM = 5 }
+						}
+						AND = {
+							DIP = 6
+							MIL = 6
+							NOT = { ADM = 6 }
+						}
+					}
+				}
+				random_list = {
+					50 = {
+						set_ruler_flag = dip_highest
+					}
+					50 = {
+						set_ruler_flag = mil_highest
+					}
+				}
+			}
+			else = {
+				random_list = {
+					33 = {
+						set_ruler_flag = adm_highest
+					}
+					33 = {
+						set_ruler_flag = dip_highest
+					}
+					33 = {
+						set_ruler_flag = mil_highest
+					}
+				}
 			}
 		}
 	}
@@ -982,5 +1190,836 @@ anglicize_irish_tag_effect = {
 		DBL = { override_country_name = DUBLIN }
 		XDG = { override_country_name = DONEGAL }
 		#CNN
+	}
+}
+
+fragment_russia_effect = {
+	#BLO # 1054
+	#BLR # 1054
+	#BOO # 1054
+	#BTY # 1054
+	#BYV
+	3868 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = BYV
+		}
+	}
+	3869 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = BYV
+		}
+	}
+	3883 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = BYV
+		}
+	}
+	3922 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = BYV
+		}
+	}
+	#CHR # 1054
+	#DGO # 1054
+	#DTV # 1054
+	#KIE # 1054
+	#KMO # 1054
+	#KRH # 1054
+	#KSK # 1054
+	#LSK # 1054
+	#MEY
+	6189 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6190 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6191 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6192 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6193 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6194 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6210 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6504 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6505 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6508 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6507 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6572 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6573 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6580 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6581 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6590 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	6591 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MEY
+		}
+	}
+	#MOA
+	3879 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MOA
+		}
+	}
+	3881 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MOA
+		}
+	}
+	3882 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MOA
+		}
+	}
+	3896 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MOA
+		}
+	}
+	3927 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MOA
+		}
+	}
+	#MOS # 1054
+	#MRM # 1054
+	#MSK # 1054
+	#MSV
+	3871 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MSV
+		}
+	}
+	3873 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MSV
+		}
+	}
+	3877 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MSV
+		}
+	}
+	3878 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MSV
+		}
+	}
+	3880 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = MSV
+		}
+	}
+	#MZH # 1054
+	#NZH # 1054
+	6564 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6565 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6566 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6567 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6568 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6569 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6582 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6583 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6584 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6585 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6586 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6587 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6588 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6589 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	#OBL
+	6672 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6673 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	6675 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OBL
+		}
+	}
+	#OKA
+	3863 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3865 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3866 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3867 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3868 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3869 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3870 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3872 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3875 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	3922 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = OKA
+		}
+	}
+	#ONU # 1054
+	#ORY
+	3928 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = ORY
+		}
+	}
+	3929 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = ORY
+		}
+	}
+	#PLL # 1054
+	#PLT # 1054
+	#PNK # 1054
+	#PSK # 1054
+	#PZS # too many
+	#RSO # 1054
+	#RYA # 1054
+	#SDB # 1054
+	#SKS # 1054
+	#SMO # 1054
+	#SPZ
+	6201 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6202 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6203 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6204 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6205 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6206 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6570 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6571 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	6579 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = SPZ
+		}
+	}
+	#SVK # 1054
+	#TAA
+	3859 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	3860 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	3861 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	3862 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	3864 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	6672 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	6673 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	6674 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	6675 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = TAA
+		}
+	}
+	#TBS # 1054
+	#TMT # 1054
+	#TPT # 1054
+	#TUV # 1054
+	#TVE # 1054
+	#UGL # 1054
+	#VBK # 1054
+	#VDR # 1054
+	#VHN # 1054
+	#VOL # 1054
+	#VOO
+	3861 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VOO
+		}
+	}
+	3862 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VOO
+		}
+	}
+	#VTY
+	3872 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VTY
+		}
+	}
+	3873 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VTY
+		}
+	}
+	3874 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VTY
+		}
+	}
+	3875 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VTY
+		}
+	}
+	#XKA
+	3810 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XKA
+		}
+	}
+	3811 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XKA
+		}
+	}
+	3814 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XKA
+		}
+	}
+	3815 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XKA
+		}
+	}
+	3816 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XKA
+		}
+	}
+	#XMO
+	3808 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XMO
+		}
+	}
+	3810 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = XMO
+		}
+	}
+	#XPY # 1054
+	#XSZ # 1054
+	#YAR # 1054
+	#YYV # 1054
+	#ZNY # 1054
+	#NOV # 1054
+	#PSK # 1054
+	#VYT # uncolonized land
+	6508 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VYT
+		}
+	}
+	6509 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VYT
+		}
+	}
+	6510 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VYT
+		}
+	}
+	6511 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VYT
+		}
+	}
+	6512 = {
+		if = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_core = VYT
+		}
 	}
 }

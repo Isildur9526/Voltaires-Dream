@@ -110,7 +110,9 @@ ship_names = {
 }
 
 army_names = {
-	"Leger van $PROVINCE$"  }
+	"Leger van $PROVINCE$"  
+}
 
-fleet_names = {  "Vloot van $PROVINCE$" 
-	 }
+fleet_names = {  
+	"Vloot van $PROVINCE$" 
+}

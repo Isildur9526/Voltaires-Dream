@@ -21,7 +21,7 @@ add_core = TDZ
 	owner = LAN
 	controller = LAN
 	add_core = LAN
-	remove_Core = TDZ
+	remove_core = TDZ
 }
 1495.1.1 = { hre = no }
 1527.1.1 = { controller = SPA }

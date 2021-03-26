@@ -1,7 +1,7 @@
 owner = BYZ
 controller = BYZ
 add_core = BYZ
-culture = greek
+culture = bulgarian
 religion = orthodox
 hre = no
 base_tax = 1

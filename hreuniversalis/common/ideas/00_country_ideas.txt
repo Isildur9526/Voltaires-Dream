@@ -2031,7 +2031,10 @@ SAX_ideas = {
 	
 	trigger = {
 		tag = SAX
-		started_in = 1180.1.1
+		OR = {
+			started_in = 1180.1.1
+			has_country_flag = altsax_split_benefactor
+		}
 	}
 	free = yes		#will be added at load.
 	
@@ -5631,7 +5634,7 @@ LAU_ideas = {
 	free = yes
 	
 	LAU_partition_of_saxony = {
-		fabricate_claims_cost = -0.2
+		fabricate_claims_cost = -0.25
 	}
 	LAU_diarchy = {
 		state_maintenance_modifier = -0.15

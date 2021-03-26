@@ -70,6 +70,7 @@
  tooltip_province_protestant: "Province is Protestant"
  tooltip_owner_orthodox: "State Religion is Orthodox or Paulician"
  tooltip_owner_theocracy: "Government is a Theocracy"
+ tooltip_dip_tech15_capital: "Capital of country with DIP tech 50"
  tooltip_philosoper_capital: "Capital of ADM tech 10 Country with a Philosopher"
  tooltip_philosopher_capital: "Capital of DIP tech 55 Country with a Philosopher"
  tooltip_theologian_capital: "Capital of Country with a Theologian"

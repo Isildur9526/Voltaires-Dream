@@ -18,6 +18,18 @@ fort_14th = yes
 	controller = PAL
 	add_core = PAL
 }
+1426.1.1 = {
+	owner = NNH
+	controller = NNH
+	add_core = NNH
+	remove_core = PAL
+}
+1456.1.1 = {
+	owner = PAL
+	controller = PAL
+	add_core = PAL
+	remove_core = NNH
+}
 1546.4.19 = { religion = reformed }
 1689.8.1 = { controller = FRA }
 1697.9.20 = { controller = PAL }

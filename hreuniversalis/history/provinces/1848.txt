@@ -28,6 +28,24 @@ discovered_by = muslim
 	remove_core = LFF
 }
 1333.1.1 = { remove_core = DRN }
+1410.5.18 = {
+	owner = MBK
+	controller = MBK
+	add_core = MBK
+	remove_core = PAL
+}
+1443.3.14 = {
+	owner = UPA
+	controller = UPA
+	add_core = UPA
+}
+1499.4.8 = {
+	owner = PAL
+	controller = PAL
+	add_core = PAL
+	remove_core = UPA
+	remove_core = MBK
+}
 1546.4.19 = { religion = reformed }
 1689.8.1 = { controller = FRA }
 1697.9.20 = { controller = PAL }

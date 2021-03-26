@@ -9,7 +9,7 @@ lan_loyal_merchants_mission = {
 }
 lan_laurentian_library_mission = {
 	global_institution_spread = 0.1
-	technology_cost = -0.1
+	technology_cost = -0.05
 }
 lan_patron_of_adm_mission = {
 	free_adm_policy = 1
@@ -33,7 +33,7 @@ lan_italian_athens_mission = {
 	legitimacy = 1
 	republican_tradition = 0.5
 	devotion = 1
-	advisor_cost = -0.2
+	advisor_cost = -0.1
 }
 lan_become_trade_empire_mission = {
 	global_trade_power = 0.1
@@ -160,7 +160,7 @@ lem_fortify_adrianople_mission = {
 }
 lem_mollify_clergy_mission = {
 	tolerance_heretic = 2
-	global_unrest = -2
+	global_unrest = -1
 }
 lem_build_navy_mission = {
 	naval_morale = 0.1
@@ -246,7 +246,7 @@ mco_develop_monaco_mission = {
 #Nice
 nic_coumuna_nissarda_mission = {
 	stability_cost_modifier = -0.25
-	global_unrest = -2
+	global_unrest = -1
 }
 nic_mercantile_revolution_mission = {
 	trade_efficiency = 0.1
@@ -348,7 +348,7 @@ nka_naval_efforts_mission = {
 	ship_durability = 0.05
 }
 nka_expell_latins_mission = {
-	technology_cost = -0.1
+	technology_cost = -0.05
 	global_institution_spread = 0.1
 }
 nka_initiate_reforms_mission = {
@@ -376,7 +376,7 @@ nka_conquer_bulgaria_mission = {
 }
 nka_conquer_anatolia_mission = {
 	tolerance_heathen = 1
-	global_unrest = -2
+	global_unrest = -1
 }
 nka_restore_byzantium_mission = {
 	all_power_cost = -0.01
@@ -386,7 +386,7 @@ nka_conquer_aegean_islands = {
 	sailors_recovery_speed = 0.25
 }
 nka_conquer_athens_missions = {
-	advisor_cost = -0.2
+	advisor_cost = -0.1
 	build_cost = -0.1
 }
 nka_conquer_epirus_mission = {
@@ -520,7 +520,7 @@ byz_rise_of_the_phoenix_mission = {
 	administrative_efficiency = 0.1
 }
 byz_court_eunuchs_mission = {
-	advisor_cost = -0.2
+	advisor_cost = -0.1
 	advisor_pool = 1
 }
 byz_conquer_rome_mission = {
@@ -544,13 +544,9 @@ byz_fortify_coasts_mission = {
 	province_trade_power_modifier = 0.1
 	local_tax_modifier = 0.1
 }
-byz_conquer_egypt_mission = {
-	global_missionary_strength = 0.02
-	missionary_maintenance_cost = -0.25
-}
 byz_scrinium_barbarorum_mission = {
 	tolerance_heathen = 2
-	same_culture_advisor_cost = -0.25
+	same_culture_advisor_cost = -0.15
 }
 byz_komnenian_succession_mission = {
 	manpower_recovery_speed = 0.1
@@ -592,17 +588,9 @@ byz_battle_of_manzikert_mission = {
 	manpower_recovery_speed = 0.1
 	recover_army_morale_speed = 0.05
 }
-byz_rise_of_the_phoenix_mission = {
-	ae_impact = -0.1
-	province_warscore_cost = -0.1
-}
 byz_conquer_sardinia_mission = {
 	global_ship_cost = -0.1
 	naval_morale = 0.1
-}
-byz_conquer_rome_mission = {
-	discipline = 0.05
-	prestige = 1
 }
 
 #Savoy
@@ -662,7 +650,7 @@ sar_conquer_saluzzo_mission = {
 	ae_impact = -0.1
 }
 sar_prepare_for_war_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	land_morale = 0.1
 }
 sar_ally_italy_mission = {
@@ -713,7 +701,7 @@ spi_conquer_emillia_mission = {
 }
 spi_conquer_tuscany_mission = {
 	technology_cost = -0.05
-	same_culture_advisor_cost = -0.25
+	same_culture_advisor_cost = -0.2
 }
 spi_conquer_calabria_mission = {
 	production_efficiency = 0.1
@@ -734,13 +722,13 @@ spi_foreign_support_mission = {
 }
 spi_dominate_the_empire_mission = {
 	prestige = 1
-	imperial_authority = 0.25
+	imperial_authority = 0.1
 }
 spi_conquer_apulia_mission = {
 	trade_goods_size_modifier = 0.1
 }
 spi_conquer_naples_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	legitimacy = 1
 	republican_tradition = 0.5
 	devotion = 1
@@ -895,7 +883,7 @@ kol_conquer_cleves_mission = {
 	land_morale = 0.1
 }
 kol_conquer_limburg_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	yearly_corruption = -0.1
 }
 kol_seneschal_upheaval_mission = {
@@ -965,8 +953,8 @@ bav_conquer_palatinate_mission = {
 	diplomatic_upkeep = 1
 }
 bav_jesuitenkolleg_ingolstadt_mission = {
-	same_culture_advisor_cost = -0.25
-	technology_cost = -0.1
+	same_culture_advisor_cost = -0.2
+	technology_cost = -0.05
 }
 bav_wittelsbacher_rise_mission = {
 	core_creation = -0.05
@@ -1109,10 +1097,6 @@ mam_deploy_mercenaries_mission = {
 	mercenary_discipline = 0.05
 	merc_maintenance_modifier = -0.25
 }
-mam_social_unity_mission = {
-	global_unrest = -2
-	global_manpower_modifier = 0.1
-}
 mam_sessions_of_wisdom_mission = {
 	global_missionary_strength = 0.02
 	missionary_maintenance_cost = -0.25
@@ -1123,8 +1107,8 @@ mam_government_quarrels_mission = {
 	yearly_corruption = -0.05
 }
 mam_modern_administration_mission = {
-	adm_advisor_cost = -0.25
-	state_maintenance_modifier = -0.25
+	adm_advisor_cost = -0.2
+	state_maintenance_modifier = -0.2
 }
 mam_conquer_baghdad_mission = {
 	land_morale = 0.1
@@ -1188,7 +1172,7 @@ mam_streets_and_canals_mission = {
 }
 mam_jihad_for_italy_mission = {
 	global_missionary_strength = 0.02
-	global_unrest = -2
+	global_unrest = -1
 }
 mam_improve_army_morale_mission = {
 	reinforce_cost_modifier = -0.15
@@ -1216,74 +1200,83 @@ mam_construct_madrasas_mission = {
 }
 
 #Toulouse
-tou_elevation_to_principality_mission = {
-	core_creation = -0.15
-	legitimacy = 1
-	land_morale = 0.15
+tou_elevation_to_principality_mission_a = {
+	core_creation = -0.1
+	diplomatic_reputation = 2
+}
+tou_elevation_to_principality_mission_b = {
+	ae_impact = -0.1
+	unjustified_demands = -0.33
 }
 tou_weather_catharism_mission_a = {
-	religious_unity = 0.25
-	tolerance_own = -1
+	local_unrest = -2
 }
 tou_weather_catharism_mission_b = {
-	global_heretic_missionary_strength = 0.02
-	tolerance_heretic = -1
+	local_missionary_strength = 0.02
 }
-tou_weather_catharism_mission_c = {
-	global_unrest = -3
-	global_missionary_strength = 0.02
+tou_conquer_languedoc_mission_a = {
+	movement_speed = 0.1
+}
+tou_conquer_languedoc_mission_b = {
+	local_unrest = -1
+	local_tax_modifier = 0.15
+}
+tou_conquer_aragon_mission = {
+	discipline = 0.05
+	land_maintenance_modifier = -0.05
 }
 tou_challenge_the_king_mission = {
-	province_warscore_cost = -0.1
+	leader_land_shock = 1
 	land_morale = 0.1
-	prestige_from_land = 0.5
+	manpower_recovery_speed = 0.2
 }
 tou_occitan_wine_empire_mission= {
 	global_trade_power = 0.1
 	global_trade_goods_size_modifier = 0.15
 }
 tou_secure_religious_peace_mission = {
-	global_unrest = -1
-	tolerance_heretic = 1
-}
-tou_conquer_languedoc_mission = {
-	movement_speed = 0.1
-	province_trade_power_modifier = 0.2
-	trade_goods_size = 0.2
+	tolerance_own = 2
 }
 tou_conquer_provence_mission = {
-	development_cost = -0.1
-	production_efficiency = 0.1
+	diplomatic_upkeep = 1
+	diplomatic_reputation = 1
 }
 tou_conquer_limoges_mission = {
-	cavalry_cost = -0.1
-	cavalry_power = 0.1
+	legitimacy = 1
+	spy_offence = 0.25
 }
 tou_crusading_army_mission = {
-	siege_ability = 0.05
-	land_attrition = -0.1
-	shock_damage = 0.1
+	holy_orders_loyalty_modifier = 0.05
+	church_loyalty_modifier = 0.05
+	army_tradition_decay = -0.01
 }
 tou_occitan_kingdom_mission = {
-	culture_conversion_cost = -0.2
-	idea_cost = -0.1
-}
-tou_fortify_tripoli_mission = {
-	local_defensiveness = 0.25
-	local_manpower_modifier = 0.25
-	regiment_recruit_speed = -0.1
-}
-tou_conquer_holy_land = {
-	global_heretic_missionary_strength = 0.02
-	warscore_cost_vs_other_religion = -0.2
-}
-tou_aragonese_rivalry_mission = {
-	diplomatic_reputation = 1
-	improve_relation_modifier = 0.25
+	monarch_diplomatic_power = 1
+	same_culture_advisor_cost = -0.15
 }
 tou_ports_of_languedoc_mission = {
-	ship_recruit_speed = -0.25
 	local_sailors_modifier = 0.25
+	province_trade_power_modifier = 0.25
+}
+tou_conquer_aquitaine_mission = {
+	prestige = 0.5
+	infantry_power = 0.15
+}
+tou_conquer_barcelona_mission = {
+	global_ship_cost = -0.1
+	global_ship_recruit_speed = -0.1
+}
+tou_patron_of_troubadours_mission = {
+	improve_relation_modifier = 0.25
+	culture_conversion_cost = -0.1
+}
+tou_aquitaine_rivalry_mission = {
+	land_forcelimit_modifier = 0.15
+	global_regiment_cost = -0.1
+}
+tou_conquer_bearn_mission = {
+	development_cost = -0.1
+	build_time = -0.1
 }
 
 #Mazovia
@@ -1292,7 +1285,7 @@ maz_conquer_coastlines_mission = {
 	sailors_recovery_speed = 0.25
 }
 maz_build_a_navy_mission = {
-	navy_tradition = 1
+	navy_tradition = 0.5
 	naval_maintenance_modifier = -0.1
 }
 maz_dominate_baltic_trade = {
@@ -1305,7 +1298,7 @@ maz_mazovian_industry = {
 }
 maz_university_of_warsaw = {
 	global_institution_spread = 0.1
-	technology_cost = -0.1
+	technology_cost = -0.05
 }
 maz_mobilize_the_army_mission = {
 	land_attrition = -0.1
@@ -1337,7 +1330,7 @@ maz_conquer_ruthenia_mission = {
 }
 maz_catholic_heaven_mission = {
 	papal_influence = 1
-	global_unrest = -2
+	global_unrest = -1
 }
 maz_anti_schism_movement_mission = {
 	land_morale = 0.1
@@ -1374,10 +1367,10 @@ maz_conquer_silesia_mission = {
 #Swabia
 wws_capital_germania_mission = {
 	diplomatic_reputation = 1
-	advisor_cost = -0.25
+	advisor_cost = -0.15
 	improve_relation_modifier = 0.25
 	imperial_authority = 0.1
-	global_unrest = -2
+	global_unrest = -1
 }
 wws_swabian_antikings_mission = {
 	diplomatic_reputation = 1
@@ -1448,8 +1441,9 @@ wws_promote_agriculture_mission = {
 	land_attrition = -0.1
 }
 wws_appoint_vogte_mission = {
-	state_maintenance_modifier = -0.25
-	advisor_cost = -0.25
+	state_maintenance_modifier = -0.2
+	advisor_cost = -0.15
+	reform_progress_growth = 0.1
 }
 wws_the_old_capital_mission = {
 	local_state_maintenance_modifier = -0.25
@@ -1527,7 +1521,7 @@ lit_conquer_kiev_mission = {
 }
 lit_university_of_vilnius_mission = {
 	technology_cost = -0.05
-	same_culture_advisor_cost = -0.1
+	same_culture_advisor_cost = -0.15
 	idea_cost = -0.05
 }
 lit_knights_of_lithuania_mission = {
@@ -1622,7 +1616,7 @@ plc_expand_kwarta_mission = {
 }
 plc_curtail_the_nobility_mission = {
 	idea_cost = -0.1
-	advisor_cost = -0.2
+	advisor_cost = -0.15
 }
 plc_turkish_threat_mission = {
 	siege_ability = 0.1
@@ -1757,7 +1751,7 @@ kie_build_up_army_mission = {
 	stability_cost_modifier = -0.1
 }
 kie_tempering_the_druzhina_mission = {
-	army_tradition = 1
+	army_tradition = 0.5
 	shock_damage_received = -0.1
 	general_cost = -0.25
 }
@@ -1795,7 +1789,7 @@ die_construct_speyer_cathedral_mission = {
 	prestige = 0.25
 	papal_influence = 0.25
 }
-die_secure_loyality_mission = {
+die_secure_loyalty_mission = {
 	province_warscore_cost = -0.1
 	diplomatic_reputation = 1
 }
@@ -1834,7 +1828,7 @@ die_conquer_bavaria_mission = {
 }
 die_conquer_burgundy_mission = {
 	core_creation = -0.1
-	advisor_cost = -0.25
+	advisor_cost = -0.15
 }
 
 #Hungary
@@ -1865,7 +1859,7 @@ hun_weaken_the_oligarchs_mission = {
 }
 hun_conquer_austria_mission = {
 	advisor_pool = 1
-	advisor_cost = -0.25
+	advisor_cost = -0.15
 }
 hun_convert_the_balkans_mission = {
 	papal_influence = 2
@@ -1873,7 +1867,7 @@ hun_convert_the_balkans_mission = {
 	monthly_fervor_increase = 2
 }
 hun_survive_fall_of_arpads_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	global_institution_spread = 0.2
 }
 hun_balkan_alliances_mission = {
@@ -1899,7 +1893,7 @@ hun_early_mercantilism_mission = {
 	global_trade_goods_size_modifier = 0.1
 }
 hun_prince_of_renaissance_mission = {
-	technology_cost = -0.1
+	technology_cost = -0.05
 	build_cost = -0.1
 }
 hun_conquer_transylvania_mission = {
@@ -1948,7 +1942,7 @@ fla_join_the_hundred_years_war_mission_1 = {
 fla_join_the_hundred_years_war_mission_2 = {
 	defensiveness = 0.2
 	prestige = 1
-	advisor_cost = -0.2
+	advisor_cost = -0.15
 }
 fla_conquer_luxembourg_mission = {
 	diplomatic_upkeep = 1
@@ -1979,7 +1973,7 @@ fla_conquer_liege_mission = {
 }
 fla_flamish_trade_fleet_mission = {
 	light_ship_cost = -0.1
-	navy_tradition = 1
+	navy_tradition = 0.5
 	ship_power_propagation = 0.25
 }
 fla_dominate_the_channel_mission = {
@@ -2012,7 +2006,7 @@ epi_develop_atra_mission = {
 }
 epi_conquer_rome_mission = {
 	global_missionary_strength = 0.02
-	global_unrest = -2
+	global_unrest = -1
 }
 epi_papal_embassy_mission = {
 	diplomatic_reputation = 1
@@ -2057,7 +2051,7 @@ aan_conquer_georgia_mission = {
 	ae_impact = -0.1
 }
 aan_conquer_circassia_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	global_autonomy = -0.03
 }
 aan_conquer_shirvan_mission = {
@@ -2104,7 +2098,7 @@ aan_perennial_supplies_mission = {
 #Saxony
 sax_university_of_wittenberg_mission = {
 	idea_cost = -0.1
-	advisor_cost = -0.2
+	advisor_cost = -0.15
 }
 sax_conquer_hesse_mission = {
 	diplomatic_reputation = 1
@@ -2181,7 +2175,7 @@ sax_game_with_great_powers_a = {
 }
 sax_game_with_great_powers_b = {
 	republican_tradition = 0.5
-	global_unrest = -2
+	global_unrest = -1
 }
 sax_schmalkaldic_league_mission = {
 	technology_cost = -0.05
@@ -2245,7 +2239,6 @@ hab_conquer_bern_mission = {
 hab_spanish_union_mission = {
 	free_leader_pool = 1
 	leader_land_shock = 1
-	leader_land_shock = 1
 }
 hab_conquer_naples_mission = {
 	diplomatic_upkeep = 1
@@ -2265,7 +2258,7 @@ hab_royal_alliances_mission = {
 	state_maintenance_modifier = -0.15
 }
 hab_imperial_ambition_mission = {
-	imperial_authority = 0.25
+	imperial_authority = 0.1
 	heir_chance = 0.25
 	diplomats = 1
 }
@@ -2374,13 +2367,13 @@ mor_conquer_egypt_mission = {
 	prestige = 1
 }
 mor_peace_in_morocco_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	global_tax_modifier = 0.1
 	stability_cost_modifier = -0.1
 }
 mor_andalusian_artisians_mission = {
 	advisor_pool = 1
-	advisor_cost = -0.2
+	advisor_cost = -0.15
 }
 mor_berber_camelry_mission = {
 	movement_speed = 0.1
@@ -2399,7 +2392,7 @@ mor_barbary_piracy_mission = {
 	light_ship_power = 0.1
 }
 mor_conquer_gibraltar_mission = {
-	mil_advisor_cost = -0.25
+	mil_advisor_cost = -0.2
 	manpower_recovery_speed = 0.15
 }
 mor_revenge_for_tours_mission = {
@@ -2468,7 +2461,8 @@ pol_conquer_lithuania_mission = {
 	land_maintenance_modifier = -0.1
 }
 pol_polish_renaissance_mission = {
-	technology_cost = -0.1
+	technology_cost = -0.05
+	reform_progress_growth = 0.1
 }
 pol_polish_bible_mission = {
 	culture_conversion_cost = -0.15
@@ -2585,7 +2579,8 @@ crd_promote_republicanism_mission = {
 	stability_cost_modifier = -0.15
 }
 crd_summon_a_council_mission = {
-	same_culture_advisor_cost = -0.25
+	reform_progress_growth = 0.1
+	same_culture_advisor_cost = -0.2
 }
 crd_cultural_patron_mission = {
 	global_autonomy = -0.05
@@ -2750,7 +2745,7 @@ fcm_filium_papalis_mission = {
 	diplomatic_reputation = 1
 }
 fcm_conquer_franche_comte_mission = {
-	global_unrest = -2
+	global_unrest = -1
 	stability_cost_modifier = -0.1
 }
 fcm_conquer_lombardy_mission = {
@@ -2955,7 +2950,7 @@ pap_conquer_lombardy_mission = {
 	core_creation = -0.1
 }
 pap_combat_heresy_mission = {
-	clergy_loyalty_modifier = 0.1
+	church_loyalty_modifier = 0.1
 	warscore_cost_vs_other_religion = -0.2
 }
 
@@ -3035,11 +3030,9 @@ pfu_conquer_swabia_mission = {
 	ae_impact = -0.1
 }
 pfu_conquer_thurgau_mission = {
-	mercenary_discipline = 0.05
-	mercenary_cost = -0.2
+	discipline = 0.05
+	land_attrition = -0.1
 }
 pfu_pfullendorfer_navy_mission = {
-	navy_tradition_decay = -0.01
-	global_ship_recruit_speed = -0.1
-	heavy_ship_power = 0.1
+	all_power_cost = -0.01
 }

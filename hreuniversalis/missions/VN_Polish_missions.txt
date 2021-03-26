@@ -962,10 +962,12 @@ vn_pol_missions_slot_4 = {
                 OR = {
                     has_global_flag = fragmentation_of_poland_ended
                     NOT = {
-                        current_age = age_of_empire
-                        current_age = age_of_holy_wars
-                        current_age = age_of_crisis
-                        current_age = age_of_dynasticism
+                        OR = {
+                            current_age = age_of_empire
+                            current_age = age_of_holy_wars
+                            current_age = age_of_crisis
+                            current_age = age_of_dynasticism
+                        }
                     }
                 }
             }

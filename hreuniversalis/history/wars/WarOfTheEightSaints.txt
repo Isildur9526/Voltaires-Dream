@@ -15,6 +15,6 @@ war_goal = {
 1378.7.1 = {
 	rem_attacker = LAN
 	rem_attacker = MLO
-	add_attacker = SIE
+	rem_attacker = SIE
 	rem_defender = PAP
 }

@@ -1,22 +1,22 @@
-owner = RNK
-controller = RNK
+capital = "Rieneck"
 culture = franconian
 religion = catholic
-hre = yes
+trade_goods = wool
 base_tax = 1
 base_production = 2
-trade_goods = wool
 base_manpower = 1
-capital = "Rieneck"
 is_city = yes
+hre = yes
+owner = RNK
+controller = RNK
 add_core = RNK
 
-1408.1.1 = {
+1544.1.1 = { religion = protestant }
+1559.1.1 = {
 	owner = MAI
 	controller = MAI
 	add_core = MAI
 }
-1544.1.1 = { religion = protestant }
 1673.1.1 = {
 	owner = RNK
 	controller = RNK

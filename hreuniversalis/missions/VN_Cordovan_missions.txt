@@ -706,7 +706,7 @@ vn_crd_missions_slot_5 = {
                 has_reform_level = 3
             }
             stability = 2
-            legitimacy_equivalent = 95
+            republican_tradition = 95
         }
         effect = {
             add_reform_progress_medium_effect = yes

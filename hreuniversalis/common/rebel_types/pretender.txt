@@ -121,7 +121,7 @@ pretender_rebels = {
 		}
 		modifier = {
 			factor = 2
-			owner = { religion = inti }
+			owner = { religion = khabze }
 		}
 		modifier = {
 			factor = 30
@@ -316,7 +316,7 @@ pretender_rebels = {
 			change_statists_vs_orangists = 1
 		}
 		if = {
-			limit = { religion = inti }
+			limit = { religion = khabze }
 			remove_religious_reforms = 2
 		}
 		if = {

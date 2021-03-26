@@ -1,0 +1,185 @@
+namespace = incident_external_imperial_union
+# emperor wants junior partner to be independent
+country_event = {
+	id = incident_external_imperial_union.1
+	title = incident_external_imperial_union.1.t
+	desc = incident_external_imperial_union.1.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	major = yes
+
+	trigger = {
+		has_dlc = "Emperor"
+		NOT = { active_imperial_incident = any }
+		is_part_of_hre = no
+		is_emperor = no
+		hre_reform_passed = emperor_chrysobull
+		NOT = {
+			any_country = {
+				has_country_flag = current_pu_incident_target_flag
+			}
+		}
+		any_subject_country = {
+			years_in_union_under = {
+				who = ROOT
+				years = 20
+			}
+			is_part_of_hre = yes
+			NOT = { has_country_flag = imperial_external_union_flag }
+			any_owned_province = {
+				any_neighbor_province = {
+					is_part_of_hre = no
+				}
+			}
+			num_of_cities = 25
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = {
+					years_in_union_under = {
+						who = ROOT
+						years = 20
+					}
+					is_part_of_hre = yes
+					NOT = { has_country_flag = imperial_external_union_flag }
+					NOT = { has_country_flag = current_pu_incident_target_flag }
+					any_owned_province = {
+						any_neighbor_province = {
+							is_part_of_hre = no
+						}
+					}
+					num_of_cities = 25
+				}
+				set_country_flag = current_pu_incident_target_flag
+				set_country_flag = imperial_external_union_flag
+				save_event_target_as = pu_hre_country
+			}
+		}
+	}
+	
+	option = {
+		name = incident_external_imperial_union.1.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				event_target:pu_hre_country = {
+					liberty_desire = 100
+				}
+			}
+		}
+		custom_tooltip = incident_external_imperial_union.1.a.tt
+		save_global_event_target_as = external_imperial_union_senior_partner
+		set_imperial_incident = incident_external_imperial_union
+	}
+	
+	option = {
+		name = incident_external_imperial_union.1.b
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = -15
+		break_union = event_target:pu_hre_country
+		event_target:pu_hre_country = {
+			clr_country_flag = current_pu_incident_target_flag
+		}
+	}
+}
+
+# let emperor decide what to do with the junior partner
+country_event = {
+	id = incident_external_imperial_union.2
+	title = incident_external_imperial_union.2.t
+	desc = incident_external_imperial_union.2.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = current_pu_incident_target_flag
+				}
+				save_event_target_as = pu_hre_country
+			}
+		}
+	}
+	
+	option = {  # demand independence
+		name = incident_external_imperial_union.2.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { manpower_percentage = 0.5 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { total_own_and_non_tributary_subject_development = FROM }
+			}
+			modifier = {
+				factor = 0
+				alliance_with = FROM
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					is_rival = FROM
+					FROM = { is_rival = ROOT }
+				}
+			}
+		}
+		add_prestige = 15
+		add_imperial_influence = 5
+		declare_war_with_cb = {
+			casus_belli = cb_imperial_ban
+			who = event_target:pu_hre_country
+		}
+	}
+	
+	option = { # do nothing
+		name = incident_external_imperial_union.2.b
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = -5
+		FROM = {
+			add_prestige = 5
+		}
+	}
+
+	option = { # kick them out
+		name = incident_external_imperial_union.2.c
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = -15
+		add_imperial_influence = -5
+		event_target:pu_hre_country = {
+			set_in_empire = no
+		}
+		FROM = {
+			add_prestige = 15
+		}
+	}
+
+	after = {
+		event_target:pu_hre_country = {
+			clr_country_flag = current_pu_incident_target_flag
+			set_country_flag = external_union_rejected_flag
+		}
+	}
+}

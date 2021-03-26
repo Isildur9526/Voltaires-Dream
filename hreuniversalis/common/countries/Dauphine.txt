@@ -46,7 +46,6 @@ monarch_names = {
 	"Humbert #0" = 40
 	"Jean #0" = 40
 	"Huges #1" = 10
-	"Anne #0" = -10
 	"Adhémar #0" = 0
 	"Arnaud #0" = 0
 	"Aymeric #0" = 0

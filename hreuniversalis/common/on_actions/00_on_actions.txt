@@ -420,7 +420,7 @@ on_war_won = {
 	
 	if = {
 		limit = {
-			is_hiring_condottiere_from = SWI
+			SWI = { is_renting_condottieri_to = ROOT }
 		}
 		SWI = { set_country_flag = won_condottiere_war }
 		if = {
@@ -458,11 +458,19 @@ on_war_lost = {
 			is_emperor = no
 			is_part_of_hre = yes
 			OR = {
-				capital_scope = { superregion = italy_superregion }
+				capital_scope = { 
+					OR = {
+						superregion = italy_superregion
+						superregion = sicily_superregion
+					}
+				}
 				AND = {
 					culture_group = latin
 					any_owned_province = {
-						superregion = italy_superregion
+						OR = {
+							superregion = italy_superregion
+							superregion = sicily_superregion
+						}
 					}
 				}
 			}
@@ -921,6 +929,16 @@ on_monarch_death = {
 		limit = { has_country_modifier = irish_high_king }
 		country_event = { id = hremodevents.9 }
 	}
+	if = {
+		limit = { NOT = { is_subject_of_type = tributary_state } }
+		random = {
+			chance = 50
+			country_event = { id = hremodevents.100 } #East slavic partition
+		}
+	}
+	else = {
+		country_event = { id = hremodevents.100 } #East slavic partition
+	}
 	burgundian_inheritance_start_effect = yes
 	events = {
 		flavor_wal.1 #Vlad the impaler
@@ -937,7 +955,6 @@ on_monarch_death = {
 		nrm_invasions.2 #Strongbow 
 		hremodevents.91	#Silesia Partition (Lesser duchies)
 		hremodevents.92 #Silesia Partition Start
-		hremodevents.100 #East slavic partition
 	}
 	random_events = {
 		1000 = 0
@@ -1526,6 +1543,11 @@ on_mandate_of_heaven_gained = {
 		}
 		remove_country_modifier = lost_mandate_of_heaven
 	}
+	clr_global_flag = introduced_pravda_flag
+	clr_global_flag = reformed_varangian_trade_flag
+	clr_global_flag = enserfed_smerds_flag
+	clr_global_flag = disable_rota_flag
+	clr_global_flag = launched_oprichnina_flag
 	country_event = { #Reforming the Bureaucracy
 		id = fbievents.118
 		days = 365
@@ -1563,37 +1585,6 @@ on_mandate_of_heaven_lost = {
 			has_country_modifier = new_mandate_holder
 		}
 		remove_country_modifier = new_mandate_holder
-	}
-}
-
-on_dismantle_revolution = {
-	remove_government_reform = revolutionary_empire_reform
-	change_government = monarchy
-	kill_ruler = yes
-	set_revolution_target = ---
-	if = {
-		limit = { has_heir = yes }
-		kill_heir = yes
-	}
-}
-
-on_lock_hre_religion = {
-	events = {
-		religious_leagues.1
-		religious_leagues.8
-	}
-}
-
-on_change_hre_religion = {
-	events = {
-		religious_leagues.2
-		religious_leagues.3
-	}
-}
-
-on_hre_religion_white_peace = {
-	events = {
-		religious_leagues.4
 	}
 }
 
@@ -1649,6 +1640,14 @@ on_embrace_revolution = {
 on_dismantle_revolution = {
 	events = {
 		center_of_revolution.1500
+	}
+	remove_government_reform = revolutionary_empire_reform
+	change_government = monarchy
+	kill_ruler = yes
+	set_revolution_target = ---
+	if = {
+		limit = { has_heir = yes }
+		kill_heir = yes
 	}
 	if = {
 		limit = {
@@ -2015,22 +2014,11 @@ on_bi_yearly_pulse = {
 		150 = institution_events.70
 		150 = institution_events.71
 		150 = institution_events.72
-
+		#Universities Spread Events:
 		150 = institution_events.741
 		150 = institution_events.742
-		150 = institution_events.743
-		150 = institution_events.744
-		
-		150 = institution_events.751
-		150 = institution_events.752
-		150 = institution_events.753
-		150 = institution_events.754
-		
-		150 = institution_events.761
-		150 = institution_events.762
-		150 = institution_events.763
-		150 = institution_events.764
-
+		#Popular Theology Spread Events:
+		150 = institution_events.781
 
 		#Personality Events
 		50 = personality_events.10 #Just Dilema
@@ -2144,6 +2132,12 @@ on_bi_yearly_pulse_3 = {
 	random_events = {
 		100 = new_court_flavour_events.21 #religious resignation
 		100 = new_court_flavour_events.25 #blood is thicker than water
+		400 = byz_crisis.2
+		400 = byz_crisis.3
+		400 = byz_crisis.4
+		400 = byz_crisis.5
+		400 = byz_crisis.6
+		400 = byz_crisis.7
 		200 = 0
 	}
 }
@@ -2276,16 +2270,15 @@ on_bi_yearly_pulse_4 = {
 		100 = vn_religious_events.8
 		100 = vn_religious_events.9
 		100 = vn_religious_events.10
-		100 = vn_religious_events.11
-		100 = vn_religious_events.12
-		100 = vn_religious_events.13
-		100 = vn_religious_events.14
-		100 = vn_religious_events.15
-		100 = vn_religious_events.16
-		100 = vn_religious_events.17
-		100 = vn_religious_events.18
-		100 = vn_religious_events.19
-		100 = vn_religious_events.20
+
+		#Bogomilist events
+		100 = bogomilist_events.1
+		100 = bogomilist_events.2
+		100 = bogomilist_events.3
+		100 = bogomilist_events.4
+		100 = bogomilist_events.5
+		100 = bogomilist_events.6
+		
 		100 = vn_religious_events.21
 		100 = vn_religious_events.22
 		100 = vn_religious_events.23
@@ -2438,7 +2431,6 @@ on_bi_yearly_pulse_4 = {
 		100 = mercs.2
 		100 = mercs.3
 		100 = mercs.4
-		100 = mercs.7
 		100 = mercs.7
 		100 = mercs.8
 		100 = mercs.10

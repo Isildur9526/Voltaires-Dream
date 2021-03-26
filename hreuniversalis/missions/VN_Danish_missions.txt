@@ -24,7 +24,9 @@ vn_dan_missions_slot_1_a = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-           	calc_true_if = {
+			army_size_percentage = 1
+			navy_size_percentage = 0.75
+			calc_true_if = {
 				amount = 2
 				kiel_area = {
 					type = all
@@ -78,7 +80,8 @@ vn_dan_missions_slot_1_a = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-            OR = {
+            calc_true_if = {
+				amount = 2
 				pomerania_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT
@@ -118,7 +121,7 @@ vn_dan_missions_slot_1_a = {
 			}
         }
         effect = {
-			add_years_of_income = 0.5
+			add_years_of_income = 1
 			add_country_modifier = {
 				name = "dan_plunder_pomerelia_mission"
 				duration = 9125

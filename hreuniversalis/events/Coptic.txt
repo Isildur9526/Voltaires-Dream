@@ -390,12 +390,12 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		OR = {
-			NOT = {
-				has_mission = coptic_conquest_of_cairo
-			}
-			has_country_flag = cairo_mission_flag
-		}
+		#OR = {
+		#	NOT = {
+		#		has_mission = coptic_conquest_of_cairo
+		#	}
+		#	has_country_flag = cairo_mission_flag
+		#}
 		has_dlc = "Rights of Man"
 		owns = 5054
 		religion = coptic
@@ -872,7 +872,7 @@ country_event = {
 					}
 					capital_scope = { 
 						OR = {
-							superregion = france_superregion
+							superregion = french_superregion
 							superregion = burgundian_superregion
 							superregion = italy_superregion
 							superregion = sicily_superregion

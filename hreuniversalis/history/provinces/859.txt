@@ -17,6 +17,10 @@ add_core = BTH
 	add_core = POM
 	remove_core = BTH
 }
+1109.8.10 = {
+	#1-1-1
+	base_production = 1
+}
 1128.4.19 = { religion = catholic }
 1156.4.1 = {
 	owner = WGS

@@ -398,7 +398,7 @@ vn_mam_missions_slot_2 = {
 				NOT = { has_heir_flag = nizar_heir_flag }
 				NOT = { has_ruler = "al-Mustansir" }
 			}
-            legitimacy_equivalent = 100
+            legitimacy = 100
 			NOT = { num_of_rebel_armies = 1 }
 			NOT = { num_of_rebel_controlled_provinces = 1 }
             months_of_ruling = 120
@@ -739,7 +739,6 @@ vn_mam_missions_slot_3 = {
         trigger = {
             land_maintenance = 1
             army_size_percentage = 0.75
-            land_maintenance = 1
             num_of_cavalry = 15
         }
         effect = {

@@ -233,13 +233,13 @@ union = {
 	end_date = 1585.4.29
 }
 union = {
-	first = MIN
+	first = XMN
 	second = MUN
 	start_date = 1532.3.23
 	end_date = 1553.7.16
 }
 union = {
-	first = MIN
+	first = XMN
 	second = ONB
 	start_date = 1532.5.14
 	end_date = 1553.7.16
@@ -251,7 +251,7 @@ union = {
 	end_date = 1455.4.7
 }
 union = {
-	first = MIN
+	first = XMN
 	second = ONB
 	start_date = 1450.6.3
 	end_date = 1454.1.1
@@ -516,7 +516,7 @@ union = {
 }
 union = {
 	first = VER
-	second = MIN
+	second = XMN
 	start_date = 1558.1.23
 	end_date = 1566.12.5
 }

@@ -69,7 +69,7 @@ leader_names = {
 }
 
 ship_names = {
-	Lakia Tarki "Umal Muhammad" Gazi Kumukh Khundzal
+	Lakia "Umal Muhammad" Khundzal
 	Kumukh
 	Gazi
 	Machimi

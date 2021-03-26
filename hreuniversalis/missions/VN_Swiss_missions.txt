@@ -19,7 +19,14 @@ vn_swi_missions_slot_1 = {
         position = 1
         required_missions = {  }
         trigger = {
-			legitimacy_equivalent = 100
+            if = {
+                limit = { government = monarchy }
+                legitimacy = 100
+            }
+            else_if = {
+                limit = { government = republic }
+                republican_tradition = 100
+            }
 			stability = 3
 			NOT = {
 				average_unrest = 0

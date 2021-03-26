@@ -231,7 +231,7 @@ vn_fcm_missions_slot_2 = {
             NOT = { is_core = ROOT }
         }
         trigger = {
-            legitimacy_equivalent = 100
+            legitimacy = 100
             owns_core_province = 1000
             owns_core_province = 1006
             owns_core_province = 2589

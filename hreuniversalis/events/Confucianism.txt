@@ -217,10 +217,7 @@ country_event = {
 				is_harmonizing_with = PREV
 			}
 		}
-		had_country_flag = {
-			flag = harmonization_shangdi_conflict
-			days = 12045	#33 years
-		}
+		NOT = { has_country_flag = harmonization_shangdi_conflict }
 	}
 	
 	immediate = {
@@ -283,10 +280,7 @@ country_event = {
 				is_harmonizing_with = PREV
 			}
 		}
-		had_country_flag = {
-			flag = harmonization_han_kitab
-			days = 12045	#33 years
-		}
+		NOT = { has_country_flag = harmonization_han_kitab }
 	}
 	
 	immediate = {
@@ -352,10 +346,7 @@ country_event = {
 				is_harmonizing_with = PREV
 			}
 		}
-		had_country_flag = {
-			flag = harmonization_fate_of_advisor
-			days = 12045	#33 years
-		}
+		NOT = { has_country_flag = harmonization_fate_of_advisor }
 	}
 	
 	immediate = {
@@ -484,6 +475,7 @@ country_event = {
 				is_harmonizing_with = PREV
 			}
 		}
+		NOT = { has_country_flag = harmonization_empowering_ceremonies }
 	}
 	
 	immediate = {

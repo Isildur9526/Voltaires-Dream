@@ -1,5 +1,5 @@
 capital = "Terponella" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = peaches
 base_tax = 1

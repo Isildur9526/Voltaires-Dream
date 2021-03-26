@@ -4,8 +4,9 @@ government_rank = 6
 technology_group = eastern
 religion = orthodox
 primary_culture = greek
-add_accepted_culture = albanian
 add_accepted_culture = armenian
+add_accepted_culture = aromanian
+add_accepted_culture = albanian
 capital = 2233
 fixed_capital = 2233
 historical_rival = SJK
@@ -17,7 +18,23 @@ change_estate_land_share = {
 1000.1.1 = {
 	set_country_flag = unformable
 	add_country_modifier = {
-		name = "the_theme_system"
+		name = "byz_aristocrats_m"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "byz_bureaucrats_m"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "byz_defenses_m"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "byz_army_m"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "byz_unrest_m"
 		duration = -1
 	}
 	set_global_flag = constantinople_restored
@@ -25,6 +42,7 @@ change_estate_land_share = {
 	set_country_flag = triumph_balkans
 	set_country_flag = triumph_asia
 	set_country_flag = triumph_anatolia
+	set_estate_privilege = byz_aristocrats_p
 }
 1042.6.11 = {
 	monarch = {
@@ -213,6 +231,12 @@ change_estate_land_share = {
 }
 1071.8.26 = {
 	set_country_flag = manzikert_happened
+	remove_country_modifier = byz_aristocrats_m
+	remove_country_modifier = byz_bureaucrats_m
+	remove_country_modifier = byz_defenses_m
+	remove_country_modifier = byz_army_m
+	remove_country_modifier = byz_unrest_m
+	remove_estate_privilege = byz_aristocrats_p
 	monarch = {
 		name = "Michael VII"
 		dynasty = "Doukas"
@@ -276,6 +300,10 @@ change_estate_land_share = {
 }
 1081.4.4 = {
 	set_country_flag = komnenian_restoration_flag
+	add_country_modifier = {
+		name = "the_theme_system"
+		duration = -1
+	}
 	monarch = {
 		name = "Alexios I"
 		dynasty = "Komnenos"

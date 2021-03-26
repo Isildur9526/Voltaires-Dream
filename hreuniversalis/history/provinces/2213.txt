@@ -21,6 +21,9 @@ add_core = LGL
 	owner = MOO
 	controller = MOO
 	add_core = MOO
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1455.1.1 = {
 	owner = AUC

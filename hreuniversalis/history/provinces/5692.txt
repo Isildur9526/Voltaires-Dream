@@ -18,6 +18,8 @@ add_core = BZG
 	add_core = WAL
 	remove_core = BZG
 	culture = wallachian
+	#1-1-1
+	base_manpower = 1
 }
 1593.1.1 = { unrest = 7 }
 1595.1.1 = { unrest = 0  }

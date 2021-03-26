@@ -76,6 +76,7 @@ country_decisions = {
 		effect = {
 			4762 = { move_capital_effect = yes }
 			change_tag = MOR
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -209,6 +210,7 @@ country_decisions = {
 		effect = {
 			set_capital = 1946 #Algiers
 			change_tag = ALG
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -329,6 +331,7 @@ country_decisions = {
 		effect = {
 			set_capital = 586
 			change_tag = TUN
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -437,6 +440,7 @@ country_decisions = {
 		effect = {
 			4920 = { move_capital_effect = yes }
 			change_tag = TRP
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

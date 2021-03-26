@@ -53,12 +53,12 @@ add_core = BYZ
 	owner = MEN
 	controller = MEN
 }
-1309.8.15 = {
+1306.9.20 = {
 	owner = KNI
 	controller = KNI
 	add_core = KNI
-	remove_core = BYZ
 }
+1309.8.15 = { remove_core = BYZ }
 1522.12.21 = {
 	owner = TUR
 	controller = TUR

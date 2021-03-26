@@ -515,7 +515,7 @@ vn_tre_missions_slot_3 = {
         required_missions = { vn_tre_conquer_phrygia }
         provinces_to_highlight = {
             superregion = anatolia_superregion
-            owner = { culture = turkish }
+            owner = { primary_culture = turkish }
         }
         trigger = {
             NOT = {

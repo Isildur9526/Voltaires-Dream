@@ -31,21 +31,33 @@ discovered_by = muslim
 	controller = BDW
 	remove_core = FNB
 }
+1395.12.25 = {
+	owner = NCH
+	controller = NCH
+	add_core = NCH
+}
 1398.1.1 = {
 	owner = TIR
 	controller = TIR
 	add_core = TIR
+	remove_core = NCH
 }
 1418.1.1 = {
 	owner = BDW
 	controller = BDW
 	remove_core = TIR
 }
+1424.1.1 = {
+	owner = NCH
+	controller = NCH
+	add_core = NCH
+}
 1444.9.8 = {
 	owner = UUS
 	controller = UUS
 	add_core = UUS
 	add_core = BAD
+	remove_core = NCH
 }
 1503.9.9 = {
 	owner = BAD

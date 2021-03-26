@@ -1,5 +1,5 @@
 capital = "Larymos" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = sugar
 base_tax = 1

@@ -943,7 +943,7 @@ vn_aan_missions_slot_5 = {
         trigger = {
 			government_rank = 5
 			stability = 2
-			legitimacy_equivalent = 100
+			legitimacy = 100
         }
         effect = {
             add_adm_power = 100

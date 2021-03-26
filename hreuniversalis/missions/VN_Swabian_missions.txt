@@ -1035,25 +1035,42 @@ vn_wws_missions_slot_4 = {
             calc_true_if = {
                 amount = 2
                 desc = vn_wws_influence_lombardy.tt
-                all_ally = {
+                all_country = {
                     capital_scope = {
                         superregion = italy_superregion
                     }
                     is_part_of_hre = yes
                     num_of_cities = 10
+                    OR = {
+                        alliance_with = ROOT
+                        is_subject_of = ROOT
+                    }
                 }
             }
         }
         effect = {
-            1818 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT	
-				}		
-			}
+            if = {
+                limit = {
+                    MLO = {
+                        exists = yes
+                    }
+                }
+                add_casus_belli = {
+                    type = cb_vassalize_mission
+                    target = MLO
+                }
+            }
+            else = {
+                1818 = {
+                    if = {
+                        limit = {
+                            NOT = { is_core = ROOT }
+                            NOT = { is_permanent_claim = ROOT }
+                        }
+                        add_permanent_claim = ROOT	
+                    }		
+                }
+            }
             add_country_modifier = {
                 name = wws_influence_lombardy_mission
                 duration = 9125
@@ -1065,20 +1082,13 @@ vn_wws_missions_slot_4 = {
         position = 8
 		required_missions = { vn_wws_influence_lombardy }
 		provinces_to_highlight = {
-			OR = {
-				AND = {
-					owned_by = MLO
-					is_capital = yes
-				}
-				AND = {
-					province_id = 1818
-					NOT = { owned_by = MLO }
-					owner = {
-						NOT = { exists = MLO }
-					}
-				}
-			}
-			NOT = { controlled_by = ROOT }
+			if = {
+                limit = { exists = MLO }
+                is_capital_of = MLO
+            }
+            else = {
+                province_id = 1818
+            }
 		}
 		trigger = {
 			if = {
@@ -1086,44 +1096,17 @@ vn_wws_missions_slot_4 = {
 					exists = MLO
 				}
 				MLO = {
-					capital_scope = {
-						OR = {
-							controlled_by = ROOT
-							AND = {
-								controller = {
-									OR = {
-										is_subject_of = ROOT
-										alliance_with = ROOT
-										overlord = {
-											alliance_with = ROOT
-										}
-									}
-									custom_trigger_tooltip = {
-										tooltip = joint_war_with_root_vs_france
-										OR = {
-											is_in_war = {
-												attackers = ROOT
-												attackers = THIS
-												defenders = MLO
-											}
-											is_in_war = {
-												defenders = ROOT
-												defenders = THIS
-												attackers = MLO
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				else = {
-					1818 = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
+					is_subject_of = ROOT
+                    capital_scope = {
+                        controlled_by = ROOT
+                    }
 				}
 			}
+            else = {
+                1818 = {
+                    country_or_non_sovereign_subject_holds = ROOT
+                }
+            }
 		}
         effect = {
             add_prestige = 20
@@ -1133,17 +1116,17 @@ vn_wws_missions_slot_4 = {
                 }
                 MLO = {
                     capital_scope = {
-                        add_base_tax = -2
-                        add_base_production = -2
-                        add_base_manpower = -2
+                        add_base_tax = -1
+                        add_base_production = -1
+                        add_base_manpower = -1
                         add_devastation = 50
                     }
                 }
             }
             capital_scope = {
-                add_base_tax = 2
-                add_base_production = 2
-                add_base_manpower = 2
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
             }
         }
     }
@@ -1168,7 +1151,7 @@ vn_wws_missions_slot_4 = {
 		}
         trigger = {
             is_emperor = yes
-            legitimacy_equivalent = 100
+            legitimacy = 100
             custom_trigger_tooltip = {
                 tooltip = vn_wws_rein_in_italy.tt
                 NOT = {
@@ -1299,7 +1282,7 @@ vn_wws_missions_slot_5 = {
         position = 3
         required_missions = { vn_wws_idealistic_duke }
         trigger = {
-			legitimacy_equivalent = 95
+			legitimacy = 95
             months_of_ruling = 120
             OR = {
                 NOT = { hre_size = 1 }

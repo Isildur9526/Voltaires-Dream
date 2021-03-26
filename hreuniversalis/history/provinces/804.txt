@@ -1,5 +1,5 @@
 capital = "Antiochetta"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = fish
 base_tax = 1

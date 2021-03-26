@@ -576,6 +576,7 @@ country_event = {
 		is_year = 1510
 		2431 = {
 			has_building = farm_estate
+			trade_goods = wine
 			development = 15
 		}
 	}
@@ -585,6 +586,7 @@ country_event = {
 		add_dip_power = -50
 		2431 = {
 			add_base_production = 1
+			change_trade_goods = beer
 			add_province_modifier = {
 				name = ingolstadt_beer_city
 				duration = -1
@@ -1170,11 +1172,21 @@ country_event = {
 					has_tax_building_trigger = no
 					num_free_building_slots = 1
 				}
+				add_building = monument
+			}
+			else_if = {
+				limit = {
+					has_building = monument
+					NOT = { has_building = temple }
+					NOT = { has_building = cathedral }
+				}
+				remove_building = monument
 				add_building = temple
 			}
 			else_if = {
 				limit = {
 					has_building = temple
+					NOT = { has_building = cathedral }
 				}
 				remove_building = temple
 				add_building = cathedral

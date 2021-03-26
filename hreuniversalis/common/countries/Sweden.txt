@@ -137,7 +137,7 @@ ship_names = {
 	David Delfin Delmenhorst Desirée Diana Disa Dragendorpt Draken "Drakenäs Skeppet" Dristigheten Dromedarius "Drottning Hedvig Eleonora"
 	"Drottning Lovisa Ulrika" "Drottning Sofia Magdalena" "Drottning Ulrika Eleonora" Drottningen "Drottningen af Sverige" Drottningholm
 	Dücker Dygden Ebenetzer Ehrenpreus Ekeblad Ekholmsund Ekorre Elefanten "Elfsborgs Bark" Elg Endräkten Engel "Engelska Drake" Engelsman
-	Enhjörningen Enigheten Enigheten "Erik Segersäll" Estland Etna Eugenie Eurydice Falken Fama "Fama Göteborg" Feden Fenix Fides Fildrim
+	Enhjörningen Enigheten "Erik Segersäll" Estland Etna Eugenie Eurydice Falken Fama "Fama Göteborg" Feden Fenix Fides Fildrim
 	Finland "Finska Mamnon" "Finska Björnen" "Finska Svanen" "Flygande Draken" "Flygande Serpent" "Flygande Vargen" Folke Fortuna Framfuss
 	Fransiskus Freden Fredericus "Fredericus Rex" "Fredericus Rex Suecia" "Frederika Amalia" Fredrika "Fredrika Amalia" Frej Frernskanten
 	Frigga Friheten "Frisk Opp" Fröja "Fröken Eleonora" Fäderneslandet "Förgylda Blommen" "Förgylda Bönan" "Förgylda Falken" "Förgylda Galejan"
@@ -168,7 +168,7 @@ ship_names = {
 	"Stå Fast" Stålnäbben Suecia "Sundska Maria" Sundsvall Svalan Svan "Svarta Hunden" "Svarta Kon" "Svarta Kåter" "Svarta Örn" "Svea Rike" Sveaborg
 	"Svenska Hektor" "Svenska Lejonet" Sverige Svärdet Södermanland Tantheijen Tapperheten Thais Theresia Thetis "Thure Bielke" Tigar Tigern Tor Torborg
 	"Tre Kronor" "Tre Lejon" Trumslagaren "Tu Lejon" Tumlaren Turken "Ulla Fersen" Ulriksdal Ulven "Unga Lybska Salvator" Uppassaren Uppland Uppsala
-	Uttern Vaksam Vanadis "Vapen von Viborg" Varberg Vasen Vaxholm Venus Venus Verden Vesterviksoxe Viborg Viktoria "Vita Örn" Vladislaff
+	Uttern Vaksam Vanadis "Vapen von Viborg" Varberg Vasen Vaxholm Venus Verden Vesterviksoxe Viborg Viktoria "Vita Örn" Vladislaff
 	Väduren Väktaren "Välkomst från Orienten" Välkomsten Vändekåpen Värmland Västergötland Västervik "Västerviks Fortuna"
 	"Västgöta Lejonet" Västmanland Wachtmeister Wasa Wenden Wolgemot Wrangel Wrede Yngve Zemire Älgen "Älvborgs Hector" "Älvborgs Lejonet"
 	"Älvborgs Svanen" Älvsborg "Älvsborgs Hektor" "Ängel Mikael" "Ängel Rafael" Ängeln Äpplet Äran Öland Ömheten Örnen "Örns Prins" Ösel

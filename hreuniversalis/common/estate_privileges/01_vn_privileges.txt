@@ -1,4 +1,5 @@
 #Mamluks
+
 estate_mamluks_land_rights = {
 	icon = privilege_grant_autonomy
 	land_share = 5
@@ -717,13 +718,19 @@ estate_burghers_jewish_scapegoats = {
 	loyalty = 0.05
 	influence = 0.10
 	can_select = {
-		current_age = age_of_dynasticism
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+		}
 		is_part_of_hre = yes
 		religion_group = christian
 		NOT = { has_estate_privilege = estate_burghers_jewish_scapegoats }
 	}
 	is_valid = {
-		current_age = age_of_dynasticism
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+		}
 		religion_group = christian
 	}
 	conditional_modifier = {
@@ -782,13 +789,19 @@ estate_burghers_jewish_sanctuary = {
 	max_absolutism = -5
 	loyalty = -0.1
 	can_select = {
-		current_age = age_of_dynasticism
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+		}
 		is_part_of_hre = yes
 		religion_group = christian
 		NOT = { has_estate_privilege = estate_burghers_jewish_scapegoats }
 	}
 	is_valid = {
-		current_age = age_of_dynasticism
+		OR = {
+			current_age = age_of_crisis
+			current_age = age_of_dynasticism
+		}
 		religion_group = christian
 	}
 	conditional_modifier = {
@@ -814,6 +827,85 @@ estate_burghers_jewish_sanctuary = {
 		modifier = {
 			factor = 0.5
 			has_idea_group = religious_ideas
+		}
+	}
+}
+
+estate_burghers_dutch_water_lines = {
+	icon = privilege_dutch_water_lines
+	max_absolutism = -20
+	loyalty = -0.05
+	influence = 0.1
+	is_valid = {
+		culture_group = dutch_group
+		capital_scope = {
+			superregion = lowlands_superregion
+		}
+	}
+	can_select = {
+		is_year = 1400
+		years_of_income = 1
+	}
+	on_granted = {
+		add_years_of_income = -1
+		custom_tooltip = estate_burghers_dutch_water_lines_effect_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { superregion = lowlands_superregion controlled_by = ROOT }
+				add_province_modifier = {
+					name = estate_burghers_dutch_water_lines_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_burghers_dutch_water_lines_revoke_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = estate_burghers_dutch_water_lines_mod }
+				remove_province_modifier = estate_burghers_dutch_water_lines_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		country_event = { id = hremodevents.139 }
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_burghers
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_burghers_dutch_water_lines }
+		}
+		modifier = {
+			factor = 0
+			NOT = { years_of_income = 1 }
+		}
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0
+			is_in_deficit = yes
+		}
+		modifier = {
+			factor = 0
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 0
+			is_absolutism_active = yes
 		}
 	}
 }
@@ -869,6 +961,102 @@ estate_nobles_frontier_resettlement = {
 	}
 }
 
+estate_nobles_georgian_strong_duchies = {
+	icon = privilege_georgian_strong_duchies
+	max_absolutism = -10
+	loyalty = 0.1
+	influence = 0.1
+	is_valid = {
+		OR = {
+			has_estate_privilege = estate_nobles_georgian_strong_duchies
+			AND = {
+				tag = GEO
+				NOT = { has_estate_privilege = estate_nobles_georgian_strong_duchies }
+			}
+		}
+		OR = {
+			any_subject_country = {
+				is_march = yes
+			}
+			vassal = 1
+		}
+	}
+	can_select = {
+		if = {
+			limit = {
+				has_dlc = "Art of War"
+			}
+			custom_trigger_tooltip = {
+				tooltip = estate_nobles_strong_duchies_trigger_tooltip
+				calc_true_if = {
+					amount = 2
+					all_subject_country = {
+						OR = {
+							is_march = yes
+							is_vassal = yes
+						}
+					}
+				}
+			}
+		}
+		else = {
+			vassal = 2
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+		diplomatic_upkeep = 3
+		reduced_liberty_desire_on_same_continent = 10
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			has_estate_privilege = estate_nobles_georgian_strong_duchies
+		}
+	}
+}
+
+byz_aristocrats_p = {
+	icon = privilege_royal_authority
+	max_absolutism = -15
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		has_estate_privilege = byz_aristocrats_p
+	}
+	can_revoke = {
+		stability = 2
+		has_regency = no
+	}
+	on_revoked = {
+		if = {
+			limit = {
+				government = monarchy
+				has_estate = estate_nobles
+				NOT = { has_country_flag = komnenian_restoration_flag }
+			}
+			add_stability = -2
+			change_estate_land_share = {
+				estate = estate_nobles
+				share = -10
+			}
+		}
+	}
+	penalties = {
+		prestige = -0.5
+	}
+	benefits = {
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
 # Clergy
 
 estate_church_priory = {
@@ -902,5 +1090,42 @@ estate_church_priory = {
 				tag = QDL	
 			}
 		}
+	}
+}
+
+estate_church_flexible_deities = {
+	icon = privilege_switch_hindu_deity
+	max_absolutism = -5
+	influence = 0.1
+	is_valid = {
+		OR = {
+			religion = egyptian_religion
+			religion = hellenic_pagan
+			religion = norse_pagan_reformed
+			religion = slavic_pagan
+			religion = animism
+			religion = druwi
+			religion = dievturiba
+		}
+		has_dlc = "Wealth of Nations"
+	}
+	can_select = {
+		estate_influence = {
+			estate = estate_church
+			influence = 60
+		}
+	}
+	on_granted = {
+		custom_tooltip = estate_brahmins_flexible_deities_effect_tooltip
+	}
+	on_revoked = {
+		custom_tooltip = estate_brahmins_flexible_deities_revoke_tooltip
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 0
 	}
 }

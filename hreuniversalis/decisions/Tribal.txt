@@ -63,7 +63,7 @@ country_decisions = {
 							culture = dalcassian
 							culture = eoganachta
 							culture = connachta
-							culture = laigain
+							culture = laigan
 							culture = ulaidh
 							culture = erainn
 						}

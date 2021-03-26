@@ -240,15 +240,23 @@ change_estate_land_share = {
 }
 1378.9.4 = {
 	monarch = {
+		name = "Bernabò I"
+		dynasty = "Visconti"
+		birth_date = 1323.1.1
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+1385.5.6 = {
+	monarch = {
 		name = "Gian Galeazzo I"
 		dynasty = "Visconti"
 		birth_date = 1347.10.15
-		adm = 2
-		dip = 2
-		mil = 2
+		adm = 5
+		dip = 6
+		mil = 5
 	}
-}
-1380.11.15 = {
 	queen = {
 		country_of_origin = MLO
 		name = "Caterina"
@@ -260,6 +268,8 @@ change_estate_land_share = {
 		dip = 1
 		mil = 1
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = conqueror_personality
 }
 1388.9.7 = {
 	heir = {

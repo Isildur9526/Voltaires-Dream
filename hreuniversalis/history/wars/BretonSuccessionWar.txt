@@ -53,7 +53,7 @@ war_goal = {
 	}
 }
 1342.8.19 = {
-	rem_defender = GEN
+	rem_attacker = GEN
 }
 
 1347.1.1 = {

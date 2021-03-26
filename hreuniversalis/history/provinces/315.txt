@@ -16,7 +16,19 @@ add_core = SPH
 	controller = ZWB
 	add_core = ZWB
 }
+1444.1.1 = {
+	owner = SXM
+	controller = SXM
+	add_core = SXM
+	remove_core = ZWB
+}
 1529.1.1 = { religion = protestant }
+1557.5.18 = {
+	owner = ZWB
+	controller = ZWB
+	add_core = ZWB
+	remove_core = SXM
+}
 1569.6.11 = {
 	owner = SPH
 	controller = SPH

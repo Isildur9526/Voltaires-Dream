@@ -237,7 +237,7 @@ vn_nap_missions_slot_2 = {
 			has_institution = enlightenment   
             has_any_disaster = no
             has_regency = no
-            legitimacy_equivalent = 95
+            legitimacy = 95
             NOT = { war_exhaustion = 1 }
             NOT = { corruption = 1 }			
         }
@@ -902,7 +902,7 @@ vn_nap_missions_slot_5 = {
         required_missions = {  }
         trigger = {
 			prestige = 25
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			NOT = { num_of_free_diplomatic_relations = 1 }
 			OR = {
 				advisor = statesman

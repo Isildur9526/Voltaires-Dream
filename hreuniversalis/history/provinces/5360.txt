@@ -1,5 +1,5 @@
 capital = "Petres"
-culture = greek
+culture = aromanian
 religion = orthodox
 trade_goods = rice
 base_tax = 1
@@ -66,6 +66,7 @@ add_core = BYZ
 	add_core = MXD
 	remove_core = WTH
 }
+1373.1.1 = { culture = greek }
 1385.1.1 = {
 	owner = TUR
 	controller = TUR

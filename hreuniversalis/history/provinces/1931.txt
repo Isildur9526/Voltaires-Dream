@@ -15,6 +15,10 @@ discovered_by = ottoman
 discovered_by = western
 discovered_by = muslim
 
+1370.1.1 = {
+	#1-1-1
+	base_tax = 1
+}
 1441.1.1 = {
 	owner = AUC
 	controller = AUC

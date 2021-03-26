@@ -1736,7 +1736,7 @@ vn_sic_missions_slot_5 = {
 		required_missions = {  }
 		trigger = {
 			prestige = 25
-			legitimacy_equivalent = 100
+			legitimacy = 100
 			NOT = { num_of_free_diplomatic_relations = 1 }
 			OR = {
 				advisor = statesman
@@ -1759,13 +1759,6 @@ vn_sic_missions_slot_5 = {
 					target = WWS
 					type = cb_fabricated_claims
 					months = 300
-				}
-				swabia_region = {
-					limit = {
-						NOT = { is_core = WWS }
-						NOT = { is_permanent_claim = WWS }
-					}
-					add_permanent_claim = WWS
 				}				
 			}
 			else = {
@@ -1788,13 +1781,6 @@ vn_sic_missions_slot_5 = {
 					target = MEI
 					type = cb_fabricated_claims
 					months = 300
-				}
-				saxony_region = {
-					limit = {
-						NOT = { is_core = MEI }
-						NOT = { is_permanent_claim = MEI }
-					}
-					add_permanent_claim = MEI
 				}				
 			}
 			else_if = {
@@ -1808,13 +1794,6 @@ vn_sic_missions_slot_5 = {
 					target = SAX
 					type = cb_fabricated_claims
 					months = 300
-				}
-				saxony_region = {
-					limit = {
-						NOT = { is_core = SAX }
-						NOT = { is_permanent_claim = SAX }
-					}
-					add_permanent_claim = SAX
 				}				
 			}
 			else = {

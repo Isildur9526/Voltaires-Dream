@@ -58,7 +58,7 @@ historical_friend = KIE
 	}
 	heir = {
 		name = "Yuriy Dolgoruky"
-		name = "Yuriy I"
+		monarch_name = "Yuriy I"
 		dynasty = "Rurikovich"
 		birth_date = 1090.1.1
 		death_date = 1157.5.15

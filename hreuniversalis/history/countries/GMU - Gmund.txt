@@ -7,6 +7,7 @@ technology_group = western
 capital = 70
 
 1053.1.1 = {
+	override_country_name = STAUFERSTADT_NAME
 	monarch = {
 		name = "Friedrich I"
 		dynasty = "von Hohenstaufen"
@@ -56,6 +57,7 @@ capital = 70
 }
 #done
 1090.5.18 = {
+	restore_country_name = yes
 	government = republic
 	add_government_reform = free_city
 	mercantilism = 25

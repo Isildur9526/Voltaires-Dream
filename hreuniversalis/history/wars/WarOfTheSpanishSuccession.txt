@@ -399,7 +399,7 @@ war_goal = {
 
 1713.4.11 = {
 	rem_attacker = SAV
-	rem_attacker = NIC
+	rem_defender = NIC
 	rem_attacker = POR
 	rem_attacker = GBR
 	rem_attacker = NED

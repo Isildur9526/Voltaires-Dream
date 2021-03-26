@@ -1,0 +1,88 @@
+incident_external_imperial_union = {
+	event = incident_external_imperial_union.2
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				any_country = {
+					has_country_flag = current_pu_incident_target_flag
+				}
+			}
+			any_country = {
+				has_country_flag = current_pu_incident_target_flag
+				OR = {
+					is_subject = no
+					overlord = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+	}
+	
+	0 = { # war
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_disloyal
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_rebellious
+				}
+			}
+		}
+	}
+	
+	1 = { # do nothing
+		factor = 1
+		modifier = {
+			factor = 100
+			ai_attitude = {
+				who = event_target:external_imperial_union_senior_partner
+				attitude = attitude_neutral
+			}
+		}
+	}
+
+	2 = { # kick them out
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_friendly
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_loyal
+				}
+				ai_attitude = {
+					who = event_target:external_imperial_union_senior_partner
+					attitude = attitude_allied
+				}
+			}
+		}
+	}
+}

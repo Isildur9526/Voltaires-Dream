@@ -34,7 +34,7 @@ latent_trade_goods = { coal }
 	add_core = BYZ
 	remove_core = NKA
 }
-1306.1.1 = {
+1304.1.1 = {
 	owner = SRU
 	controller = SRU
 	add_core = SRU

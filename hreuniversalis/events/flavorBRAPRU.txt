@@ -905,10 +905,10 @@ country_event = {
 	option = { #Brandenburg must be indivisible!
 		name = flavor_brapru.25.a
 		ai_chance = { factor = 50 }
-		add_country_modifier = {
-			name = "bra_dispositio_achillea"
-			duration = -1
-		}
+		#add_country_modifier = {
+		#	name = "bra_dispositio_achillea"
+		#	duration = -1
+		#}
 		if = {
 			limit = {
 				senior_union_with = ANS

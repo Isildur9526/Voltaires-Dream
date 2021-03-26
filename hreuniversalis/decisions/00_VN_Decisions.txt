@@ -482,6 +482,7 @@ country_decisions = {
 			change_government = monarchy
 			add_government_reform = feudalism_reform
 			add_prestige = 25
+			clr_country_flag = byz_lost_crown_land
 			hidden_effect = {
 				random_owned_province = {
 					limit = {
@@ -743,18 +744,33 @@ country_decisions = {
 				culture_group = germanic
 				tag = LST
 			}
-			berlin_area = { owned_by = ROOT }
+			OR = {
+				berlin_area = { owned_by = ROOT }
+				potsdam_area = { owned_by = ROOT }
+			}
 			government = monarchy
 			NOT = { has_country_flag = formed_brandenburg }
 			normal_or_historical_nations = yes
 			NOT = { is_year = 1160 }
-			NOT = { capital_scope = { area = berlin_area } }
+			NOT = { 
+				capital_scope = { 
+					OR = {
+						area = berlin_area 
+						area = potsdam_area
+					}	
+				} 
+			}
 			NOT = { any_owned_province = { is_core = BRA } }
+			NOT = { primary_culture = central_margravian }
 		}
 		allow = {
-			berlin_area = {
-				type = all
-				owned_by = ROOT
+			num_of_owned_provinces_with = {
+				value = 5
+				area = berlin_area
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				area = potsdam_area
 			}
 			is_subject = no
 			is_at_war = no
@@ -762,7 +778,12 @@ country_decisions = {
 		effect = {
 			set_country_flag = formed_brandenburg
 			every_owned_province = {
-				limit = { area = berlin_area }
+				limit = { 
+					OR = {
+						area = berlin_area 
+						area = potsdam_area
+					}
+				}
 				add_core = BRA
 				remove_core = ROOT
 				cede_province = BRA
@@ -834,6 +855,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BRA
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			if = {
 				limit = { NOT = { government = monarchy } }
@@ -1031,7 +1053,7 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			if = {
-				limit = { tag = EGY }
+				limit = { ROOT = { tag = EGY } }
 				always = no
 			}
 			else = {
@@ -1216,6 +1238,7 @@ country_decisions = {
 			}
 			change_primary_culture = hebrew
 			change_tag = ISR
+			hidden_effect = { restore_country_name = yes }
 			if = {
 				limit = { NOT = { government = monarchy } }
 				change_government = monarchy
@@ -1464,6 +1487,7 @@ country_decisions = {
 			NOT = { started_in = 1250.8.28 }
 			NOT = { has_global_flag = established_warmia_diocese_flag }
 			has_reform = crusader_order_reform
+			total_development = 100
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -1493,7 +1517,7 @@ country_decisions = {
 			add_papal_influence = 25
 			add_prestige = 25
 			if = {
-				limit = { religion = catohlic }
+				limit = { religion = catholic }
 				reverse_add_opinion = {
 					who = PAP
 					modifier = opinion_pleased
@@ -1527,10 +1551,17 @@ country_decisions = {
 				release = WRM
 				vassalize = WRM
 				WRM = {
+					add_liberty_desire = -50
 					set_government_rank = 4
 					add_government_reform = leading_clergy_reform
 					change_religion = ROOT
 					define_ruler = { }
+					adopt_reform_progress = ROOT
+					capital_scope = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
 				}
 			}
 		}
@@ -1569,6 +1600,7 @@ country_decisions = {
 			NOT = { started_in = 1263.1.1 }
 			NOT = { has_global_flag = established_kurland_diocese_flag }
 			has_reform = crusader_order_reform
+			total_development = 100
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -1598,7 +1630,7 @@ country_decisions = {
 			add_papal_influence = 25
 			add_prestige = 25
 			if = {
-				limit = { religion = catohlic }
+				limit = { religion = catholic }
 				reverse_add_opinion = {
 					who = PAP
 					modifier = opinion_pleased
@@ -1632,10 +1664,17 @@ country_decisions = {
 				release = KUR
 				vassalize = KUR
 				KUR = {
+					add_liberty_desire = -50
 					set_government_rank = 4
 					add_government_reform = leading_clergy_reform
 					change_religion = ROOT
 					define_ruler = { }
+					adopt_reform_progress = ROOT
+					capital_scope = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
 				}
 			}
 		}
@@ -1674,6 +1713,7 @@ country_decisions = {
 			NOT = { started_in = 1199.1.1 }
 			NOT = { has_global_flag = established_riga_diocese_flag }
 			has_reform = crusader_order_reform
+			total_development = 100
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -1719,7 +1759,7 @@ country_decisions = {
 			add_papal_influence = 25
 			add_prestige = 25
 			if = {
-				limit = { religion = catohlic }
+				limit = { religion = catholic }
 				reverse_add_opinion = {
 					who = PAP
 					modifier = opinion_pleased
@@ -1777,10 +1817,17 @@ country_decisions = {
 				release = RIG
 				vassalize = RIG
 				RIG = {
+					add_liberty_desire = -50
 					set_government_rank = 4
 					add_government_reform = leading_clergy_reform
 					change_religion = ROOT
 					define_ruler = { }
+					adopt_reform_progress = ROOT
+					capital_scope = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
 				}
 			}
 		}
@@ -1819,6 +1866,7 @@ country_decisions = {
 			NOT = { started_in = 1227.1.1 }
 			NOT = { has_global_flag = established_osel_diocese_flag }
 			has_reform = crusader_order_reform
+			total_development = 100
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -1862,7 +1910,7 @@ country_decisions = {
 			add_papal_influence = 25
 			add_prestige = 25
 			if = {
-				limit = { religion = catohlic }
+				limit = { religion = catholic }
 				reverse_add_opinion = {
 					who = PAP
 					modifier = opinion_pleased
@@ -1924,10 +1972,17 @@ country_decisions = {
 				release = OSL
 				vassalize = OSL
 				OSL = {
+					add_liberty_desire = -50
 					set_government_rank = 4
 					add_government_reform = leading_clergy_reform
 					change_religion = ROOT
 					define_ruler = { }
+					adopt_reform_progress = ROOT
+					capital_scope = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
 				}
 			}
 		}
@@ -1966,6 +2021,7 @@ country_decisions = {
 			NOT = { started_in = 1224.1.1 }
 			NOT = { has_global_flag = established_dorpat_diocese_flag }
 			has_reform = crusader_order_reform
+			total_development = 100
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -2003,7 +2059,7 @@ country_decisions = {
 			add_papal_influence = 25
 			add_prestige = 25
 			if = {
-				limit = { religion = catohlic }
+				limit = { religion = catholic }
 				reverse_add_opinion = {
 					who = PAP
 					modifier = opinion_pleased
@@ -2053,10 +2109,17 @@ country_decisions = {
 				release = DPT
 				vassalize = DPT
 				DPT = {
+					add_liberty_desire = -50
 					set_government_rank = 4
 					add_government_reform = leading_clergy_reform
 					change_religion = ROOT
 					define_ruler = { }
+					adopt_reform_progress = ROOT
+					capital_scope = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
 				}
 			}
 		}
@@ -2084,13 +2147,9 @@ country_decisions = {
 	wendish_germanization = {
 		major = yes
 		potential = {
-			primitives = no
 			OR = {
 				primary_culture = polabian
 				primary_culture = kashubian
-			}
-			any_neighbor_country = {
-				culture_group = germanic
 			}
 			OR = {
 				current_age = age_of_holy_wars
@@ -2098,6 +2157,7 @@ country_decisions = {
 			}
 		}
 		allow = {
+			primitives = no
 			capital_scope = {
 				culture_group = germanic
 				has_owner_accepted_culture = yes
@@ -2108,7 +2168,7 @@ country_decisions = {
 		effect = {
 			add_stability = -1
 			hidden_effect = {
-				restore_country_name = yes
+				hidden_effect = { restore_country_name = yes }
 				export_to_variable = {
 					variable_name = formerprimaryculture
 					value = primary_culture
@@ -2117,6 +2177,8 @@ country_decisions = {
 				capital_scope = {
 					owner = {
 						change_primary_culture = PREV
+						set_ruler_culture = PREV
+						set_heir_culture = PREV
 					}
 				}
 				add_accepted_culture = variable:formerprimaryculture
@@ -2136,12 +2198,12 @@ country_decisions = {
 		major = yes
 		potential = {
 			has_dlc = "Mandate of Heaven"
-			has_country_flag = launched_oprichnina_flag
+			has_global_flag = launched_oprichnina_flag
 			is_emperor_of_china = yes
 		}
 		allow = {
 			is_at_war = no
-			stability = 1
+			stability = 3
 			meritocracy = 100
 			imperial_mandate = 100
 			any_subject_country = {
@@ -2156,6 +2218,228 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	byz_aristocrats_d = {
+		major = yes
+		potential = {
+			has_country_modifier = byz_aristocrats_m
+		}
+		allow = {
+			stability = 1
+			NOT = {
+				has_estate_privilege = byz_aristocrats_p
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 40
+			}
+		}
+		effect = {
+			add_prestige = 5
+			remove_country_modifier = byz_aristocrats_m
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	byz_bureaucrats_d = {
+		major = yes
+		potential = {
+			has_country_modifier = byz_bureaucrats_m
+		}
+		allow = {
+			government_reform_progress = 10
+			NOT = { num_of_states = 25 }
+			has_3_lv2_advisors_trigger = yes
+			NOT = { corruption = 1 }
+			NOT = { inflation = 1 }
+			is_bankrupt = no
+		}
+		effect = {
+			add_prestige = 5
+			remove_country_modifier = byz_bureaucrats_m
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	byz_defenses_d = {
+		major = yes
+		potential = {
+			has_country_modifier = byz_defenses_m
+		}
+		allow = {
+			calc_true_if = {
+				desc = byz_defenses_d.tt2
+				all_owned_province = {
+					controlled_by = ROOT
+					has_fort_trigger = yes
+					garrison = 1000
+				}
+				amount = 60
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = byz_defenses_d.tt
+					num_of_owned_provinces_with = {
+						value = 5
+						any_neighbor_province = {
+							NOT = { owned_by = ROOT }
+							owner = {
+								religion_group = muslim
+								capital_scope = { superregion = mesopotamia_superregion }
+							}
+						}
+						controlled_by = ROOT
+						has_fort_trigger = yes
+						garrison = 1000
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = byz_crisis_stop.tt
+					NOT = {
+						any_owned_province = {
+							any_neighbor_province = {
+								owner = { religion_group = muslim }
+							}
+						}
+						any_subject_country = {
+							any_owned_province = {
+								any_neighbor_province = {
+									owner = { religion_group = muslim }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+			remove_country_modifier = byz_defenses_m
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	byz_army_d = {
+		major = yes
+		potential = {
+			has_country_modifier = byz_army_m
+		}
+		allow = {
+			if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				OR = {
+					army_professionalism = 0.05
+					army_tradition = 10
+				}
+			}
+			else = {
+				army_tradition = 10
+			}
+			army_size_percentage = 1
+			NOT = { num_of_mercenaries = 1 }
+			land_maintenance = 1.0
+			manpower_percentage = 0.6
+			NOT = { war_exhaustion = 1 }
+		}
+		effect = {
+			add_prestige = 5
+			remove_country_modifier = byz_army_m
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	byz_unrest_d = {
+		major = yes
+		potential = {
+			has_country_modifier = byz_unrest_m
+		}
+		allow = {
+			is_at_war = no
+			NOT = { average_autonomy_above_min = 1 }
+			NOT = {
+				any_owned_province = {
+					OR = {
+						custom_trigger_tooltip = {
+							tooltip = byz_unrest_d.tt
+							is_in_capital_area = yes
+						}
+						superregion = anatolia_superregion
+					}
+					unrest = 1
+				}
+			}
+			development_in_provinces = {
+				value = 2500
+				OR = {
+					superregion = anatolia_superregion
+					superregion = balkans_superregion
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 35
+				OR = {
+					superregion = anatolia_superregion
+					superregion = balkans_superregion
+				}
+				development = 10
+			}
+		}
+		effect = {
+			add_prestige = 5
+			remove_country_modifier = byz_unrest_m
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	church_pagan_deity_decision = {
+		potential = {
+			has_dlc = "Wealth of Nations"
+			OR = {
+				religion = egyptian_religion
+				religion = hellenic_pagan
+				religion = norse_pagan_reformed
+				religion = slavic_pagan
+				religion = animism
+				religion = druwi
+				religion = dievturiba
+			}
+			has_estate = estate_church
+		}
+		allow = {
+			has_regency = no
+			has_estate_privilege = estate_church_flexible_deities
+			custom_trigger_tooltip = {
+				tooltip = decision_once_every_twenty_years
+				OR = {
+					NOT = { has_country_flag = church_pagan_deity_decision }
+					had_country_flag = {
+						flag = church_pagan_deity_decision
+						days = 7300
+					}
+				}
+			}
+		}
+		effect = {
+			reduce_legitimacy_large_effect = yes
+			set_country_flag = church_deity_interaction
+			clr_country_flag = church_pagan_deity_decision
+			set_country_flag = church_pagan_deity_decision
+			country_event = { id = vn_religions.0 }
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

@@ -47,7 +47,6 @@ monarch_names = {
 	"Odo #0" = 10
 	"Baudouin #0" = 5
 	"Charles #0" = 5
-	"Louis #0" = 5
 	"Adam #0" = 1
 	"Adolphe #0" = 1
 	"Adrien #0" = 1

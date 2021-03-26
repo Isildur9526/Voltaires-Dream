@@ -28,6 +28,9 @@ add_core = IAS
 	controller = MOL
 	add_core = MOL
 	remove_core = CDR
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1653.1.1 = { revolt = { type = noble_rebels size = 0 } controller = REB }
 1654.1.1 = { revolt = {} controller = MOL }

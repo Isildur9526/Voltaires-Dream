@@ -228,11 +228,31 @@ religious_school = hanafi_school
 		mil = 0
 	}
 }
+1307.1.1 = {
+	monarch = {
+		name = "Masud III"
+		dynasty = "Selçukoglu"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
 #done 1308
 
 #Ilkhan Viceroys of Anatolia
 1308.1.1 = {
 	government_rank = 4
+	monarch = {
+		name = "Irinjin"
+		dynasty = "Kerait"
+		religion = nestorian
+		culture = mongol
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+} #KAR invasion 1314
+1314.7.31 = {
 	monarch = {
 		name = "Chupan"
 		dynasty = "Suldus"
@@ -242,7 +262,7 @@ religious_school = hanafi_school
 		mil = 4
 	}
 }
-1319.1.1 = {
+1317.8.1 = {
 	monarch = {
 		name = "Timurtash"
 		dynasty = "Suldus"

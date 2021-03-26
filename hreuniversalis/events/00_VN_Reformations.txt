@@ -8,7 +8,14 @@ province_event = {
 	id = hohenref_events.1
 	title = "hohenref_events.1.t"
 	desc = "hohenref_events.1.d"
-	picture = RELIGION_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = POPE_PREACHING_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
 	goto = root
 	
 	major = yes
@@ -37,7 +44,14 @@ province_event = {
 	id = hohenref_events.2
 	title = "hohenref_events.2.t"
 	desc = "hohenref_events.2.d"
-	picture = RELIGION_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = POPE_PREACHING_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
 	goto = root
 	
 	major = yes
@@ -61,7 +75,15 @@ country_event = {
 	id = hohenref_events.3
 	title = "hohenref_events.3.t"
 	desc = "hohenref_events.3.d"
-	picture = RELIGION_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Third Rome" } }
+		picture = RELIGION_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = ICONS_IN_CHURCH_eventPicture
+	}
+
 	goto = root
 	
 	major = yes
@@ -129,7 +151,14 @@ country_event = {
 	id = hohenref_events.4
 	title = "hohenref_events.4.t"
 	desc = "hohenref_events.4.d"
-	picture = POPE_PREACHING_eventPicture
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = POPE_PREACHING_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
 	goto = fraticelli_ref
 	
 	major = yes

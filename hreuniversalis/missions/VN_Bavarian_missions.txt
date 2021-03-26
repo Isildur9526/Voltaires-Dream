@@ -276,7 +276,7 @@ vn_bav_missions_slot_2 = {
                 has_reform_level = 2
             }
             stability = 1
-            legitimacy_equivalent = 95
+            legitimacy = 95
             has_regency = no
             if = {
                 limit = { has_government_attribute = heir }
@@ -986,7 +986,7 @@ vn_bav_missions_slot_4 = {
         required_missions = { vn_bav_bavarian_electorate }
         trigger = {
             government_rank = 5
-            legitimacy_equivalent = 95
+            legitimacy = 95
             if = {
                 limit = { has_government_attribute = heir }
                 has_heir = yes
@@ -1154,7 +1154,7 @@ vn_bav_missions_slot_5 = {
             total_development = 500
             has_any_disaster = no
             has_regency = no
-            legitimacy_equivalent = 95
+            legitimacy = 95
             NOT = { war_exhaustion = 1 }
             NOT = { corruption = 1 }
         }

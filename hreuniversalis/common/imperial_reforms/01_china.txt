@@ -4,10 +4,9 @@ establish_gaituguiliu_decision = {
 		meritocracy = 0.5
 	}
 	on_effect = {
-		set_country_flag = introduced_pravda_flag
+		set_global_flag = introduced_pravda_flag
 	}
 	off_effect = {
-		clr_country_flag = introduced_pravda_flag
 	}
 }
 
@@ -18,10 +17,9 @@ seaban_decision = {
 		trade_efficiency = 0.05
 	}
 	on_effect = {
-		set_country_flag = reformed_varangian_trade_flag
+		set_global_flag = reformed_varangian_trade_flag
 	}
 	off_effect = {
-		clr_country_flag = reformed_varangian_trade_flag
 	}
 	required_reform = establish_gaituguiliu_decision
 }
@@ -32,10 +30,9 @@ reform_land_tax_decision = {
 		global_autonomy = -0.05
 	}
 	on_effect = {
-		set_country_flag = enserfed_smerds_flag
+		set_global_flag = enserfed_smerds_flag
 	}
 	off_effect = {
-		clr_country_flag = enserfed_smerds_flag
 	}
 	required_reform = seaban_decision
 }
@@ -46,11 +43,10 @@ military_governors_decision = {
 		heir_chance = 0.5
 	}
 	on_effect = {
-		set_country_flag = disable_rota_flag
+		set_global_flag = disable_rota_flag
 		custom_tooltip = rota_disabled.tt
 	}
 	off_effect = {
-		clr_country_flag = disable_rota_flag
 	}
 	required_reform = reform_land_tax_decision
 }
@@ -61,10 +57,9 @@ centralizing_top_government_decision = {
 		core_creation = -0.1
 	}
 	on_effect = {
-		set_country_flag = launched_oprichnina_flag
+		set_global_flag = launched_oprichnina_flag
 	}
 	off_effect = {
-		clr_country_flag = launched_oprichnina_flag
 	}
 	required_reform = military_governors_decision
 }

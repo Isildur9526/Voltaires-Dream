@@ -1,5 +1,5 @@
 capital = "Bodena"
-culture = greek
+culture = aromanian
 religion = orthodox
 trade_goods = rice
 base_tax = 1

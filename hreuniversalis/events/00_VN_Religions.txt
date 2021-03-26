@@ -1,4 +1,316 @@
 namespace = vn_religious_events
+namespace = bogomilist_events
+
+# Paths of Religion
+country_event = {
+	id = vn_religious_events.0
+	title = "vn_religious_events.0.t"
+	desc = "vn_religious_events.0.d"
+	picture = PRAYING_eventPicture
+
+	trigger = {
+		has_dlc = "Wealth of Nations"
+		has_regency = no
+		OR = {
+			has_country_flag = church_deity_interaction
+			AND = {
+                religion = egyptian_religion
+				NOT = { has_personal_deity = egy_anubis }
+				NOT = { has_personal_deity = egy_horus }
+				NOT = { has_personal_deity = egy_isis }
+				NOT = { has_personal_deity = egy_ra }
+				NOT = { has_personal_deity = egy_set }
+				NOT = { has_personal_deity = egy_sobek }
+			}
+            AND = {
+                religion = hellenic_pagan
+				NOT = { has_personal_deity = zeus }
+				NOT = { has_personal_deity = poseidon }
+				NOT = { has_personal_deity = hades }
+				NOT = { has_personal_deity = hera }
+				NOT = { has_personal_deity = athena }
+				NOT = { has_personal_deity = aphrodite }
+			}
+            AND = {
+                religion = norse_pagan_reformed
+				NOT = { has_personal_deity = odin }
+				NOT = { has_personal_deity = freya }
+				NOT = { has_personal_deity = tor }
+				NOT = { has_personal_deity = tyr }
+				NOT = { has_personal_deity = njord }
+				NOT = { has_personal_deity = snotra }
+			}
+            AND = {
+                religion = slavic_pagan
+				NOT = { has_personal_deity = perun }
+				NOT = { has_personal_deity = veles }
+				NOT = { has_personal_deity = jarilo }
+				NOT = { has_personal_deity = svarog }
+				NOT = { has_personal_deity = dazbog }
+				NOT = { has_personal_deity = lada }
+			}
+            AND = {
+                religion = animism
+				NOT = { has_personal_deity = ausrine }
+				NOT = { has_personal_deity = laima }
+				NOT = { has_personal_deity = milda }
+				NOT = { has_personal_deity = perkunas }
+				NOT = { has_personal_deity = saule }
+				NOT = { has_personal_deity = zemyna }
+			}
+            AND = {
+                religion = druwi
+				NOT = { has_personal_deity = potrimpo }
+				NOT = { has_personal_deity = autrimpo }
+				NOT = { has_personal_deity = peckols }
+				NOT = { has_personal_deity = occopirmo }
+				NOT = { has_personal_deity = suaixtix }
+				NOT = { has_personal_deity = piluuyto }
+			}
+            AND = {
+                religion = dievturiba
+				NOT = { has_personal_deity = dievs }
+				NOT = { has_personal_deity = mara }
+				NOT = { has_personal_deity = karta }
+				NOT = { has_personal_deity = udens }
+				NOT = { has_personal_deity = juras }
+				NOT = { has_personal_deity = upes }
+			}
+		}
+	}
+
+	after = {
+		clr_country_flag = church_deity_interaction
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "vn_religious_events.0.egy.a"
+        trigger = { religion = egyptian_religion }
+		change_personal_deity = egy_anubis
+	}
+	option = {
+		name = "vn_religious_events.0.egy.b"
+        trigger = { religion = egyptian_religion }
+		change_personal_deity = egy_horus
+	}
+	option = {
+		name = "vn_religious_events.0.egy.c"
+        trigger = { religion = egyptian_religion }
+		change_personal_deity = egy_isis
+	}
+	option = {
+		name = "vn_religious_events.0.egy.d"
+        trigger = { religion = egyptian_religion }
+		change_personal_deity = egy_ra
+	}
+	option = {
+		name = "vn_religious_events.0.egy.e"
+        trigger = { religion = egyptian_religion }
+		change_personal_deity = egy_set
+	}
+	option = {
+		name = "vn_religious_events.0.egy.f"
+        trigger = { religion = egyptian_religion }
+		change_personal_deity = egy_sobek
+	}
+
+    option = {
+		name = "vn_religious_events.0.hel.a"
+        trigger = { religion = hellenic_pagan }
+		change_personal_deity = zeus
+	}
+	option = {
+		name = "vn_religious_events.0.hel.b"
+        trigger = { religion = hellenic_pagan }
+		change_personal_deity = poseidon
+	}
+	option = {
+		name = "vn_religious_events.0.hel.c"
+        trigger = { religion = hellenic_pagan }
+		change_personal_deity = hades
+	}
+	option = {
+		name = "vn_religious_events.0.hel.d"
+        trigger = { religion = hellenic_pagan }
+		change_personal_deity = hera
+	}
+	option = {
+		name = "vn_religious_events.0.hel.e"
+        trigger = { religion = hellenic_pagan }
+		change_personal_deity = athena
+	}
+	option = {
+		name = "vn_religious_events.0.hel.f"
+        trigger = { religion = hellenic_pagan }
+		change_personal_deity = aphrodite
+	}
+
+    option = {
+		name = "vn_religious_events.0.nrs.a"
+        trigger = { religion = norse_pagan_reformed }
+		change_personal_deity = odin
+	}
+	option = {
+		name = "vn_religious_events.0.nrs.b"
+        trigger = { religion = norse_pagan_reformed }
+		change_personal_deity = freya
+	}
+	option = {
+		name = "vn_religious_events.0.nrs.c"
+        trigger = { religion = norse_pagan_reformed }
+		change_personal_deity = tor
+	}
+	option = {
+		name = "vn_religious_events.0.nrs.d"
+        trigger = { religion = norse_pagan_reformed }
+		change_personal_deity = tyr
+	}
+	option = {
+		name = "vn_religious_events.0.nrs.e"
+        trigger = { religion = norse_pagan_reformed }
+		change_personal_deity = njord
+	}
+	option = {
+		name = "vn_religious_events.0.nrs.f"
+        trigger = { religion = norse_pagan_reformed }
+		change_personal_deity = snotra
+	}
+
+    option = {
+		name = "vn_religious_events.0.slv.a"
+        trigger = { religion = slavic_pagan }
+		change_personal_deity = perun
+	}
+	option = {
+		name = "vn_religious_events.0.slv.b"
+        trigger = { religion = slavic_pagan }
+		change_personal_deity = veles
+	}
+	option = {
+		name = "vn_religious_events.0.slv.c"
+        trigger = { religion = slavic_pagan }
+		change_personal_deity = jarilo
+	}
+	option = {
+		name = "vn_religious_events.0.slv.d"
+        trigger = { religion = slavic_pagan }
+		change_personal_deity = svarog
+	}
+	option = {
+		name = "vn_religious_events.0.slv.e"
+        trigger = { religion = slavic_pagan }
+		change_personal_deity = dazbog
+	}
+	option = {
+		name = "vn_religious_events.0.slv.f"
+        trigger = { religion = slavic_pagan }
+		change_personal_deity = lada
+	}
+
+    option = {
+		name = "vn_religious_events.0.rmv.a"
+        trigger = { religion = animism }
+		change_personal_deity = ausrine
+	}
+	option = {
+		name = "vn_religious_events.0.rmv.b"
+        trigger = { religion = animism }
+		change_personal_deity = laima
+	}
+	option = {
+		name = "vn_religious_events.0.rmv.c"
+        trigger = { religion = animism }
+		change_personal_deity = milda
+	}
+	option = {
+		name = "vn_religious_events.0.rmv.d"
+        trigger = { religion = animism }
+		change_personal_deity = perkunas
+	}
+	option = {
+		name = "vn_religious_events.0.rmv.e"
+        trigger = { religion = animism }
+		change_personal_deity = saule
+	}
+	option = {
+		name = "vn_religious_events.0.rmv.f"
+        trigger = { religion = animism }
+		change_personal_deity = zemyna
+	}
+
+    option = {
+		name = "vn_religious_events.0.drw.a"
+        trigger = { religion = druwi }
+		change_personal_deity = potrimpo
+	}
+	option = {
+		name = "vn_religious_events.0.drw.b"
+        trigger = { religion = druwi }
+		change_personal_deity = autrimpo
+	}
+	option = {
+		name = "vn_religious_events.0.drw.c"
+        trigger = { religion = druwi }
+		change_personal_deity = peckols
+	}
+	option = {
+		name = "vn_religious_events.0.drw.d"
+        trigger = { religion = druwi }
+		change_personal_deity = occopirmo
+	}
+	option = {
+		name = "vn_religious_events.0.drw.e"
+        trigger = { religion = druwi }
+		change_personal_deity = suaixtix
+	}
+	option = {
+		name = "vn_religious_events.0.drw.f"
+        trigger = { religion = druwi }
+		change_personal_deity = piluuyto
+	}
+
+    option = {
+		name = "vn_religious_events.0.dvb.a"
+        trigger = { religion = dievturiba }
+		change_personal_deity = dievs
+	}
+	option = {
+		name = "vn_religious_events.0.dvb.b"
+        trigger = { religion = dievturiba }
+		change_personal_deity = mara
+	}
+	option = {
+		name = "vn_religious_events.0.dvb.c"
+        trigger = { religion = dievturiba }
+		change_personal_deity = karta
+	}
+	option = {
+		name = "vn_religious_events.0.dvb.d"
+        trigger = { religion = dievturiba }
+		change_personal_deity = udens
+	}
+	option = {
+		name = "vn_religious_events.0.dvb.e"
+        trigger = { religion = dievturiba }
+		change_personal_deity = juras
+	}
+	option = {
+		name = "vn_religious_events.0.dvb.f"
+        trigger = { religion = dievturiba }
+		change_personal_deity = upes
+	}
+
+	option = {
+		trigger = {
+			NOT = { has_country_flag = church_deity_interaction }
+		}
+		name = "vn_religious_events.0.g"
+	}
+}
 
 #Catholic Heretic
 country_event = {
@@ -292,128 +604,84 @@ country_event = {
 	}
 }
 
-#Bogomilist
+########################################
+# Bogomilist
+########################################
 country_event = {
-	id = vn_religious_events.11
-	title = "vn_religious_events.11.t"
-	desc = "vn_religious_events.11.d"
+	id = bogomilist_events.1
+	title = "bogomilist_events.1.t"
+	desc = "bogomilist_events.1.d"
 	picture = BIG_BOOK_eventPicture
 	
 	is_triggered_only = yes
 	trigger = {
 		religion = bogomilist
-		NOT = { has_country_modifier = religious_manuscript_m }
     }
     mean_time_to_happen = { days = 1 }
 
 	option = {
-		name = "vn_religious_events.11.a"
-		add_harmony = 5
-		add_country_modifier = {
-			name = "religious_manuscript_m"
-            duration = 3650
-		}
+		name = "bogomilist_events.1.a"
+		add_harmony = 10
+		add_stability_or_adm_power = yes
 	}
 }
 
 country_event = {
-	id = vn_religious_events.12
-	title = "vn_religious_events.12.t"
-	desc = "vn_religious_events.12.d"
-	picture = ANGRY_MOB_eventPicture
-	
-	is_triggered_only = yes
-	trigger = {
-		religion = bogomilist
-		num_of_cities = 2
-    }
-    mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "vn_religious_events.12.a"
-        add_harmony = -5
-        add_legitimacy = -10
-        add_devotion = -10
-        add_republican_tradition = -10
-        add_horde_unity = -5
-	}
-	option = {
-		name = "vn_religious_events.12.b"
-		add_harmony = 5
-		random_owned_province = {
-			limit = {
-				is_capital = no
-			}
-			heretic_rebels = 2
-		}
-	}
-}
-
-country_event = {
-	id = vn_religious_events.13
-	title = "vn_religious_events.13.t"
-	desc = "vn_religious_events.13.d"
+	id = bogomilist_events.2
+	title = "bogomilist_events.2.t"
+	desc = "bogomilist_events.2.d"
 	picture = RELIGIOUS_TURMOIL_eventPicture
+    goto = draguvitian_province
 	
 	is_triggered_only = yes
 	trigger = {
 		religion = bogomilist
+		any_owned_province = {
+            is_capital = no
+            religion = bogomilist
+            controlled_by = ROOT
+        }
     }
     mean_time_to_happen = { days = 1 }
-		
+
+    immediate = {
+        hidden_effect = {
+            random_owned_province = {
+                limit = {
+                    is_capital = no
+                    religion = bogomilist
+                    controlled_by = ROOT
+                }
+                save_event_target_as = draguvitian_province
+            }
+        }
+    }
+	
 	option = {
-		name = "vn_religious_events.13.a"
-		add_harmony = -5
-		add_yearly_manpower = -0.5
+		name = "bogomilist_events.2.a"
+        ai_chance = { factor = 2 }
+        add_harmony = 10
+        event_target:draguvitian_province = {
+            heretic_rebels = 1
+        }
 	}
 	option = {
-		name = "vn_religious_events.13.b"
-		add_harmony = -5
-		random_owned_area = {
-			add_unrest = 10
-		}
+		name = "bogomilist_events.2.b"
+        ai_chance = { factor = 8 }
+		add_harmony = -10
+        event_target:draguvitian_province = {
+            add_province_modifier = {
+                name = religious_violence
+                duration = 1825
+            }
+        }
 	}
 }
 
 country_event = {
-	id = vn_religious_events.14
-	title = "vn_religious_events.14.t"
-	desc = "vn_religious_events.14.d"
-	picture = RELIGIOUS_CONVERSION_eventPicture
-	
-	is_triggered_only = yes
-	trigger = {
-		religion = bogomilist
-		any_neighbor_country = {
-			religion = catholic
-		}
-    }
-    mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "vn_religious_events.14.a"
-		add_harmony = -5
-		random_owned_province = {
-			add_base_tax = 1
-		}
-	}
-	option = {
-		name = "vn_religious_events.14.b"
-		add_harmony = 5
-		random_neighbor_country = {
-			limit = { religion = catholic }
-			add_opinion = {
-				who = ROOT
-				modifier = opinion_angry
-			}
-		}
-	}
-}
-
-country_event = {
-	id = vn_religious_events.15
-	title = "vn_religious_events.15.t"
-	desc = "vn_religious_events.15.d"
+	id = bogomilist_events.3
+	title = "bogomilist_events.3.t"
+	desc = "bogomilist_events.3.d"
 	picture = CITY_VIEW_eventPicture
 	
 	is_triggered_only = yes
@@ -423,124 +691,108 @@ country_event = {
     mean_time_to_happen = { days = 1 }
 	
 	option = {
-		name = "vn_religious_events.15.a"
-		add_harmony = 5
-		add_years_of_income = -0.25
+		name = "bogomilist_events.3.a"
+        ai_chance = { factor = 2 }
+        add_harmony = -10
+        add_prestige = 10
 	}
 	option = {
-		name = "vn_religious_events.15.b"
-		add_harmony = -5
+		name = "bogomilist_events.3.b"
+        ai_chance = { factor = 8 }
+		add_harmony = 10
+        add_prestige = -10
 	}
 }
 
 country_event = {
-	id = vn_religious_events.16
-	title = "vn_religious_events.16.t"
-	desc = "vn_religious_events.16.d"
+	id = bogomilist_events.4
+	title = "bogomilist_events.4.t"
+	desc = "bogomilist_events.4.d"
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		religion = bogomilist
+        has_estate = estate_nobles
+    }
+    mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "bogomilist_events.4.a"
+        ai_chance = { factor = 2 }
+        add_harmony = 10
+        add_estate_loyalty = {
+            estate = estate_nobles
+            loyalty = -10
+        }
+	}
+	option = {
+		name = "bogomilist_events.4.b"
+        ai_chance = { factor = 8 }
+        add_harmony = -10
+        add_estate_loyalty = {
+            estate = estate_nobles
+            loyalty = 10
+        }
+	}
+}
+
+country_event = {
+    id = bogomilist_events.5
+	title = "bogomilist_events.5.t"
+	desc = "bogomilist_events.5.d"
+    picture = ARTWORK_eventPicture
+
+    is_triggered_only = yes
+	trigger = {
+		religion = bogomilist
+    }
+    mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "bogomilist_events.5.a"
+        ai_chance = { factor = 8 }
+        add_harmony = 10
+        add_years_of_income = -0.5
+        add_republican_tradition = 5
+		add_legitimacy = 5
+		add_devotion = 5
+		define_advisor = {
+            type = artist
+            skill = 2
+            discount = yes
+        }
+	}
+	option = {
+		name = "bogomilist_events.5.b"
+        ai_chance = { factor = 2 }
+        add_harmony = -10
+		add_republican_tradition = -5
+		add_legitimacy = -5
+		add_devotion = -5
+	}
+}
+
+country_event = {
+	id = bogomilist_events.6
+	title = "bogomilist_events.6.t"
+	desc = "bogomilist_events.6.d"
 	picture = OVEREXTENSION_eventPicture
 	
 	is_triggered_only = yes
 	trigger = {
 		religion = bogomilist
-		has_estate = estate_church
+        NOT = { has_country_modifier = incompetent_clergy }
     }
     mean_time_to_happen = { days = 1 }
 	
 	option = {
-		name = "vn_religious_events.16.a"
-		add_harmony = 5
-		reduce_estate_church_loyalty_effect = yes
-	}
-	option = {
-		name = "vn_religious_events.16.b"
-		add_harmony = -5
-		add_estate_church_loyalty_effect = yes
-	}
-}
-
-country_event = {
-	id = vn_religious_events.17
-	title = "vn_religious_events.17.t"
-	desc = "vn_religious_events.17.d"
-	picture = DIPLOMACY_eventPicture
-	
-	is_triggered_only = yes
-	trigger = {
-		religion = bogomilist
-		NOT = { has_country_modifier = bogomilist_diplomat_m }
-    }
-    mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "vn_religious_events.17.a"
-		add_dip_power = 50
-	}
-	option = {
-		name = "vn_religious_events.17.b"
+		name = "bogomilist_events.6.a"
+		add_harmony = -10
 		add_country_modifier = {
-			name = bogomilist_diplomat_m
-			duration = 3650
-		}
-	}
-}
-
-country_event = {
-	id = vn_religious_events.18
-	title = "vn_religious_events.18.t"
-	desc = "vn_religious_events.18.d"
-	picture = PRAYING_eventPicture
-	
-	is_triggered_only = yes
-	trigger = {
-		religion = bogomilist
-    }
-    mean_time_to_happen = { days = 1 }
-	
-	option = {
-        name = "vn_religious_events.18.a"
-        add_adm_power = 50
-	}
-    option = {
-        name = "vn_religious_events.18.b"
-        add_mil_power = 50
-	}
-}
-
-country_event = {
-	id = vn_religious_events.19
-	title = "vn_religious_events.19.t"
-	desc = "vn_religious_events.19.d"
-	picture = BORDER_TENSION_eventPicture
-	
-	is_triggered_only = yes
-	trigger = {
-		religion = bogomilist
-    }
-    mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "vn_religious_events.19.a"
-		add_harmony = -5
-		add_corruption = 1
-	}
-}
-
-country_event = {
-	id = vn_religious_events.20
-	title = "vn_religious_events.20.t"
-	desc = "vn_religious_events.20.d"
-	picture = CULTURE_eventPicture
-	
-	is_triggered_only = yes
-	trigger = {
-		religion = bogomilist
-    }
-    mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "vn_religious_events.20.a"
-		add_harmony = 5
-		add_stability = 1
+            name = incompetent_clergy
+            duration = 1825
+        }
 	}
 }
 
@@ -2333,8 +2585,10 @@ country_event = {
     option = {
         name = "vn_religious_events.91.a"
         every_owned_province = {
-            limit = { religion = ROOT }
-            limit = { culture = ROOT }
+            limit = { 
+                religion = ROOT
+                culture = ROOT
+            }
             add_unrest = -5
         }
         add_patriarch_authority = 0.05
@@ -3305,7 +3559,7 @@ country_event = {
         else = {
             add_prestige = 5
         }
-        remove_advisor_by_category = mil
+        remove_advisor_by_category = MIL
     }
     option = {
         name = "vn_religious_events.119.b"
@@ -3380,7 +3634,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3418,7 +3672,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3444,7 +3698,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3467,7 +3721,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3495,7 +3749,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3530,7 +3784,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3566,7 +3820,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3588,7 +3842,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3622,7 +3876,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }
@@ -3652,7 +3906,7 @@ country_event = {
     is_triggered_only = yes
 	trigger = {
         OR = {
-            religion = mandaean
+            religion = mandaeism
             religion = yazidi
             religion = druze
         }

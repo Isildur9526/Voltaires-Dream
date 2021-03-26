@@ -1,5 +1,5 @@
 capital = "Aspendos"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = rye
 base_tax = 2

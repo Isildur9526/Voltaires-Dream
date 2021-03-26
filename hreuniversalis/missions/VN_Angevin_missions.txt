@@ -337,7 +337,7 @@ vn_anj_missions_slot_3_a = {
             }
             stability = 1
             army_size_percentage = 0.75
-            legitimacy_equivalent = 90
+            legitimacy = 90
         }
         effect = {
 			add_stability_or_adm_power = yes

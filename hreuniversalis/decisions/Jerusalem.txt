@@ -80,6 +80,7 @@ country_decisions = {
 				set_country_flag = knights_formed_jerusalem
 			}
 			KOJ = {
+				hidden_effect = { restore_country_name = yes }
 				set_capital = 4974 #Jerusalem
 				change_religion = catholic
 				if = {

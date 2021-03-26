@@ -61,7 +61,7 @@ capital = 2408
 	}
 }
 #1385 under PAL
-1410.10.3 = {
+1410.5.18 = {
 	monarch = {
 		name = "Stefan I"
 		dynasty = "von Wittelsbach"

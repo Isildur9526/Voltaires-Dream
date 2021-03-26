@@ -18,6 +18,9 @@ add_core = CZY
 	add_core = POM
 	remove_core = CZY
 	religion = catholic
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1156.4.1 = {
 	owner = WGS

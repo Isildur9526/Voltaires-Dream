@@ -72,7 +72,6 @@ monarch_names = {
 	"Jânbulât #0" = 20
 	"Yûsuf #0" = 20
 	"Barqûq #0" = 15
-	"‘Alî #0" = 10
 	"Baybars #0" = 10
 	"Hâjjî #0" = 10
 	"Sha‘bân #0" = 10

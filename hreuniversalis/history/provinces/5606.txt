@@ -53,6 +53,9 @@ add_core = PHE
 	add_core = MOL
 	remove_core = BDI
 	remove_core = CRI
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
 }
 1484.7.15 = { controller = TUR }
 1487.8.5 = { owner = TUR add_core = TUR }

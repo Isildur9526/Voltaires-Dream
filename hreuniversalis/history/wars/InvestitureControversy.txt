@@ -26,6 +26,7 @@ war_goal = {
 	rem_attacker = XKK
 	rem_attacker = TUS
 	rem_attacker = MAN
+	rem_attacker = PAP
 	rem_defender = DIE
 	rem_defender = BRN
 }

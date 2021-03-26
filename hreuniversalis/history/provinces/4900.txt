@@ -33,7 +33,7 @@ add_core = BYZ
 	add_core = BYZ
 	remove_core = NKA
 }
-1308.1.1 = {
+1315.1.1 = {
 	owner = AYD
 	controller = AYD
 	add_core = AYD

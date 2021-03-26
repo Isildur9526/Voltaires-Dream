@@ -1,5 +1,5 @@
 capital = "Grammos"
-culture = arvanite
+culture = albanian
 religion = orthodox
 trade_goods = olive
 base_tax = 1

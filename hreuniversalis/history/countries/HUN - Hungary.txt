@@ -17,8 +17,17 @@ change_estate_land_share = {
 	estate = estate_nomadic_tribes
 	share = -20
 }
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 15
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
 
 1046.9.1 = {
+	set_estate_privilege = estate_nobles_strong_duchies
 	monarch = {
 		name = "András I"
 		dynasty = "Árpád"
@@ -591,6 +600,7 @@ change_estate_land_share = {
 	}
 }
 1301.1.14 = { #weak claimants
+	remove_estate_privilege = estate_nobles_strong_duchies
 	set_country_flag = had_fall_of_arpads
 	monarch = {
 		name = "(Interregnum)"

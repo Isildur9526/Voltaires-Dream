@@ -2,7 +2,7 @@ owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = WTH
-culture = greek
+culture = aromanian
 religion = orthodox
 hre = no
 base_tax = 5
@@ -53,6 +53,7 @@ center_of_trade = 1
 	owner = BYZ
 	controller = BYZ
 	add_core = BYZ
+	culture = greek
 }
 1341.9.1 = {
 	revolt = {

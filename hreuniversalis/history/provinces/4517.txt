@@ -1,5 +1,5 @@
 capital = "Sorrento"
-culture = greek
+culture = neapolitan
 religion = catholic 
 trade_goods = chinaware
 base_tax = 2
@@ -25,7 +25,6 @@ add_core = SRT
 	owner = SIC
 	controller = SIC
 	add_core = SIC
-	culture = neapolitan
 }
 1155.10.1 = { controller = PAP }
 1156.6.18 = { controller = SIC }

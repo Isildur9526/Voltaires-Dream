@@ -8,6 +8,7 @@ country_decisions = {
 				ai = no
 				num_of_cities = 10
 			}
+			has_country_flag = komnenian_restoration_flag
 		}
 		provinces_to_highlight = {
 			OR = {

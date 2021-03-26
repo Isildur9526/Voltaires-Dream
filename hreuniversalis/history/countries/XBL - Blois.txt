@@ -28,6 +28,7 @@ fixed_capital = 2088
 		dynasty = "Thibalding"
 		birth_date = 1045.1.1
 		death_date = 1102.5.19
+		claim = 95
 		adm = 3
 		dip = 3
 		mil = 4

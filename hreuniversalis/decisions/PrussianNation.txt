@@ -69,6 +69,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PRU
+			hidden_effect = { restore_country_name = yes }
 			restore_country_name_effect = yes
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
@@ -232,6 +233,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PTH
+			hidden_effect = { restore_country_name = yes }
 			restore_country_name_effect = yes
 			ostpreussen_region = {
 				limit = {
@@ -366,6 +368,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PRU
+			hidden_effect = { restore_country_name = yes }
 			restore_country_name_effect = yes
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes

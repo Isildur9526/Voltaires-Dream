@@ -1,5 +1,5 @@
 capital = "Diokaisareia" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = cloth
 base_tax = 1

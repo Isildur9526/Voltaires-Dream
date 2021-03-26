@@ -120,5 +120,5 @@ army_names = {
 }
 
 fleet_names = {
-	"Black Sea fleet" "Caspian Sea fleet" "Persian Gulf Fleet"
+	"Black Sea Fleet" "Caspian Sea Fleet" "Persian Gulf Fleet"
 }

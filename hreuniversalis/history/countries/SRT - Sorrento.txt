@@ -3,7 +3,7 @@ add_government_reform = feudalism_reform
 government_rank = 3
 technology_group = western
 religion = catholic
-primary_culture = greek
+primary_culture = neapolitan
 capital = 4517
 fixed_capital = 4517
 
@@ -27,7 +27,7 @@ fixed_capital = 4517
 	add_government_reform = merchants_reform
 	mercantilism = 25
 	monarch = {
-        name = "Kybernisi"
+        name = "Repubblica"
         regent = yes
         adm = 2
         dip = 2
@@ -36,10 +36,9 @@ fixed_capital = 4517
 }
 1100.1.1 = {
 	monarch = {
-        name = "Sergios"
+        name = "Sergio"
         adm = 1
         dip = 3
         mil = 2
     }
 }
-1137.1.1 = { primary_culture = neapolitan }

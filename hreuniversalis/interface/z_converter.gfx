@@ -554,6 +554,13 @@ spriteTypes = {
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
+
+	spriteType = {
+		name = "GFX_disaster_russian_factionalism"
+		texturefile = "gfx//interface//disasters//russian_factionalism.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 	
 	#NewMissions
 	spriteType = {
@@ -956,6 +963,22 @@ spriteTypes = {
         loadType = "INGAME"
     }
 
+	spriteType = {
+        name = "GFX_incident_external_imperial_union.2.a"
+        texturefile = "gfx/interface/imperial_incident_legitimacy.dds"
+        loadType = "INGAME"
+    }
+	spriteType = {
+        name = "GFX_incident_external_imperial_union.2.b"
+        texturefile = "gfx/interface/imperial_incident_shield.dds"
+        loadType = "INGAME"
+    }
+	spriteType = {
+        name = "GFX_incident_external_imperial_union.2.c"
+        texturefile = "gfx/interface/imperial_incident_denial_of_request.dds"
+        loadType = "INGAME"
+    }
+
     #Estate Privileges
     spriteType = {
 		name = "privilege_monopoly_of_goods_beer"
@@ -980,5 +1003,13 @@ spriteTypes = {
 	spriteType = {
 		name = "privilege_female"
 		texturefile = "gfx/interface/privileges/privilege_female.dds"
+	}
+	spriteType = {
+		name = "privilege_georgian_strong_duchies"
+		texturefile = "gfx/interface/privileges/privilege_georgian_strong_duchies.dds"
+	}
+	spriteType = {
+		name = "privilege_dutch_water_lines"
+		texturefile = "gfx/interface/privileges/privilege_dutch_water_lines.dds"
 	}
 }

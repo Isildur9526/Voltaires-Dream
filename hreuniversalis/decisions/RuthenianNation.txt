@@ -42,7 +42,7 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			if = {
-				limit = { dip = 5 }
+				limit = { ROOT = { DIP = 5 } }
 				OR = {
 					province_id = 4237
 					province_id = 604
@@ -78,12 +78,13 @@ country_decisions = {
 				AND = {
 					owns_core_province = 4237		#Kiev				
 					owns_core_province = 604		#Podolia
-					dip = 5
+					DIP = 5
 				}
 			}
 		}
 		effect = {
 			change_tag = UKR
+			hidden_effect = { restore_country_name = yes }
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

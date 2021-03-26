@@ -35,7 +35,6 @@ latent_trade_goods = { steel }
 1659.11.7 = {
 	owner = FRA
 	add_core = FRA
-	add_core = FRA
 	remove_core = SPA
 	remove_core = LUX
 }

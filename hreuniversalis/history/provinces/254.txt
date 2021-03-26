@@ -11,6 +11,11 @@ owner = AUC
 controller = AUC
 add_core = AUC
 
+1370.1.1 = {
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
+}
 1464.1.1 = {
 	owner = EFR
 	controller = EFR

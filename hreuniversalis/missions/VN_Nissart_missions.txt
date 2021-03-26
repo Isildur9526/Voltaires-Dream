@@ -25,7 +25,7 @@ vn_nic_missions_slot_1 = {
 		}
 		trigger = {
             is_at_war = no
-            legitimacy_equivalent = 80
+            legitimacy = 80
 			992 = {
                 owned_by = ROOT
                 development = 25

@@ -22,7 +22,7 @@ add_core = CGL
 	add_core = PIS
 	remove_core = GLL
 }
-1324.2.29 = {
+1324.2.28 = {
 	controller = ARA
 }
 1326.6.1 = {

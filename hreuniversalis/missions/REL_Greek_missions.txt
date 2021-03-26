@@ -1,4 +1,4 @@
-VN_generic_horde_missions = {
+VN_greek_minor_missions = {
 	slot = 5
 	generic = yes
 	ai = yes
@@ -15,7 +15,7 @@ VN_generic_horde_missions = {
         position = 5
 		trigger = {
 			stability = 2
-			legitimacy_equivalent = 95
+			legitimacy = 100
 			army_size_percentage = 0.95
 		}
 		effect = {

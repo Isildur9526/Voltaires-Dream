@@ -80,7 +80,7 @@ VN_generic_horde_missions = {
 	}
 }
 
-VN_generic_horde_missions = {
+VN_generic_horde_missions_2 = {
 	slot = 5
 	generic = yes
 	ai = yes

@@ -15,7 +15,7 @@ vn_boh_missions_slot_1 = {
         required_missions = { }
         trigger = {
 			prestige = 25
-            legitimacy_equivalent = 100
+            legitimacy = 100
             government_rank = 5
             is_elector = yes
         }
@@ -93,7 +93,7 @@ vn_boh_missions_slot_1 = {
         required_missions = {  }
         trigger = {
             any_rival_country = {
-                culture = austrian
+                primary_culture = austrian
                 has_been_insulted_by_root = yes
                 NOT = {
                     army_strength = {
@@ -1273,13 +1273,13 @@ vn_boh_missions_slot_5 = {
                 5136 = {
                     owned_by = ROOT
                     is_core = ROOT
-                    has_institution = industrialism
+                    industrialism = 100
                     has_manufactory_trigger = yes
                 }
                 5137 = {
                     owned_by = ROOT
                     is_core = ROOT
-                    has_institution = industrialism
+                    industrialism = 100
                     has_manufactory_trigger = yes
                 }
             }

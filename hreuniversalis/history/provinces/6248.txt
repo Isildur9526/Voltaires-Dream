@@ -1,5 +1,5 @@
 capital = "Mokhbud"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = grain
 base_tax = 1

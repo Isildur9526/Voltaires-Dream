@@ -19,7 +19,6 @@ war_goal = {
 	rem_attacker = MOL
 	rem_attacker = WAL
 	rem_attacker = CRI
-	rem_attacker = LEB
 	rem_defender = RUS
 	rem_defender = KUR
 	rem_defender = ZAZ

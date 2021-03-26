@@ -1,5 +1,5 @@
 capital = "Kasai"
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = honey
 base_tax = 1

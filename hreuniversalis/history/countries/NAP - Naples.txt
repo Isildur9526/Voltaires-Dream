@@ -4,14 +4,12 @@ government_rank = 3
 technology_group = western
 religion = catholic
 primary_culture = neapolitan
-add_accepted_culture = greek
 capital = 564 # Napoli
 
 1036.1.1 = {
 	monarch = {
-		name = "Sergios V"
+		name = "Sergio V"
 		dynasty = "Sergii"
-		culture = greek
 		adm = 2
 		dip = 2
 		mil = 2
@@ -19,9 +17,8 @@ capital = 564 # Napoli
 }
 1076.1.1 = {
 	monarch = {
-		name = "Sergios VI"
+		name = "Sergio VI"
 		dynasty = "Sergii"
-		culture = greek
 		adm = 2
 		dip = 4
 		mil = 3
@@ -29,9 +26,8 @@ capital = 564 # Napoli
 }
 1107.1.1 = {
 	monarch = {
-		name = "Ioannes VI"
+		name = "Giovanni VI"
 		dynasty = "Sergii"
-		culture = greek
 		adm = 2
 		dip = 2
 		mil = 2
@@ -39,9 +35,8 @@ capital = 564 # Napoli
 }
 1122.1.1 = {
 	monarch = {
-		name = "Sergios VII"
+		name = "Sergio VII"
 		dynasty = "Sergii"
-		culture = greek
 		adm = 2
 		dip = 2
 		mil = 1
@@ -57,10 +52,7 @@ capital = 564 # Napoli
 	}
 }
 #annexed to Capua
-1139.7.25 = {
-	government_rank = 5
-	remove_accepted_culture = greek
-}
+1139.7.25 = { government_rank = 5 }
 1302.8.31 = {
 	capital = 564
 	monarch = {

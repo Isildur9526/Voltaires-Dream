@@ -13,7 +13,10 @@ vn_sco_missions_slot_1_a = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -314,7 +317,10 @@ vn_sco_missions_slot_1_b = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -375,7 +381,10 @@ vn_sco_missions_slot_2_a = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -444,7 +453,10 @@ vn_sco_missions_slot_2_b = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -533,7 +545,10 @@ vn_sco_missions_slot_2_c = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -585,7 +600,10 @@ vn_sco_missions_slot_2_d = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -624,7 +642,10 @@ vn_sco_missions_slot_3_a = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -668,7 +689,10 @@ vn_sco_missions_slot_3_b = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -723,7 +747,10 @@ vn_sco_missions_slot_3_c = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -872,7 +899,7 @@ vn_sco_missions_slot_3_c = {
 			prestige = 50
 			army_size_percentage = 0.6
 			navy_size_percentage = 0.6
-			legitimacy_equivalent = 95
+			legitimacy = 95
         }
         effect = {
             add_adm_power = 75
@@ -900,7 +927,10 @@ vn_sco_missions_slot_4_a = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -1026,7 +1056,10 @@ vn_sco_missions_slot_4_b = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
 		NOT = { map_setup = map_setup_random }
@@ -1100,7 +1133,10 @@ vn_sco_missions_slot_5_a = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
         NOT = { map_setup = map_setup_random }
@@ -1253,7 +1289,10 @@ vn_sco_missions_slot_5_b = {
 			}
 			AND = {
 				tag = GBR
-				was_tag = SCO
+                OR = {
+                    was_tag = HSC
+                    was_tag = SCO
+                }
 			}	
 		}
         NOT = { map_setup = map_setup_random }

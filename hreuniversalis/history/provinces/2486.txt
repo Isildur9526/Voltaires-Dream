@@ -1,5 +1,5 @@
 capital = "Halikarnassos" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = marble
 base_tax = 1
@@ -32,6 +32,7 @@ add_core = BYZ
 	controller = MEN
 	add_core = MEN
 	remove_core = NKA
+	culture = peloponnesian
 }
 1390.1.1 = {
 	owner = TUR

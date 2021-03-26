@@ -41,6 +41,8 @@ add_core = BDI
 	add_core = MOL
 	remove_core = BDI
 	remove_core = CRI
+	#1-1-1
+	base_manpower = 1
 }
 1538.1.1 = { owner = TUR controller = TUR add_core = TUR }
 1653.1.1 = { revolt = { type = noble_rebels size = 0 } controller = REB }

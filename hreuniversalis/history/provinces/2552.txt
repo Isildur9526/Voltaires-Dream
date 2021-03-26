@@ -32,16 +32,6 @@ discovered_by = muslim
 	add_core = PAL
 	remove_core = XMU
 }
-1410.5.18 = {
-	owner = UPA
-	controller = UPA
-	remove_core = PAL
-}
-1499.4.8 = {
-	owner = PAL
-	controller = PAL
-	add_core = PAL
-}
 1505.7.30 = {
 	owner = UPA
 	controller = UPA

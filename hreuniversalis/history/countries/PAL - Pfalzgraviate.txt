@@ -394,7 +394,7 @@ elector = yes
 }
 1511.2.23 = {
 	queen = {
-		country_of_origin = MUL
+		country_of_origin = XMU
 		name = "Sibylle"
 		dynasty = "von Wittelsbach"
 		birth_date = 1489.6.16

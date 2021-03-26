@@ -29,23 +29,19 @@ country_event = {
 	title = vn_missions.52.t
 	desc = vn_missions.52.d
 	picture = CITY_VIEW_eventPicture
+	goto = 989
 	
 	is_triggered_only = yes
-	immediate = {
-		hidden_effect = {
-			989 = { save_event_target_as = arles_province }
-		}
-	}
 	
 	option = {
 		name = vn_missions.52.a
-		goto = arles_province
 		ai_chance = { factor = 0 }
 		trigger = { owns = 989 }
-		event_target:arles_province = { move_capital_effect = yes }
+		989 = { move_capital_effect = yes }
 		if = {
 			limit = { NOT = { exists = XAP } }
 			change_tag = XAP
+			hidden_effect = { restore_country_name = yes }
 		}
 		if = {
 			limit = {
@@ -136,7 +132,7 @@ country_event = {
 		else = {
 			random_known_country = {
 				limit = {
-					culture = greek
+					primary_culture = greek
 					has_opinion = {
 						who = ROOT
 						value = 100
@@ -320,15 +316,9 @@ country_event = {
 	title = vn_missions.59.t
 	desc = vn_missions.59.d
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
-	is_triggered_only = yes
+	goto = 6112
 
-	immediate = {
-		hidden_effect = {
-			6112 = { save_event_target_as = uppsala_temple_province }
-		}
-	}
-	goto = uppsala_temple_province
+	is_triggered_only = yes
 	
 	option = {
 		name = vn_missions.59.a
@@ -341,7 +331,7 @@ country_event = {
 		}
 		add_prestige = 15
 		add_years_of_income = -1
-		event_target:uppsala_temple_province = {
+		6112 = {
 			add_base_tax = 2
 			add_province_modifier = {
 				name = "swe_uppsala_temple"
@@ -352,7 +342,7 @@ country_event = {
 	option = {
 		name = vn_missions.59.b
 		ai_chance = { factor = 5 }
-		event_target:uppsala_temple_province = {
+		6112 = {
 			add_base_tax = -2
 			add_province_modifier = {
 				name = "swe_uppsala_temple2"
@@ -465,15 +455,21 @@ country_event = {
 		}
 		netherlands_region = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
 			cede_province = NED
+			add_core = NED
 		}
 		overijssel_area = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
 			cede_province = NED
+			add_core = NED
 		}
 		westfrisia_area = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
 			cede_province = NED
+			add_core = NED
 		}
 		NED = {
 			change_government = republic
@@ -486,7 +482,12 @@ country_event = {
 			}
 			adopt_reform_progress = ROOT
 		}
-		vassalize = NED
+		if = {
+			limit = {
+				NED = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = NED
+		}
 	}
 	option = {
 		name = vn_missions.61.b
@@ -499,21 +500,38 @@ country_event = {
 		}
 		netherlands_region = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
 			cede_province = NED
+			add_core = NED
 		}
 		overijssel_area = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
 			cede_province = NED
+			add_core = NED
 		}
 		westfrisia_area = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
 			cede_province = NED
+			add_core = NED
 		}
 		NED = {
 			change_government = monarchy
 			adopt_reform_progress = ROOT
+			define_ruler = {
+				dynasty = ROOT
+			}
+			define_heir = {
+				dynasty = ROOT
+			}
 		}
-		vassalize = NED
+		if = {
+			limit = {
+				NED = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = NED
+		}
 	}
 	option = {
 		name = vn_missions.61.c
@@ -680,67 +698,59 @@ country_event = {
 
 	is_triggered_only = yes
 
-	immediate = {
-		hidden_effect = {
-			1940 = { save_event_target_as = jcb_capital_1 }
-			2501 = { save_event_target_as = jcb_capital_2 }
-			2502 = { save_event_target_as = jcb_capital_3 }
-		}
-	}
-
 	option = {
 		name = vn_missions.66.a
-		goto = jcb_capital_1
+		goto = 1940
         ai_chance = { 
             factor = 33
             modifier = {
                 factor = 2
-                event_target:jcb_capital_1 = { 
-					higher_development_than = event_target:jcb_capital_2
-					higher_development_than = event_target:jcb_capital_3
+                1940 = { 
+					higher_development_than = 2501
+					higher_development_than = 2502
 				}	
             }
         }
         trigger = {
-            NOT = { capital = event_target:jcb_capital_1 }
+            NOT = { capital = 1940 }
         }
-        event_target:jcb_capital_1 = { move_capital_effect = yes }
+        1940 = { move_capital_effect = yes }
     }
     option = {
 		name = vn_missions.66.b
-		goto = jcb_capital_2
+		goto = 2501
 		ai_chance = {
 			factor = 33
 			modifier = {
 				factor = 2
-				event_target:jcb_capital_2 = { 
-					higher_development_than = event_target:jcb_capital_1
-					higher_development_than = event_target:jcb_capital_3
+				event_target:2501 = { 
+					higher_development_than = 1940
+					higher_development_than = 2502
 				}	
 			}
 		}
         trigger = {
-            NOT = { capital = event_target:jcb_capital_2 }
+            NOT = { capital = 2501 }
         }
-        event_target:jcb_capital_2 = { move_capital_effect = yes }
+        2501 = { move_capital_effect = yes }
     }
     option = {
 		name = vn_missions.66.c
-		goto = jcb_capital_3
+		goto = 2502
         ai_chance = { 
             factor = 33
             modifier = {
                 factor = 2
-                event_target:jcb_capital_3 = { 
-					higher_development_than = event_target:jcb_capital_1
-					higher_development_than = event_target:jcb_capital_2
+                event_target:2502 = { 
+					higher_development_than = 1940
+					higher_development_than = 2501
 				}	
             }
         }
         trigger = {
-            NOT = { capital = event_target:jcb_capital_3 }
+            NOT = { capital = 2502 }
         }
-        event_target:jcb_capital_3 = { move_capital_effect = yes }
+        2502 = { move_capital_effect = yes }
 	}
     option = {
 		name = vn_missions.68.e
@@ -758,68 +768,60 @@ country_event = {
 	picture = CITY_VIEW_eventPicture
 
 	is_triggered_only = yes
-	
-	immediate = {
-		hidden_effect = {
-			2995 = { save_event_target_as = lth_capital_1 }
-			34 = { save_event_target_as = lth_capital_2 }
-			869 = { save_event_target_as = lth_capital_3 }
-		}
-	}
 
 	option = {
 		name = vn_missions.68.a
-		goto = lth_capital_1
+		goto = 2995
         ai_chance = { 
             factor = 33
             modifier = {
                 factor = 2
-                event_target:lth_capital_1 = { 
-					higher_development_than = event_target:lth_capital_2
-					higher_development_than = event_target:lth_capital_3
+                2995 = { 
+					higher_development_than = 34
+					higher_development_than = 869
 				}	
             }
         }
         trigger = {
-            NOT = { capital = event_target:lth_capital_1 }
+            NOT = { capital = 2995 }
         }
-        event_target:lth_capital_1 = { move_capital_effect = yes }
+        2995 = { move_capital_effect = yes }
     }
     option = {
 		name = vn_missions.68.b
-		goto = lth_capital_2
+		goto = 34
 		ai_chance = {
 			factor = 33
 			modifier = {
 				factor = 2
-				event_target:lth_capital_2 = { 
-					higher_development_than = event_target:lth_capital_1
-					higher_development_than = event_target:lth_capital_3
+				34 = { 
+					higher_development_than = 2995
+					higher_development_than = 869
 				}	
 			}
 		}
         trigger = {
-            NOT = { capital = event_target:lth_capital_2 }
+            NOT = { capital = 34 }
         }
-        event_target:lth_capital_2 = { move_capital_effect = yes }
+        34 = { move_capital_effect = yes }
     }
     option = {
 		name = vn_missions.68.c
-		goto = lth_capital_3
+		goto = 869
         ai_chance = { 
             factor = 33
             modifier = {
                 factor = 2
-                event_target:lth_capital_3 = { 
-					higher_development_than = event_target:lth_capital_1
-					higher_development_than = event_target:lth_capital_2
+                869 = { 
+					higher_development_than = 2995
+					higher_development_than = 34
 				}	
             }
         }
         trigger = {
-            NOT = { capital = event_target:lth_capital_3 }
+            NOT = { capital = 869 }
         }
-        event_target:lth_capital_3 = { move_capital_effect = yes }
+        869 = { move_capital_effect = yes }
 	}
     option = {
 		name = vn_missions.68.e
@@ -1063,7 +1065,7 @@ country_event = {
     }
 }
 
-#The Beeldenstorm
+#The Beeldenstorm (73)
 country_event = {
 	id = vn_missions.73
 	title = vn_missions.73.t
@@ -1550,27 +1552,20 @@ country_event = {
 	picture = CITY_VIEW_eventPicture
 
 	is_triggered_only = yes
-	
-	immediate = {
-		hidden_effect = {
-			1846 = { save_event_target_as = fri_capital_1 }
-			98 = { save_event_target_as = fri_capital_2 }
-		}
-	}
 
 	option = {
 		name = vn_missions.81.a
-		goto = fri_capital_1
+		goto = 1846
 		ai_chance = { factor = 0 }
-		trigger = { owns = event_target:fri_capital_1 }
-		event_target:fri_capital_1 = { move_capital_effect = yes }
+		trigger = { owns = 1846 }
+		1846 = { move_capital_effect = yes }
 	}
 	option = {
 		name = vn_missions.81.b
-		goto = fri_capital_2
+		goto = 98
 		ai_chance = { factor = 0 }
-		trigger = { owns = event_target:fri_capital_2 }
-		event_target:fri_capital_2 = { move_capital_effect = yes }
+		trigger = { owns = 98 }
+		98 = { move_capital_effect = yes }
 	}
 	option = {
 		name = vn_missions.81.c
@@ -1694,6 +1689,265 @@ country_event = {
 		}
 		2268 = {
 			move_capital_effect = yes
+		}
+	}
+}
+
+#Cisalpine Republic (84)
+country_event = {
+	id = vn_missions.84
+	title = vn_missions.84.t
+	desc = vn_missions.84.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = vn_missions.84.a
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 0
+				government = monarchy
+			}
+		}
+		lombardy_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = ITA
+			add_core = ITA
+		}
+		romagna_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = ITA
+			add_core = ITA
+		}
+		ITA = {
+			change_government = republic
+			adopt_reform_progress = ROOT
+		}
+		if = {
+			limit = {
+				ITA = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = ITA
+		}
+	}
+	option = {
+		name = vn_missions.84.b
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 0
+				government = republic
+			}
+		}
+		lombardy_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = XKK
+			add_core = XKK
+		}
+		romagna_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = XKK
+			add_core = XKK
+		}
+		XKK = {
+			change_government = monarchy
+			adopt_reform_progress = ROOT
+			define_ruler = {
+				dynasty = ROOT
+			}
+			define_heir = {
+				dynasty = ROOT
+			}
+		}
+		if = {
+			limit = {
+				XKK = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = XKK
+		}
+	}
+	option = {
+		name = vn_missions.84.c
+		ai_chance = { factor = 5 }
+		lombardy_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			add_province_modifier = {
+				name = "fra_batavia_unrest"
+				duration = 9125
+			}
+		}
+		romagna_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			add_province_modifier = {
+				name = "fra_batavia_unrest"
+				duration = 9125
+			}
+		}
+	}
+}
+
+#Roman Republic (85)
+country_event = {
+	id = vn_missions.85
+	title = vn_missions.85.t
+	desc = vn_missions.85.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = vn_missions.85.a
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 0
+				government = monarchy
+			}
+		}
+		umbria_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = LZO
+			add_core = LZO
+		}
+		LZO = {
+			change_government = republic
+			adopt_reform_progress = ROOT
+		}
+		if = {
+			limit = {
+				LZO = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = LZO
+		}
+	}
+	option = {
+		name = vn_missions.85.b
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 0
+				government = republic
+			}
+		}
+		umbria_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = LZO
+			add_core = LZO
+		}
+		LZO = {
+			change_government = monarchy
+			adopt_reform_progress = ROOT
+			define_ruler = {
+				dynasty = ROOT
+			}
+			define_heir = {
+				dynasty = ROOT
+			}
+		}
+		if = {
+			limit = {
+				LZO = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = LZO
+		}
+	}
+	option = {
+		name = vn_missions.85.c
+		ai_chance = { factor = 5 }
+		umbria_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			add_province_modifier = {
+				name = "fra_batavia_unrest"
+				duration = 9125
+			}
+		}
+	}
+}
+
+#Etruria (86)
+country_event = {
+	id = vn_missions.86
+	title = vn_missions.86.t
+	desc = vn_missions.86.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = vn_missions.86.a
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 0
+				government = monarchy
+			}
+		}
+		tuscany_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = ETR
+			add_core = ETR
+		}
+		ETR = {
+			change_government = republic
+			adopt_reform_progress = ROOT
+		}
+		if = {
+			limit = {
+				ETR = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = ETR
+		}
+	}
+	option = {
+		name = vn_missions.86.b
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 0
+				government = republic
+			}
+		}
+		tuscany_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			remove_core = owner
+			cede_province = TUS
+			add_core = TUS
+		}
+		TUS = {
+			change_government = monarchy
+			adopt_reform_progress = ROOT
+			define_ruler = {
+				dynasty = ROOT
+			}
+			define_heir = {
+				dynasty = ROOT
+			}
+		}
+		if = {
+			limit = {
+				TUS = { NOT = { is_subject_of = ROOT } }
+			}
+			vassalize = TUS
+		}
+	}
+	option = {
+		name = vn_missions.86.c
+		ai_chance = { factor = 5 }
+		tuscany_region = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			add_province_modifier = {
+				name = "fra_batavia_unrest"
+				duration = 9125
+			}
 		}
 	}
 }

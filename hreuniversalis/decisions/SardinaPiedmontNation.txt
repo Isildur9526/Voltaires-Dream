@@ -59,6 +59,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SPI
+			hidden_effect = { restore_country_name = yes }
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -177,6 +178,7 @@ country_decisions = {
 				set_government_rank = 5
 			}
 			change_tag = SPI
+			hidden_effect = { restore_country_name = yes }
 			change_primary_culture = piedmontese
 			set_capital = 1009	# Piedmont
 			add_prestige = 25

@@ -17,6 +17,11 @@ add_core = HLX
 	controller = HLX
 	remove_core = NRD
 }
+1370.1.1 = {
+	#1-1-1
+	base_tax = 1
+	base_manpower = 1
+}
 1464.1.1 = { hre = yes }
 1530.1.1 = {
 	owner = EFR

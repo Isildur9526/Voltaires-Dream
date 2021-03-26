@@ -1,5 +1,5 @@
 capital = "Stauroupolis" 
-culture = greek
+culture = cypriot
 religion = orthodox
 trade_goods = tobacco
 base_tax = 3

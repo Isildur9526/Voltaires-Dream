@@ -209,11 +209,20 @@ vn_atc_missions_slot_3_a = {
             vn_atc_develop_holy_sites 
         }
         trigger = {
-            has_estate = estate_holy_orders
-            has_estate_privilege = estate_holy_orders_land_rights
-            num_of_estate_privileges = {
-                estate = estate_holy_orders
-                value = 2
+            OR = {
+                AND = {
+                    government = theocracy
+                    legitimacy = 95
+                    army_size_percentage = 0.75
+                }
+                AND = {
+                    has_estate = estate_holy_orders
+                    has_estate_privilege = estate_holy_orders_land_rights
+                    num_of_estate_privileges = {
+                        estate = estate_holy_orders
+                        value = 2
+                    }
+                }
             }
         }
         effect = {
@@ -303,7 +312,7 @@ vn_atc_missions_slot_4_a = {
             if = {
                 limit = { government = monarchy }
                 stability = 1
-                legitimacy_equivalent = 100
+                legitimacy = 100
                 has_heir = yes
                 num_of_royal_marriages = 3
             }

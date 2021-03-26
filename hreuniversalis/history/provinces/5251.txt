@@ -17,6 +17,11 @@ add_core = POM
 	add_core = PML
 	remove_core = POM
 }
+1109.8.10 = {
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
+}
 1113.1.1 = {
 	religion = catholic
 	owner = POL

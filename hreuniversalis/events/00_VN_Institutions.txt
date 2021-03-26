@@ -1,0 +1,1333 @@
+namespace = institution_events
+
+########################################
+# Investiture
+########################################
+country_event = {
+	id = institution_events.80
+	title = institution_events.80.t
+	desc = institution_events.80.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = COUNCIL_TRENT_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
+
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = institution_events.80.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.80.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_investiture"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.800 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.800
+	title = institution_events.80.t
+	desc = institution_events.80.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = COUNCIL_TRENT_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.80.a
+		custom_tooltip = institution_events.80.a.tt
+	}
+}
+
+country_event = {
+	id = institution_events.801
+	title = institution_events.801.t
+	desc = institution_events.801.d
+	picture = POPE_PREACHING_eventPicture
+	goto = capital
+
+	trigger = {
+		is_institution_enabled = investiture
+		NOT = { has_institution = investiture }
+		government = theocracy
+		NOT = { has_reform = papacy_reform }
+		religion = catholic
+		capital_scope = {
+			religion = catholic
+			NOT = { investiture = 100 }
+		}
+		any_neighbor_country = {
+			has_institution = investiture
+			religion = catholic
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 0.8
+			has_reform = monastic_order_reform
+		}
+		modifier = {
+			factor = 0.8
+			faction_in_power = abb_cluniacs
+		}
+	}
+
+	option = {
+		name = institution_events.801.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.1
+				NOT = { years_of_income = 0.75 }
+			}
+		}
+		add_papal_influence = 10
+		add_years_of_income = -0.75
+		capital_scope = {
+			add_institution_embracement = {
+				which = investiture
+				value = 100
+			}
+		}
+	}
+	option = {
+		name = institution_events.801.b
+		ai_chance = { factor = 25 }
+		add_years_of_income = 0.25
+	}
+}
+
+########################################
+# Universities
+########################################
+country_event = {
+	id = institution_events.74
+	title = institution_events.74.t
+	desc = institution_events.74.d
+	picture = UNIVERSITY_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}	
+
+	option = {
+		name = institution_events.74.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.74.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_universities"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.740 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.740
+	title = institution_events.74.t
+	desc = institution_events.74.d
+	picture = UNIVERSITY_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.74.a
+		custom_tooltip = institution_events.74.a.tt
+	}
+}
+
+country_event = {
+	id = institution_events.741
+	title = institution_events.741.t
+	desc = institution_events.741.d
+	picture = BATTLE_eventPicture
+	goto = institution_province
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_institution_enabled = universities
+		NOT = { has_institution = universities }
+		any_owned_province = {
+			is_state = yes
+			controlled_by = ROOT
+			universities = 25
+			NOT = { universities = 100 }
+			development = 15
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					controlled_by = ROOT
+					universities = 25
+					NOT = { universities = 100 }
+					development = 15
+				}
+				save_event_target_as = institution_province
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.741.a
+		ai_chance = { factor = 50 }
+		event_target:institution_province = {
+			spawn_rebels = {
+				size = 1
+				type = anti_tax_rebels
+			}
+			add_institution_embracement = {
+				which = universities
+				value = 50
+			}
+		}
+	}
+	option = {
+		name = institution_events.741.b
+		ai_chance = { factor = 50 }
+		add_prestige = -5
+		event_target:institution_province = {
+			add_base_tax = -1
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.742
+	title = institution_events.742.t
+	desc = institution_events.742.d
+	picture = LAND_MILITARY_eventPicture
+	goto = institution_province
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_institution_enabled = universities
+		NOT = { has_institution = universities }
+		is_at_war = yes
+		NOT = { manpower_percentage = 0.75 }
+		any_owned_province = {
+			is_state = yes
+			universities = 25
+			NOT = { universities = 100 }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					universities = 25
+					NOT = { universities = 100 }
+				}
+				save_event_target_as = institution_province
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.742.a
+		ai_chance = { factor = 75 }
+		add_yearly_manpower = 1.5
+		add_army_tradition = -5
+		event_target:institution_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_institution_embracement = {
+					which = universities
+					value = -50
+				}
+			}
+		}
+	}
+	option = {
+		name = institution_events.742.b
+		ai_chance = { factor = 25 }
+		if = {
+			limit = { has_dlc = "Rule Britannia" }
+			add_innovativeness_small_effect = yes
+		}
+		else = {
+			add_prestige = 5
+		}
+		event_target:institution_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_institution_embracement = {
+					which = universities
+					value = 50
+				}
+			}
+		}
+	}
+}
+
+########################################
+# Guilds
+########################################
+country_event = {
+	id = institution_events.75
+	title = institution_events.75.t
+	desc = institution_events.75.d
+	picture = GREAT_BUILDING_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = institution_events.75.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.75.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_guilds"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.750 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.750
+	title = institution_events.75.t
+	desc = institution_events.75.d
+	picture = GREAT_BUILDING_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.75.a
+		custom_tooltip = institution_events.75.a.tt
+	}
+}
+
+province_event = {
+	id = institution_events.751
+	title = institution_events.751.t
+	desc = institution_events.751.d
+	picture = TRADEGOODS_eventPicture
+	goto = root
+	
+	trigger = {
+		is_institution_enabled = guilds
+		owner = { NOT = { has_institution = guilds } }
+		development = 16
+		is_state = yes
+		NOT = { guilds = 100 }
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.9
+			development = 20
+		}
+		modifier = {
+			factor = 0.9
+			development = 24
+		}
+	}
+	
+	option = {
+		name = institution_events.751.a
+		ai_chance = { factor = 10 }
+		owner = {
+			add_adm_power = -75
+			add_years_of_income = -0.25
+		}
+		add_base_production = 1
+		add_local_autonomy = 25
+		add_institution_embracement = {
+			which = guilds
+			value = 100
+		}
+	}
+	option = {
+		name = institution_events.751.b
+		ai_chance = { factor = 90 }
+		owner = {
+			add_prestige = 10
+		}
+	}
+}
+
+########################################
+# Chivarly
+########################################
+country_event = {
+	id = institution_events.76
+	title = institution_events.76.t
+	desc = institution_events.76.d
+	picture = TOURNAMENT_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = institution_events.76.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.76.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_chivalry"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.760 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.760
+	title = institution_events.76.t
+	desc = institution_events.76.d
+	picture = TOURNAMENT_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.76.a
+		custom_tooltip = institution_events.76.a.tt
+	}
+}
+
+country_event = {
+	id = institution_events.761
+	title = institution_events.761.t
+	desc = institution_events.761.d
+	picture = TOURNAMENT_eventPicture
+	goto = capital
+	
+	trigger = {
+		is_institution_enabled = chivalry
+		NOT = { has_institution = chivalry }
+		religion_group = christian
+		government = monarchy
+		has_heir = yes
+		has_female_heir = no
+		heir_age = 14
+		NOT = { heir_age = 27 }
+		capital_scope = {
+			controlled_by = ROOT
+			NOT = { chivalry = 100 }
+		}
+		any_neighbor_country = {
+			has_institution = chivalry
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 0.8
+			heir_adm = 5
+		}
+		modifier = {
+			factor = 0.8
+			heir_dip = 5
+		}
+		modifier = {
+			factor = 0.8
+			heir_mil = 5
+		}
+	}
+
+	option = {
+		name = institution_events.761.a
+		ai_chance = { factor = 75 }
+		add_mil_power = -75
+		add_heir_claim = 10
+		capital_scope = {
+			add_institution_embracement = {
+				which = chivalry
+				value = 75
+			}
+		}
+	}
+	option = {
+		name = institution_events.761.b
+		ai_chance = { factor = 25 }
+		add_prestige = 5
+	}
+}
+
+########################################
+# Public Health
+########################################
+country_event = {
+	id = institution_events.77
+	title = institution_events.77.t
+	desc = institution_events.77.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = institution_events.77.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.77.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_publichealth"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.770 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.770
+	title = institution_events.77.t
+	desc = institution_events.77.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.77.a
+		custom_tooltip = institution_events.77.a.tt
+	}
+}
+
+########################################
+# Popular Theology
+########################################
+country_event = {
+	id = institution_events.78
+	title = institution_events.78.t
+	desc = institution_events.78.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = STREET_SPEECH_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+			set_global_flag = hussite_heresy_g
+			enable_religion = hussite
+		}
+	}
+
+	option = {
+		name = institution_events.78.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.78.a.tt
+		if = {
+			limit = {
+				FROM = {
+					can_have_center_of_reformation_trigger = {
+						RELIGION = hussite
+					}
+				}
+			}
+			FROM = {
+				change_religion = hussite
+				add_reform_center = hussite
+				add_permanent_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_laytheology"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.780 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.780
+	title = institution_events.78.t
+	desc = institution_events.78.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = STREET_SPEECH_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.78.a
+		custom_tooltip = institution_events.78.a.tt
+	}
+}
+
+country_event = {
+	id = institution_events.781
+	title = institution_events.781.t
+	desc = institution_events.781.d
+	picture = {
+		trigger = { NOT = { has_dlc = "Emperor" } }
+		picture = STREET_SPEECH_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Emperor" }
+		picture = ADULT_BAPTISME_eventPicture
+	}
+	goto = institution_province
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_institution_enabled = laytheology
+		NOT = { has_institution = laytheology }
+		NOT = { government = theocracy }
+		NOT = { has_country_modifier = anticlericalism }
+		NOT = { has_country_modifier = controlled_preaching }
+		OR = {
+			AND = {
+				has_estate = estate_nobles
+				has_estate = estate_church
+			}
+			AND = {
+				has_estate = estate_maratha
+				has_estate = estate_brahmins
+			}
+		}
+		any_owned_province = {
+			laytheology = 100
+			any_neighbor_province = {
+				area = PREV
+				NOT = { laytheology = 100 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {	days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					laytheology = 100
+					any_neighbor_province = {
+						area = PREV
+						NOT = { laytheology = 100 }
+					}
+				}
+				save_event_target_as = institution_province
+			}
+		}
+	}
+
+	option = {
+		name = institution_events.781.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				has_estate = estate_church
+				NOT = {
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_estate = estate_brahmins
+				NOT = {
+					estate_loyalty = {
+						estate = estate_brahmins
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_estate = estate_nobles
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_estate = estate_maratha
+				NOT = {
+					estate_loyalty = {
+						estate = estate_maratha
+						loyalty = 40
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_estate = estate_nobles }
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_maratha }
+			add_estate_loyalty = {
+				estate = estate_maratha
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_brahmins }
+			add_estate_loyalty = {
+				estate = estate_brahmins
+				loyalty = -10
+			}
+		}
+		event_target:institution_province = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_institution_embracement = {
+					which = laytheology
+					value = 50
+				}
+			}
+		}
+		add_country_modifier = {
+			name = anticlericalism
+			duration = 3650
+		}
+	}
+	option = {
+		name = institution_events.781.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_estate = estate_church
+				NOT = {
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_estate = estate_brahmins
+				NOT = {
+					estate_loyalty = {
+						estate = estate_brahmins
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_estate = estate_nobles
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_estate = estate_maratha
+				NOT = {
+					estate_loyalty = {
+						estate = estate_maratha
+						loyalty = 40
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_brahmins }
+			add_estate_loyalty = {
+				estate = estate_maratha
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_nobles }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_maratha }
+			add_estate_loyalty = {
+				estate = estate_brahmins
+				loyalty = -10
+			}
+		}
+		event_target:institution_province = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_institution_embracement = {
+					which = laytheology
+					value = -25
+				}
+			}
+		}
+		add_country_modifier = {
+			name = controlled_preaching
+			duration = 3650
+		}
+	}
+}
+
+########################################
+# Industrialism
+########################################
+country_event = {
+	id = institution_events.79
+	title = institution_events.79.t
+	desc = institution_events.79.d
+	picture = {	
+		trigger = { NOT = { has_dlc = "Rule Britannia" } }	
+		picture = INVENTION_eventPicture	
+	}	
+	picture = {	
+		trigger = { has_dlc = "Rule Britannia" }	
+		picture = TEXTILE_INDUSTRY_eventPicture	
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = institution_events.79.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.79.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_industrialism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.790 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.790
+	title = institution_events.79.t
+	desc = institution_events.79.d
+	picture = {	
+		trigger = { NOT = { has_dlc = "Rule Britannia" } }	
+		picture = INVENTION_eventPicture	
+	}	
+	picture = {	
+		trigger = { has_dlc = "Rule Britannia" }	
+		picture = TEXTILE_INDUSTRY_eventPicture	
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = institution_events.79.a
+		custom_tooltip = institution_events.79.a.tt
+	}
+}
+
+########################################
+# Liberalism
+########################################
+country_event = {
+	id = institution_events.81
+	title = institution_events.81.t
+	desc = institution_events.81.d
+	picture = {	
+		trigger = { NOT = { has_dlc = "Art of War" } }	
+		picture = REVOLT_HUNGARIAN_eventPicture	
+	}	
+	picture = {	
+		trigger = { has_dlc = "Art of War" }	
+		picture = REVOLT_HUGUENOTS_eventPicture	
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = institution_events.81.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = institution_events.81.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_liberalism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = institution_events.810 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = institution_events.810
+	title = institution_events.81.t
+	desc = institution_events.81.d
+	picture = {	
+		trigger = { NOT = { has_dlc = "Art of War" } }	
+		picture = REVOLT_HUNGARIAN_eventPicture	
+	}	
+	picture = {	
+		trigger = { has_dlc = "Art of War" }	
+		picture = REVOLT_HUGUENOTS_eventPicture	
+	}
+	goto = institution_origin
+
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = institution_events.81.a
+		custom_tooltip = institution_events.81.a.tt
+	}
+}
+
+province_event = {
+	id = institution_events.811
+	title = institution_events.811.t
+	desc = institution_events.811.d
+	picture = ANGRY_MOB_eventPicture
+	goto = root
+
+    is_mtth_scaled_to_size = 1
+
+    trigger = {
+        is_institution_enabled = liberalism
+        NOT = { liberalism = 100 }
+        controlled_by = owner
+        owner = {
+			NOT = { has_institution = liberalism }
+		}
+    }
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+
+	option = {
+		name = institution_events.811.a
+		ai_chance = { factor = 75 }
+		spawn_rebels = {
+			type = anti_tax_rebels
+			size = 3
+		}
+        area = {
+			limit = { owned_by = ROOT }
+			add_institution_embracement = {
+				which = liberalism
+				value = 25
+			}
+		}
+    }
+    option = {
+		name = institution_events.811.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.1
+				owner = { NOT = { stability = 0 } }
+			}
+		}
+        owner = { add_stability = -1 }
+	}
+}
+
+country_event = {
+	id = institution_events.812
+	title = institution_events.812.t
+	desc = institution_events.812.d
+	picture = GREAT_BUILDING_eventPicture
+	goto = capital
+
+	is_mtth_scaled_to_size = 1
+	
+	trigger = {
+		is_institution_enabled = liberalism
+		NOT = { has_institution = liberalism }
+		any_neighbor_country = { has_institution = liberalism }
+		NOT = { capital_scope = { liberalism = 100 } }
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = institution_events.812.a
+		ai_chance = { factor = 25 }
+		add_years_of_income = -0.25
+		add_adm_power = -75
+		capital_scope = {
+			add_institution_embracement = {
+				which = liberalism
+				value = 50
+			}
+		}
+	}
+	option = {
+		name = institution_events.812.b
+		ai_chance = { factor = 75 }
+		add_prestige = 5
+	}
+}

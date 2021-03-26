@@ -24,6 +24,8 @@ discovered_by = north_american
 	religion = catholic
 	trade_goods = wool
 	is_city = yes
+	#1-1-1
+	base_manpower = 1
 }
 1365.6.1 = { controller = GAL }
 1367.4.3 = { controller = CAS }

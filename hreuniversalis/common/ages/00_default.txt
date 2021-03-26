@@ -133,7 +133,7 @@ age_of_empire = {
 			}
 			modifier = {
 				fabricate_claims_cost = -0.5
-				claim_duration = 0.5
+				province_warscore_cost = -0.25
 			}
 			ai_will_do = {
 				factor = 100
@@ -482,7 +482,7 @@ age_of_crisis = {
 				tag = SIC
 			}
 			modifier = {
-				prestige = 2
+				prestige = 1
 			}
 			ai_will_do = {
 				factor = 100
@@ -493,7 +493,7 @@ age_of_crisis = {
 				tag = VDR
 			}
 			modifier = {
-				stability_cost_modifier = -0.2
+				stability_cost_modifier = -0.25
 			}
 			ai_will_do = {
 				factor = 100
@@ -1576,7 +1576,7 @@ age_of_ideology = {
 				tag = SPI
 			}
 			modifier = {
-				unjustified_demands = -0.5
+				years_of_nationalism = -10
 			}
 			ai_will_do = {
 				factor = 100

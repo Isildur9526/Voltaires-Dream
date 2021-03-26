@@ -6,7 +6,13 @@ vn_ase_missions_slot_1_a = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -136,7 +142,13 @@ vn_ase_missions_slot_1_b = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -197,7 +209,13 @@ vn_ase_missions_slot_1_c = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -242,7 +260,13 @@ vn_ase_missions_slot_2_a = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -299,7 +323,13 @@ vn_ase_missions_slot_2_b = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -348,7 +378,13 @@ vn_ase_missions_slot_2_c = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -513,7 +549,13 @@ vn_ase_missions_slot_3_a = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -575,7 +617,13 @@ vn_ase_missions_slot_3_b = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -599,7 +647,13 @@ vn_ase_missions_slot_3_c = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -680,7 +734,13 @@ vn_ase_missions_slot_3_d = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -716,7 +776,13 @@ vn_ase_missions_slot_3_e = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -758,7 +824,7 @@ vn_ase_missions_slot_3_e = {
 			prestige = 50
 			army_size_percentage = 0.6
 			navy_size_percentage = 0.6
-			legitimacy_equivalent = 95
+			legitimacy = 95
         }
         effect = {
             add_adm_power = 75
@@ -779,7 +845,13 @@ vn_ase_missions_slot_4_a = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -829,7 +901,13 @@ vn_ase_missions_slot_4_b = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -897,7 +975,13 @@ vn_ase_missions_slot_4_c = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -1031,7 +1115,13 @@ vn_ase_missions_slot_5_a = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -1111,7 +1201,13 @@ vn_ase_missions_slot_5_b = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes
@@ -1253,7 +1349,13 @@ vn_ase_missions_slot_5_c = {
     generic = no
     ai = yes
     potential = {
-        tag = ASE
+        OR = {
+            tag = ASE
+            AND = {
+                tag = GBR
+                was_tag = ASE
+            }
+        }
         NOT = { map_setup = map_setup_random }
     }
     has_country_shield = yes

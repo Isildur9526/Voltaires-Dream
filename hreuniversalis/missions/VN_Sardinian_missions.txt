@@ -435,7 +435,7 @@ vn_sar_missions_slot_3 = {
                     NOT = { has_estate = estate_burghers }
                 }
                 stability = 2
-                legitimacy_equivalent = 95
+                legitimacy = 95
             }
 		}
 		effect = {

@@ -27,6 +27,10 @@ vn_pap_missions_slot_1 = {
             manpower = 5
         }
         effect = {
+            random_list = {
+                75 = { set_global_flag = victory_at_barbastro }
+                25 = { set_global_flag = failure_at_barbastro }
+            }
             country_event = {
                 id = vn_missions.40
             }
@@ -535,7 +539,7 @@ vn_pap_missions_slot_2 = {
                         faction = pap_roman_mob
                         influence = 60
                     }
-                    legitimacy_equivalent = 95
+                    devotion = 95
                 }
                 AND = {
                     faction_in_power = pap_colonna
@@ -969,7 +973,7 @@ vn_pap_missions_slot_3 = {
         position = 1
         required_missions = { }
         trigger = {
-			legitimacy_equivalent = 90
+			devotion = 90
             num_of_cardinals = 3
         }
         effect = {
@@ -1539,7 +1543,6 @@ vn_pap_missions_slot_5 = {
             }
         }
         effect = {
-            
             treviso_region = {
                 limit = {
                     NOT = { is_core = ROOT }
@@ -1589,7 +1592,7 @@ vn_pap_missions_slot_5 = {
             202 = {
                 add_base_tax = 1
                 add_base_production = 1
-                add_base_production = 1
+                add_base_manpower = 1
                 add_province_modifier = {
                     name = pap_a_courteous_gift_mission
                     duration = 9125

@@ -4,7 +4,7 @@ SAS_ideas = {
         global_ship_trade_power = 0.1
     }
     bonus = {
-        artillery_cost = -0.1
+        artillery_cost = -0.15
     }
     
     trigger = {
@@ -61,7 +61,7 @@ CNC_ideas = {
     free = yes
 
     CNC_idea_1 = {
-        infantry_power = 0.1
+        infantry_power = 0.15
     }
     CNC_idea_2 = {
         prestige = 0.5
@@ -106,7 +106,7 @@ CNE_ideas = {
     free = yes
 
     CNE_idea_1 = {
-        infantry_power = 0.1
+        infantry_power = 0.15
     }
     CNE_idea_2 = {
         prestige = 0.5
@@ -148,7 +148,7 @@ DLF_ideas = {
         adm_tech_cost_modifier = -0.1
     }
     DLF_idea_2 = {
-        trade_range_modifier = 0.2
+        trade_range_modifier = 0.15
     }
     DLF_idea_3 = {
         improve_relation_modifier = 0.3
@@ -309,7 +309,7 @@ GLN_ideas = {
         reinforce_speed = 0.15
     }
     bonus = {
-        artillery_cost = -0.1
+        artillery_cost = -0.15
     }
     
     trigger = {
@@ -431,7 +431,7 @@ LGN_ideas = {
         improve_relation_modifier = 0.3
     }
     LGN_idea_4 = {
-        unjustified_demands = -0.25
+        unjustified_demands = -0.15
         mercenary_cost = -0.15
     }
     LGN_idea_5 = {
@@ -450,7 +450,7 @@ LGN_ideas = {
 EGN_ideas = {
     start = {
         galley_power = 0.1
-        cavalry_power = 0.1
+        cavalry_power = 0.15
     }
     bonus = {
         trade_efficiency = 0.1
@@ -637,7 +637,7 @@ armenian_ducal_ideas = {
     free = yes
 
     armenian_ducal_idea_1 = {
-        global_missionary_strength = 0.01
+        global_missionary_strength = 0.02
     }
     armenian_ducal_idea_2 = {
         development_cost = -0.05
@@ -655,7 +655,7 @@ armenian_ducal_ideas = {
         army_tradition = 0.5
     }
     armenian_ducal_idea_7 = {
-       culture_conversion_cost = -0.1
+        culture_conversion_cost = -0.15
     }
 }
 
@@ -729,7 +729,7 @@ siculo_norman_ideas = {
         papal_influence = 1
     }
     siculo_norman_idea_3 = {
-        global_missionary_strength = 0.02
+        global_missionary_strength = 0.01
         siege_ability = 0.1
     }
     siculo_norman_idea_4 = {
@@ -808,7 +808,7 @@ HiberNor_ideas = {
     free = yes
     
     HiberNor_idea_1 = {
-        cavalry_power = 0.1
+        cavalry_power = 0.15
     }
     HiberNor_idea_2 = {
         num_accepted_cultures = 1
@@ -875,7 +875,7 @@ theocracy_ideas = {
     }
     
     bonus = {
-        culture_conversion_cost = -0.1
+        culture_conversion_cost = -0.15
     }
     
     trigger = {
@@ -935,7 +935,7 @@ dutch_ducal_ideas = {
         development_cost = -0.1
     }
     dutch_ducal_idea_5 = {
-        infantry_power = 0.1
+        infantry_power = 0.15
     }
     dutch_ducal_idea_6 = {
         tolerance_own = 1
@@ -1106,7 +1106,7 @@ molducal_ideas = {
 SWI_ideas = {
     start = {
         merc_maintenance_modifier = -0.15
-        infantry_power = 0.1
+        infantry_power = 0.15
     }
     
     bonus = {
@@ -1142,7 +1142,7 @@ SWI_ideas = {
         development_cost = -0.1
     }
     haven_for_refugees = {
-        prestige = 1
+        prestige = 0.5
     }
     clockwork = {
         production_efficiency = 0.1
@@ -1360,7 +1360,7 @@ taifa_ideas = {
         mercenary_manpower = 0.25
     }
     taifa_idea_3 = {
-        culture_conversion_cost = -0.1
+        culture_conversion_cost = -0.15
     }
     taifa_idea_4 = {
         technology_cost = -0.05
@@ -1369,7 +1369,7 @@ taifa_ideas = {
         global_tax_modifier = 0.1
     }
     taifa_idea_6 = {
-        cavalry_power = 0.1
+        cavalry_power = 0.15
     }
     taifa_idea_7 = {
         build_cost = -0.1
@@ -1435,7 +1435,7 @@ hunduc_ideas = {
         unjustified_demands = -0.25
     }
     hunduc_idea_3 = {
-        cavalry_power = 0.05
+        cavalry_power = 0.1
         cavalry_cost = -0.1
     }
     hunduc_idea_4 = {

@@ -81,7 +81,6 @@ monarch_names = {
 	"Zagip #0" = 1
 	"Zamanbyek #0" = 1
 	"Zaribzyan #0" = 1
-	"Gabdulla #0" = 1
 	"Zofar #0" = 1	
 	
 	"Aibanoo #0" = -1

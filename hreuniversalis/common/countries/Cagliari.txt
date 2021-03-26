@@ -53,7 +53,6 @@ monarch_names = {
 	"Beatrice #0" = -1
 	"Agostino #0" = 10
 	"Amedeo #0" = 10
-	"Andrea #0" = 10
 	"Arsenio #0" = 1
 	"Benedetto #0" = 1
 	"Benvenuto #0" = 1

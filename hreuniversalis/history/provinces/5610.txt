@@ -26,6 +26,9 @@ add_core = BDC
 	controller = MOL
 	add_core = MOL
 	remove_core = BDC
+	#1-1-1
+	base_production = 1
+	base_manpower = 1
 }
 1653.1.1 = { revolt = { type = noble_rebels size = 0 } controller = REB }
 1654.1.1 = { revolt = {} controller = MOL }

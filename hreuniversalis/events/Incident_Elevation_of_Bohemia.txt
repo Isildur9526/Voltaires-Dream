@@ -16,8 +16,10 @@ country_event = {
 			current_age = age_of_dynasticism
 		}
 		normal_or_historical_nations = yes
-		government = monarchy
+		is_bankrupt = no
+		NOT = { government = republic }
 		is_subject = no
+		has_any_disaster = no
 		total_development = 300 #More than their 1054 level so they can't cheese it first month
 		NOT = { government_rank = 5 }
 		has_regency = no

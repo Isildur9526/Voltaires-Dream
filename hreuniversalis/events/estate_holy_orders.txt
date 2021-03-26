@@ -84,6 +84,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_holy_orders
 		has_estate = estate_church
+		had_recent_war = 10
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -103,7 +104,7 @@ country_event = {
 		}
 		change_estate_land_share = {
 			estate = estate_holy_orders
-			share = 5
+			share = 2
 		}
 		add_estate_influence_modifier = {
 			estate = estate_holy_orders
@@ -126,8 +127,8 @@ country_event = {
 			}
 		}
 		change_estate_land_share = {
-			estate = estate_holy_orders
-			share = 5
+			estate = estate_church
+			share = 2
 		}
 		add_estate_influence_modifier = {
 			estate = estate_church

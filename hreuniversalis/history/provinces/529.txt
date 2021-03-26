@@ -11,12 +11,12 @@ owner = GLL
 controller = GLL
 add_core = GLL
 
-1288.1.1. = {
+1288.1.1 = {
 	owner = PIS
 	controller = PIS
 	add_core = PIS
 }
-1324.2.29 = {
+1324.2.28 = {
 	controller = ARA
 }
 1326.6.1 = {

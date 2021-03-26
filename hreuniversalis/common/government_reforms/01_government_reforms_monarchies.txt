@@ -212,7 +212,7 @@ germanic_monarchy = {
 	modifiers = {
 		legitimacy = 0.5
 		max_absolutism = -30
-		heir_chance = -1
+		heir_chance = -10
 	}
 
 	custom_attributes = {
@@ -1013,6 +1013,7 @@ states_general_reform = {
 		is_revolutionary = no
 	}
 	trigger = {
+		NOT = { has_reform = germanic_monarchy }
 		NOT = { is_lesser_in_union = yes }
 		is_emperor = no
 	}
