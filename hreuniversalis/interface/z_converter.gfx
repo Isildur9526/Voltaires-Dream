@@ -1388,10 +1388,6 @@ spriteTypes = {
 		texturefile = "gfx//interface//great_projects//great_project_city_de_carcassonne.dds"
 	}
 	spriteType = {
-		name = "GFX_great_project_stahleck_castle"	
-		texturefile = "gfx//interface//great_projects//great_project_stahleck_castle.dds"
-	}
-	spriteType = {
 		name = "GFX_great_project_diocletians_palace"	
 		texturefile = "gfx//interface//great_projects//great_project_diocletians_palace.dds"
 	}
@@ -1406,10 +1402,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_great_project_safranbolu_caravansary"	
 		texturefile = "gfx//interface//great_projects//great_project_safranbolu_caravansary.dds"
-	}
-	spriteType = {
-		name = "GFX_great_project_jasna_gora"	
-		texturefile = "gfx//interface//great_projects//great_project_jasna_gora.dds"
 	}
 	spriteType = {
 		name = "GFX_great_project_smolensk_cathedral"	
@@ -1436,8 +1428,8 @@ spriteTypes = {
 		texturefile = "gfx//interface//great_projects//great_project_su_nuraxi.dds"
 	}
 	spriteType = {
-		name = "GFX_great_project_archivo_general_de_indias"
-		texturefile = "gfx//interface//great_projects//great_project_archivo_general_de_indias.dds"
+		name = "GFX_great_project_alcazar_of_seville"
+		texturefile = "gfx//interface//great_projects//great_project_alcazar_of_seville.dds"
 	}
 	spriteType = {
 		name = "GFX_great_project_house_of_the_blackheads"
@@ -1496,12 +1488,56 @@ spriteTypes = {
 		texturefile = "gfx//interface//great_projects//great_project_mzab_valley.dds"
 	}
 	spriteType = {
-		name = "GFX_great_project_city_of_sarai"
-		texturefile = "gfx//interface//great_projects//great_project_city_of_sarai.dds"
-	}
-	spriteType = {
 		name = "GFX_great_project_orto_botanico_di_padova"
 		texturefile = "gfx//interface//great_projects//great_project_orto_botanico_di_padova.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_jaromarsburg"
+		texturefile = "gfx//interface//great_projects//great_project_jaromarsburg.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_reichsburg_cochem"
+		texturefile = "gfx//interface//great_projects//great_project_reichsburg_cochem.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_manasija_monastery"
+		texturefile = "gfx//interface//great_projects//great_project_manasija_monastery.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_palace_of_aachen"
+		texturefile = "gfx//interface//great_projects//great_project_palace_of_aachen.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_mausoleum_of_theodoric"
+		texturefile = "gfx//interface//great_projects//great_project_mausoleum_of_theodoric.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_rabban_hormizd_monastery"
+		texturefile = "gfx//interface//great_projects//great_project_rabban_hormizd_monastery.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_abu_hanifa_mosque"
+		texturefile = "gfx//interface//great_projects//great_project_abu_hanifa_mosque.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_lonja_de_la_seda"
+		texturefile = "gfx//interface//great_projects//great_project_lonja_de_la_seda.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_palace_of_poitiers"
+		texturefile = "gfx//interface//great_projects//great_project_palace_of_poitiers.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_citadel_of_besancon"
+		texturefile = "gfx//interface//great_projects//great_project_citadel_of_besancon.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_kruje_castle"
+		texturefile = "gfx//interface//great_projects//great_project_kruje_castle.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_osnabruck_town_hall"
+		texturefile = "gfx//interface//great_projects//great_project_osnabruck_town_hall.dds"
 	}
 
 	#GOVERNMENT MECHANICS
