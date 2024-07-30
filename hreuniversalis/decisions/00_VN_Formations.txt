@@ -3274,12 +3274,17 @@ country_decisions = {
 				exile_heir_as = nrm_conquest_heir
 				exile_ruler_as = { name = nrm_conquest_ruler }
 				switch_tag = ENG
-				set_capital = 2268
-				set_ruler = nrm_conquest_ruler
-				set_heir = nrm_conquest_heir
-				if = {
-					limit = {
-						NOT = { government_rank = 5 }
+				ENG = {
+					set_capital = 2268
+					change_government = monarchy
+					add_government_reform = anglo_norman_monarchy
+					set_ruler = nrm_conquest_ruler
+					set_heir = nrm_conquest_heir
+					if = {
+						limit = {
+							NOT = { government_rank = 5 }
+						}
+						set_government_rank = 5
 					}
 					set_government_rank = 5
 				}

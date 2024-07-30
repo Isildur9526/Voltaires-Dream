@@ -51,9 +51,6 @@ vn_vgb_missions_slot_1 = {
 				"
 			}
         }
-
-
-		
 		ai_weight = {
 			factor = 500
 		}
@@ -471,23 +468,15 @@ vn_vgb_missions_slot_2 = {
 			}
         }
         effect = {
-			add_mercantilism = 2
-            custom_tooltip = vn_vgb_trade_fortresses.tt2
-			hidden_effect = {
-                for = {
-                    amount = 5
-                    effect = "
-						random_owned_province = {
-							limit = {
-								has_fort_trigger = yes
-								has_trade_building_trigger = yes
-							}
-                            add_base_production = 1
-							add_base_manpower = 1
-						}
-					"
-                }
+			distribute_development = {
+                type = tax
+                amount = 5
             }
+			distribute_development = {
+                type = production
+                amount = 5
+            }
+			add_mercantilism = 2
         }
     }
     vn_vgb_eurasian_monopoly = {

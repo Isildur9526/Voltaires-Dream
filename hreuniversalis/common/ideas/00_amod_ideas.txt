@@ -4594,33 +4594,32 @@ XSE_ideas = {
         yearly_corruption = -0.1
     }
 
-    trigger = {
-        tag = XSE
-    }
-    free = yes
-    XSE_idea_1 = {
-        global_tax_modifier = 0.1
-    }
-    XSE_idea_2 = {
-        global_prov_trade_power_modifier = 0.15
-    }
-    XSE_idea_3 = {
-        trade_range_modifier = 0.15
-    }
-    XSE_idea_4 = {
-        global_autonomy = -0.05
-    }
-    XSE_idea_5 = {
-        unjustified_demands = -0.25
-    }
-    XSE_idea_6 = {
-        global_trade_goods_size_modifier = 0.1
-        trade_efficiency = 0.1
-    }
-    XSE_idea_7 = {
-        global_tax_modifier = 0.1
-        war_taxes_cost_modifier = -0.5
-    }
+	trigger = {
+		tag = XSE
+	}
+	free = yes
+	XSE_idea_1 = {
+		global_tax_modifier = 0.1
+	}
+	XSE_idea_2 = {
+		global_prov_trade_power_modifier = 0.15
+	}
+	XSE_idea_3 = {
+		trade_range_modifier = 0.15
+	}
+	XSE_idea_4 = {
+		global_autonomy = -0.05
+	}
+	XSE_idea_5 = {
+		unjustified_demands = -0.25
+	}
+	XSE_idea_6 = {
+		global_trade_goods_size_modifier = 0.1
+		trade_efficiency = 0.1
+	}
+	XSE_idea_7 = {
+		war_taxes_cost_modifier = -0.5
+	}
 }
 
 FNB_ideas = {
